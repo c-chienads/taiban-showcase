@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" class="compass-svg" aria-hidden="true" focusable="false">
+  <!-- 南風里巷弄地圖・指北針：手繪。外圈是風向袋的布紋刻度，箭身左半實心、右半空心；底下一支小風向袋指出「南風」從哪來 -->
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="60" cy="72" r="40" stroke-width="1.4"/>
+    <circle cx="60" cy="72" r="34" stroke-width=".7" stroke-dasharray="1.6 4.1"/>
+    <path d="M60 28v-6M60 116v6M16 72h-6M104 72h6" stroke-width="1.4"/>
+    <path d="M60 24 70.5 72 60 120 49.5 72Z" stroke-width="1.6"/>
+  </g>
+  <path d="M60 24 49.5 72H60Z M60 120 70.5 72H60Z" fill="currentColor"/>
+  <circle cx="60" cy="72" r="3.2" fill="currentColor"/>
+  <!-- 風向袋（俯視）：桿腳在南，袋口迎著南風，袋尾被吹向北 -->
+  <g class="compass-sock">
+    <circle cx="107" cy="134" r="2.6" fill="currentColor"/>
+    <path d="M102.6 131 111.4 131 109.4 104 104.6 104Z" fill="var(--sock, #ec7c27)" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
+    <path d="M103.1 123h7.8M103.7 115h6.6" stroke="currentColor" stroke-width="1"/>
+  </g>
+  <text x="60" y="14" text-anchor="middle" class="compass-n">北</text>
+</svg>

@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F12" data-slug="take-one-care">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>一日一帖｜早晚各一帖的皮膚保養</title>
+<meta name="description" content="一日一帖是臺中綠川旁的小保養所：早帖清爽凝露、晚帖潤澤乳霜，各七帖，一日兩次、七日一輪。照著藥袋上的用法，剛好就好。">
+
+<meta name="generator" content="套版網站平台 F12">
+<link rel="icon" href="assets/mark.svg">
+<link rel="preload" href="fonts/01-noto-sans-tc.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"Noto Sans TC";src:url("fonts/01-noto-sans-tc.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Space Mono";src:url("fonts/02-space-mono.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Space Mono";src:url("fonts/03-space-mono.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root{
+  --paper: oklch(0.993 0.004 355);
+  --bag: oklch(0.952 0.02 330);
+  --bag-2: oklch(0.9 0.036 330);
+  --ink: oklch(0.34 0.072 330);
+  --ink-2: oklch(0.47 0.085 330);
+  --deep: oklch(0.26 0.045 330);
+  --amber: oklch(0.81 0.15 76);
+  --cream: oklch(0.965 0.03 85);
+  --hair: oklch(0.47 0.085 330 / .36);
+  --crease: oklch(0.47 0.085 330 / .16);
+  --focus-ring: 3px dashed var(--ink);
+  --focus-offset: 3px;
+  --selection-bg: var(--amber);
+  --selection-fg: var(--deep);
+  --sans: "Noto Sans TC", sans-serif;
+  --mono: "Space Mono", "Noto Sans TC", monospace;
+  --gut: clamp(16px, 3.4vw, 52px);
+  --rule: 1.5px;
+}
+html{ background: var(--bag); }
+body{ font-family: var(--sans); font-size: 16px; line-height: 1.8; color: var(--ink); background: var(--bag); font-weight: 400; }
+a{ color: inherit; text-decoration-thickness: 1px; text-underline-offset: .24em; }
+a:hover{ text-decoration-thickness: 2px; }
+:lang(zh) em, em{ text-emphasis: none; font-weight: 800; }
+.nb{ white-space: nowrap; }
+.mono, .mono-num{ font-family: var(--mono); font-variant-numeric: tabular-nums; }
+b{ font-weight: 800; }
+:focus-visible{ outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+
+/* ============ 藥袋頂：打孔撕線＋夾鏈 ============ */
+.bag{ position: relative; padding: 0 var(--gut); }
+.tear-top{ position: relative; height: 40px; margin: 0 calc(var(--gut) * -1); padding-left: calc(var(--gut) + 22px); font-size: 12px; line-height: 30px; font-weight: 500; letter-spacing: .12em; color: var(--ink);
+  background: radial-gradient(circle at 5px 50%, var(--paper) 2.4px, transparent 2.9px) 0 calc(100% - 7px) / 11px 7px repeat-x; box-shadow: inset 0 -1px 0 var(--hair); }
+.tear-top .notch{ position: absolute; left: 0; top: 7px; width: 14px; height: 20px; background: var(--paper); clip-path: polygon(0 0, 100% 50%, 0 100%); }
+.strip{ display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px; padding: 14px 0 12px; position: relative; }
+.strip::before{ content: ""; position: absolute; left: 0; right: 0; top: 5px; height: 4px; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+.brand{ display: flex; align-items: center; gap: 10px; margin: 0; }
+.brand-link{ display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+.mark{ width: 34px; height: 34px; color: var(--ink-2); flex: none; }
+.mark .mk-b{ fill: var(--paper); } .mark .mk-f{ fill: var(--bag-2); }
+.brand-name{ font-size: 19px; font-weight: 900; letter-spacing: .06em; line-height: 1; }
+.brand-name small{ font-size: 13px; font-weight: 600; margin-left: .5em; letter-spacing: .14em; }
+.toc ol{ display: flex; flex-wrap: wrap; gap: 4px 22px; justify-content: center; margin: 0; }
+.toc a{ display: inline-flex; align-items: baseline; gap: 6px; font-size: 14.5px; font-weight: 600; text-decoration: none; padding: 4px 0; white-space: nowrap; }
+.toc a:hover{ text-decoration: underline; }
+.toc .n{ font-family: var(--mono); font-size: 12px; color: var(--ink-2); font-weight: 400; }
+.strip-tel{ font-size: 13px; font-weight: 600; margin: 0; white-space: nowrap; }
+.strip-tel a{ margin-left: .3em; font-weight: 400; }
+
+/* ============ 藥袋正面：表格欄位 ============ */
+.front{ margin: 6px var(--gut) 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); position: relative;
+  grid-template-areas:
+    "name name name name name name name name dial dial dial dial"
+    "how how how how how how qty qty dial dial dial dial"
+    "to to use use use look look look rx rx rx rx"; }
+.front::before{ content: ""; position: absolute; inset: 0; border: 2.5px solid var(--ink-2); pointer-events: none; z-index: 1; }
+.cell{ background: var(--bag); padding: 14px clamp(16px, 1.7vw, 26px) 20px; min-width: 0; position: relative; box-shadow: inset -1.5px -1.5px 0 var(--ink-2); }
+.c-name{ grid-area: name; } .c-dial{ grid-area: dial; } .c-how{ grid-area: how; } .c-qty{ grid-area: qty; }
+.c-to{ grid-area: to; } .c-use{ grid-area: use; } .c-look{ grid-area: look; } .c-rx{ grid-area: rx; }
+.tag{ display: inline-block; font-size: 12.5px; font-weight: 700; letter-spacing: .28em; line-height: 1; padding: 5px 4px 5px 8px; background: var(--ink-2); color: var(--paper); vertical-align: top; }
+
+.c-name h1{ font-size: clamp(66px, 13.3vw, 252px); font-weight: 900; line-height: 1; letter-spacing: -.04em; color: var(--ink); margin: 16px 0 18px -.05em; }
+.name-foot{ display: grid; grid-template-columns: minmax(0, 11em) minmax(0, 1fr); gap: 32px; align-items: start; border-top: var(--rule) solid var(--hair); padding-top: 14px; }
+.sub{ font-size: 17px; font-weight: 700; line-height: 1.6; margin: 0; }
+.sub-l{ display: block; font-size: 14px; font-weight: 500; line-height: 1.7; }
+.sub-l:first-of-type{ margin-top: 4px; }
+.sub .mono-num{ font-size: 13px; font-weight: 400; }
+.lead{ font-size: 17px; line-height: 1.8; margin: 0; max-width: 34em; }
+
+.c-dial{ display: flex; flex-direction: column; align-items: flex-start; }
+.dial{ width: min(100%, 392px); height: auto; margin: 12px auto 6px; align-self: center; overflow: visible; }
+.dial .rim{ fill: var(--paper); stroke: var(--ink-2); stroke-width: 2; }
+.dial .dot-ring{ fill: none; stroke: var(--ink-2); stroke-width: 1.4; stroke-dasharray: 1 6; stroke-linecap: round; }
+.dial .sec{ fill: none; stroke-width: 30; }
+.dial .sec.am{ stroke: var(--amber); } .dial .sec.pm{ stroke: var(--ink-2); }
+.dial .t1, .dial .t2, .dial .t3{ stroke: var(--ink-2); stroke-linecap: butt; }
+.dial .t1{ stroke-width: 1.2; } .dial .t2{ stroke-width: 2.2; } .dial .t3{ stroke-width: 3.4; }
+.dial text{ text-anchor: middle; dominant-baseline: central; fill: var(--ink); }
+.dial .hn{ font-family: var(--mono); font-size: 18px; }
+.dial .hand{ transform-box: view-box; transform-origin: 200px 200px; transform: rotate(var(--deg)); }
+.dial .hd{ stroke: var(--deep); stroke-width: 3; stroke-linecap: round; }
+.dial .tip{ fill: var(--amber); stroke: var(--deep); stroke-width: 2; }
+.dial .hub{ fill: var(--deep); }
+.dial-key{ display: grid; gap: 2px; margin: 4px 0 0; font-size: 14px; line-height: 1.75; }
+.dial-key li{ display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.dial-key .mono{ font-size: 13px; }
+.dial-key .k{ width: 22px; height: 10px; flex: none; }
+.k-am{ background: var(--amber); } .k-pm{ background: var(--ink-2); }
+.dial-now{ font-size: 14px; font-weight: 700; margin: 6px 0 0; min-height: 1.75em; }
+.dial-now:empty{ display: none; }
+.dial-now b{ font-family: var(--mono); background: var(--amber); color: var(--deep); padding: 0 4px; font-weight: 700; }
+
+.dose{ display: flex; flex-wrap: wrap; gap: 10px 30px; margin: 14px 0 8px; }
+.dose li{ display: grid; grid-template-columns: auto auto; grid-template-rows: auto auto; column-gap: 10px; align-items: center; font-size: 21px; line-height: 1.3; font-weight: 400; }
+.dose .box{ grid-row: 1 / span 2; width: 24px; height: 24px; border: 2px solid var(--ink-2); position: relative; align-self: start; margin-top: 2px; background: var(--paper); }
+.dose .on .box{ background: var(--ink-2); }
+.dose .on .box::after{ content: ""; position: absolute; left: 7px; top: 2px; width: 7px; height: 13px; border: solid var(--paper); border-width: 0 3px 3px 0; transform: rotate(42deg); }
+.dose .on .dl{ font-weight: 900; }
+.dose .ds{ grid-column: 2; font-size: 13px; font-weight: 600; line-height: 1.4; }
+.how-note{ font-size: 15px; margin: 6px 0 0; padding-top: 8px; border-top: var(--rule) dashed var(--hair); }
+.how-note b{ font-size: 16px; }
+
+.qty{ margin: 10px 0 0; font-size: 22px; font-weight: 800; line-height: 1; display: flex; align-items: baseline; gap: 4px; }
+.qty .mono{ font-size: clamp(54px, 5vw, 76px); font-weight: 700; letter-spacing: -.04em; color: var(--ink-2); }
+.qty-sub{ font-size: 14px; line-height: 1.6; margin: 6px 0 0; }
+
+.to{ font-size: clamp(22px, 1.9vw, 27px); font-weight: 800; margin: 12px 0 2px; line-height: 1.35; text-decoration: underline; text-decoration-style: dotted; text-decoration-thickness: 2px; text-underline-offset: .3em; text-decoration-color: var(--ink-2); }
+.to-sub{ font-size: 13px; line-height: 1.7; margin: 8px 0 0; }
+.use{ font-size: 16px; margin: 12px 0 0; }
+.look{ margin: 10px 0 0; display: grid; gap: 8px; }
+.look div{ display: grid; grid-template-columns: 4.6em 1fr; gap: 8px; font-size: 14px; line-height: 1.65; }
+.look dt{ font-weight: 800; display: flex; align-items: center; gap: 7px; }
+.look dd{ margin: 0; }
+.sw{ width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid var(--ink-2); flex: none; }
+.sw-am{ background: oklch(0.92 0.07 140); } .sw-pm{ background: var(--cream); }
+
+.c-rx{ display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto 1fr auto; column-gap: 12px; }
+.c-rx .tag{ grid-column: 1; justify-self: start; }
+.rx{ grid-column: 1; margin: 10px 0 0; font-size: 13.5px; line-height: 1.85; }
+.rx div{ display: flex; gap: 12px; }
+.rx dt{ font-weight: 600; } .rx dd{ margin: 0; font-size: 13.5px; }
+.stamp{ grid-column: 2; grid-row: 1 / span 2; align-self: center; margin: 6px 4px 0 0; width: 76px; height: 76px; border-radius: 50%; border: 2px solid var(--ink-2); box-shadow: inset 0 0 0 4px var(--bag), inset 0 0 0 5.2px var(--ink-2); display: grid; place-content: center; text-align: center; line-height: 1.15; transform: rotate(var(--r)); color: var(--ink); }
+.stamp span{ font-size: 12px; font-weight: 700; letter-spacing: .3em; padding-left: .3em; }
+.stamp b{ font-size: 18px; font-weight: 900; letter-spacing: .08em; }
+.lot-wrap{ grid-column: 1 / -1; margin-top: 10px; transform: rotate(var(--r)); transform-origin: 0 50%; }
+.lot{ width: min(100%, 236px); height: auto; fill: var(--deep); display: block; }
+
+/* 外用警示帶 */
+.ext{ margin: 0 var(--gut); display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; padding: 10px 18px; background: var(--amber); color: var(--deep); box-shadow: inset 2.5px 0 0 var(--ink-2), inset -2.5px 0 0 var(--ink-2), inset 0 -2.5px 0 var(--ink-2); font-size: 15px; font-weight: 700; line-height: 1.5; }
+.ext-badge{ font-size: 21px; font-weight: 900; letter-spacing: .14em; padding: 2px 6px 2px 10px; border: 2.5px solid var(--deep); line-height: 1.2; }
+.ext-b{ margin-left: auto; font-weight: 500; }
+
+/* 撕線 */
+.tear{ display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px; margin: 34px var(--gut) 0; color: var(--ink-2); }
+.tear .sc{ width: 26px; height: 18px; }
+.tear .cut{ height: 0; border-top: 2px dashed var(--ink-2); }
+.tear-l{ font-size: 13px; font-weight: 600; color: var(--ink); letter-spacing: .08em; }
+
+/* ============ 說明書：白紙＋四摺摺痕（平塗細線，固定實體面板寬 340px） ============ */
+.insert{ margin-top: 14px; padding: 44px var(--gut) 88px; background-color: var(--paper);
+  background-image: linear-gradient(90deg, var(--crease) 0 1px, transparent 1px), linear-gradient(180deg, var(--crease) 0 1px, transparent 1px);
+  background-size: 340px 100%, 100% var(--fold-h, 920px);
+  background-position: calc(50% + 170px) 0, 0 var(--fold-h, 920px); }
+.ifu-head{ display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: end; }
+.ifu-head::after{ content: ""; grid-column: 1 / -1; height: 6px; margin-top: 18px; border-top: 1.5px solid var(--ink-2); border-bottom: 1.5px solid var(--ink-2); }
+.ifu-title{ grid-column: 1 / span 5; font-size: clamp(34px, 3.6vw, 52px); font-weight: 900; letter-spacing: .12em; line-height: 1.1; margin: 0; }
+.ifu-keep{ grid-column: 6 / span 4; font-size: 14px; line-height: 1.7; }
+.ifu-keep p{ margin: 0; }
+.ifu-ver{ font-size: 13px; }
+.ifu-fold{ grid-column: 10 / span 3; justify-self: end; margin: 0; display: grid; justify-items: end; gap: 4px; }
+.ifu-fold img{ width: 132px; height: 44px; }
+.ifu-fold figcaption{ font-size: 12.5px; font-weight: 500; }
+
+.ifu-sec{ padding-top: clamp(64px, 7vw, 104px); }
+.sec-row{ display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: baseline; margin-bottom: 32px; }
+.sec-row .sec-h{ grid-column: 1 / span 5; margin: 0; }
+.sec-row .sec-lead{ grid-column: 6 / span 6; }
+.sec-h{ font-size: clamp(25px, 2.5vw, 34px); font-weight: 900; line-height: 1.3; text-indent: -.64em; letter-spacing: .02em; margin: 0 0 28px; }
+.sec-lead{ font-size: 16px; margin: 0; max-width: 40em; }
+
+/* ---- 用法：攤開的藥袋（展開圖） ---- */
+.die{ display: grid; grid-template-columns: 36px minmax(0, 1fr) 62px minmax(0, .5fr); grid-template-rows: auto auto auto; }
+.die-top{ grid-column: 2 / 5; grid-row: 1; position: relative; background: var(--bag); border: 2px solid var(--ink); border-bottom: 1.5px dashed var(--ink-2); display: flex; align-items: flex-end; justify-content: space-between; padding: 30px 18px 8px; }
+.die-top .zip{ position: absolute; left: 0; right: 0; top: 13px; height: 6px; border-top: 1.5px solid var(--ink-2); border-bottom: 1.5px solid var(--ink-2); }
+.die-top::after{ content: ""; position: absolute; top: -2px; left: 50%; width: 60px; height: 26px; margin-left: -30px; background: var(--paper); border: 2px solid var(--ink); border-top: 0; border-radius: 0 0 30px 30px; }
+.die-lab{ font-size: 12.5px; font-weight: 700; letter-spacing: .14em; }
+.die-glue{ grid-column: 1; grid-row: 2; position: relative; display: grid; place-items: center;
+  background: repeating-linear-gradient(135deg, var(--bag-2) 0 5px, var(--bag) 5px 11px);
+  clip-path: polygon(100% 0, 0 26px, 0 calc(100% - 26px), 100% 100%); }
+.die-glue span{ writing-mode: vertical-rl; font-size: 12.5px; font-weight: 800; letter-spacing: .5em; background: var(--bag); padding: 8px 2px; }
+.die-front{ grid-column: 2; grid-row: 2; background: var(--bag); border-left: 1.5px dashed var(--ink-2); padding: 22px clamp(18px, 2.4vw, 38px) 16px; min-width: 0; }
+.die-gusset{ grid-column: 3; grid-row: 2; background: var(--bag-2); border-left: 1.5px dashed var(--ink-2); display: flex; justify-content: center; padding: 28px 4px; }
+.die-gusset span{ writing-mode: vertical-rl; font-size: 13px; font-weight: 700; letter-spacing: .42em; line-height: 1.6; }
+.die-back{ grid-column: 4; grid-row: 2; background: var(--bag); border-left: 1.5px dashed var(--ink-2); box-shadow: inset -2px 0 0 var(--ink); padding: 22px clamp(18px, 2.2vw, 34px) 26px; min-width: 0; }
+.die-bot{ grid-column: 2 / 5; grid-row: 3; display: grid; grid-template-columns: subgrid; }
+.die-bot span{ height: 46px; background: var(--bag-2); clip-path: polygon(0 0, 100% 0, calc(100% - 28px) 100%, 28px 100%); box-shadow: inset 0 1.5px 0 var(--ink-2); }
+.die-bot span:nth-child(2){ background: var(--bag); clip-path: polygon(0 0, 100% 0, 50% 100%); }
+.die-legend{ display: flex; flex-wrap: wrap; gap: 6px 26px; margin: 14px 0 0 36px; font-size: 12.5px; font-weight: 600; }
+.die-legend span{ display: inline-flex; align-items: center; gap: 8px; }
+.die-legend i{ display: inline-block; width: 26px; height: 0; }
+.lg-cut{ border-top: 2px solid var(--ink); } .lg-fold{ border-top: 1.5px dashed var(--ink-2); }
+.lg-glue{ height: 12px !important; background: repeating-linear-gradient(135deg, var(--bag-2) 0 3px, var(--bag) 3px 6px); outline: 1px solid var(--hair); }
+
+.die-title{ display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin: 0 0 6px; padding-bottom: 14px; position: relative; }
+.die-title::after, .db-h::after{ content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; border-top: 1px solid var(--ink-2); border-bottom: 1px solid var(--ink-2); }
+.die-title b{ font-size: 26px; font-weight: 900; letter-spacing: .4em; color: var(--ink-2); }
+.die-title span{ font-size: 13.5px; font-weight: 600; }
+
+.steps{ counter-reset: step; margin: 0; }
+.step{ counter-increment: step; display: grid; grid-template-columns: 112px 118px minmax(0, 1fr); column-gap: 22px; align-items: last baseline; padding: 22px 0 24px; position: relative; }
+.step + .step{ box-shadow: inset 0 1.5px 0 var(--hair); }
+.step::before{ content: counter(step); font-family: var(--sans); font-size: 150px; font-weight: 900; line-height: .74; letter-spacing: -.05em; color: var(--ink-2); text-align: center; }
+.step-art{ align-self: center; transform: rotate(var(--r)); }
+.cutout{ width: 118px; height: 118px; display: block; }
+.cp-bg{ fill: var(--paper); } .cp-i{ fill: var(--ink); } .cp-a{ fill: var(--amber); } .cp-t{ fill: var(--bag-2); } .cp-p{ fill: var(--paper); }
+.cp-cut{ fill: none; stroke: var(--paper); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.cp-tx{ font-size: 16px; font-weight: 900; fill: var(--ink); text-anchor: middle; dominant-baseline: central; }
+.cp-tx-p{ font-family: var(--mono); font-size: 13px; font-weight: 700; fill: var(--paper); text-anchor: middle; dominant-baseline: central; }
+.step-text h3{ font-size: clamp(21px, 1.8vw, 25px); font-weight: 800; line-height: 1.35; margin: 0 0 6px; display: flex; align-items: center; gap: 12px; }
+.verb{ flex: none; display: grid; place-items: center; width: 1.65em; height: 1.65em; border: 2.5px solid var(--ink-2); background: var(--paper); font-weight: 900; color: var(--ink); font-size: 1.02em; }
+.step-meta{ display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin: 0; font-size: 14px; }
+.dur{ font-weight: 700; white-space: nowrap; }
+.dur b{ font-family: var(--mono); font-size: 20px; margin: 0 3px; color: var(--ink-2); }
+.clock{ font-size: 13.5px; }
+.clock .mono{ margin-left: 2px; }
+.desc{ font-size: 17px; line-height: 1.8; margin: 6px 0 0; max-width: 31em; }
+
+.db-h{ font-size: 19px; font-weight: 900; margin: 0 0 10px; padding-bottom: 12px; position: relative; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.db-h small{ font-size: 12.5px; font-weight: 600; }
+.tips{ margin: 0 0 30px; }
+.tips li{ display: grid; grid-template-columns: 28px 1fr; column-gap: 10px; font-size: 15px; line-height: 1.75; padding: 9px 0; }
+.tips li + li{ box-shadow: inset 0 1px 0 var(--hair); }
+.tn{ width: 24px; height: 24px; margin-top: 2px; display: grid; place-items: center; font-family: var(--mono); font-weight: 700; font-size: 14px; color: var(--paper); background: var(--ink-2); }
+.diff{ margin: 0 0 26px; display: grid; }
+.diff div{ display: grid; grid-template-columns: 4.4em 1fr; gap: 10px; padding: 7px 0; font-size: 14.5px; line-height: 1.6; }
+.diff div + div{ box-shadow: inset 0 1px 0 var(--hair); }
+.diff dt{ font-weight: 800; }
+.diff dd{ margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.dd-am::before, .dd-pm::before{ content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: 0; }
+.dd-am::before{ background: var(--amber); } .dd-pm::before{ background: var(--ink-2); }
+.actual{ margin: 0 0 26px; }
+.act-pair{ display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; margin: 4px 0 10px; }
+.act{ margin: 0; display: grid; justify-items: start; gap: 8px; }
+.act-disc{ width: 20mm; height: 20mm; max-width: none; display: block; overflow: visible; }
+.ad-ring{ fill: var(--paper); stroke: var(--ink-2); stroke-width: .22; stroke-dasharray: .7 .55; }
+.ad-am{ fill: var(--amber); }
+.ad-cr{ fill: var(--cream); stroke: var(--ink-2); stroke-width: .25; stroke-linejoin: round; }
+.ad-rg{ fill: none; stroke: var(--ink-2); stroke-width: .22; stroke-linecap: round; opacity: .55; }
+.ad-hi{ fill: var(--paper); opacity: .78; }
+.act-t{ font-size: 14px; line-height: 1.55; display: block; }
+.act-t b{ display: block; font-size: 15px; font-weight: 800; }
+.act-note{ margin: 0; font-size: 14px; line-height: 1.7; }
+.return{ margin: 0; font-size: 14.5px; line-height: 1.75; padding: 12px 14px; background: var(--paper); box-shadow: inset 0 0 0 1.5px var(--ink-2); }
+
+/* 招牌時刻：字重軸 100→900（捲動驅動） */
+@keyframes dose-fill{ from{ font-weight: 100; } to{ font-weight: 900; } }
+@supports (animation-timeline: view()){
+  .step{ view-timeline: --dose block; }
+  .step::before{ animation: dose-fill linear both; animation-timeline: --dose; animation-range: entry 10% cover 55%; }
+}
+
+/* ---- 七日帖子格 ---- */
+.week-scroll{ margin-top: 4px; }
+.blister{ width: 100%; table-layout: fixed; border-collapse: separate; border-spacing: 0; }
+.blister thead th{ font-size: 22px; font-weight: 900; text-align: left; padding: 0 12px 10px; }
+.blister .wk{ font-size: 13px; font-weight: 600; margin-right: 2px; }
+.blister thead th:first-child{ width: 120px; }
+.blister tbody th{ text-align: left; font-size: 19px; font-weight: 900; vertical-align: middle; line-height: 1.3; padding-right: 10px; }
+.blister tbody th small{ display: block; font-size: 13px; font-weight: 600; }
+.blister td{ padding: 8px 0; border-left: 2px dashed var(--hair); vertical-align: top; }
+.blister tr.pm td{ border-top: 2px dashed var(--hair); }
+.pk{ display: grid; align-content: start; margin: 0 10px; min-height: 140px; padding: 22px 12px 18px; background: var(--paper); border: var(--rule) solid var(--ink-2); position: relative;
+  clip-path: polygon(0 0, calc(100% - 18px) 0, calc(100% - 12px) 7px, calc(100% - 6px) 0, 100% 0, 100% 100%, 0 100%); }
+.pk::before, .pk::after{ content: ""; position: absolute; left: 0; right: 0; height: 7px; background: repeating-linear-gradient(90deg, var(--hair) 0 1px, transparent 1px 4px); }
+.pk::before{ top: 0; height: 12px; background: repeating-linear-gradient(90deg, var(--band) 0 2px, transparent 2px 4.5px) 0 5px / 100% 7px no-repeat, linear-gradient(var(--band), var(--band)) 0 0 / 100% 5px no-repeat; }
+.pk::after{ bottom: 0; }
+.am .pk{ --band: var(--amber); }
+.pm .pk{ --band: var(--ink-2); background: var(--bag); }
+.pk-n{ font-family: var(--mono); font-size: 26px; font-weight: 700; line-height: 1; color: var(--ink-2); letter-spacing: -.02em; }
+.pk-d{ font-size: 13px; font-weight: 700; margin-top: 6px; }
+.pk-p{ font-family: var(--mono); font-size: 12px; margin-top: 2px; }
+.pk-c{ font-size: 12.5px; line-height: 1.5; margin-top: 8px; padding-top: 6px; border-top: 1px dotted var(--ink-2); font-weight: 500; }
+.pk.now{ outline: 3px solid var(--amber); outline-offset: 5px; clip-path: none; }
+.now-tag{ position: absolute; right: -6px; top: -16px; background: var(--amber); color: var(--deep); font-size: 12px; font-weight: 800; padding: 1px 6px; z-index: 1; }
+
+/* ---- 成分：中藥行百子櫃 ---- */
+.cabinet{ display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 9px; padding: 14px; background: var(--ink); margin: 0; }
+.drawer{ background: var(--ink-2); padding: 10px 10px 30px; display: grid; position: relative; }
+.drawer::after{ content: ""; position: absolute; left: 50%; bottom: 11px; width: 34px; height: 8px; margin-left: -17px; background: var(--amber); border-radius: 4px; }
+.drawer::before{ content: ""; position: absolute; left: 50%; bottom: 14px; width: 54px; margin-left: -27px; border-top: 1.5px solid var(--deep); }
+.d-card{ background: var(--paper); padding: 10px 11px 11px; display: flex; flex-direction: column; gap: 3px; box-shadow: inset 0 0 0 1px var(--hair); }
+.d-zh{ font-size: 18px; font-weight: 900; line-height: 1.3; }
+.d-inci{ font-family: var(--mono); font-size: 12px; line-height: 1.45; overflow-wrap: anywhere; }
+.d-use{ font-size: 13px; font-weight: 600; }
+.d-mk{ display: flex; gap: 6px; margin-top: auto; padding-top: 6px; }
+.m{ font-size: 12.5px; font-weight: 800; line-height: 1; padding: 4px 5px; border: 1.5px solid var(--ink-2); color: var(--ink); background: var(--paper); }
+.m.am.on{ background: var(--amber); border-color: var(--amber); color: var(--deep); }
+.m.pm.on{ background: var(--ink-2); color: var(--paper); }
+.m.off{ border-style: dashed; text-decoration: line-through; text-decoration-thickness: 1.5px; }
+.d-none .d-card{ background: var(--cream); }
+.d-none .d-zh{ letter-spacing: .3em; }
+.ing-notes{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 26px; padding-top: 14px; border-top: 2px solid var(--ink-2); }
+.micro{ font-size: 13.5px; line-height: 1.8; }
+.micro h3{ font-size: 14.5px; font-weight: 900; margin: 18px 0 2px; text-indent: -.64em; line-height: 1.5; }
+.micro h3:first-child{ margin-top: 0; }
+.micro p{ margin: 0; }
+
+/* ---- 注意事項：粗外框（描邊一次） ---- */
+@property --draw{ syntax: "<number>"; inherits: false; initial-value: 1; }
+.cbox{ --bw: 5px; --draw: 1; position: relative; padding: 30px clamp(18px, 3vw, 44px) 34px;
+  background:
+    linear-gradient(var(--ink), var(--ink)) left top / calc(clamp(0, var(--draw) * 4, 1) * 100%) var(--bw) no-repeat,
+    linear-gradient(var(--ink), var(--ink)) right top / var(--bw) calc(clamp(0, var(--draw) * 4 - 1, 1) * 100%) no-repeat,
+    linear-gradient(var(--ink), var(--ink)) right bottom / calc(clamp(0, var(--draw) * 4 - 2, 1) * 100%) var(--bw) no-repeat,
+    linear-gradient(var(--ink), var(--ink)) left bottom / var(--bw) calc(clamp(0, var(--draw) * 4 - 3, 1) * 100%) no-repeat,
+    var(--paper);
+  transition: --draw 1.5s linear; }
+.cbox::before{ content: ""; position: absolute; inset: 10px; border: 1px solid var(--ink-2); pointer-events: none; }
+.chead{ display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; background: var(--amber); color: var(--deep); margin: 0 0 22px; padding: 10px 16px; position: relative; }
+.chead .tri{ width: 30px; height: 27px; color: var(--deep); flex: none; }
+.chead h2{ font-size: clamp(24px, 2.4vw, 32px); font-weight: 900; line-height: 1.2; margin: 0; letter-spacing: .04em; }
+.chead p{ margin: 0; font-size: 15px; font-weight: 700; }
+.clist{ columns: 2; column-gap: 56px; column-rule: 1px dotted var(--ink-2); font-size: 16px; line-height: 1.8; position: relative; }
+.clist li{ break-inside: avoid; padding-left: 2.2em; text-indent: -2.2em; margin-bottom: 10px; }
+.cn{ font-weight: 900; display: inline-block; width: 2.2em; text-indent: 0; }
+.clist li:last-child{ font-weight: 700; }
+.sticker{ position: absolute; right: clamp(14px, 3vw, 46px); top: -34px; width: 92px; height: 92px; border-radius: 50%; background: var(--amber); color: var(--deep); display: grid; place-content: center; text-align: center; line-height: 1.1; margin: 0; transform: rotate(var(--r)); box-shadow: inset 0 0 0 4px var(--amber), inset 0 0 0 6px var(--deep); }
+.sticker b{ font-size: 26px; font-weight: 900; letter-spacing: .12em; padding-left: .12em; }
+.sticker span{ font-size: 12px; font-weight: 800; letter-spacing: .1em; margin-top: 3px; }
+
+/* ---- 適用／先停一帖 ---- */
+.split{ display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); position: relative; border-top: 2px solid var(--ink-2); }
+.split::after{ content: ""; position: absolute; top: 22px; bottom: 6px; left: calc(7 / 12 * 100%); border-left: 2px dashed var(--ink-2); }
+.split > div{ padding: 22px 0 6px; }
+.split .yes{ padding-right: clamp(20px, 4vw, 64px); }
+.split .no{ padding-left: clamp(20px, 4vw, 64px); }
+.split h3{ font-size: 21px; font-weight: 900; margin: 0 0 14px; display: flex; align-items: center; gap: 12px; }
+.mk-o, .mk-x{ width: 26px; height: 26px; flex: none; position: relative; }
+.mk-o::before{ content: ""; position: absolute; inset: 1px; border: 3.5px solid var(--ink-2); border-radius: 50%; }
+.mk-x::before, .mk-x::after{ content: ""; position: absolute; left: 50%; top: -2px; bottom: -2px; width: 3.5px; margin-left: -1.75px; background: var(--ink); transform: rotate(45deg); }
+.mk-x::after{ transform: rotate(-45deg); }
+.split li{ padding: 9px 0 9px 1.6em; border-bottom: 1px solid var(--hair); position: relative; font-size: 16px; line-height: 1.7; }
+.yes li::before{ content: ""; position: absolute; left: 2px; top: 1.05em; width: 9px; height: 9px; border: 2px solid var(--ink-2); border-radius: 50%; }
+.no li::before, .no li::after{ content: ""; position: absolute; left: 6px; top: 1.05em; width: 2px; height: 12px; background: var(--ink); transform: rotate(45deg); margin-top: -2px; }
+.no li::after{ transform: rotate(-45deg); }
+
+/* ---- 保存・客服 ---- */
+.care-grid{ display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 3fr) minmax(0, 6fr); gap: 40px; align-items: start; border-top: 2px solid var(--ink-2); padding-top: 18px; }
+.bulk{ border: 2.5px solid var(--ink-2); padding: 18px clamp(16px, 2vw, 28px) 22px; background: var(--bag); }
+.bulk h3{ font-size: 21px; font-weight: 900; margin: 0 0 4px; }
+.bulk-lead{ font-size: 14px; margin: 0 0 14px; }
+.f-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 6px 22px; }
+.fld{ display: grid; align-content: start; min-width: 0; }
+.fld-wide{ grid-column: 1 / -1; }
+.fld label{ font-size: 13px; font-weight: 800; letter-spacing: .06em; }
+.fld label small{ font-weight: 500; letter-spacing: 0; font-size: 12.5px; }
+.fld input, .fld select, .fld textarea{ width: 100%; min-width: 0; border: 0; border-bottom: 2px solid var(--ink-2); background: var(--paper); padding: 8px 10px; font-size: 16px; color: var(--ink); border-radius: 0; min-height: 44px; }
+.fld textarea{ resize: vertical; line-height: 1.6; }
+.fld input:focus-visible, .fld select:focus-visible, .fld textarea:focus-visible{ outline-offset: 2px; }
+.fld input[aria-invalid="true"]{ border-bottom-color: var(--deep); background: var(--cream); }
+.hint{ font-size: 12.5px; margin: 4px 0 0; }
+.err{ font-size: 13px; font-weight: 700; color: var(--deep); margin: 4px 0 0; min-height: 1.4em; }
+.err:not(:empty)::before{ content: ""; display: inline-block; width: 4px; height: 1em; background: var(--amber); margin-right: 7px; vertical-align: -2px; }
+.f-act{ display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin: 12px 0 0; }
+.bulk button{ font-size: 16px; font-weight: 900; letter-spacing: .2em; padding: 10px 18px 10px 22px; background: var(--ink-2); color: var(--paper); border: 0; box-shadow: 4px 4px 0 var(--amber); min-height: 44px; }
+.bulk button:hover{ background: var(--ink); }
+.bulk button:active{ transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--amber); }
+.f-done{ font-size: 14px; font-weight: 700; flex: 1 1 16em; }
+
+/* ============ 藥袋背面 ============ */
+.bag-back{ background: var(--ink); color: var(--paper); padding: 56px var(--gut) 34px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; row-gap: 26px; }
+.bb-mark{ grid-column: 1 / span 4; display: flex; align-items: center; gap: 16px; }
+.mark.big{ width: 64px; height: 64px; color: var(--paper); }
+.mark.big .mk-b{ fill: var(--ink); } .mark.big .mk-f{ fill: var(--ink-2); }
+.bb-name{ font-size: 30px; font-weight: 900; letter-spacing: .06em; margin: 0; line-height: 1.1; }
+.bb-name small{ font-size: 15px; font-weight: 600; margin-left: .5em; }
+.bb-say{ grid-column: 5 / span 5; font-size: 16px; margin: 0; }
+.bb-info{ grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px 40px; margin: 0; padding-top: 18px; border-top: 1px dashed oklch(0.993 0.004 355 / .5); font-size: 14px; }
+.bb-info div{ display: flex; gap: 10px; }
+.bb-info dt{ font-weight: 800; } .bb-info dd{ margin: 0; }
+.bb-end{ grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; margin: 0; font-size: 13.5px; }
+.bag-back a{ color: var(--paper); font-weight: 700; }
+.bag-back :focus-visible{ outline-color: var(--amber); }
+
+/* ============ 404 ============ */
+.nf-front{ grid-template-areas: "name name name name name name name empty empty empty empty empty" "how how how how how how how empty empty empty empty empty" "rx rx rx rx back back back back back back back back"; margin-bottom: 64px; }
+.c-empty{ grid-area: empty; display: grid; place-items: center; align-content: center; gap: 10px; }
+.c-back{ grid-area: back; }
+.empty{ width: 168px; height: auto; color: var(--ink-2); }
+.empty .es-b{ fill: var(--paper); }
+.empty-cap{ font-size: 13px; font-weight: 700; margin: 0; }
+.back{ font-size: 22px; font-weight: 900; margin: 12px 0 0; }
+.back2{ font-size: 15px; margin: 4px 0 0; }
+.nf-lot{ margin-top: 14px; }
+.nf .lead{ margin-top: 14px; }
+.nf-foot{ padding-top: 22px; }
+
+/* ============ 響應式 ============ */
+@media (max-width: 1099px){
+  .front{ grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-areas: "name name name name name name" "dial dial dial how how how" "dial dial dial qty qty to" "use use use use look look" "rx rx rx rx rx rx"; }
+  .c-to .to{ font-size: 21px; }
+  .toc ol{ gap: 2px 16px; }
+  .sec-row .sec-h{ grid-column: 1 / -1; }
+  .sec-row .sec-lead{ grid-column: 1 / -1; margin-top: 8px; }
+  .die{ grid-template-columns: 30px minmax(0, 1fr) 48px; }
+  .die-top{ grid-column: 2 / 4; }
+  .die-back{ grid-column: 2 / 4; grid-row: 4; border-left: 0; box-shadow: inset -2px 0 0 var(--ink), inset 2px 0 0 var(--ink); border-top: 1.5px dashed var(--ink-2); display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; }
+  .die-back .tips{ grid-row: 2 / span 3; }
+  .die-back .db-h:first-child{ grid-column: 1; } .die-back .db-h:nth-of-type(2){ grid-column: 2; grid-row: 1; }
+  .die-back .diff{ grid-column: 2; grid-row: 2; } .die-back .actual{ grid-column: 2; grid-row: 3; margin-bottom: 22px; } .die-back .return{ grid-column: 2; grid-row: 4; align-self: start; }
+  .die-gusset{ box-shadow: inset -2px 0 0 var(--ink); }
+  .die-bot{ grid-column: 2 / 4; grid-row: 5; grid-template-columns: 1fr; }
+  .die-bot span:nth-child(n+2){ display: none; }
+  .cabinet{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .ing-notes{ grid-template-columns: 1fr 1fr; }
+  .care-grid{ grid-template-columns: 1fr 1fr; }
+  .bulk{ grid-column: 1 / -1; }
+  .bb-mark{ grid-column: 1 / -1; } .bb-say{ grid-column: 1 / -1; }
+  .nf-front{ grid-template-areas: "name name name name empty empty" "how how how how empty empty" "rx rx back back back back"; }
+}
+/* ≤899px：七日帖子格由「橫排七天」轉成「一天一列、早晚並排」——七天全部看得到，不靠左右滑 */
+@media (max-width: 899px){
+  .blister{ display: grid; grid-template-columns: 56px minmax(0, 1fr) minmax(0, 1fr); width: 100%; max-width: 640px; table-layout: auto; }
+  .blister thead, .blister tbody, .blister tr{ display: contents; }
+  .blister thead th:first-child{ grid-column: 1; grid-row: 1; padding: 0; }
+  .blister tbody th{ grid-row: 1; padding: 0 0 10px 8px; align-self: end; font-size: 19px; }
+  .blister tr.am th{ grid-column: 2; } .blister tr.pm th{ grid-column: 3; }
+  .blister thead th:not(:first-child){ grid-column: 1; grid-row: calc(var(--d) + 2); padding: 26px 0 0; font-size: 24px; white-space: nowrap; border-bottom: 2px dashed var(--hair); }
+  .blister td{ display: flex; padding: 10px 8px; border: 0; border-bottom: 2px dashed var(--hair); grid-row: calc(var(--d) + 2); }
+  .blister tr.am td{ grid-column: 2; }
+  .blister tr.pm td{ grid-column: 3; border-top: 0; border-left: 2px dashed var(--hair); }
+  .blister thead th:nth-child(8), .blister td[style*="--d:6"]{ border-bottom: 0; }
+  .pk{ flex: 1; min-width: 0; margin: 0; min-height: 0; padding: 22px 12px 16px; }
+  .pk.now{ outline-offset: 3px; }
+}
+@media (max-width: 719px){
+  body{ font-size: 16px; }
+  .strip{ grid-template-columns: 1fr auto; gap: 6px 12px; }
+  .toc{ grid-column: 1 / -1; grid-row: 2; overflow-x: auto; margin: -2px calc(var(--gut) * -1); padding: 2px var(--gut); scrollbar-width: thin; }
+  .toc ol{ flex-wrap: nowrap; justify-content: space-between; gap: 0 12px; min-width: max-content; }
+  .toc a{ font-size: 14px; min-height: 44px; margin-block: -2px; align-items: center; gap: 4px; }
+  .toc .lg{ display: none; }
+  .strip-tel{ font-size: 12.5px; }
+  .front{ grid-template-columns: 1fr 1fr; grid-template-areas: "name name" "dial dial" "how how" "qty to" "use use" "look look" "rx rx"; }
+  .c-name h1{ font-size: min(21vw, 92px); margin-top: 14px; }
+  .name-foot{ grid-template-columns: 1fr; gap: 10px; }
+  .lead{ font-size: 16px; }
+  .dose{ gap: 10px 22px; }
+  .dose li{ font-size: 19px; }
+  .ext{ padding: 10px 14px; font-size: 14px; }
+  .ext-b{ margin-left: 0; }
+  .tear-l{ font-size: 12px; }
+  .ifu-head{ grid-template-columns: 1fr auto; row-gap: 10px; }
+  .ifu-title{ grid-column: 1 / -1; }
+  .ifu-keep{ grid-column: 1; } .ifu-fold{ grid-column: 2; }
+  .die{ grid-template-columns: minmax(0, 1fr); margin: 0 calc(var(--gut) * -1 + 6px); }
+  .die-top, .die-front, .die-back, .die-bot{ grid-column: 1; }
+  .die-glue{ display: none; }
+  .die-top{ padding: 30px 12px 8px; }
+  .die-front{ border-left: 0; box-shadow: inset 2px 0 0 var(--ink), inset -2px 0 0 var(--ink); padding: 18px 14px 10px; }
+  .die-gusset{ grid-column: 1; grid-row: 3; border-left: 0; border-top: 1.5px dashed var(--ink-2); padding: 8px 14px; box-shadow: inset 2px 0 0 var(--ink), inset -2px 0 0 var(--ink); justify-content: flex-start; }
+  .die-gusset span{ writing-mode: horizontal-tb; letter-spacing: .2em; font-size: 12.5px; }
+  .die-back{ grid-row: 4; display: block; padding: 18px 14px 20px; box-shadow: inset 2px 0 0 var(--ink), inset -2px 0 0 var(--ink); }
+  .die-bot{ grid-row: 5; }
+  .die-legend{ margin-left: 0; }
+  .die-title b{ font-size: 22px; }
+  .step{ grid-template-columns: 70px minmax(0, 1fr); grid-template-areas: "num art" "text text"; column-gap: 12px; align-items: end; padding: 18px 0 20px; }
+  .step::before{ grid-area: num; font-size: 100px; text-align: left; }
+  .step-art{ grid-area: art; justify-self: start; }
+  .cutout{ width: 88px; height: 88px; }
+  .step-text{ grid-area: text; margin-top: 10px; }
+  .desc{ font-size: 16.5px; }
+  .cabinet{ grid-template-columns: 1fr 1fr; gap: 7px; padding: 10px; margin: 0 calc(var(--gut) * -1 + 6px); }
+  .drawer{ padding: 8px 8px 28px; }
+  .d-zh{ font-size: 17px; }
+  .ing-notes{ grid-template-columns: 1fr; gap: 14px; }
+  .clist{ columns: 1; }
+  .sticker{ width: 76px; height: 76px; top: -40px; }
+  .sticker b{ font-size: 22px; }
+  .chead{ padding-right: 74px; }
+  .split{ grid-template-columns: 1fr; }
+  .split::after{ display: none; }
+  .split .yes{ padding-right: 0; }
+  .split .no{ padding-left: 0; position: relative; margin-top: 14px; }
+  .split .no::before{ content: ""; position: absolute; left: 0; right: 0; top: 0; border-top: 2px dashed var(--ink-2); }
+  .care-grid{ grid-template-columns: 1fr; gap: 26px; }
+  .f-grid{ grid-template-columns: 1fr; }
+  .bag-back{ grid-template-columns: 1fr; padding-top: 40px; }
+  .bb-info{ flex-direction: column; gap: 6px; }
+  .nf-front{ grid-template-areas: "name name" "empty empty" "how how" "rx rx" "back back"; }
+}
+/* ≤600px：說明書摺痕在窄螢幕上會密到每 100px 一道，改成不畫 */
+@media (max-width: 600px){
+  .insert{ background-image: none; }
+}
+
+/* ============ 降級動效 ============ */
+html.js .dial .hand{ transition: transform 1.6s cubic-bezier(.22, .8, .24, 1); }
+html.js .dial:not([data-go]) .hand{ transform: rotate(0deg); }
+html.js .cbox[data-frame]:not(.drawn){ --draw: 0; }
+@media (prefers-reduced-motion: reduce){
+  .step::before{ animation: none !important; font-weight: 900; }
+  html.js .dial .hand{ transition: none; }
+  html.js .dial:not([data-go]) .hand{ transform: rotate(var(--deg)); }
+  .cbox{ transition: none; }
+  html.js .cbox[data-frame]:not(.drawn){ --draw: 1; }
+  html{ scroll-behavior: auto; }
+}
+
+/* ============ 列印：單色黑、去底色、去動效 ============ */
+@media print{
+  *, *::before, *::after{ color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
+  *{ background-color: transparent !important; }
+  html, body{ background: #fff !important; }
+  .insert, .cbox, .pk::before, .die-glue{ background-image: none !important; }
+  .dose .on .box{ background: #000 !important; }
+  .front::before{ border-color: #000; }
+  .cell{ box-shadow: inset -1px -1px 0 #000 !important; }
+  .tear-top, .tear, .toc, .dial .hand, .dial-now, .f-act, .sticker, .now-tag, .die-legend{ display: none !important; }
+  .tag, .ext, .chead{ outline: 1.5px solid #000; }
+  .cbox{ border: 4px solid #000; }
+  .step::before{ animation: none !important; font-weight: 900; }
+  .week-scroll{ overflow: visible !important; margin: 0 !important; }
+  .blister{ width: 100% !important; }
+  .blister th{ position: static !important; }
+  .drawer{ outline: 1px solid #000; }
+  a{ text-decoration: underline; }
+  .ifu-sec, .cbox, .step, .bulk, .front, .drawer{ break-inside: avoid; }
+}
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+
+<header class="bag">
+  <p class="tear-top" aria-hidden="true"><span class="notch"></span>由此撕開</p>
+  <div class="strip">
+    <p class="brand"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6.22 16.14C6.7 16.14 8.16 16.16 9.13 16.15C10.1 16.13 11.07 16.11 12.04 16.08C13.01 16.04 13.99 15.98 14.96 15.95C15.93 15.91 16.9 15.87 17.87 15.86C18.85 15.86 19.82 15.89 20.81 15.93C21.79 15.97 22.79 16.06 23.77 16.12C24.76 16.18 25.75 16.26 26.73 16.28C27.71 16.3 28.68 16.29 29.66 16.26C30.64 16.22 31.63 16.13 32.62 16.06C33.6 15.99 34.6 15.9 35.58 15.86C36.56 15.82 37.53 15.81 38.5 15.82C39.46 15.82 40.9 15.36 41.37 15.89C41.84 16.42 41.33 17.97 41.32 19C41.31 20.02 41.3 21.02 41.3 22.04C41.31 23.06 41.33 24.09 41.36 25.12C41.39 26.16 41.43 27.22 41.46 28.26C41.48 29.3 41.49 30.34 41.51 31.34C41.53 32.35 41.54 33.32 41.57 34.3C41.6 35.27 41.66 36.22 41.7 37.19C41.73 38.16 41.79 39.12 41.79 40.11C41.8 41.1 42.27 42.6 41.73 43.1C41.19 43.6 39.62 43.1 38.56 43.11C37.51 43.11 36.43 43.11 35.41 43.11C34.39 43.11 33.42 43.1 32.47 43.12C31.52 43.13 30.63 43.16 29.72 43.19C28.81 43.21 27.93 43.25 27 43.27C26.07 43.28 25.12 43.3 24.14 43.29C23.16 43.27 22.14 43.21 21.13 43.16C20.12 43.1 19.08 43.02 18.07 42.97C17.07 42.92 16.05 42.89 15.09 42.88C14.12 42.87 13.2 42.89 12.27 42.91C11.35 42.93 10.48 42.96 9.56 42.98C8.65 43 7.25 43.53 6.79 43.03C6.32 42.53 6.78 41.01 6.75 39.98C6.73 38.94 6.67 37.87 6.63 36.82C6.59 35.78 6.55 34.71 6.53 33.69C6.5 32.68 6.51 31.68 6.5 30.72C6.49 29.77 6.48 28.88 6.46 27.96C6.45 27.04 6.43 26.16 6.42 25.21C6.41 24.26 6.42 23.29 6.4 22.26C6.39 21.24 6.38 20.08 6.34 19.06C6.31 18.04 6.24 16.63 6.22 16.14" class="mk-b"/><path d="M6.5 15.93C6.9 16.24 8.11 17.19 8.89 17.81C9.67 18.43 10.43 19.06 11.17 19.65C11.9 20.25 12.59 20.81 13.28 21.38C13.98 21.94 14.65 22.47 15.34 23.03C16.04 23.59 16.74 24.14 17.45 24.74C18.16 25.34 18.9 25.99 19.62 26.65C20.34 27.32 21.05 28.04 21.76 28.73C22.48 29.41 23.19 30.73 23.91 30.76C24.63 30.79 25.37 29.56 26.08 28.91C26.79 28.26 27.49 27.54 28.2 26.85C28.9 26.17 29.6 25.45 30.31 24.79C31.03 24.14 31.75 23.53 32.5 22.94C33.25 22.36 34.03 21.84 34.8 21.29C35.58 20.75 36.38 20.24 37.14 19.68C37.9 19.12 38.64 18.55 39.38 17.95C40.13 17.34 41.22 16.39 41.59 16.07" class="mk-f"/><path d="M23.84 12.29C23.85 12.81 23.87 14.37 23.88 15.41C23.9 16.46 23.92 17.53 23.94 18.57C23.95 19.61 23.96 20.64 23.96 21.66C23.95 22.69 23.93 23.7 23.91 24.73C23.88 25.75 23.84 26.78 23.82 27.8C23.79 28.82 23.77 29.84 23.76 30.87C23.76 31.89 23.77 32.91 23.79 33.95C23.8 34.98 23.83 36.04 23.85 37.08C23.87 38.12 23.89 39.16 23.9 40.19C23.92 41.21 23.93 42.71 23.94 43.21"/><path d="M6.51 34.49C6.99 34.49 8.44 34.48 9.4 34.49C10.35 34.5 11.3 34.53 12.24 34.55C13.19 34.58 14.12 34.62 15.07 34.64C16.02 34.65 16.98 34.66 17.95 34.67C18.91 34.67 19.9 34.67 20.88 34.67C21.86 34.67 22.84 34.68 23.82 34.68C24.8 34.68 25.77 34.7 26.75 34.68C27.73 34.67 28.71 34.65 29.7 34.6C30.7 34.56 31.71 34.47 32.71 34.41C33.71 34.36 34.7 34.29 35.69 34.27C36.68 34.24 37.64 34.26 38.63 34.27C39.62 34.28 41.11 34.31 41.61 34.32"/><path d="M23.93 12.57C23.66 12.2 22.84 10.96 22.31 10.33C21.78 9.71 21.24 9.22 20.74 8.82C20.25 8.43 19.76 8.17 19.33 7.97C18.89 7.77 18.49 7.68 18.14 7.62C17.8 7.57 17.5 7.59 17.25 7.64C17.01 7.7 16.8 7.8 16.66 7.94C16.53 8.08 16.44 8.27 16.45 8.49C16.46 8.7 16.54 8.97 16.73 9.24C16.93 9.51 17.23 9.81 17.63 10.11C18.03 10.4 18.54 10.72 19.15 11.01C19.77 11.3 20.48 11.6 21.29 11.86C22.11 12.12 23.59 12.46 24.05 12.58"/><path d="M24.07 12.64C24.37 12.27 25.27 11.05 25.84 10.42C26.4 9.78 26.97 9.26 27.48 8.84C27.99 8.42 28.47 8.13 28.89 7.9C29.31 7.67 29.68 7.54 30 7.47C30.32 7.39 30.58 7.39 30.8 7.45C31.02 7.5 31.2 7.61 31.3 7.77C31.41 7.92 31.46 8.14 31.41 8.38C31.37 8.61 31.26 8.9 31.05 9.18C30.84 9.47 30.56 9.78 30.18 10.08C29.8 10.37 29.33 10.69 28.75 10.98C28.17 11.27 27.49 11.57 26.69 11.84C25.89 12.1 24.4 12.44 23.94 12.56"/></g></svg><span class="brand-name">一日一帖<small>保養所</small></span></p>
+    <nav class="toc" aria-label="說明書目次"><ol role="list">
+      <li><a href="#usage"><span class="n">01</span>用法</a></li>
+      <li><a href="#week"><span class="n">02</span>七日</a></li>
+      <li><a href="#ingredients"><span class="n">03</span>成分</a></li>
+      <li><a href="#caution"><span class="n">04</span><span>注意<span class="lg">事項</span></span></a></li>
+      <li><a href="#care"><span class="n">05</span><span><span class="lg">保存・</span>客服</span></a></li>
+    </ol></nav>
+    <p class="strip-tel">客服 <a href="tel:+886422250115" class="mono">(04) 2225-0115</a></p>
+  </div>
+</header>
+
+<main id="main">
+<section class="front" aria-labelledby="brand-h">
+  <div class="cell c-name">
+    <span class="tag">品名</span>
+    <h1 id="brand-h">一日一帖</h1>
+    <div class="name-foot">
+      <p class="sub">皮膚保養・七日份<span class="sub-l">早帖凝露 <span class="mono-num">×7</span></span><span class="sub-l">晚帖乳霜 <span class="mono-num">×7</span></span></p>
+      <p class="lead">把保養包成每天按時的一帖：早上洗完臉撕一帖，晚上卸完妝撕一帖。不必記哪瓶先、哪瓶後，照藥袋上寫的做，剛好就好。</p>
+    </div>
+  </div>
+  <div class="cell c-dial">
+    <span class="tag">使用時間</span>
+    <svg class="dial" viewBox="0 0 400 400" role="img" aria-labelledby="dial-t" style="--deg:337.5deg" data-dial>
+<title id="dial-t">服用時間鐘面：早帖 6 點到 9 點，晚帖 21 點到 24 點</title>
+<circle cx="200" cy="200" r="194" class="rim"/><circle cx="200" cy="200" r="86" class="dot-ring"/>
+<path d="M312 200A112 112 0 0 1 279.2 279.2" class="sec am"/><path d="M120.8 120.8A112 112 0 0 1 200 88" class="sec pm"/>
+<g class="ticks"><line x1="200" y1="37" x2="200" y2="13" class="t3"/><line x1="211.71" y1="21.38" x2="212.23" y2="13.4" class="t1"/><line x1="223.36" y1="22.53" x2="224.41" y2="14.6" class="t1"/><line x1="234.92" y1="24.44" x2="236.48" y2="16.59" class="t1"/><line x1="244.52" y1="33.86" x2="248.4" y2="19.37" class="t2"/><line x1="257.54" y1="30.5" x2="260.11" y2="22.92" class="t1"/><line x1="268.5" y1="34.63" x2="271.56" y2="27.23" class="t1"/><line x1="279.17" y1="39.46" x2="282.71" y2="32.28" class="t1"/><line x1="286" y1="51.04" x2="293.5" y2="38.05" class="t2"/><line x1="299.45" y1="51.17" x2="303.89" y2="44.52" class="t1"/><line x1="308.97" y1="57.99" x2="313.84" y2="51.64" class="t1"/><line x1="318.02" y1="65.42" x2="323.3" y2="59.41" class="t1"/><line x1="315.26" y1="84.74" x2="332.23" y2="67.77" class="t3"/><line x1="334.58" y1="81.98" x2="340.59" y2="76.7" class="t1"/><line x1="342.01" y1="91.03" x2="348.36" y2="86.16" class="t1"/><line x1="348.83" y1="100.55" x2="355.48" y2="96.11" class="t1"/><line x1="348.96" y1="114" x2="361.95" y2="106.5" class="t2"/><line x1="360.54" y1="120.83" x2="367.72" y2="117.29" class="t1"/><line x1="365.37" y1="131.5" x2="372.77" y2="128.44" class="t1"/><line x1="369.5" y1="142.46" x2="377.08" y2="139.89" class="t1"/><line x1="366.14" y1="155.48" x2="380.63" y2="151.6" class="t2"/><line x1="375.56" y1="165.08" x2="383.41" y2="163.52" class="t1"/><line x1="377.47" y1="176.64" x2="385.4" y2="175.59" class="t1"/><line x1="378.62" y1="188.29" x2="386.6" y2="187.77" class="t1"/><line x1="363" y1="200" x2="387" y2="200" class="t3"/><line x1="378.62" y1="211.71" x2="386.6" y2="212.23" class="t1"/><line x1="377.47" y1="223.36" x2="385.4" y2="224.41" class="t1"/><line x1="375.56" y1="234.92" x2="383.41" y2="236.48" class="t1"/><line x1="366.14" y1="244.52" x2="380.63" y2="248.4" class="t2"/><line x1="369.5" y1="257.54" x2="377.08" y2="260.11" class="t1"/><line x1="365.37" y1="268.5" x2="372.77" y2="271.56" class="t1"/><line x1="360.54" y1="279.17" x2="367.72" y2="282.71" class="t1"/><line x1="348.96" y1="286" x2="361.95" y2="293.5" class="t2"/><line x1="348.83" y1="299.45" x2="355.48" y2="303.89" class="t1"/><line x1="342.01" y1="308.97" x2="348.36" y2="313.84" class="t1"/><line x1="334.58" y1="318.02" x2="340.59" y2="323.3" class="t1"/><line x1="315.26" y1="315.26" x2="332.23" y2="332.23" class="t3"/><line x1="318.02" y1="334.58" x2="323.3" y2="340.59" class="t1"/><line x1="308.97" y1="342.01" x2="313.84" y2="348.36" class="t1"/><line x1="299.45" y1="348.83" x2="303.89" y2="355.48" class="t1"/><line x1="286" y1="348.96" x2="293.5" y2="361.95" class="t2"/><line x1="279.17" y1="360.54" x2="282.71" y2="367.72" class="t1"/><line x1="268.5" y1="365.37" x2="271.56" y2="372.77" class="t1"/><line x1="257.54" y1="369.5" x2="260.11" y2="377.08" class="t1"/><line x1="244.52" y1="366.14" x2="248.4" y2="380.63" class="t2"/><line x1="234.92" y1="375.56" x2="236.48" y2="383.41" class="t1"/><line x1="223.36" y1="377.47" x2="224.41" y2="385.4" class="t1"/><line x1="211.71" y1="378.62" x2="212.23" y2="386.6" class="t1"/><line x1="200" y1="363" x2="200" y2="387" class="t3"/><line x1="188.29" y1="378.62" x2="187.77" y2="386.6" class="t1"/><line x1="176.64" y1="377.47" x2="175.59" y2="385.4" class="t1"/><line x1="165.08" y1="375.56" x2="163.52" y2="383.41" class="t1"/><line x1="155.48" y1="366.14" x2="151.6" y2="380.63" class="t2"/><line x1="142.46" y1="369.5" x2="139.89" y2="377.08" class="t1"/><line x1="131.5" y1="365.37" x2="128.44" y2="372.77" class="t1"/><line x1="120.83" y1="360.54" x2="117.29" y2="367.72" class="t1"/><line x1="114" y1="348.96" x2="106.5" y2="361.95" class="t2"/><line x1="100.55" y1="348.83" x2="96.11" y2="355.48" class="t1"/><line x1="91.03" y1="342.01" x2="86.16" y2="348.36" class="t1"/><line x1="81.98" y1="334.58" x2="76.7" y2="340.59" class="t1"/><line x1="84.74" y1="315.26" x2="67.77" y2="332.23" class="t3"/><line x1="65.42" y1="318.02" x2="59.41" y2="323.3" class="t1"/><line x1="57.99" y1="308.97" x2="51.64" y2="313.84" class="t1"/><line x1="51.17" y1="299.45" x2="44.52" y2="303.89" class="t1"/><line x1="51.04" y1="286" x2="38.05" y2="293.5" class="t2"/><line x1="39.46" y1="279.17" x2="32.28" y2="282.71" class="t1"/><line x1="34.63" y1="268.5" x2="27.23" y2="271.56" class="t1"/><line x1="30.5" y1="257.54" x2="22.92" y2="260.11" class="t1"/><line x1="33.86" y1="244.52" x2="19.37" y2="248.4" class="t2"/><line x1="24.44" y1="234.92" x2="16.59" y2="236.48" class="t1"/><line x1="22.53" y1="223.36" x2="14.6" y2="224.41" class="t1"/><line x1="21.38" y1="211.71" x2="13.4" y2="212.23" class="t1"/><line x1="37" y1="200" x2="13" y2="200" class="t3"/><line x1="21.38" y1="188.29" x2="13.4" y2="187.77" class="t1"/><line x1="22.53" y1="176.64" x2="14.6" y2="175.59" class="t1"/><line x1="24.44" y1="165.08" x2="16.59" y2="163.52" class="t1"/><line x1="33.86" y1="155.48" x2="19.37" y2="151.6" class="t2"/><line x1="30.5" y1="142.46" x2="22.92" y2="139.89" class="t1"/><line x1="34.63" y1="131.5" x2="27.23" y2="128.44" class="t1"/><line x1="39.46" y1="120.83" x2="32.28" y2="117.29" class="t1"/><line x1="51.04" y1="114" x2="38.05" y2="106.5" class="t2"/><line x1="51.17" y1="100.55" x2="44.52" y2="96.11" class="t1"/><line x1="57.99" y1="91.03" x2="51.64" y2="86.16" class="t1"/><line x1="65.42" y1="81.98" x2="59.41" y2="76.7" class="t1"/><line x1="84.74" y1="84.74" x2="67.77" y2="67.77" class="t3"/><line x1="81.98" y1="65.42" x2="76.7" y2="59.41" class="t1"/><line x1="91.03" y1="57.99" x2="86.16" y2="51.64" class="t1"/><line x1="100.55" y1="51.17" x2="96.11" y2="44.52" class="t1"/><line x1="114" y1="51.04" x2="106.5" y2="38.05" class="t2"/><line x1="120.83" y1="39.46" x2="117.29" y2="32.28" class="t1"/><line x1="131.5" y1="34.63" x2="128.44" y2="27.23" class="t1"/><line x1="142.46" y1="30.5" x2="139.89" y2="22.92" class="t1"/><line x1="155.48" y1="33.86" x2="151.6" y2="19.37" class="t2"/><line x1="165.08" y1="24.44" x2="163.52" y2="16.59" class="t1"/><line x1="176.64" y1="22.53" x2="175.59" y2="14.6" class="t1"/><line x1="188.29" y1="21.38" x2="187.77" y2="13.4" class="t1"/></g><text x="200" y="53" class="hn">00</text><text x="303.94" y="96.06" class="hn">03</text><text x="347" y="200" class="hn">06</text><text x="303.94" y="303.94" class="hn">09</text><text x="200" y="347" class="hn">12</text><text x="96.06" y="303.94" class="hn">15</text><text x="53" y="200" class="hn">18</text><text x="96.06" y="96.06" class="hn">21</text>
+<g class="hand"><line x1="200" y1="232" x2="200" y2="30" class="hd"/><circle cx="200" cy="30" r="6.5" class="tip"/><circle cx="200" cy="200" r="10" class="hub"/></g>
+</svg>
+    <ul class="dial-key" role="list">
+      <li><span class="k k-am" aria-hidden="true"></span><b>早帖</b><span class="mono">06:00–09:00</span>洗臉後</li>
+      <li><span class="k k-pm" aria-hidden="true"></span><b>晚帖</b><span class="mono">21:00–24:00</span>卸妝後</li>
+    </ul>
+    <p class="dial-now" data-now></p>
+  </div>
+  <div class="cell c-how">
+    <span class="tag">用法</span>
+    <ul class="dose" role="list"><li class="on"><span class="box" aria-hidden="true"></span><span class="dl">早晨</span><span class="ds">洗臉後</span><span class="sr-only">（使用）</span></li><li class=""><span class="box" aria-hidden="true"></span><span class="dl">中午</span><span class="sr-only">（不使用）</span></li><li class=""><span class="box" aria-hidden="true"></span><span class="dl">傍晚</span><span class="sr-only">（不使用）</span></li><li class="on"><span class="box" aria-hidden="true"></span><span class="dl">睡前</span><span class="ds">卸妝後</span><span class="sr-only">（使用）</span></li></ul>
+    <p class="how-note">每日 <b class="mono">2</b> 次，每次 <b class="mono">1</b> 帖，一帖約 <b class="mono">2</b> mL。</p>
+  </div>
+  <div class="cell c-qty">
+    <span class="tag">數量</span>
+    <p class="qty"><span class="mono">14</span>帖</p>
+    <p class="qty-sub">早帖 7・晚帖 7<br>七日份</p>
+  </div>
+  <div class="cell c-to">
+    <span class="tag">姓名</span>
+    <p class="to">今天的自己</p>
+    <p class="to-sub">性別　不拘<br>年齡　不問</p>
+  </div>
+  <div class="cell c-use">
+    <span class="tag">用途</span>
+    <p class="use"><b>保濕</b>、<b>潤澤</b>。讓臉摸起來，回到剛洗完、還帶著一點水氣的那種柔軟。</p>
+  </div>
+  <div class="cell c-look">
+    <span class="tag">外觀</span>
+    <dl class="look">
+      <div><dt><span class="sw sw-am" aria-hidden="true"></span>早帖</dt><dd>淡綠色透明凝露，清爽、不黏手</dd></div>
+      <div><dt><span class="sw sw-pm" aria-hidden="true"></span>晚帖</dt><dd>乳白色乳霜，質地稍厚，推得開</dd></div>
+    </dl>
+  </div>
+  <div class="cell c-rx">
+    <span class="tag">調劑</span>
+    <dl class="rx">
+      <div><dt>製造日期</dt><dd class="mono">114.12.08</dd></div>
+      <div><dt>保存期限</dt><dd class="mono">117.12.07</dd></div>
+      <div><dt>開封後</dt><dd>當次用畢</dd></div>
+    </dl>
+    <p class="stamp" style="--r:1.78deg"><span>調劑</span><b>蘇蘅</b></p>
+    <div class="lot-wrap" style="--r:-1.56deg"><svg class="lot" viewBox="-0.5 -0.5 84 17" role="img" aria-label="噴碼：批號 TC1412-44，保存期限 2028 年 12 月 7 日"><g><circle cx="0.5" cy="0.46" r="0.37"/><circle cx="0.57" cy="1.46" r="0.45"/><circle cx="0.58" cy="2.49" r="0.39"/><circle cx="0.55" cy="3.49" r="0.35"/><circle cx="0.43" cy="4.53" r="0.41"/><circle cx="0.5" cy="5.52" r="0.42"/><circle cx="0.51" cy="6.57" r="0.44"/><circle cx="1.53" cy="6.53" r="0.36"/><circle cx="2.49" cy="6.59" r="0.46"/><circle cx="3.4" cy="6.51" r="0.44"/><circle cx="4.6" cy="6.56" r="0.36"/><circle cx="7.55" cy="0.47" r="0.44"/><circle cx="8.5" cy="0.43" r="0.39"/><circle cx="9.52" cy="0.52" r="0.4"/><circle cx="6.49" cy="1.53" r="0.39"/><circle cx="10.4" cy="1.44" r="0.4"/><circle cx="6.61" cy="2.5" r="0.43"/><circle cx="10.34" cy="2.41" r="0.36"/><circle cx="6.55" cy="3.45" r="0.4"/><circle cx="10.56" cy="3.45" r="0.36"/><circle cx="6.48" cy="4.53" r="0.41"/><circle cx="10.56" cy="4.52" r="0.35"/><circle cx="6.46" cy="5.55" r="0.35"/><circle cx="10.46" cy="5.53" r="0.43"/><circle cx="7.48" cy="6.53" r="0.38"/><circle cx="8.53" cy="6.39" r="0.44"/><circle cx="9.48" cy="6.51" r="0.44"/><circle cx="12.59" cy="0.36" r="0.42"/><circle cx="13.46" cy="0.56" r="0.46"/><circle cx="14.46" cy="0.49" r="0.4"/><circle cx="15.39" cy="0.52" r="0.36"/><circle cx="16.49" cy="0.52" r="0.37"/><circle cx="14.41" cy="1.57" r="0.35"/><circle cx="14.6" cy="2.55" r="0.43"/><circle cx="14.49" cy="3.54" r="0.4"/><circle cx="14.55" cy="4.37" r="0.42"/><circle cx="14.41" cy="5.51" r="0.35"/><circle cx="14.65" cy="6.55" r="0.4"/><circle cx="24.54" cy="0.59" r="0.41"/><circle cx="25.39" cy="0.59" r="0.4"/><circle cx="26.36" cy="0.55" r="0.4"/><circle cx="27.52" cy="0.43" r="0.36"/><circle cx="28.52" cy="0.51" r="0.36"/><circle cx="26.48" cy="1.45" r="0.38"/><circle cx="26.42" cy="2.57" r="0.46"/><circle cx="26.43" cy="3.48" r="0.45"/><circle cx="26.42" cy="4.43" r="0.42"/><circle cx="26.51" cy="5.58" r="0.42"/><circle cx="26.41" cy="6.49" r="0.45"/><circle cx="31.44" cy="0.43" r="0.44"/><circle cx="32.5" cy="0.39" r="0.37"/><circle cx="30.55" cy="1.53" r="0.43"/><circle cx="34.62" cy="1.52" r="0.39"/><circle cx="30.48" cy="2.33" r="0.38"/><circle cx="30.52" cy="3.6" r="0.41"/><circle cx="30.64" cy="4.5" r="0.46"/><circle cx="30.58" cy="5.55" r="0.38"/><circle cx="34.47" cy="5.48" r="0.38"/><circle cx="31.52" cy="6.5" r="0.39"/><circle cx="32.49" cy="6.54" r="0.37"/><circle cx="33.46" cy="6.63" r="0.44"/><circle cx="38.35" cy="0.48" r="0.42"/><circle cx="37.49" cy="1.44" r="0.35"/><circle cx="38.48" cy="1.51" r="0.38"/><circle cx="38.49" cy="2.6" r="0.34"/><circle cx="38.58" cy="3.49" r="0.45"/><circle cx="38.6" cy="4.51" r="0.39"/><circle cx="38.41" cy="5.5" r="0.45"/><circle cx="37.51" cy="6.46" r="0.4"/><circle cx="38.41" cy="6.4" r="0.37"/><circle cx="39.58" cy="6.54" r="0.39"/><circle cx="45.49" cy="0.44" r="0.38"/><circle cx="44.51" cy="1.46" r="0.44"/><circle cx="45.53" cy="1.46" r="0.39"/><circle cx="43.55" cy="2.44" r="0.34"/><circle cx="45.59" cy="2.48" r="0.35"/><circle cx="42.51" cy="3.51" r="0.37"/><circle cx="45.52" cy="3.53" r="0.45"/><circle cx="42.54" cy="4.49" r="0.45"/><circle cx="43.53" cy="4.42" r="0.36"/><circle cx="44.53" cy="4.53" r="0.44"/><circle cx="45.47" cy="4.36" r="0.39"/><circle cx="46.6" cy="4.54" r="0.45"/><circle cx="45.39" cy="5.53" r="0.37"/><circle cx="45.51" cy="6.61" r="0.44"/><circle cx="50.57" cy="0.57" r="0.45"/><circle cx="49.47" cy="1.49" r="0.44"/><circle cx="50.66" cy="1.43" r="0.36"/><circle cx="50.44" cy="2.54" r="0.36"/><circle cx="50.4" cy="3.48" r="0.39"/><circle cx="50.47" cy="4.54" r="0.41"/><circle cx="50.49" cy="5.47" r="0.35"/><circle cx="49.55" cy="6.41" r="0.38"/><circle cx="50.47" cy="6.59" r="0.38"/><circle cx="51.48" cy="6.38" r="0.35"/><circle cx="55.46" cy="0.54" r="0.46"/><circle cx="56.59" cy="0.56" r="0.44"/><circle cx="57.42" cy="0.55" r="0.39"/><circle cx="54.55" cy="1.48" r="0.41"/><circle cx="58.52" cy="1.5" r="0.44"/><circle cx="58.46" cy="2.42" r="0.36"/><circle cx="57.51" cy="3.5" r="0.45"/><circle cx="56.47" cy="4.48" r="0.38"/><circle cx="55.4" cy="5.48" r="0.43"/><circle cx="54.43" cy="6.57" r="0.34"/><circle cx="55.58" cy="6.47" r="0.36"/><circle cx="56.42" cy="6.55" r="0.44"/><circle cx="57.43" cy="6.6" r="0.39"/><circle cx="58.56" cy="6.54" r="0.45"/><circle cx="60.54" cy="3.54" r="0.43"/><circle cx="61.51" cy="3.48" r="0.36"/><circle cx="62.51" cy="3.44" r="0.42"/><circle cx="63.43" cy="3.55" r="0.4"/><circle cx="64.47" cy="3.48" r="0.34"/><circle cx="68.54" cy="1.43" r="0.37"/><circle cx="69.43" cy="1.54" r="0.35"/><circle cx="67.56" cy="2.5" r="0.39"/><circle cx="69.47" cy="2.53" r="0.43"/><circle cx="66.53" cy="3.58" r="0.43"/><circle cx="69.52" cy="3.46" r="0.38"/><circle cx="66.42" cy="4.51" r="0.41"/><circle cx="67.42" cy="4.45" r="0.35"/><circle cx="68.53" cy="4.45" r="0.43"/><circle cx="69.47" cy="4.48" r="0.35"/><circle cx="70.48" cy="4.55" r="0.42"/><circle cx="69.41" cy="5.48" r="0.45"/><circle cx="69.47" cy="6.46" r="0.36"/><circle cx="75.46" cy="0.52" r="0.37"/><circle cx="74.5" cy="1.58" r="0.41"/><circle cx="75.37" cy="1.54" r="0.37"/><circle cx="73.43" cy="2.51" r="0.42"/><circle cx="75.51" cy="2.53" r="0.36"/><circle cx="72.52" cy="3.53" r="0.42"/><circle cx="75.63" cy="3.5" r="0.45"/><circle cx="72.56" cy="4.44" r="0.44"/><circle cx="73.53" cy="4.44" r="0.41"/><circle cx="74.53" cy="4.51" r="0.35"/><circle cx="75.53" cy="4.59" r="0.43"/><circle cx="76.56" cy="4.51" r="0.39"/><circle cx="75.44" cy="5.51" r="0.44"/><circle cx="75.48" cy="6.45" r="0.37"/><circle cx="0.51" cy="9.55" r="0.36"/><circle cx="1.53" cy="9.44" r="0.38"/><circle cx="2.55" cy="9.56" r="0.4"/><circle cx="3.54" cy="9.5" r="0.42"/><circle cx="4.44" cy="9.59" r="0.4"/><circle cx="0.47" cy="10.6" r="0.37"/><circle cx="0.57" cy="11.51" r="0.4"/><circle cx="0.56" cy="12.61" r="0.35"/><circle cx="1.52" cy="12.48" r="0.34"/><circle cx="2.48" cy="12.53" r="0.4"/><circle cx="3.64" cy="12.53" r="0.37"/><circle cx="0.55" cy="13.5" r="0.41"/><circle cx="0.41" cy="15.47" r="0.39"/><circle cx="1.53" cy="15.54" r="0.45"/><circle cx="2.54" cy="15.55" r="0.45"/><circle cx="3.46" cy="15.65" r="0.42"/><circle cx="4.56" cy="15.44" r="0.36"/><circle cx="6.54" cy="9.54" r="0.42"/><circle cx="10.51" cy="9.52" r="0.35"/><circle cx="6.49" cy="10.57" r="0.39"/><circle cx="10.54" cy="10.48" r="0.43"/><circle cx="7.52" cy="11.6" r="0.35"/><circle cx="9.48" cy="11.46" r="0.43"/><circle cx="8.47" cy="12.46" r="0.38"/><circle cx="7.43" cy="13.51" r="0.37"/><circle cx="9.46" cy="13.55" r="0.43"/><circle cx="6.52" cy="14.49" r="0.35"/><circle cx="10.5" cy="14.4" r="0.36"/><circle cx="6.49" cy="15.59" r="0.44"/><circle cx="10.64" cy="15.48" r="0.39"/><circle cx="12.59" cy="9.51" r="0.36"/><circle cx="13.54" cy="9.43" r="0.35"/><circle cx="14.44" cy="9.53" r="0.36"/><circle cx="15.56" cy="9.47" r="0.39"/><circle cx="12.52" cy="10.41" r="0.42"/><circle cx="16.41" cy="10.57" r="0.38"/><circle cx="12.47" cy="11.62" r="0.37"/><circle cx="16.44" cy="11.51" r="0.43"/><circle cx="12.45" cy="12.53" r="0.38"/><circle cx="13.52" cy="12.62" r="0.43"/><circle cx="14.51" cy="12.46" r="0.36"/><circle cx="15.47" cy="12.53" r="0.42"/><circle cx="12.53" cy="13.54" r="0.44"/><circle cx="12.59" cy="14.42" r="0.38"/><circle cx="12.38" cy="15.59" r="0.4"/><circle cx="25.48" cy="9.4" r="0.4"/><circle cx="26.49" cy="9.56" r="0.35"/><circle cx="27.43" cy="9.58" r="0.45"/><circle cx="24.51" cy="10.5" r="0.38"/><circle cx="28.52" cy="10.52" r="0.42"/><circle cx="28.6" cy="11.51" r="0.43"/><circle cx="27.5" cy="12.55" r="0.41"/><circle cx="26.57" cy="13.53" r="0.37"/><circle cx="25.52" cy="14.52" r="0.41"/><circle cx="24.45" cy="15.45" r="0.41"/><circle cx="25.49" cy="15.44" r="0.43"/><circle cx="26.41" cy="15.55" r="0.4"/><circle cx="27.41" cy="15.56" r="0.39"/><circle cx="28.5" cy="15.5" r="0.45"/><circle cx="31.51" cy="9.4" r="0.45"/><circle cx="32.49" cy="9.46" r="0.4"/><circle cx="33.57" cy="9.54" r="0.4"/><circle cx="30.5" cy="10.49" r="0.4"/><circle cx="34.5" cy="10.56" r="0.43"/><circle cx="30.5" cy="11.52" r="0.36"/><circle cx="33.51" cy="11.47" r="0.41"/><circle cx="34.47" cy="11.47" r="0.36"/><circle cx="30.54" cy="12.55" r="0.39"/><circle cx="32.53" cy="12.61" r="0.36"/><circle cx="34.48" cy="12.42" r="0.43"/><circle cx="30.45" cy="13.55" r="0.42"/><circle cx="31.52" cy="13.59" r="0.44"/><circle cx="34.48" cy="13.38" r="0.38"/><circle cx="30.43" cy="14.42" r="0.43"/><circle cx="34.54" cy="14.53" r="0.38"/><circle cx="32.43" cy="15.49" r="0.45"/><circle cx="33.49" cy="15.5" r="0.45"/><circle cx="37.51" cy="9.52" r="0.39"/><circle cx="38.45" cy="9.46" r="0.43"/><circle cx="39.44" cy="9.55" r="0.42"/><circle cx="36.42" cy="10.52" r="0.41"/><circle cx="40.5" cy="10.55" r="0.37"/><circle cx="40.43" cy="11.44" r="0.4"/><circle cx="39.49" cy="12.48" r="0.36"/><circle cx="38.5" cy="13.45" r="0.39"/><circle cx="37.53" cy="14.57" r="0.39"/><circle cx="36.58" cy="15.56" r="0.34"/><circle cx="37.54" cy="15.55" r="0.43"/><circle cx="38.45" cy="15.46" r="0.36"/><circle cx="39.55" cy="15.4" r="0.39"/><circle cx="40.43" cy="15.46" r="0.41"/><circle cx="43.45" cy="9.54" r="0.45"/><circle cx="44.55" cy="9.41" r="0.37"/><circle cx="45.45" cy="9.44" r="0.41"/><circle cx="42.48" cy="10.47" r="0.43"/><circle cx="46.58" cy="10.53" r="0.37"/><circle cx="42.5" cy="11.52" r="0.37"/><circle cx="46.47" cy="11.46" r="0.42"/><circle cx="43.47" cy="12.54" r="0.43"/><circle cx="44.43" cy="12.47" r="0.35"/><circle cx="45.47" cy="12.48" r="0.39"/><circle cx="42.51" cy="13.48" r="0.45"/><circle cx="46.57" cy="13.39" r="0.37"/><circle cx="42.49" cy="14.52" r="0.42"/><circle cx="46.62" cy="14.47" r="0.38"/><circle cx="43.48" cy="15.45" r="0.44"/><circle cx="44.57" cy="15.56" r="0.44"/><circle cx="45.5" cy="15.44" r="0.34"/><circle cx="49.58" cy="14.4" r="0.42"/><circle cx="50.51" cy="14.49" r="0.36"/><circle cx="49.48" cy="15.55" r="0.44"/><circle cx="50.54" cy="15.55" r="0.35"/><circle cx="56.49" cy="9.5" r="0.35"/><circle cx="55.49" cy="10.55" r="0.45"/><circle cx="56.61" cy="10.54" r="0.44"/><circle cx="56.64" cy="11.44" r="0.39"/><circle cx="56.45" cy="12.49" r="0.37"/><circle cx="56.49" cy="13.46" r="0.43"/><circle cx="55.6" cy="15.49" r="0.46"/><circle cx="56.5" cy="15.5" r="0.45"/><circle cx="57.49" cy="15.54" r="0.44"/><circle cx="61.55" cy="9.54" r="0.42"/><circle cx="62.35" cy="9.5" r="0.39"/><circle cx="63.46" cy="9.48" r="0.44"/><circle cx="60.55" cy="10.56" r="0.43"/><circle cx="64.5" cy="10.43" r="0.41"/><circle cx="63.48" cy="12.42" r="0.4"/><circle cx="62.64" cy="13.45" r="0.4"/><circle cx="61.56" cy="14.49" r="0.44"/><circle cx="60.51" cy="15.61" r="0.42"/><circle cx="61.46" cy="15.46" r="0.36"/><circle cx="62.43" cy="15.47" r="0.45"/><circle cx="63.46" cy="15.54" r="0.43"/><circle cx="64.5" cy="15.52" r="0.36"/><circle cx="67.54" cy="14.44" r="0.45"/><circle cx="68.56" cy="14.46" r="0.4"/><circle cx="67.5" cy="15.51" r="0.39"/><circle cx="68.5" cy="15.5" r="0.43"/><circle cx="74.47" cy="9.52" r="0.39"/><circle cx="75.47" cy="9.54" r="0.42"/><circle cx="72.44" cy="10.45" r="0.39"/><circle cx="76.55" cy="10.38" r="0.41"/><circle cx="72.57" cy="11.58" r="0.41"/><circle cx="75.44" cy="11.51" r="0.46"/><circle cx="76.46" cy="11.5" r="0.34"/><circle cx="72.56" cy="12.57" r="0.39"/><circle cx="74.5" cy="12.47" r="0.43"/><circle cx="76.56" cy="12.51" r="0.36"/><circle cx="72.45" cy="13.45" r="0.4"/><circle cx="73.69" cy="13.44" r="0.4"/><circle cx="76.39" cy="13.47" r="0.35"/><circle cx="72.65" cy="14.51" r="0.4"/><circle cx="76.52" cy="14.53" r="0.34"/><circle cx="73.49" cy="15.5" r="0.46"/><circle cx="74.53" cy="15.58" r="0.41"/><circle cx="75.47" cy="15.5" r="0.42"/><circle cx="78.49" cy="9.57" r="0.36"/><circle cx="79.54" cy="9.55" r="0.45"/><circle cx="80.52" cy="9.54" r="0.42"/><circle cx="81.55" cy="9.53" r="0.39"/><circle cx="82.53" cy="10.46" r="0.36"/><circle cx="79.49" cy="13.47" r="0.46"/><circle cx="79.49" cy="14.51" r="0.43"/><circle cx="79.53" cy="15.41" r="0.42"/></g></svg></div>
+  </div>
+</section>
+
+<p class="ext"><span class="ext-badge">外用</span><span class="ext-a">一般化粧品，僅供外用，請勿食用。</span><span class="ext-b">外觀像藥袋，裡面不是藥——皮膚有狀況時，請先看醫師。</span></p>
+
+<p class="tear"><svg class="sc" viewBox="0 0 26 18" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="5" cy="4.6" r="3.2"/><circle cx="5" cy="13.4" r="3.2"/><path d="M7.6 6.4 L24.5 13.2 M7.6 11.6 L24.5 4.8"/></g></svg><span class="cut" aria-hidden="true"></span><span class="tear-l">沿虛線撕開・說明書折在裡面</span></p>
+
+<article class="insert" aria-labelledby="ifu-h" style="--fold-h:911px">
+  <header class="ifu-head">
+    <h2 id="ifu-h" class="ifu-title">使用說明書</h2>
+    <div class="ifu-keep"><p>請保留本說明書，以便日後參閱。</p><p class="ifu-ver">立冬修訂：第五步改成早帖、晚帖分開寫。</p></div>
+    <figure class="ifu-fold"><img src="assets/fold-diagram.svg" width="132" height="44" alt="說明書四摺示意圖：風琴摺，向右展開"><figcaption>四摺・展開後由上而下閱讀</figcaption></figure>
+  </header>
+
+  <section id="usage" class="ifu-sec usage" aria-labelledby="usage-h">
+    <div class="sec-row">
+      <h2 id="usage-h" class="sec-h">【用法】</h2>
+      <p class="sec-lead">把藥袋沿黏貼處拆開、攤平，用法就印在袋子正面：五個動作，前後大約四分鐘。早帖、晚帖用法相同，只有第五步不一樣。</p>
+    </div>
+    <div class="die">
+      <div class="die-top" aria-hidden="true"><span class="zip"></span><span class="die-lab">封口・夾鏈</span><span class="die-lab">沿虛線向內摺</span></div>
+      <div class="die-glue" aria-hidden="true"><span>黏貼處</span></div>
+      <div class="die-front">
+        <p class="die-title"><b>用法</b><span>袋面・正面　一帖約四分鐘</span></p>
+        <ol class="steps" role="list"><li class="step">
+        <div class="step-art" style="--r:4.81deg"><svg class="cutout" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><defs><clipPath id="cpk1"><path d="M113.54 62.1L112.83 72.77L109.56 83.31L104.01 93.77L96.55 102.23L87.78 107.99L77.59 112.65L66.74 115.99L54.93 116.11L42.49 113.74L32.69 108.66L24.66 101.13L16.96 93.44L11.09 84.58L7.24 74.04L5.74 62.98L6.65 50.88L10.02 39.64L16.57 30.87L24.49 22.83L33.39 15.42L43.66 10.73L54.87 9.16L66.25 9.01L77.52 10.3L87.48 14.68L95.71 21.12L103.1 29.97L108.57 40.56L112.62 50.63L114.47 61.03Z"/></clipPath></defs><path d="M113.54 62.1L112.83 72.77L109.56 83.31L104.01 93.77L96.55 102.23L87.78 107.99L77.59 112.65L66.74 115.99L54.93 116.11L42.49 113.74L32.69 108.66L24.66 101.13L16.96 93.44L11.09 84.58L7.24 74.04L5.74 62.98L6.65 50.88L10.02 39.64L16.57 30.87L24.49 22.83L33.39 15.42L43.66 10.73L54.87 9.16L66.25 9.01L77.52 10.3L87.48 14.68L95.71 21.12L103.1 29.97L108.57 40.56L112.62 50.63L114.47 61.03Z" class="cp-bg"/><g clip-path="url(#cpk1)"><path d="M0.36 29.75L8.45 29.64L16.88 29.73L25.35 30.19L34.05 30.09L43.05 29.56L51.61 29.83L60.08 30.47L59.84 37.48L59.5 44.46L64 46.01L68.49 43.49L72.44 46.63L76.4 43.5L80.18 46.32L84.05 43.93L87.68 46.78L91.65 43.78L96.23 46.25L100.31 43.97L100.1 52.5L100.16 61.53L100.41 70.95L100.33 79.74L100.14 88.36L99.98 97.11L99.76 105.81L99.85 114.97L99.92 124.12L91.01 123.78L82.03 123.57L72.53 123.96L63.3 124.14L54.63 124.17L45.59 124.22L35.94 124.41L26.84 124.35L18.15 123.97L9.23 123.9L0.42 123.83L0.19 114.37L-0.27 104.85L-0.21 95.53L-0.13 86.22L-0.22 77.03L-0.3 67.81L0.11 58.56L0.37 49.23L0.21 39.15Z" class="cp-i"/><path d="M6 32.5L6 41" class="cp-cut"/><path d="M11 32.5L11 41" class="cp-cut"/><path d="M16 32.5L16 41" class="cp-cut"/><path d="M21 32.5L21 41" class="cp-cut"/><path d="M26 32.5L26 41" class="cp-cut"/><path d="M31 32.5L31 41" class="cp-cut"/><path d="M36 32.5L36 41" class="cp-cut"/><path d="M41 32.5L41 41" class="cp-cut"/><path d="M46 32.5L46 41" class="cp-cut"/><path d="M51 32.5L51 41" class="cp-cut"/><path d="M56 32.5L56 41" class="cp-cut"/><path d="M6 44L10 44" class="cp-cut"/><path d="M14 44L18 44" class="cp-cut"/><path d="M22 44L26 44" class="cp-cut"/><path d="M30 44L34 44" class="cp-cut"/><path d="M38 44L42 44" class="cp-cut"/><path d="M46 44L50 44" class="cp-cut"/><path d="M54 44L58 44" class="cp-cut"/><path d="M57.19 30.5L62.23 28.02L67.47 25.78L72.76 23.7L78.06 21.24L83.4 18.69L88.43 16.55L93.44 14.43L96.52 20.84L99.53 27.25L96.47 31.04L91.74 30.66L89.55 34.77L84.81 33.57L82.39 37.46L77.68 36.75L74.96 41.16L69.99 39.93L67.23 43.49L62.73 43.36L59.8 37.13Z" class="cp-a"/><path d="M56.06 83.93L55.19 86.87L54.26 89.63L53.33 92.38L51 94.04L48.68 95.71L46.45 97.24L43.61 97.15L40.51 97.36L37.54 97.43L35.27 95.54L32.95 93.79L30.59 92.1L29.71 89.37L28.86 86.64L27.96 83.94L28.81 81.29L29.76 78.48L30.74 75.62L33.01 73.96L35.27 72.31L37.75 70.66L40.75 70.7L43.58 70.74L46.44 70.76L48.81 72.34L51.16 73.98L53.5 75.65L54.36 78.4L55.14 81.22L56.04 83.99Z" class="cp-p"/><text x="42" y="84.5" class="cp-tx">帖</text><path d="M101.41 13.2L108.46 6.07L106.05 3.63L99.05 10.61Z" class="cp-i"/><path d="M104.32 26.58L113.31 23.46L112.27 20.24L103.33 23.26Z" class="cp-i"/></g></svg></div>
+        <div class="step-text">
+          <h3><span class="verb" aria-hidden="true">撕</span><span class="sr-only">第 1 步，</span>沿缺口撕開一帖</h3>
+          <p class="step-meta"><span class="dur">約<b>5</b>秒</span><span class="clock">累計 <span class="mono">00:05</span></span></p>
+          <p class="desc">從右上角的鋸齒缺口撕開，撕到第一道壓線就停。一帖剛好是一次的量，撕開了就用完，不留到下一回。</p>
+        </div>
+      </li><li class="step">
+        <div class="step-art" style="--r:4.68deg"><svg class="cutout" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><defs><clipPath id="cpk2"><path d="M113.54 62.1L112.83 72.77L109.56 83.31L104.01 93.77L96.55 102.23L87.78 107.99L77.59 112.65L66.74 115.99L54.93 116.11L42.49 113.74L32.69 108.66L24.66 101.13L16.96 93.44L11.09 84.58L7.24 74.04L5.74 62.98L6.65 50.88L10.02 39.64L16.57 30.87L24.49 22.83L33.39 15.42L43.66 10.73L54.87 9.16L66.25 9.01L77.52 10.3L87.48 14.68L95.71 21.12L103.1 29.97L108.57 40.56L112.62 50.63L114.47 61.03Z"/></clipPath></defs><path d="M113.54 62.1L112.83 72.77L109.56 83.31L104.01 93.77L96.55 102.23L87.78 107.99L77.59 112.65L66.74 115.99L54.93 116.11L42.49 113.74L32.69 108.66L24.66 101.13L16.96 93.44L11.09 84.58L7.24 74.04L5.74 62.98L6.65 50.88L10.02 39.64L16.57 30.87L24.49 22.83L33.39 15.42L43.66 10.73L54.87 9.16L66.25 9.01L77.52 10.3L87.48 14.68L95.71 21.12L103.1 29.97L108.57 40.56L112.62 50.63L114.47 61.03Z" class="cp-bg"/><g clip-path="url(#cpk2)"><path d="M119.64 107.46L118.06 118.47L113.78 128.97L106.58 138.46L101.54 142.49L96.88 146.68L91.47 150.19L86.03 152.87L80.08 154.15L73.53 156.15L66.6 156.97L59.76 157.74L52.95 157.24L46.6 156.55L40.44 154.68L33.82 153.01L28.03 150.07L22.41 146.83L17.76 142.81L13.41 138.92L6.15 129.67L1.08 119.81L-0.37 108.52L1.43 96.84L5.97 86.41L13.27 77.2L17.7 73.06L22.1 68.9L28.49 66.11L34.72 63.28L40.32 61.6L46.27 59.83L53.16 58.84L59.87 58.13L66.17 59.23L72.83 59.82L79.56 60.91L85.88 62.75L91.3 66.12L97.32 68.98L102.84 72.6L107.31 76.75L113.99 86.55L118.17 96.93L119.41 107.86Z" class="cp-a"/><path d="M18 92L24.59 87.34L31.38 83.38L38.34 80.09L45.5 77.5L52.84 75.59L60.38 74.38L68.09 73.84L76 74" class="cp-cut"/><path d="M30 108L38.59 104.31L47.38 101.25L56.34 98.81L65.5 97L74.84 95.81L84.38 95.25L94.09 95.31L104 96" class="cp-cut"/><path d="M70 120L72.44 113.5L75.78 107.33L80 101.5L85.11 96L91.11 90.83L98 86" class="cp-cut"/><path d="M69.17 86.38L67.94 90.53L64.38 93.79L60.28 96.28L55.84 97.36L49.95 96.66L44.65 94.45L41.8 90.57L40.91 86.08L41.62 82.31L44.43 79.01L49.38 75.84L54.9 74.68L59.95 75.95L64.56 78.41L68.53 81.56L69.63 85.79Z" class="cp-t"/><path d="M55.17 82.18L53.9 84.06L50.91 84.71L48.14 83.94L47.03 82.01L48.25 80.07L51.11 79.28L53.83 80.09L54.95 82.05Z" class="cp-p"/><path d="M100.67 39.96L99.68 42.37L98.72 44.78L98.04 47.36L96.02 48.95L94.01 50.46L91.95 51.95L89.34 51.76L86.76 51.75L84.21 51.97L82.15 50.51L80.12 49.04L77.97 47.44L77.03 44.79L76.27 42.36L75.56 39.97L76.29 37.61L77 35.26L77.9 32.82L80.06 31.31L82.14 29.68L84.23 28.1L86.82 28.12L89.37 28.14L91.74 28.2L93.77 29.7L95.88 31.09L97.96 32.55L98.73 34.92L99.57 37.46L100.46 40.14Z" class="cp-i"/><path d="M96.98 40.13L95.77 44.58L92.41 47.87L87.78 48.99L83.2 47.78L79.96 44.71L78.8 40.11L80.22 35.26L83.54 31.89L87.98 30.73L92.52 31.91L95.8 35.17L97.21 39.96Z" class="cp-a"/><path d="M95.69 39.87L94.88 42.16L94.14 44.39L92.28 45.72L90.38 47.14L88.01 47.29L85.61 47.26L83.61 45.79L81.83 44.35L81.29 42.05L80.46 39.86L81.09 37.67L81.74 35.4L83.6 33.99L85.48 32.67L87.82 32.7L90.15 32.72L92.08 34.1L94.2 35.45L94.97 37.66L95.68 39.85Z" class="cp-i"/><text x="88" y="40.5" class="cp-tx-p">1</text></g></svg></div>
+        <div class="step-text">
+          <h3><span class="verb" aria-hidden="true">擠</span><span class="sr-only">第 2 步，</span>擠在掌心，一元硬幣大</h3>
+          <p class="step-meta"><span class="dur">約<b>10</b>秒</span><span class="clock">累計 <span class="mono">00:15</span></span></p>
+          <p class="desc">從封口那一端往缺口推，在掌心擠出一元硬幣大小，大約 2 mL。量多不會比較好，剛好塗滿全臉就夠。</p>
+        </div>
+      </li><li class="step">
+        <div class="step-art" style="--r:-2.19deg"><svg class="cutout" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><defs><clipPath id="cpk3"><path d="M113.54 62.1L112.83 72.77L109.56 83.31L104.01 93.77L96.55 102.23L87.78 107.99L77.59 112.65L66.74 115.99L54.93 116.11L42.49 113.74L32.69 108.66L24.66 101.13L16.96 93.44L11.09 84.58L7.24 74.04L5.74 62.98L6.65 50.88L10.02 39.64L16.57 30.87L24.49 22.83L33.39 15.42L43.66 10.73L54.87 9.16L66.25 9.01L77.52 10.3L87.48 14.68L95.71 21.12L103.1 29.97L108.57 40.56L112.62 50.63L114.47 61.03Z"/></clipPath></defs><path d="M113.54 62.1L112.83 72.77L109.56 83.31L104.01 93.77L96.55 102.23L87.78 107.99L77.59 112.65L66.74 115.99L54.93 116.11L42.49 113.74L32.69 108.66L24.66 101.13L16.96 93.44L11.09 84.58L7.24 74.04L5.74 62.98L6.65 50.88L10.02 39.64L16.57 30.87L24.49 22.83L33.39 15.42L43.66 10.73L54.87 9.16L66.25 9.01L77.52 10.3L87.48 14.68L95.71 21.12L103.1 29.97L108.57 40.56L112.62 50.63L114.47 61.03Z" class="cp-bg"/><g clip-path="url(#cpk3)"><path d="M56.08 64.52L54.87 70.82L54.24 77.17L52.63 83.09L51.34 88.95L49.25 94.03L47.14 100.06L40.92 109.85L32.75 116.58L23.71 120.72L14.3 121.57L4.92 119.82L-3.85 116.03L-11.83 109.26L-18.87 99.58L-21.57 94.16L-24.5 89.67L-26.01 83.65L-27.17 77.33L-27.57 70.86L-27.9 64.43L-27.66 57.67L-27.57 50.76L-25.6 44.96L-23.6 39.18L-20.86 33.15L-18.18 27.26L-11.7 18.03L-3.81 11.16L5.22 7.73L14.54 6.55L23.29 7.66L32.09 11.9L40.33 19.01L46.93 28.03L49.15 32.98L51.89 38.36L53.98 44.33L55.27 50.58L55.41 57.2L55.81 63.56Z" class="cp-i"/><path d="M148.39 64.02L148.13 69.89L147.49 76.3L145.79 82.39L144.36 89.18L141.96 95.26L138.95 100.46L132 109.47L124.29 116.56L115.5 120.87L105.88 121.77L96.55 120.11L88.26 115.66L80.28 108.77L73.15 99.79L70.52 94.26L67.85 88.64L66.57 82.76L65.49 77.06L64.4 70.55L63.2 64.02L64.21 57.41L65.15 50.82L66.98 44.48L68.68 38.27L70.85 33.6L73.17 28.39L79.46 18.83L87.46 11.82L97.04 7.56L106.31 6.14L114.96 7.71L123.81 11.88L131.88 18.51L138.36 27.97L140.59 33.95L143.58 39.41L145.68 45.49L147.23 51.48L147.74 57.83L148.07 64.17Z" class="cp-a"/><path d="M65.55 64L65.22 69.47L64.86 74.48L64.18 78.75L63.92 83.14L62.3 89L59.89 91.11L57.71 89.05L56.02 83.05L55.4 78.7L54.66 74.6L54.56 69.46L54.72 64.26L54.95 59.05L55.15 53.81L55.67 49.39L56.16 44.96L57.87 38.88L59.89 36.62L62.02 39.1L63.81 45.23L64.28 49.47L64.84 53.79L65.38 58.98L65.65 64.16Z" class="cp-t"/><path d="M40 40L37.84 45.59L36.38 51.38L35.59 57.34L35.5 63.5L36.09 69.84L37.38 76.38L39.34 83.09L42 90" class="cp-cut"/><path d="M28 46L26.28 51.16L25.13 56.63L24.53 62.41L24.5 68.5L25.03 74.91L26.13 81.63L27.78 88.66L30 96" class="cp-cut"/><path d="M80 40L82.16 45.59L83.63 51.38L84.41 57.34L84.5 63.5L83.91 69.84L82.63 76.38L80.66 83.09L78 90" class="cp-cut"/><path d="M92 46L93.72 51.16L94.88 56.63L95.47 62.41L95.5 68.5L94.97 74.91L93.88 81.63L92.22 88.66L90 96" class="cp-cut"/><path d="M52.82 20.08L52.03 22.3L50.17 23.57L47.85 23.52L46.03 22.09L45.3 19.86L45.9 17.72L47.81 16.34L50.24 16.31L52.18 17.67L52.98 19.85Z" class="cp-i"/><path d="M63.74 14.92L62.99 17.1L61.15 18.48L58.78 18.47L56.74 17.06L56.11 14.92L57.08 12.93L58.92 11.54L61.14 11.5L63.12 12.88L63.94 15.11Z" class="cp-i"/><path d="M74.88 20.04L74.17 22.27L72.24 23.56L69.84 23.58L67.85 22.25L67.13 19.96L67.87 17.64L69.84 16.4L72.26 16.53L74.08 17.74L74.76 19.86Z" class="cp-i"/></g></svg></div>
+        <div class="step-text">
+          <h3><span class="verb" aria-hidden="true">溫</span><span class="sr-only">第 3 步，</span>雙掌合十，停三秒</h3>
+          <p class="step-meta"><span class="dur"><b>3</b>秒</span><span class="clock">累計 <span class="mono">00:18</span></span></p>
+          <p class="desc">兩手輕輕合起來，心裡數三下，讓它跟手心一樣溫，再把掌心貼上臉。冷氣房裡待久了，手心偏涼，可以多數兩下。</p>
+        </div>
+      </li><li class="step">
+        <div class="step-art" style="--r:1.13deg"><svg class="cutout" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><defs><clipPath id="cpk4"><path d="M113.54 62.1L112.83 72.77L109.56 83.31L104.01 93.77L96.55 102.23L87.78 107.99L77.59 112.65L66.74 115.99L54.93 116.11L42.49 113.74L32.69 108.66L24.66 101.13L16.96 93.44L11.09 84.58L7.24 74.04L5.74 62.98L6.65 50.88L10.02 39.64L16.57 30.87L24.49 22.83L33.39 15.42L43.66 10.73L54.87 9.16L66.25 9.01L77.52 10.3L87.48 14.68L95.71 21.12L103.1 29.97L108.57 40.56L112.62 50.63L114.47 61.03Z"/></clipPath></defs><path d="M113.54 62.1L112.83 72.77L109.56 83.31L104.01 93.77L96.55 102.23L87.78 107.99L77.59 112.65L66.74 115.99L54.93 116.11L42.49 113.74L32.69 108.66L24.66 101.13L16.96 93.44L11.09 84.58L7.24 74.04L5.74 62.98L6.65 50.88L10.02 39.64L16.57 30.87L24.49 22.83L33.39 15.42L43.66 10.73L54.87 9.16L66.25 9.01L77.52 10.3L87.48 14.68L95.71 21.12L103.1 29.97L108.57 40.56L112.62 50.63L114.47 61.03Z" class="cp-bg"/><g clip-path="url(#cpk4)"><path d="M88 60.1L87.13 67.86L84.79 75.06L81.71 82.26L77.54 88.36L72.27 92.31L66.39 94.74L60.42 96.21L54.28 95.55L47.84 92.17L42.36 87.66L38.09 82.27L34.83 75.47L32.91 67.67L32.08 59.86L32.33 52.52L34.6 44.64L38.42 37.14L42.71 31.61L47.78 27.6L53.52 25.17L59.58 24.5L66.37 24.89L72.67 27.22L77.83 31.98L82.17 37.91L85.2 44.63L87.25 52.21L88.43 60.28Z" class="cp-a"/><path d="M54.9 51.68L54.01 53.43L52.61 54.83L51.03 55.77L49.17 56.09L47.04 55.6L45.25 54.62L44.09 53.32L43.31 51.56L45.72 50.76L46.18 51.82L47.03 52.85L47.96 53.35L48.93 53.43L50.06 53.19L51.11 52.58L51.87 51.85L52.34 50.92Z" class="cp-i"/><path d="M76.93 51.39L76.08 53.35L74.72 54.87L72.91 55.83L70.95 56.14L68.97 55.65L67.27 54.73L66.1 53.48L65.3 51.68L67.77 50.88L68.24 51.94L69.02 52.87L70.02 53.28L71.14 53.32L72.12 53.12L72.99 52.57L73.72 51.9L74.16 50.96Z" class="cp-i"/><path d="M66.2 62.99L73.18 62.99L80.15 63.02L80.05 59.45L86.98 64.96L79.83 70.4L79.92 66.74L73.14 66.82L66.1 66.74Z" class="cp-p"/><path d="M53.83 63.34L46.99 63.18L40.06 63.16L40.18 59.43L33.07 64.9L39.88 70.36L39.91 66.69L46.95 66.73L53.91 66.82Z" class="cp-p"/><path d="M45.54 75.87L44.64 78.58L42.36 80.26L39.55 80.28L37.23 78.68L36.32 76.03L37.29 73.21L39.64 71.47L42.39 71.53L44.67 73.23L45.73 75.99Z" class="cp-i"/><path d="M83.48 76.01L82.56 78.82L80.36 80.36L77.58 80.26L75.2 78.75L74.3 76.12L75.29 73.38L77.64 71.71L80.54 71.78L82.86 73.47L83.75 76.19Z" class="cp-i"/><path d="M15.95 52.02L11.52 56.16L6.92 59.87L11.37 63.8L15.77 68.19L15.75 64.66L11.4 60.09L15.87 55.61Z" class="cp-i"/><path d="M103.88 51.93L108.39 55.94L113.03 59.92L108.52 63.93L103.92 68L103.91 64.37L108.34 59.88L104.02 55.49Z" class="cp-i"/></g></svg></div>
+        <div class="step-text">
+          <h3><span class="verb" aria-hidden="true">按</span><span class="sr-only">第 4 步，</span>由臉中央往外按</h3>
+          <p class="step-meta"><span class="dur">約<b>40</b>秒</span><span class="clock">累計 <span class="mono">00:58</span></span></p>
+          <p class="desc">掌心貼著臉，從鼻翼兩側往耳朵的方向一下一下按，<b>不推、不搓、不拍</b>。額頭和下巴留到最後，眼周與嘴唇避開。</p>
+        </div>
+      </li><li class="step">
+        <div class="step-art" style="--r:2.21deg"><svg class="cutout" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><defs><clipPath id="cpk5"><path d="M113.54 62.1L112.83 72.77L109.56 83.31L104.01 93.77L96.55 102.23L87.78 107.99L77.59 112.65L66.74 115.99L54.93 116.11L42.49 113.74L32.69 108.66L24.66 101.13L16.96 93.44L11.09 84.58L7.24 74.04L5.74 62.98L6.65 50.88L10.02 39.64L16.57 30.87L24.49 22.83L33.39 15.42L43.66 10.73L54.87 9.16L66.25 9.01L77.52 10.3L87.48 14.68L95.71 21.12L103.1 29.97L108.57 40.56L112.62 50.63L114.47 61.03Z"/></clipPath></defs><path d="M113.54 62.1L112.83 72.77L109.56 83.31L104.01 93.77L96.55 102.23L87.78 107.99L77.59 112.65L66.74 115.99L54.93 116.11L42.49 113.74L32.69 108.66L24.66 101.13L16.96 93.44L11.09 84.58L7.24 74.04L5.74 62.98L6.65 50.88L10.02 39.64L16.57 30.87L24.49 22.83L33.39 15.42L43.66 10.73L54.87 9.16L66.25 9.01L77.52 10.3L87.48 14.68L95.71 21.12L103.1 29.97L108.57 40.56L112.62 50.63L114.47 61.03Z" class="cp-bg"/><g clip-path="url(#cpk5)"><path d="M48.45 26.92L55.44 26.93L55.34 36.08L48.48 36.02Z" class="cp-i"/><path d="M44.68 22.47L59.5 22.53L59.22 27.62L44.37 27.58Z" class="cp-i"/><path d="M86.53 68.64L85.11 76.2L81.85 83.38L77.5 90.32L71.52 95.89L63.9 100.14L55.84 102.3L48.07 102.35L40.24 100.3L33 96.01L26.88 90.52L22.27 83.87L19.07 76.3L17.4 68.36L18.4 60L21.37 51.95L25.98 45L32.06 39.34L39.6 36.19L47.79 34.74L56.43 34.11L64.61 35.74L71.41 39.75L77.33 45.22L81.7 51.64L84.72 59.41L86.54 68.42Z" class="cp-i"/><path d="M78.68 67.57L78.31 75.13L75.86 81.87L71.48 87.08L65.83 91.22L59.1 93.77L51.96 94.81L44.6 94.48L38.24 91.6L33.17 86.65L28.88 81.17L26.12 74.96L25.23 67.83L26.19 60.66L28.71 54.25L32.85 48.76L38.53 44.35L45.1 41.59L52.05 41.03L58.99 42.09L65.22 44.54L70.82 48.71L75.67 54.08L78.38 60.59L78.95 67.73Z" class="cp-p"/><path d="M51.9 67.79L51.73 61.45L51.68 55.21L51.65 49.08L51.63 42.87L55.51 43.22L59.52 44.11L63.53 45.54L66.87 47.54L69.82 50.02L72.2 53.33L74.08 57.01L75.78 60.59L69.96 62.49L63.71 64.35L57.6 66.23Z" class="cp-a"/><path d="M53.37 47.85L53.4 42.98L50.76 42.94L50.67 47.83Z" class="cp-i"/><path d="M72.02 69.18L77.15 69.14L77.08 66.57L71.98 66.61Z" class="cp-i"/><path d="M50.64 88.14L50.77 93.13L53.37 93.1L53.37 88.07Z" class="cp-i"/><path d="M31.97 66.63L26.87 66.68L27.04 69.44L32.11 69.48Z" class="cp-i"/><path d="M53.79 68.15L53.75 47.12L50.28 46.97L50.3 67.97Z" class="cp-i"/><path d="M52.53 69.2L70.63 63.36L69.78 60.76L51.6 66.69Z" class="cp-i"/><path d="M55.8 67.96L55.11 70.16L53.25 71.49L50.8 71.65L48.79 70.43L48.21 68L49.03 65.62L50.85 64.34L53.15 64.41L54.96 65.89L55.69 68.14Z" class="cp-i"/><path d="M103.4 59.35L103.32 62.2L101.32 65.06L98.09 67.09L94.26 67.79L90.87 67.12L88.87 64.96L88.88 61.75L90.79 58.77L94.17 56.86L97.97 56.14L101.02 56.97L103.13 59.07Z" class="cp-a"/><path d="M100.54 27.25L104.19 27L104.19 43.88L103.96 60.83L100.27 60.85L100.22 44.08Z" class="cp-a"/><path d="M104.2 27.14L107.84 29.99L111.54 32.93L112.05 37.56L112.7 42.36L108.56 38.04L104.01 35.47L104.11 31.03Z" class="cp-a"/></g></svg></div>
+        <div class="step-text">
+          <h3><span class="verb" aria-hidden="true">等</span><span class="sr-only">第 5 步，</span>等一首歌的時間</h3>
+          <p class="step-meta"><span class="dur">約<b>3</b>分鐘</span><span class="clock">累計 <span class="mono">03:58</span></span></p>
+          <p class="desc">早上等三分鐘，再擦防曬或上妝；晚上就讓它留在臉上，關燈睡覺。三分鐘，差不多是一首歌的長度。</p>
+        </div>
+      </li></ol>
+      </div>
+      <div class="die-gusset" aria-hidden="true"><span>一日一帖保養所　用法說明　側摺</span></div>
+      <div class="die-back">
+        <h3 class="db-h">藥師叮嚀<small>袋面・背面</small></h3>
+        <ol class="tips" role="list"><li><span class="tn" aria-hidden="true">1</span><span class="sr-only">第 1 步：</span>早帖印琥珀色條、晚帖印藕紫色條，撕之前看一眼，就不會拿錯。</li><li><span class="tn" aria-hidden="true">2</span><span class="sr-only">第 2 步：</span>凝露偏稀，掌心微微凹起來接；乳霜比較稠，從袋底往上推。</li><li><span class="tn" aria-hidden="true">3</span><span class="sr-only">第 3 步：</span>夏天剛洗完澡，手心是溫的，數到三就好；冬天從戶外回來，先洗手再溫。</li><li><span class="tn" aria-hidden="true">4</span><span class="sr-only">第 4 步：</span>按，是為了讓它貼著皮膚待久一點。指腹不要用力，用掌心的重量就夠。</li><li><span class="tn" aria-hidden="true">5</span><span class="sr-only">第 5 步：</span>這三分鐘，剛好拿來刷牙，或挑今天要穿的衣服。</li></ol>
+        <h3 class="db-h">早帖・晚帖</h3>
+        <dl class="diff"><div><dt>質地</dt><dd><span class="dd-am">凝露</span><span class="dd-pm">乳霜</span></dd></div><div><dt>色條</dt><dd><span class="dd-am">琥珀</span><span class="dd-pm">藕紫</span></dd></div><div><dt>第五步</dt><dd><span class="dd-am">等三分鐘再上妝</span><span class="dd-pm">直接關燈睡</span></dd></div><div><dt>香料</dt><dd><span class="dd-am">未添加</span><span class="dd-pm">未添加</span></dd></div></dl>
+        <div class="actual">
+          <h3 class="db-h">一帖的量<small>實物大小</small></h3>
+          <div class="act-pair">
+            <p class="act"><svg class="act-disc" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle class="ad-ring" cx="10" cy="10" r="9.9"/><path class="ad-am" d="M19.19 10.86L18.22 13.27L17.28 15.63L15 16.79L12.76 17.99L10.33 18.14L7.8 18.28L5.54 17.08L3.22 15.92L1.78 13.84L0.48 11.67L1.04 9.23L1.56 6.73L3.09 4.64L4.59 2.62L7.12 1.99L9.63 1.42L12 2.24L14.37 2.94L16.17 4.54L18 6.15L18.53 8.52Z"/><path class="ad-hi" d="M9.81 5.12L9.62 6.65L7.91 8.12L5.69 8.65L4.33 8.01L4.6 6.55L6.31 5.09L8.5 4.52L9.87 5.13Z"/></svg><span class="act-t"><b>早帖・凝露</b>透明，帶一點琥珀色</span></p>
+            <p class="act"><svg class="act-disc" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle class="ad-ring" cx="10" cy="10" r="9.9"/><path class="ad-cr" d="M17.94 14.43L16.08 16.16L14.22 17.91L11.66 18.63L9.12 19.26L6.85 18.09L4.5 16.96L2.86 14.91L1.24 12.95L0.79 10.46L0.43 7.83L1.81 5.38L3.1 2.97L5.57 1.79L8.12 0.53L10.81 0.96L13.43 1.54L15.59 3.1L17.75 4.59L18.52 7.1L19.35 9.63L18.69 12.09Z"/><path class="ad-rg" d="M5.2 13.2Q10 11.6 14.8 13.2"/><path class="ad-rg" d="M5.2 15.6Q10 14 14.8 15.6"/><path class="ad-hi" d="M9.79 5.19L9.59 6.62L7.89 8.08L5.69 8.68L4.34 8.05L4.64 6.58L6.34 5.12L8.5 4.56L9.84 5.16Z"/></svg><span class="act-t"><b>晚帖・乳霜</b>乳白，質地稍厚</span></p>
+          </div>
+          <p class="act-note">圓圈直徑 <span class="mono">20 mm</span>，就是一元硬幣的大小，列印出來是原寸。每帖約 <span class="mono">2 mL</span>，擠出來差不多蓋滿這個圓。</p>
+        </div>
+        <p class="return"><b>空袋回收</b>　用完的藥袋拿回門市，下一袋折 20 元。回收的紙袋，會送去做成下一批說明書的用紙。</p>
+      </div>
+      <div class="die-bot" aria-hidden="true"><span></span><span></span><span></span></div>
+    </div>
+    <p class="die-legend" aria-hidden="true"><span><i class="lg-cut"></i>裁切線</span><span><i class="lg-fold"></i>摺線</span><span><i class="lg-glue"></i>黏貼處</span></p>
+  </section>
+
+  <section id="week" class="ifu-sec week" aria-labelledby="week-h">
+    <div class="sec-row">
+      <h2 id="week-h" class="sec-h">【一日兩帖・七日一輪】</h2>
+      <p class="sec-lead">藥袋裡的十四帖照星期排好：上排早帖，下排晚帖。每用一帖就撕下一格，週日晚上撕完最後一格，這一輪就結束了。下一袋寄出前，我們會打一通電話，問問這一週的臉摸起來怎麼樣，再決定早晚的比例要不要調。</p>
+    </div>
+    <div class="week-scroll">
+      <table class="blister">
+        <caption class="sr-only">七日份帖子排程：上排早帖、下排晚帖，共十四帖</caption>
+        <thead><tr><th scope="col"><span class="sr-only">時段</span></th><th scope="col" style="--d:0"><span class="wk">週</span>一</th><th scope="col" style="--d:1"><span class="wk">週</span>二</th><th scope="col" style="--d:2"><span class="wk">週</span>三</th><th scope="col" style="--d:3"><span class="wk">週</span>四</th><th scope="col" style="--d:4"><span class="wk">週</span>五</th><th scope="col" style="--d:5"><span class="wk">週</span>六</th><th scope="col" style="--d:6"><span class="wk">週</span>日</th></tr></thead>
+        <tbody>
+          <tr class="am"><th scope="row">早帖<small>洗臉後</small></th><td style="--d:0"><span class="pk"><span class="pk-n">01</span><span class="pk-d" aria-hidden="true">一・早</span><span class="pk-p">凝露 2 mL</span><span class="pk-c">開工前</span></span></td><td style="--d:1"><span class="pk"><span class="pk-n">03</span><span class="pk-d" aria-hidden="true">二・早</span><span class="pk-p">凝露 2 mL</span></span></td><td style="--d:2"><span class="pk"><span class="pk-n">05</span><span class="pk-d" aria-hidden="true">三・早</span><span class="pk-p">凝露 2 mL</span></span></td><td style="--d:3"><span class="pk"><span class="pk-n">07</span><span class="pk-d" aria-hidden="true">四・早</span><span class="pk-p">凝露 2 mL</span></span></td><td style="--d:4"><span class="pk"><span class="pk-n">09</span><span class="pk-d" aria-hidden="true">五・早</span><span class="pk-p">凝露 2 mL</span></span></td><td style="--d:5"><span class="pk"><span class="pk-n">11</span><span class="pk-d" aria-hidden="true">六・早</span><span class="pk-p">凝露 2 mL</span><span class="pk-c">睡飽的早上，按慢一點</span></span></td><td style="--d:6"><span class="pk"><span class="pk-n">13</span><span class="pk-d" aria-hidden="true">日・早</span><span class="pk-p">凝露 2 mL</span></span></td></tr>
+          <tr class="pm"><th scope="row">晚帖<small>卸妝後</small></th><td style="--d:0"><span class="pk"><span class="pk-n">02</span><span class="pk-d" aria-hidden="true">一・晚</span><span class="pk-p">乳霜 2 mL</span></span></td><td style="--d:1"><span class="pk"><span class="pk-n">04</span><span class="pk-d" aria-hidden="true">二・晚</span><span class="pk-p">乳霜 2 mL</span></span></td><td style="--d:2"><span class="pk"><span class="pk-n">06</span><span class="pk-d" aria-hidden="true">三・晚</span><span class="pk-p">乳霜 2 mL</span><span class="pk-c">冷氣房待了一整天</span></span></td><td style="--d:3"><span class="pk"><span class="pk-n">08</span><span class="pk-d" aria-hidden="true">四・晚</span><span class="pk-p">乳霜 2 mL</span></span></td><td style="--d:4"><span class="pk"><span class="pk-n">10</span><span class="pk-d" aria-hidden="true">五・晚</span><span class="pk-p">乳霜 2 mL</span><span class="pk-c">聚餐晚歸，卸了妝再睡</span></span></td><td style="--d:5"><span class="pk"><span class="pk-n">12</span><span class="pk-d" aria-hidden="true">六・晚</span><span class="pk-p">乳霜 2 mL</span></span></td><td style="--d:6"><span class="pk"><span class="pk-n">14</span><span class="pk-d" aria-hidden="true">日・晚</span><span class="pk-p">乳霜 2 mL</span><span class="pk-c">最後一帖，空袋留著</span></span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="ingredients" class="ifu-sec ing" aria-labelledby="ing-h">
+    <div class="sec-row">
+      <h2 id="ing-h" class="sec-h">【成分】</h2>
+      <p class="sec-lead">像中藥行的百子櫃，一格一味：抽屜由左上往右下，依含量由多至少排列（含量 1% 以下者不依順序）。抽屜口的小方印標出它在早帖、晚帖，或兩帖都有。</p>
+    </div>
+    <ul class="cabinet" role="list" aria-label="成分百子櫃"><li class="drawer"><span class="d-card">
+      <span class="d-zh">水</span><span class="d-inci" lang="en">AQUA</span><span class="d-use">溶劑</span>
+      <span class="d-mk"><span class="m am on" aria-hidden="true">早</span><span class="m pm on" aria-hidden="true">晚</span><span class="sr-only">（早帖、晚帖皆含）</span></span>
+    </span></li><li class="drawer"><span class="d-card">
+      <span class="d-zh">甘油</span><span class="d-inci" lang="en">GLYCERIN</span><span class="d-use">保濕劑</span>
+      <span class="d-mk"><span class="m am on" aria-hidden="true">早</span><span class="m pm on" aria-hidden="true">晚</span><span class="sr-only">（早帖、晚帖皆含）</span></span>
+    </span></li><li class="drawer"><span class="d-card">
+      <span class="d-zh">丁二醇</span><span class="d-inci" lang="en">BUTYLENE GLYCOL</span><span class="d-use">保濕劑</span>
+      <span class="d-mk"><span class="m am on" aria-hidden="true">早</span><span class="m pm on" aria-hidden="true">晚</span><span class="sr-only">（早帖、晚帖皆含）</span></span>
+    </span></li><li class="drawer"><span class="d-card">
+      <span class="d-zh">角鯊烷</span><span class="d-inci" lang="en">SQUALANE</span><span class="d-use">潤膚劑</span>
+      <span class="d-mk"><span class="m am off" aria-hidden="true">早</span><span class="m pm on" aria-hidden="true">晚</span><span class="sr-only">（只在晚帖）</span></span>
+    </span></li><li class="drawer"><span class="d-card">
+      <span class="d-zh">辛酸／癸酸三酸甘油酯</span><span class="d-inci" lang="en">CAPRYLIC/CAPRIC TRIGLYCERIDE</span><span class="d-use">潤膚劑</span>
+      <span class="d-mk"><span class="m am off" aria-hidden="true">早</span><span class="m pm on" aria-hidden="true">晚</span><span class="sr-only">（只在晚帖）</span></span>
+    </span></li><li class="drawer"><span class="d-card">
+      <span class="d-zh">鯨蠟硬脂醇</span><span class="d-inci" lang="en">CETEARYL ALCOHOL</span><span class="d-use">乳化安定劑</span>
+      <span class="d-mk"><span class="m am off" aria-hidden="true">早</span><span class="m pm on" aria-hidden="true">晚</span><span class="sr-only">（只在晚帖）</span></span>
+    </span></li><li class="drawer"><span class="d-card">
+      <span class="d-zh">硬脂酸甘油酯</span><span class="d-inci" lang="en">GLYCERYL STEARATE</span><span class="d-use">乳化劑</span>
+      <span class="d-mk"><span class="m am off" aria-hidden="true">早</span><span class="m pm on" aria-hidden="true">晚</span><span class="sr-only">（只在晚帖）</span></span>
+    </span></li><li class="drawer"><span class="d-card">
+      <span class="d-zh">玻尿酸鈉</span><span class="d-inci" lang="en">SODIUM HYALURONATE</span><span class="d-use">保濕劑</span>
+      <span class="d-mk"><span class="m am on" aria-hidden="true">早</span><span class="m pm on" aria-hidden="true">晚</span><span class="sr-only">（早帖、晚帖皆含）</span></span>
+    </span></li><li class="drawer"><span class="d-card">
+      <span class="d-zh">泛醇</span><span class="d-inci" lang="en">PANTHENOL</span><span class="d-use">保濕劑</span>
+      <span class="d-mk"><span class="m am on" aria-hidden="true">早</span><span class="m pm on" aria-hidden="true">晚</span><span class="sr-only">（早帖、晚帖皆含）</span></span>
+    </span></li><li class="drawer"><span class="d-card">
+      <span class="d-zh">神經醯胺 NP</span><span class="d-inci" lang="en">CERAMIDE NP</span><span class="d-use">皮膚調理劑</span>
+      <span class="d-mk"><span class="m am off" aria-hidden="true">早</span><span class="m pm on" aria-hidden="true">晚</span><span class="sr-only">（只在晚帖）</span></span>
+    </span></li><li class="drawer"><span class="d-card">
+      <span class="d-zh">薏仁萃取</span><span class="d-inci" lang="en">COIX LACRYMA-JOBI MA-YUEN SEED EXTRACT</span><span class="d-use">皮膚調理劑</span>
+      <span class="d-mk"><span class="m am on" aria-hidden="true">早</span><span class="m pm off" aria-hidden="true">晚</span><span class="sr-only">（只在早帖）</span></span>
+    </span></li><li class="drawer"><span class="d-card">
+      <span class="d-zh">綠茶萃取</span><span class="d-inci" lang="en">CAMELLIA SINENSIS LEAF EXTRACT</span><span class="d-use">皮膚調理劑</span>
+      <span class="d-mk"><span class="m am on" aria-hidden="true">早</span><span class="m pm off" aria-hidden="true">晚</span><span class="sr-only">（只在早帖）</span></span>
+    </span></li><li class="drawer"><span class="d-card">
+      <span class="d-zh">尿囊素</span><span class="d-inci" lang="en">ALLANTOIN</span><span class="d-use">皮膚調理劑</span>
+      <span class="d-mk"><span class="m am on" aria-hidden="true">早</span><span class="m pm on" aria-hidden="true">晚</span><span class="sr-only">（早帖、晚帖皆含）</span></span>
+    </span></li><li class="drawer"><span class="d-card">
+      <span class="d-zh">卡波姆</span><span class="d-inci" lang="en">CARBOMER</span><span class="d-use">增稠劑</span>
+      <span class="d-mk"><span class="m am on" aria-hidden="true">早</span><span class="m pm off" aria-hidden="true">晚</span><span class="sr-only">（只在早帖）</span></span>
+    </span></li><li class="drawer"><span class="d-card">
+      <span class="d-zh">精胺酸</span><span class="d-inci" lang="en">ARGININE</span><span class="d-use">pH 調整劑</span>
+      <span class="d-mk"><span class="m am on" aria-hidden="true">早</span><span class="m pm off" aria-hidden="true">晚</span><span class="sr-only">（只在早帖）</span></span>
+    </span></li><li class="drawer"><span class="d-card">
+      <span class="d-zh">苯氧乙醇</span><span class="d-inci" lang="en">PHENOXYETHANOL</span><span class="d-use">防腐劑</span>
+      <span class="d-mk"><span class="m am on" aria-hidden="true">早</span><span class="m pm on" aria-hidden="true">晚</span><span class="sr-only">（早帖、晚帖皆含）</span></span>
+    </span></li><li class="drawer"><span class="d-card">
+      <span class="d-zh">乙基己基甘油</span><span class="d-inci" lang="en">ETHYLHEXYLGLYCERIN</span><span class="d-use">保濕劑</span>
+      <span class="d-mk"><span class="m am on" aria-hidden="true">早</span><span class="m pm on" aria-hidden="true">晚</span><span class="sr-only">（早帖、晚帖皆含）</span></span>
+    </span></li><li class="drawer d-none"><span class="d-card"><span class="d-zh">未添加</span><span class="d-use">香料、色素、乙醇（酒精）</span></span></li></ul>
+    <div class="ing-notes micro">
+      <div><h3>【全成分・早帖】</h3><p>水、甘油、丁二醇、玻尿酸鈉、泛醇、薏仁萃取、綠茶萃取、尿囊素、卡波姆、精胺酸、苯氧乙醇、乙基己基甘油。</p></div>
+      <div><h3>【全成分・晚帖】</h3><p>水、甘油、丁二醇、角鯊烷、辛酸／癸酸三酸甘油酯、鯨蠟硬脂醇、硬脂酸甘油酯、玻尿酸鈉、泛醇、神經醯胺 NP、尿囊素、苯氧乙醇、乙基己基甘油。</p></div>
+      <div><h3>【酸鹼值・淨重】</h3><p>早帖 pH <span class="mono">5.5 ± 0.5</span>；晚帖 pH <span class="mono">6.0 ± 0.5</span>。每帖淨重 <span class="mono">2 mL</span>，約一元硬幣大小。</p></div>
+    </div>
+  </section>
+
+  <section id="caution" class="ifu-sec caution" aria-labelledby="caution-h">
+    <div class="cbox" data-frame>
+      <div class="chead"><svg class="tri" viewBox="0 0 30 27" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.83 2.53C15.06 2.94 15.71 4.15 16.19 4.98C16.67 5.82 17.19 6.68 17.71 7.54C18.23 8.4 18.78 9.29 19.31 10.15C19.83 11.01 20.35 11.89 20.85 12.72C21.36 13.56 21.82 14.37 22.31 15.17C22.8 15.97 23.3 16.72 23.79 17.51C24.28 18.29 24.78 19.06 25.27 19.87C25.75 20.68 26.23 21.52 26.69 22.38C27.16 23.24 28.32 24.56 28.05 25.02C27.78 25.48 26.05 25.13 25.07 25.16C24.09 25.19 23.12 25.19 22.16 25.19C21.2 25.2 20.27 25.18 19.32 25.17C18.38 25.17 17.45 25.15 16.5 25.15C15.56 25.14 14.6 25.15 13.64 25.13C12.68 25.12 11.72 25.1 10.76 25.07C9.8 25.04 8.84 24.99 7.88 24.96C6.92 24.93 5.97 24.9 4.99 24.9C4.02 24.9 2.32 25.33 2.04 24.94C1.76 24.55 2.89 23.34 3.33 22.54C3.77 21.73 4.19 20.93 4.66 20.11C5.12 19.29 5.62 18.45 6.12 17.61C6.62 16.77 7.15 15.92 7.67 15.07C8.18 14.23 8.71 13.37 9.21 12.54C9.71 11.7 10.19 10.86 10.66 10.04C11.14 9.21 11.59 8.4 12.06 7.58C12.52 6.77 12.98 5.98 13.44 5.14C13.9 4.3 14.6 2.97 14.83 2.53"/><path d="M14.98 9.95C14.97 10.54 14.92 12.29 14.9 13.46C14.88 14.63 14.87 16.38 14.87 16.96"/></g><circle cx="15" cy="20.8" r="1.5" fill="currentColor"/></svg><h2 id="caution-h">【注意事項】</h2><p>使用前請詳閱，並保留本說明書。</p></div>
+      <ol class="clist" role="list"><li><span class="cn">一、</span>本品為一般化粧品，僅供外用，請勿食用。</li><li><span class="cn">二、</span>使用後如有紅、腫、癢、刺痛等不適，請立即停用，並洽詢皮膚科醫師。</li><li><span class="cn">三、</span>請避免接觸眼睛；不慎進入眼睛時，請立即以大量清水沖洗。</li><li><span class="cn">四、</span>請勿用於傷口、濕疹或其他皮膚異常的部位。</li><li><span class="cn">五、</span>一帖為單次用量，撕開後請於當次用畢，勿留存再用。</li><li><span class="cn">六、</span>請置於孩童拿不到的地方。</li><li><span class="cn">七、</span>本品外觀仿照藥袋設計，但不是藥品，也不能代替醫師的診斷與處方。</li></ol>
+      <p class="sticker" style="--r:4.02deg"><b>外用</b><span>請勿食用</span></p>
+    </div>
+  </section>
+
+  <section id="suit" class="ifu-sec suit" aria-labelledby="suit-h">
+    <h2 id="suit-h" class="sec-h">【適用／先停一帖】</h2>
+    <div class="split">
+      <div class="yes"><h3><span class="mk-o" aria-hidden="true"></span>適合這樣的日子</h3><ul role="list"><li>在冷氣房待了一整天，臉摸起來緊緊的</li><li>換季那幾週，早晚溫差大到要多帶一件外套</li><li>戴了一整天口罩，下巴悶悶的</li><li>加班到很晚，只想要一個步驟就能睡</li><li>想替自己留一個固定的時間，好好照顧一下</li></ul></div>
+      <div class="no"><h3><span class="mk-x" aria-hidden="true"></span>先停一帖的時候</h3><ul role="list"><li>皮膚有傷口、正在脫皮，或曬傷發紅的當下</li><li>剛做完雷射、換膚等皮膚科療程——請先問過醫師</li><li>曾對成分表中任何一項成分感到不適</li><li>眼周、嘴唇等黏膜部位</li><li>帖子撕開超過一天，或已過保存期限</li></ul></div>
+    </div>
+  </section>
+
+  <section id="care" class="ifu-sec care" aria-labelledby="care-h">
+    <h2 id="care-h" class="sec-h">【保存・包裝・客服】</h2>
+    <div class="care-grid">
+      <div class="micro">
+        <h3>【保存】</h3><p>請放在陰涼乾燥處，避免陽光直射與高溫，例如夏天停在戶外的車內。未開封可保存三年，製造日期與保存期限印在藥袋正面。</p>
+        <h3>【包裝】</h3><p>每袋十四帖：早帖凝露 <span class="mono">2 mL × 7</span>、晚帖乳霜 <span class="mono">2 mL × 7</span>。外袋是未上膜的紙，可以回收；帖子是鋁箔複合膜，請依各地垃圾分類規定處理。</p>
+      </div>
+      <div class="micro">
+        <h3>【製造・販售】</h3><p>一日一帖保養所<br>臺中市中區綠川東街，舊藥局的騎樓下。<br>本品委託通過化粧品優良製造準則（GMP）之工廠製造。</p>
+        <h3>【客服】</h3><p>週二至週六 <span class="mono">10:00–18:00</span>，週一公休。<br>電話 <span class="mono">(04) 2225-0115</span>。對使用感有疑問時，請一併告知藥袋正面的 LOT 批號。</p>
+      </div>
+      <form class="bulk" id="bulk" action="#bulk" method="get" aria-labelledby="bulk-h">
+        <h3 id="bulk-h">團購與開立發票</h3>
+        <p class="bulk-lead">公司行號或工作室一起訂，可以開三聯式發票。留下聯絡方式，我們在兩個工作天內回覆。</p>
+        <div class="f-grid">
+          <div class="fld"><label for="f-name">稱呼</label><input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err"><p class="err" id="f-name-err" aria-live="polite"></p></div>
+          <div class="fld"><label for="f-contact">電話或 Email</label><input id="f-contact" name="contact" type="text" autocomplete="email" required aria-describedby="f-contact-err"><p class="err" id="f-contact-err" aria-live="polite"></p></div>
+          <div class="fld"><label for="f-ban">統一編號<small>（選填，8 碼）</small></label><input id="f-ban" name="ban" type="text" inputmode="numeric" maxlength="8" pattern="[0-9]{8}" title="統一編號是 8 碼數字" aria-describedby="f-ban-hint f-ban-err"><p class="hint" id="f-ban-hint">要開三聯式發票才需要填。</p><p class="err" id="f-ban-err" aria-live="polite"></p></div>
+          <div class="fld"><label for="f-qty">想訂幾袋</label><select id="f-qty" name="qty"><option>1 至 5 袋</option><option>6 至 20 袋</option><option>21 袋以上</option></select></div>
+          <div class="fld fld-wide"><label for="f-msg">想說的話<small>（選填）</small></label><textarea id="f-msg" name="msg" rows="3"></textarea></div>
+        </div>
+        <p class="f-act"><button type="submit">送出詢問</button><span class="f-done" role="status" data-done></span></p>
+      </form>
+    </div>
+  </section>
+</article>
+</main>
+
+<footer class="bag-back">
+  <div class="bb-mark"><svg class="mark big" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6.77 16.09C7.25 16.1 8.71 16.15 9.67 16.15C10.64 16.15 11.6 16.12 12.56 16.09C13.52 16.07 14.46 16.02 15.42 15.99C16.37 15.96 17.34 15.93 18.3 15.92C19.25 15.92 20.22 15.93 21.15 15.94C22.08 15.95 22.98 15.98 23.9 15.99C24.82 16.01 25.72 16.03 26.68 16.03C27.63 16.04 28.61 16.04 29.62 16.05C30.64 16.06 31.71 16.07 32.76 16.09C33.81 16.1 34.89 16.12 35.9 16.12C36.92 16.13 37.9 16.13 38.87 16.13C39.85 16.13 41.28 15.63 41.75 16.12C42.22 16.62 41.71 18.11 41.7 19.11C41.69 20.11 41.68 21.11 41.68 22.1C41.67 23.1 41.67 24.08 41.67 25.06C41.67 26.05 41.66 27.01 41.65 28C41.65 28.98 41.66 29.96 41.65 30.96C41.64 31.96 41.63 32.97 41.6 33.99C41.58 35 41.53 36.04 41.5 37.06C41.47 38.08 41.44 39.1 41.42 40.11C41.41 41.12 41.9 42.61 41.41 43.1C40.92 43.59 39.45 43.06 38.48 43.04C37.5 43.03 36.52 43 35.54 42.99C34.56 42.98 33.59 42.99 32.62 42.98C31.65 42.97 30.67 42.96 29.7 42.94C28.73 42.93 27.75 42.91 26.78 42.9C25.81 42.9 24.82 42.9 23.87 42.89C22.91 42.87 21.98 42.85 21.05 42.82C20.12 42.79 19.21 42.75 18.28 42.72C17.34 42.7 16.4 42.68 15.44 42.67C14.47 42.66 13.48 42.68 12.49 42.69C11.5 42.7 10.5 42.72 9.51 42.73C8.52 42.74 7.04 43.25 6.55 42.76C6.07 42.26 6.56 40.75 6.58 39.75C6.6 38.74 6.63 37.73 6.66 36.72C6.68 35.71 6.72 34.7 6.73 33.7C6.73 32.7 6.74 31.69 6.7 30.72C6.66 29.75 6.57 28.82 6.5 27.87C6.43 26.92 6.33 26 6.28 25.03C6.24 24.06 6.23 23.08 6.23 22.06C6.22 21.05 6.15 19.92 6.24 18.93C6.33 17.93 6.68 16.56 6.77 16.09" class="mk-b"/><path d="M6.64 15.7C6.99 16.01 8.05 16.94 8.77 17.55C9.48 18.17 10.2 18.78 10.93 19.38C11.66 19.99 12.41 20.58 13.16 21.18C13.91 21.78 14.68 22.37 15.43 22.96C16.19 23.56 16.95 24.15 17.67 24.76C18.4 25.37 19.1 25.99 19.78 26.63C20.45 27.28 21.08 27.96 21.74 28.61C22.4 29.27 23.05 30.54 23.74 30.56C24.44 30.58 25.19 29.36 25.92 28.72C26.65 28.09 27.39 27.41 28.12 26.75C28.86 26.09 29.6 25.41 30.33 24.77C31.07 24.14 31.78 23.52 32.55 22.95C33.31 22.38 34.13 21.89 34.93 21.37C35.73 20.86 36.57 20.39 37.36 19.85C38.14 19.31 38.9 18.76 39.63 18.14C40.36 17.53 41.4 16.51 41.75 16.18" class="mk-f"/><path d="M23.8 12.33C23.8 12.83 23.79 14.35 23.79 15.36C23.78 16.37 23.77 17.37 23.77 18.39C23.77 19.4 23.74 20.41 23.76 21.43C23.78 22.44 23.83 23.46 23.89 24.48C23.95 25.5 24.05 26.52 24.11 27.53C24.17 28.55 24.23 29.56 24.24 30.59C24.25 31.61 24.21 32.63 24.17 33.67C24.13 34.7 24.04 35.75 23.99 36.79C23.94 37.83 23.87 38.86 23.85 39.89C23.82 40.93 23.85 42.46 23.85 42.98"/><path d="M6.54 34.55C7.02 34.56 8.5 34.58 9.47 34.57C10.44 34.56 11.39 34.51 12.35 34.48C13.31 34.44 14.26 34.39 15.22 34.36C16.18 34.34 17.15 34.32 18.12 34.32C19.09 34.31 20.06 34.33 21.03 34.33C22 34.34 22.98 34.35 23.95 34.36C24.92 34.36 25.89 34.36 26.86 34.37C27.84 34.38 28.82 34.4 29.8 34.43C30.78 34.47 31.77 34.54 32.76 34.58C33.74 34.62 34.73 34.68 35.71 34.69C36.68 34.71 37.65 34.69 38.62 34.67C39.58 34.65 41.02 34.57 41.5 34.56"/><path d="M23.94 12.46C23.65 12.12 22.73 10.99 22.17 10.4C21.61 9.81 21.07 9.33 20.58 8.92C20.09 8.52 19.65 8.2 19.24 7.96C18.84 7.72 18.48 7.57 18.16 7.48C17.84 7.4 17.54 7.4 17.31 7.45C17.08 7.51 16.89 7.64 16.79 7.8C16.68 7.96 16.64 8.18 16.68 8.42C16.72 8.65 16.84 8.92 17.03 9.2C17.22 9.48 17.48 9.79 17.84 10.1C18.2 10.4 18.62 10.74 19.18 11.04C19.73 11.35 20.38 11.66 21.18 11.92C21.97 12.19 23.49 12.51 23.96 12.62"/><path d="M23.94 12.54C24.22 12.19 25.08 11.05 25.61 10.46C26.15 9.88 26.67 9.43 27.16 9.04C27.66 8.65 28.14 8.36 28.57 8.11C28.99 7.87 29.39 7.69 29.73 7.57C30.07 7.46 30.37 7.41 30.6 7.43C30.83 7.45 31.02 7.56 31.13 7.71C31.25 7.86 31.32 8.1 31.3 8.34C31.28 8.58 31.2 8.88 31.01 9.17C30.83 9.46 30.56 9.79 30.18 10.08C29.8 10.38 29.32 10.67 28.73 10.95C28.13 11.22 27.42 11.48 26.6 11.72C25.78 11.96 24.27 12.28 23.8 12.39"/></g></svg><p class="bb-name">一日一帖<small>保養所</small></p></div>
+  <p class="bb-say">我們借了藥袋的樣子，好讓保養變成每天按時做的一件小事；袋子裡裝的是保養品，不是藥。</p>
+  <dl class="bb-info">
+    <div><dt>門市</dt><dd>臺中市中區綠川東街，舊藥局騎樓下</dd></div>
+    <div><dt>時間</dt><dd>週二至週六 <span class="mono">10:00–18:00</span></dd></div>
+    <div><dt>批號查詢</dt><dd>把藥袋上的 LOT 號碼告訴客服，可查到這一批的製造與出貨紀錄</dd></div>
+  </dl>
+  <p class="bb-end"><a href="#main">回到藥袋正面</a><span>© 一日一帖保養所</span></p>
+</footer>
+<script>
+
+(function(){
+  var d = document, rm = matchMedia('(prefers-reduced-motion: reduce)').matches, now = new Date();
+  var mins = now.getHours() * 60 + now.getMinutes();
+  var p2 = function(n){ return (n < 10 ? '0' : '') + n; };
+  var dur = function(m){ var h = Math.floor(m / 60), r = m % 60; return '<span class="nb">' + (h ? h + ' 小時' : '') + (h && r ? ' ' : '') + (r ? r + ' 分鐘' : '') + '</span>'; };
+  /* 1 服用時間鐘面：指針轉到此刻 */
+  var dial = d.querySelector('[data-dial]'), out = d.querySelector('[data-now]');
+  if (dial) {
+    dial.style.setProperty('--deg', (mins / 1440 * 360).toFixed(2) + 'deg');
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ dial.setAttribute('data-go', ''); }); });
+    var t = '<b>' + p2(now.getHours()) + ':' + p2(now.getMinutes()) + '</b>　', s;
+    if (mins >= 360 && mins < 540) s = '正是早帖時間：洗完臉，撕一帖。';
+    else if (mins >= 1260) s = '正是晚帖時間：卸完妝，撕一帖。';
+    else if (mins < 360) s = '夜深了。早帖在 ' + dur(360 - mins) + '後。';
+    else s = '離晚帖還有 ' + dur(1260 - mins) + '。';
+    if (out) out.innerHTML = '現在 ' + t + s;
+  }
+  /* 2 七日帖子格：標出今天這一帖 */
+  var wd = (now.getDay() + 6) % 7, slot = mins < 900 ? 'am' : 'pm';
+  var cell = d.querySelector('.blister tr.' + slot + ' td:nth-of-type(' + (wd + 1) + ') .pk');
+  if (cell) { cell.classList.add('now'); var tag = d.createElement('span'); tag.className = 'now-tag'; tag.textContent = '現在這一帖'; cell.appendChild(tag); }
+  /* 3 注意事項粗框：進入視窗時描一次 */
+  var box = d.querySelector('[data-frame]');
+  if (box) {
+    if (rm || !('IntersectionObserver' in window)) box.classList.add('drawn');
+    else { var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { box.classList.add('drawn'); io.disconnect(); } }); }, { threshold: 0.35 }); io.observe(box); }
+  }
+  /* 4 團購表單：統一編號檢查碼（財政部 2023 新制：加權和可被 5 整除） */
+  var f = d.getElementById('bulk');
+  if (!f) return;
+  f.noValidate = true;
+  var ban = function(v){ var w = [1,2,1,2,1,2,4,1], s = 0; for (var i = 0; i < 8; i++) { var p = +v[i] * w[i]; s += Math.floor(p / 10) + p % 10; } return s % 5 === 0 || (v[6] === '7' && (s + 1) % 5 === 0); };
+  var rules = {
+    'f-name': function(v){ return v.trim() ? '' : '請留個稱呼，回電時才知道要找誰。'; },
+    'f-contact': function(v){ v = v.trim(); if (!v) return '請留下電話或 Email，其中一種就好。'; return (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v) || /^[0-9()+#\-\s]{8,}$/.test(v)) ? '' : '這看起來不像電話或 Email，麻煩再確認一下。'; },
+    'f-ban': function(v){ v = v.trim(); if (!v) return ''; if (!/^[0-9]+$/.test(v)) return '統一編號只會有數字，請拿掉空格或符號。'; if (v.length !== 8) return '統一編號是 8 碼，目前是 ' + v.length + ' 碼。'; return ban(v) ? '' : '這組統一編號的檢查碼對不起來，請對照公司登記資料再確認一次。'; }
+  };
+  var check = function(id){ var el = d.getElementById(id), m = rules[id](el.value), e = d.getElementById(id + '-err'); e.textContent = m; if (m) el.setAttribute('aria-invalid', 'true'); else el.removeAttribute('aria-invalid'); return !m; };
+  /* 離開欄位就檢查；但若焦點是移到「送出」，交給 submit 一次檢查，避免錯誤訊息把按鈕擠走、點擊落空 */
+  Object.keys(rules).forEach(function(id){ d.getElementById(id).addEventListener('blur', function(e){ if (this.value && !(e.relatedTarget && e.relatedTarget.type === 'submit')) check(id); }); });
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault(); var bad = null;
+    Object.keys(rules).forEach(function(id){ if (!check(id) && !bad) bad = id; });
+    var done = f.querySelector('[data-done]');
+    if (bad) { d.getElementById(bad).focus(); done.textContent = ''; return; }
+    done.textContent = '收到了。我們會在兩個工作天內回覆；開三聯式發票的話，抬頭以統編登記的名稱為準。';
+    f.reset();
+  });
+})();
+
+</script>
+</body>
+</html>

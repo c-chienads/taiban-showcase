@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F22" data-slug="six-oclock">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>六點鐘運動教室｜台中西區皮拉提斯・瑜珈：週課表與預約</title>
+<meta name="description" content="台中西區晨昏街的皮拉提斯與瑜珈教室。早上六點第一堂，晚上六點下班直接來。晨間活動度、墊上皮拉提斯、器械核心床、流動瑜珈、陰瑜珈，一週的課表、教練口令、課卡與第一次上課須知。">
+
+<meta name="generator" content="套版網站平台 F22">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preload" href="fonts/01-lxgw-marker-gothic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/02-noto-sans-tc.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"LXGW Marker Gothic";src:url("fonts/01-lxgw-marker-gothic.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans TC";src:url("fonts/02-noto-sans-tc.woff2") format("woff2");font-weight:400 500;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root{
+  --tang:oklch(0.71 0.165 55);--tang-hi:oklch(0.79 0.13 66);--tang-lo:oklch(0.66 0.17 50);
+  --ink:oklch(0.22 0.035 40);--cream:oklch(0.965 0.028 82);
+  --night:oklch(0.29 0.075 272);--night-d:oklch(0.235 0.055 270);
+  --d1:oklch(0.63 0.165 44);--d2:oklch(0.54 0.15 30);--d3:oklch(0.45 0.12 14);--d4:oklch(0.365 0.08 300);
+  --mk:"LXGW Marker Gothic","Noto Sans TC",sans-serif;
+  --sans:"Noto Sans TC",sans-serif;
+  --pad:clamp(16px,2.8vw,40px);
+  --lab:64px;--sc:2.4;
+  --focus-ring:3px dashed var(--ink);--focus-offset:3px;
+  --selection-bg:var(--night);--selection-fg:var(--cream);
+}
+html{background:var(--tang)}
+body{font:400 16px/1.75 var(--sans);color:var(--ink);background:var(--tang)}
+a{color:inherit;text-decoration-thickness:1.5px;text-underline-offset:.26em}
+button{font:inherit;color:inherit}
+.mkn{font-family:var(--mk);font-variant-numeric:normal;letter-spacing:.01em}
+h1,h2,h3{text-wrap:balance;font-weight:400}
+
+/* ---------- 字標列 ---------- */
+.bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 28px;padding:14px var(--pad) 4px}
+.mark{display:inline-flex;align-items:center;gap:10px;font:400 26px/1 var(--mk);text-decoration:none;letter-spacing:.02em}
+.mark svg{width:38px;height:38px;overflow:visible}
+.wm-c{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.wm-h{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round}
+.wm-d{fill:var(--cream);stroke:currentColor;stroke-width:1.6}
+.nav ul{display:flex;flex-wrap:wrap;align-items:center;gap:4px 22px;margin:0;padding:0;list-style:none}
+.nav a{font:500 15px/2 var(--sans);text-decoration:none;letter-spacing:.06em}
+.nav a:hover{text-decoration:underline}
+.nav .go{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 16px 0 18px;background:var(--ink);color:var(--cream);border-radius:999px}
+.nav .go:hover{text-decoration:none;background:var(--night)}
+.nav .go .mkn{font-size:21px;line-height:1}
+
+/* ---------- 工具首屏 ---------- */
+.tool{padding:0 var(--pad)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:14px 40px;padding:16px 0 6px}
+.h1{margin:0;font:400 clamp(40px,5.8vw,84px)/1.04 var(--mk);letter-spacing:.005em}
+.sub{margin:10px 0 0;font:400 14px/1.6 var(--sans);letter-spacing:.04em}
+.sub .now-static{margin-left:.6em}
+.js .now-static{display:none}
+
+/* 姿勢篩選（膠囊＋小剪影） */
+.flt{display:flex;gap:6px;margin:0;padding:0;border:0}
+.chip{position:relative;display:grid;justify-items:center;align-content:end;gap:2px;width:58px;min-height:70px;padding:6px 2px 8px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--ink);cursor:pointer;font:500 13px/1.2 var(--sans);letter-spacing:.04em}
+.chip input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;border-radius:999px}
+.chip .cfig{width:44px;height:30px;overflow:visible}
+.chip .call{width:34px;height:30px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+.chip .call .fl{fill:currentColor;stroke:none}.chip .call .ink-x{display:none}.chip .call .dt{stroke-width:3px!important}.chip .call .w3,.chip .call .w2{stroke-width:1.6px}.chip .call .w1,.chip .call .w0{stroke-width:1.1px}
+.chip .call *{vector-effect:non-scaling-stroke}
+.chip .fg-near path,.chip .fg-near circle{fill:var(--ink)}
+.chip .fg-far path{fill:color-mix(in oklch,var(--ink) 55%,var(--tang))}
+.chip .fg-j,.chip .fg-ground{display:none}
+.chip:has(:checked){background:var(--ink);color:var(--cream);box-shadow:none}
+.chip:has(:checked) .fg-near path,.chip:has(:checked) .fg-near circle{fill:var(--cream)}
+.chip:has(:checked) .fg-far path{fill:color-mix(in oklch,var(--cream) 55%,var(--ink))}
+.chip:has(:focus-visible){outline:var(--focus-ring);outline-offset:3px}
+.chip:hover{box-shadow:inset 0 0 0 2.5px var(--ink)}
+
+/* 舞台：剪影站在時間軸上 */
+.stage{position:relative;height:292px;margin-top:4px}
+.st-band,.band{position:absolute;top:0;bottom:0;left:calc(var(--lab) + (100% - var(--lab)) * 0.6875);right:0;display:grid;grid-template-columns:repeat(4,calc(100% * 15 / 300)) minmax(0,1fr);pointer-events:none}
+.st-band i:nth-child(1),.band i:nth-child(1){background:var(--d1)}
+.st-band i:nth-child(2),.band i:nth-child(2){background:var(--d2)}
+.st-band i:nth-child(3),.band i:nth-child(3){background:var(--d3)}
+.st-band i:nth-child(4),.band i:nth-child(4){background:var(--d4)}
+.st-band b,.band b{background:var(--night)}
+.st-band{border-radius:100% 0 0 0 / 78% 0 0 0;overflow:hidden}
+.st-band b{border-radius:0}
+.st-eve{position:absolute;z-index:2;top:118px;left:calc(var(--lab) + (100% - var(--lab)) * 0.75 + 8px);margin:0;padding:2px 8px;border-radius:999px;background:var(--night);color:var(--cream);font:400 22px/1.2 var(--mk);letter-spacing:.06em;pointer-events:none}
+.st-fig{position:absolute;bottom:0;left:var(--fx);translate:-50% 0;z-index:2;color:var(--ink);transition:left .7s cubic-bezier(.6,0,.25,1)}
+.st-fig{width:max-content}
+.st-fig svg{display:block;width:calc(var(--bw) * var(--sc) * 1px);height:calc(var(--bh) * var(--sc) * 1px);max-width:none;overflow:visible}
+.fig .fg-near path,.fig .fg-near circle{fill:currentColor}
+.fig .fg-far path{fill:color-mix(in oklch,currentColor 52%,var(--fld,var(--tang)))}
+.fig .fg-j circle{fill:var(--fld,var(--tang))}
+.fig .fg-ground{display:none}
+.fig .fg-gh path{fill:none;stroke:currentColor;stroke-width:.55;stroke-linejoin:round}
+.fig .fg-gh .g0{opacity:.42}.fig .fg-gh .g1{opacity:.5}.fig .fg-gh .g2{opacity:.6}.fig .fg-gh .g3{opacity:.72}
+.fig .fg-tr path{fill:none;stroke:currentColor;stroke-width:1.15;stroke-linecap:round;stroke-dasharray:0 2.6}
+.fig .mk circle{fill:var(--fld,var(--tang));stroke:currentColor;stroke-width:.8}
+.fig .ld{fill:none;stroke:currentColor;stroke-width:.4}
+.js .st-fig .fg-gh path,.js .st-fig .fg-tr{transition:opacity .35s}
+.js .st-fig[data-k="0"] .fg-gh path,.js .st-fig[data-k="1"] .fg-gh path:not(.g0),.js .st-fig[data-k="2"] .fg-gh :is(.g2,.g3),.js .st-fig[data-k="3"] .fg-gh .g3{opacity:0}
+.js .st-fig:not([data-k="4"]) .fg-tr{opacity:0}
+.st-fig.eve{color:var(--cream);--fld:var(--night)}
+.st-cap{position:absolute;bottom:10px;left:var(--cx);width:320px;z-index:3;transition:left .7s cubic-bezier(.6,0,.25,1)}
+.cp-when{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;margin:0;font:500 15px/1.4 var(--sans)}
+.cp-tag{display:inline-block;padding:1px 10px 0;border-radius:999px;background:var(--ink);color:var(--cream);font:500 13px/1.6 var(--sans);letter-spacing:.06em}
+.cp-tag:empty{display:none}
+.cp-when .pk-d{font-weight:500;letter-spacing:.06em}
+.cp-when .pk-dt{font:400 16px/1 var(--mk)}
+.cp-when .pk-t{font:400 22px/1 var(--mk)}
+.face{display:grid;gap:4px;margin-top:4px}
+.face h2{margin:0;font:400 40px/1.1 var(--mk);letter-spacing:.01em}
+.face .pk-co{margin:0;font:500 14.5px/1.5 var(--sans)}
+.face .pk-cue{margin:2px 0 0;font:500 16px/1.6 var(--sans)}
+.pk-act{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:8px}
+.add{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border:0;border-radius:999px 999px 999px 999px;background:var(--ink);color:var(--cream);font:500 16px/1 var(--sans);letter-spacing:.08em;cursor:pointer}
+.add:hover{background:var(--night)}
+.add[aria-pressed="true"]{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.add .a-on,.add[aria-pressed="true"] .a-off{display:none}
+.add[aria-pressed="true"] .a-on{display:inline}
+html:not(.js) .add{display:none}
+.pk-act a{font:500 15px/1.4 var(--sans)}
+.st-now{position:absolute;top:0;bottom:0;left:calc(var(--lab) + (100% - var(--lab)) * var(--nf,0));width:0;border-left:2px solid var(--ink);z-index:1;pointer-events:none}
+.st-now.eve{border-left-color:var(--cream)}
+.np{position:absolute;top:0;left:0;translate:-50% 0;display:inline-flex;align-items:baseline;gap:6px;padding:2px 12px 1px;border-radius:999px;background:var(--ink);color:var(--cream);font:500 13px/1.7 var(--sans);white-space:nowrap;letter-spacing:.06em}
+.st-now.eve .np{background:var(--cream);color:var(--ink)}
+.st-now.np-r .np{translate:calc(-100% + 1px) 0}
+.st-now.np-l .np{translate:-1px 0}
+.np time{font:400 17px/1 var(--mk)}
+
+/* 時間軸＋七條日線 */
+.tl-sc{position:relative;scrollbar-color:var(--ink) transparent}
+.tl{position:relative;padding-bottom:6px}
+.band{top:0;bottom:6px}
+.axis{position:relative;height:26px;margin-left:var(--lab);border-top:2px solid var(--ink)}
+.axis span{position:absolute;top:3px;left:calc(var(--h) / 16 * 100%);translate:-50% 0;font:400 15px/1 var(--mk);white-space:nowrap}
+.axis span.ev{color:var(--cream)}
+.axis span:first-child{translate:0 0}.axis span:last-child{translate:-100% 0}
+.days{position:relative;margin:0;padding:0;list-style:none}
+.day{display:grid;grid-template-columns:var(--lab) minmax(0,1fr);height:46px}
+.dn{align-self:center;margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:3px;font:400 17px/1 var(--mk);letter-spacing:.02em;white-space:nowrap}
+.dn .dd{font-size:13px}
+.day.today .dn .dn-w{padding:3px 8px 1px;margin:-3px 0 0 -8px;border-radius:999px;background:var(--ink);color:var(--cream)}
+.row{position:relative;margin:0;padding:0;list-style:none;
+  background:radial-gradient(circle,oklch(0.22 0.035 40 / .45) 1px,transparent 1.4px) 0 calc(100% - 11px)/calc(100% / 32) 3px repeat-x}
+.blk{--halo:var(--tang);position:absolute;z-index:1;bottom:4px;height:40px;left:calc(var(--st) / 960 * 100%);width:calc(var(--du) / 960 * 100%);display:flex;flex-direction:column;justify-content:flex-end;gap:4px;min-width:0;padding:0;border:0;border-radius:3px;background:none;text-align:start;cursor:pointer;overflow:visible}
+.blk.eve{--halo:var(--night);color:var(--cream)}
+.b-l{display:inline-flex;align-items:baseline;gap:4px;width:max-content;white-space:nowrap;border-radius:999px;text-shadow:1.5px 0 var(--halo),-1.5px 0 var(--halo),0 1.5px var(--halo),0 -1.5px var(--halo),1px 1px var(--halo),-1px -1px var(--halo),1px -1px var(--halo),-1px 1px var(--halo);font:500 14px/1.15 var(--sans);letter-spacing:.02em}
+.b-t{font:400 16px/1 var(--mk)}
+.b-ok{display:none;width:12px;height:12px;align-self:center;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.blk.booked .b-ok{display:block}
+.b-m{display:block;width:100%;height:12px;overflow:visible;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+.b-m *,.len *{vector-effect:non-scaling-stroke}
+.m-wake .w2{stroke-width:2px}.m-wake .w1{stroke-width:1.7px}
+.m-mat .fl{fill:currentColor;stroke:none}.m-mat .ink-x{stroke:var(--tang);stroke-width:1.4px}
+.blk.eve .m-mat .ink-x{stroke:var(--night)}
+.m-reformer .w1{stroke-width:1.6px}
+.m-flow .w3{stroke-width:2.6px}
+.m-yin .w0{stroke-width:1px;opacity:.55}.m-yin .dt{stroke-width:5px}
+.blk:hover .b-l{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:.22em}
+.blk[aria-pressed="true"]{z-index:2}
+.day.today .dn .dn-w,.blk .b-l{position:relative}
+.blk[aria-pressed="true"] .b-l{background:var(--ink);color:var(--cream);box-shadow:0 0 0 3px var(--ink);text-shadow:none}
+.blk.eve[aria-pressed="true"] .b-l{background:var(--cream);color:var(--ink);box-shadow:0 0 0 3px var(--cream);text-shadow:none}
+.blk[aria-pressed="true"] .b-m{stroke-width:1.25;transform:scaleY(1.25)}
+.blk:focus-visible{z-index:3;outline:3px dashed currentColor;outline-offset:3px}
+.tool:has(.flt input:not([value="all"]):checked) .blk .b-l{visibility:hidden}
+.tool:has(.flt input:not([value="all"]):checked) .blk .b-m{opacity:.22}
+.tool:has(#f-wake:checked) .blk.t-wake :is(.b-l,.b-m),.tool:has(#f-mat:checked) .blk.t-mat :is(.b-l,.b-m),.tool:has(#f-reformer:checked) .blk.t-reformer :is(.b-l,.b-m),.tool:has(#f-flow:checked) .blk.t-flow :is(.b-l,.b-m),.tool:has(#f-yin:checked) .blk.t-yin :is(.b-l,.b-m){visibility:visible;opacity:1}
+.nowp{position:absolute;top:0;bottom:6px;left:calc(var(--lab) + (100% - var(--lab)) * var(--nf,0));width:0;border-left:2px solid var(--ink);z-index:0;pointer-events:none}
+.nowp.eve{border-left-color:var(--cream)}
+.tl-foot{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 26px;padding:6px 0 0 var(--lab)}
+.hint{margin:0;font:400 15px/1.5 var(--mk);letter-spacing:.04em}
+.keys{margin:0;display:flex;flex-wrap:wrap;gap:2px 20px;font:400 14px/1.7 var(--mk);letter-spacing:.04em}
+.keys kbd{font:inherit;padding:0 7px 0;margin-right:6px;border-radius:3px;box-shadow:inset 0 0 0 1.5px var(--ink)}
+@media (pointer:coarse){.keys{display:none}}
+.jump-l{align-self:center;font:400 16px/1 var(--mk);letter-spacing:.04em}
+.jump{display:none}
+
+/* ---------- 預約列 ---------- */
+.tray{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 40px;margin:26px 0 0;padding:26px 0 54px;border-top:2px solid var(--ink)}
+.tr-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 22px}
+.tr-head h2{margin:0;font:400 clamp(30px,3vw,44px)/1.15 var(--mk)}
+.tr-sum{margin:0;font:500 16px/1.4 var(--sans)}
+.tr-sum b{font:400 34px/1 var(--mk);margin:0 4px;font-weight:400}
+.meter{grid-column:1/-1;position:relative;height:30px;margin:6px 0 0}
+.meter .seg-w{display:flex;align-items:center;gap:6px;height:100%}
+.meter .seg{flex:none;width:calc(var(--du) / var(--cap) * 100%);height:12px;transition:width .3s ease-out}
+.meter .seg .b-m{height:12px}
+.meter .empty-line{position:absolute;left:0;right:0;top:50%;height:0;border-top:2px dashed color-mix(in oklch,var(--ink) 55%,var(--tang))}
+.meter:has(.seg) .empty-line{display:none}
+.meter-ax{grid-column:1/-1;display:flex;justify-content:space-between;margin:0;font:400 14px/1.3 var(--mk)}
+.tr-empty{grid-column:1/-1;margin:6px 0 0;font:400 15.5px/1.7 var(--sans)}
+.tr-list{grid-column:1/-1;margin:8px 0 0;padding:0;list-style:none;display:grid;gap:2px}
+.ti{display:grid;grid-template-columns:72px auto auto minmax(0,1fr) auto;align-items:center;gap:6px 16px;padding:6px 0;font:400 15.5px/1.5 var(--sans)}
+.ti .ti-m .b-m{height:12px}
+.ti .ti-d{font-weight:500}
+.ti .ti-t{font:400 19px/1 var(--mk)}
+.ti .ti-x{min-height:36px;padding:0 14px;border:0;border-radius:999px;box-shadow:inset 0 0 0 1.5px currentColor;background:transparent;font:500 14px/1 var(--sans);cursor:pointer}
+.ti .ti-x:hover{background:var(--ink);color:var(--cream)}
+.tr-form{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 20px;margin-top:12px}
+.tr-form label.fl{display:grid;gap:2px;font:500 14.5px/1.4 var(--sans);letter-spacing:.06em}
+.tr-form input[type=text],.tr-form input[type=tel]{width:min(100%,15em);min-height:46px;padding:0 14px;border:1.5px solid var(--ink);border-radius:999px;background:var(--tang-hi);color:var(--ink);font:400 17px/1 var(--sans)}
+.tr-form input::placeholder{color:oklch(0.38 0.05 50)}
+.tr-form .ck{display:flex;align-items:center;gap:10px;min-height:46px;font:500 15.5px/1.4 var(--sans);cursor:pointer}
+.tr-form .ck input{width:22px;height:22px;margin:0;accent-color:var(--ink)}
+.tr-form .err{flex:1 1 100%;margin:0;font:500 14.5px/1.5 var(--sans)}
+.tr-form .err::before{content:"";display:inline-block;width:.6em;height:.6em;margin-right:.5em;border-radius:50%;background:var(--ink);vertical-align:.06em}
+.tr-form .gen{min-height:48px;padding:0 26px;border:0;border-radius:999px;background:var(--ink);color:var(--cream);font:500 16.5px/1 var(--sans);letter-spacing:.1em;cursor:pointer}
+.tr-form .gen:hover{background:var(--night)}
+html:not(.js) .tr-form,html:not(.js) .tr-empty{display:none}
+.js .tr-nojs{display:none}
+.tr-nojs{grid-column:1/-1;margin:0}
+.tr-out{grid-column:1/-1;margin-top:14px;padding:16px 20px;border-radius:22px 22px 22px 4px;background:var(--cream);color:var(--ink)}
+.msg{font:400 15.5px/1.75 var(--sans)}
+.tr-out .copy{margin-top:10px;min-height:42px;padding:0 18px;border:0;border-radius:999px;box-shadow:inset 0 0 0 1.5px currentColor;background:transparent;font:500 14.5px/1 var(--sans);cursor:pointer;letter-spacing:.06em}
+.tr-out .copy:hover{background:var(--ink);color:var(--cream)}
+.copied{margin-left:10px;font:500 14.5px/1.4 var(--sans)}
+.tr-note{grid-column:1/-1;margin:12px 0 0;max-width:46em;font:400 14.5px/1.65 var(--sans)}
+
+/* ---------- 章節：由晨到夜的明度階梯，頂邊是一道弧 ---------- */
+.chapters{position:relative}
+.ch{--fld:var(--tang);position:relative;margin-top:calc(var(--arc) * -1);padding:calc(var(--arc) + clamp(28px,3.4vw,52px)) var(--pad) calc(var(--arcn,0px) + clamp(40px,4.4vw,64px));min-height:calc(var(--dur) * 5px + 220px);background:var(--fld);color:var(--on);border-radius:50% 50% 0 0 / var(--arc) var(--arc) 0 0;display:grid;gap:18px 40px;align-content:start}
+.ch-wake{--fld:oklch(0.93 0.075 95);--on:var(--ink);--arc:46px;--arcn:58px}
+.ch-mat{--fld:oklch(0.845 0.095 72);--on:var(--ink);--arc:58px;--arcn:70px}
+.ch-reformer{--fld:oklch(0.52 0.155 34);--on:var(--cream);--arc:70px;--arcn:84px}
+.ch-flow{--fld:oklch(0.395 0.115 10);--on:var(--cream);--arc:84px;--arcn:100px}
+.ch-yin{--fld:var(--night);--on:var(--cream);--arc:100px}
+.ch-h{display:grid;gap:10px;align-content:start}
+.ch h2{margin:0;font:400 clamp(44px,5.6vw,84px)/1.04 var(--mk);letter-spacing:.005em}
+.ch-len{display:flex;align-items:center;gap:14px;margin:0;font:500 15px/1 var(--sans)}
+.ch-len .len{flex:none;width:min(100% - 7.5em,calc(var(--dur) / 90 * 600px));height:16px;overflow:visible;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+.ch-len>span{flex:none;white-space:nowrap}
+.ch-len b{font:400 30px/1 var(--mk);margin-right:3px}
+.len.m-mat .ink-x{stroke:var(--fld)}
+.ch-lead{margin:0;max-width:30em;font:400 17px/1.8 var(--sans)}
+.fx{margin:0;align-self:start}
+.fx-in{position:relative}
+.fx-art svg{display:block;width:100%;height:auto;overflow:visible}
+.ch .fig{color:var(--on)}
+.fx-marks{margin:0;padding:0;list-style:none}
+.fx-marks li{display:flex;align-items:baseline;gap:10px;font:500 15.5px/1.5 var(--sans)}
+.fx-marks b{flex:none;font:400 26px/1 var(--mk);min-width:1.1em;padding-bottom:3px;box-shadow:inset 0 -2px 0 currentColor}
+.ch-cue{display:grid;gap:14px;align-content:start}
+.cue{margin:0;font:400 clamp(22px,2vw,30px)/1.4 var(--mk);max-width:20em}
+.bt{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));column-gap:0;row-gap:6px;margin:0}
+.bt .tk{grid-row:2;grid-column:var(--i);padding:2px 0 0 4px;font:400 14px/1.3 var(--mk);box-shadow:inset 1px 0 0 color-mix(in oklch,var(--on) 50%,transparent)}
+.bt .tk.on{box-shadow:inset 2px 0 0 var(--on)}
+.bt-l{display:contents}
+.bt-l li{grid-row:1;grid-column:var(--r) / span var(--s);display:flex;flex-direction:column;justify-content:flex-end;gap:8px;min-width:0;padding:0 3px 0 0}
+.bt-l li::after{content:"";display:block;height:10px;background:var(--on);border-radius:999px 2px 2px 999px}
+.bt-t{padding-right:8px;font:500 15.5px/1.45 var(--sans)}
+.fit{display:flex;flex-wrap:wrap;gap:8px 34px;margin:0;font:400 15.5px/1.65 var(--sans)}
+.fit>div{min-width:12em;max-width:22em}
+.fit h3{margin:0 0 2px;font:400 20px/1.3 var(--mk);letter-spacing:.04em}
+.fit ul{margin:0;padding:0;list-style:none}
+.fit li::before{content:"";display:inline-block;width:.9em;height:2px;margin-right:.55em;background:currentColor;vertical-align:.3em}
+.fit .swap p{margin:0}
+.slots{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:0;font:500 14.5px/1.4 var(--sans)}
+.slots .sl-h{margin-right:4px;font:400 18px/1 var(--mk)}
+.slots a{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 13px;border-radius:999px;box-shadow:inset 0 0 0 1.5px currentColor;text-decoration:none}
+.slots a:hover{background:var(--on);color:var(--fld)}
+.slots a .mkn{font-size:17px}
+.ch :focus-visible{outline-color:var(--on)}
+
+/* 各章版面（桌機） */
+.ch-wake{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.05fr);grid-template-areas:"h h fx" "lead cue fx" "fit fit fx" "sl sl sl"}
+.ch-mat{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-areas:"h h lead" "fx fx fx" "cue cue fit" "sl sl sl"}
+.ch-reformer{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);grid-template-areas:"fx h" "fx lead" "cue cue" "fit sl"}
+.ch-flow{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);grid-template-areas:"h fx" "lead fx" "fit fx" "cue cue" "sl sl"}
+.ch-yin{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);grid-template-areas:". . h" ". . lead" "fx fx fx" "cue cue fit" "sl sl sl";row-gap:22px}
+.ch-reformer{padding-top:calc(var(--arc) + clamp(48px,5vw,76px))}
+.ch-mat{padding-top:calc(var(--arc) + clamp(64px,9vw,130px))}
+.ch-h{grid-area:h}.ch-lead{grid-area:lead}.fx{grid-area:fx}.ch-cue{grid-area:cue}.fit{grid-area:fit}.slots{grid-area:sl}
+.ch-wake .fx{align-self:center}
+.ch-yin .ch-h,.ch-yin .ch-lead{text-align:start}
+.ch-yin h2{font-size:clamp(34px,3.4vw,52px)}
+.ch-yin .fx{margin-top:clamp(8px,1.6vw,24px)}
+@media (min-width:900px){
+  .fx-in{padding:0 12.5em}
+  .fx-marks li{position:absolute;top:var(--y);width:12em;translate:0 -50%}
+  .fx-marks li.l{left:0;flex-direction:row-reverse;text-align:end}
+  .fx-marks li.r{right:0}
+  .ch-wake .fx-in{padding:0 12.5em 0 0}
+  .ch-mat .fx{width:min(100%,calc(560px + 25em));justify-self:center}
+  .ch-flow .fx{width:min(100%,calc(330px + 25em));justify-self:center;align-self:center}
+  .ch-yin .fx{width:min(100%,calc(440px + 25em));justify-self:start}
+}
+
+/* ---------- 教練：一大三小 ---------- */
+.coaches{position:relative;padding:clamp(52px,5vw,76px) var(--pad) clamp(52px,4.4vw,64px);background:var(--night-d);color:var(--cream)}
+.coaches h2{margin:0;font:400 clamp(26px,2.4vw,34px)/1.3 var(--mk);letter-spacing:.02em}
+.cl{margin:26px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:40px 30px}
+.co{display:grid;gap:10px;align-content:start}
+.co-cue{margin:0;font:400 clamp(26px,2.5vw,36px)/1.3 var(--mk);text-wrap:balance}
+.co-who{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.co-who h3{margin:0;font:500 14px/1.4 var(--sans);letter-spacing:.12em}
+.tchip{display:inline-flex;align-items:center;min-height:30px;padding:0 12px;border-radius:999px;box-shadow:inset 0 0 0 1.5px currentColor;font:400 13.5px/1 var(--sans);text-decoration:none;letter-spacing:.04em}
+.tchip:hover{background:var(--cream);color:var(--night-d)}
+.co-pts{margin:0;padding:0;list-style:none;font:400 14.5px/1.65 var(--sans)}
+.co-pts li::before{content:"";display:inline-block;width:12px;height:2px;margin-right:8px;background:currentColor;vertical-align:.32em}
+.co.big{grid-column:1/-1;grid-template-columns:minmax(0,1fr) minmax(0,15em);column-gap:40px;min-height:clamp(200px,20vw,300px);align-content:center;padding:clamp(16px,2.4vw,36px) 0}
+.co.big .co-cue{grid-column:1;grid-row:1/4;font-size:clamp(52px,7.6vw,112px);line-height:1.08}
+.co.big .co-who,.co.big .co-pts{grid-column:2;align-self:end}
+.co.s1{grid-column:1/5}
+.co.s2{grid-column:5/9;margin-top:32px}
+.co.s3{grid-column:9/13;margin-top:64px}
+.co :focus-visible{outline-color:var(--cream)}
+
+/* ---------- 課卡：記日劃記，價格沿效期斜排 ---------- */
+.plans{padding:clamp(52px,5vw,76px) var(--pad) clamp(52px,5vw,76px)}
+.plans h2{margin:0;font:400 clamp(40px,4.4vw,64px)/1.1 var(--mk)}
+.pl-p{margin:10px 0 0;max-width:32em;font:400 16px/1.7 var(--sans)}
+.pl-key{display:flex;gap:22px;margin:16px 0 0;font:400 14px/1.4 var(--sans);letter-spacing:.06em}
+.pl-key span{display:inline-flex;align-items:center;gap:8px}
+.pl-key i{display:inline-block;width:2px;height:16px;background:currentColor;border-radius:2px;rotate:4deg}
+.pl-key .k-n{width:7px;height:7px;border-radius:50%;rotate:none}
+.pl{--u:calc((100% - 21em - 9em) / 121);margin:34px 0 0;padding:0;list-style:none;display:grid;gap:26px}
+.pl li{display:grid;grid-template-columns:19em minmax(0,1fr);align-items:end;column-gap:2em}
+.pl .p-t h3{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;margin:0;font:400 26px/1.25 var(--mk)}
+.pl .p-t h3 small{font:400 14px/1.4 var(--sans);letter-spacing:.04em}
+.pl-note{margin:2px 0 0;font:400 14.5px/1.55 var(--sans)}
+.pl .p-v{display:flex;align-items:flex-end;gap:14px;min-width:0}
+.tly{flex:none;width:calc(var(--tw) * 1px * var(--tk,1.18));height:40px;max-width:calc(100% - 7.5em);overflow:visible}
+.tly *{vector-effect:non-scaling-stroke}
+.tl-st{fill:none;stroke:currentColor;stroke-width:1.6px;stroke-linecap:round}
+.tl-dot{fill:none;stroke:currentColor;stroke-width:5px;stroke-linecap:round}
+.pl-price{flex:none;margin:0;white-space:nowrap;font:500 14px/1 var(--sans)}
+.pl-price b{font:400 clamp(36px,3.4vw,50px)/1 var(--mk);margin-left:4px}
+.pl-tax{margin:26px 0 0;max-width:44em;font:400 14.5px/1.65 var(--sans)}
+
+/* ---------- 第一次來（瀑布條） ---------- */
+.first{padding:clamp(44px,4vw,58px) var(--pad);background:var(--tang-lo)}
+.first h2{margin:0;font:400 clamp(34px,3.6vw,52px)/1.15 var(--mk)}
+.fv{margin:30px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.fv li{display:grid;grid-template-columns:calc(var(--at0) / 75 * 100%) calc(var(--m) / 75 * 100%) minmax(0,1fr);align-items:center;column-gap:0}
+.fv .fv-b{grid-column:2;position:relative;display:flex;align-items:center;min-height:30px}
+.fv .rb{position:absolute;inset:0;width:100%;height:100%;fill:var(--ink)}
+.fv .fv-b .mkn{position:relative;padding:0 8px;font-size:17px;color:var(--cream);white-space:nowrap}
+.fv .fv-x{grid-column:3;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 12px;padding:0 0 0 14px}
+.fv .fv-x h3{margin:0;font:400 20px/1.35 var(--mk)}
+.fv .fv-x p{margin:0;font:400 15px/1.6 var(--sans)}
+.fv li.late{grid-template-columns:minmax(0,1fr) calc(var(--m) / 75 * 100%) calc((75 - var(--at0) - var(--m)) / 75 * 100%)}
+.fv li.late .fv-x{grid-column:1;grid-row:1;justify-content:flex-end;text-align:end;padding:0 14px 0 0}
+.fv li.main .fv-x{grid-column:2;grid-row:2;padding:6px 0 0}
+.fv-ax{position:relative;height:22px;margin:8px 0 0;font:400 14px/22px var(--mk)}
+.fv-ax span{position:absolute;left:calc(var(--m) / 75 * 100%);translate:-50% 0;white-space:nowrap}
+.fv-ax span:first-child{translate:0}.fv-ax span:last-child{translate:-100% 0}
+.bring{display:flex;flex-wrap:wrap;gap:10px 56px;margin:26px 0 0;font:400 15.5px/1.7 var(--sans)}
+.bring h3{margin:0;font:400 22px/1.3 var(--mk)}
+.bring p{margin:2px 0 0;max-width:26em}
+
+/* ---------- 規矩與怎麼來 ---------- */
+.rules{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:26px 56px;padding:clamp(48px,4vw,60px) var(--pad) clamp(52px,4.4vw,64px)}
+.rules h2{grid-column:1/-1;margin:0;font:400 clamp(34px,3.6vw,52px)/1.15 var(--mk)}
+.rl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px 26px;align-items:baseline}
+.rl dt{font:400 28px/1.2 var(--mk)}
+.rl dd{margin:0;font:400 16px/1.75 var(--sans);max-width:34em}
+.visit{display:grid;gap:14px;align-content:start;padding:28px 28px 30px;border-radius:120px 24px 24px 24px / 90px 24px 24px 24px;background:var(--night);color:var(--cream)}
+.visit h3{margin:0;padding-left:40px;font:400 30px/1.2 var(--mk)}
+.visit address{font-style:normal;font:400 16px/1.75 var(--sans)}
+.visit .tel{font:400 32px/1.1 var(--mk);text-decoration-thickness:1.5px}
+.visit dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 16px;font:400 15.5px/1.65 var(--sans)}
+.visit dt{font-weight:500}
+.visit dd{margin:0}
+.visit :focus-visible{outline-color:var(--cream)}
+
+/* ---------- 頁尾 ---------- */
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding:22px var(--pad) 32px;background:var(--night-d);color:var(--cream);font:400 14.5px/1.7 var(--sans)}
+.foot p{margin:0}
+.foot b{font:400 18px/1 var(--mk)}
+
+/* ---------- 404 ---------- */
+.nf{min-height:calc(100dvh - 170px);padding:24px var(--pad) 80px}
+.nf-top{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.nf h1{margin:0;font:400 clamp(44px,6vw,92px)/1.06 var(--mk)}
+.nf p{margin:16px 0 0;max-width:30em;font:400 17px/1.75 var(--sans)}
+.nf .fx-art{justify-self:end;width:min(100%,520px);color:var(--cream);--fld:var(--night);padding:20px 22px 12px;background:var(--night);border-radius:50% 50% 18px 18px / 70px 70px 18px 18px}
+.nf .fx-art svg{width:100%;height:auto;overflow:visible}
+.nf-go{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 0;padding:0;list-style:none}
+.nf-go a{display:inline-grid;place-items:center;min-height:48px;padding:0 22px;border-radius:999px;background:var(--ink);color:var(--cream);font:500 16px/1 var(--sans);text-decoration:none;letter-spacing:.08em}
+.nf-go a:hover{background:var(--night)}
+.nf-tl{position:relative;margin:40px 0 0}
+.nf-tl .lane{position:relative;height:44px;background:radial-gradient(circle,oklch(0.22 0.035 40 / .5) 1px,transparent 1.4px) 0 calc(100% - 9px)/calc(100% / 48) 3px repeat-x}
+.nf-tl .open{position:absolute;top:0;bottom:0;left:calc(6 / 24 * 100%);width:calc(16 / 24 * 100%);box-shadow:inset 2px 0 0 var(--ink),inset -2px 0 0 var(--ink)}
+.nf-tl .ghost{position:absolute;bottom:4px;left:calc(4.0667 / 24 * 100%);display:grid;gap:3px}
+.nf-tl .ghost span{font:400 18px/1 var(--mk);white-space:nowrap;padding:0 4px;background:var(--tang)}
+.nf-tl .ghost i{display:block;width:62px;height:4px;background:radial-gradient(circle,currentColor 1.6px,transparent 2px) 0 50%/7px 4px repeat-x}
+.nf-tl .ax{position:relative;height:24px;border-top:2px solid var(--ink);font:400 15px/24px var(--mk)}
+.nf-tl .ax span{position:absolute;left:calc(var(--h) / 24 * 100%);translate:-50% 0;white-space:nowrap}
+.nf-tl .ax span:first-child{translate:0}.nf-tl .ax span:last-child{translate:-100% 0}
+
+/* ---------- 平板 ---------- */
+@media (max-width:1180px){
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .flt{justify-self:start}
+}
+/* ---------- 手機 ---------- */
+@media (max-width:899px){
+  :root{--lab:50px}
+  .bar{padding-top:12px}
+  .mark{font-size:24px}
+  .nav{width:100%}
+  .nav ul{justify-content:space-between;gap:0 4px}
+  .nav li:last-child{margin-left:auto}
+  .nav a{font-size:14.5px}
+  .bar{position:relative}
+  .nav .go{position:absolute;top:10px;right:var(--pad)}
+  .hero{padding-top:10px;gap:10px}
+  .h1{font-size:clamp(34px,10vw,46px);line-height:1.12}
+  .sub{font-size:14px}
+  .flt{flex-wrap:wrap;gap:6px;justify-self:stretch}
+  .chip{width:auto;flex:1 1 0;min-width:48px;min-height:66px}
+  .chip .cfig{width:40px;height:26px}
+  .stage{display:grid;grid-template-columns:minmax(0,46%) minmax(0,1fr);align-items:end;gap:6px 14px;height:auto;margin-top:14px;padding-bottom:12px;border-bottom:2px solid var(--ink)}
+  .st-band,.st-now,.st-eve{display:none}
+  .st-fig{position:relative;left:auto;bottom:auto;translate:none;justify-self:center;--sc:var(--scm,1.3);transition:none}
+  .st-cap{position:static;width:auto;transition:none}
+  .face h2{font-size:30px}
+  .face .pk-cue{display:none}
+  .pk-act{gap:8px 12px}
+  .add{min-height:44px;padding:0 16px;font-size:15px}
+  .pk-act a{font-size:14px}
+  .sched-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:12px 0 6px}
+  .jump{display:flex;gap:6px}
+  .jump button{min-width:52px;min-height:44px;padding:0 10px;border:0;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--ink);background:transparent;font:400 18px/1 var(--mk);cursor:pointer}
+  .tl-sc{overflow-x:auto;overscroll-behavior-x:contain;margin:0 calc(var(--pad) * -1);padding:0 var(--pad)}
+  .tl{width:calc(960 * 1.8px + var(--lab))}
+  .day{height:60px}
+  .dn{position:sticky;left:0;z-index:4;align-self:stretch;flex-direction:column;justify-content:center;align-items:flex-start;gap:2px;background:var(--tang);padding-left:0}
+  .day.today .dn .dn-w{margin-left:0}
+  .axis span:first-child{translate:-50% 0}
+  .blk{height:48px;bottom:5px}
+  .b-l{font-size:14px}
+  .b-t{font-size:17px}
+  .tl-foot{padding-left:0}
+  .tray{grid-template-columns:minmax(0,1fr);padding-bottom:44px}
+  .ti{grid-template-columns:56px auto minmax(0,1fr) auto;font-size:14.5px}
+  .ti .ti-k{display:none}
+  .tr-form input[type=text],.tr-form input[type=tel]{width:100%}
+  .tr-form label.fl{flex:1 1 100%}
+  .chapters{display:flex;align-items:stretch;gap:10px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);padding:4px var(--pad) 34px;scrollbar-color:var(--ink) transparent}
+  .ch{flex:0 0 86%;scroll-snap-align:start;margin-top:0;padding:50px 18px 24px!important;border-radius:50% 50% 20px 20px / 44px 44px 20px 20px;grid-template-columns:minmax(0,1fr)!important;grid-template-areas:"h" "lead" "fx" "cue" "fit"!important;grid-template-rows:none;min-height:0;gap:12px;align-content:start}
+  .ch h2,.ch-yin h2{font-size:clamp(34px,10vw,44px)}
+  .ch-len .len{width:min(100% - 6.4em,calc(var(--dur) / 90 * 52vw))}
+  .ch-len b{font-size:26px}
+  .slots{display:none}
+  .ch-lead{font-size:15px;line-height:1.7}
+  .ch-yin .fx{margin-top:0}
+  .fx,.ch-mat .fx,.ch-flow .fx,.ch-yin .fx{width:auto;justify-self:stretch}
+  .fx-art{width:min(100%,calc(190px * var(--ar)));margin:0 auto}
+  .fx-marks{display:grid;gap:0;margin-top:6px}
+  .fx-marks li{font-size:14px;line-height:1.5}
+  .fx-marks b{font-size:19px;padding-bottom:1px}
+  .fig .ld{display:none}
+  .cue{font-size:19px;line-height:1.45}
+  .ch-cue{gap:10px}
+  .bt{grid-template-columns:1.5em minmax(0,1fr);grid-auto-rows:minmax(10px,auto);row-gap:0}
+  .bt .tk{grid-column:1;grid-row:var(--i);padding:0;box-shadow:none;font-size:12.5px;line-height:10px}
+  .bt .tk:not(.on){visibility:hidden}
+  .bt .tk.on{box-shadow:inset 0 2px 0 var(--on);padding-top:2px}
+  .bt-l li{grid-column:2;grid-row:var(--r) / span var(--s);flex-direction:row;justify-content:flex-start;align-items:center;gap:10px;padding:2px 0}
+  .bt-l li::after{order:-1;width:7px;height:auto;align-self:stretch;border-radius:999px}
+  .bt-t{font-size:14px;line-height:1.4}
+  .fit{gap:6px 18px;font-size:14px;line-height:1.6}
+  .fit>div{min-width:0;flex:1 1 100%}
+  .fit h3{font-size:17px}
+  .coaches{padding:52px var(--pad) 56px}
+  .cl{grid-template-columns:minmax(0,1fr);gap:30px}
+  .co.big,.co.s1,.co.s2,.co.s3{grid-column:1;margin-top:0}
+  .co.big{grid-template-columns:minmax(0,1fr);min-height:0;padding:6px 0 0}
+  .co.big .co-cue{grid-row:auto;font-size:clamp(40px,12vw,54px)}
+  .co.big .co-who,.co.big .co-pts{grid-column:1}
+  .co-cue{font-size:24px}
+  .co-pts{display:none}
+  .co.big .co-pts{display:block}
+  .pl{gap:22px}
+  .pl li{grid-template-columns:minmax(0,1fr);row-gap:6px}
+  .pl .p-v{gap:10px}
+  .tly{--tk:.48;height:30px;max-width:calc(100% - 7.4em)}
+  .pl-price b{font-size:32px}
+  .pl-price b{font-size:34px}
+  .fv li,.fv li.late{grid-template-columns:calc(var(--at0) / 75 * 100%) calc(var(--m) / 75 * 100%) minmax(0,1fr)}
+  .fv .fv-x,.fv li.late .fv-x,.fv li.main .fv-x{grid-column:1/-1;grid-row:2;justify-content:flex-start;text-align:start;padding:4px 0 0}
+  .fv .fv-b{min-height:26px}
+  .fv .fv-b .mkn{font-size:15px;padding:0 4px}
+  .fv .fv-x h3{font-size:18px}
+  .fv .fv-x p{font-size:14.5px}
+  .rules{grid-template-columns:minmax(0,1fr)}
+  .rl{grid-template-columns:minmax(0,1fr);gap:0}
+  .rl dt{padding-top:12px;font-size:24px}
+  .rl dd{font-size:15px}
+  .visit{padding:24px 20px 24px;border-radius:80px 20px 20px 20px / 60px 20px 20px 20px}
+  .visit h3{padding-left:30px}
+  .nf-top{grid-template-columns:minmax(0,1fr)}
+  .nf h1{font-size:clamp(36px,10vw,50px)}
+}
+@media (max-width:380px){.nav a{font-size:13.5px}}
+
+/* ---------- 降級動效：剪影直接換姿勢、殘影直接出現 ---------- */
+@media (prefers-reduced-motion:reduce){
+  .st-fig,.st-cap,.meter .seg{transition:none}
+  .js .st-fig .fg-gh path,.js .st-fig .fg-tr{transition:none}
+}
+
+/* ---------- 列印：白底黑字 ---------- */
+@media print{
+  html,body{background:#fff!important;color:#000}
+  .nav,.flt,.jump,.pk-act,.tr-form,.tr-empty,.st-now,.nowp,.copy,.copied,.keys,.hint,.st-band,.band{display:none!important}
+  .ch,.coaches,.visit,.foot,.first,.tr-out{background:none!important;color:#000!important;border-radius:0!important;margin-top:0!important}
+  .ch{min-height:0;border-top:2pt solid #000;break-inside:avoid;padding-top:24pt}
+  .blk,.blk.eve,.axis span.ev{color:#000!important}
+  .blk[aria-pressed="true"] .b-l{background:none!important;color:#000!important;box-shadow:none!important}
+  .fig{color:#000!important}
+  .tl-sc{overflow:visible}
+  .tl{width:auto!important}
+  .stage{height:auto}
+  .st-fig,.st-cap{position:static;translate:none}
+  a{text-decoration:underline}
+}
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+
+<header class="bar">
+  <a class="mark" href="#main"><svg viewBox="0 0 36 36" aria-hidden="true" focusable="false"><path class="wm-c" d="M13.27 4.16L16.68 2.92L20.27 3.39L23.87 3.96L26.98 5.87L29.51 8.47L31.82 11.32L32.39 14.96L33 18.5L31.97 21.94L31.06 25.42L28.55 27.99L26.15 30.69L22.75 31.9L19.28 32.57L15.62 33.32L12.14 32.04L9.34 29.69L6.76 27.31L4.95 24.3L3.26 21.12L3.07 17.5L3.3 13.85L4.7 10.44L7.48 8.03L9.92 5.42L13.2 3.95L16.58 1.86L20.46 2.19"/><path class="wm-h" d="M18.01 6.4L17.7 29.4"/><circle class="wm-d" cx="18" cy="18" r="2.4"/></svg><span>六點鐘</span></a>
+  <nav class="nav" aria-label="頁內導覽"><ul role="list">
+    <li><a href="#tool">課表</a></li><li><a href="#types">課型</a></li><li><a href="#coaches">教練</a></li><li><a href="#plans">課卡</a></li><li><a href="#first">第一次來</a></li>
+    <li><a class="go" href="#book">預約 <span class="mkn">0</span></a></li>
+  </ul></nav>
+</header>
+
+<main id="main">
+<div class="tool" id="tool">
+  <div class="hero">
+    <div class="hero-t">
+      <h1 class="h1">早上六點還是晚上六點？</h1>
+      <p class="sub">台中西區晨昏街，皮拉提斯與瑜珈。早上六點第一堂，晚上六點下班直接來。<span class="now-static">週日只上午有課。</span></p>
+    </div>
+    <fieldset class="flt"><legend class="sr-only">只看一種課</legend>
+      <label class="chip"><input type="radio" name="t" id="f-all" value="all" checked><svg class="call" viewBox="0 0 34 30" aria-hidden="true" focusable="false"><svg x="0" y="0" width="16.7" height="5" viewBox="0 0 30 12" preserveAspectRatio="none" class="m-wake"><path class="w2" d="M0.6 10.6H29.4"/><path class="w1" d="M1.4 10.4L1.05 3.7M4.07 10.4L3.69 5.86M7.06 10.4L6.83 5.43M10.01 10.4L9.77 5.23M12.57 10.4L12.97 5.33M15.1 10.4L15.06 2.58M17.65 10.4L17.49 3.27M20.37 10.4L20.8 4.31M23.32 10.4L23.3 3M26.14 10.4L26.07 5.34M28.8 10.4L29.25 4.94"/></svg><svg x="0" y="6.2" width="22.5" height="5" viewBox="0 0 50 12" preserveAspectRatio="none" class="m-mat"><path class="fl" d="M2.4 2.35L5.6 2.82L8.8 2.34L12 3.09L15.2 3.01L18.4 2.31L21.6 2.97L24.8 2.69L28 2.26L31.2 2.62L34.4 2.37L37.6 3.09L40.8 2.36L44 2.36L47.2 2.73L47.6 2.8Q50.2 2.6 50.2 6.9Q50.2 11.2 47.6 11L47.6 11L47.2 10.93L44 10.92L40.8 11.05L37.6 10.89L34.4 11.18L31.2 11.4L28 11.22L24.8 10.81L21.6 10.9L18.4 11.19L15.2 11.27L12 11.24L8.8 10.98L5.6 11.15L2.4 10.96Q-0.2 11.2 -0.2 6.9Q-0.2 2.6 2.4 2.35Z"/><path class="w1 ink-x" d="M46.4 4.6q1.6 2.3 0 4.6"/></svg><svg x="0" y="12.4" width="23.95" height="5" viewBox="0 0 55 12" preserveAspectRatio="none" class="m-reformer"><path class="w1" d="M0.4 0.8V11.6M54.6 0.8V11.6M0.4 6.2L1.6 2.55L3.54 10.14L5.54 2.64L7.59 9.75L9.5 2.17L11.44 10.32L13.32 1.91L15.2 10.39L17.13 2.09L18.96 10.01L20.96 2.01L22.73 10.38L24.65 2.55L26.42 10.3L28.3 2.06L30.23 9.93L32.05 2.04L34.04 9.98L35.81 2.32L37.72 10.07L39.68 2.64L41.48 10.32L43.47 2.31L45.48 10.42L47.32 2.29L49.09 9.87L51.01 2.51L52.83 10.19L54.6 6.2"/></svg><svg x="0" y="18.6" width="29.75" height="5" viewBox="0 0 75 12" preserveAspectRatio="none" class="m-flow"><path class="w3" d="M0.5 7.1L1.1 5.58L1.7 4.22L2.3 3.26L2.9 2.84L3.5 3.05L4.1 3.83L4.7 5.04L5.3 6.47L5.9 7.86L6.5 8.99L7.1 9.65L7.7 9.74L8.3 9.26L8.9 8.29L9.5 7.02L10.1 5.65L10.7 4.44L11.3 3.58L11.9 3.21L12.5 3.41L13.1 4.11L13.7 5.19L14.3 6.47L14.9 7.72L15.5 8.72L16.1 9.32L16.7 9.4L17.3 8.96L17.9 8.09L18.5 6.94L19.1 5.71L19.7 4.61L20.3 3.83L20.9 3.5L21.5 3.67L22.1 4.31L22.7 5.3L23.3 6.48L23.9 7.64L24.5 8.58L25.1 9.14L25.7 9.22L26.3 8.82L26.9 8L27.5 6.91L28.1 5.72L28.7 4.66L29.3 3.89L29.9 3.55L30.5 3.71L31.1 4.33L31.7 5.32L32.3 6.49L32.9 7.66L33.5 8.62L34.1 9.2L34.7 9.3L35.3 8.9L35.9 8.05L36.5 6.92L37.1 5.68L37.7 4.55L38.3 3.73L38.9 3.36L39.5 3.52L40.1 4.18L40.7 5.24L41.3 6.52L41.9 7.79L42.5 8.84L43.1 9.48L43.7 9.59L44.3 9.15L44.9 8.22L45.5 6.96L46.1 5.58L46.7 4.33L47.3 3.41L47.9 3.01L48.5 3.19L49.1 3.93L49.7 5.12L50.3 6.55L50.9 7.97L51.5 9.14L52.1 9.84L52.7 9.96L53.3 9.45L53.9 8.41L54.5 7L55.1 5.47L55.7 4.09L56.3 3.09L56.9 2.66L57.5 2.87L58.1 3.7L58.7 5.01L59.3 6.58L59.9 8.12L60.5 9.38L61.1 10.13L61.7 10.24L62.3 9.67L62.9 8.54L63.5 7.03L64.1 5.4L64.7 3.94L65.3 2.9L65.9 2.46L66.5 2.71L67.1 3.6L67.7 4.98L68.3 6.6L68.9 8.19L69.5 9.47L70.1 10.21L70.7 10.29L71.3 9.7L71.9 8.54L72.5 7.01L73.1 5.38L73.7 3.94L74.3 2.93"/></svg><svg x="0" y="24.8" width="34.099999999999994" height="5" viewBox="0 0 90 12" preserveAspectRatio="none" class="m-yin"><path class="w0" d="M0.6 6.4H89.4"/><path class="dt" d="M2.6 6.4h0.01" style="stroke-width:4.79px"/><path class="dt" d="M10.08 6.4h0.01" style="stroke-width:5.63px"/><path class="dt" d="M16.49 6.4h0.01" style="stroke-width:6.23px"/><path class="dt" d="M23.95 6.4h0.01" style="stroke-width:5.1px"/><path class="dt" d="M30.61 6.4h0.01" style="stroke-width:5.21px"/><path class="dt" d="M36.97 6.4h0.01" style="stroke-width:5.98px"/><path class="dt" d="M44.57 6.4h0.01" style="stroke-width:4.87px"/><path class="dt" d="M52.36 6.4h0.01" style="stroke-width:5.94px"/><path class="dt" d="M58.99 6.4h0.01" style="stroke-width:6.26px"/><path class="dt" d="M65.58 6.4h0.01" style="stroke-width:5.94px"/><path class="dt" d="M72.33 6.4h0.01" style="stroke-width:4.71px"/><path class="dt" d="M79.34 6.4h0.01" style="stroke-width:6.35px"/><path class="dt" d="M86.35 6.4h0.01" style="stroke-width:5.24px"/></svg></svg><span>全部</span></label>
+      <label class="chip"><input type="radio" name="t" id="f-wake" value="wake"><svg class="cfig" viewBox="63.08 58.97 91.05 65.03" aria-hidden="true" focusable="false"><path class="fg-ground" d="M23.08 122.6h171.05"/><g class="fg-far"><path class="s-thL" d="M96.01 111.75L119.13 99.24A3.48 3.48 0 0 0 116.08 92.99L91.99 103.51A4.59 4.59 0 0 0 96.01 111.75Z"/><path class="s-shL" d="M114.54 95.18L108.29 119.22A2.15 2.15 0 0 0 112.4 120.48L120.66 97.05A3.2 3.2 0 0 0 114.54 95.18Z"/><path class="s-ftL" d="M110.42 122.01L118.57 121.12A1.56 1.56 0 0 0 118.46 118.01L110.27 117.69A2.17 2.17 0 0 0 110.42 122.01Z"/><path class="s-uaL" d="M101.61 80.36L109.36 95.59A2.14 2.14 0 0 0 113.27 93.85L107.14 77.89A3.03 3.03 0 0 0 101.61 80.36Z"/><path class="s-faL" d="M112.94 96.18L123.9 83.22A1.66 1.66 0 0 0 121.44 81L109.69 93.26A2.19 2.19 0 0 0 112.94 96.18Z"/></g><g class="fg-near"><path class="s-T" d="M100.05 109.83L111.7 81.79A7.8 7.8 0 0 0 97.04 76.46L87.95 105.42A6.44 6.44 0 0 0 100.05 109.83Z"/><path class="s-N" d="M106.7 79.7L107.71 74.65A2.16 2.16 0 0 0 103.53 73.61L102.05 78.55A2.4 2.4 0 0 0 106.7 79.7Z"/><circle class="s-H" cx="107.4" cy="66.97" r="7.38"/><path class="s-thR" d="M96.15 111.67L118.82 98.37A3.48 3.48 0 0 0 115.55 92.23L91.85 103.58A4.59 4.59 0 0 0 96.15 111.67Z"/><path class="s-shR" d="M114.11 94.42L108.28 118.56A2.15 2.15 0 0 0 112.41 119.75L120.26 96.18A3.2 3.2 0 0 0 114.11 94.42Z"/><path class="s-ftR" d="M110.34 121.32L118.51 120.72A1.56 1.56 0 0 0 118.51 117.6L110.34 116.99A2.17 2.17 0 0 0 110.34 121.32Z"/><path class="s-uaR" d="M101.53 80.16L108.2 95.9A2.14 2.14 0 0 0 112.22 94.43L107.22 78.09A3.03 3.03 0 0 0 101.53 80.16Z"/><path class="s-faR" d="M111.62 96.84L124.28 85.53A1.66 1.66 0 0 0 122.15 82.99L108.81 93.49A2.19 2.19 0 0 0 111.62 96.84Z"/></g><g class="fg-j"><circle class="j-P" cx="94" cy="107.63" r="1.5"/><circle class="j-C" cx="104.37" cy="79.13" r="1.5"/><circle class="j-kR" cx="117.19" cy="95.3" r="1.5"/><circle class="j-eR" cx="110.21" cy="95.17" r="1.5"/><circle class="j-aR" cx="110.34" cy="119.16" r="1.5"/></g></svg><span>晨動</span></label><label class="chip"><input type="radio" name="t" id="f-mat" value="mat"><svg class="cfig" viewBox="67.86 56.72 94.2 67.28" aria-hidden="true" focusable="false"><path class="fg-ground" d="M27.86 122.6h174.2"/><g class="fg-far"><path class="s-thL" d="M113.19 118.86L131.3 99.82A3.48 3.48 0 0 0 126.48 94.82L106.81 112.26A4.59 4.59 0 0 0 113.19 118.86Z"/><path class="s-shL" d="M131.11 99.62L148.24 81.62A2.15 2.15 0 0 0 145.25 78.53L126.67 95.02A3.2 3.2 0 0 0 131.11 99.62Z"/><path class="s-ftL" d="M148.02 81.83L154.27 76.54A1.56 1.56 0 0 0 152.44 74.01L145.47 78.33A2.17 2.17 0 0 0 148.02 81.83Z"/><path class="s-uaL" d="M83.52 103.41L100.61 103.72A2.14 2.14 0 0 0 100.91 99.45L83.94 97.38A3.03 3.03 0 0 0 83.52 103.41Z"/><path class="s-faL" d="M100.76 103.77L117.73 103.24A1.66 1.66 0 0 0 117.73 99.93L100.76 99.4A2.19 2.19 0 0 0 100.76 103.77Z"/></g><g class="fg-near"><path class="s-T" d="M113.22 109.98L87.63 93.64A7.8 7.8 0 0 0 79.83 107.15L106.78 121.14A6.44 6.44 0 0 0 113.22 109.98Z"/><path class="s-N" d="M85.21 98.51L81 95.53A2.16 2.16 0 0 0 78.35 98.92L82.26 102.28A2.4 2.4 0 0 0 85.21 98.51Z"/><circle class="s-H" cx="73.86" cy="92.68" r="7.38"/><path class="s-thR" d="M112.95 119.07L132.35 101.34A3.48 3.48 0 0 0 127.88 96.02L107.05 112.05A4.59 4.59 0 0 0 112.95 119.07Z"/><path class="s-shR" d="M132.17 101.13L150.51 84.37A2.15 2.15 0 0 0 147.75 81.08L128.06 96.23A3.2 3.2 0 0 0 132.17 101.13Z"/><path class="s-ftR" d="M150.28 84.56L156.88 79.72A1.56 1.56 0 0 0 155.23 77.08L147.98 80.89A2.17 2.17 0 0 0 150.28 84.56Z"/><path class="s-uaR" d="M83.26 103.38L100.26 105.18A2.14 2.14 0 0 0 100.93 100.95L84.21 97.41A3.03 3.03 0 0 0 83.26 103.38Z"/><path class="s-faR" d="M100.48 105.25L117.45 105.61A1.66 1.66 0 0 0 117.63 102.3L100.71 100.88A2.19 2.19 0 0 0 100.48 105.25Z"/></g><g class="fg-j"><circle class="j-P" cx="110" cy="115.56" r="1.5"/><circle class="j-C" cx="83.73" cy="100.4" r="1.5"/><circle class="j-kR" cx="130.12" cy="98.68" r="1.5"/><circle class="j-eR" cx="100.59" cy="103.07" r="1.5"/><circle class="j-aR" cx="149.13" cy="82.73" r="1.5"/></g></svg><span>墊上</span></label><label class="chip"><input type="radio" name="t" id="f-reformer" value="reformer"><svg class="cfig" viewBox="58.12 50.65 102.69 73.35" aria-hidden="true" focusable="false"><path class="fg-ground" d="M18.119999999999997 122.6h182.69"/><g class="fg-far"><path class="s-thL" d="M112.71 91.18L87.82 99.61A3.48 3.48 0 0 0 89.77 106.28L115.29 99.98A4.59 4.59 0 0 0 112.71 91.18Z"/><path class="s-shL" d="M87.9 99.88L64.37 107.85A2.15 2.15 0 0 0 65.58 111.98L89.69 106.02A3.2 3.2 0 0 0 87.9 99.88Z"/><path class="s-ftL" d="M62.82 109.69L62.57 117.88A1.56 1.56 0 0 0 65.67 118.2L67.13 110.14A2.17 2.17 0 0 0 62.82 109.69Z"/><path class="s-uaL" d="M139.86 86.15L139.85 103.24A2.14 2.14 0 0 0 144.12 103.46L145.9 86.46A3.03 3.03 0 0 0 139.86 86.15Z"/><path class="s-faL" d="M139.8 103.35L140.33 120.32A1.66 1.66 0 0 0 143.64 120.32L144.17 103.35A2.19 2.19 0 0 0 139.8 103.35Z"/></g><g class="fg-near"><path class="s-T" d="M115.97 101.71L145.26 93.73A7.8 7.8 0 0 0 140.49 78.88L112.03 89.45A6.44 6.44 0 0 0 115.97 101.71Z"/><path class="s-N" d="M143.61 88.59L148.44 86.78A2.16 2.16 0 0 0 147.12 82.68L142.15 84.02A2.4 2.4 0 0 0 143.61 88.59Z"/><circle class="s-H" cx="154.81" cy="82.47" r="7.38"/><path class="s-thR" d="M112.6 91.21L87.93 100.3A3.48 3.48 0 0 0 90.06 106.91L115.4 99.94A4.59 4.59 0 0 0 112.6 91.21Z"/><path class="s-shR" d="M88.02 100.56L64.71 109.14A2.15 2.15 0 0 0 66.02 113.24L89.98 106.65A3.2 3.2 0 0 0 88.02 100.56Z"/><path class="s-ftR" d="M63.21 111L63.1 119.19A1.56 1.56 0 0 0 66.21 119.47L67.52 111.38A2.17 2.17 0 0 0 63.21 111Z"/><path class="s-uaR" d="M139.85 86.31L140.74 103.38A2.14 2.14 0 0 0 145.02 103.38L145.9 86.31A3.03 3.03 0 0 0 139.85 86.31Z"/><path class="s-faR" d="M140.69 103.38L141.22 120.35A1.66 1.66 0 0 0 144.53 120.35L145.06 103.38A2.19 2.19 0 0 0 140.69 103.38Z"/></g><g class="fg-j"><circle class="j-P" cx="114" cy="95.58" r="1.5"/><circle class="j-C" cx="142.88" cy="86.31" r="1.5"/><circle class="j-kR" cx="89" cy="103.6" r="1.5"/><circle class="j-eR" cx="142.88" cy="103.38" r="1.5"/><circle class="j-aR" cx="65.37" cy="111.19" r="1.5"/></g></svg><span>器械</span></label><label class="chip"><input type="radio" name="t" id="f-flow" value="flow"><svg class="cfig" viewBox="45.09 40.05 117.53 83.95" aria-hidden="true" focusable="false"><path class="fg-ground" d="M5.090000000000003 122.6h197.53"/><g class="fg-far"><path class="s-thL" d="M109.43 87.12L88.31 102.76A3.48 3.48 0 0 0 92.2 108.51L114.57 94.71A4.59 4.59 0 0 0 109.43 87.12Z"/><path class="s-shL" d="M88.46 102.99L68.5 117.77A2.15 2.15 0 0 0 70.91 121.33L92.05 108.28A3.2 3.2 0 0 0 88.46 102.99Z"/><path class="s-ftL" d="M69.63 117.39L61.48 118.28A1.56 1.56 0 0 0 61.59 121.39L69.78 121.71A2.17 2.17 0 0 0 69.63 117.39Z"/><path class="s-uaL" d="M112 57.56L94.93 58.44A2.14 2.14 0 0 0 94.93 62.72L112 63.61A3.03 3.03 0 0 0 112 57.56Z"/><path class="s-faL" d="M94.93 58.4L77.96 58.93A1.66 1.66 0 0 0 77.96 62.24L94.93 62.77A2.19 2.19 0 0 0 94.93 58.4Z"/></g><g class="fg-near"><path class="s-T" d="M118.44 90.91L119.8 60.58A7.8 7.8 0 0 0 104.2 60.58L105.56 90.91A6.44 6.44 0 0 0 118.44 90.91Z"/><path class="s-N" d="M114.4 60.58L114.16 55.43A2.16 2.16 0 0 0 109.84 55.43L109.61 60.58A2.4 2.4 0 0 0 114.4 60.58Z"/><circle class="s-H" cx="112" cy="48.05" r="7.38"/><path class="s-thR" d="M111.36 95.45L137.52 98.01A3.48 3.48 0 0 0 138.49 91.13L112.64 86.37A4.59 4.59 0 0 0 111.36 95.45Z"/><path class="s-shR" d="M134.8 94.57L135.85 119.39A2.15 2.15 0 0 0 140.15 119.39L141.2 94.57A3.2 3.2 0 0 0 134.8 94.57Z"/><path class="s-ftR" d="M138 121.55L146.17 120.95A1.56 1.56 0 0 0 146.17 117.83L138 117.22A2.17 2.17 0 0 0 138 121.55Z"/><path class="s-uaR" d="M112 63.61L129.07 62.72A2.14 2.14 0 0 0 129.07 58.44L112 57.56A3.03 3.03 0 0 0 112 63.61Z"/><path class="s-faR" d="M129.07 62.77L146.04 62.24A1.66 1.66 0 0 0 146.04 58.93L129.07 58.4A2.19 2.19 0 0 0 129.07 62.77Z"/></g><g class="fg-j"><circle class="j-P" cx="112" cy="90.91" r="1.5"/><circle class="j-C" cx="112" cy="60.58" r="1.5"/><circle class="j-kR" cx="138" cy="94.57" r="1.5"/><circle class="j-eR" cx="129.07" cy="60.58" r="1.5"/><circle class="j-aR" cx="138" cy="119.39" r="1.5"/></g></svg><span>流動</span></label><label class="chip"><input type="radio" name="t" id="f-yin" value="yin"><svg class="cfig" viewBox="71.97 62.6 85.97 61.4" aria-hidden="true" focusable="false"><path class="fg-ground" d="M31.97 122.6h165.97"/><g class="fg-far"><path class="s-thL" d="M88.99 102.5L109.54 118.89A3.48 3.48 0 0 0 114.1 113.64L95.01 95.57A4.59 4.59 0 0 0 88.99 102.5Z"/><path class="s-shL" d="M111.82 113.06L87 114.11A2.15 2.15 0 0 0 87 118.41L111.82 119.46A3.2 3.2 0 0 0 111.82 113.06Z"/><path class="s-ftL" d="M87.04 114.1L78.86 114.56A1.56 1.56 0 0 0 78.8 117.68L86.96 118.43A2.17 2.17 0 0 0 87.04 114.1Z"/><path class="s-uaL" d="M117.53 117.14L134.31 120.41A2.14 2.14 0 0 0 135.35 116.25L119 111.26A3.03 3.03 0 0 0 117.53 117.14Z"/><path class="s-faL" d="M134.75 120.51L151.73 120.58A1.66 1.66 0 0 0 151.85 117.27L134.91 116.15A2.19 2.19 0 0 0 134.75 120.51Z"/></g><g class="fg-near"><path class="s-T" d="M88.78 104.61L114.37 120.95A7.8 7.8 0 0 0 122.17 107.45L95.22 93.46A6.44 6.44 0 0 0 88.78 104.61Z"/><path class="s-N" d="M118.48 116.59L123.58 115.9A2.16 2.16 0 0 0 123.21 111.6L118.06 111.81A2.4 2.4 0 0 0 118.48 116.59Z"/><circle class="s-H" cx="130.75" cy="113.11" r="7.38"/><path class="s-thR" d="M88.83 102.34L108.55 119.72A3.48 3.48 0 0 0 113.36 114.7L95.17 95.73A4.59 4.59 0 0 0 88.83 102.34Z"/><path class="s-shR" d="M110.95 114.01L86.13 115.06A2.15 2.15 0 0 0 86.13 119.36L110.95 120.41A3.2 3.2 0 0 0 110.95 114.01Z"/><path class="s-ftR" d="M86.21 115.05L78.02 115.37A1.56 1.56 0 0 0 77.91 118.48L86.06 119.37A2.17 2.17 0 0 0 86.21 115.05Z"/><path class="s-uaR" d="M117.64 117.16L134.52 119.84A2.14 2.14 0 0 0 135.41 115.66L118.9 111.24A3.03 3.03 0 0 0 117.64 117.16Z"/><path class="s-faR" d="M134.96 119.93L151.93 119.4A1.66 1.66 0 0 0 151.93 116.09L134.96 115.56A2.19 2.19 0 0 0 134.96 119.93Z"/></g><g class="fg-j"><circle class="j-P" cx="92" cy="99.04" r="1.5"/><circle class="j-C" cx="118.27" cy="114.2" r="1.5"/><circle class="j-kR" cx="110.95" cy="117.21" r="1.5"/><circle class="j-eR" cx="134.96" cy="117.75" r="1.5"/><circle class="j-aR" cx="86.13" cy="117.21" r="1.5"/></g></svg><span>陰瑜</span></label>
+    </fieldset>
+  </div>
+
+  <div class="stage" data-poses="{&quot;wake&quot;:[94,109,-70,-76,66,-48,70,-40,-26,107,-2,-28,106,0],&quot;mat&quot;:[110,114,-150,-142,4,0,9,3,-44,-44,-36,-40,-40,-32],&quot;reformer&quot;:[114,96.9,-17.8,-17.8,93,90,90,90,163.7,163.7,96,162.2,162.2,95],&quot;flow&quot;:[112,91.4,-90,-90,180,180,0,0,145.9,145.9,178,8,90,0],&quot;yin&quot;:[92,100,30,-5,14,2,12,0,41,180,181,43.8,180,182]}" data-starts="{&quot;wake&quot;:[92,69,-90,-88,84,78,94,86,92,89,-2,88,91,0],&quot;mat&quot;:[110,115.6,180,180,2,0,0,0,0,0,-88,2,0,-90],&quot;reformer&quot;:[96,93,-11.7,-14,90,90,92,90,90,180,180,88,180,180],&quot;flow&quot;:[112,69,-90,-90,100,96,80,84,95,93,180,85,87,0],&quot;yin&quot;:[86,109,-86,-86,76,16,82,12,10,180,181,13,180,182]}" data-prop="{&quot;t&quot;:30.33,&quot;n&quot;:5.15,&quot;h&quot;:7.38,&quot;ua&quot;:17.07,&quot;fa&quot;:16.97,&quot;th&quot;:26.26,&quot;sh&quot;:24.82,&quot;ft&quot;:8.17,&quot;w&quot;:{&quot;hip&quot;:12.88,&quot;chest&quot;:15.6,&quot;neck&quot;:4.79,&quot;th0&quot;:9.17,&quot;th1&quot;:6.95,&quot;sh0&quot;:6.4,&quot;sh1&quot;:4.3,&quot;ft&quot;:4.33,&quot;ua0&quot;:6.05,&quot;ua1&quot;:4.28,&quot;fa0&quot;:4.37,&quot;fa1&quot;:3.31}}" data-delay="[0,0,0,0.12,0.28,0.44,0.28,0.44,0.1,0.24,0.38,0.1,0.24,0.38]" data-gt="[0,0.3,0.52,0.74]" data-box="[53,18,101,106]">
+    <div class="st-band" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
+    <p class="st-eve" aria-hidden="true">晚上六點以後</p>
+    <div class="st-now" hidden><span class="np">現在 <time class="now-t">--:--</time></span></div>
+    <div class="st-fig" data-k="4" style="--fx:79.9%;--bw:101;--bh:106"><svg class="fig" viewBox="53 18 101 106" aria-hidden="true" focusable="false"><path class="fg-ground" d="M13 122.6h181"/><g class="fg-gh"><path class="g0" d="M107.43 68.49L106.25 94.75A3.48 3.48 0 0 0 113.17 95.35L116.57 69.29A4.59 4.59 0 0 0 107.43 68.49ZM106.52 94.88L106.27 119.72A2.15 2.15 0 0 0 110.56 119.95L112.91 95.22A3.2 3.2 0 0 0 106.52 94.88ZM108.41 117.67L100.24 118.28A1.56 1.56 0 0 0 100.24 121.39L108.41 122A2.17 2.17 0 0 0 108.41 117.67ZM109.02 38.03L106.93 55A2.14 2.14 0 0 0 111.14 55.74L114.98 39.08A3.03 3.03 0 0 0 109.02 38.03ZM106.86 55.14L105.62 72.07A1.66 1.66 0 0 0 108.91 72.42L111.21 55.6A2.19 2.19 0 0 0 106.86 55.14ZM118.44 68.89L119.8 38.56A7.8 7.8 0 0 0 104.2 38.56L105.56 68.89A6.44 6.44 0 0 0 118.44 68.89ZM114.4 38.56L114.16 33.41A2.16 2.16 0 0 0 109.84 33.41L109.61 38.56A2.4 2.4 0 0 0 114.4 38.56ZM107.43 69.29L110.83 95.35A3.48 3.48 0 0 0 117.75 94.75L116.57 68.49A4.59 4.59 0 0 0 107.43 69.29ZM111.09 95.22L113.44 119.95A2.15 2.15 0 0 0 117.73 119.72L117.48 94.88A3.2 3.2 0 0 0 111.09 95.22ZM115.59 122L123.76 121.39A1.56 1.56 0 0 0 123.76 118.28L115.59 117.67A2.17 2.17 0 0 0 115.59 122ZM109.02 39.08L112.86 55.74A2.14 2.14 0 0 0 117.07 55L114.98 38.03A3.03 3.03 0 0 0 109.02 39.08ZM112.79 55.6L115.09 72.42A1.66 1.66 0 0 0 118.38 72.07L117.14 55.14A2.19 2.19 0 0 0 112.79 55.6ZM104.62 26.03a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g1" d="M107.56 68.48L102.16 94.2A3.48 3.48 0 0 0 108.89 95.91L116.44 70.74A4.59 4.59 0 0 0 107.56 68.48ZM102.33 94.87L101.97 119.71A2.15 2.15 0 0 0 106.26 119.96L108.72 95.24A3.2 3.2 0 0 0 102.33 94.87ZM104.11 117.67L95.94 118.28A1.56 1.56 0 0 0 95.94 121.39L104.11 122A2.17 2.17 0 0 0 104.11 117.67ZM109.02 38.75L106.92 55.71A2.14 2.14 0 0 0 111.14 56.46L114.98 39.8A3.03 3.03 0 0 0 109.02 38.75ZM106.86 55.86L105.61 72.79A1.66 1.66 0 0 0 108.9 73.14L111.2 56.31A2.19 2.19 0 0 0 106.86 55.86ZM118.44 69.61L119.8 39.28A7.8 7.8 0 0 0 104.2 39.28L105.56 69.61A6.44 6.44 0 0 0 118.44 69.61ZM114.4 39.28L114.16 34.13A2.16 2.16 0 0 0 109.84 34.13L109.61 39.28A2.4 2.4 0 0 0 114.4 39.28ZM107.67 71.1L117.28 95.56A3.48 3.48 0 0 0 123.85 93.3L116.33 68.11A4.59 4.59 0 0 0 107.67 71.1ZM117.37 94.6L119.71 119.33A2.15 2.15 0 0 0 124 119.11L123.76 94.26A3.2 3.2 0 0 0 117.37 94.6ZM121.86 121.38L130.03 120.78A1.56 1.56 0 0 0 130.03 117.66L121.86 117.05A2.17 2.17 0 0 0 121.86 121.38ZM109.02 39.8L112.86 56.46A2.14 2.14 0 0 0 117.08 55.71L114.98 38.75A3.03 3.03 0 0 0 109.02 39.8ZM112.8 56.31L115.1 73.14A1.66 1.66 0 0 0 118.39 72.79L117.14 55.86A2.19 2.19 0 0 0 112.8 56.31ZM104.62 26.75a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g2" d="M109.22 78.65L89 95.44A3.48 3.48 0 0 0 93.21 100.97L114.78 85.95A4.59 4.59 0 0 0 109.22 78.65ZM88.32 96.63L77.03 118.76A2.15 2.15 0 0 0 80.77 120.87L93.89 99.78A3.2 3.2 0 0 0 88.32 96.63ZM78.9 117.65L70.73 118.28A1.56 1.56 0 0 0 70.74 121.39L78.91 121.98A2.17 2.17 0 0 0 78.9 117.65ZM109.53 50.22L100.41 64.69A2.14 2.14 0 0 0 103.91 67.15L114.47 53.71A3.03 3.03 0 0 0 109.53 50.22ZM99.99 65.65L98.46 82.56A1.66 1.66 0 0 0 101.74 82.96L104.33 66.18A2.19 2.19 0 0 0 99.99 65.65ZM118.44 82.3L119.8 51.97A7.8 7.8 0 0 0 104.2 51.97L105.56 82.3A6.44 6.44 0 0 0 118.44 82.3ZM114.4 51.97L114.16 46.82A2.16 2.16 0 0 0 109.84 46.82L109.61 51.97A2.4 2.4 0 0 0 114.4 51.97ZM110.98 86.77L136.84 91.51A3.48 3.48 0 0 0 138.38 84.73L113.02 77.83A4.59 4.59 0 0 0 110.98 86.77ZM134.41 88.21L136.11 112.99A2.15 2.15 0 0 0 140.41 112.88L140.81 88.04A3.2 3.2 0 0 0 134.41 88.21ZM138.26 115.1L146.43 114.49A1.56 1.56 0 0 0 146.43 111.37L138.26 110.77A2.17 2.17 0 0 0 138.26 115.1ZM109.53 53.71L120.09 67.15A2.14 2.14 0 0 0 123.59 64.69L114.47 50.22A3.03 3.03 0 0 0 109.53 53.71ZM119.67 66.18L122.26 82.96A1.66 1.66 0 0 0 125.54 82.56L124.01 65.65A2.19 2.19 0 0 0 119.67 66.18ZM104.62 39.44a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g3" d="M109.43 87.07L88.31 102.72A3.48 3.48 0 0 0 92.2 108.47L114.57 94.67A4.59 4.59 0 0 0 109.43 87.07ZM88.45 102.95L68.55 117.83A2.15 2.15 0 0 0 70.98 121.38L92.06 108.24A3.2 3.2 0 0 0 88.45 102.95ZM69.7 117.44L61.55 118.28A1.56 1.56 0 0 0 61.64 121.39L69.83 121.77A2.17 2.17 0 0 0 69.7 117.44ZM111.9 57.52L94.87 58.95A2.14 2.14 0 0 0 95.01 63.22L112.1 63.56A3.03 3.03 0 0 0 111.9 57.52ZM93.73 59.26L79.89 69.1A1.66 1.66 0 0 0 81.73 71.86L96.15 62.9A2.19 2.19 0 0 0 93.73 59.26ZM118.44 90.87L119.8 60.54A7.8 7.8 0 0 0 104.2 60.54L105.56 90.87A6.44 6.44 0 0 0 118.44 90.87ZM114.4 60.54L114.16 55.39A2.16 2.16 0 0 0 109.84 55.39L109.61 60.54A2.4 2.4 0 0 0 114.4 60.54ZM111.36 95.41L137.52 97.97A3.48 3.48 0 0 0 138.49 91.08L112.64 86.33A4.59 4.59 0 0 0 111.36 95.41ZM134.8 94.53L135.86 119.35A2.15 2.15 0 0 0 140.16 119.35L141.2 94.53A3.2 3.2 0 0 0 134.8 94.53ZM138.01 121.51L146.18 120.9A1.56 1.56 0 0 0 146.18 117.79L138.01 117.18A2.17 2.17 0 0 0 138.01 121.51ZM111.9 63.56L128.99 63.22A2.14 2.14 0 0 0 129.13 58.95L112.1 57.52A3.03 3.03 0 0 0 111.9 63.56ZM127.85 62.9L142.27 71.86A1.66 1.66 0 0 0 144.11 69.1L130.27 59.26A2.19 2.19 0 0 0 127.85 62.9ZM104.62 48.01a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/></g><g class="fg-tr"><path d="M112 26L112 26L112 26L112 26.1L112 26.2L112 27L112 29.3L112 33.6L112 37.8L112 42.7L112 46L112 47.5L112 48L112 48.1L112 48.1L112 48.1L112 48.1"/><path d="M116.7 72.2L116.7 72.2L116.7 72.2L116.7 72.3L116.7 72.5L116.8 73.2L117.2 75.5L118.8 79.3L122.3 82.1L128.1 82.7L133.5 80L138.7 75.9L143.8 69.4L145.6 64.3L146 61.7L146 60.7L146 60.6"/><path d="M123.8 119.8L123.8 119.8L123.8 119.8L124.3 119.8L126.4 119.7L131.2 119L138.8 116.7L144.6 113.3L146.3 112.4L146.5 114.8L146.3 117.4L146.2 118.9L146.2 119.4L146.2 119.4L146.2 119.4L146.2 119.4L146.2 119.4"/></g><g class="fg-far"><path class="s-thL" d="M109.43 87.12L88.31 102.76A3.48 3.48 0 0 0 92.2 108.51L114.57 94.71A4.59 4.59 0 0 0 109.43 87.12Z"/><path class="s-shL" d="M88.46 102.99L68.5 117.77A2.15 2.15 0 0 0 70.91 121.33L92.05 108.28A3.2 3.2 0 0 0 88.46 102.99Z"/><path class="s-ftL" d="M69.63 117.39L61.48 118.28A1.56 1.56 0 0 0 61.59 121.39L69.78 121.71A2.17 2.17 0 0 0 69.63 117.39Z"/><path class="s-uaL" d="M112 57.56L94.93 58.44A2.14 2.14 0 0 0 94.93 62.72L112 63.61A3.03 3.03 0 0 0 112 57.56Z"/><path class="s-faL" d="M94.93 58.4L77.96 58.93A1.66 1.66 0 0 0 77.96 62.24L94.93 62.77A2.19 2.19 0 0 0 94.93 58.4Z"/></g><g class="fg-near"><path class="s-T" d="M118.44 90.91L119.8 60.58A7.8 7.8 0 0 0 104.2 60.58L105.56 90.91A6.44 6.44 0 0 0 118.44 90.91Z"/><path class="s-N" d="M114.4 60.58L114.16 55.43A2.16 2.16 0 0 0 109.84 55.43L109.61 60.58A2.4 2.4 0 0 0 114.4 60.58Z"/><circle class="s-H" cx="112" cy="48.05" r="7.38"/><path class="s-thR" d="M111.36 95.45L137.52 98.01A3.48 3.48 0 0 0 138.49 91.13L112.64 86.37A4.59 4.59 0 0 0 111.36 95.45Z"/><path class="s-shR" d="M134.8 94.57L135.85 119.39A2.15 2.15 0 0 0 140.15 119.39L141.2 94.57A3.2 3.2 0 0 0 134.8 94.57Z"/><path class="s-ftR" d="M138 121.55L146.17 120.95A1.56 1.56 0 0 0 146.17 117.83L138 117.22A2.17 2.17 0 0 0 138 121.55Z"/><path class="s-uaR" d="M112 63.61L129.07 62.72A2.14 2.14 0 0 0 129.07 58.44L112 57.56A3.03 3.03 0 0 0 112 63.61Z"/><path class="s-faR" d="M129.07 62.77L146.04 62.24A1.66 1.66 0 0 0 146.04 58.93L129.07 58.4A2.19 2.19 0 0 0 129.07 62.77Z"/></g><g class="fg-j"><circle class="j-P" cx="112" cy="90.91" r="1.5"/><circle class="j-C" cx="112" cy="60.58" r="1.5"/><circle class="j-kR" cx="138" cy="94.57" r="1.5"/><circle class="j-eR" cx="129.07" cy="60.58" r="1.5"/><circle class="j-aR" cx="138" cy="119.39" r="1.5"/></g></svg></div>
+    <div class="st-cap" style="--cx:45.4%">
+      <p class="cp-when"><span class="cp-tag"></span><span class="pk-d">週一</span><span class="pk-dt mkn"></span><span class="pk-t mkn">18:00–19:15</span></p>
+      <div class="face" data-t="wake" hidden>
+        <h2>晨間活動度</h2>
+        <p class="pk-co"><span class="pk-coach">何柏翰</span> 帶・深蹲・30 分鐘</p>
+        <p class="pk-cue">今天練深蹲。腳跟踩住，屁股往下坐。</p>
+        <div class="pk-act"><button type="button" class="add" aria-pressed="false"><span class="a-off">加入這堂</span><span class="a-on">已加入</span></button><a href="#c-wake">這堂課怎麼上</a></div>
+      </div><div class="face" data-t="mat" hidden>
+        <h2>墊上皮拉提斯</h2>
+        <p class="pk-co"><span class="pk-coach">何柏翰</span> 帶・百次拍擊・50 分鐘</p>
+        <p class="pk-cue">今天練百次拍擊。下巴收，手拍一百下。</p>
+        <div class="pk-act"><button type="button" class="add" aria-pressed="false"><span class="a-off">加入這堂</span><span class="a-on">已加入</span></button><a href="#c-mat">這堂課怎麼上</a></div>
+      </div><div class="face" data-t="reformer" hidden>
+        <h2>器械核心床</h2>
+        <p class="pk-co"><span class="pk-coach">何柏翰</span> 帶・長伸展・55 分鐘</p>
+        <p class="pk-cue">今天練長伸展。身體一直線，彈簧慢慢回。</p>
+        <div class="pk-act"><button type="button" class="add" aria-pressed="false"><span class="a-off">加入這堂</span><span class="a-on">已加入</span></button><a href="#c-reformer">這堂課怎麼上</a></div>
+      </div><div class="face" data-t="flow">
+        <h2>流動瑜珈</h2>
+        <p class="pk-co"><span class="pk-coach">何柏翰</span> 帶・戰士二式・75 分鐘</p>
+        <p class="pk-cue">今天練戰士二式。前膝彎，後腳踩實，手拉長。</p>
+        <div class="pk-act"><button type="button" class="add" aria-pressed="false"><span class="a-off">加入這堂</span><span class="a-on">已加入</span></button><a href="#c-flow">這堂課怎麼上</a></div>
+      </div><div class="face" data-t="yin" hidden>
+        <h2>陰瑜珈</h2>
+        <p class="pk-co"><span class="pk-coach">何柏翰</span> 帶・嬰兒式・90 分鐘</p>
+        <p class="pk-cue">今天練嬰兒式。停在七分，不要到十分。</p>
+        <div class="pk-act"><button type="button" class="add" aria-pressed="false"><span class="a-off">加入這堂</span><span class="a-on">已加入</span></button><a href="#c-yin">這堂課怎麼上</a></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sched" id="schedule" aria-labelledby="h-sched">
+    <div class="sched-h"><h2 id="h-sched" class="sr-only">這週課表</h2>
+      <div class="jump"><span class="jump-l" aria-hidden="true">跳到</span><button type="button" data-h="6" aria-label="捲到早上六點">06</button><button type="button" data-h="12" aria-label="捲到中午十二點">12</button><button type="button" data-h="18" aria-label="捲到晚上六點">18</button></div>
+    </div>
+    <div class="tl-sc" aria-label="週課表">
+      <div class="tl">
+        <div class="band" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
+        <div class="axis" aria-hidden="true"><span style="--h:0">06</span><span style="--h:1">07</span><span style="--h:2">08</span><span style="--h:3">09</span><span style="--h:4">10</span><span style="--h:5">11</span><span style="--h:6">12</span><span style="--h:7">13</span><span style="--h:8">14</span><span style="--h:9">15</span><span style="--h:10">16</span><span style="--h:11">17</span><span style="--h:12" class="ev">18</span><span style="--h:13" class="ev">19</span><span style="--h:14" class="ev">20</span><span style="--h:15" class="ev">21</span><span style="--h:16" class="ev">22</span></div>
+        <ol class="days" role="list"><li class="day" data-day="1"><h3 class="dn"><span class="dn-w">週一</span><span class="dd" aria-hidden="true"></span></h3><ul class="row" role="list"><li><button type="button" class="blk t-wake" id="b-1-0600" data-s="1-0600" data-t="wake" data-d="1" data-st="0" data-du="30" data-c="ho" style="--st:0;--du:30" aria-pressed="false"><span class="b-l"><span class="b-t">06:00</span><span class="b-n">晨動</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.53 6.42L4.68 9.75L10.52 2.09"/></svg></span><svg class="b-m m-wake" viewBox="0 0 30 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w2" d="M0.6 10.6H29.4"/><path class="w1" d="M1.4 10.4L1.44 2.49M4.21 10.4L3.76 4.47M7.15 10.4L6.75 4.45M9.76 10.4L10.04 2.53M12.46 10.4L12.52 3.2M14.96 10.4L15.31 3.34M17.89 10.4L17.62 1.82M20.88 10.4L21.26 4.62M23.49 10.4L23.25 4.06M26.22 10.4L26.4 5.96M29.16 10.4L29.36 3.58"/></svg><span class="sr-only">晨間活動度，到 06:30，何柏翰</span></button></li><li><button type="button" class="blk t-mat" id="b-1-0700" data-s="1-0700" data-t="mat" data-d="1" data-st="60" data-du="50" data-c="lai" style="--st:60;--du:50" aria-pressed="false"><span class="b-l"><span class="b-t">07:00</span><span class="b-n">墊上</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.56 6.64L4.65 9.68L10.48 2.46"/></svg></span><svg class="b-m m-mat" viewBox="0 0 50 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="fl" d="M2.4 2.81L5.6 2.31L8.8 2.79L12 2.55L15.2 2.4L18.4 3.01L21.6 2.75L24.8 2.93L28 2.99L31.2 2.9L34.4 2.79L37.6 3.12L40.8 2.5L44 2.86L47.2 2.87L47.6 2.8Q50.2 2.6 50.2 6.9Q50.2 11.2 47.6 11L47.6 11L47.2 11.42L44 11.38L40.8 10.88L37.6 11.16L34.4 11.1L31.2 10.98L28 11.23L24.8 10.86L21.6 11.43L18.4 11.35L15.2 11.2L12 10.93L8.8 11.32L5.6 11.12L2.4 11.21Q-0.2 11.2 -0.2 6.9Q-0.2 2.6 2.4 2.81Z"/><path class="w1 ink-x" d="M46.4 4.6q1.6 2.3 0 4.6"/></svg><span class="sr-only">墊上皮拉提斯，到 07:50，賴宥廷</span></button></li><li><button type="button" class="blk t-reformer" id="b-1-1210" data-s="1-1210" data-t="reformer" data-d="1" data-st="370" data-du="55" data-c="chung" style="--st:370;--du:55" aria-pressed="false"><span class="b-l"><span class="b-t">12:10</span><span class="b-n">器械</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.43 6.96L4.62 9.92L10.62 2.71"/></svg></span><svg class="b-m m-reformer" viewBox="0 0 55 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w1" d="M0.4 0.8V11.6M54.6 0.8V11.6M0.4 6.2L1.6 1.92L3.63 10.08L5.43 2.59L7.18 10.16L8.9 2.56L10.9 10.03L12.87 2.25L14.77 10.21L16.78 2.19L18.67 10.09L20.53 2.33L22.52 10.08L24.24 2.1L25.96 10.28L27.98 1.95L30 9.78L31.85 2.08L33.7 10.11L35.69 2.39L37.39 10.01L39.16 1.98L41.07 10.39L43.06 2.24L44.86 10.33L46.62 1.95L48.44 10.24L50.18 1.92L51.93 10.27L53.72 2.59L54.6 6.2"/></svg><span class="sr-only">器械核心床，到 13:05，鍾以寧</span></button></li><li><button type="button" class="blk t-flow eve" id="b-1-1800" data-s="1-1800" data-t="flow" data-d="1" data-st="720" data-du="75" data-c="ho" style="--st:720;--du:75" aria-pressed="true"><span class="b-l"><span class="b-t">18:00</span><span class="b-n">流動</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.74 6.56L4.68 10.09L10.51 2.48"/></svg></span><svg class="b-m m-flow" viewBox="0 0 75 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w3" d="M0.5 7.78L1.1 6.39L1.7 5.02L2.3 3.88L2.9 3.11L3.5 2.84L4.1 3.1L4.7 3.85L5.3 4.96L5.9 6.26L6.5 7.57L7.1 8.69L7.7 9.45L8.3 9.76L8.9 9.56L9.5 8.9L10.1 7.89L10.7 6.66L11.3 5.42L11.9 4.34L12.5 3.58L13.1 3.25L13.7 3.38L14.3 3.96L14.9 4.89L15.5 6.02L16.1 7.2L16.7 8.24L17.3 9L17.9 9.36L18.5 9.28L19.1 8.78L19.7 7.94L20.3 6.88L20.9 5.76L21.5 4.74L22.1 3.99L22.7 3.59L23.3 3.61L23.9 4.04L24.5 4.82L25.1 5.82L25.7 6.91L26.3 7.91L26.9 8.68L27.5 9.12L28.1 9.15L28.7 8.78L29.3 8.05L29.9 7.08L30.5 6.01L31.1 5L31.7 4.19L32.3 3.7L32.9 3.62L33.5 3.94L34.1 4.64L34.7 5.59L35.3 6.68L35.9 7.73L36.5 8.59L37.1 9.13L37.7 9.28L38.3 8.99L38.9 8.32L39.5 7.35L40.1 6.23L40.7 5.12L41.3 4.19L41.9 3.58L42.5 3.37L43.1 3.62L43.7 4.28L44.3 5.27L44.9 6.45L45.5 7.63L46.1 8.65L46.7 9.34L47.3 9.61L47.9 9.4L48.5 8.74L49.1 7.72L49.7 6.49L50.3 5.22L50.9 4.11L51.5 3.33L52.1 2.99L52.7 3.16L53.3 3.81L53.9 4.87L54.5 6.16L55.1 7.51L55.7 8.71L56.3 9.58L56.9 9.98L57.5 9.86L58.1 9.22L58.7 8.15L59.3 6.81L59.9 5.39L60.5 4.11L61.1 3.16L61.7 2.68L62.3 2.76L62.9 3.38L63.5 4.45L64.1 5.82L64.7 7.29L65.3 8.63L65.9 9.65L66.5 10.19L67.1 10.16L67.7 9.58L68.3 8.52L68.9 7.14L69.5 5.66L70.1 4.28L70.7 3.21L71.3 2.62L71.9 2.59L72.5 3.13L73.1 4.15L73.7 5.5L74.3 6.98"/></svg><span class="sr-only">流動瑜珈，到 19:15，何柏翰</span></button></li><li><button type="button" class="blk t-reformer eve" id="b-1-1940" data-s="1-1940" data-t="reformer" data-d="1" data-st="820" data-du="55" data-c="chung" style="--st:820;--du:55" aria-pressed="false"><span class="b-l"><span class="b-t">19:40</span><span class="b-n">器械</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.72 6.42L4.96 9.67L10.92 2.31"/></svg></span><svg class="b-m m-reformer" viewBox="0 0 55 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w1" d="M0.4 0.8V11.6M54.6 0.8V11.6M0.4 6.2L1.6 1.91L3.48 10.14L5.29 2.38L6.99 10.32L8.71 2.5L10.74 9.94L12.66 2.09L14.46 10L16.2 2.19L18.08 9.94L20.12 1.98L21.96 10.12L23.89 2.69L25.93 10.03L27.91 2.46L29.95 10.24L31.75 2.22L33.77 9.95L35.6 2.49L37.41 10.4L39.37 2.08L41.21 9.81L42.99 2.24L44.76 10L46.72 2.57L48.72 10.17L50.5 2.37L52.5 10L54.6 6.2"/></svg><span class="sr-only">器械核心床，到 20:35，鍾以寧</span></button></li></ul></li><li class="day" data-day="2"><h3 class="dn"><span class="dn-w">週二</span><span class="dd" aria-hidden="true"></span></h3><ul class="row" role="list"><li><button type="button" class="blk t-wake" id="b-2-0600" data-s="2-0600" data-t="wake" data-d="2" data-st="0" data-du="30" data-c="lai" style="--st:0;--du:30" aria-pressed="false"><span class="b-l"><span class="b-t">06:00</span><span class="b-n">晨動</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.98 6.59L4.78 9.8L10.7 2.51"/></svg></span><svg class="b-m m-wake" viewBox="0 0 30 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w2" d="M0.6 10.6H29.4"/><path class="w1" d="M1.4 10.4L1.56 3.51M3.91 10.4L4.08 4.37M6.78 10.4L6.66 5.74M9.42 10.4L9.73 5.71M12.1 10.4L12.15 2.15M14.69 10.4L15.09 2.35M17.56 10.4L17.26 3.83M20.08 10.4L20.5 5.22M23.08 10.4L22.84 3.82M25.9 10.4L26.24 6.02M28.66 10.4L28.23 3.8"/></svg><span class="sr-only">晨間活動度，到 06:30，賴宥廷</span></button></li><li><button type="button" class="blk t-mat" id="b-2-0930" data-s="2-0930" data-t="mat" data-d="2" data-st="210" data-du="50" data-c="lai" style="--st:210;--du:50" aria-pressed="false"><span class="b-l"><span class="b-t">09:30</span><span class="b-n">墊上</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.78 6.79L4.64 9.64L10.59 2.04"/></svg></span><svg class="b-m m-mat" viewBox="0 0 50 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="fl" d="M2.4 2.89L5.6 2.55L8.8 3.02L12 2.67L15.2 2.27L18.4 2.4L21.6 2.44L24.8 2.71L28 3.05L31.2 2.75L34.4 2.28L37.6 2.77L40.8 2.67L44 2.27L47.2 2.56L47.6 2.8Q50.2 2.6 50.2 6.9Q50.2 11.2 47.6 11L47.6 11L47.2 11.33L44 11.07L40.8 10.9L37.6 10.79L34.4 11.18L31.2 10.94L28 11.27L24.8 10.84L21.6 11.07L18.4 11.18L15.2 11.42L12 11.22L8.8 10.77L5.6 11.34L2.4 11.06Q-0.2 11.2 -0.2 6.9Q-0.2 2.6 2.4 2.89Z"/><path class="w1 ink-x" d="M46.4 4.6q1.6 2.3 0 4.6"/></svg><span class="sr-only">墊上皮拉提斯，到 10:20，賴宥廷</span></button></li><li><button type="button" class="blk t-reformer eve" id="b-2-1800" data-s="2-1800" data-t="reformer" data-d="2" data-st="720" data-du="55" data-c="chung" style="--st:720;--du:55" aria-pressed="false"><span class="b-l"><span class="b-t">18:00</span><span class="b-n">器械</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.61 6.62L4.68 9.63L10.62 2.66"/></svg></span><svg class="b-m m-reformer" viewBox="0 0 55 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w1" d="M0.4 0.8V11.6M54.6 0.8V11.6M0.4 6.2L1.6 2.47L3.62 10.09L5.34 2.37L7.17 10.47L8.98 2.53L10.93 10.02L12.8 2.1L14.53 9.74L16.55 2.01L18.33 9.97L20.27 2.43L22.3 10.35L24.2 2.59L25.99 9.98L27.83 2.66L29.8 9.93L31.57 1.94L33.39 9.9L35.18 1.92L37.05 9.73L39.05 2.15L40.88 10.21L42.7 2.18L44.46 9.76L46.34 2.63L48.29 9.93L50.29 2.56L52.28 10.12L54.6 6.2"/></svg><span class="sr-only">器械核心床，到 18:55，鍾以寧</span></button></li><li><button type="button" class="blk t-mat eve" id="b-2-1910" data-s="2-1910" data-t="mat" data-d="2" data-st="790" data-du="50" data-c="chung" style="--st:790;--du:50" aria-pressed="false"><span class="b-l"><span class="b-t">19:10</span><span class="b-n">墊上</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.9 6.89L4.63 9.95L10.53 2.43"/></svg></span><svg class="b-m m-mat" viewBox="0 0 50 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="fl" d="M2.4 3.13L5.6 2.7L8.8 2.43L12 2.37L15.2 2.7L18.4 2.28L21.6 2.94L24.8 3L28 3.03L31.2 2.32L34.4 2.9L37.6 2.72L40.8 3.12L44 3.02L47.2 2.51L47.6 2.8Q50.2 2.6 50.2 6.9Q50.2 11.2 47.6 11L47.6 11L47.2 11.37L44 11.41L40.8 10.78L37.6 11.12L34.4 11.07L31.2 11L28 10.96L24.8 11.26L21.6 11.07L18.4 11.05L15.2 11.11L12 11.26L8.8 10.99L5.6 11.29L2.4 10.93Q-0.2 11.2 -0.2 6.9Q-0.2 2.6 2.4 3.13Z"/><path class="w1 ink-x" d="M46.4 4.6q1.6 2.3 0 4.6"/></svg><span class="sr-only">墊上皮拉提斯，到 20:00，鍾以寧</span></button></li><li><button type="button" class="blk t-yin eve" id="b-2-2015" data-s="2-2015" data-t="yin" data-d="2" data-st="855" data-du="90" data-c="yeh" style="--st:855;--du:90" aria-pressed="false"><span class="b-l"><span class="b-t">20:15</span><span class="b-n">陰瑜</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.55 6.67L4.98 10.08L10.82 2.79"/></svg></span><svg class="b-m m-yin" viewBox="0 0 90 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w0" d="M0.6 6.4H89.4"/><path class="dt" d="M2.6 6.4h0.01" style="stroke-width:5.26px"/><path class="dt" d="M10.03 6.4h0.01" style="stroke-width:5.36px"/><path class="dt" d="M16.74 6.4h0.01" style="stroke-width:4.86px"/><path class="dt" d="M23.92 6.4h0.01" style="stroke-width:4.84px"/><path class="dt" d="M31.01 6.4h0.01" style="stroke-width:6.36px"/><path class="dt" d="M38.41 6.4h0.01" style="stroke-width:5.34px"/><path class="dt" d="M45.06 6.4h0.01" style="stroke-width:4.75px"/><path class="dt" d="M52.84 6.4h0.01" style="stroke-width:5.42px"/><path class="dt" d="M60.41 6.4h0.01" style="stroke-width:5.37px"/><path class="dt" d="M66.65 6.4h0.01" style="stroke-width:5.2px"/><path class="dt" d="M73.23 6.4h0.01" style="stroke-width:5.59px"/><path class="dt" d="M80.03 6.4h0.01" style="stroke-width:5.48px"/><path class="dt" d="M86.68 6.4h0.01" style="stroke-width:4.65px"/></svg><span class="sr-only">陰瑜珈，到 21:45，葉曉蓉</span></button></li></ul></li><li class="day" data-day="3"><h3 class="dn"><span class="dn-w">週三</span><span class="dd" aria-hidden="true"></span></h3><ul class="row" role="list"><li><button type="button" class="blk t-wake" id="b-3-0600" data-s="3-0600" data-t="wake" data-d="3" data-st="0" data-du="30" data-c="ho" style="--st:0;--du:30" aria-pressed="false"><span class="b-l"><span class="b-t">06:00</span><span class="b-n">晨動</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.79 6.85L4.74 10.01L10.88 2.16"/></svg></span><svg class="b-m m-wake" viewBox="0 0 30 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w2" d="M0.6 10.6H29.4"/><path class="w1" d="M1.4 10.4L1.27 1.81M4.37 10.4L4.18 6.12M7.1 10.4L6.92 2.81M10.02 10.4L9.8 5.89M12.72 10.4L12.92 3.21M15.49 10.4L15.77 3.02M18.29 10.4L18.11 2.04M20.95 10.4L20.83 6M23.52 10.4L23.56 5.82M26.3 10.4L25.88 3.29M29.02 10.4L29.18 4.22"/></svg><span class="sr-only">晨間活動度，到 06:30，何柏翰</span></button></li><li><button type="button" class="blk t-reformer" id="b-3-0700" data-s="3-0700" data-t="reformer" data-d="3" data-st="60" data-du="55" data-c="chung" style="--st:60;--du:55" aria-pressed="false"><span class="b-l"><span class="b-t">07:00</span><span class="b-n">器械</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.89 6.49L4.84 9.7L10.67 2.4"/></svg></span><svg class="b-m m-reformer" viewBox="0 0 55 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w1" d="M0.4 0.8V11.6M54.6 0.8V11.6M0.4 6.2L1.6 2.67L3.34 10.11L5.32 2.35L7.35 10.34L9.07 2.6L10.83 10.22L12.66 2.55L14.54 9.78L16.26 2.6L17.99 10.45L19.8 2.33L21.61 9.82L23.61 2.64L25.47 9.92L27.18 2.62L29.04 9.92L31.08 2.65L33.06 10.19L35.02 2.46L36.91 9.96L38.9 2.07L40.81 10.34L42.72 2.33L44.5 9.97L46.38 2.17L48.14 10.26L50.04 1.9L52.01 10L53.97 2.63L54.6 6.2"/></svg><span class="sr-only">器械核心床，到 07:55，鍾以寧</span></button></li><li><button type="button" class="blk t-mat" id="b-3-1210" data-s="3-1210" data-t="mat" data-d="3" data-st="370" data-du="50" data-c="lai" style="--st:370;--du:50" aria-pressed="false"><span class="b-l"><span class="b-t">12:10</span><span class="b-n">墊上</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.42 6.47L4.93 10.03L10.52 2.6"/></svg></span><svg class="b-m m-mat" viewBox="0 0 50 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="fl" d="M2.4 2.87L5.6 2.99L8.8 2.48L12 2.76L15.2 2.83L18.4 2.42L21.6 2.42L24.8 2.65L28 3.05L31.2 2.93L34.4 2.81L37.6 2.46L40.8 2.42L44 2.57L47.2 2.39L47.6 2.8Q50.2 2.6 50.2 6.9Q50.2 11.2 47.6 11L47.6 11L47.2 11.08L44 11.29L40.8 11.31L37.6 11.32L34.4 11.28L31.2 11.44L28 11.12L24.8 11.25L21.6 11.22L18.4 11.03L15.2 11.17L12 10.92L8.8 11.22L5.6 10.76L2.4 11.44Q-0.2 11.2 -0.2 6.9Q-0.2 2.6 2.4 2.87Z"/><path class="w1 ink-x" d="M46.4 4.6q1.6 2.3 0 4.6"/></svg><span class="sr-only">墊上皮拉提斯，到 13:00，賴宥廷</span></button></li><li><button type="button" class="blk t-flow eve" id="b-3-1800" data-s="3-1800" data-t="flow" data-d="3" data-st="720" data-du="75" data-c="ho" style="--st:720;--du:75" aria-pressed="false"><span class="b-l"><span class="b-t">18:00</span><span class="b-n">流動</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.76 6.72L4.76 9.71L10.8 2.52"/></svg></span><svg class="b-m m-flow" viewBox="0 0 75 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w3" d="M0.5 5.49L1.1 4.25L1.7 3.44L2.3 3.2L2.9 3.57L3.5 4.48L4.1 5.73L4.7 7.09L5.3 8.3L5.9 9.13L6.5 9.43L7.1 9.15L7.7 8.36L8.3 7.2L8.9 5.91L9.5 4.73L10.1 3.88L10.7 3.52L11.3 3.71L11.9 4.41L12.5 5.48L13.1 6.71L13.7 7.87L14.3 8.74L14.9 9.16L15.5 9.05L16.1 8.44L16.7 7.44L17.3 6.25L17.9 5.1L18.5 4.2L19.1 3.72L19.7 3.76L20.3 4.29L20.9 5.23L21.5 6.39L22.1 7.55L22.7 8.49L23.3 9.04L23.9 9.08L24.5 8.61L25.1 7.72L25.7 6.57L26.3 5.38L26.9 4.38L27.5 3.76L28.1 3.64L28.7 4.05L29.3 4.91L29.9 6.07L30.5 7.3L31.1 8.38L31.7 9.08L32.3 9.28L32.9 8.93L33.5 8.09L34.1 6.91L34.7 5.62L35.3 4.46L35.9 3.66L36.5 3.37L37.1 3.66L37.7 4.48L38.3 5.69L38.9 7.05L39.5 8.31L40.1 9.21L40.7 9.59L41.3 9.37L41.9 8.56L42.5 7.33L43.1 5.9L43.7 4.55L44.3 3.53L44.9 3.05L45.5 3.21L46.1 3.98L46.7 5.24L47.3 6.73L47.9 8.18L48.5 9.3L49.1 9.88L49.7 9.8L50.3 9.06L50.9 7.8L51.5 6.26L52.1 4.73L52.7 3.51L53.3 2.83L53.9 2.83L54.5 3.52L55.1 4.76L55.7 6.33L56.3 7.92L56.9 9.23L57.5 10.01L58.1 10.09L58.7 9.47L59.3 8.26L59.9 6.69L60.5 5.05L61.1 3.68L61.7 2.82L62.3 2.65L62.9 3.19L63.5 4.35L64.1 5.9L64.7 7.54L65.3 8.96L65.9 9.89L66.5 10.14L67.1 9.68L67.7 8.6L68.3 7.1L68.9 5.48L69.5 4.04L70.1 3.06L70.7 2.73L71.3 3.1L71.9 4.09L72.5 5.51L73.1 7.09L73.7 8.53L74.3 9.54"/></svg><span class="sr-only">流動瑜珈，到 19:15，何柏翰</span></button></li><li><button type="button" class="blk t-reformer eve" id="b-3-1940" data-s="3-1940" data-t="reformer" data-d="3" data-st="820" data-du="55" data-c="chung" style="--st:820;--du:55" aria-pressed="false"><span class="b-l"><span class="b-t">19:40</span><span class="b-n">器械</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.45 6.41L4.77 10.06L10.54 2.53"/></svg></span><svg class="b-m m-reformer" viewBox="0 0 55 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w1" d="M0.4 0.8V11.6M54.6 0.8V11.6M0.4 6.2L1.6 2.05L3.56 10.34L5.33 2.25L7.13 9.84L9 2.49L10.88 10.27L12.85 2.12L14.62 10.45L16.51 2.48L18.32 10.46L20.29 1.93L22.2 9.84L23.93 2.07L25.8 10.08L27.55 2.62L29.27 10.32L31.16 1.93L33.15 10.47L35.03 1.95L36.91 10.06L38.69 2.42L40.67 10.26L42.71 2.47L44.44 10.18L46.33 2.11L48.18 9.77L50.16 2.4L51.99 10.23L53.93 2.58L54.6 6.2"/></svg><span class="sr-only">器械核心床，到 20:35，鍾以寧</span></button></li></ul></li><li class="day" data-day="4"><h3 class="dn"><span class="dn-w">週四</span><span class="dd" aria-hidden="true"></span></h3><ul class="row" role="list"><li><button type="button" class="blk t-wake" id="b-4-0600" data-s="4-0600" data-t="wake" data-d="4" data-st="0" data-du="30" data-c="lai" style="--st:0;--du:30" aria-pressed="false"><span class="b-l"><span class="b-t">06:00</span><span class="b-n">晨動</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.79 6.91L4.65 9.67L10.62 2.52"/></svg></span><svg class="b-m m-wake" viewBox="0 0 30 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w2" d="M0.6 10.6H29.4"/><path class="w1" d="M1.4 10.4L1.29 4.3M4.25 10.4L4.36 3.71M6.98 10.4L6.97 5.73M9.53 10.4L9.4 5.56M12.28 10.4L12.01 5.76M14.94 10.4L14.9 2.61M17.82 10.4L17.89 5.91M20.69 10.4L20.9 3.89M23.6 10.4L23.22 3.86M26.2 10.4L26.07 2.55M28.77 10.4L28.81 2.4"/></svg><span class="sr-only">晨間活動度，到 06:30，賴宥廷</span></button></li><li><button type="button" class="blk t-mat" id="b-4-0930" data-s="4-0930" data-t="mat" data-d="4" data-st="210" data-du="50" data-c="lai" style="--st:210;--du:50" aria-pressed="false"><span class="b-l"><span class="b-t">09:30</span><span class="b-n">墊上</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.54 6.61L4.75 9.94L10.52 2.56"/></svg></span><svg class="b-m m-mat" viewBox="0 0 50 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="fl" d="M2.4 2.45L5.6 2.8L8.8 3.1L12 2.68L15.2 2.32L18.4 2.86L21.6 2.57L24.8 2.37L28 2.52L31.2 3.11L34.4 2.35L37.6 2.92L40.8 2.98L44 3.01L47.2 2.36L47.6 2.8Q50.2 2.6 50.2 6.9Q50.2 11.2 47.6 11L47.6 11L47.2 11.24L44 10.92L40.8 11.03L37.6 10.86L34.4 10.81L31.2 11.22L28 10.79L24.8 11.23L21.6 11.39L18.4 11.18L15.2 10.87L12 10.95L8.8 11.27L5.6 11.02L2.4 10.78Q-0.2 11.2 -0.2 6.9Q-0.2 2.6 2.4 2.45Z"/><path class="w1 ink-x" d="M46.4 4.6q1.6 2.3 0 4.6"/></svg><span class="sr-only">墊上皮拉提斯，到 10:20，賴宥廷</span></button></li><li><button type="button" class="blk t-reformer eve" id="b-4-1800" data-s="4-1800" data-t="reformer" data-d="4" data-st="720" data-du="55" data-c="chung" style="--st:720;--du:55" aria-pressed="false"><span class="b-l"><span class="b-t">18:00</span><span class="b-n">器械</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.98 6.64L4.75 9.81L10.9 2.31"/></svg></span><svg class="b-m m-reformer" viewBox="0 0 55 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w1" d="M0.4 0.8V11.6M54.6 0.8V11.6M0.4 6.2L1.6 2.6L3.46 10.37L5.19 2.46L6.89 9.75L8.75 2.49L10.56 9.94L12.51 2.02L14.33 10.36L16.36 2.16L18.19 9.77L20.23 2.57L22.07 9.99L24.08 2.51L25.97 9.97L28 2.04L29.96 10.48L31.72 2.04L33.56 10.47L35.43 1.95L37.28 10.46L39.25 2.5L41.03 10.08L42.88 2.17L44.75 10.12L46.47 2.1L48.48 10.33L50.22 2.36L52.19 9.79L54.6 6.2"/></svg><span class="sr-only">器械核心床，到 18:55，鍾以寧</span></button></li><li><button type="button" class="blk t-mat eve" id="b-4-1910" data-s="4-1910" data-t="mat" data-d="4" data-st="790" data-du="50" data-c="chung" style="--st:790;--du:50" aria-pressed="false"><span class="b-l"><span class="b-t">19:10</span><span class="b-n">墊上</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.91 6.74L4.6 9.64L10.79 2.12"/></svg></span><svg class="b-m m-mat" viewBox="0 0 50 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="fl" d="M2.4 2.85L5.6 2.83L8.8 2.75L12 2.9L15.2 2.58L18.4 2.57L21.6 3.13L24.8 3.03L28 2.75L31.2 2.49L34.4 2.57L37.6 2.81L40.8 2.84L44 2.26L47.2 2.56L47.6 2.8Q50.2 2.6 50.2 6.9Q50.2 11.2 47.6 11L47.6 11L47.2 11.16L44 11.41L40.8 11.03L37.6 11.23L34.4 10.89L31.2 10.94L28 11.33L24.8 11.16L21.6 11.06L18.4 11.04L15.2 11.02L12 11.13L8.8 11.4L5.6 11.26L2.4 10.89Q-0.2 11.2 -0.2 6.9Q-0.2 2.6 2.4 2.85Z"/><path class="w1 ink-x" d="M46.4 4.6q1.6 2.3 0 4.6"/></svg><span class="sr-only">墊上皮拉提斯，到 20:00，鍾以寧</span></button></li><li><button type="button" class="blk t-yin eve" id="b-4-2015" data-s="4-2015" data-t="yin" data-d="4" data-st="855" data-du="90" data-c="yeh" style="--st:855;--du:90" aria-pressed="false"><span class="b-l"><span class="b-t">20:15</span><span class="b-n">陰瑜</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.75 6.94L4.74 9.67L10.48 2.3"/></svg></span><svg class="b-m m-yin" viewBox="0 0 90 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w0" d="M0.6 6.4H89.4"/><path class="dt" d="M2.6 6.4h0.01" style="stroke-width:6.47px"/><path class="dt" d="M9.91 6.4h0.01" style="stroke-width:5.81px"/><path class="dt" d="M17.33 6.4h0.01" style="stroke-width:5.71px"/><path class="dt" d="M24.92 6.4h0.01" style="stroke-width:5.95px"/><path class="dt" d="M31.25 6.4h0.01" style="stroke-width:5.28px"/><path class="dt" d="M38.27 6.4h0.01" style="stroke-width:5.55px"/><path class="dt" d="M44.87 6.4h0.01" style="stroke-width:6.4px"/><path class="dt" d="M51.11 6.4h0.01" style="stroke-width:5.71px"/><path class="dt" d="M58.16 6.4h0.01" style="stroke-width:5.57px"/><path class="dt" d="M64.6 6.4h0.01" style="stroke-width:5.86px"/><path class="dt" d="M72.03 6.4h0.01" style="stroke-width:6.14px"/><path class="dt" d="M79.76 6.4h0.01" style="stroke-width:6.43px"/><path class="dt" d="M87.47 6.4h0.01" style="stroke-width:4.51px"/></svg><span class="sr-only">陰瑜珈，到 21:45，葉曉蓉</span></button></li></ul></li><li class="day" data-day="5"><h3 class="dn"><span class="dn-w">週五</span><span class="dd" aria-hidden="true"></span></h3><ul class="row" role="list"><li><button type="button" class="blk t-wake" id="b-5-0600" data-s="5-0600" data-t="wake" data-d="5" data-st="0" data-du="30" data-c="ho" style="--st:0;--du:30" aria-pressed="false"><span class="b-l"><span class="b-t">06:00</span><span class="b-n">晨動</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.85 6.43L4.7 9.65L10.6 2.18"/></svg></span><svg class="b-m m-wake" viewBox="0 0 30 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w2" d="M0.6 10.6H29.4"/><path class="w1" d="M1.4 10.4L1.02 3.78M3.96 10.4L3.56 2.27M6.9 10.4L7.07 3.8M9.87 10.4L9.69 3.49M12.59 10.4L12.17 4.02M15.56 10.4L15.2 2.11M18.27 10.4L18.14 2.77M21.25 10.4L21.39 1.9M23.91 10.4L23.54 3.32M26.51 10.4L26.08 2.42M29.12 10.4L29.35 3.94"/></svg><span class="sr-only">晨間活動度，到 06:30，何柏翰</span></button></li><li><button type="button" class="blk t-mat" id="b-5-0700" data-s="5-0700" data-t="mat" data-d="5" data-st="60" data-du="50" data-c="lai" style="--st:60;--du:50" aria-pressed="false"><span class="b-l"><span class="b-t">07:00</span><span class="b-n">墊上</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.8 6.66L4.61 9.73L10.82 2.74"/></svg></span><svg class="b-m m-mat" viewBox="0 0 50 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="fl" d="M2.4 2.96L5.6 2.78L8.8 2.68L12 2.95L15.2 2.32L18.4 2.96L21.6 2.49L24.8 2.37L28 2.9L31.2 2.54L34.4 2.77L37.6 2.58L40.8 2.53L44 2.33L47.2 2.97L47.6 2.8Q50.2 2.6 50.2 6.9Q50.2 11.2 47.6 11L47.6 11L47.2 11.44L44 11.41L40.8 11.03L37.6 10.99L34.4 11.04L31.2 10.84L28 11.16L24.8 11.22L21.6 11.41L18.4 11.19L15.2 11.41L12 11.37L8.8 10.93L5.6 10.82L2.4 10.76Q-0.2 11.2 -0.2 6.9Q-0.2 2.6 2.4 2.96Z"/><path class="w1 ink-x" d="M46.4 4.6q1.6 2.3 0 4.6"/></svg><span class="sr-only">墊上皮拉提斯，到 07:50，賴宥廷</span></button></li><li><button type="button" class="blk t-reformer" id="b-5-1210" data-s="5-1210" data-t="reformer" data-d="5" data-st="370" data-du="55" data-c="chung" style="--st:370;--du:55" aria-pressed="false"><span class="b-l"><span class="b-t">12:10</span><span class="b-n">器械</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.72 6.93L4.82 9.63L10.42 2.78"/></svg></span><svg class="b-m m-reformer" viewBox="0 0 55 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w1" d="M0.4 0.8V11.6M54.6 0.8V11.6M0.4 6.2L1.6 2.66L3.48 10.02L5.4 2.31L7.17 10.28L8.89 2.11L10.6 10.43L12.49 2.69L14.2 9.75L16.21 2.59L18.12 9.83L19.93 2.08L21.98 10.49L23.98 2.37L25.79 9.75L27.63 1.97L29.47 10.1L31.44 2.43L33.49 9.96L35.21 2.32L36.97 10.48L39.01 1.91L41 10.31L42.96 2.6L44.87 10.49L46.69 2.53L48.43 9.9L50.38 1.97L52.21 9.87L54.6 6.2"/></svg><span class="sr-only">器械核心床，到 13:05，鍾以寧</span></button></li><li><button type="button" class="blk t-flow eve" id="b-5-1800" data-s="5-1800" data-t="flow" data-d="5" data-st="720" data-du="75" data-c="ho" style="--st:720;--du:75" aria-pressed="false"><span class="b-l"><span class="b-t">18:00</span><span class="b-n">流動</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.69 6.93L4.67 9.75L10.58 2.57"/></svg></span><svg class="b-m m-flow" viewBox="0 0 75 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w3" d="M0.5 10.18L1.1 9.96L1.7 9.18L2.3 7.94L2.9 6.46L3.5 4.97L4.1 3.7L4.7 2.86L5.3 2.58L5.9 2.92L6.5 3.81L7.1 5.11L7.7 6.62L8.3 8.08L8.9 9.28L9.5 10.01L10.1 10.16L10.7 9.71L11.3 8.74L11.9 7.4L12.5 5.91L13.1 4.51L13.7 3.42L14.3 2.81L14.9 2.78L15.5 3.32L16.1 4.35L16.7 5.69L17.3 7.13L17.9 8.44L18.5 9.41L19.1 9.89L19.7 9.81L20.3 9.19L20.9 8.14L21.5 6.83L22.1 5.46L22.7 4.27L23.3 3.43L23.9 3.07L24.5 3.24L25.1 3.91L25.7 4.97L26.3 6.23L26.9 7.51L27.5 8.59L28.1 9.3L28.7 9.55L29.3 9.3L29.9 8.59L30.5 7.54L31.1 6.33L31.7 5.15L32.3 4.18L32.9 3.58L33.5 3.43L34.1 3.75L34.7 4.49L35.3 5.52L35.9 6.68L36.5 7.77L37.1 8.64L37.7 9.15L38.3 9.21L38.9 8.83L39.5 8.07L40.1 7.05L40.7 5.93L41.3 4.9L41.9 4.11L42.5 3.69L43.1 3.7L43.7 4.14L44.3 4.93L44.9 5.96L45.5 7.06L46.1 8.05L46.7 8.78L47.3 9.13L47.9 9.05L48.5 8.54L49.1 7.7L49.7 6.64L50.3 5.54L50.9 4.57L51.5 3.88L52.1 3.6L52.7 3.75L53.3 4.34L53.9 5.25L54.5 6.36L55.1 7.49L55.7 8.46L56.3 9.11L56.9 9.33L57.5 9.08L58.1 8.41L58.7 7.4L59.3 6.22L59.9 5.05L60.5 4.08L61.1 3.47L61.7 3.32L62.3 3.66L62.9 4.45L63.5 5.56L64.1 6.83L64.7 8.04L65.3 9.01L65.9 9.58L66.5 9.64L67.1 9.19L67.7 8.28L68.3 7.05L68.9 5.7L69.5 4.45L70.1 3.49L70.7 2.98L71.3 3.02L71.9 3.6L72.5 4.64L73.1 5.97L73.7 7.39L74.3 8.67"/></svg><span class="sr-only">流動瑜珈，到 19:15，何柏翰</span></button></li></ul></li><li class="day" data-day="6"><h3 class="dn"><span class="dn-w">週六</span><span class="dd" aria-hidden="true"></span></h3><ul class="row" role="list"><li><button type="button" class="blk t-flow" id="b-6-0800" data-s="6-0800" data-t="flow" data-d="6" data-st="120" data-du="75" data-c="ho" style="--st:120;--du:75" aria-pressed="false"><span class="b-l"><span class="b-t">08:00</span><span class="b-n">流動</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.96 6.44L4.72 9.83L10.59 2.43"/></svg></span><svg class="b-m m-flow" viewBox="0 0 75 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w3" d="M0.5 7.64L1.1 6.26L1.7 4.91L2.3 3.82L2.9 3.14L3.5 2.99L4.1 3.37L4.7 4.22L5.3 5.41L5.9 6.73L6.5 7.99L7.1 8.97L7.7 9.54L8.3 9.61L8.9 9.17L9.5 8.31L10.1 7.16L10.7 5.9L11.3 4.75L11.9 3.87L12.5 3.4L13.1 3.41L13.7 3.89L14.3 4.75L14.9 5.86L15.5 7.04L16.1 8.1L16.7 8.88L17.3 9.26L17.9 9.19L18.5 8.68L19.1 7.82L19.7 6.75L20.3 5.63L20.9 4.65L21.5 3.95L22.1 3.65L22.7 3.78L23.3 4.31L23.9 5.18L24.5 6.23L25.1 7.29L25.7 8.22L26.3 8.85L26.9 9.09L27.5 8.91L28.1 8.34L28.7 7.46L29.3 6.41L29.9 5.37L30.5 4.48L31.1 3.9L31.7 3.71L32.3 3.94L32.9 4.56L33.5 5.48L34.1 6.55L34.7 7.6L35.3 8.46L35.9 9.01L36.5 9.15L37.1 8.86L37.7 8.17L38.3 7.19L38.9 6.08L39.5 5.01L40.1 4.14L40.7 3.63L41.3 3.54L41.9 3.91L42.5 4.68L43.1 5.73L43.7 6.91L44.3 8.02L44.9 8.89L45.5 9.38L46.1 9.4L46.7 8.94L47.3 8.07L47.9 6.93L48.5 5.68L49.1 4.53L49.7 3.65L50.3 3.21L50.9 3.26L51.5 3.81L52.1 4.79L52.7 6.03L53.3 7.35L53.9 8.54L54.5 9.4L55.1 9.8L55.7 9.66L56.3 9L56.9 7.92L57.5 6.58L58.1 5.2L58.7 3.99L59.3 3.16L59.9 2.83L60.5 3.07L61.1 3.83L61.7 5.02L62.3 6.43L62.9 7.85L63.5 9.04L64.1 9.83L64.7 10.08L65.3 9.74L65.9 8.88L66.5 7.61L67.1 6.15L67.7 4.73L68.3 3.56L68.9 2.85L69.5 2.69L70.1 3.12L70.7 4.07L71.3 5.39L71.9 6.87L72.5 8.27L73.1 9.37L73.7 10L74.3 10.06"/></svg><span class="sr-only">流動瑜珈，到 09:15，何柏翰</span></button></li><li><button type="button" class="blk t-reformer" id="b-6-0945" data-s="6-0945" data-t="reformer" data-d="6" data-st="225" data-du="55" data-c="chung" style="--st:225;--du:55" aria-pressed="false"><span class="b-l"><span class="b-t">09:45</span><span class="b-n">器械</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.7 7L4.93 10.04L10.96 2.46"/></svg></span><svg class="b-m m-reformer" viewBox="0 0 55 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w1" d="M0.4 0.8V11.6M54.6 0.8V11.6M0.4 6.2L1.6 2.2L3.42 10.48L5.42 1.95L7.35 10.09L9.28 2.25L11.22 9.91L13.03 2.69L14.92 10.23L16.62 2.65L18.66 10.3L20.37 2.63L22.25 9.87L24.26 2.37L26.2 9.8L27.91 2.43L29.85 10.11L31.9 1.97L33.7 10.32L35.58 2.41L37.39 10.4L39.33 2.61L41.26 10.25L43.04 2.5L44.89 10.44L46.7 1.91L48.5 10.38L50.36 2.18L52.39 10.32L54.6 6.2"/></svg><span class="sr-only">器械核心床，到 10:40，鍾以寧</span></button></li><li><button type="button" class="blk t-mat" id="b-6-1100" data-s="6-1100" data-t="mat" data-d="6" data-st="300" data-du="50" data-c="lai" style="--st:300;--du:50" aria-pressed="false"><span class="b-l"><span class="b-t">11:00</span><span class="b-n">墊上</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.49 6.82L5 9.65L10.58 2.31"/></svg></span><svg class="b-m m-mat" viewBox="0 0 50 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="fl" d="M2.4 3.07L5.6 2.72L8.8 2.84L12 2.48L15.2 2.91L18.4 3.04L21.6 3.09L24.8 2.37L28 2.41L31.2 2.94L34.4 3.05L37.6 2.46L40.8 2.29L44 2.48L47.2 2.55L47.6 2.8Q50.2 2.6 50.2 6.9Q50.2 11.2 47.6 11L47.6 11L47.2 10.8L44 11.4L40.8 11.29L37.6 11.14L34.4 11.3L31.2 11.06L28 10.89L24.8 10.78L21.6 11.29L18.4 11.27L15.2 10.81L12 11.12L8.8 11.45L5.6 11.09L2.4 10.86Q-0.2 11.2 -0.2 6.9Q-0.2 2.6 2.4 3.07Z"/><path class="w1 ink-x" d="M46.4 4.6q1.6 2.3 0 4.6"/></svg><span class="sr-only">墊上皮拉提斯，到 11:50，賴宥廷</span></button></li><li><button type="button" class="blk t-yin" id="b-6-1530" data-s="6-1530" data-t="yin" data-d="6" data-st="570" data-du="90" data-c="yeh" style="--st:570;--du:90" aria-pressed="false"><span class="b-l"><span class="b-t">15:30</span><span class="b-n">陰瑜</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.88 6.99L4.77 9.64L10.79 2.04"/></svg></span><svg class="b-m m-yin" viewBox="0 0 90 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w0" d="M0.6 6.4H89.4"/><path class="dt" d="M2.6 6.4h0.01" style="stroke-width:5.31px"/><path class="dt" d="M9.92 6.4h0.01" style="stroke-width:4.81px"/><path class="dt" d="M17.14 6.4h0.01" style="stroke-width:4.78px"/><path class="dt" d="M24.93 6.4h0.01" style="stroke-width:6.16px"/><path class="dt" d="M32.37 6.4h0.01" style="stroke-width:5.93px"/><path class="dt" d="M39.45 6.4h0.01" style="stroke-width:4.55px"/><path class="dt" d="M46.96 6.4h0.01" style="stroke-width:6.19px"/><path class="dt" d="M53.97 6.4h0.01" style="stroke-width:6.48px"/><path class="dt" d="M60.42 6.4h0.01" style="stroke-width:4.79px"/><path class="dt" d="M67.34 6.4h0.01" style="stroke-width:6.32px"/><path class="dt" d="M75.12 6.4h0.01" style="stroke-width:5.73px"/><path class="dt" d="M82.59 6.4h0.01" style="stroke-width:6.31px"/></svg><span class="sr-only">陰瑜珈，到 17:00，葉曉蓉</span></button></li></ul></li><li class="day" data-day="7"><h3 class="dn"><span class="dn-w">週日</span><span class="dd" aria-hidden="true"></span></h3><ul class="row" role="list"><li><button type="button" class="blk t-yin" id="b-7-0830" data-s="7-0830" data-t="yin" data-d="7" data-st="150" data-du="90" data-c="yeh" style="--st:150;--du:90" aria-pressed="false"><span class="b-l"><span class="b-t">08:30</span><span class="b-n">陰瑜</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.68 6.5L4.61 9.66L10.4 2.73"/></svg></span><svg class="b-m m-yin" viewBox="0 0 90 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w0" d="M0.6 6.4H89.4"/><path class="dt" d="M2.6 6.4h0.01" style="stroke-width:6px"/><path class="dt" d="M8.83 6.4h0.01" style="stroke-width:6.32px"/><path class="dt" d="M15.51 6.4h0.01" style="stroke-width:6.18px"/><path class="dt" d="M22.21 6.4h0.01" style="stroke-width:4.77px"/><path class="dt" d="M28.86 6.4h0.01" style="stroke-width:5.34px"/><path class="dt" d="M36.5 6.4h0.01" style="stroke-width:5.13px"/><path class="dt" d="M42.83 6.4h0.01" style="stroke-width:6.56px"/><path class="dt" d="M49.23 6.4h0.01" style="stroke-width:5.45px"/><path class="dt" d="M56.45 6.4h0.01" style="stroke-width:6.31px"/><path class="dt" d="M62.91 6.4h0.01" style="stroke-width:5.72px"/><path class="dt" d="M69.25 6.4h0.01" style="stroke-width:6.04px"/><path class="dt" d="M75.67 6.4h0.01" style="stroke-width:5.8px"/><path class="dt" d="M82.46 6.4h0.01" style="stroke-width:5.92px"/></svg><span class="sr-only">陰瑜珈，到 10:00，葉曉蓉</span></button></li><li><button type="button" class="blk t-mat" id="b-7-1030" data-s="7-1030" data-t="mat" data-d="7" data-st="270" data-du="50" data-c="lai" style="--st:270;--du:50" aria-pressed="false"><span class="b-l"><span class="b-t">10:30</span><span class="b-n">墊上</span><svg class="b-ok" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.7 6.71L4.76 9.92L10.6 2.73"/></svg></span><svg class="b-m m-mat" viewBox="0 0 50 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="fl" d="M2.4 2.87L5.6 2.32L8.8 2.65L12 3.08L15.2 2.31L18.4 2.76L21.6 2.41L24.8 2.97L28 3.02L31.2 2.53L34.4 2.95L37.6 2.45L40.8 2.48L44 2.38L47.2 2.41L47.6 2.8Q50.2 2.6 50.2 6.9Q50.2 11.2 47.6 11L47.6 11L47.2 11.18L44 11.19L40.8 11.32L37.6 10.86L34.4 11.15L31.2 11.14L28 10.91L24.8 11.43L21.6 11.18L18.4 10.99L15.2 11.34L12 11.13L8.8 11.12L5.6 11.28L2.4 10.77Q-0.2 11.2 -0.2 6.9Q-0.2 2.6 2.4 2.87Z"/><path class="w1 ink-x" d="M46.4 4.6q1.6 2.3 0 4.6"/></svg><span class="sr-only">墊上皮拉提斯，到 11:20，賴宥廷</span></button></li></ul></li></ol>
+        <div class="nowp" hidden></div>
+      </div>
+    </div>
+    <div class="tl-foot"><p class="hint">挑一段線，看這堂的動作</p>
+      <p class="keys" id="tl-keys"><span><kbd>← →</kbd>同一天換課</span><span><kbd>↑ ↓</kbd>換一天</span><span><kbd>Enter</kbd>選定</span><span><kbd>Esc</kbd>取消篩選</span></p>
+    </div>
+  </section>
+
+  <form class="tray" id="book" aria-labelledby="h-book" novalidate>
+    <div class="tr-head"><h2 id="h-book">你約了哪幾堂</h2><p class="tr-sum"><b class="tr-n mkn">0</b>堂・<b class="tr-m mkn">0</b>分鐘</p></div>
+    <div class="meter" aria-hidden="true"><span class="empty-line"></span><div class="seg-w"></div></div>
+    <p class="meter-ax" aria-hidden="true"><span>0h</span><span>1h</span><span>2h</span><span>3h</span><span>4h</span><span>5h</span><span>6h</span></p>
+    <p class="tr-empty">還沒選。點課表上的一段線，再按「加入這堂」。</p>
+    <ol class="tr-list" role="list"></ol>
+    <p class="tr-nojs">記下想上的時段，打 <a href="tel:+886400000622">04-0000-0622</a>，或到櫃台說。</p>
+    <div class="tr-form">
+      <label class="fl">名字<input type="text" name="n" autocomplete="name"></label>
+      <label class="fl">手機<input type="tel" name="p" inputmode="tel" autocomplete="tel" placeholder="09xx-xxx-xxx"></label>
+      <label class="ck"><input type="checkbox" name="f">第一次來</label>
+      <button type="submit" class="gen">產生預約訊息</button>
+      <p class="err" data-err="n" hidden>先寫名字。</p>
+      <p class="err" data-err="p" hidden>手機寫十碼，09 開頭。</p>
+      <p class="err" data-err="e" hidden>先加一堂課，再產生訊息。</p>
+    </div>
+    <div class="tr-out" hidden><div class="msg"></div><button type="button" class="copy">複製訊息</button><span class="copied" hidden>複製好了。貼給櫃台。</span></div>
+    <p class="tr-note">這一頁不會把資料送出去。複製訊息傳給櫃台，或直接打 <a href="tel:+886400000622">04-0000-0622</a>。櫃台回覆了，才算約好。</p>
+  </form>
+  <p id="booked-note" hidden>已加入你的預約</p>
+  <div id="msgs" hidden><span data-m="sel">已選</span><span data-m="add">已加入預約</span><span data-m="del">已取消</span><span data-m="gen">預約訊息好了，可以複製。</span><span data-m="next">下一堂</span><span data-m="run">上課中</span><span data-c="chung">鍾以寧</span><span data-c="ho">何柏翰</span><span data-c="yeh">葉曉蓉</span><span data-c="lai">賴宥廷</span></div>
+  <p class="sr-only" id="live" aria-live="polite"></p>
+  <template id="tpl-ti"><li class="ti"><span class="ti-m" aria-hidden="true"></span><span class="ti-d"></span><span class="ti-t"></span><span><b class="ti-c"></b>　<span class="ti-k"></span></span><button type="button" class="ti-x">取消<span class="sr-only ti-sr"></span></button></li></template>
+  <template id="tpl-msg"><div><b>六點鐘運動教室</b>　預約</div><div>名字：<span class="m-n"></span>　手機：<span class="m-p"></span></div><div class="m-list"></div><div class="m-first">第一次來。上課前，請教練先看我的動作。</div></template>
+  <template id="tpl-mi"><div>・<span class="m-d"></span>　<span class="m-t"></span>　<span class="m-c"></span>（<span class="m-k"></span>）</div></template>
+</div>
+
+<section class="coaches" id="coaches" aria-labelledby="h-co">
+  <h2 id="h-co">上課時聽到最多次的那句話</h2>
+  <ol class="cl" role="list"><li class="co big"><p class="co-cue">「下巴收，看肚臍。數到四再換。」</p><div class="co-who"><h3>賴宥廷</h3><a class="tchip" href="#c-mat">墊上皮拉提斯</a><a class="tchip" href="#c-wake">晨間活動度</a></div><ul class="co-pts" role="list"><li>動作小沒關係，準就好。</li><li>第一次來，站第一排。</li><li>有舊傷，上課前先講。</li></ul></li><li class="co s1"><p class="co-cue">「肋骨收回來。再吐一口。」</p><div class="co-who"><h3>鍾以寧</h3><a class="tchip" href="#c-reformer">器械核心床</a><a class="tchip" href="#c-mat">墊上皮拉提斯</a></div><ul class="co-pts" role="list"><li>先找到骨盆的位置，再動。</li><li>彈簧回來的那一段，也要控制。</li><li>五下做滿，不要十下做一半。</li></ul></li><li class="co s2"><p class="co-cue">「呼吸先走，動作跟上。」</p><div class="co-who"><h3>何柏翰</h3><a class="tchip" href="#c-flow">流動瑜珈</a><a class="tchip" href="#c-wake">晨間活動度</a></div><ul class="co-pts" role="list"><li>腳掌踩實，十個腳趾張開。</li><li>喘了就回到嬰兒式，不用問。</li><li>看自己的墊子，不要看隔壁。</li></ul></li><li class="co s3"><p class="co-cue">「停在七分。不用到十分。」</p><div class="co-who"><h3>葉曉蓉</h3><a class="tchip" href="#c-yin">陰瑜珈</a></div><ul class="co-pts" role="list"><li>冷了就拿毯子。</li><li>痛就退一點，痠可以留著。</li><li>九十分鐘不說話，也可以。</li></ul></li></ol>
+</section>
+
+<div class="chapters" id="types" role="region" aria-labelledby="h-types">
+<h2 class="sr-only" id="h-types">五種課</h2>
+<article class="ch ch-wake" id="c-wake" style="--dur:30" aria-labelledby="h-wake">
+  <header class="ch-h"><h2 id="h-wake">晨間活動度</h2><p class="ch-len"><svg class="len m-wake" viewBox="0 0 30 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w2" d="M0.6 10.6H29.4"/><path class="w1" d="M1.4 10.4L1.25 5.38M3.94 10.4L4.38 2.03M6.9 10.4L6.82 2.89M9.62 10.4L9.67 2.63M12.33 10.4L12.52 4.21M15.22 10.4L15.18 3.09M18.06 10.4L18.33 1.84M20.67 10.4L20.55 4.95M23.48 10.4L23.35 6.08M25.99 10.4L25.54 3.77M28.68 10.4L28.86 4.77"/></svg><span><b class="mkn">30</b>分鐘</span></p></header>
+  <p class="ch-lead">早上六點，三十分鐘。不流汗，先把關節一個一個叫醒；七點前下課，回家還來得及洗澡。</p>
+  <figure class="fx"><div class="fx-in">
+    <div class="fx-art" role="img" aria-label="從站姿蹲到深蹲的分解：腳跟踩地，膝蓋往前，屁股往下坐，手肘推開膝蓋" style="--ar:0.5"><svg class="fig" viewBox="82 17 54 107" aria-hidden="true" focusable="false"><path class="fg-ground" d="M42 122.6h134"/><g class="fg-gh"><path class="g0" d="M87.42 68.61L87.61 94.9A3.48 3.48 0 0 0 94.56 95.14L96.58 68.93A4.59 4.59 0 0 0 87.42 68.61ZM87.88 95.07L89.37 119.87A2.15 2.15 0 0 0 93.67 119.8L94.28 94.96A3.2 3.2 0 0 0 87.88 95.07ZM91.59 122L99.74 121.11A1.56 1.56 0 0 0 99.63 117.99L91.44 117.67A2.17 2.17 0 0 0 91.59 122ZM88.99 38.76L91.66 55.64A2.14 2.14 0 0 0 95.91 55.2L95.01 38.13A3.03 3.03 0 0 0 88.99 38.76ZM91.65 55.88L95.69 72.36A1.66 1.66 0 0 0 98.93 71.68L95.92 54.97A2.19 2.19 0 0 0 91.65 55.88ZM98.44 68.77L99.8 38.44A7.8 7.8 0 0 0 84.2 38.44L85.56 68.77A6.44 6.44 0 0 0 98.44 68.77ZM94.39 38.53L94.33 33.37A2.16 2.16 0 0 0 90.03 33.22L89.61 38.36A2.4 2.4 0 0 0 94.39 38.53ZM87.42 68.93L89.44 95.14A3.48 3.48 0 0 0 96.39 94.9L96.58 68.61A4.59 4.59 0 0 0 87.42 68.93ZM89.72 94.96L90.33 119.8A2.15 2.15 0 0 0 94.63 119.87L96.12 95.07A3.2 3.2 0 0 0 89.72 94.96ZM92.48 122L100.65 121.39A1.56 1.56 0 0 0 100.65 118.28L92.48 117.67A2.17 2.17 0 0 0 92.48 122ZM88.98 38.23L88.67 55.32A2.14 2.14 0 0 0 92.94 55.62L95.02 38.66A3.03 3.03 0 0 0 88.98 38.23ZM88.63 55.63L90.34 72.52A1.66 1.66 0 0 0 93.64 72.29L92.99 55.32A2.19 2.19 0 0 0 88.63 55.63ZM85.06 25.92a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g1" d="M88.88 71.81L98.69 96.19A3.48 3.48 0 0 0 105.24 93.87L97.52 68.75A4.59 4.59 0 0 0 88.88 71.81ZM98.77 95.08L100.21 119.88A2.15 2.15 0 0 0 104.51 119.82L105.17 94.98A3.2 3.2 0 0 0 98.77 95.08ZM102.44 122.01L110.58 121.12A1.56 1.56 0 0 0 110.47 118.01L102.28 117.69A2.17 2.17 0 0 0 102.44 122.01ZM96.49 40.93L99.16 57.81A2.14 2.14 0 0 0 103.42 57.36L102.51 40.3A3.03 3.03 0 0 0 96.49 40.93ZM99.15 58.04L103.2 74.53A1.66 1.66 0 0 0 106.43 73.84L103.42 57.13A2.19 2.19 0 0 0 99.15 58.04ZM99.5 71.62L107.13 42.23A7.8 7.8 0 0 0 91.87 38.99L86.9 68.94A6.44 6.44 0 0 0 99.5 71.62ZM101.89 40.76L101.98 35.61A2.16 2.16 0 0 0 97.67 35.34L97.11 40.46A2.4 2.4 0 0 0 101.89 40.76ZM88.98 72.08L100.32 95.79A3.48 3.48 0 0 0 106.71 93.06L97.42 68.48A4.59 4.59 0 0 0 88.98 72.08ZM100.32 94.37L100.9 119.2A2.15 2.15 0 0 0 105.2 119.28L106.72 94.49A3.2 3.2 0 0 0 100.32 94.37ZM103.05 121.41L111.22 120.8A1.56 1.56 0 0 0 111.22 117.68L103.05 117.08A2.17 2.17 0 0 0 103.05 121.41ZM96.48 40.4L96.18 57.49A2.14 2.14 0 0 0 100.45 57.79L102.52 40.82A3.03 3.03 0 0 0 96.48 40.4ZM96.13 57.79L97.85 74.68A1.66 1.66 0 0 0 101.15 74.45L100.49 57.49A2.19 2.19 0 0 0 96.13 57.79ZM92.91000000000001 28.11a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g2" d="M95.46 108L119.99 98.56A3.48 3.48 0 0 0 117.77 91.98L92.53 99.31A4.59 4.59 0 0 0 95.46 108ZM115.71 94.83L113.3 119.55A2.15 2.15 0 0 0 117.56 120.15L122.05 95.72A3.2 3.2 0 0 0 115.71 94.83ZM115.5 122.01L123.65 121.12A1.56 1.56 0 0 0 123.54 118.01L115.35 117.69A2.17 2.17 0 0 0 115.5 122.01ZM101.39 75.76L105.71 92.3A2.14 2.14 0 0 0 109.9 91.44L107.32 74.54A3.03 3.03 0 0 0 101.39 75.76ZM105.68 92.38L110.15 108.76A1.66 1.66 0 0 0 113.37 107.99L109.93 91.36A2.19 2.19 0 0 0 105.68 92.38ZM100.05 105.86L111.69 77.82A7.8 7.8 0 0 0 97.03 72.49L87.94 101.46A6.44 6.44 0 0 0 100.05 105.86ZM106.69 75.69L107.61 70.61A2.16 2.16 0 0 0 103.4 69.65L102.02 74.62A2.4 2.4 0 0 0 106.69 75.69ZM95.62 107.95L119.78 97.6A3.48 3.48 0 0 0 117.32 91.1L92.37 99.37A4.59 4.59 0 0 0 95.62 107.95ZM115.39 93.88L112.76 118.58A2.15 2.15 0 0 0 117.01 119.22L121.72 94.83A3.2 3.2 0 0 0 115.39 93.88ZM114.89 121.07L123.06 120.46A1.56 1.56 0 0 0 123.06 117.34L114.89 116.74A2.17 2.17 0 0 0 114.89 121.07ZM101.34 75.34L103.28 92.32A2.14 2.14 0 0 0 107.55 92.06L107.38 74.96A3.03 3.03 0 0 0 101.34 75.34ZM103.24 92.4L105.39 109.24A1.66 1.66 0 0 0 108.68 108.92L107.59 91.98A2.19 2.19 0 0 0 103.24 92.4ZM99.77000000000001 62.94a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g3" d="M96.01 111.74L119.13 99.23A3.48 3.48 0 0 0 116.08 92.98L91.99 103.49A4.59 4.59 0 0 0 96.01 111.74ZM114.54 95.17L108.33 119.22A2.15 2.15 0 0 0 112.44 120.48L120.66 97.03A3.2 3.2 0 0 0 114.54 95.17ZM110.46 122.01L118.6 121.12A1.56 1.56 0 0 0 118.49 118.01L110.31 117.69A2.17 2.17 0 0 0 110.46 122.01ZM101.6 80.32L109.24 95.61A2.14 2.14 0 0 0 113.17 93.9L107.15 77.9A3.03 3.03 0 0 0 101.6 80.32ZM111.11 96.94L128.09 97.13A1.66 1.66 0 0 0 128.23 93.83L111.3 92.57A2.19 2.19 0 0 0 111.11 96.94ZM100.05 109.82L111.7 81.78A7.8 7.8 0 0 0 97.04 76.45L87.95 105.41A6.44 6.44 0 0 0 100.05 109.82ZM106.7 79.69L107.71 74.64A2.16 2.16 0 0 0 103.53 73.6L102.05 78.53A2.4 2.4 0 0 0 106.7 79.69ZM96.15 111.66L118.82 98.35A3.48 3.48 0 0 0 115.55 92.22L91.85 103.57A4.59 4.59 0 0 0 96.15 111.66ZM114.11 94.41L108.31 118.56A2.15 2.15 0 0 0 112.44 119.74L120.26 96.16A3.2 3.2 0 0 0 114.11 94.41ZM110.38 121.32L118.55 120.71A1.56 1.56 0 0 0 118.55 117.6L110.38 116.99A2.17 2.17 0 0 0 110.38 121.32ZM101.52 80.12L108.04 95.92A2.14 2.14 0 0 0 112.08 94.5L107.23 78.11A3.03 3.03 0 0 0 101.52 80.12ZM109.66 97.36L126.45 99.91A1.66 1.66 0 0 0 127.05 96.66L110.45 93.06A2.19 2.19 0 0 0 109.66 97.36ZM100.02000000000001 66.96a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/></g><g class="fg-tr"><path d="M92.4 25.9L92.5 25.9L93 25.9L94.3 26L97 26.4L101 29L104.1 38.1L106.1 52.4L107 61.2L107.3 65.3L107.4 66.7L107.4 66.9L107.4 67L107.4 67L107.4 67L107.4 67L107.4 67"/><path d="M92 72.4L92.1 72.4L92.6 72.4L93.9 72.4L96.5 72.8L100.2 75.4L102.8 84.5L104.5 98.7L106.2 107.4L109.6 111.1L115.1 111.1L122.2 106.7L127 96.6L126 89.1L124.2 85.6L123.3 84.4L123.2 84.3"/><path d="M100.7 119.8L100.7 119.8L100.8 119.8L101.8 119.8L105.4 119.6L113.1 119.1L123.1 118.7L126.8 118.7L124.2 118.8L120.9 119L119.3 119.1L118.7 119.1L118.5 119.2L118.5 119.2L118.5 119.2L118.5 119.2L118.5 119.2"/></g><g class="fg-far"><path class="s-thL" d="M96.01 111.75L119.13 99.24A3.48 3.48 0 0 0 116.08 92.99L91.99 103.51A4.59 4.59 0 0 0 96.01 111.75Z"/><path class="s-shL" d="M114.54 95.18L108.29 119.22A2.15 2.15 0 0 0 112.4 120.48L120.66 97.05A3.2 3.2 0 0 0 114.54 95.18Z"/><path class="s-ftL" d="M110.42 122.01L118.57 121.12A1.56 1.56 0 0 0 118.46 118.01L110.27 117.69A2.17 2.17 0 0 0 110.42 122.01Z"/><path class="s-uaL" d="M101.61 80.36L109.36 95.59A2.14 2.14 0 0 0 113.27 93.85L107.14 77.89A3.03 3.03 0 0 0 101.61 80.36Z"/><path class="s-faL" d="M112.94 96.18L123.9 83.22A1.66 1.66 0 0 0 121.44 81L109.69 93.26A2.19 2.19 0 0 0 112.94 96.18Z"/></g><g class="fg-near"><path class="s-T" d="M100.05 109.83L111.7 81.79A7.8 7.8 0 0 0 97.04 76.46L87.95 105.42A6.44 6.44 0 0 0 100.05 109.83Z"/><path class="s-N" d="M106.7 79.7L107.71 74.65A2.16 2.16 0 0 0 103.53 73.61L102.05 78.55A2.4 2.4 0 0 0 106.7 79.7Z"/><circle class="s-H" cx="107.4" cy="66.97" r="7.38"/><path class="s-thR" d="M96.15 111.67L118.82 98.37A3.48 3.48 0 0 0 115.55 92.23L91.85 103.58A4.59 4.59 0 0 0 96.15 111.67Z"/><path class="s-shR" d="M114.11 94.42L108.28 118.56A2.15 2.15 0 0 0 112.41 119.75L120.26 96.18A3.2 3.2 0 0 0 114.11 94.42Z"/><path class="s-ftR" d="M110.34 121.32L118.51 120.72A1.56 1.56 0 0 0 118.51 117.6L110.34 116.99A2.17 2.17 0 0 0 110.34 121.32Z"/><path class="s-uaR" d="M101.53 80.16L108.2 95.9A2.14 2.14 0 0 0 112.22 94.43L107.22 78.09A3.03 3.03 0 0 0 101.53 80.16Z"/><path class="s-faR" d="M111.62 96.84L124.28 85.53A1.66 1.66 0 0 0 122.15 82.99L108.81 93.49A2.19 2.19 0 0 0 111.62 96.84Z"/></g><g class="fg-j"><circle class="j-P" cx="94" cy="107.63" r="1.5"/><circle class="j-C" cx="104.37" cy="79.13" r="1.5"/><circle class="j-kR" cx="117.19" cy="95.3" r="1.5"/><circle class="j-eR" cx="110.21" cy="95.17" r="1.5"/><circle class="j-aR" cx="110.34" cy="119.16" r="1.5"/></g><g class="mk"><path class="ld" d="M104.37 79.13L136 79.13"/><circle cx="104.37" cy="79.13" r="2.2"/></g><g class="mk"><path class="ld" d="M117.19 95.3L136 95.3"/><circle cx="117.19" cy="95.3" r="2.2"/></g><g class="mk"><path class="ld" d="M110.34 119.16L136 119.16"/><circle cx="110.34" cy="119.16" r="2.2"/></g></svg></div>
+    <ol class="fx-marks"><li class="r" style="--y:58.06%"><b>胸</b><span>胸口往前推，背不要駝。</span></li><li class="r" style="--y:73.18%"><b>膝</b><span>膝蓋和腳尖，朝同一個方向。</span></li><li class="r" style="--y:95.47%"><b>跟</b><span>腳跟踩地，不要抬。</span></li></ol>
+  </div></figure>
+  <div class="ch-cue"><p class="cue">今天練深蹲。腳跟踩住，屁股往下坐。</p><div class="bt" style="--n:8"><span class="tk on" style="--i:1" aria-hidden="true">1</span><span class="tk" style="--i:2" aria-hidden="true">2</span><span class="tk on" style="--i:3" aria-hidden="true">3</span><span class="tk" style="--i:4" aria-hidden="true">4</span><span class="tk on" style="--i:5" aria-hidden="true">5</span><span class="tk" style="--i:6" aria-hidden="true">6</span><span class="tk on" style="--i:7" aria-hidden="true">7</span><span class="tk" style="--i:8" aria-hidden="true">8</span><ol class="bt-l"><li style="--r:1;--s:2"><span class="sr-only">2 拍：</span><span class="bt-t">腳打開，比肩寬。</span></li><li style="--r:3;--s:2"><span class="sr-only">2 拍：</span><span class="bt-t">吐氣，往下蹲。</span></li><li style="--r:5;--s:2"><span class="sr-only">2 拍：</span><span class="bt-t">手肘推開膝蓋。</span></li><li style="--r:7;--s:2"><span class="sr-only">2 拍：</span><span class="bt-t">停住，吸氣。</span></li></ol></div></div>
+  <div class="fit"><div class="yes"><h3>適合</h3><ul><li>剛起床，身體還很硬。</li><li>整天要坐著，先動一動再上班。</li></ul></div><div class="swap"><h3>改上</h3><p>想流汗、想累：<a href="#c-flow">流動瑜珈</a></p><p>沒有運動習慣，也可以來。帶：帶水就好。</p></div></div>
+  <p class="slots"><span class="sl-h">這週</span><a class="slot" href="#b-1-0600" data-s="1-0600">週一 <span class="mkn">06:00</span></a><a class="slot" href="#b-2-0600" data-s="2-0600">週二 <span class="mkn">06:00</span></a><a class="slot" href="#b-3-0600" data-s="3-0600">週三 <span class="mkn">06:00</span></a><a class="slot" href="#b-4-0600" data-s="4-0600">週四 <span class="mkn">06:00</span></a><a class="slot" href="#b-5-0600" data-s="5-0600">週五 <span class="mkn">06:00</span></a></p>
+</article><article class="ch ch-mat" id="c-mat" style="--dur:50" aria-labelledby="h-mat">
+  <header class="ch-h"><h2 id="h-mat">墊上皮拉提斯</h2><p class="ch-len"><svg class="len m-mat" viewBox="0 0 50 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="fl" d="M2.4 2.5L5.6 2.83L8.8 2.39L12 2.76L15.2 2.39L18.4 2.74L21.6 2.7L24.8 3.14L28 2.94L31.2 2.44L34.4 2.77L37.6 2.26L40.8 3.1L44 2.83L47.2 2.26L47.6 2.8Q50.2 2.6 50.2 6.9Q50.2 11.2 47.6 11L47.6 11L47.2 10.99L44 11.1L40.8 10.92L37.6 11.06L34.4 11.13L31.2 11.08L28 11.4L24.8 10.99L21.6 10.84L18.4 11.06L15.2 11.38L12 10.93L8.8 11.1L5.6 11.12L2.4 11.36Q-0.2 11.2 -0.2 6.9Q-0.2 2.6 2.4 2.5Z"/><path class="w1 ink-x" d="M46.4 4.6q1.6 2.3 0 4.6"/></svg><span><b class="mkn">50</b>分鐘</span></p></header>
+  <p class="ch-lead">只用一張墊子和自己的體重。五十分鐘，練的是「肚子出力，脖子不出力」。</p>
+  <figure class="fx"><div class="fx-in">
+    <div class="fx-art" role="img" aria-label="從平躺到百次拍擊的分解：頭和肩膀抬起，雙腿往斜上方伸直，手臂平舉" style="--ar:1.88"><svg class="fig" viewBox="59 65 111 59" aria-hidden="true" focusable="false"><path class="fg-ground" d="M19 122.6h191"/><g class="fg-gh"><path class="g0" d="M110 118.79L136.26 117.68A3.48 3.48 0 0 0 136.26 110.73L110 109.62A4.59 4.59 0 0 0 110 118.79ZM136.26 117.4L161.08 116.35A2.15 2.15 0 0 0 161.08 112.05L136.26 111A3.2 3.2 0 0 0 136.26 117.4ZM163.24 114.28L162.92 106.09A1.56 1.56 0 0 0 159.81 105.98L158.92 114.12A2.17 2.17 0 0 0 163.24 114.28ZM79.56 117.22L96.65 116.93A2.14 2.14 0 0 0 96.8 112.66L79.78 111.18A3.03 3.03 0 0 0 79.56 117.22ZM96.73 116.98L113.7 116.45A1.66 1.66 0 0 0 113.7 113.14L96.73 112.61A2.19 2.19 0 0 0 96.73 116.98ZM110 107.76L79.67 106.4A7.8 7.8 0 0 0 79.67 122L110 120.64A6.44 6.44 0 0 0 110 107.76ZM79.67 111.81L74.52 112.04A2.16 2.16 0 0 0 74.52 116.36L79.67 116.6A2.4 2.4 0 0 0 79.67 111.81ZM109.84 118.78L136.12 118.59A3.48 3.48 0 0 0 136.37 111.64L110.16 109.62A4.59 4.59 0 0 0 109.84 118.78ZM136.24 118.32L161.06 117.27A2.15 2.15 0 0 0 161.06 112.97L136.24 111.92A3.2 3.2 0 0 0 136.24 118.32ZM163.23 115.12L162.62 106.95A1.56 1.56 0 0 0 159.51 106.95L158.9 115.12A2.17 2.17 0 0 0 163.23 115.12ZM79.67 117.23L96.74 116.34A2.14 2.14 0 0 0 96.74 112.06L79.67 111.18A3.03 3.03 0 0 0 79.67 117.23ZM96.74 116.39L113.71 115.86A1.66 1.66 0 0 0 113.71 112.55L96.74 112.02A2.19 2.19 0 0 0 96.74 116.39ZM59.76 114.2a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g1" d="M110.64 120.1L136.49 115.34A3.48 3.48 0 0 0 135.52 108.46L109.36 111.02A4.59 4.59 0 0 0 110.64 120.1ZM136.02 115.1L160.83 113.95A2.15 2.15 0 0 0 160.82 109.65L135.99 108.7A3.2 3.2 0 0 0 136.02 115.1ZM162.99 111.88L162.67 103.69A1.56 1.56 0 0 0 159.55 103.58L158.66 111.73A2.17 2.17 0 0 0 162.99 111.88ZM81.05 109.22L98.14 108.93A2.14 2.14 0 0 0 98.29 104.65L81.26 103.17A3.03 3.03 0 0 0 81.05 109.22ZM98.21 108.97L115.18 108.44A1.66 1.66 0 0 0 115.18 105.13L98.21 104.6A2.19 2.19 0 0 0 98.21 108.97ZM111.99 109.43L83.56 98.77A7.8 7.8 0 0 0 78.74 113.61L108.01 121.69A6.44 6.44 0 0 0 111.99 109.43ZM81.36 103.81L76.21 103.59A2.16 2.16 0 0 0 75.83 107.89L80.94 108.58A2.4 2.4 0 0 0 81.36 103.81ZM110.45 120.12L136.47 116.43A3.48 3.48 0 0 0 135.79 109.52L109.55 111A4.59 4.59 0 0 0 110.45 120.12ZM136.14 116.17L160.96 115.04A2.15 2.15 0 0 0 160.94 110.74L136.12 109.77A3.2 3.2 0 0 0 136.14 116.17ZM163.12 112.89L162.51 104.72A1.56 1.56 0 0 0 159.39 104.72L158.79 112.89A2.17 2.17 0 0 0 163.12 112.89ZM81.15 109.22L98.22 108.33A2.14 2.14 0 0 0 98.22 104.05L81.15 103.17A3.03 3.03 0 0 0 81.15 109.22ZM98.22 108.38L115.19 107.85A1.66 1.66 0 0 0 115.19 104.54L98.22 104.01A2.19 2.19 0 0 0 98.22 108.38ZM61.29 105.09a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g2" d="M113.02 119.01L132.03 100.86A3.48 3.48 0 0 0 127.45 95.63L106.98 112.11A4.59 4.59 0 0 0 113.02 119.01ZM130.94 101.21L153.56 90.94A2.15 2.15 0 0 0 151.95 86.95L128.54 95.28A3.2 3.2 0 0 0 130.94 101.21ZM154.91 89.15L155.06 80.95A1.56 1.56 0 0 0 151.95 80.67L150.6 88.75A2.17 2.17 0 0 0 154.91 89.15ZM83.58 103.44L100.68 103.34A2.14 2.14 0 0 0 100.87 99.06L83.86 97.39A3.03 3.03 0 0 0 83.58 103.44ZM100.77 103.38L117.74 102.85A1.66 1.66 0 0 0 117.74 99.54L100.77 99.01A2.19 2.19 0 0 0 100.77 103.38ZM113.22 109.98L87.62 93.66A7.8 7.8 0 0 0 79.83 107.17L106.78 121.14A6.44 6.44 0 0 0 113.22 109.98ZM85.08 98.44L80.69 95.72A2.16 2.16 0 0 0 78.26 99.28L82.37 102.39A2.4 2.4 0 0 0 85.08 98.44ZM112.78 119.2L132.98 102.38A3.48 3.48 0 0 0 128.76 96.86L107.22 111.92A4.59 4.59 0 0 0 112.78 119.2ZM131.96 102.63L154.93 93.15A2.15 2.15 0 0 0 153.46 89.11L129.77 96.61A3.2 3.2 0 0 0 131.96 102.63ZM156.35 91.27L156.26 83.08A1.56 1.56 0 0 0 153.15 82.88L152.03 90.99A2.17 2.17 0 0 0 156.35 91.27ZM83.57 103.44L100.67 103.4A2.14 2.14 0 0 0 100.88 99.12L83.87 97.39A3.03 3.03 0 0 0 83.57 103.44ZM100.77 103.44L117.74 102.92A1.66 1.66 0 0 0 117.74 99.61L100.77 99.07A2.19 2.19 0 0 0 100.77 103.44ZM66.01 93.33a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g3" d="M113.19 118.86L131.3 99.82A3.48 3.48 0 0 0 126.48 94.82L106.81 112.26A4.59 4.59 0 0 0 113.19 118.86ZM131.1 99.63L148.3 81.7A2.15 2.15 0 0 0 145.32 78.59L126.68 95.01A3.2 3.2 0 0 0 131.1 99.63ZM148.35 81.66L153.65 75.41A1.56 1.56 0 0 0 151.43 73.23L145.27 78.63A2.17 2.17 0 0 0 148.35 81.66ZM83.52 103.41L100.62 103.71A2.14 2.14 0 0 0 100.91 99.44L83.94 97.38A3.03 3.03 0 0 0 83.52 103.41ZM100.76 103.76L117.73 103.23A1.66 1.66 0 0 0 117.73 99.92L100.76 99.39A2.19 2.19 0 0 0 100.76 103.76ZM113.22 109.98L87.63 93.64A7.8 7.8 0 0 0 79.83 107.15L106.78 121.14A6.44 6.44 0 0 0 113.22 109.98ZM85.21 98.51L81 95.53A2.16 2.16 0 0 0 78.35 98.92L82.26 102.28A2.4 2.4 0 0 0 85.21 98.51ZM112.95 119.07L132.35 101.34A3.48 3.48 0 0 0 127.88 96.02L107.05 112.05A4.59 4.59 0 0 0 112.95 119.07ZM132.16 101.14L150.56 84.44A2.15 2.15 0 0 0 147.81 81.14L128.07 96.22A3.2 3.2 0 0 0 132.16 101.14ZM150.65 84.39L156.26 78.41A1.56 1.56 0 0 0 154.15 76.12L147.72 81.2A2.17 2.17 0 0 0 150.65 84.39ZM83.27 103.38L100.28 105.12A2.14 2.14 0 0 0 100.93 100.89L84.2 97.41A3.03 3.03 0 0 0 83.27 103.38ZM100.53 105.19L117.51 105.19A1.66 1.66 0 0 0 117.62 101.88L100.67 100.82A2.19 2.19 0 0 0 100.53 105.19ZM66.48 92.68a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/></g><g class="fg-tr"><path d="M67.1 114.2L67.1 114.2L67.1 114.2L67.2 113.1L67.7 109.5L69 104L70.5 99.3L72.1 95.5L73.2 93.6L73.7 92.9L73.8 92.7L73.9 92.7L73.9 92.7L73.9 92.7L73.9 92.7L73.9 92.7L73.9 92.7"/><path d="M113.7 114.2L113.7 114.2L113.7 114.2L113.8 113.2L114.2 109.9L115.5 105.4L116.7 102.5L117.4 101.2L117.7 101.1L117.7 101.8L117.6 102.6L117.6 103.2L117.6 103.6L117.5 103.8L117.5 103.9L117.5 103.9L117.5 104"/><path d="M161.1 106.9L161.1 107L161.1 107.6L161.1 108L161.1 106.8L160.9 104L159.8 98.4L157.5 91.4L155.4 85.1L153.5 79.3L153.1 76.7L154.4 76.6L155.3 77.4L155.8 78.1L156 78.4L156.1 78.4L156.1 78.4"/></g><g class="fg-far"><path class="s-thL" d="M113.19 118.86L131.3 99.82A3.48 3.48 0 0 0 126.48 94.82L106.81 112.26A4.59 4.59 0 0 0 113.19 118.86Z"/><path class="s-shL" d="M131.11 99.62L148.24 81.62A2.15 2.15 0 0 0 145.25 78.53L126.67 95.02A3.2 3.2 0 0 0 131.11 99.62Z"/><path class="s-ftL" d="M148.02 81.83L154.27 76.54A1.56 1.56 0 0 0 152.44 74.01L145.47 78.33A2.17 2.17 0 0 0 148.02 81.83Z"/><path class="s-uaL" d="M83.52 103.41L100.61 103.72A2.14 2.14 0 0 0 100.91 99.45L83.94 97.38A3.03 3.03 0 0 0 83.52 103.41Z"/><path class="s-faL" d="M100.76 103.77L117.73 103.24A1.66 1.66 0 0 0 117.73 99.93L100.76 99.4A2.19 2.19 0 0 0 100.76 103.77Z"/></g><g class="fg-near"><path class="s-T" d="M113.22 109.98L87.63 93.64A7.8 7.8 0 0 0 79.83 107.15L106.78 121.14A6.44 6.44 0 0 0 113.22 109.98Z"/><path class="s-N" d="M85.21 98.51L81 95.53A2.16 2.16 0 0 0 78.35 98.92L82.26 102.28A2.4 2.4 0 0 0 85.21 98.51Z"/><circle class="s-H" cx="73.86" cy="92.68" r="7.38"/><path class="s-thR" d="M112.95 119.07L132.35 101.34A3.48 3.48 0 0 0 127.88 96.02L107.05 112.05A4.59 4.59 0 0 0 112.95 119.07Z"/><path class="s-shR" d="M132.17 101.13L150.51 84.37A2.15 2.15 0 0 0 147.75 81.08L128.06 96.23A3.2 3.2 0 0 0 132.17 101.13Z"/><path class="s-ftR" d="M150.28 84.56L156.88 79.72A1.56 1.56 0 0 0 155.23 77.08L147.98 80.89A2.17 2.17 0 0 0 150.28 84.56Z"/><path class="s-uaR" d="M83.26 103.38L100.26 105.18A2.14 2.14 0 0 0 100.93 100.95L84.21 97.41A3.03 3.03 0 0 0 83.26 103.38Z"/><path class="s-faR" d="M100.48 105.25L117.45 105.61A1.66 1.66 0 0 0 117.63 102.3L100.71 100.88A2.19 2.19 0 0 0 100.48 105.25Z"/></g><g class="fg-j"><circle class="j-P" cx="110" cy="115.56" r="1.5"/><circle class="j-C" cx="83.73" cy="100.4" r="1.5"/><circle class="j-kR" cx="130.12" cy="98.68" r="1.5"/><circle class="j-eR" cx="100.59" cy="103.07" r="1.5"/><circle class="j-aR" cx="149.13" cy="82.73" r="1.5"/></g><g class="mk"><path class="ld" d="M73.86 92.68L59 92.68"/><circle cx="73.86" cy="92.68" r="2.2"/></g><g class="mk"><path class="ld" d="M110 115.56L59 115.56"/><circle cx="110" cy="115.56" r="2.2"/></g><g class="mk"><path class="ld" d="M156.06 78.4L170 78.4"/><circle cx="156.06" cy="78.4" r="2.2"/></g></svg></div>
+    <ol class="fx-marks"><li class="l" style="--y:46.92%"><b>顎</b><span>下巴收，眼睛看肚子。</span></li><li class="l" style="--y:85.69%"><b>腰</b><span>下背貼地，不要拱。</span></li><li class="r" style="--y:22.71%"><b>趾</b><span>腳尖往遠處延伸。</span></li></ol>
+  </div></figure>
+  <div class="ch-cue"><p class="cue">今天練百次拍擊。下巴收，手拍一百下。</p><div class="bt" style="--n:10"><span class="tk on" style="--i:1" aria-hidden="true">1</span><span class="tk" style="--i:2" aria-hidden="true">2</span><span class="tk" style="--i:3" aria-hidden="true">3</span><span class="tk" style="--i:4" aria-hidden="true">4</span><span class="tk" style="--i:5" aria-hidden="true">5</span><span class="tk on" style="--i:6" aria-hidden="true">6</span><span class="tk" style="--i:7" aria-hidden="true">7</span><span class="tk" style="--i:8" aria-hidden="true">8</span><span class="tk" style="--i:9" aria-hidden="true">9</span><span class="tk" style="--i:10" aria-hidden="true">10</span><ol class="bt-l"><li style="--r:1;--s:5"><span class="sr-only">5 拍：</span><span class="bt-t">吸氣——拍、拍、拍、拍、拍。</span></li><li style="--r:6;--s:5"><span class="sr-only">5 拍：</span><span class="bt-t">吐氣——拍、拍、拍、拍、拍。</span></li></ol></div></div>
+  <div class="fit"><div class="yes"><h3>適合</h3><ul><li>想找回肚子出力的感覺。</li><li>跑步、爬山之前，想先練穩。</li></ul></div><div class="swap"><h3>改上</h3><p>上滿三堂、想加彈簧：<a href="#c-reformer">器械核心床</a></p><p>第一次來，就從這堂開始。帶：毛巾、水。</p></div></div>
+  <p class="slots"><span class="sl-h">這週</span><a class="slot" href="#b-1-0700" data-s="1-0700">週一 <span class="mkn">07:00</span></a><a class="slot" href="#b-2-0930" data-s="2-0930">週二 <span class="mkn">09:30</span></a><a class="slot" href="#b-2-1910" data-s="2-1910">週二 <span class="mkn">19:10</span></a><a class="slot" href="#b-3-1210" data-s="3-1210">週三 <span class="mkn">12:10</span></a><a class="slot" href="#b-4-0930" data-s="4-0930">週四 <span class="mkn">09:30</span></a><a class="slot" href="#b-4-1910" data-s="4-1910">週四 <span class="mkn">19:10</span></a><a class="slot" href="#b-5-0700" data-s="5-0700">週五 <span class="mkn">07:00</span></a><a class="slot" href="#b-6-1100" data-s="6-1100">週六 <span class="mkn">11:00</span></a><a class="slot" href="#b-7-1030" data-s="7-1030">週日 <span class="mkn">10:30</span></a></p>
+</article><article class="ch ch-reformer" id="c-reformer" style="--dur:55" aria-labelledby="h-reformer">
+  <header class="ch-h"><h2 id="h-reformer">器械核心床</h2><p class="ch-len"><svg class="len m-reformer" viewBox="0 0 55 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w1" d="M0.4 0.8V11.6M54.6 0.8V11.6M0.4 6.2L1.6 2.54L3.56 9.95L5.3 2.5L7.14 10.02L9.07 2.33L10.77 9.84L12.66 2.31L14.37 9.72L16.31 2.6L18.27 10.49L20.17 2.14L21.99 9.76L23.8 2.44L25.57 10.47L27.42 1.95L29.34 9.85L31.22 2.32L33.09 10.29L34.88 2.1L36.88 9.72L38.66 2.11L40.48 10.34L42.41 2.46L44.28 9.93L46.03 2.09L47.96 10.06L49.68 2.63L51.48 10.38L53.2 2.13L54.6 6.2"/></svg><span><b class="mkn">55</b>分鐘</span></p></header>
+  <p class="ch-lead">彈簧給阻力，也給回彈。五十五分鐘，一床一人，六張床排成一排，教練站在床尾看得到每一張。</p>
+  <figure class="fx"><div class="fx-in">
+    <div class="fx-art" role="img" aria-label="從四足跪姿推到長伸展的分解：雙手撐在肩膀正下方，身體從頭到腳跟一直線" style="--ar:2.25"><svg class="fig" viewBox="48 73 115 51" aria-hidden="true" focusable="false"><path class="fg-ground" d="M8 122.6h195"/><g class="fg-gh"><path class="g0" d="M91.42 92.27L92.53 118.53A3.48 3.48 0 0 0 99.48 118.53L100.59 92.27A4.59 4.59 0 0 0 91.42 92.27ZM96 115.33L71.18 116.38A2.15 2.15 0 0 0 71.18 120.68L96 121.73A3.2 3.2 0 0 0 96 115.33ZM71.18 116.36L63.01 116.97A1.56 1.56 0 0 0 63.01 120.08L71.18 120.69A2.17 2.17 0 0 0 71.18 116.36ZM122.67 86.11L123.56 103.18A2.14 2.14 0 0 0 127.84 103.18L128.72 86.11A3.03 3.03 0 0 0 122.67 86.11ZM123.51 103.18L124.04 120.15A1.66 1.66 0 0 0 127.35 120.15L127.88 103.18A2.19 2.19 0 0 0 123.51 103.18ZM97.31 98.57L127.28 93.75A7.8 7.8 0 0 0 124.12 78.48L94.69 85.96A6.44 6.44 0 0 0 97.31 98.57ZM126.28 88.44L131.22 86.96A2.16 2.16 0 0 0 130.18 82.78L125.12 83.79A2.4 2.4 0 0 0 126.28 88.44ZM91.42 92.43L93.44 118.63A3.48 3.48 0 0 0 100.39 118.39L100.58 92.1A4.59 4.59 0 0 0 91.42 92.43ZM96.92 115.31L72.1 116.36A2.15 2.15 0 0 0 72.1 120.66L96.92 121.71A3.2 3.2 0 0 0 96.92 115.31ZM72.1 116.34L63.93 116.95A1.56 1.56 0 0 0 63.93 120.07L72.1 120.67A2.17 2.17 0 0 0 72.1 116.34ZM122.68 86.01L122.97 103.1A2.14 2.14 0 0 0 127.24 103.25L128.72 86.22A3.03 3.03 0 0 0 122.68 86.01ZM122.92 103.17L123.45 120.14A1.66 1.66 0 0 0 126.76 120.14L127.29 103.17A2.19 2.19 0 0 0 122.92 103.17ZM130.48000000000002 83.08a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g1" d="M102.33 91.73L97.32 117.53A3.48 3.48 0 0 0 104.08 119.14L111.25 93.86A4.59 4.59 0 0 0 102.33 91.73ZM100.69 115.14L75.87 116.22A2.15 2.15 0 0 0 75.88 120.52L100.7 121.54A3.2 3.2 0 0 0 100.69 115.14ZM75.88 116.21L67.71 116.81A1.56 1.56 0 0 0 67.71 119.93L75.88 120.54A2.17 2.17 0 0 0 75.88 116.21ZM133.02 84.76L133.9 101.83A2.14 2.14 0 0 0 138.18 101.83L139.07 84.76A3.03 3.03 0 0 0 133.02 84.76ZM133.86 101.83L134.39 118.8A1.66 1.66 0 0 0 137.7 118.8L138.23 101.83A2.19 2.19 0 0 0 133.86 101.83ZM108.5 99L138.11 92.28A7.8 7.8 0 0 0 133.98 77.24L105.09 86.58A6.44 6.44 0 0 0 108.5 99ZM136.64 87.08L141.57 85.56A2.16 2.16 0 0 0 140.49 81.38L135.44 82.44A2.4 2.4 0 0 0 136.64 87.08ZM102.3 91.88L98.14 117.83A3.48 3.48 0 0 0 104.95 119.22L111.29 93.71A4.59 4.59 0 0 0 102.3 91.88ZM101.54 115.33L76.73 116.41A2.15 2.15 0 0 0 76.73 120.71L101.55 121.72A3.2 3.2 0 0 0 101.54 115.33ZM76.73 116.4L68.56 117A1.56 1.56 0 0 0 68.56 120.12L76.73 120.73A2.17 2.17 0 0 0 76.73 116.4ZM133.02 84.66L133.31 101.75A2.14 2.14 0 0 0 137.58 101.9L139.06 84.87A3.03 3.03 0 0 0 133.02 84.66ZM133.26 101.82L133.79 118.79A1.66 1.66 0 0 0 137.1 118.79L137.63 101.82A2.19 2.19 0 0 0 133.26 101.82ZM140.79 81.62a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g2" d="M112.34 91.29L88.2 101.7A3.48 3.48 0 0 0 90.68 108.19L115.61 99.86A4.59 4.59 0 0 0 112.34 91.29ZM88.99 101.78L64.57 106.34A2.15 2.15 0 0 0 65.18 110.59L89.9 108.11A3.2 3.2 0 0 0 88.99 101.78ZM64.68 106.31L56.59 107.66A1.56 1.56 0 0 0 56.88 110.76L65.07 110.62A2.17 2.17 0 0 0 64.68 106.31ZM139.83 86.26L140.43 103.34A2.14 2.14 0 0 0 144.71 103.41L145.88 86.36A3.03 3.03 0 0 0 139.83 86.26ZM140.39 103.38L140.92 120.35A1.66 1.66 0 0 0 144.23 120.35L144.76 103.38A2.19 2.19 0 0 0 140.39 103.38ZM115.94 101.71L145.24 93.73A7.8 7.8 0 0 0 140.47 78.88L112.01 89.44A6.44 6.44 0 0 0 115.94 101.71ZM143.57 88.59L148.41 86.82A2.16 2.16 0 0 0 147.12 82.71L142.14 84.02A2.4 2.4 0 0 0 143.57 88.59ZM112.22 91.34L88.38 102.39A3.48 3.48 0 0 0 91.03 108.81L115.72 99.81A4.59 4.59 0 0 0 112.22 91.34ZM89.21 102.44L64.85 107.31A2.15 2.15 0 0 0 65.51 111.56L90.2 108.76A3.2 3.2 0 0 0 89.21 102.44ZM64.98 107.28L56.9 108.64A1.56 1.56 0 0 0 57.19 111.75L65.38 111.59A2.17 2.17 0 0 0 64.98 107.28ZM139.83 86.23L140.31 103.32A2.14 2.14 0 0 0 144.58 103.42L145.88 86.38A3.03 3.03 0 0 0 139.83 86.23ZM140.26 103.37L140.79 120.34A1.66 1.66 0 0 0 144.1 120.34L144.63 103.37A2.19 2.19 0 0 0 140.26 103.37ZM147.43 82.55a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g3" d="M112.71 91.18L87.82 99.61A3.48 3.48 0 0 0 89.77 106.28L115.29 99.98A4.59 4.59 0 0 0 112.71 91.18ZM87.9 99.87L64.36 107.82A2.15 2.15 0 0 0 65.56 111.94L89.69 106.02A3.2 3.2 0 0 0 87.9 99.87ZM62.95 109.09L60.54 116.93A1.56 1.56 0 0 0 63.45 118.06L66.98 110.67A2.17 2.17 0 0 0 62.95 109.09ZM139.86 86.15L139.87 103.24A2.14 2.14 0 0 0 144.14 103.46L145.9 86.46A3.03 3.03 0 0 0 139.86 86.15ZM139.82 103.35L140.35 120.32A1.66 1.66 0 0 0 143.66 120.32L144.19 103.35A2.19 2.19 0 0 0 139.82 103.35ZM115.97 101.71L145.26 93.73A7.8 7.8 0 0 0 140.49 78.88L112.03 89.45A6.44 6.44 0 0 0 115.97 101.71ZM143.61 88.59L148.44 86.78A2.16 2.16 0 0 0 147.12 82.68L142.15 84.02A2.4 2.4 0 0 0 143.61 88.59ZM112.6 91.21L87.93 100.3A3.48 3.48 0 0 0 90.06 106.91L115.4 99.94A4.59 4.59 0 0 0 112.6 91.21ZM88.02 100.56L64.7 109.11A2.15 2.15 0 0 0 66.01 113.2L89.97 106.65A3.2 3.2 0 0 0 88.02 100.56ZM63.33 110.4L61.03 118.26A1.56 1.56 0 0 0 63.95 119.35L67.38 111.91A2.17 2.17 0 0 0 63.33 110.4ZM139.85 86.3L140.72 103.37A2.14 2.14 0 0 0 145 103.38L145.9 86.31A3.03 3.03 0 0 0 139.85 86.3ZM140.68 103.38L141.21 120.35A1.66 1.66 0 0 0 144.52 120.35L145.05 103.38A2.19 2.19 0 0 0 140.68 103.38ZM147.43 82.47a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/></g><g class="fg-tr"><path d="M137.9 83.1L138 83.1L138.6 82.9L140.5 82.6L144 82L149.1 81.7L152.5 83L154.2 82.7L154.8 82.6L154.8 82.5L154.8 82.5L154.8 82.5L154.8 82.5L154.8 82.5L154.8 82.5L154.8 82.5L154.8 82.5"/><path d="M125.1 120.1L125.2 120.1L125.9 120L127.7 119.7L131.3 119.1L136.4 118.9L139.8 120.3L141.6 120.3L142.3 120.3L142.6 120.3L142.7 120.3L142.8 120.3L142.9 120.3L142.9 120.3L142.9 120.3L142.9 120.3L142.9 120.3"/><path d="M63.9 118.5L64 118.5L64.7 118.5L66.1 118.5L67.7 118.5L68.3 118.6L64.1 117.6L59.2 112.4L57.3 110.1L57 111.3L57.9 114.2L60.5 117.5L62.8 118.9L64.1 119.3L64.6 119.3L64.7 119.3L64.7 119.3"/></g><g class="fg-far"><path class="s-thL" d="M112.71 91.18L87.82 99.61A3.48 3.48 0 0 0 89.77 106.28L115.29 99.98A4.59 4.59 0 0 0 112.71 91.18Z"/><path class="s-shL" d="M87.9 99.88L64.37 107.85A2.15 2.15 0 0 0 65.58 111.98L89.69 106.02A3.2 3.2 0 0 0 87.9 99.88Z"/><path class="s-ftL" d="M62.82 109.69L62.57 117.88A1.56 1.56 0 0 0 65.67 118.2L67.13 110.14A2.17 2.17 0 0 0 62.82 109.69Z"/><path class="s-uaL" d="M139.86 86.15L139.85 103.24A2.14 2.14 0 0 0 144.12 103.46L145.9 86.46A3.03 3.03 0 0 0 139.86 86.15Z"/><path class="s-faL" d="M139.8 103.35L140.33 120.32A1.66 1.66 0 0 0 143.64 120.32L144.17 103.35A2.19 2.19 0 0 0 139.8 103.35Z"/></g><g class="fg-near"><path class="s-T" d="M115.97 101.71L145.26 93.73A7.8 7.8 0 0 0 140.49 78.88L112.03 89.45A6.44 6.44 0 0 0 115.97 101.71Z"/><path class="s-N" d="M143.61 88.59L148.44 86.78A2.16 2.16 0 0 0 147.12 82.68L142.15 84.02A2.4 2.4 0 0 0 143.61 88.59Z"/><circle class="s-H" cx="154.81" cy="82.47" r="7.38"/><path class="s-thR" d="M112.6 91.21L87.93 100.3A3.48 3.48 0 0 0 90.06 106.91L115.4 99.94A4.59 4.59 0 0 0 112.6 91.21Z"/><path class="s-shR" d="M88.02 100.56L64.71 109.14A2.15 2.15 0 0 0 66.02 113.24L89.98 106.65A3.2 3.2 0 0 0 88.02 100.56Z"/><path class="s-ftR" d="M63.21 111L63.1 119.19A1.56 1.56 0 0 0 66.21 119.47L67.52 111.38A2.17 2.17 0 0 0 63.21 111Z"/><path class="s-uaR" d="M139.85 86.31L140.74 103.38A2.14 2.14 0 0 0 145.02 103.38L145.9 86.31A3.03 3.03 0 0 0 139.85 86.31Z"/><path class="s-faR" d="M140.69 103.38L141.22 120.35A1.66 1.66 0 0 0 144.53 120.35L145.06 103.38A2.19 2.19 0 0 0 140.69 103.38Z"/></g><g class="fg-j"><circle class="j-P" cx="114" cy="95.58" r="1.5"/><circle class="j-C" cx="142.88" cy="86.31" r="1.5"/><circle class="j-kR" cx="89" cy="103.6" r="1.5"/><circle class="j-eR" cx="142.88" cy="103.38" r="1.5"/><circle class="j-aR" cx="65.37" cy="111.19" r="1.5"/></g><g class="mk"><path class="ld" d="M142.88 86.31L163 86.31"/><circle cx="142.88" cy="86.31" r="2.2"/></g><g class="mk"><path class="ld" d="M114 95.58L48 95.58"/><circle cx="114" cy="95.58" r="2.2"/></g><g class="mk"><path class="ld" d="M64.97 109.91L48 110.58"/><circle cx="64.97" cy="109.91" r="2.2"/></g></svg></div>
+    <ol class="fx-marks"><li class="r" style="--y:26.09%"><b>肩</b><span>肩膀在手腕正上方。</span></li><li class="l" style="--y:44.27%"><b>臀</b><span>屁股不要翹，也不要掉。</span></li><li class="l" style="--y:73.68%"><b>跟</b><span>腳跟往後推。</span></li></ol>
+  </div></figure>
+  <div class="ch-cue"><p class="cue">今天練長伸展。身體一直線，彈簧慢慢回。</p><div class="bt" style="--n:8"><span class="tk on" style="--i:1" aria-hidden="true">1</span><span class="tk" style="--i:2" aria-hidden="true">2</span><span class="tk on" style="--i:3" aria-hidden="true">3</span><span class="tk" style="--i:4" aria-hidden="true">4</span><span class="tk on" style="--i:5" aria-hidden="true">5</span><span class="tk" style="--i:6" aria-hidden="true">6</span><span class="tk" style="--i:7" aria-hidden="true">7</span><span class="tk" style="--i:8" aria-hidden="true">8</span><ol class="bt-l"><li style="--r:1;--s:2"><span class="sr-only">2 拍：</span><span class="bt-t">推出去，吸氣。</span></li><li style="--r:3;--s:2"><span class="sr-only">2 拍：</span><span class="bt-t">停在最遠，撐住。</span></li><li style="--r:5;--s:4"><span class="sr-only">4 拍：</span><span class="bt-t">吐氣，慢慢收回來。</span></li></ol></div></div>
+  <div class="fit"><div class="yes"><h3>適合</h3><ul><li>墊上課做穩了，想加阻力。</li><li>想把每一下做得更準。</li></ul></div><div class="swap"><h3>改上</h3><p>第一次接觸皮拉提斯：<a href="#c-mat">墊上皮拉提斯</a></p><p>上過三堂墊上課，再來。帶：止滑襪（必穿）、毛巾。</p></div></div>
+  <p class="slots"><span class="sl-h">這週</span><a class="slot" href="#b-1-1210" data-s="1-1210">週一 <span class="mkn">12:10</span></a><a class="slot" href="#b-1-1940" data-s="1-1940">週一 <span class="mkn">19:40</span></a><a class="slot" href="#b-2-1800" data-s="2-1800">週二 <span class="mkn">18:00</span></a><a class="slot" href="#b-3-0700" data-s="3-0700">週三 <span class="mkn">07:00</span></a><a class="slot" href="#b-3-1940" data-s="3-1940">週三 <span class="mkn">19:40</span></a><a class="slot" href="#b-4-1800" data-s="4-1800">週四 <span class="mkn">18:00</span></a><a class="slot" href="#b-5-1210" data-s="5-1210">週五 <span class="mkn">12:10</span></a><a class="slot" href="#b-6-0945" data-s="6-0945">週六 <span class="mkn">09:45</span></a></p>
+</article><article class="ch ch-flow" id="c-flow" style="--dur:75" aria-labelledby="h-flow">
+  <header class="ch-h"><h2 id="h-flow">流動瑜珈</h2><p class="ch-len"><svg class="len m-flow" viewBox="0 0 75 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w3" d="M0.5 8.99L1.1 9.66L1.7 9.79L2.3 9.34L2.9 8.39L3.5 7.1L4.1 5.67L4.7 4.36L5.3 3.38L5.9 2.9L6.5 3.01L7.1 3.69L7.7 4.83L8.3 6.25L8.9 7.69L9.5 8.93L10.1 9.74L10.7 9.99L11.3 9.64L11.9 8.75L12.5 7.45L13.1 5.98L13.7 4.58L14.3 3.48L14.9 2.88L15.5 2.87L16.1 3.45L16.7 4.52L17.3 5.91L17.9 7.37L18.5 8.67L19.1 9.58L19.7 9.95L20.3 9.72L20.9 8.94L21.5 7.74L22.1 6.32L22.7 4.93L23.3 3.8L23.9 3.11L24.5 2.98L25.1 3.42L25.7 4.36L26.3 5.63L26.9 7.01L27.5 8.27L28.1 9.21L28.7 9.66L29.3 9.57L29.9 8.94L30.5 7.9L31.1 6.63L31.7 5.33L32.3 4.23L32.9 3.51L33.5 3.28L34.1 3.57L34.7 4.33L35.3 5.43L35.9 6.67L36.5 7.84L37.1 8.76L37.7 9.27L38.3 9.3L38.9 8.84L39.5 7.98L40.1 6.87L40.7 5.7L41.3 4.66L41.9 3.93L42.5 3.62L43.1 3.77L43.7 4.36L44.3 5.29L44.9 6.38L45.5 7.47L46.1 8.37L46.7 8.93L47.3 9.06L47.9 8.75L48.5 8.05L49.1 7.08L49.7 6L50.3 4.99L50.9 4.23L51.5 3.83L52.1 3.87L52.7 4.32L53.3 5.13L53.9 6.14L54.5 7.2L55.1 8.13L55.7 8.76L56.3 9L56.9 8.81L57.5 8.21L58.1 7.3L58.7 6.24L59.3 5.2L59.9 4.35L60.5 3.84L61.1 3.76L61.7 4.12L62.3 4.87L62.9 5.88L63.5 6.99L64.1 8.02L64.7 8.78L65.3 9.15L65.9 9.06L66.5 8.52L67.1 7.62L67.7 6.5L68.3 5.34L68.9 4.35L69.5 3.69L70.1 3.48L70.7 3.76L71.3 4.49L71.9 5.55L72.5 6.78L73.1 7.96L73.7 8.89L74.3 9.42"/></svg><span><b class="mkn">75</b>分鐘</span></p></header>
+  <p class="ch-lead">一個呼吸，一個動作。七十五分鐘，會流汗，下課前一定躺平五分鐘，誰都不准先走。</p>
+  <figure class="fx"><div class="fx-in">
+    <div class="fx-art" role="img" aria-label="從站姿打開到戰士二式的分解：雙腳大步打開，前膝彎成直角，後腿伸直，雙手往兩側平舉" style="--ar:0.95"><svg class="fig" viewBox="53 18 101 106" aria-hidden="true" focusable="false"><path class="fg-ground" d="M13 122.6h181"/><g class="fg-gh"><path class="g0" d="M107.43 68.49L106.25 94.75A3.48 3.48 0 0 0 113.17 95.35L116.57 69.29A4.59 4.59 0 0 0 107.43 68.49ZM106.52 94.88L106.27 119.72A2.15 2.15 0 0 0 110.56 119.95L112.91 95.22A3.2 3.2 0 0 0 106.52 94.88ZM108.41 117.67L100.24 118.28A1.56 1.56 0 0 0 100.24 121.39L108.41 122A2.17 2.17 0 0 0 108.41 117.67ZM109.02 38.03L106.93 55A2.14 2.14 0 0 0 111.14 55.74L114.98 39.08A3.03 3.03 0 0 0 109.02 38.03ZM106.86 55.14L105.62 72.07A1.66 1.66 0 0 0 108.91 72.42L111.21 55.6A2.19 2.19 0 0 0 106.86 55.14ZM118.44 68.89L119.8 38.56A7.8 7.8 0 0 0 104.2 38.56L105.56 68.89A6.44 6.44 0 0 0 118.44 68.89ZM114.4 38.56L114.16 33.41A2.16 2.16 0 0 0 109.84 33.41L109.61 38.56A2.4 2.4 0 0 0 114.4 38.56ZM107.43 69.29L110.83 95.35A3.48 3.48 0 0 0 117.75 94.75L116.57 68.49A4.59 4.59 0 0 0 107.43 69.29ZM111.09 95.22L113.44 119.95A2.15 2.15 0 0 0 117.73 119.72L117.48 94.88A3.2 3.2 0 0 0 111.09 95.22ZM115.59 122L123.76 121.39A1.56 1.56 0 0 0 123.76 118.28L115.59 117.67A2.17 2.17 0 0 0 115.59 122ZM109.02 39.08L112.86 55.74A2.14 2.14 0 0 0 117.07 55L114.98 38.03A3.03 3.03 0 0 0 109.02 39.08ZM112.79 55.6L115.09 72.42A1.66 1.66 0 0 0 118.38 72.07L117.14 55.14A2.19 2.19 0 0 0 112.79 55.6ZM104.62 26.03a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g1" d="M107.56 68.48L102.16 94.2A3.48 3.48 0 0 0 108.89 95.91L116.44 70.74A4.59 4.59 0 0 0 107.56 68.48ZM102.33 94.87L101.97 119.71A2.15 2.15 0 0 0 106.26 119.96L108.72 95.24A3.2 3.2 0 0 0 102.33 94.87ZM104.11 117.67L95.94 118.28A1.56 1.56 0 0 0 95.94 121.39L104.11 122A2.17 2.17 0 0 0 104.11 117.67ZM109.02 38.75L106.92 55.71A2.14 2.14 0 0 0 111.14 56.46L114.98 39.8A3.03 3.03 0 0 0 109.02 38.75ZM106.86 55.86L105.61 72.79A1.66 1.66 0 0 0 108.9 73.14L111.2 56.31A2.19 2.19 0 0 0 106.86 55.86ZM118.44 69.61L119.8 39.28A7.8 7.8 0 0 0 104.2 39.28L105.56 69.61A6.44 6.44 0 0 0 118.44 69.61ZM114.4 39.28L114.16 34.13A2.16 2.16 0 0 0 109.84 34.13L109.61 39.28A2.4 2.4 0 0 0 114.4 39.28ZM107.67 71.1L117.28 95.56A3.48 3.48 0 0 0 123.85 93.3L116.33 68.11A4.59 4.59 0 0 0 107.67 71.1ZM117.37 94.6L119.71 119.33A2.15 2.15 0 0 0 124 119.11L123.76 94.26A3.2 3.2 0 0 0 117.37 94.6ZM121.86 121.38L130.03 120.78A1.56 1.56 0 0 0 130.03 117.66L121.86 117.05A2.17 2.17 0 0 0 121.86 121.38ZM109.02 39.8L112.86 56.46A2.14 2.14 0 0 0 117.08 55.71L114.98 38.75A3.03 3.03 0 0 0 109.02 39.8ZM112.8 56.31L115.1 73.14A1.66 1.66 0 0 0 118.39 72.79L117.14 55.86A2.19 2.19 0 0 0 112.8 56.31ZM104.62 26.75a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g2" d="M109.22 78.65L89 95.44A3.48 3.48 0 0 0 93.21 100.97L114.78 85.95A4.59 4.59 0 0 0 109.22 78.65ZM88.32 96.63L77.03 118.76A2.15 2.15 0 0 0 80.77 120.87L93.89 99.78A3.2 3.2 0 0 0 88.32 96.63ZM78.9 117.65L70.73 118.28A1.56 1.56 0 0 0 70.74 121.39L78.91 121.98A2.17 2.17 0 0 0 78.9 117.65ZM109.53 50.22L100.41 64.69A2.14 2.14 0 0 0 103.91 67.15L114.47 53.71A3.03 3.03 0 0 0 109.53 50.22ZM99.99 65.65L98.46 82.56A1.66 1.66 0 0 0 101.74 82.96L104.33 66.18A2.19 2.19 0 0 0 99.99 65.65ZM118.44 82.3L119.8 51.97A7.8 7.8 0 0 0 104.2 51.97L105.56 82.3A6.44 6.44 0 0 0 118.44 82.3ZM114.4 51.97L114.16 46.82A2.16 2.16 0 0 0 109.84 46.82L109.61 51.97A2.4 2.4 0 0 0 114.4 51.97ZM110.98 86.77L136.84 91.51A3.48 3.48 0 0 0 138.38 84.73L113.02 77.83A4.59 4.59 0 0 0 110.98 86.77ZM134.41 88.21L136.11 112.99A2.15 2.15 0 0 0 140.41 112.88L140.81 88.04A3.2 3.2 0 0 0 134.41 88.21ZM138.26 115.1L146.43 114.49A1.56 1.56 0 0 0 146.43 111.37L138.26 110.77A2.17 2.17 0 0 0 138.26 115.1ZM109.53 53.71L120.09 67.15A2.14 2.14 0 0 0 123.59 64.69L114.47 50.22A3.03 3.03 0 0 0 109.53 53.71ZM119.67 66.18L122.26 82.96A1.66 1.66 0 0 0 125.54 82.56L124.01 65.65A2.19 2.19 0 0 0 119.67 66.18ZM104.62 39.44a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g3" d="M109.43 87.07L88.31 102.72A3.48 3.48 0 0 0 92.2 108.47L114.57 94.67A4.59 4.59 0 0 0 109.43 87.07ZM88.45 102.95L68.55 117.83A2.15 2.15 0 0 0 70.98 121.38L92.06 108.24A3.2 3.2 0 0 0 88.45 102.95ZM69.7 117.44L61.55 118.28A1.56 1.56 0 0 0 61.64 121.39L69.83 121.77A2.17 2.17 0 0 0 69.7 117.44ZM111.9 57.52L94.87 58.95A2.14 2.14 0 0 0 95.01 63.22L112.1 63.56A3.03 3.03 0 0 0 111.9 57.52ZM93.73 59.26L79.89 69.1A1.66 1.66 0 0 0 81.73 71.86L96.15 62.9A2.19 2.19 0 0 0 93.73 59.26ZM118.44 90.87L119.8 60.54A7.8 7.8 0 0 0 104.2 60.54L105.56 90.87A6.44 6.44 0 0 0 118.44 90.87ZM114.4 60.54L114.16 55.39A2.16 2.16 0 0 0 109.84 55.39L109.61 60.54A2.4 2.4 0 0 0 114.4 60.54ZM111.36 95.41L137.52 97.97A3.48 3.48 0 0 0 138.49 91.08L112.64 86.33A4.59 4.59 0 0 0 111.36 95.41ZM134.8 94.53L135.86 119.35A2.15 2.15 0 0 0 140.16 119.35L141.2 94.53A3.2 3.2 0 0 0 134.8 94.53ZM138.01 121.51L146.18 120.9A1.56 1.56 0 0 0 146.18 117.79L138.01 117.18A2.17 2.17 0 0 0 138.01 121.51ZM111.9 63.56L128.99 63.22A2.14 2.14 0 0 0 129.13 58.95L112.1 57.52A3.03 3.03 0 0 0 111.9 63.56ZM127.85 62.9L142.27 71.86A1.66 1.66 0 0 0 144.11 69.1L130.27 59.26A2.19 2.19 0 0 0 127.85 62.9ZM104.62 48.01a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/></g><g class="fg-tr"><path d="M112 26L112 26L112 26L112 26.1L112 26.2L112 27L112 29.3L112 33.6L112 37.8L112 42.7L112 46L112 47.5L112 48L112 48.1L112 48.1L112 48.1L112 48.1"/><path d="M116.7 72.2L116.7 72.2L116.7 72.2L116.7 72.3L116.7 72.5L116.8 73.2L117.2 75.5L118.8 79.3L122.3 82.1L128.1 82.7L133.5 80L138.7 75.9L143.8 69.4L145.6 64.3L146 61.7L146 60.7L146 60.6"/><path d="M123.8 119.8L123.8 119.8L123.8 119.8L124.3 119.8L126.4 119.7L131.2 119L138.8 116.7L144.6 113.3L146.3 112.4L146.5 114.8L146.3 117.4L146.2 118.9L146.2 119.4L146.2 119.4L146.2 119.4L146.2 119.4L146.2 119.4"/></g><g class="fg-far"><path class="s-thL" d="M109.43 87.12L88.31 102.76A3.48 3.48 0 0 0 92.2 108.51L114.57 94.71A4.59 4.59 0 0 0 109.43 87.12Z"/><path class="s-shL" d="M88.46 102.99L68.5 117.77A2.15 2.15 0 0 0 70.91 121.33L92.05 108.28A3.2 3.2 0 0 0 88.46 102.99Z"/><path class="s-ftL" d="M69.63 117.39L61.48 118.28A1.56 1.56 0 0 0 61.59 121.39L69.78 121.71A2.17 2.17 0 0 0 69.63 117.39Z"/><path class="s-uaL" d="M112 57.56L94.93 58.44A2.14 2.14 0 0 0 94.93 62.72L112 63.61A3.03 3.03 0 0 0 112 57.56Z"/><path class="s-faL" d="M94.93 58.4L77.96 58.93A1.66 1.66 0 0 0 77.96 62.24L94.93 62.77A2.19 2.19 0 0 0 94.93 58.4Z"/></g><g class="fg-near"><path class="s-T" d="M118.44 90.91L119.8 60.58A7.8 7.8 0 0 0 104.2 60.58L105.56 90.91A6.44 6.44 0 0 0 118.44 90.91Z"/><path class="s-N" d="M114.4 60.58L114.16 55.43A2.16 2.16 0 0 0 109.84 55.43L109.61 60.58A2.4 2.4 0 0 0 114.4 60.58Z"/><circle class="s-H" cx="112" cy="48.05" r="7.38"/><path class="s-thR" d="M111.36 95.45L137.52 98.01A3.48 3.48 0 0 0 138.49 91.13L112.64 86.37A4.59 4.59 0 0 0 111.36 95.45Z"/><path class="s-shR" d="M134.8 94.57L135.85 119.39A2.15 2.15 0 0 0 140.15 119.39L141.2 94.57A3.2 3.2 0 0 0 134.8 94.57Z"/><path class="s-ftR" d="M138 121.55L146.17 120.95A1.56 1.56 0 0 0 146.17 117.83L138 117.22A2.17 2.17 0 0 0 138 121.55Z"/><path class="s-uaR" d="M112 63.61L129.07 62.72A2.14 2.14 0 0 0 129.07 58.44L112 57.56A3.03 3.03 0 0 0 112 63.61Z"/><path class="s-faR" d="M129.07 62.77L146.04 62.24A1.66 1.66 0 0 0 146.04 58.93L129.07 58.4A2.19 2.19 0 0 0 129.07 62.77Z"/></g><g class="fg-j"><circle class="j-P" cx="112" cy="90.91" r="1.5"/><circle class="j-C" cx="112" cy="60.58" r="1.5"/><circle class="j-kR" cx="138" cy="94.57" r="1.5"/><circle class="j-eR" cx="129.07" cy="60.58" r="1.5"/><circle class="j-aR" cx="138" cy="119.39" r="1.5"/></g><g class="mk"><path class="ld" d="M77.96 60.58L53 60.58"/><circle cx="77.96" cy="60.58" r="2.2"/></g><g class="mk"><path class="ld" d="M69.7 119.55L53 119.55"/><circle cx="69.7" cy="119.55" r="2.2"/></g><g class="mk"><path class="ld" d="M138 94.57L154 94.57"/><circle cx="138" cy="94.57" r="2.2"/></g></svg></div>
+    <ol class="fx-marks"><li class="l" style="--y:40.17%"><b>手</b><span>兩手往兩邊拉長。</span></li><li class="l" style="--y:95.8%"><b>腳</b><span>後腳外側踩實。</span></li><li class="r" style="--y:72.23%"><b>膝</b><span>前膝對準第二根腳趾。</span></li></ol>
+  </div></figure>
+  <div class="ch-cue"><p class="cue">今天練戰士二式。前膝彎，後腳踩實，手拉長。</p><div class="bt" style="--n:8"><span class="tk on" style="--i:1" aria-hidden="true">1</span><span class="tk" style="--i:2" aria-hidden="true">2</span><span class="tk on" style="--i:3" aria-hidden="true">3</span><span class="tk" style="--i:4" aria-hidden="true">4</span><span class="tk on" style="--i:5" aria-hidden="true">5</span><span class="tk on" style="--i:6" aria-hidden="true">6</span><span class="tk" style="--i:7" aria-hidden="true">7</span><span class="tk" style="--i:8" aria-hidden="true">8</span><ol class="bt-l"><li style="--r:1;--s:2"><span class="sr-only">2 拍：</span><span class="bt-t">吸氣，手打開。</span></li><li style="--r:3;--s:2"><span class="sr-only">2 拍：</span><span class="bt-t">吐氣，前膝彎。</span></li><li style="--r:5;--s:1"><span class="sr-only">1 拍：</span><span class="bt-t">看前手指尖。</span></li><li style="--r:6;--s:3"><span class="sr-only">3 拍：</span><span class="bt-t">停在這裡，五個呼吸。</span></li></ol></div></div>
+  <div class="fit"><div class="yes"><h3>適合</h3><ul><li>想流汗。</li><li>下班後，想把腦袋關掉。</li></ul></div><div class="swap"><h3>改上</h3><p>從來沒有運動習慣：<a href="#c-wake">晨間活動度</a></p><p>會做下犬式，就可以來。帶：毛巾、水、一件換的上衣。</p></div></div>
+  <p class="slots"><span class="sl-h">這週</span><a class="slot" href="#b-1-1800" data-s="1-1800">週一 <span class="mkn">18:00</span></a><a class="slot" href="#b-3-1800" data-s="3-1800">週三 <span class="mkn">18:00</span></a><a class="slot" href="#b-5-1800" data-s="5-1800">週五 <span class="mkn">18:00</span></a><a class="slot" href="#b-6-0800" data-s="6-0800">週六 <span class="mkn">08:00</span></a></p>
+</article><article class="ch ch-yin" id="c-yin" style="--dur:90" aria-labelledby="h-yin">
+  <header class="ch-h"><h2 id="h-yin">陰瑜珈</h2><p class="ch-len"><svg class="len m-yin" viewBox="0 0 90 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="w0" d="M0.6 6.4H89.4"/><path class="dt" d="M2.6 6.4h0.01" style="stroke-width:5.47px"/><path class="dt" d="M9.42 6.4h0.01" style="stroke-width:5.26px"/><path class="dt" d="M16.7 6.4h0.01" style="stroke-width:6.08px"/><path class="dt" d="M24.42 6.4h0.01" style="stroke-width:6.3px"/><path class="dt" d="M31.47 6.4h0.01" style="stroke-width:4.73px"/><path class="dt" d="M38.46 6.4h0.01" style="stroke-width:4.86px"/><path class="dt" d="M45.91 6.4h0.01" style="stroke-width:6.23px"/><path class="dt" d="M53.11 6.4h0.01" style="stroke-width:6.35px"/><path class="dt" d="M59.58 6.4h0.01" style="stroke-width:4.67px"/><path class="dt" d="M66.96 6.4h0.01" style="stroke-width:5.11px"/><path class="dt" d="M73.64 6.4h0.01" style="stroke-width:6.23px"/><path class="dt" d="M81.17 6.4h0.01" style="stroke-width:6.11px"/><path class="dt" d="M87.94 6.4h0.01" style="stroke-width:4.88px"/></svg><span><b class="mkn">90</b>分鐘</span></p></header>
+  <p class="ch-lead">一個動作停三到五分鐘。九十分鐘，燈調暗，不放音樂，只聽得到冷氣和隔壁墊子的呼吸。</p>
+  <figure class="fx"><div class="fx-in">
+    <div class="fx-art" role="img" aria-label="從跪坐往前趴到嬰兒式的分解：屁股坐回腳跟，身體往前趴，額頭貼地，雙手往前放" style="--ar:1.43"><svg class="fig" viewBox="69 61 90 63" aria-hidden="true" focusable="false"><path class="fg-ground" d="M29 122.6h170"/><g class="fg-gh"><path class="g0" d="M85.2 117.13L111.26 120.6A3.48 3.48 0 0 0 112.46 113.76L86.8 108.1A4.59 4.59 0 0 0 85.2 117.13ZM111.86 113.98L87.04 115.03A2.15 2.15 0 0 0 87.04 119.33L111.86 120.38A3.2 3.2 0 0 0 111.86 113.98ZM87.08 115.01L78.9 115.48A1.56 1.56 0 0 0 78.85 118.59L87 119.34A2.17 2.17 0 0 0 87.08 115.01ZM85.18 83.09L90.17 99.44A2.14 2.14 0 0 0 94.32 98.41L91.05 81.63A3.03 3.03 0 0 0 85.18 83.09ZM91.64 101.02L108.1 105.19A1.66 1.66 0 0 0 109.01 102.01L92.85 96.82A2.19 2.19 0 0 0 91.64 101.02ZM92.42 113.07L95.9 82.91A7.8 7.8 0 0 0 80.33 81.82L79.58 112.17A6.44 6.44 0 0 0 92.42 113.07ZM90.5 82.53L90.63 77.37A2.16 2.16 0 0 0 86.32 77.07L85.73 82.19A2.4 2.4 0 0 0 90.5 82.53ZM84.97 117.09L110.81 121.91A3.48 3.48 0 0 0 112.37 115.14L87.03 108.15A4.59 4.59 0 0 0 84.97 117.09ZM111.59 115.33L86.77 116.38A2.15 2.15 0 0 0 86.77 120.68L111.59 121.73A3.2 3.2 0 0 0 111.59 115.33ZM86.84 116.36L78.66 116.68A1.56 1.56 0 0 0 78.55 119.8L86.69 120.69A2.17 2.17 0 0 0 86.84 116.36ZM85.12 82.78L88.37 99.56A2.14 2.14 0 0 0 92.61 98.97L91.11 81.94A3.03 3.03 0 0 0 85.12 82.78ZM90.04 101.4L106.75 104.41A1.66 1.66 0 0 0 107.43 101.17L90.95 97.13A2.19 2.19 0 0 0 90.04 101.4ZM81.61 69.86a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g1" d="M88.36 112.1L113.95 118.12A3.48 3.48 0 0 0 115.82 111.43L90.83 103.27A4.59 4.59 0 0 0 88.36 112.1ZM114.88 111.57L90.06 112.62A2.15 2.15 0 0 0 90.06 116.92L114.88 117.97A3.2 3.2 0 0 0 114.88 111.57ZM90.1 112.61L81.92 113.07A1.56 1.56 0 0 0 81.87 116.19L90.03 116.94A2.17 2.17 0 0 0 90.1 112.61ZM115.75 99.84L120.74 116.19A2.14 2.14 0 0 0 124.9 115.15L121.62 98.37A3.03 3.03 0 0 0 115.75 99.84ZM122.22 117.77L138.68 121.94A1.66 1.66 0 0 0 139.59 118.75L123.42 113.57A2.19 2.19 0 0 0 122.22 117.77ZM91.42 113.86L120.9 106.59A7.8 7.8 0 0 0 116.48 91.62L87.78 101.51A6.44 6.44 0 0 0 91.42 113.86ZM121 99.72L122.08 94.67A2.16 2.16 0 0 0 117.92 93.58L116.37 98.5A2.4 2.4 0 0 0 121 99.72ZM88.13 112.03L113.38 119.36A3.48 3.48 0 0 0 115.59 112.78L91.06 103.34A4.59 4.59 0 0 0 88.13 112.03ZM114.48 112.87L89.66 113.92A2.15 2.15 0 0 0 89.66 118.22L114.48 119.27A3.2 3.2 0 0 0 114.48 112.87ZM89.74 113.91L81.55 114.23A1.56 1.56 0 0 0 81.45 117.34L89.59 118.23A2.17 2.17 0 0 0 89.74 113.91ZM115.69 99.53L118.95 116.31A2.14 2.14 0 0 0 123.19 115.71L121.68 98.68A3.03 3.03 0 0 0 115.69 99.53ZM120.61 118.15L137.32 121.16A1.66 1.66 0 0 0 138.01 117.92L121.52 113.87A2.19 2.19 0 0 0 120.61 118.15ZM114.5 86.99a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g2" d="M89.1 89.96L110.19 105.64A3.48 3.48 0 0 0 114.57 100.25L94.88 82.84A4.59 4.59 0 0 0 89.1 89.96ZM112.38 99.74L87.56 100.79A2.15 2.15 0 0 0 87.56 105.09L112.38 106.14A3.2 3.2 0 0 0 112.38 99.74ZM87.6 100.78L79.42 101.24A1.56 1.56 0 0 0 79.37 104.36L87.52 105.11A2.17 2.17 0 0 0 87.6 100.78ZM115.78 103.15L125.95 116.9A2.14 2.14 0 0 0 129.51 114.53L120.82 99.81A3.03 3.03 0 0 0 115.78 103.15ZM127.13 117.82L143.6 121.94A1.66 1.66 0 0 0 144.51 118.75L128.33 113.61A2.19 2.19 0 0 0 127.13 117.82ZM88.79 91.98L114.42 108.25A7.8 7.8 0 0 0 122.18 94.72L95.19 80.81A6.44 6.44 0 0 0 88.79 91.98ZM118.82 103.82L123.8 102.47A2.16 2.16 0 0 0 122.86 98.26L117.78 99.15A2.4 2.4 0 0 0 118.82 103.82ZM88.93 89.81L109.22 106.51A3.48 3.48 0 0 0 113.86 101.34L95.05 82.98A4.59 4.59 0 0 0 88.93 89.81ZM111.54 100.72L86.72 101.77A2.15 2.15 0 0 0 86.72 106.07L111.54 107.12A3.2 3.2 0 0 0 111.54 100.72ZM86.8 101.76L78.61 102.08A1.56 1.56 0 0 0 78.51 105.2L86.65 106.09A2.17 2.17 0 0 0 86.8 101.76ZM115.68 103L125 117.33A2.14 2.14 0 0 0 128.7 115.19L120.92 99.97A3.03 3.03 0 0 0 115.68 103ZM126.4 118.4L143.12 121.37A1.66 1.66 0 0 0 143.8 118.13L127.3 114.12A2.19 2.19 0 0 0 126.4 118.4ZM123.15 98.76a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/><path class="g3" d="M88.99 101.86L109.54 118.25A3.48 3.48 0 0 0 114.1 113L95.01 94.94A4.59 4.59 0 0 0 88.99 101.86ZM111.82 112.43L87 113.48A2.15 2.15 0 0 0 87 117.78L111.82 118.83A3.2 3.2 0 0 0 111.82 112.43ZM87.04 113.46L78.86 113.92A1.56 1.56 0 0 0 78.8 117.04L86.96 117.79A2.17 2.17 0 0 0 87.04 113.46ZM117.46 116.48L134.15 120.16A2.14 2.14 0 0 0 135.29 116.04L119.07 110.65A3.03 3.03 0 0 0 117.46 116.48ZM134.43 120.27L151.32 121.99A1.66 1.66 0 0 0 151.76 118.7L135.01 115.93A2.19 2.19 0 0 0 134.43 120.27ZM88.78 103.97L114.37 120.32A7.8 7.8 0 0 0 122.17 106.81L95.22 92.82A6.44 6.44 0 0 0 88.78 103.97ZM118.48 115.95L123.58 115.26A2.16 2.16 0 0 0 123.21 110.97L118.06 111.18A2.4 2.4 0 0 0 118.48 115.95ZM88.83 101.71L108.55 119.08A3.48 3.48 0 0 0 113.36 114.07L95.17 95.09A4.59 4.59 0 0 0 88.83 101.71ZM110.95 113.37L86.13 114.42A2.15 2.15 0 0 0 86.13 118.72L110.95 119.77A3.2 3.2 0 0 0 110.95 113.37ZM86.21 114.41L78.02 114.73A1.56 1.56 0 0 0 77.91 117.85L86.06 118.74A2.17 2.17 0 0 0 86.21 114.41ZM117.56 116.5L134.36 119.66A2.14 2.14 0 0 0 135.36 115.49L118.98 110.62A3.03 3.03 0 0 0 117.56 116.5ZM134.68 119.75L151.63 120.65A1.66 1.66 0 0 0 151.91 117.35L135.04 115.4A2.19 2.19 0 0 0 134.68 119.75ZM123.37 112.47a7.38 7.38 0 1 0 14.76 0a7.38 7.38 0 1 0 -14.76 0Z"/></g><g class="fg-tr"><path d="M89 69.9L89.4 69.9L92 70.2L99 71.7L111.4 77.8L123.5 87.1L127.8 88.9L129.9 93.1L130.4 97.4L130.7 102.2L130.7 107.1L130.7 110.4L130.7 112.8L130.7 113.1L130.7 113.1L130.7 113.1L130.7 113.1"/><path d="M107.1 102.8L107.5 102.8L110.1 103.1L117 104.6L128.7 110.7L138.8 119.5L140 119.6L140 119.7L142.2 119.7L146.7 119.6L150.1 119.2L151.3 119L151.8 119L151.9 118.3L151.9 117.9L151.9 117.8L151.9 117.7"/><path d="M78.6 118.2L78.6 118.2L78.9 118.2L79.5 118.2L80.5 118.2L81.7 113L81.4 104.1L80 101.9L78.8 102.8L78.2 106.4L78 110.9L78 114.2L78 116.6L78 116.9L78 116.9L78 116.9L78 116.9"/></g><g class="fg-far"><path class="s-thL" d="M88.99 102.5L109.54 118.89A3.48 3.48 0 0 0 114.1 113.64L95.01 95.57A4.59 4.59 0 0 0 88.99 102.5Z"/><path class="s-shL" d="M111.82 113.06L87 114.11A2.15 2.15 0 0 0 87 118.41L111.82 119.46A3.2 3.2 0 0 0 111.82 113.06Z"/><path class="s-ftL" d="M87.04 114.1L78.86 114.56A1.56 1.56 0 0 0 78.8 117.68L86.96 118.43A2.17 2.17 0 0 0 87.04 114.1Z"/><path class="s-uaL" d="M117.53 117.14L134.31 120.41A2.14 2.14 0 0 0 135.35 116.25L119 111.26A3.03 3.03 0 0 0 117.53 117.14Z"/><path class="s-faL" d="M134.75 120.51L151.73 120.58A1.66 1.66 0 0 0 151.85 117.27L134.91 116.15A2.19 2.19 0 0 0 134.75 120.51Z"/></g><g class="fg-near"><path class="s-T" d="M88.78 104.61L114.37 120.95A7.8 7.8 0 0 0 122.17 107.45L95.22 93.46A6.44 6.44 0 0 0 88.78 104.61Z"/><path class="s-N" d="M118.48 116.59L123.58 115.9A2.16 2.16 0 0 0 123.21 111.6L118.06 111.81A2.4 2.4 0 0 0 118.48 116.59Z"/><circle class="s-H" cx="130.75" cy="113.11" r="7.38"/><path class="s-thR" d="M88.83 102.34L108.55 119.72A3.48 3.48 0 0 0 113.36 114.7L95.17 95.73A4.59 4.59 0 0 0 88.83 102.34Z"/><path class="s-shR" d="M110.95 114.01L86.13 115.06A2.15 2.15 0 0 0 86.13 119.36L110.95 120.41A3.2 3.2 0 0 0 110.95 114.01Z"/><path class="s-ftR" d="M86.21 115.05L78.02 115.37A1.56 1.56 0 0 0 77.91 118.48L86.06 119.37A2.17 2.17 0 0 0 86.21 115.05Z"/><path class="s-uaR" d="M117.64 117.16L134.52 119.84A2.14 2.14 0 0 0 135.41 115.66L118.9 111.24A3.03 3.03 0 0 0 117.64 117.16Z"/><path class="s-faR" d="M134.96 119.93L151.93 119.4A1.66 1.66 0 0 0 151.93 116.09L134.96 115.56A2.19 2.19 0 0 0 134.96 119.93Z"/></g><g class="fg-j"><circle class="j-P" cx="92" cy="99.04" r="1.5"/><circle class="j-C" cx="118.27" cy="114.2" r="1.5"/><circle class="j-kR" cx="110.95" cy="117.21" r="1.5"/><circle class="j-eR" cx="134.96" cy="117.75" r="1.5"/><circle class="j-aR" cx="86.13" cy="117.21" r="1.5"/></g><g class="mk"><path class="ld" d="M92 99.04L69 99.04"/><circle cx="92" cy="99.04" r="2.2"/></g><g class="mk"><path class="ld" d="M130.75 113.11L159 106"/><circle cx="130.75" cy="113.11" r="2.2"/></g><g class="mk"><path class="ld" d="M151.93 117.75L159 121"/><circle cx="151.93" cy="117.75" r="2.2"/></g></svg></div>
+    <ol class="fx-marks"><li class="l" style="--y:60.37%"><b>臀</b><span>屁股往腳跟坐。</span></li><li class="r" style="--y:71.43%"><b>額</b><span>額頭放下來，墊毯子也可以。</span></li><li class="r" style="--y:95.24%"><b>手</b><span>手往前放，不用出力。</span></li></ol>
+  </div></figure>
+  <div class="ch-cue"><p class="cue">今天練嬰兒式。停在七分，不要到十分。</p><div class="bt" style="--n:16"><span class="tk on" style="--i:1" aria-hidden="true">1</span><span class="tk" style="--i:2" aria-hidden="true">2</span><span class="tk on" style="--i:3" aria-hidden="true">3</span><span class="tk" style="--i:4" aria-hidden="true">4</span><span class="tk on" style="--i:5" aria-hidden="true">5</span><span class="tk" style="--i:6" aria-hidden="true">6</span><span class="tk on" style="--i:7" aria-hidden="true">7</span><span class="tk" style="--i:8" aria-hidden="true">8</span><span class="tk" style="--i:9" aria-hidden="true">9</span><span class="tk" style="--i:10" aria-hidden="true">10</span><span class="tk" style="--i:11" aria-hidden="true">11</span><span class="tk" style="--i:12" aria-hidden="true">12</span><span class="tk" style="--i:13" aria-hidden="true">13</span><span class="tk" style="--i:14" aria-hidden="true">14</span><span class="tk" style="--i:15" aria-hidden="true">15</span><span class="tk" style="--i:16" aria-hidden="true">16</span><ol class="bt-l"><li style="--r:1;--s:2"><span class="sr-only">2 拍：</span><span class="bt-t">跪下，膝蓋打開。</span></li><li style="--r:3;--s:2"><span class="sr-only">2 拍：</span><span class="bt-t">身體往前趴。</span></li><li style="--r:5;--s:2"><span class="sr-only">2 拍：</span><span class="bt-t">額頭放下來。</span></li><li style="--r:7;--s:10"><span class="sr-only">10 拍：</span><span class="bt-t">停住。呼吸。</span></li></ol></div></div>
+  <div class="fit"><div class="yes"><h3>適合</h3><ul><li>一週運動很多天，需要一堂慢的。</li><li>想安靜九十分鐘。</li></ul></div><div class="swap"><h3>改上</h3><p>今天想流汗：<a href="#c-flow">流動瑜珈</a></p><p>誰都可以來。帶：一件保暖的外套。</p></div></div>
+  <p class="slots"><span class="sl-h">這週</span><a class="slot" href="#b-2-2015" data-s="2-2015">週二 <span class="mkn">20:15</span></a><a class="slot" href="#b-4-2015" data-s="4-2015">週四 <span class="mkn">20:15</span></a><a class="slot" href="#b-6-1530" data-s="6-1530">週六 <span class="mkn">15:30</span></a><a class="slot" href="#b-7-0830" data-s="7-0830">週日 <span class="mkn">08:30</span></a></p>
+</article>
+</div>
+
+<section class="plans" id="plans" aria-labelledby="h-pl">
+  <h2 id="h-pl">選一張課卡</h2>
+  <p class="pl-p">先買一堂體驗。喜歡，再挑卡。</p>
+  <p class="pl-key" aria-hidden="true"><span><i class="k-d"></i>一天</span><span><i class="k-n"></i>一堂</span></p>
+  <ol class="pl" role="list"><li><div class="p-t"><h3>體驗一堂<small>效期 當天</small></h3><p class="pl-note">第一次來才能用。器械課也是這個價。</p></div><div class="p-v"><svg class="tly" viewBox="0 0 14 34" preserveAspectRatio="none" style="--tw:14" aria-hidden="true" focusable="false"><path class="tl-st" d="M4.05 29.11L3.73 15.15"/></svg><p class="pl-price">NT$<b class="mkn">350</b></p></div></li><li><div class="p-t"><h3>單堂<small>效期 當天</small></h3><p class="pl-note">不買卡，來就上。</p></div><div class="p-v"><svg class="tly" viewBox="0 0 14 34" preserveAspectRatio="none" style="--tw:14" aria-hidden="true" focusable="false"><path class="tl-st" d="M3.68 29.02L3.76 15.32"/></svg><p class="pl-price">NT$<b class="mkn">550</b></p></div></li><li><div class="p-t"><h3>月卡<small>效期 30 天</small></h3><p class="pl-note">三十天內不限堂數。器械課每堂另加 150 元。</p></div><div class="p-v"><svg class="tly" viewBox="0 0 188 34" preserveAspectRatio="none" style="--tw:188" aria-hidden="true" focusable="false"><path class="tl-st" d="M3.6 29.68L3.3 13.52M9.72 29.32L9.49 13.7M15.82 29.25L15.68 13.4M20.73 29.43L20.45 13.27M2.11 27.67L24.09 15.4M33.58 29.33L33.7 13.89M39.93 29.67L39.67 14.68M45.11 28.62L46.09 14.78M51.34 28.98L51.69 14.61M32.97 28.36L54.36 16.47M63.78 28.98L63.77 13.46M69.37 28.8L69.64 14.82M75.09 28.63L75.44 13.8M81.48 28.81L81.11 14.56M62.75 28.16L84.41 16.48M94.17 29.85L94.55 14.29M100.15 29.98L99.03 14M105.76 29.37L105.47 13.57M110.66 28.89L110.86 13.79M92.26 28.65L114.56 15.05M123.71 28.73L124.5 13.56M129.3 28.77L130.24 13.21M135.78 29.83L135.8 13.09M141.54 28.57L140.76 14.83M122.28 28.34L144.79 16.36M154.22 29.09L153.76 14.12M160.08 29.14L159.74 13.79M165.54 28.82L165.15 14.75M170.87 29.92L170.61 15.28M152.99 27.56L174.61 15.08"/></svg><p class="pl-price">NT$<b class="mkn">4,800</b></p></div></li><li><div class="p-t"><h3>8 堂卡<small>效期 60 天</small></h3><p class="pl-note">一堂 500 元，六十天內用完。</p></div><div class="p-v"><svg class="tly" viewBox="0 0 368 34" preserveAspectRatio="none" style="--tw:368" aria-hidden="true" focusable="false"><path class="tl-st" d="M4.45 29.24L3.53 14.99M9.59 29.5L9.07 14.68M15.34 29.64L14.99 13.25M20.83 29.65L21.35 14.19M2.33 27.06L24.4 16.33M34.26 29.25L34.33 14.66M39.39 28.72L39.84 14.5M45.74 29.53L45.88 14.57M51.43 29.73L50.55 14.89M32.16 27.81L54.76 15.4M64.08 28.63L63.32 14.96M69.71 28.72L69.62 13.25M75.23 29.04L74.71 15.29M80.68 28.52L80.83 13.4M62.89 28.34L84.3 15.72M93.84 28.8L94.02 15.37M99.55 29.37L100.06 14.03M105.76 29.03L104.97 13.02M111.23 29.01L110.43 15.48M92.79 28.99L114.06 16.49M124.29 29.93L123.51 13.38M130.04 29.39L130.29 13.12M135.68 29.24L134.99 13.6M141.21 28.93L140.66 14.64M122.73 28.34L144.52 16.28M154.04 28.89L154.53 14.75M159.74 29.8L159.2 15.03M165.53 29.1L165.73 13.53M170.7 29.86L170.83 14.83M152.98 27.16L174.43 15.67M184.06 28.8L183.7 15.06M189.35 29.01L189.89 13.03M195.29 28.61L195.14 14.03M201.48 29.2L201.24 15.27M182.64 28.18L204.67 15.85M214.14 29.86L213.44 15.31M219.98 29.49L219.74 15.03M225.12 29.78L225.81 13.67M231.43 29.39L231.71 14.67M212.23 28.13L234.76 15.54M244.07 28.65L243.97 14.18M249.42 29L249.84 15.08M254.95 28.7L254.82 13.37M260.88 28.53L261.43 15.09M242.48 27.61L264.08 15.92M273.83 29.36L274.54 13.16M279.35 28.99L280.02 13M285.32 29.98L285.99 13.25M291.52 29.45L291.71 14.81M272.31 27.04L294.17 15.03M304.13 29.81L304.42 14.46M309.58 29.87L309.07 13.51M315.41 28.55L315.19 15.19M321.53 29.24L321.11 13.9M302.73 28.22L324.65 15.91M333.79 28.75L334.06 14.73M339.79 29.9L339.16 13.81M344.99 28.88L345.33 13.36M350.99 29.11L351.65 13.85M332.21 28.8L354.1 15.63"/><path class="tl-dot" d="M26.71 5.4h0.01"/><path class="tl-dot" d="M71.42 5.4h0.01"/><path class="tl-dot" d="M116.04 5.4h0.01"/><path class="tl-dot" d="M161.11 5.4h0.01"/><path class="tl-dot" d="M206.87 5.4h0.01"/><path class="tl-dot" d="M251.12 5.4h0.01"/><path class="tl-dot" d="M296.5 5.4h0.01"/><path class="tl-dot" d="M341.39 5.4h0.01"/></svg><p class="pl-price">NT$<b class="mkn">4,000</b></p></div></li><li><div class="p-t"><h3>16 堂卡<small>效期 120 天</small></h3><p class="pl-note">一堂 470 元，一百二十天內用完。</p></div><div class="p-v"><svg class="tly" viewBox="0 0 728 34" preserveAspectRatio="none" style="--tw:728" aria-hidden="true" focusable="false"><path class="tl-st" d="M4.36 29.25L3.53 14.17M10.14 28.75L10.08 15.27M15.19 29.42L15.86 13.51M21.28 29.01L20.95 15.23M2.35 28.9L24.44 16.48M33.69 29.01L33.78 14.57M39.62 29.66L39.13 15.49M45.76 28.89L45.13 13.3M51.41 28.85L51.62 13M32.96 27.59L54.19 16.56M64.23 29.28L63.93 14.98M70.03 28.6L69.87 13.88M75.64 29.37L75.18 14.66M80.68 29.96L81.01 14.32M62.61 28.29L84.49 16.27M94.26 28.68L94.18 13.49M100.11 28.76L100.18 13.15M105.66 29.57L105.49 13.02M111.23 29.75L111.58 14.84M92.45 28.25L114.28 16.58M123.75 29.15L124.1 14.24M129.48 28.79L130.37 14.89M135.79 29.67L135.41 13.54M141.4 29.13L140.88 14.72M122.14 27.56L144.15 15.11M153.61 28.74L154.58 13.26M160.03 29.48L159.21 14.05M165.66 29.81L165.27 14.6M171.22 29.28L171.52 14.68M152.57 27.48L174.17 15.08M183.71 29.44L184.64 13.73M189.74 28.55L190.13 13.94M195.64 29.62L195.67 15.12M200.82 29.19L201.74 13.98M182.02 28.94L203.84 16.47M213.77 29.79L214.25 13.79M219.69 28.89L219.56 14.39M225.31 29.43L225.09 14.04M231.52 28.99L231.44 14.76M212.76 28.81L234.03 16.88M244.18 29.36L244.38 13.59M249.78 29.52L250.06 14.83M255.39 28.77L255.03 14.18M261.47 29.12L261.72 15.04M242.8 27.46L264.04 16.46M273.57 29.21L274.28 14.68M279.51 28.94L279.52 14.08M285.45 29.99L285.46 14.11M291.38 29.97L291.23 13.7M272.01 27.25L294.01 15.02M304.17 29.2L304.22 13.4M309.38 29.87L309.24 14.2M315.6 29.49L315.25 14.06M321.02 29.81L320.95 13.24M302.58 28.5L324.44 15.3M334.43 29.12L333.5 14.33M339.93 29.86L339.97 13.79M345.06 29.29L345.29 14.68M350.74 28.62L351.62 14.73M332.08 27.97L354.11 15.86M364.4 29.29L364.07 14.41M369.72 28.93L369.18 14M375.71 29.96L375.61 15.13M381.05 29.09L381.23 14.03M362.19 28.35L384.56 16.71M393.87 29.34L393.41 13.05M399.39 28.61L400.14 15.28M405.7 29.35L406.08 14.99M411.39 29.43L411.47 14.47M392.63 28.22L414.68 16.78M423.66 29.09L423.5 15.41M429.39 29.9L429.2 15.19M435.32 29.65L435.67 13.11M441.36 30L441.51 13.23M422.44 27.56L444.37 15.44M453.58 28.63L454.23 14.14M459.88 29.74L460.01 14.87M465.71 29.4L465.29 15.05M470.89 28.99L471.18 14.87M452.8 28.59L474.53 16.19M484.04 29.13L484.07 14.36M489.3 28.98L490.37 14.17M495.15 29.91L495.41 15.34M501.54 28.93L500.99 14.59M482.92 28.83L504 16.72M514.24 28.75L514.11 14.82M519.71 28.83L519.65 14.75M525.25 29.28L525.5 14.06M531.49 29.93L530.92 14.58M512.76 28.9L533.94 16.07M543.63 28.87L543.68 13.65M549.67 29.72L549.36 14.24M555.74 29.38L555.33 13.83M561.35 29.72L561.1 14.5M542.51 27.11L564.16 15.49M574.37 29.45L573.71 13.58M580.13 29.41L579.08 14.73M585.57 29.13L585.82 15.17M591.42 29.36L591.28 14.94M572.81 27.81L594.77 15.27M603.77 29.11L603.87 14.64M609.5 29.17L609.51 14.27M615.57 29.68L615.11 13.18M621.51 29.37L621.51 14.61M602.73 28.18L624.21 15.01M634.32 29.7L633.68 13.36M639.6 29.29L639.6 14.31M645.58 29.28L645.62 13.16M651.52 29.82L651.07 14.09M632.74 28.77L653.92 15.5M664.01 29.95L663.88 14.29M669.73 28.65L669.94 15.3M675.73 29.37L676.05 13.71M681.24 29.05L680.88 13.48M662.51 28.87L684.07 16.14M694.33 28.85L693.71 14.68M699.54 28.96L700.06 15.41M705.52 29.25L704.95 13.66M710.79 28.6L710.96 15.42M692.11 27.64L714.52 16.57"/><path class="tl-dot" d="M26.74 5.4h0.01"/><path class="tl-dot" d="M71.38 5.4h0.01"/><path class="tl-dot" d="M116.2 5.4h0.01"/><path class="tl-dot" d="M161.54 5.4h0.01"/><path class="tl-dot" d="M206.52 5.4h0.01"/><path class="tl-dot" d="M251.08 5.4h0.01"/><path class="tl-dot" d="M296 5.4h0.01"/><path class="tl-dot" d="M341.09 5.4h0.01"/><path class="tl-dot" d="M386.8 5.4h0.01"/><path class="tl-dot" d="M431.57 5.4h0.01"/><path class="tl-dot" d="M476.67 5.4h0.01"/><path class="tl-dot" d="M521.83 5.4h0.01"/><path class="tl-dot" d="M566.05 5.4h0.01"/><path class="tl-dot" d="M611.79 5.4h0.01"/><path class="tl-dot" d="M656.58 5.4h0.01"/><path class="tl-dot" d="M701.7 5.4h0.01"/></svg><p class="pl-price">NT$<b class="mkn">7,520</b></p></div></li></ol>
+  <p class="pl-tax">價格含稅。課卡不能轉讓；出國、受傷可以暫停一次，最多三十天，先跟櫃台說。</p>
+</section>
+
+<section class="first" id="first" aria-labelledby="h-fv">
+  <h2 id="h-fv">第一堂課前後的七十五分鐘</h2>
+  <ol class="fv" role="list"><li class="" style="--at0:0;--m:5"><span class="fv-b"><svg class="rb" viewBox="0 0 20 14" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 0.76L2.5 1.11L5 1.07L7.5 1.5L10 0.92L12.5 1.14L15 0.72L17.5 1.4L20 1.38L20 1.2L20 13L20 13.42L17.5 12.91L15 13.43L12.5 13.58L10 13.6L7.5 12.56L5 12.91L2.5 12.51L0 12.98Z"/></svg><span class="mkn">−15</span></span><div class="fv-x"><h3>報到</h3><p>提早十五分鐘到，報上名字。</p></div></li><li class="" style="--at0:5;--m:5"><span class="fv-b"><svg class="rb" viewBox="0 0 20 14" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 0.53L2.5 1.65L5 1.61L7.5 1.54L10 1.1L12.5 1.53L15 0.89L17.5 1.63L20 1.58L20 1.2L20 13L20 13.5L17.5 13.06L15 12.78L12.5 12.84L10 12.91L7.5 13.56L5 13.28L2.5 12.67L0 13.29Z"/></svg><span class="mkn">−10</span></span><div class="fv-x"><h3>填一張表</h3><p>寫下受過傷的地方，還在回診的也寫。</p></div></li><li class="" style="--at0:10;--m:5"><span class="fv-b"><svg class="rb" viewBox="0 0 20 14" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 0.37L2.5 1.52L5 0.69L7.5 0.4L10 1L12.5 0.54L15 1.25L17.5 1.57L20 0.88L20 1.2L20 13L20 13.46L17.5 13.34L15 13.43L12.5 13.63L10 12.3L7.5 13.02L5 12.72L2.5 12.55L0 13.23Z"/></svg><span class="mkn">−5</span></span><div class="fv-x"><h3>換衣服拿墊子</h3><p>鞋子脫在門口。手機關靜音。</p></div></li><li class="main" style="--at0:15;--m:50"><span class="fv-b"><svg class="rb" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 1.38L25 0.97L50 0.75L75 0.78L100 0.89L125 0.44L150 0.67L175 0.39L200 1.57L200 1.2L200 13L200 12.96L175 12.9L150 12.87L125 12.89L100 12.37L75 13.56L50 13.66L25 13.23L0 13.1Z"/></svg><span class="mkn">0</span></span><div class="fv-x"><h3>上課</h3><p>跟不上就停下來，看教練做。不用硬跟。</p></div></li><li class=" late" style="--at0:65;--m:10"><span class="fv-b"><svg class="rb" viewBox="0 0 40 14" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 1.27L5 0.95L10 1.14L15 1.39L20 1.57L25 0.72L30 0.34L35 1.68L40 1.31L40 1.2L40 13L40 12.5L35 13.69L30 12.78L25 12.89L20 13.46L15 12.51L10 13.5L5 13.33L0 13.15Z"/></svg><span class="mkn">+50</span></span><div class="fv-x"><h3>收操與發問</h3><p>下課後十分鐘，教練留在教室。有問題，現在問。</p></div></li></ol>
+  <div class="fv-ax" aria-hidden="true"><span style="--m:0">−15</span><span style="--m:15">0</span><span style="--m:40">25</span><span style="--m:65">50</span><span style="--m:75">60</span></div>
+  <div class="bring">
+    <div><h3>帶</h3><p>水壺、毛巾、能伸展的衣服。器械課加一雙止滑襪。</p></div>
+    <div><h3>不用帶</h3><p>墊子、毯子、磚、伸展帶。教室都有，用完噴一下、擦乾、放回去。</p></div>
+  </div>
+</section>
+
+<section class="rules" id="rules" aria-labelledby="h-rl">
+  <h2 id="h-rl">教室裡的五條規矩</h2>
+  <dl class="rl"><dt>取消</dt><dd>開課前 6 小時。過了 6 小時，算上過一堂。</dd><dt>遲到</dt><dd>10 分鐘內，可以進。超過，等下一堂。器械課遲到，不能上床。</dd><dt>人數</dt><dd>墊上課一堂最多 14 人。器械課 6 床。</dd><dt>衣服</dt><dd>穿能伸展、不會往上掀的衣服。器械課穿止滑襪。</dd><dt>身體</dt><dd>這裡練的是動作，不是治療——懷孕、剛動過手術或還在回診的，先讓你的醫師點頭，再進教室。</dd></dl>
+  <div class="visit">
+    <h3>怎麼來</h3>
+    <address>台中市西區晨昏街 6 號 2 樓<br>樓梯上來，左手邊第一間。</address>
+    <p><a class="tel" href="tel:+886400000622">04-0000-0622</a><br>上課中不接，下課回撥。</p>
+    <dl>
+      <dt>櫃台</dt><dd>週一到週五 05:45–21:50<br>週六 07:45–17:30<br>週日 08:15–11:30</dd>
+      <dt>公車</dt><dd>到「晨昏街口」，走兩分鐘。</dd>
+      <dt>停車</dt><dd>機車停騎樓。汽車停巷口的收費停車場。</dd>
+    </dl>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <p><b>六點鐘運動教室</b>　台中市西區晨昏街 6 號 2 樓　04-0000-0622</p>
+  <p>字型：霞鶩馬克黑（LXGW Marker Gothic）、Noto Sans TC，皆依 SIL Open Font License 授權使用。</p>
+</footer>
+<script>
+(function(){
+var d=document,RMq=matchMedia('(prefers-reduced-motion: reduce)'),MOB=matchMedia('(max-width: 899px)');
+function $(s,r){return (r||d).querySelector(s);}function $$(s,r){return Array.prototype.slice.call((r||d).querySelectorAll(s));}
+function tx(e){return e?e.textContent.replace(/\s+/g,' ').trim():'';}
+function p2(n){return (n<10?'0':'')+n;}
+function hm(st){return p2(6+Math.floor(st/60))+':'+p2(st%60);}
+function fk(p, s) {
+  var R = Math.PI / 180;
+  function go(o, a, l) { return [o[0] + l * Math.cos(a * R), o[1] + l * Math.sin(a * R)]; }
+  var P = [p[0], p[1]], C = go(P, p[2], s.t), K = go(C, p[3], s.n), H = go(K, p[3], s.h);
+  var eL = go(C, p[4], s.ua), hL = go(eL, p[5], s.fa), eR = go(C, p[6], s.ua), hR = go(eR, p[7], s.fa);
+  var kL = go(P, p[8], s.th), aL = go(kL, p[9], s.sh), tL = go(aL, p[10], s.ft);
+  var kR = go(P, p[11], s.th), aR = go(kR, p[12], s.sh), tR = go(aR, p[13], s.ft);
+  return { P: P, C: C, K: K, H: H, eL: eL, hL: hL, eR: eR, hR: hR, kL: kL, aL: aL, tL: tL, kR: kR, aR: aR, tR: tR };
+}
+function cap(A, B, wa, wb) {
+  function f(v) { return Math.round(v * 100) / 100; }
+  var dx = B[0] - A[0], dy = B[1] - A[1], L = Math.hypot(dx, dy) || 1, nx = -dy / L, ny = dx / L, ra = wa / 2, rb = wb / 2;
+  return 'M' + f(A[0] + nx * ra) + ' ' + f(A[1] + ny * ra) + 'L' + f(B[0] + nx * rb) + ' ' + f(B[1] + ny * rb) +
+    'A' + f(rb) + ' ' + f(rb) + ' 0 0 0 ' + f(B[0] - nx * rb) + ' ' + f(B[1] - ny * rb) + 'L' + f(A[0] - nx * ra) + ' ' + f(A[1] - ny * ra) +
+    'A' + f(ra) + ' ' + f(ra) + ' 0 0 0 ' + f(A[0] + nx * ra) + ' ' + f(A[1] + ny * ra) + 'Z';
+}
+function figAttrs(p, s) {
+  var q = fk(p, s), w = s.w;
+  function f(v) { return Math.round(v * 100) / 100; }
+  return {
+    thL: cap(q.P, q.kL, w.th0, w.th1), shL: cap(q.kL, q.aL, w.sh0, w.sh1), ftL: cap(q.aL, q.tL, w.ft, w.ft * 0.72),
+    uaL: cap(q.C, q.eL, w.ua0, w.ua1), faL: cap(q.eL, q.hL, w.fa0, w.fa1),
+    T: cap(q.P, q.C, w.hip, w.chest), N: cap(q.C, q.K, w.neck, w.neck * 0.9),
+    thR: cap(q.P, q.kR, w.th0, w.th1), shR: cap(q.kR, q.aR, w.sh0, w.sh1), ftR: cap(q.aR, q.tR, w.ft, w.ft * 0.72),
+    uaR: cap(q.C, q.eR, w.ua0, w.ua1), faR: cap(q.eR, q.hR, w.fa0, w.fa1),
+    H: [f(q.H[0]), f(q.H[1]), s.h],
+    J: { P: q.P, C: q.C, kR: q.kR, eR: q.eR, aR: q.aR },
+    Q: q,
+  };
+}
+function grounded(p, s) {
+  var q = fk(p, s), w = s.w;
+  var lo = Math.max(q.aL[1] + w.sh1 / 2, q.aR[1] + w.sh1 / 2, q.tL[1] + w.ft / 2, q.tR[1] + w.ft / 2, q.hL[1] + w.fa1 / 2, q.hR[1] + w.fa1 / 2,
+    q.kL[1] + w.th1 / 2, q.kR[1] + w.th1 / 2, q.H[1] + s.h, q.P[1] + w.hip / 2, q.C[1] + w.chest / 2, q.eL[1] + w.ua1 / 2, q.eR[1] + w.ua1 / 2);
+  var o = p.slice(); o[1] += 122 - lo; return o;
+}
+function outline(p, s) {
+  var a = figAttrs(p, s), k = ['thL', 'shL', 'ftL', 'uaL', 'faL', 'T', 'N', 'thR', 'shR', 'ftR', 'uaR', 'faR'], d = '', i;
+  for (i = 0; i < k.length; i++) d += a[k[i]];
+  var cx = a.H[0], cy = a.H[1], r = a.H[2];
+  return d + 'M' + (cx - r) + ' ' + cy + 'a' + r + ' ' + r + ' 0 1 0 ' + 2 * r + ' 0a' + r + ' ' + r + ' 0 1 0 ' + -2 * r + ' 0Z';
+}
+function lerpPose(a, b, t, delay) {
+  var out = [], span = 0.56;
+  for (var i = 0; i < a.length; i++) {
+    var d = delay[i] || 0, u = Math.min(1, Math.max(0, (t - d) / span));
+    u = u < 0.5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2;
+    var x = a[i], y = b[i];
+    if (i > 1) { var dd = ((y - x + 540) % 360) - 180; y = x + dd; }
+    out.push(x + (y - x) * u);
+  }
+  return out;
+}
+function trail(a, b, s, delay, ghostT) {
+  var ghosts = [], i, n = 16, lines = { H: [], hR: [], tR: [] }, x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+  function grow(q, r) { for (var k in q) { var v = q[k]; if (v[0] - r < x0) x0 = v[0] - r; if (v[0] + r > x1) x1 = v[0] + r; if (v[1] - r < y0) y0 = v[1] - r; if (v[1] + r > y1) y1 = v[1] + r; } }
+  for (i = 0; i < ghostT.length; i++) { var g = grounded(lerpPose(a, b, ghostT[i], delay), s); ghosts.push(g); grow(fk(g, s), 8); }
+  for (i = 0; i <= n; i++) {
+    var p = grounded(lerpPose(a, b, i / n, delay), s), q = fk(p, s);
+    lines.H.push(q.H); lines.hR.push(q.hR); lines.tR.push(q.tR); grow(q, 8);
+  }
+  var fin = grounded(b, s); grow(fk(fin, s), 8);
+  function d(pts) { var o = '', j; for (j = 0; j < pts.length; j++) o += (j ? 'L' : 'M') + Math.round(pts[j][0] * 10) / 10 + ' ' + Math.round(pts[j][1] * 10) / 10; return o; }
+  return { ghosts: ghosts, fin: fin, paths: [d(lines.H), d(lines.hR), d(lines.tR)], box: [Math.floor(x0), Math.floor(y0), Math.ceil(x1 - x0), 124 - Math.floor(y0)] };
+}
+var tool=$('#tool');if(!tool)return;
+var stage=$('.stage',tool),figW=$('.st-fig',stage),capEl=$('.st-cap',stage),svg=$('svg',figW);
+var blocks=$$('.blk',tool),byId={},DAYN=[];
+blocks.forEach(function(b){byId[b.getAttribute('data-s')]=b;});
+$$('.day',tool).forEach(function(li,i){DAYN[i+1]=tx($('.dn-w',li));});
+var MSG={};$$('#msgs [data-m]').forEach(function(e){MSG[e.getAttribute('data-m')]=tx(e);});
+var CN={};$$('#msgs [data-c]').forEach(function(e){CN[e.getAttribute('data-c')]=tx(e);});
+var live=$('#live');
+function say(k,s){if(!live)return;live.textContent='';setTimeout(function(){live.textContent=(MSG[k]||'')+' '+s;},40);}
+var TN={};$$('.face',capEl).forEach(function(f){TN[f.getAttribute('data-t')]=tx($('h2',f));});
+function info(b){var st=+b.getAttribute('data-st'),du=+b.getAttribute('data-du'),dd=+b.getAttribute('data-d');return {id:b.getAttribute('data-s'),t:b.getAttribute('data-t'),st:st,du:du,d:dd,day:DAYN[dd],date:DATE[dd]||'',time:hm(st)+'\u2013'+hm(st+du),coach:CN[b.getAttribute('data-c')]||'',name:TN[b.getAttribute('data-t')]};}
+function label(i){return i.day+' '+i.time+' '+i.name;}
+var DATE=[];
+/* ---- figure + chronophotograph ---- */
+var POSES=JSON.parse(stage.getAttribute('data-poses')),STARTS=JSON.parse(stage.getAttribute('data-starts')),PROP=JSON.parse(stage.getAttribute('data-prop')),DELAY=JSON.parse(stage.getAttribute('data-delay')),GT=JSON.parse(stage.getAttribute('data-gt'));
+var P={};['thL','shL','ftL','uaL','faL','T','N','thR','shR','ftR','uaR','faR'].forEach(function(k){P[k]=$('.s-'+k,svg);});
+var HD=$('.s-H',svg),JT={};['P','C','kR','eR','aR'].forEach(function(k){JT[k]=$('.j-'+k,svg);});
+var GH=$$('.fg-gh path',svg),TRL=$$('.fg-tr path',svg),box=JSON.parse(stage.getAttribute('data-box')),shown=null,curT=null,raf=0;
+function drawPose(p){var a=figAttrs(p,PROP);for(var k in P)if(P[k])P[k].setAttribute('d',a[k]);HD.setAttribute('cx',a.H[0]);HD.setAttribute('cy',a.H[1]);for(var j in JT)if(JT[j]){JT[j].setAttribute('cx',a.J[j][0].toFixed(2));JT[j].setAttribute('cy',a.J[j][1].toFixed(2));}shown=p;}
+function setTrail(tr){box=tr.box;svg.setAttribute('viewBox',box.join(' '));figW.style.setProperty('--bw',box[2]);figW.style.setProperty('--bh',box[3]);GH.forEach(function(g,i){g.setAttribute('d',outline(tr.ghosts[i],PROP));});TRL.forEach(function(t,i){t.setAttribute('d',tr.paths[i]);});}
+function show(from,to,anim){cancelAnimationFrame(raf);var tr=trail(from,to,PROP,DELAY,GT);setTrail(tr);
+  if(!anim||RMq.matches){drawPose(tr.fin);figW.setAttribute('data-k','4');return;}
+  var t0=0,D=1150;figW.setAttribute('data-k','0');
+  function step(now){if(!t0)t0=now;var t=Math.min(1,(now-t0)/D);drawPose(grounded(lerpPose(from,to,t,DELAY),PROP));var k=0;while(k<GT.length&&t>=GT[k]+0.04)k++;figW.setAttribute('data-k',t>=1?'4':String(k));if(t<1)raf=requestAnimationFrame(step);}
+  raf=requestAnimationFrame(step);}
+/* ---- where the figure and its caption stand ---- */
+function place(){var b=byId[sel];if(!b)return;
+  if(MOB.matches){figW.style.left='';capEl.style.left='';figW.classList.remove('eve');var sw=stage.clientWidth*0.46;figW.style.setProperty('--scm',Math.min(1.45,sw/box[2]).toFixed(3));return;}
+  figW.style.removeProperty('--scm');
+  var W=stage.clientWidth,lab=parseFloat(getComputedStyle(stage).getPropertyValue('--lab'))||64,LW=W-lab,sc=parseFloat(getComputedStyle(figW).getPropertyValue('--sc'))||2.4;
+  var st=+b.getAttribute('data-st'),du=+b.getAttribute('data-du'),half=box[2]*sc/2,cx=lab+LW*(st+du/2)/960;cx=Math.min(W-half,Math.max(half,cx));
+  var x17=lab+LW*660/960,x18=lab+LW*720/960,cw=capEl.offsetWidth||320,gap=28,cl=Math.min(cx-half-gap-cw,x17-cw-12);
+  if(cl<0)cl=Math.min(cx+half+gap,W-cw);
+  figW.style.left=cx.toFixed(1)+'px';capEl.style.left=cl.toFixed(1)+'px';figW.classList.toggle('eve',cx>=x18);}
+addEventListener('resize',function(){place();syncSc();});
+/* ---- state ---- */
+var sel=null,booked=[],filt='all';
+function writeHash(){var q=[];if(sel)q.push('s='+sel);if(filt!=='all')q.push('t='+filt);if(booked.length)q.push('b='+booked.join('.'));try{history.replaceState(null,'',q.length?'#'+q.join('&'):location.pathname+location.search);}catch(e){}}
+function readHash(){var o={};location.hash.replace(/^#/,'').split('&').forEach(function(kv){var m=kv.split('=');if(m.length===2)o[m[0]]=m[1];});return o;}
+function roving(b){blocks.forEach(function(x){x.tabIndex=(x===b)?0:-1;});}
+var tagEl=$('.cp-tag',capEl);
+function select(id,o){o=o||{};var b=byId[id];if(!b)return;var i=info(b);
+  blocks.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});roving(b);var prevT=curT;sel=id;curT=i.t;
+  $$('.face',capEl).forEach(function(f){f.hidden=f.getAttribute('data-t')!==i.t;});
+  $('.pk-d',capEl).textContent=i.day;$('.pk-dt',capEl).textContent=i.date;$('.pk-t',capEl).textContent=i.time;
+  $$('.pk-coach',capEl).forEach(function(e){e.textContent=i.coach;});
+  tagEl.textContent=(RUN&&RUN.id===id)?MSG.run:((NEXT&&NEXT.id===id)?MSG.next:'');
+  syncAdd();
+  var from=(shown&&prevT&&prevT!==i.t)?shown:STARTS[i.t];
+  show(from,POSES[i.t],o.anim!==false);place();
+  if(!o.quiet)say('sel',label(i));
+  if(o.hash!==false)writeHash();
+  if(o.scroll)revealBlock(b);}
+var SC=$('.tl-sc',tool);function syncSc(){if(SC.scrollWidth>SC.clientWidth+4){SC.tabIndex=0;SC.setAttribute('role','region');}else{SC.removeAttribute('tabindex');}}
+function revealBlock(b){if(SC.scrollWidth>SC.clientWidth+4){var x=b.offsetLeft-70;SC.scrollTo({left:Math.max(0,x),behavior:RMq.matches?'auto':'smooth'});}}
+/* ---- booking ---- */
+var addBtns=$$('.add',capEl),list=$('.tr-list'),tplI=$('#tpl-ti'),meter=$('.meter .seg-w'),nN=$('.tr-n'),nM=$('.tr-m'),navN=$('.nav .go .mkn'),empty=$('.tr-empty');
+function syncAdd(){addBtns.forEach(function(a){a.setAttribute('aria-pressed',booked.indexOf(sel)>=0?'true':'false');});}
+function visAdd(){return addBtns.filter(function(a){return !a.closest('.face').hidden;})[0];}
+function renderTray(){list.textContent='';meter.textContent='';var mins=0;
+  booked.forEach(function(id){var b=byId[id];if(!b)return;var i=info(b);mins+=i.du;
+    var li=tplI.content.firstElementChild.cloneNode(true);li.className='ti t-'+i.t;
+    $('.ti-m',li).appendChild($('.b-m',b).cloneNode(true));
+    $('.ti-d',li).textContent=i.day+' '+i.date;$('.ti-t',li).textContent=i.time;$('.ti-c',li).textContent=i.name;$('.ti-k',li).textContent=i.coach;$('.ti-sr',li).textContent=' '+label(i);
+    $('.ti-x',li).addEventListener('click',function(){toggle(id);var nx=$('.ti-x',list)||visAdd();if(nx)nx.focus();});list.appendChild(li);
+    var sg=d.createElement('span');sg.className='seg';sg.style.setProperty('--du',i.du);sg.appendChild($('.b-m',b).cloneNode(true));meter.appendChild(sg);});
+  var cap2=Math.max(360,Math.ceil(mins/60)*60+60);meter.parentNode.style.setProperty('--cap',cap2);
+  var ax=$$('.meter-ax span');ax.forEach(function(s,k){s.textContent=Math.round(cap2/60*k/(ax.length-1))+'h';});
+  nN.textContent=booked.length;nM.textContent=mins;if(navN)navN.textContent=booked.length;empty.hidden=booked.length>0;
+  blocks.forEach(function(b){var on=booked.indexOf(b.getAttribute('data-s'))>=0;b.classList.toggle('booked',on);if(on)b.setAttribute('aria-describedby','booked-note');else b.removeAttribute('aria-describedby');});
+  syncAdd();}
+function toggle(id){var k=booked.indexOf(id),i=info(byId[id]);if(k>=0){booked.splice(k,1);say('del',label(i));}else{booked.push(id);booked.sort(function(a,b){var A=info(byId[a]),B=info(byId[b]);return A.d-B.d||A.st-B.st;});say('add',label(i));}renderTray();writeHash();}
+addBtns.forEach(function(a){a.addEventListener('click',function(){if(sel)toggle(sel);});});
+/* ---- blocks: click + roving keys ---- */
+blocks.forEach(function(b){b.addEventListener('click',function(){select(b.getAttribute('data-s'));if(MOB.matches){var r=stage.getBoundingClientRect();if(r.top<0||r.bottom>innerHeight)stage.scrollIntoView({block:'nearest',behavior:RMq.matches?'auto':'smooth'});}});});
+function rowOf(b){return b.closest('.day');}
+function inRow(r){return $$('.blk',r);}
+tool.addEventListener('keydown',function(e){var b=e.target.closest&&e.target.closest('.blk');if(!b)return;var r=rowOf(b),rs=inRow(r),k=rs.indexOf(b),t=null;
+  if(e.key==='ArrowRight')t=rs[k+1];else if(e.key==='ArrowLeft')t=rs[k-1];else if(e.key==='Home')t=rs[0];else if(e.key==='End')t=rs[rs.length-1];
+  else if(e.key==='ArrowDown'||e.key==='ArrowUp'){var days=$$('.day',tool),di=days.indexOf(r),st=+b.getAttribute('data-st'),dir=e.key==='ArrowDown'?1:-1;for(var n=di+dir;n>=0&&n<days.length&&!t;n+=dir){var c=inRow(days[n]);if(c.length)t=c.reduce(function(a,x){return Math.abs(+x.getAttribute('data-st')-st)<Math.abs(+a.getAttribute('data-st')-st)?x:a;});}}
+  else if(e.key==='Escape'){var all=$('#f-all');if(all&&!all.checked){all.checked=true;all.dispatchEvent(new Event('change',{bubbles:true}));}return;}
+  if(t){e.preventDefault();roving(t);t.focus();revealBlock(t);}});
+/* ---- filter ---- */
+$$('.flt input').forEach(function(inp){inp.addEventListener('change',function(){if(inp.checked){filt=inp.value;writeHash();}});});
+/* ---- chapter slots ---- */
+$$('a.slot').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('data-s');if(!byId[id])return;e.preventDefault();tool.scrollIntoView({behavior:RMq.matches?'auto':'smooth',block:'start'});select(id,{scroll:true});byId[id].focus({preventScroll:true});});});
+/* ---- jump (phone) ---- */
+$$('.jump button').forEach(function(bt){bt.addEventListener('click',function(){var row=$('.row',tool),hh=+bt.getAttribute('data-h');SC.scrollTo({left:Math.max(0,(hh-6)/16*row.offsetWidth-8),behavior:RMq.matches?'auto':'smooth'});});});
+/* ---- form ---- */
+var form=$('#book'),out=$('.tr-out'),tplM=$('#tpl-msg'),tplMI=$('#tpl-mi');
+if(form)form.addEventListener('submit',function(e){e.preventDefault();var nm=form.elements.n,ph=form.elements.p,bad=[];
+  $$('.err',form).forEach(function(x){x.hidden=true;});
+  if(!booked.length)bad.push(['e',null]);if(!nm.value.trim())bad.push(['n',nm]);var pv=ph.value.replace(/[\s-]/g,'');if(!/^09\d{8}$/.test(pv))bad.push(['p',ph]);
+  [nm,ph].forEach(function(x){x.removeAttribute('aria-invalid');});
+  if(bad.length){bad.forEach(function(x){var er=$('.err[data-err="'+x[0]+'"]',form);if(er)er.hidden=false;if(x[1])x[1].setAttribute('aria-invalid','true');});var f=bad.filter(function(x){return x[1];})[0];if(f)f[1].focus();else form.querySelector('.gen').focus();return;}
+  var m=tplM.content.cloneNode(true),bx=$('.msg',out);bx.textContent='';
+  $('.m-n',m).textContent=nm.value.trim();$('.m-p',m).textContent=pv.slice(0,4)+'-'+pv.slice(4,7)+'-'+pv.slice(7);
+  var ul=$('.m-list',m);booked.forEach(function(id){var i=info(byId[id]),li=tplMI.content.firstElementChild.cloneNode(true);$('.m-d',li).textContent=i.day+' '+i.date;$('.m-t',li).textContent=i.time;$('.m-c',li).textContent=i.name;$('.m-k',li).textContent=i.coach;ul.appendChild(li);});
+  $('.m-first',m).hidden=!form.elements.f.checked;bx.appendChild(m);out.hidden=false;var cpd=$('.copied',out);if(cpd)cpd.hidden=true;say('gen','');$('.copy',out).focus();});
+if(out)$('.copy',out).addEventListener('click',function(){var t=$('.msg',out).innerText,cpd=$('.copied',out);function ok(){cpd.hidden=false;}
+  function sel2(){var r=d.createRange();r.selectNodeContents($('.msg',out));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(ok,sel2);else sel2();});
+/* ---- now ---- */
+var now=new Date(),dow=(now.getDay()+6)%7+1,nm=now.getHours()*60+now.getMinutes()-360;
+var days=$$('.day',tool);
+days.forEach(function(li,i){var dt=new Date(now);dt.setDate(now.getDate()+((i+1-dow+7)%7));DATE[i+1]=(dt.getMonth()+1)+'/'+dt.getDate();var dd=$('.dd',li);if(dd)dd.textContent=DATE[i+1];li.classList.toggle('today',i+1===dow);});
+$$('.now-t').forEach(function(e){e.textContent=p2(now.getHours())+':'+p2(now.getMinutes());});
+if(nm>=0&&nm<=960){[$('.nowp',tool),$('.st-now',stage)].forEach(function(p){if(!p)return;p.style.setProperty('--nf',(nm/960).toFixed(4));p.classList.toggle('eve',nm>=660);p.classList.toggle('np-r',nm>900);p.classList.toggle('np-l',nm<50);p.hidden=false;});}
+var all=blocks.map(info).sort(function(a,b){return a.d-b.d||a.st-b.st;});
+var RUN=all.filter(function(i){return i.d===dow&&i.st<=nm&&nm<i.st+i.du;})[0]||null;
+var NEXT=all.filter(function(i){return i.d>dow||(i.d===dow&&i.st>nm);})[0]||all[0];
+/* ---- boot ---- */
+var q=readHash();
+if(q.t&&$('#f-'+q.t)){$('#f-'+q.t).checked=true;filt=q.t;}
+if(q.b)q.b.split('.').forEach(function(id){if(byId[id]&&booked.indexOf(id)<0)booked.push(id);});
+renderTray();syncSc();
+select(q.s&&byId[q.s]?q.s:(RUN?RUN.id:NEXT.id),{anim:false,quiet:true,hash:!!(q.s||q.t||q.b)});
+revealBlock(byId[sel]);
+MOB.addEventListener&&MOB.addEventListener('change',place);
+})();
+</script>
+</body>
+</html>

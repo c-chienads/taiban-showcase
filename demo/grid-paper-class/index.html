@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F16" data-slug="grid-paper-class">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>格子語文教室｜中和的兒少作文班：每一篇都用紅筆批改</title>
+<meta name="description" content="格子語文教室在新北中和，教三年級到九年級的孩子寫作文。每週一堂九十分鐘，一班八人以內，每篇作文老師都用紅筆逐句批改、隔週發回。看一篇四年級的範文怎麼被批改，再看課表、學費與試聽。">
+
+<meta name="generator" content="套版網站平台 F16">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preload" href="fonts/01-iansui.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/02-lxgw-wenkai-tc.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"Iansui";src:url("fonts/01-iansui.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"LXGW WenKai TC";src:url("fonts/02-lxgw-wenkai-tc.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root {
+  --paper: oklch(0.978 0.006 115); --grid: oklch(0.855 0.065 152); --frame: oklch(0.58 0.095 152);
+  --pencil: oklch(0.29 0.012 255); --ink: oklch(0.22 0.02 250); --red: oklch(0.49 0.2 27); --red-pen: oklch(0.56 0.22 27); --hi: oklch(0.93 0.17 100); --mute: oklch(0.44 0.03 200);
+  --cols: 20;
+  --cell-max: 35px;
+  --cell: 35px;
+  --gap: calc(var(--cell) * .4);
+  --row: calc(var(--cell) + var(--gap));
+  --fs: calc(var(--cell) * .8);
+  --ls: calc(var(--cell) * .2);
+  --kid: "Iansui", "Klee One", "LXGW WenKai TC", "BiauKai", serif;
+  --pen: "LXGW WenKai TC", "Iansui", "BiauKai", serif;
+  --focus-ring: 2px dashed var(--red);
+  --focus-offset: 3px;
+  --selection-bg: oklch(0.93 0.17 100);
+  --selection-fg: var(--ink);
+}
+html { background: var(--paper); color: var(--pencil); font-family: var(--kid); }
+body { container-type: inline-size; font-size: 1.0625rem; line-height: 1.8; }
+.page { --cell: min(var(--cell-max), calc((100cqw - 32px) / var(--cols))); --gap: calc(var(--cell) * .4); --row: calc(var(--cell) + var(--gap)); --fs: calc(var(--cell) * .8); --ls: calc(var(--cell) * .2); }
+@supports (width: round(down, 10px, 1px)) { .page { --cell: min(var(--cell-max), round(down, calc((100cqw - 32px) / var(--cols)), 1px)); } }
+@media (max-width: 479px) { .page { --cols: 16; } }
+a { color: var(--ink); text-decoration-color: var(--frame); text-decoration-thickness: 1.5px; text-underline-offset: .2em; }
+a:not(.skip):hover { color: var(--red); text-decoration-color: var(--red); }
+.skip { background: var(--ink); color: var(--paper); padding: .5em 1.1em; letter-spacing: .2em; text-decoration: none; z-index: 30; }
+mark { background: none; color: inherit; }
+.nb { white-space: nowrap; }
+b, strong { font-weight: 400; font-family: var(--pen); -webkit-text-stroke: .025em currentColor; }
+.g { font-size: var(--fs); line-height: var(--row); letter-spacing: var(--ls); word-break: break-all; line-break: strict; overflow-wrap: anywhere; text-wrap: wrap; text-spacing-trim: space-all; text-autospace: no-autospace; hyphens: none; font-kerning: none; font-variant-ligatures: none; }
+.g :where(p, li, dd, dt, h1, h2, h3, blockquote, label, legend, figcaption) { text-wrap: wrap; line-height: var(--row); }
+.g :where(*) { word-break: break-all; line-break: strict; }
+.g :where(h1, h2, h3) { font-weight: 400; }
+.prose { word-break: normal; line-break: strict; letter-spacing: 0; }
+.sheet > :not(.pen, .head-strip, .fold, .tt) { margin-inline-end: calc(var(--cell) * -.4); }
+.x2 { font-family: var(--pen); font-weight: 400; -webkit-text-stroke: .035em var(--ink); color: var(--ink); font-size: calc(var(--cell) * 1.6); letter-spacing: calc(var(--cell) * .4); line-height: calc(var(--row) * 2); text-indent: calc(var(--cell) * .1); }
+.row { margin-block-start: var(--row); }
+.row2 { margin-block-start: calc(var(--row) * 2); }
+.ind { text-indent: calc(var(--cell) * 2); }
+.num { font-feature-settings: "fwid" 1; font-variant-numeric: tabular-nums; }
+.tn { font-variant-numeric: tabular-nums; }
+.sheet { position: relative; box-sizing: border-box; width: calc(var(--cols) * var(--cell)); min-height: calc(21 * var(--row)); margin-inline: auto; padding-inline-start: calc(var(--cell) * .1); padding-block-end: var(--row); display: flow-root; background: var(--paper) url("assets/grid.svg") 0 0 / calc(4 * var(--cell)) calc(2 * var(--row)) repeat; box-shadow: 0 0 0 1.5px var(--frame); }
+.sheet, .essay { margin-block-start: var(--row); }
+.fold { position: relative; box-sizing: border-box; width: calc(var(--cols) * var(--cell)); margin-inline-start: calc(var(--cell) * -.1); height: var(--row); background: var(--paper); display: flex; align-items: center; justify-content: space-between; padding-inline: calc(var(--cell) * 1.4); font-size: max(11px, calc(var(--cell) * .42)); line-height: 1; letter-spacing: .12em; color: var(--mute); word-break: normal; }
+.fold::before, .fold::after { content: ""; position: absolute; top: 50%; height: calc(var(--cell) * .55); width: calc(var(--cell) * 1.15); transform: translateY(-50%); background: url("assets/yuwei-l.svg") left center / contain no-repeat; }
+.fold::before { left: 0; } .fold::after { right: 0; background-image: url("assets/yuwei-r.svg"); background-position: right center; }
+.fold-no { font-family: var(--pen); color: var(--frame); letter-spacing: .25em; }
+.head-strip { position: absolute; left: 0; width: calc(var(--cols) * var(--cell)); bottom: 100%; display: flex; justify-content: space-between; padding: 0 2px calc(var(--cell) * .12); font-size: max(11px, calc(var(--cell) * .4)); letter-spacing: .14em; color: var(--mute); line-height: 1.2; white-space: nowrap; }
+.cover h1 { margin-block-start: 0; }
+.cover .tag { color: var(--ink); }
+.nav ol { list-style: none; margin: 0; padding: 0; }
+.nav li { display: inline; margin-inline-end: var(--cell); }
+.nav li:last-child { margin-inline-end: 0; }
+.nav a { position: relative; text-decoration: none; color: var(--ink); box-shadow: inset 0 calc(var(--cell) * -.12) 0 0 var(--hi); }
+.nav a::after { content: ""; position: absolute; inset: -13px -3px; z-index: 1; }
+.nav a:hover, .nav a:focus-visible { color: var(--red); }
+.legend { list-style: none; padding: 0; margin: 0; }
+.legend li { display: block; }
+.legend .smp { display: block; text-indent: calc(var(--cell) * 2); }
+.legend .exp { display: block; color: var(--ink); }
+mark[data-pen="wave"] { text-decoration: underline wavy var(--red-pen); text-decoration-thickness: 2px; text-underline-offset: .16em; text-decoration-skip-ink: none; }
+mark[data-pen="circle"] { outline: 2px solid var(--red-pen); outline-offset: 0; border-radius: 50%; }
+del[data-pen] { text-decoration: line-through; text-decoration-color: var(--red-pen); text-decoration-thickness: 2px; }
+html.js mark[data-pen="wave"] { text-decoration-color: transparent; }
+html.js mark[data-pen="circle"] { outline-color: transparent; }
+html.js del[data-pen] { text-decoration-color: transparent; }
+.fix, .at { position: relative; }
+.fix [data-note]::before { transform: translate(-100%, -62%); }
+.g ins { position: absolute; left: 50%; bottom: calc(100% - var(--cell) * .02); transform: translateX(-50%); font-family: var(--pen); color: var(--red); text-decoration: none; letter-spacing: 0; white-space: nowrap; font-size: max(11px, calc(var(--cell) * .42)); line-height: var(--gap); padding-inline: 1px; text-shadow: 0 0 0 var(--paper), 1px 0 0 var(--paper), -1px 0 0 var(--paper), 0 1px 0 var(--paper), 0 -1px 0 var(--paper); }
+.fix ins { left: calc(50% - var(--ls) / 2); }
+.at ins { left: calc(100% - var(--ls) / 2); }
+html:not(.js) .at ins::after { content: "∧"; position: absolute; left: 50%; top: 100%; transform: translateX(-50%) translateY(calc(var(--cell) * .55)); color: var(--red-pen); font-size: max(11px, calc(var(--cell) * .4)); line-height: 1; }
+[data-note] { position: relative; }
+[data-note]::before { content: counter(note, circ); counter-increment: note; position: absolute; left: 0; top: 0; transform: translate(-45%, -52%); font-family: var(--pen); font-size: max(11px, calc(var(--cell) * .36)); line-height: 1; letter-spacing: 0; color: var(--red); text-shadow: 0 0 0 var(--paper), 1px 0 0 var(--paper), -1px 0 0 var(--paper), 0 1px 0 var(--paper), 0 -1px 0 var(--paper); }
+@counter-style circ { system: fixed; symbols: "①" "②" "③" "④" "⑤" "⑥" "⑦" "⑧" "⑨"; suffix: ""; }
+.essay-body, #teachers, .cover { counter-reset: note; }
+.cover [data-note]::before { content: none; }
+.notes.notes-c li::before { content: none; }
+.notes.notes-c li { padding-inline-start: 0; }
+.essay-body > .pen { margin: 0; }
+.pen { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 2; }
+.pen path { fill: none; stroke: var(--red-pen); stroke-linecap: round; stroke-linejoin: round; stroke-opacity: .92; }
+.pen path[data-step] { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset var(--d, .5s) cubic-bezier(.3, .1, .4, 1); }
+.pen path[data-step].on { stroke-dashoffset: 0; }
+.pen path[data-step].drawn { transition: none; }
+html.js .notes li[data-step]:not(.on) { opacity: 0; }
+html.js .essay-body ins[data-step]:not(.on) { opacity: 0; }
+.essay-body ins { transition: opacity .25s; }
+.notes li { transition: opacity .3s; }
+html.js .verdict:not(.on) .verdict-p { clip-path: inset(0 0 100% 0); }
+.verdict-p { transition: clip-path 1.1s cubic-bezier(.3, 0, .5, 1); }
+html.js .grade:not(.on) .stamp { opacity: 0; transform: rotate(calc(var(--rot) - 10deg)) scale(1.45); }
+.stamp { transition: opacity .3s ease-out, transform .34s cubic-bezier(.2, .8, .25, 1); }
+@media (max-width: 520px) { html.js .grade:not(.on) .stamp { transform: rotate(calc(var(--rot) - 10deg)) scale(1.12); } }
+.cur { background: color-mix(in oklch, var(--hi) 55%, transparent); box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.essay { display: grid; grid-template-columns: minmax(0, 1fr) calc(var(--cols) * var(--cell)) minmax(0, 1fr); column-gap: calc(var(--cell) * 1.2); align-items: start; position: relative; }
+.essay > .sheet { grid-column: 2; margin: 0; }
+.pen-ctl { grid-column: 1; justify-self: end; position: sticky; top: 42vh; display: none; width: calc(var(--cell) * 6.8); font-size: 1rem; line-height: 1.6; color: var(--ink); word-break: normal; line-break: strict; }
+html.js .pen-ctl { display: block; }
+.pen-ctl p { margin: 0 0 .6em; letter-spacing: .08em; font-family: var(--pen); color: var(--mute); }
+.pen-ctl output { display: block; font-variant-numeric: tabular-nums; color: var(--ink); font-size: 1.5rem; line-height: 1.2; letter-spacing: .04em; }
+.pen-ctl button { display: block; width: 100%; margin-top: .55em; padding: .45em .8em; font: inherit; font-family: var(--pen); letter-spacing: .14em; color: var(--red); background: var(--paper); border: 2px solid var(--red-pen); border-radius: 2px 6px 3px 7px / 6px 3px 7px 2px; cursor: pointer; }
+.pen-ctl button:hover { background: var(--red); color: var(--paper); }
+.essay-title { text-indent: calc(var(--cell) * 7); color: var(--ink); font-family: var(--pen); -webkit-text-stroke: .03em var(--ink); }
+.essay-by { text-indent: calc(var(--cell) * 12); color: var(--ink); }
+.essay-body p + p { margin: 0; }
+.verdict { grid-column: 2; margin-block-start: calc(var(--cell) * .8); padding-block-end: calc(var(--cell) * .5); display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: calc(var(--cell) * .6); align-items: start; font-family: var(--pen); color: var(--red); word-break: normal; line-break: strict; }
+.verdict-p { font-size: max(16px, calc(var(--cell) * .58)); line-height: 1.7; letter-spacing: .02em; margin: 0; }
+.verdict-p b { margin-inline-end: .5em; }
+.grade { margin: 0; align-self: end; }
+.stamp { display: grid; place-items: center; width: calc(var(--cell) * 3.1); height: calc(var(--cell) * 3.1); background: url("assets/stamp.svg") center / contain no-repeat; font-family: var(--pen); font-weight: 400; -webkit-text-stroke: .04em var(--red); font-size: calc(var(--cell) * 1.05); letter-spacing: .04em; line-height: 1; color: var(--red); transform: rotate(var(--rot)); mix-blend-mode: multiply; }
+.notes { grid-column: 2; margin: calc(var(--cell) * .9) 0 0; padding: 0; list-style: none; font-family: var(--pen); color: var(--red); font-size: max(16px, calc(var(--cell) * .55)); line-height: 1.65; word-break: normal; line-break: strict; letter-spacing: .02em; }
+.notes-h { grid-column: 2; margin: calc(var(--cell) * .9) 0 calc(var(--cell) * .2); font-family: var(--pen); font-weight: 400; font-size: 1rem; letter-spacing: .14em; color: var(--mute); line-height: 1.4; }
+.notes-t, .notes-h-t { clear: left; margin-block-start: var(--row); }
+.notes-t li { line-height: var(--row); margin: 0; }
+.notes li { position: relative; padding-inline-start: 1.6em; margin-block-end: .35em; }
+.notes li::before { content: counter(list-item, circ); position: absolute; left: 0; top: .02em; }
+@media (min-width: 1300px) {
+  .notes-h { position: absolute; left: calc(50% + var(--cols) * var(--cell) / 2 + var(--cell) * 1.2); top: calc(var(--cell) * -.7); margin: 0; }
+  @supports (position-anchor: --a) {
+    .notes { position: static; margin: 0; }
+    .notes li { position: absolute; left: calc(50% + var(--cols) * var(--cell) / 2 + var(--cell) * 1.2); width: calc(var(--cell) * 6.8); top: anchor(top); margin-top: calc(var(--cell) * -.12); line-height: 1.65; }
+    .notes-h-t { display: none; }
+    .notes-t { margin: 0; }
+  }
+}
+.bands { margin: 0; padding: 0; border: 0; }
+.bands-hint { color: var(--mute); }
+.band { display: block; position: relative; cursor: pointer; padding-inline-start: var(--cell); }
+.band input, .all input { appearance: none; -webkit-appearance: none; margin: 0; position: absolute; left: calc(var(--cell) * -.1); top: calc(var(--gap) / 2); width: var(--cell); height: var(--cell); border: 0; background: transparent; cursor: pointer; }
+.band input::before, .all input::before { content: ""; position: absolute; inset: 20%; border-radius: 50%; border: 1.5px solid var(--frame); transition: background-color .18s, border-color .18s; }
+.band input:checked::before, .all input:checked::before { background: var(--red-pen); border-color: var(--red-pen); }
+.band input:focus-visible, .all input:focus-visible { outline: var(--focus-ring); outline-offset: -3px; }
+.band-name { font-family: var(--pen); -webkit-text-stroke: .03em currentColor; color: var(--ink); }
+.band-desc { display: block; color: var(--pencil); }
+.all { display: block; position: relative; padding-inline-start: var(--cell); }
+.tt { clear: left; width: calc(var(--cols) * var(--cell)); margin-inline-start: calc(var(--cell) * -.1); table-layout: fixed; font-size: max(13px, calc(var(--cell) * .6)); line-height: var(--row); letter-spacing: 0; word-break: normal; line-break: strict; box-shadow: inset 1px 1px 0 var(--frame); }
+.tt caption { text-align: start; color: var(--mute); font-size: var(--fs); letter-spacing: var(--ls); }
+.tt th, .tt td { height: var(--row); padding: 0 .3em; text-align: center; vertical-align: middle; box-shadow: inset -1px -1px 0 var(--frame); font-weight: 400; }
+.tt th { color: var(--ink); font-family: var(--pen); }
+.tt tbody th { text-align: start; padding-inline-start: .5em; font-variant-numeric: tabular-nums; font-family: var(--kid); }
+.tt col.t { width: calc(var(--cell) * 5); }
+.tt .c { display: inline-block; padding: 0 .25em; background: linear-gradient(var(--hi), var(--hi)) left center / 0% 70% no-repeat; transition: background-size .25s ease-out; color: var(--ink); }
+.sched:has(#b-mid:checked) td[data-c="mid"] .c, .sched:has(#b-sen:checked) td[data-c="sen"] .c, .sched:has(#b-jr:checked) td[data-c="jr"] .c { background-size: 100% 70%; }
+.sched:has(#b-mid:checked) .band[data-b="mid"] .band-name, .sched:has(#b-sen:checked) .band[data-b="sen"] .band-name, .sched:has(#b-jr:checked) .band[data-b="jr"] .band-name { color: var(--red); }
+.tt-note { color: var(--mute); }
+.teacher { margin: 0; }
+.teacher h3 { color: var(--ink); font-family: var(--pen); -webkit-text-stroke: .03em var(--ink); }
+.teacher h3 small { font-size: inherit; font-family: var(--kid); font-weight: 400; color: var(--mute); margin-inline-start: var(--cell); }
+.teacher .smp { text-indent: calc(var(--cell) * 2); color: var(--pencil); }
+.lead { color: var(--mute); }
+.fees { margin: 0; }
+.fees > div { position: relative; }
+.fees dt { position: absolute; left: 0; top: 0; width: calc(var(--cell) * 5); color: var(--ink); font-family: var(--pen); -webkit-text-stroke: .03em var(--ink); }
+.fees dd { margin: 0; margin-inline-start: calc(var(--cell) * 5); }
+.trial { margin: 0; clear: left; }
+.fld { position: relative; display: block; }
+.lab { color: var(--ink); font-family: var(--pen); -webkit-text-stroke: .03em var(--ink); }
+.lab small { font-family: var(--kid); font-weight: 400; color: var(--mute); font-size: inherit; margin-inline-start: var(--cell); }
+.fld input, .fld select, .fld textarea { display: block; box-sizing: content-box; height: calc(var(--row) - 4px); margin: 0; margin-inline-start: calc(var(--cell) * -.1); padding: 2px 0 0 calc(var(--cell) * .1); border: 0; border-bottom: 2px solid var(--frame); border-radius: 0; background: transparent; font: inherit; font-size: var(--fs); line-height: var(--row); letter-spacing: var(--ls); color: var(--pencil); }
+.fld input:focus-visible, .fld select:focus-visible, .fld textarea:focus-visible { outline: var(--focus-ring); outline-offset: -2px; border-bottom-color: var(--red-pen); }
+.fld input[aria-invalid="true"], .fld select[aria-invalid="true"] { border-bottom-color: var(--red-pen); }
+.fld-name input { width: calc(var(--cell) * 8); }
+.fld-grade select { width: calc(var(--cell) * 6); appearance: none; -webkit-appearance: none; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 12'%3E%3Cpath d='M2 2l8 7 8-7' fill='none' stroke='%234b8a5e' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") right 4px center / .55em auto no-repeat; }
+.fld-phone input { width: calc(var(--cell) * 12); font-feature-settings: "fwid" 1; }
+.fld-msg textarea { width: calc(var(--cols) * var(--cell) - var(--cell) * .1); height: calc(var(--row) * 3); resize: vertical; overflow: auto; padding-top: 0; margin-block-end: -2px; box-shadow: inset 2px 0 0 0 var(--frame), inset -2px 0 0 0 var(--frame), inset 0 2px 0 0 var(--frame); }
+.radios { margin: 0; padding: 0; border: 0; clear: left; }
+.radios legend { padding: 0; }
+.radios label { position: relative; display: inline-block; margin-inline-end: var(--cell); cursor: pointer; }
+.radios input { appearance: none; -webkit-appearance: none; margin: 0; position: absolute; left: calc(var(--cell) * -.1); top: calc(var(--gap) / 2); width: var(--cell); height: var(--cell); border: 0; background: transparent; cursor: pointer; }
+.radios input::before { content: ""; position: absolute; inset: 20%; border-radius: 50%; border: 1.5px solid var(--frame); transition: background-color .18s, border-color .18s; }
+.radios input:checked::before { background: var(--red-pen); border-color: var(--red-pen); }
+.radios input:focus-visible { outline: var(--focus-ring); outline-offset: -3px; }
+.radios label { padding-inline-start: var(--cell); }
+.err { display: block; font-family: var(--pen); color: var(--red); font-size: max(15px, calc(var(--cell) * .55)); line-height: var(--row); letter-spacing: .02em; word-break: normal; line-break: strict; }
+.err::before { content: "→ "; }
+.submit { display: inline-block; margin-inline-start: calc(var(--cell) * -.1); padding: 0 calc(var(--cell) * .4); border: 2px solid var(--red-pen); border-radius: 3px 9px 4px 10px / 9px 4px 10px 3px; background: var(--paper); color: var(--red); font: inherit; font-family: var(--pen); font-size: var(--fs); line-height: calc(var(--row) - 4px); letter-spacing: var(--ls); cursor: pointer; }
+.submit:hover { background: var(--red); color: var(--paper); }
+.ok { font-family: var(--pen); color: var(--red); }
+.privacy { color: var(--mute); }
+.back { width: calc(var(--cols) * var(--cell)); margin: calc(var(--row) * 1.5) auto calc(var(--row) * 2); padding-top: calc(var(--cell) * .6); background: linear-gradient(var(--frame), var(--frame)) 0 0 / 100% 1px no-repeat, linear-gradient(var(--frame), var(--frame)) 0 3px / 100% 1px no-repeat; font-size: 1rem; line-height: 1.8; color: var(--ink); word-break: normal; line-break: strict; }
+.back p { margin: 0; }
+.back .brand { font-family: var(--pen); -webkit-text-stroke: .03em var(--ink); font-size: 1.25rem; letter-spacing: .12em; margin-bottom: .3em; }
+.back .fine { color: var(--mute); font-size: .9375rem; margin-top: .8em; }
+.back .fine a { color: var(--mute); }
+.lost .sheet { min-height: calc(14 * var(--row)); clip-path: var(--torn); box-shadow: none; }
+.lost-frame { position: relative; width: calc(var(--cols) * var(--cell)); margin-inline: auto; }
+.lost-frame::before { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1.5px var(--frame); clip-path: var(--torn); pointer-events: none; }
+.lost .head-strip { bottom: 100%; }
+.lost .note { color: var(--red); font-family: var(--pen); }
+.lost .note a { color: var(--red); text-decoration-color: var(--red-pen); }
+@media (max-width: 1299px) {
+  .essay { grid-template-columns: minmax(0, 1fr); }
+  .essay > .sheet, .verdict, .notes, .notes-h { grid-column: 1; }
+  .essay > .sheet { margin-inline: auto; }
+  .verdict, .notes { width: calc(var(--cols) * var(--cell)); margin-inline: auto; }
+  .notes-h { width: calc(var(--cols) * var(--cell)); margin-inline: auto; }
+  .pen-ctl { position: static; width: calc(var(--cols) * var(--cell)); margin: 0 auto var(--row); display: none; }
+  html.js .pen-ctl { display: flex; flex-wrap: wrap; align-items: center; gap: .4em 1em; }
+  .pen-ctl p { margin: 0; }
+  .pen-ctl output { display: inline; font-size: 1.1rem; }
+  .pen-ctl button { display: inline-block; width: auto; margin: 0; }
+}
+@media (max-width: 479px) {
+  .essay-title { text-indent: calc(var(--cell) * 5); }
+  .essay-by { text-indent: calc(var(--cell) * 8); }
+  .tt { font-size: max(12px, calc(var(--cell) * .55)); }
+  .tt th, .tt td { padding: 0 .1em; }
+  .tt col.t { width: calc(var(--cell) * 4); }
+  .fees { grid-template-columns: calc(var(--cell) * 4) minmax(0, 1fr); }
+  .fld-phone input, .fld-name input { width: calc(var(--cols) * var(--cell) - var(--cell) * .1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pen path[data-step] { transition: none; }
+  .notes li, .verdict-p, .stamp, .tt .c, .band input::before, .radios input::before { transition: none; }
+}
+@media print {
+  html, body { background: #fff; color: #000; }
+  .sheet { box-shadow: 0 0 0 1px #888; background-image: none; }
+  .pen-ctl, .skip { display: none !important; }
+  .pen path { stroke: #c00; stroke-dashoffset: 0 !important; }
+  .notes li, .verdict-p, .stamp { opacity: 1 !important; clip-path: none !important; transform: none !important; }
+  a { color: #000; text-decoration: underline; }
+  .notes li { position: static !important; }
+  .essay, .sheet { break-inside: avoid; }
+}
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<div class="page" data-seed="1">
+<header class="sheet g cover" aria-label="封面" data-pen-layer>
+<p class="head-strip"><span>作文簿</span><span>第一頁</span></p>
+<h1 class="x2">格子語文教室</h1>
+<p class="tag"><mark data-pen="wave" data-note="1" style="anchor-name:--c1">一格一格，把話說清楚。</mark></p>
+<p class="ind row">教三年級到九年級的孩子寫作文。每週一堂，九十分鐘，一班最多八個人。每一篇都用紅筆批改，隔一週發回去。教室在中和的景平路，捷運景安站走六分鐘。</p>
+<nav class="nav row" aria-label="目次"><ol><li><a href="#essay">範文</a></li><li><a href="#classes">課表</a></li><li><a href="#teachers">老師</a></li><li><a href="#fees">學費</a></li><li><a href="#trial">報名</a></li></ol></nav>
+<div class="fold" aria-hidden="true"><span>格子語文教室</span><span class="fold-no">一</span></div>
+<h2 class="x2 row" id="legend-h">老師的紅筆記號</h2>
+<ul class="legend" aria-labelledby="legend-h"><li><span class="smp">我<span class="fix"><mark data-pen="circle">在</mark><ins>再</ins></span>也不要玩手機了。</span><span class="exp">錯字圈起來，對的字寫在格子上面。</span></li><li><span class="smp"><mark data-pen="wave">雲像剛拉開的棉花糖。</mark></span><span class="exp">好句子畫波浪線，告訴孩子哪裡寫對了。</span></li><li><span class="smp">我非常<del data-pen="strike">非常</del>高興。</span><span class="exp">多出來的字劃掉，一個字夠就不用兩個。</span></li><li><span class="smp">爸爸把蛋糕<span class="at">放<ins data-pen="caret">在</ins></span>桌上。</span><span class="exp">少了的字補在格子上面。</span></li></ul>
+<ol class="notes notes-t notes-c" aria-label="老師的旁批"><li style="position-anchor:--c1">好句，留著。</li></ol>
+</header>
+<main id="main">
+<section class="essay" id="essay" aria-labelledby="essay-h" data-essay>
+<div class="pen-ctl">
+<p id="pen-lab">批改進度</p>
+<output aria-labelledby="pen-lab" aria-live="polite"><span data-n>0</span>／<span data-m>9</span><small> 處</small></output>
+<button type="button" data-next>下一處批改</button>
+<button type="button" data-reset hidden>重新批改</button>
+</div>
+<article class="sheet g essay-body" data-pen-layer>
+<p class="head-strip"><span>批改範文</span><span>第二頁</span></p>
+<h2 class="essay-title" id="essay-h">停電的晚上</h2>
+<p class="essay-by">四年級　陳宥均</p>
+<p class="ind">上個星期三晚上，我正在寫數學作業，寫到第七題的時候，<mark data-pen="wave" data-step="1" data-note="1" style="anchor-name:--n1">燈突然「啪」一聲全部熄掉了</mark>。我以為是我把燈弄壞了，嚇得不敢動。媽媽從廚房喊：「停電了！大家不要走動！」</p><p class="ind">爸爸用手機照路，去陽台找出一支很久<del data-pen="strike" data-step="2" data-note="2" style="anchor-name:--n2">很久</del>沒用的手電筒，可是電池早就沒電了。最後我們點了阿嬤拜拜用的紅蠟燭。燭光一直晃，我們的影子在牆上變得好大，<mark data-pen="wave" data-step="3" data-note="3" style="anchor-name:--n3">像三個巨人在開會</mark>。</p><div class="fold" aria-hidden="true"><span>格子語文教室</span><span class="fold-no">二</span></div><p class="ind">沒有電視也沒有平板，我們就坐在客廳聊天。爸爸說他小時<span class="fix"><mark data-pen="circle" data-step="4" data-note="4" style="anchor-name:--n4">後</mark><ins data-step="4">候</ins></span>常停電，大家會到樓下乘涼、講鬼故事。我問弟弟怕不怕，他說不怕，可是他的手一直緊緊<span class="fix"><mark data-pen="circle" data-step="5" data-note="5" style="anchor-name:--n5">的</mark><ins data-step="5">地</ins></span>抓著我的衣服。</p><p class="ind">電來的時候，冰箱先「嗡」了一聲，然後燈全<span class="at">亮<ins data-pen="caret" data-step="6" data-note="6" style="anchor-name:--n6">了</ins></span>。大家都說「喔——」，好像有一點可惜。弟弟馬上就放開我的衣服。那天晚上我才發現，<mark data-pen="wave" data-step="7" data-note="7" style="anchor-name:--n7">沒有電的時候，我們家會變得比平常更安靜，也更靠近</mark>。</p>
+</article>
+<div class="verdict" data-step="8"><p class="verdict-p"><b>總評</b>宥均：從一個「啪」開始，到一個「嗡」結束，中間的黑暗寫得很熱鬧。第三段爸爸的小時候，可以再多寫一兩句他講的鬼故事，讓讀的人也跟著進去。弟弟放開衣服那一句，比「可惜」更可惜，寫得好。</p>
+<p class="grade" data-step="9"><span class="stamp" style="--rot:-5.2deg" aria-hidden="true">甲上</span><span class="sr-only">等第：甲上</span></p></div>
+<h3 class="notes-h" id="notes-h">老師的旁批</h3>
+<ol class="notes" aria-labelledby="notes-h"><li data-step="1" style="position-anchor:--n1">用聲音寫停電，一下子就有畫面。</li><li data-step="2" style="position-anchor:--n2">一次就夠。寫兩次，反而不急了。</li><li data-step="3" style="position-anchor:--n3">影子變巨人、晃動變開會，兩層都想到了。</li><li data-step="4" style="position-anchor:--n4">時候的「候」。</li><li data-step="5" style="position-anchor:--n5">修飾動作，用「地」。</li><li data-step="6" style="position-anchor:--n6">補一個字，句子才落地。</li><li data-step="7" style="position-anchor:--n7">結尾不喊口號，很好。</li></ol>
+</section>
+
+<section class="sheet g sched" id="classes" aria-labelledby="classes-h">
+<p class="head-strip"><span>班別與課表</span><span>第三頁</span></p>
+<h2 class="x2" id="classes-h">班別與課表</h2>
+<div class="bands" role="radiogroup" aria-labelledby="bands-hint"><p class="bands-hint" id="bands-hint">選一個班，課表上同一班的時段會被螢光筆劃起來。</p>
+<label class="band" data-b="mid"><input type="radio" name="band" id="b-mid" value="mid"><span class="band-name">中年級班</span><span class="band-desc">三、四年級。先把看到、聽到的寫下來。</span></label><label class="band" data-b="sen"><input type="radio" name="band" id="b-sen" value="sen"><span class="band-name">高年級班</span><span class="band-desc">五、六年級。學會分段，也學會刪字。</span></label><label class="band" data-b="jr"><input type="radio" name="band" id="b-jr" value="jr"><span class="band-name">國中班</span><span class="band-desc">七到九年級。論點、例子、結尾和時間感。</span></label>
+<label class="all"><input type="radio" name="band" id="b-all" value="all" checked><span class="band-name">全部</span></label>
+</div>
+<div class="fold" aria-hidden="true"><span>格子語文教室</span><span class="fold-no">三</span></div>
+<table class="tt"><caption>每週課表（週二至週六）</caption><colgroup><col class="t"><col><col><col><col><col></colgroup>
+<thead><tr><th scope="col">時段</th><th scope="col">週二</th><th scope="col">週三</th><th scope="col">週四</th><th scope="col">週五</th><th scope="col">週六</th></tr></thead>
+<tbody><tr><th scope="row">10:00–11:30</th><td></td><td></td><td></td><td></td><td data-c="mid"><span class="c">中年級</span></td> </tr><tr><th scope="row">13:30–15:00</th><td></td><td></td><td></td><td></td><td data-c="sen"><span class="c">高年級</span></td> </tr><tr><th scope="row">15:30–17:00</th><td></td><td></td><td></td><td></td><td data-c="jr"><span class="c">國中</span></td> </tr><tr><th scope="row">16:30–18:00</th><td></td><td data-c="mid"><span class="c">中年級</span></td> <td></td><td data-c="mid"><span class="c">中年級</span></td> <td></td></tr><tr><th scope="row">17:00–18:30</th><td data-c="sen"><span class="c">高年級</span></td> <td></td><td data-c="sen"><span class="c">高年級</span></td> <td></td><td></td></tr><tr><th scope="row">19:00–20:30</th><td data-c="jr"><span class="c">國中</span></td> <td></td><td data-c="jr"><span class="c">國中</span></td> <td></td><td></td></tr></tbody></table>
+<p class="tt-note">週一、週日不上課。國定假日依新北市學校行事曆停課，停課的那堂往後補。</p>
+</section>
+
+<section class="sheet g" id="teachers" aria-labelledby="teachers-h" data-pen-layer>
+<p class="head-strip"><span>老師們</span><span>第四頁</span></p>
+<h2 class="x2" id="teachers-h">老師們</h2>
+<p class="lead">不放照片。認識老師，看紅筆就夠了。</p>
+<article class="teacher row"><h3>林雨蓁<small>中年級班</small></h3><p>紅筆只圈不劃。孩子寫錯字，她圈起來，把對的字寫在格子上面，等孩子自己改。教了十二年國小國語，她說三、四年級最要緊的是先寫出來。</p><p class="smp">那隻狗的毛很柔軟，摸起來像<span class="fix"><mark data-pen="circle" data-note="1" style="anchor-name:--t1">綿</mark><ins>棉</ins></span>被。</p></article><div class="fold" aria-hidden="true"><span>格子語文教室</span><span class="fold-no">四</span></div><article class="teacher row"><h3>吳佩璇<small>高年級班</small></h3><p>最愛畫波浪線。她說讓孩子知道哪句寫對了，比指出錯字更重要；一篇作文至少找三句畫。帶過六屆畢業班。</p><p class="smp"><mark data-pen="wave" data-note="2" style="anchor-name:--t2">外婆的手像一塊老薑，熱熱的，有點粗。</mark></p></article><article class="teacher row"><h3>周承恩<small>國中班</small></h3><p>旁批寫得最多。他會把孩子的句子改寫一次，兩句並排著比，讓孩子自己選。國文系畢業，教國中作文九年。</p><p class="smp"><del data-pen="strike" data-note="3" style="anchor-name:--t3">我覺得</del>這件事<del data-pen="strike">情</del>讓我很感動。</p></article>
+<h3 class="notes-h notes-h-t" id="notes-h-t">老師們的旁批</h3>
+<ol class="notes notes-t" aria-labelledby="notes-h-t"><li style="position-anchor:--t1">棉被的棉，木字旁。</li><li style="position-anchor:--t2">摸得到的句子。</li><li style="position-anchor:--t3">開頭不必先說我覺得。</li></ol>
+</section>
+
+<section class="sheet g" id="fees" aria-labelledby="fees-h">
+<p class="head-strip"><span>學費與報名</span><span>第五頁</span></p>
+<h2 class="x2" id="fees-h">學費與規矩</h2>
+<dl class="fees"><div><dt>中年級班</dt><dd class="num">一期十二堂　７２００元</dd></div><div><dt>高年級班</dt><dd class="num">一期十二堂　７８００元</dd></div><div><dt>國中班</dt><dd class="num">一期十二堂　８４００元</dd></div><div><dt>教材費</dt><dd class="num">一期３００元，含稿紙與講義。</dd></div><div><dt>試聽</dt><dd class="num">第一堂免費，不用先繳費。</dd></div><div><dt>補課</dt><dd class="num">當期內補同班別另一時段。</dd></div><div><dt>退費</dt><dd class="num">開課前全退；未滿三分之一退半。</dd></div><div><dt>紅筆規矩</dt><dd class="num">孩子自己寫，紅筆只批只圈。</dd></div></dl>
+<div class="fold" aria-hidden="true"><span>格子語文教室</span><span class="fold-no">五</span></div>
+<h2 class="x2 row" id="trial">報名試聽</h2>
+<p class="lead">填好送出，老師會在兩個工作天內打電話，一起把試聽時間約起來。</p>
+<form class="trial row" data-trial action="#trial" method="get" novalidate>
+<label class="fld fld-name"><span class="lab">孩子姓名</span><input type="text" name="name" autocomplete="name" required data-req data-err="e-name" aria-describedby="e-name"><span class="err" id="e-name" hidden>請填孩子的名字，老師才知道怎麼叫他。</span></label>
+<label class="fld fld-grade"><span class="lab">就讀年級</span><select name="grade" required data-req data-err="e-grade" aria-describedby="e-grade"><option value="">　</option><option>三年級</option><option>四年級</option><option>五年級</option><option>六年級</option><option>七年級</option><option>八年級</option><option>九年級</option></select><span class="err" id="e-grade" hidden>請選一個年級，才知道要排哪一班。</span></label>
+<label class="fld fld-phone"><span class="lab">家長手機</span><input type="tel" name="phone" inputmode="numeric" autocomplete="tel" required data-req data-err="e-phone" aria-describedby="e-phone"><span class="err" id="e-phone" hidden>手機請填 09 開頭的十碼數字。</span></label>
+<fieldset class="radios" data-req data-err="e-band" aria-describedby="e-band"><legend class="lab">想試聽的班</legend>
+<label><input type="radio" name="trial-band" value="mid"><span>中年級班</span></label><label><input type="radio" name="trial-band" value="sen"><span>高年級班</span></label><label><input type="radio" name="trial-band" value="jr"><span>國中班</span></label>
+<span class="err" id="e-band" hidden>請選一個想試聽的班。</span></fieldset>
+<label class="fld fld-msg"><span class="lab">想跟老師說的話<small>選填</small></span><textarea name="msg" rows="3"></textarea></label>
+<p class="row"><button class="submit" type="submit">送出，約試聽</button></p>
+<p class="ok" data-ok hidden tabindex="-1" role="status">收到了。老師會在兩個工作天內打電話過去，一起約試聽的時間。</p>
+<p class="privacy">留下的資料只用來聯絡試聽，不會給別人。</p>
+</form>
+</section>
+</main>
+<footer class="back">
+<p class="brand">格子語文教室</p>
+<p>新北市中和區景平路一一八〇巷七號四樓（捷運景安站二號出口，走路六分鐘）</p>
+<p><span class="tn">電話 (02) 0000-0160</span>　週二至週六 14:00–21:00</p>
+<p class="fine">字型：芫荽、霞鶩文楷 TC（SIL Open Font License 1.1）　© 格子語文教室　<a href="#main">回到第一頁</a></p>
+</footer>
+</div>
+<script>
+
+(() => {
+  const d = document, still = matchMedia('(prefers-reduced-motion: reduce)').matches, NS = 'http://www.w3.org/2000/svg';
+  const layers = [...d.querySelectorAll('[data-pen-layer]')];
+  const essay = d.querySelector('[data-essay]');
+  const seed = (+((d.querySelector('[data-seed]') || {}).dataset?.seed || 1) >>> 0) || 1; let t0 = seed;
+  const rnd = () => { t0 += 0x6D2B79F5; let r = Math.imul(t0 ^ (t0 >>> 15), 1 | t0); r ^= r + Math.imul(r ^ (r >>> 7), 61 | r); return ((r ^ (r >>> 14)) >>> 0) / 4294967296; };
+  const rr = (a, b) => a + rnd() * (b - a), F = n => Math.round(n * 10) / 10;
+  const smooth = p => { let s = 'M' + F(p[0][0]) + ' ' + F(p[0][1]); for (let i = 0; i < p.length - 1; i++) { const a = p[i - 1] || p[i], b = p[i], c = p[i + 1], e = p[i + 2] || c; s += 'C' + F(b[0] + (c[0] - a[0]) / 6) + ' ' + F(b[1] + (c[1] - a[1]) / 6) + ' ' + F(c[0] - (e[0] - b[0]) / 6) + ' ' + F(c[1] - (e[1] - b[1]) / 6) + ' ' + F(c[0]) + ' ' + F(c[1]); } return s; };
+  const gen = {
+    circle(R, fs, ls) {
+      const r = R[0], w = Math.max(fs, r.width - ls), cx = r.left + w / 2, cy = r.top + r.height / 2, rx = w / 2 + fs * .2, ry = fs * .62, a0 = rr(.9, 1.6), n = 22, tilt = rr(-.16, .16), p = [];
+      for (let i = 0; i <= n; i++) { const a = a0 + i / n * Math.PI * 2.12, k = 1 + .045 * Math.sin(a * 2.3 + seed) + rr(-.02, .02); const x = rx * k * Math.cos(a), y = ry * k * Math.sin(a); p.push([cx + x * Math.cos(tilt) - y * Math.sin(tilt), cy + x * Math.sin(tilt) + y * Math.cos(tilt)]); }
+      return [smooth(p)];
+    },
+    strike(R, fs, ls) { return R.map(r => { const y = r.top + r.height * .52 + rr(-1, 1), x1 = r.left + fs * .05, x2 = r.right - ls - fs * .05; return 'M' + F(x1) + ' ' + F(y) + 'Q' + F((x1 + x2) / 2) + ' ' + F(y + rr(-2.5, 2.5)) + ' ' + F(x2) + ' ' + F(y + rr(-1.5, 2)); }); },
+    wave(R, fs, ls) {
+      return R.map(r => { const y0 = r.bottom - fs * .02, amp = fs * .075, st = fs * .24, x1 = r.left + fs * .04, x2 = r.right - ls - fs * .04, p = []; let ph = rr(0, 6); for (let x = x1; x < x2 + st * .5; x += st) { const xx = Math.min(x, x2); p.push([xx, y0 + Math.sin(ph) * amp + rr(-.4, .4)]); ph += 1.9; } return smooth(p); });
+    },
+    caret(R, fs, ls, el, L) { const a = el.parentElement.getBoundingClientRect(), x = a.right - L.left - ls / 2, y = a.bottom - L.top - fs * .12; return ['M' + F(x - fs * .17) + ' ' + F(y) + 'L' + F(x + rr(-1, 1)) + ' ' + F(y - fs * .3) + 'L' + F(x + fs * .17) + ' ' + F(y + rr(-.5, .5))]; },
+  };
+  const SKIP = 'ins, .sr-only, .fold, .head-strip, .stamp, .tt, [aria-hidden], [hidden], script, style, textarea, select, option';
+  const blockOf = n => { let e = n.parentElement; while (e && !e.classList.contains('g')) { const ds = getComputedStyle(e).display; if (ds !== 'inline' && ds !== 'contents') return e; e = e.parentElement; } return null; };
+  const wrap = (n, a, b) => { const r = d.createRange(), s = d.createElement('span'); r.setStart(n, a); r.setEnd(n, b); s.className = 'nb'; r.surroundContents(s); };
+  const texts = () => { const out = []; d.querySelectorAll('.g').forEach(root => { const tw = d.createTreeWalker(root, NodeFilter.SHOW_TEXT); for (let n; (n = tw.nextNode());) if (/\S/.test(n.data) && !n.parentElement.closest(SKIP)) out.push(n); }); return out; };
+  const glue = K => {
+    texts().forEach(n => { const hits = [...n.data.matchAll(/[^\s—…][—…]+/g)]; for (let i = hits.length - 1; i >= 0; i--) wrap(n, hits[i].index, hits[i].index + hits[i][0].length); });
+    const groups = new Map();
+    texts().forEach(n => { const b = blockOf(n); if (!b) return; if (!groups.has(b)) groups.set(b, []); groups.get(b).push(n); });
+    groups.forEach(nodes => {
+      let need = K; const pcs = [];
+      for (let i = nodes.length - 1; i >= 0 && need > 0; i--) { const end = nodes[i].data.trimEnd().length, take = Math.min(need, end); pcs.push([nodes[i], end - take, end]); need -= take; }
+      const r = d.createRange(), a = pcs[pcs.length - 1], z = pcs[0];
+      r.setStart(a[0], a[1]); r.setEnd(z[0], z[2]);
+      try { const s = d.createElement('span'); s.className = 'nb'; r.surroundContents(s); } catch (e) { pcs.forEach(q => wrap(q[0], q[1], q[2])); }
+    });
+  };
+  glue(4);
+  const revealed = new Set();
+  function build(layer) {
+    let svg = layer.querySelector(':scope > svg.pen');
+    if (!svg) { svg = d.createElementNS(NS, 'svg'); svg.setAttribute('class', 'pen'); svg.setAttribute('aria-hidden', 'true'); svg.setAttribute('focusable', 'false'); layer.appendChild(svg); }
+    svg.textContent = '';
+    const L = layer.getBoundingClientRect();
+    svg.setAttribute('viewBox', '0 0 ' + F(L.width) + ' ' + F(L.height));
+    t0 = seed;
+    for (const el of layer.querySelectorAll('[data-pen]')) {
+      const kind = el.dataset.pen; if (!gen[kind]) continue;
+      const ref = kind === 'caret' ? el.parentElement : el, cs = getComputedStyle(ref), fs = parseFloat(cs.fontSize) || 16, ls = parseFloat(cs.letterSpacing) || 0;
+      const rects = [...el.getClientRects()].filter(r => r.width > 0).map(r => ({ left: r.left - L.left, right: r.right - L.left, top: r.top - L.top, bottom: r.bottom - L.top, width: r.width, height: r.height }));
+      if (!rects.length) continue;
+      gen[kind](rects, fs, ls, el, L).forEach((dd, i) => {
+        const p = d.createElementNS(NS, 'path'); p.setAttribute('d', dd); p.setAttribute('pathLength', '1');
+        p.setAttribute('stroke-width', F(Math.max(1.6, fs * (kind === 'wave' ? .075 : .085))));
+        const len = p.getTotalLength ? p.getTotalLength() : 100;
+        p.style.setProperty('--d', (Math.min(1.1, .28 + len / 420) + i * .1).toFixed(2) + 's');
+        if (el.dataset.step) { p.dataset.step = el.dataset.step; if (revealed.has(el.dataset.step)) p.classList.add('drawn', 'on'); }
+        svg.appendChild(p);
+      });
+    }
+  }
+  const buildAll = () => layers.forEach(build);
+  let tmr = 0; addEventListener('resize', () => { clearTimeout(tmr); tmr = setTimeout(buildAll, 120); });
+  if (d.fonts && d.fonts.ready) d.fonts.ready.then(buildAll);
+  buildAll();
+  if (essay) {
+    const steps = [...new Set([...essay.querySelectorAll('[data-step]')].map(e => e.dataset.step))].sort((a, b) => a - b);
+    const out = essay.querySelector('[data-n]'), total = essay.querySelector('[data-m]'), next = essay.querySelector('[data-next]'), reset = essay.querySelector('[data-reset]');
+    if (total) total.textContent = steps.length;
+    let k = 0, timer = 0, cur = null;
+    const paint = s => { revealed.add(s); essay.querySelectorAll('[data-step="' + s + '"]').forEach(e => e.classList.add('on')); };
+    const stop = () => { clearInterval(timer); timer = 0; };
+    const focusStep = s => {
+      if (cur) cur.classList.remove('cur');
+      cur = essay.querySelector('.essay-body [data-step="' + s + '"], .verdict[data-step="' + s + '"], .grade[data-step="' + s + '"]');
+      if (!cur) return;
+      cur.classList.add('cur');
+      const r = cur.getBoundingClientRect(); if (r.top < 60 || r.bottom > innerHeight - 60) cur.scrollIntoView({ block: 'center', behavior: still ? 'instant' : 'smooth' });
+    };
+    const count = () => { if (out) out.textContent = k; };
+    if (still) {
+      steps.forEach(paint);
+      if (reset) reset.hidden = true;
+      if (next) next.addEventListener('click', () => { if (k >= steps.length) k = 0; focusStep(steps[k++]); count(); });
+    } else {
+      const step = manual => {
+        if (k >= steps.length) return;
+        const s = steps[k++]; paint(s); count();
+        if (manual) focusStep(s);
+        if (k >= steps.length) { stop(); if (next) next.hidden = true; if (reset) reset.hidden = false; }
+      };
+      const auto = () => { if (timer || k >= steps.length) return; timer = setInterval(() => step(false), 760); };
+      if (next) next.addEventListener('click', () => { stop(); step(true); });
+      if (reset) reset.addEventListener('click', () => {
+        stop(); revealed.clear(); k = 0; if (cur) cur.classList.remove('cur'); cur = null; count();
+        essay.querySelectorAll('.on').forEach(e => e.classList.remove('on', 'drawn'));
+        reset.hidden = true; if (next) { next.hidden = false; next.focus(); }
+        setTimeout(auto, 400);
+      });
+      if ('IntersectionObserver' in window) { const io = new IntersectionObserver(es => { es.forEach(en => { if (en.isIntersecting) { auto(); io.disconnect(); } }); }, { threshold: .22 }); io.observe(essay.querySelector('.sheet') || essay); }
+      else auto();
+    }
+  }
+  const f = d.querySelector('form[data-trial]');
+  if (f) {
+    f.noValidate = true;
+    const show = (id, bad) => { const e = d.getElementById(id); if (e) e.hidden = !bad; };
+    const check = () => {
+      let first = null;
+      for (const fld of f.querySelectorAll('[data-req]')) {
+        const id = fld.dataset.err; let bad = false, focusEl = fld;
+        if (fld.tagName === 'FIELDSET') { bad = !fld.querySelector('input:checked'); focusEl = fld.querySelector('input'); }
+        else if (fld.type === 'tel') bad = !/^09\d{8}$/.test(fld.value.replace(/[\s-]/g, ''));
+        else bad = !fld.value.trim();
+        show(id, bad);
+        if (fld.tagName !== 'FIELDSET') { if (bad) fld.setAttribute('aria-invalid', 'true'); else fld.removeAttribute('aria-invalid'); }
+        if (bad && !first) first = focusEl;
+      }
+      return first;
+    };
+    f.addEventListener('submit', e => {
+      e.preventDefault();
+      const first = check(), okEl = f.querySelector('[data-ok]');
+      if (first) { if (okEl) okEl.hidden = true; first.focus(); return; }
+      if (okEl) { okEl.hidden = false; okEl.focus(); }
+      f.reset();
+    });
+    f.querySelectorAll('[data-req]').forEach(fld => fld.addEventListener('change', () => { const e = d.getElementById(fld.dataset.err); if (e && !e.hidden) check(); }));
+  }
+})();
+
+</script>
+</body>
+</html>

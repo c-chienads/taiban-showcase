@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F14" data-slug="one-lamp-stage">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>找不到頁面｜一盞｜閱讀燈，照一本書的範圍</title>
+<meta name="description" content="找不到這個頁面。">
+
+<meta name="generator" content="套版網站平台 F14">
+<link rel="icon" href="data:,">
+<link rel="preload" href="fonts/01-uoqmunthenkhung.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/02-noto-serif-tc.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"UoqMunThenKhung";src:url("fonts/01-uoqmunthenkhung.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Serif TC";src:url("fonts/02-noto-serif-tc.woff2") format("woff2");font-weight:400 500;font-style:normal;font-display:swap}
+@layer flagship {
+
+@property --k1{syntax:'<number>';inherits:true;initial-value:1}@property --k2{syntax:'<number>';inherits:true;initial-value:1}@property --k3{syntax:'<number>';inherits:true;initial-value:1}@property --k4{syntax:'<number>';inherits:true;initial-value:1}@property --k5{syntax:'<number>';inherits:true;initial-value:1}@property --k6{syntax:'<number>';inherits:true;initial-value:1}@property --k7{syntax:'<number>';inherits:true;initial-value:1}@property --k8{syntax:'<number>';inherits:true;initial-value:1}@property --k9{syntax:'<number>';inherits:true;initial-value:1}
+@property --r{syntax:'<number>';inherits:true;initial-value:0}
+@property --on{syntax:'<number>';inherits:true;initial-value:0}
+:root{
+  /* 夜：夜藍牆、木桌；光：鎢絲到晨光；燈：瓷白、黃銅、鐵件。白天的紙是偏冷的白，字是夜藍墨 */
+  --night:oklch(0.315 0.062 262);
+  --night-2:oklch(0.295 0.058 262);
+  --night-3:oklch(0.37 0.058 258);
+  --night-4:oklch(0.235 0.05 264);
+  --desk:oklch(0.345 0.05 50);
+  --desk-2:oklch(0.29 0.045 46);
+  --desk-3:oklch(0.41 0.055 54);
+  --lit:oklch(0.925 0.068 80);
+  --beam:oklch(0.87 0.1 78);
+  --ink:oklch(0.265 0.055 262);
+  --ink-2:oklch(0.43 0.05 258);
+  --porc:oklch(0.955 0.012 90);
+  --porc-2:oklch(0.84 0.022 245);
+  --porc-3:oklch(0.64 0.035 250);
+  --brass:oklch(0.79 0.12 80);
+  --brass-2:oklch(0.66 0.12 72);
+  --brass-ink:oklch(0.47 0.1 66);
+  --day:oklch(0.966 0.007 240);
+  --day-2:oklch(0.928 0.013 242);
+  --day-3:oklch(0.885 0.02 244);
+  --rule:oklch(0.8 0.025 248);
+  --c1:oklch(0.975 0.01 90);--c2:oklch(0.90 0.015 85);--c3:oklch(0.73 0.02 80);
+  --m1:oklch(0.90 0.11 88);--m2:oklch(0.76 0.13 80);--m3:oklch(0.58 0.11 68);
+  --s1:oklch(0.56 0.02 245);--s2:oklch(0.40 0.025 250);--s3:oklch(0.26 0.03 255);
+  --rim:oklch(0.86 0.012 240);--spun:oklch(0.66 0.015 245);
+  --focus-ring:3px solid var(--brass);
+  --focus-offset:3px;
+  --selection-bg:var(--brass);
+  --selection-fg:var(--night-4);
+  --f-d:"UoqMunThenKhung","Noto Serif TC",serif;
+  --f-t:"Noto Serif TC",serif;
+  --gut:clamp(16px,3.6vw,60px);
+  --mast-h:56px;
+  --cut:12px;
+  color-scheme:light;
+}
+html{background:var(--night)}
+body{background:var(--night);color:var(--porc);font-family:var(--f-t);font-size:1.0625rem;line-height:1.8;font-weight:400}
+h1,h2,h3{font-family:var(--f-d);font-weight:400;margin:0;line-height:1.15;text-wrap:balance}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.26em}
+/* hover：夜裡的連結亮成黃銅色，白天紙面與燈下瓷白圈裡的連結換成銅褐（燈光照到才看得清楚的那種顏色） */
+a:not(.btn,.skip):hover{color:var(--brass)}
+.day a:not(.btn,.skip):hover,.night__lit a:not(.btn,.skip):hover,.cart a:not(.btn,.skip):hover,.co__msg a:hover{color:var(--brass-ink)}
+.num{font-family:var(--f-d);font-variant-numeric:tabular-nums lining-nums}
+.skip{background:var(--brass);color:var(--night-4)}
+button{border:0;background:none;padding:0;color:inherit;font:inherit}
+/* 切角：宇文天穹的平頭切角，搬到按鈕、卡片與晶片上 */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:.5em 1.5em;font-family:var(--f-d);font-size:1.12rem;letter-spacing:.04em;text-decoration:none;cursor:pointer;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
+.btn:focus-visible{outline:3px solid currentColor;outline-offset:-6px}
+.btn--ink{background:var(--ink);color:var(--porc)}
+.btn--ink:hover{background:oklch(0.34 0.07 262)}
+.btn--lit{background:var(--lit);color:var(--ink)}
+.btn--lit:hover{background:var(--porc)}
+.btn:active{translate:1px 1px}
+
+/* ===== 刊頭 ===== */
+.mast{position:sticky;top:0;z-index:6;display:flex;align-items:center;gap:1rem 2.4rem;height:var(--mast-h);padding:0 var(--gut);background:var(--night)}
+.mast__brand{display:flex;align-items:center;gap:.5rem;font-family:var(--f-d);font-size:1.45rem;letter-spacing:.14em;text-decoration:none}
+.mast__brand svg{width:24px;height:24px;color:var(--brass)}
+.mast__nav{display:flex;gap:1.8rem;margin-left:auto;font-size:.95rem}
+.mast__nav a{text-decoration:none;padding:.3rem 0;border-bottom:1px solid transparent;color:var(--porc-2)}
+.mast__nav a:hover{border-bottom-color:var(--brass);color:var(--porc)}
+.mast__cart{display:inline-flex;align-items:center;gap:.55rem;min-height:40px;padding:0 .5rem 0 1rem;border-radius:999px;background:var(--night-3);font-size:.95rem;cursor:pointer}
+.mast__cart:hover{background:oklch(0.42 0.06 258)}
+.mast__cart{position:relative}
+.mast__cart::after{content:"";position:absolute;inset:-3px -2px}
+.badge{display:inline-grid;place-items:center;min-width:1.7rem;height:1.7rem;padding:0 .35rem;border-radius:999px;background:var(--brass);color:var(--night-4);font-family:var(--f-d);font-size:1rem;line-height:1}
+.badge.is-bump{animation:f14-bump .3s ease-out}
+@keyframes f14-bump{0%{scale:1}40%{scale:1.35}100%{scale:1}}
+
+/* ===== 夜讀（首屏） ===== */
+.night{position:relative;background:linear-gradient(var(--night) 0 39.19%,var(--desk) 39.19%);clip-path:inset(0);--r:1;--on:1}
+.night__frame{position:relative;width:min(100%,calc((100svh - var(--mast-h)) * 1440 / 842));margin-inline:auto}
+.night__scene{position:relative;aspect-ratio:1440/842;container-type:inline-size}
+.scene--d{overflow:visible}
+.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
+.scene--m{display:none}
+.scene .wall{fill:var(--night)}
+.scene .desk{fill:var(--desk)}
+.scene .deskEdge{fill:none;stroke:var(--desk-3);stroke-width:2}
+.scene .deskLip{fill:var(--desk-2)}
+.scene .grain{fill:none;stroke:var(--desk-2);stroke-width:1.1;stroke-linecap:round}
+.scene .grain--near{stroke-width:1.8}
+.scene .grain--knot *{fill:none;stroke:var(--desk-2);stroke-width:1.2}
+.scene .beam{fill:var(--beam);opacity:.17}
+.scene .beam--in{opacity:.13}
+.scene .poolDot{fill:none;stroke:var(--lit);stroke-linecap:round}
+.scene .poolCore{fill:var(--lit)}
+.scene .wallDot{fill:none;stroke:color-mix(in oklch,var(--night),var(--beam) 16%);stroke-linecap:round}
+.scene .contact{fill:var(--desk-2);opacity:.9}
+.night__where{position:absolute;left:4.4%;top:7.6%;margin:0;font-size:max(.875rem,1cqw);letter-spacing:.2em;color:var(--porc-2)}
+.night__lit{position:absolute;left:13.9%;top:52.6%;width:55.6%;height:39%;display:grid;align-content:center;justify-items:center;text-align:center;color:var(--ink)}
+.night h1{font-size:10.4cqw;line-height:.95;letter-spacing:.04em;display:flex;align-items:flex-end;gap:.18em}
+.night h1 small{font-size:max(.875rem,1.75cqw);letter-spacing:.32em;line-height:1.4;padding-bottom:.35em}
+.night__lead{margin:1cqw 0 0;max-width:32em;font-size:clamp(.75rem,.42rem + 1cqw,1.25rem);line-height:1.7;text-wrap:pretty}
+.night__buy{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.4rem 1.4cqw;margin:1.2cqw 0 0}
+.night__price{display:inline-flex;align-items:baseline;gap:.4rem;font-family:var(--f-d);font-size:max(1.1rem,2.3cqw);line-height:1}
+.night__price .cur{font-size:.6em}
+.night__ship{display:block;font-family:var(--f-t);font-size:max(.75rem,.95cqw);color:var(--ink-2);margin-top:.25rem;text-align:left}
+.night__more{color:var(--ink);text-decoration-color:var(--ink-2)}
+/* 色溫旋鈕：四個位置是一組單選鈕，光圈的顏色跟著換（無 JS 也成立） */
+.dial{--R:74px;--dot:24px;--kn:62px;--cy:86px;position:absolute;right:1.4%;top:57%;width:226px;height:150px;margin:0;padding:0;border:0;--dial:-60deg}
+.dial__lg{position:absolute;left:0;right:0;top:calc(var(--cy) + var(--kn) / 2 + 6px);text-align:center;font-family:var(--f-d);font-size:1rem;letter-spacing:.3em;color:var(--porc);padding:0}
+.dial__knob{position:absolute;left:50%;top:var(--cy);width:var(--kn);height:var(--kn);translate:-50% -50%;border-radius:50%;background:repeating-conic-gradient(var(--m1) 0 5deg,var(--m3) 5deg 10deg);box-shadow:0 0 0 2px var(--desk-2)}
+.dial__knob::before{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--m2);box-shadow:inset 6px 6px 0 -2px var(--m1)}
+.dial__knob i{position:absolute;left:50%;top:50%;width:4px;height:36%;translate:-50% -100%;border-radius:2px;background:var(--night-4);transform-origin:50% 100%;rotate:var(--dial);transition:rotate .35s cubic-bezier(.2,.8,.2,1)}
+.dial::before{content:"";position:absolute;left:50%;top:var(--cy);width:calc(var(--R) * 2);height:calc(var(--R) * 2);translate:-50% -50%;border-radius:50%;border:1px dashed var(--porc-3);clip-path:inset(0 0 58% 0)}
+.dial__pos{position:absolute;left:50%;top:var(--cy);width:0;height:0;transform:rotate(var(--a)) translateY(calc(-1 * var(--R))) rotate(calc(-1 * var(--a)));cursor:pointer;font-size:.8125rem;line-height:1.2;color:var(--porc-2)}
+.dial__pos span{position:absolute;left:50%;bottom:calc(var(--dot) / 2 + 2px);translate:-50% 0;white-space:nowrap;padding:2px 3px}
+.dial__pos--side span{bottom:auto;top:calc(var(--dot) / 2 + 2px)}
+.dial__pos input{position:absolute;left:calc(var(--dot) / -2);top:calc(var(--dot) / -2);appearance:none;width:var(--dot);height:var(--dot);margin:0;border-radius:50%;border:5px solid var(--desk);background:var(--kc);box-shadow:0 0 0 1.5px var(--porc-3);cursor:pointer}
+.dial__pos input:checked{box-shadow:0 0 0 2px var(--porc),0 0 0 6px color-mix(in oklch,var(--kc) 35%,transparent)}
+.dial__pos:has(input:checked){color:var(--porc)}
+.dial__pos input:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+@media (min-width:1700px){.dial{scale:1.18;transform-origin:100% 0}}
+.dial__hint{position:absolute;left:-10px;right:-10px;top:calc(var(--cy) + var(--kn) / 2 + 34px);margin:0;text-align:center;font-size:.8125rem;color:var(--porc-2);line-height:1.4}
+.night:has(#k-2700:checked){--lit:oklch(0.925 0.068 80);--beam:oklch(0.87 0.1 78);--dial:-60deg}.night:has(#k-3000:checked){--lit:oklch(0.935 0.052 85);--beam:oklch(0.88 0.08 83);--dial:-20deg}.night:has(#k-3500:checked){--lit:oklch(0.945 0.03 95);--beam:oklch(0.89 0.05 95);--dial:20deg}.night:has(#k-4000:checked){--lit:oklch(0.95 0.016 230);--beam:oklch(0.9 0.028 230);--dial:60deg}
+.scene .poolDot,.scene .poolCore,.scene .beam{transition:fill .5s,stroke .5s}
+
+/* ===== 工作台（九個零件） ===== */
+.bench{position:relative;background:var(--night-2);padding-top:clamp(3rem,6vw,5.5rem)}
+.bench__head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,46%) minmax(0,1fr);padding:0 var(--gut);align-items:end;gap:0 2rem}
+.bench__head h2{grid-column:2;text-align:center;font-size:clamp(2.4rem,4.2vw,3.8rem);letter-spacing:.08em}
+.bench__head p{grid-column:2;margin:.7rem auto 0;text-align:center;max-width:26em;color:var(--porc-2)}
+.bench__in{display:grid;grid-template-areas:"all"}
+.bench__track,.bench__flow{grid-area:all;min-width:0}
+.bench__track{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,46%) minmax(0,1fr);pointer-events:none}
+.bench__frame{grid-column:2;position:sticky;top:var(--mast-h);height:calc(100dvh - var(--mast-h));display:grid;grid-template-rows:minmax(0,1fr) auto;justify-items:center;padding:8px 0 14px}
+.bench__frame .lamp{display:block;width:auto;max-width:100%;height:100%;min-height:0;overflow:visible}
+.bench__hint{position:relative;margin:0;text-align:center;font-size:.875rem;color:var(--porc-2);letter-spacing:.08em}
+html.js .bench__say{opacity:clamp(0,calc(1 - (var(--k2) - .1) * 4),1)}
+/* 圖例：製圖的想像線（長線、點、點）。圖上的虛線輪廓就是這個樣子；它和「往下讀」疊在同一行，零件散開時才浮現、組回去就退場 */
+.bench__key{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:.6rem;font-size:.8125rem;letter-spacing:.06em;white-space:nowrap}
+html.js .bench__key{opacity:calc(clamp(0,(var(--k2) - .1) * 4,1) * (1 - var(--r)))}
+.bench__key i{flex:none;inline-size:31px;block-size:2px;background:repeating-linear-gradient(90deg,var(--porc-2) 0 14px,transparent 14px 18px,var(--porc-2) 18px 20.5px,transparent 20.5px 24.5px,var(--porc-2) 24.5px 27px,transparent 27px 31px);background-size:31px 2px}
+.bench__flow{position:relative;z-index:1;pointer-events:none}
+.bench__flow>*{pointer-events:auto}
+.parts{list-style:none;margin:0;padding:0 var(--gut);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,46%) minmax(0,1fr);grid-auto-rows:minmax(31vh,auto);column-gap:2rem;pointer-events:none}
+.story{pointer-events:auto;grid-column:1;min-height:44vh;display:grid;align-content:center;grid-template-columns:auto minmax(0,1fr);gap:.1rem .9rem;padding:3vh 0;position:relative}
+.story:nth-child(even){grid-column:3}
+.story:nth-child(1){grid-row:1 / span 2}.story:nth-child(2){grid-row:2 / span 2}.story:nth-child(3){grid-row:3 / span 2}.story:nth-child(4){grid-row:4 / span 2}.story:nth-child(5){grid-row:5 / span 2}.story:nth-child(6){grid-row:6 / span 2}.story:nth-child(7){grid-row:7 / span 2}.story:nth-child(8){grid-row:8 / span 2}.story:nth-child(9){grid-row:9 / span 2}
+.story--outro{display:none}
+.story__no{grid-row:1/span 2;margin:.2rem 0 0;display:grid;place-items:center;width:2.3rem;height:2.3rem;border-radius:50%;border:1.5px solid var(--porc-2);font-family:var(--f-d);font-size:1rem;line-height:1;color:var(--porc)}
+.story h3{font-size:clamp(1.7rem,2.3vw,2.15rem);letter-spacing:.06em}
+.story__sub{margin:.1rem 0 0;color:var(--brass);font-size:.95rem;line-height:1.5}
+.story__text,.story__facts{grid-column:1/-1}
+.story__text{margin-top:.8rem}
+.story__text p{margin:0}
+.story__text p+p{margin-top:.55em}
+.story__facts{display:flex;flex-wrap:wrap;gap:.3rem 1.3rem;margin:.9rem 0 0;font-size:.9375rem}
+.story__facts>div{display:flex;align-items:baseline;gap:.45rem}
+.story__facts dt{color:var(--porc-2)}
+.story__facts dd{margin:0;font-family:var(--f-d);font-size:1.1rem;color:var(--porc)}
+.story__facts dd small{font-family:var(--f-t);font-size:.8125rem;color:var(--porc-2);margin-left:.15rem}
+/* 引線：從筆記伸向中央的燈 */
+.story::after{content:"";position:absolute;top:50%;width:min(4vw,56px);height:5px;margin-top:-2px;border-top:1px solid var(--porc-3);background:radial-gradient(circle,var(--brass) 0 2.5px,transparent 3px) no-repeat var(--dotx,100%) 0/6px 6px;translate:0 -2px}
+.story:nth-child(odd)::after{left:calc(100% + .6rem)}
+.story:nth-child(even)::after{right:calc(100% + .6rem);--dotx:0}
+.parts__nav{display:none}
+.only-m{display:none}
+
+/* 燈（舞台與首屏共用）：色面、材質排線、想像線、光 */
+.lampart .c1{fill:var(--c1)}.lampart .c2{fill:var(--c2)}.lampart .c3{fill:var(--c3)}
+.lampart .m1{fill:var(--m1)}.lampart .m2{fill:var(--m2)}.lampart .m3{fill:var(--m3)}
+.lampart .s1{fill:var(--s1)}.lampart .s2{fill:var(--s2)}.lampart .s3{fill:var(--s3)}
+.lampart .c1,.lampart .c2,.lampart .c3{transition:fill .28s}
+.lampart .rim{fill:color-mix(in oklch,var(--rim),var(--beam) calc(var(--on) * 85%))}
+.lampart .rimShade{fill:var(--s3);opacity:calc(.55 - var(--on) * .3)}
+.lampart .rimEdge{fill:none;stroke:var(--c1);stroke-width:1.2;opacity:.45}
+.lampart .led{fill:color-mix(in oklch,var(--porc),var(--lit) calc(var(--on) * 100%))}
+.lampart .ledHi{fill:#fff;opacity:calc(.55 - var(--on) * .45)}
+.lampart .cable{fill:none;stroke:var(--s3);stroke-width:6.5;stroke-linecap:round}
+.lampart .tx-c{fill:none;stroke:var(--c3);stroke-width:.9;opacity:.6}
+.lampart .tx-m,.lampart .tx-m *{fill:none;stroke:var(--m3);stroke-width:.8;opacity:.7}
+.lampart .tx-hi{fill:none;stroke:#fff;stroke-width:1.5;stroke-linecap:round;opacity:.55}
+.lampart .tx-spk{fill:none;stroke:var(--c3);stroke-width:1.6;stroke-linecap:round;opacity:.55}
+.lampart .tx-seam{fill:none;stroke:var(--s3);stroke-width:1;opacity:.4}
+.lampart .tx-tick{fill:none;stroke:var(--c3);stroke-width:1.3;stroke-dasharray:2 4}
+.lampart .tx-fuzz{fill:none;stroke:var(--s2);stroke-width:1;stroke-linecap:round}
+.lampart .tx-spun *{fill:none;stroke:var(--spun);stroke-width:.85}
+.lampart .tx-led{fill:none;stroke:var(--s1);stroke-width:2.4;stroke-linecap:round;opacity:calc(.5 - var(--on) * .4)}
+.lampart .tx-braidA,.lampart .tx-braidB{fill:none;stroke-width:3.6;stroke-dasharray:2.6 2.6;stroke-linecap:butt}
+.lampart .tx-braidA{stroke:var(--s1);translate:0 -1.1px}
+.lampart .tx-braidB{stroke:var(--s2);stroke-dashoffset:2.6;translate:0 1.1px}
+.lampart .shd{fill:none;stroke:var(--night-4);stroke-width:1.8}
+.scene .shd{stroke:var(--desk-2)}
+.lampart .part{transform:translate(calc((1 - var(--r)) * var(--tx) * 1px),calc((1 - var(--r)) * var(--ty) * 1px))}
+.lamp{--e:calc(1 - var(--r));--x:calc(max(var(--k1),var(--k2),var(--k3),var(--k4),var(--k5),var(--k6),var(--k7),var(--k8),var(--k9)) * var(--e))}
+.lamp .phantom{opacity:calc(var(--x) * .95)}
+.lamp .phantom *{fill:none;stroke:var(--porc-2);stroke-width:1.3;stroke-dasharray:16 4 2.5 4 2.5 4;stroke-linecap:round}
+.lamp .axis{fill:none;stroke:var(--porc-3);stroke-width:1;stroke-dasharray:2 7;opacity:calc(var(--x) * .8)}
+.lamp .disc__floor{fill:color-mix(in oklch,var(--night-3),var(--desk-3) calc(var(--on) * 100%))}
+.lamp .disc__dot{fill:none;stroke:color-mix(in oklch,var(--night-3),var(--desk-3) calc(var(--on) * 100%));stroke-linecap:round}
+.lamp .light{opacity:var(--on)}
+.lamp .cone{fill:var(--beam);opacity:.2}
+.lamp .pool{fill:var(--lit);opacity:.85}
+.lamp .poolDot{fill:none;stroke:var(--lit);stroke-linecap:round;opacity:.85}
+.lamp .lab{opacity:clamp(0,calc((var(--ko) * var(--e) - .7) * 3.4),1)}
+.lamp .lab .lead{fill:none;stroke:var(--porc-2);stroke-width:1.2}
+.lamp .lab .dot{fill:var(--brass)}
+.lamp .lab .bub{fill:var(--night-2);stroke:var(--porc-2);stroke-width:1.5}
+.lamp .lab .no{font-family:var(--f-d);font-size:15px;fill:var(--porc);text-anchor:middle;dominant-baseline:central}
+.lamp .lab .nm{font-family:var(--f-t);font-size:15px;fill:var(--porc);dominant-baseline:central;paint-order:stroke;stroke:var(--night-2);stroke-width:4px;stroke-linejoin:round}
+.nod{transform-box:fill-box;transform-origin:50% 4%}
+main:has(#c-green:checked){--c1:oklch(0.62 0.07 165);--c2:oklch(0.47 0.065 165);--c3:oklch(0.33 0.05 165)}
+main:has(#c-red:checked){--c1:oklch(0.74 0.14 42);--c2:oklch(0.60 0.135 36);--c3:oklch(0.43 0.1 30)}
+html.js .bench:has(#c-white:checked) .nod{animation:f14-nod-a .6s ease-out}
+html.js .bench:has(#c-green:checked) .nod{animation:f14-nod-b .6s ease-out}
+html.js .bench:has(#c-red:checked) .nod{animation:f14-nod-c .6s ease-out}
+@keyframes f14-nod-a{0%{rotate:0deg}28%{rotate:-6deg}58%{rotate:2.5deg}82%{rotate:-1deg}100%{rotate:0deg}}
+@keyframes f14-nod-b{0%{rotate:0deg}28%{rotate:-6deg}58%{rotate:2.5deg}82%{rotate:-1deg}100%{rotate:0deg}}
+@keyframes f14-nod-c{0%{rotate:0deg}28%{rotate:-6deg}58%{rotate:2.5deg}82%{rotate:-1deg}100%{rotate:0deg}}
+.bench__in{background:color-mix(in oklch,var(--night-2),var(--desk) calc(var(--on) * 100%))}
+
+/* 亮燈・挑漆色：燈在中間亮著，左邊說、右邊選 */
+.buy{min-height:calc(100dvh - var(--mast-h));display:grid;grid-template-columns:minmax(0,1fr) minmax(0,46%) minmax(0,1fr);column-gap:2rem;align-content:center;padding:3rem var(--gut) 4rem}
+.buy__say{grid-column:1;align-self:center}
+.buy__do{grid-column:3;align-self:center}
+.buy h2{font-size:clamp(2rem,3vw,2.7rem);letter-spacing:.04em}
+.buy__lead{color:var(--porc-2);margin:.8rem 0 0}
+.buy__price{display:flex;align-items:baseline;gap:.4rem;margin:1.4rem 0 0;font-family:var(--f-d);font-size:1.3rem;color:var(--porc-2)}
+.buy__price .num{font-size:2.6rem;color:var(--porc);line-height:1}
+.buy__note{font-size:.9rem;color:var(--porc-2);margin:1rem 0 0}
+.colors{margin:0;padding:0;border:0}
+.colors legend{font-size:.95rem;color:var(--porc-2);padding:0 0 .6rem}
+.colors__row{display:flex;flex-wrap:wrap;gap:.6rem 1rem}
+.swatch{position:relative;display:grid;justify-items:center;gap:.25rem;width:5.6rem;cursor:pointer;text-align:center}
+.swatch input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.swatch__chip{display:grid;place-items:center;width:4.6rem;height:4.6rem;border-radius:50%;background:var(--night-3);box-shadow:0 0 0 2px var(--porc-3)}
+.swatch__chip svg{width:62%;height:auto;overflow:visible}
+.swatch__chip .mini *{fill:var(--sw);stroke:var(--sw-2);stroke-width:5}
+.swatch b{font-family:var(--f-d);font-weight:400;font-size:1.1rem;line-height:1.3}
+.swatch small{font-size:.8125rem;color:var(--porc-2);line-height:1.45}
+.swatch:has(input:checked) .swatch__chip{box-shadow:0 0 0 3px var(--lit),0 0 0 7px color-mix(in oklch,var(--lit) 25%,transparent)}
+.swatch:has(input:focus-visible) .swatch__chip{outline:3px solid var(--brass);outline-offset:6px}
+.sw--white{--sw:oklch(0.94 0.012 88);--sw-2:oklch(0.78 0.02 85)}.sw--green{--sw:oklch(0.5 0.065 165);--sw-2:oklch(0.36 0.05 165)}.sw--red{--sw:oklch(0.62 0.135 36);--sw-2:oklch(0.45 0.1 30)}
+.qty{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem 1rem;margin:1.4rem 0 0}
+.qty label{font-size:.95rem;color:var(--porc-2)}
+.stepper{display:inline-grid;grid-template-columns:44px 3.4rem 44px;align-items:center}
+.stepper button{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--night-3);font-family:var(--f-d);font-size:1.3rem;cursor:pointer}
+.stepper button:hover{background:oklch(0.43 0.06 258)}
+.stepper button svg{width:16px;height:16px}
+.stepper input,.stepper output{height:44px;line-height:44px;text-align:center;font-family:var(--f-d);font-size:1.3rem;background:transparent;border:0;color:inherit;-moz-appearance:textfield;appearance:textfield;width:100%}
+.stepper input{border-bottom:2px solid var(--porc-2)}
+.stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.buy__act{display:flex;flex-wrap:wrap;gap:.8rem 1.4rem;align-items:center;margin:1.4rem 0 0}
+.buy__act a{color:var(--porc-2)}
+.buy__done{margin:.8rem 0 0;color:var(--brass)}
+.buy__done a{color:var(--porc)}
+
+/* ===== 白天：量過的數字 ===== */
+.day{background:var(--day);color:var(--ink);--focus-ring:3px solid var(--brass-ink);--selection-bg:var(--brass);--selection-fg:var(--ink)}
+.day a{text-decoration-color:var(--brass-ink)}
+.day h2{font-size:clamp(2.2rem,3.6vw,3.2rem);letter-spacing:.04em}
+.spec{padding:clamp(3rem,6vw,5.5rem) var(--gut) clamp(3rem,5vw,4.5rem)}
+.spec__head{max-width:40rem}
+.spec__head p{margin:.7rem 0 0;color:var(--ink-2)}
+.spec__figs{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:2rem clamp(2rem,4vw,4.5rem);margin:2.4rem 0 0;align-items:start}
+.elev{margin:0;position:relative}
+.elev__svg{width:100%;height:auto;max-height:78vh;display:block}
+.linelamp .sil *{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linejoin:round}
+.linelamp .sil ellipse,.linelamp .sil circle{fill:var(--day)}
+.linelamp .tex *{fill:none;stroke:var(--ink-2);stroke-width:.9}
+.linelamp .tex .tx-hi,.linelamp .tex .rimEdge,.linelamp .tex .rimShade,.linelamp .tex .tx-led{display:none}
+.linelamp .tex .tx-spk,.linelamp .tex .tx-led{stroke-width:1.4;stroke-linecap:round}
+.linelamp .tex .tx-braidA{stroke-dasharray:2.6 2.6;stroke-width:3}
+.linelamp .tex .tx-braidB{display:none}
+.linelamp .tex .tx-fuzz{stroke-width:.8}
+.linelamp .shd{fill:none;stroke:var(--day-3);stroke-width:1.6}
+.linelamp .cl{fill:none;stroke:var(--brass-ink);stroke-width:1;stroke-dasharray:24 5 3 5}
+.elev__svg .dim path{fill:none;stroke:var(--ink);stroke-width:1.2}
+.elev__svg .dim text{font-family:var(--f-d);font-size:30px;fill:var(--ink);paint-order:stroke;stroke:var(--day);stroke-width:7px;stroke-linejoin:round}
+.elev__svg .ext{fill:none;stroke:var(--ink-2);stroke-width:1;stroke-dasharray:3 4}
+.elev figcaption,.reach figcaption{font-size:.9rem;color:var(--ink-2);margin-top:.6rem;max-width:30em}
+.reach{margin:0;display:grid;grid-template-columns:minmax(0,1fr);gap:.4rem}
+.reach h3{font-size:clamp(1.6rem,2.2vw,2rem)}
+.reach__svg{width:100%;height:auto;display:block;margin-top:.4rem}
+.reach__svg .page{fill:oklch(0.99 0.004 240);stroke:var(--ink);stroke-width:1.5}
+.reach__svg .txtline{fill:none;stroke:var(--day-3);stroke-width:3.4;stroke-linecap:round}
+.reach__svg .gutter{fill:none;stroke:var(--ink-2);stroke-width:1}
+.reach__svg .luxDot{fill:none;stroke:var(--brass);stroke-linecap:round;opacity:.75}
+.reach__svg .lux{fill:none;stroke:var(--brass-ink);stroke-width:1.3;stroke-dasharray:5 5}
+.reach__svg .luxPin{fill:var(--brass-ink)}
+.reach__svg .luxLead{fill:none;stroke:var(--ink);stroke-width:1}
+.reach__svg .luxT,.reach__svg .bookT,.reach__svg .scale text{font-family:var(--f-d);font-size:19px;fill:var(--ink);paint-order:stroke;stroke:var(--day);stroke-width:6px;stroke-linejoin:round}
+.reach__svg .cross{fill:none;stroke:var(--ink);stroke-width:1.4}
+.reach__svg .scale path{fill:none;stroke:var(--ink);stroke-width:1.4}
+.reach__facts{display:flex;flex-wrap:wrap;gap:.3rem 1.6rem;margin:.8rem 0 0;font-size:.9375rem}
+.reach__facts>div{display:flex;gap:.5rem;align-items:baseline}
+.reach__facts dt{color:var(--ink-2)}
+.reach__facts dd{margin:0}
+.mats{margin:clamp(3rem,6vw,5rem) 0 0}
+.mats h3{font-size:clamp(1.6rem,2.2vw,2rem)}
+.mats__row{list-style:none;margin:1.6rem 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.6rem 1.2rem}
+.mat{flex:1 1 9rem;max-width:13rem;display:grid;justify-items:start;gap:.1rem}
+.mat:nth-child(even){margin-top:2.6rem}
+.mat__chip{width:7.4rem;height:7.4rem;margin-bottom:.6rem}
+.mat__name{margin:0;font-family:var(--f-d);font-size:1.5rem;line-height:1.2}
+.mat__where{margin:0;color:var(--brass-ink);font-size:.9375rem}
+.mat__note{margin:.2rem 0 0;font-size:.9375rem;color:var(--ink-2);line-height:1.6}
+.mat__rim{fill:none;stroke:var(--ink);stroke-width:1.5}
+.mat__base--al{fill:oklch(0.86 0.008 240)}.mat__base--steel{fill:oklch(0.62 0.012 245)}.mat__base--iron{fill:oklch(0.36 0.012 250)}.mat__base--brass{fill:var(--m2)}.mat__base--cotton{fill:oklch(0.33 0.025 255)}
+.mat__ln,.mat__ln *{fill:none;stroke:oklch(0.48 0.012 245);stroke-width:.8}
+.mat__ln--brass{stroke:var(--m3)}
+.mat__hi{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;opacity:.7}
+.mat__spk{fill:none;stroke:oklch(0.55 0.01 250);stroke-width:1.8;stroke-linecap:round}
+.mat__kn{fill:none;stroke:var(--m3);stroke-width:1.6}
+.mat__glint{fill:var(--m1)}
+.mat__weave{fill:none;stroke:oklch(0.55 0.02 250);stroke-width:2.2;stroke-linecap:round}
+
+/* 寄出、保固、退回：一條棉編織線從下單走到保固期滿 */
+.service{background:var(--day-2);padding:clamp(3rem,6vw,5rem) var(--gut)}
+.service__head{max-width:40rem}
+.service__head p{margin:.7rem 0 0;color:var(--ink-2)}
+.cord{list-style:none;margin:2rem 0 0;padding:.6rem 2.6rem 5rem;display:grid;grid-template-columns:18px 1fr 18px 1fr 18px 1fr 18px 1fr 18px;grid-template-rows:auto auto 18px auto}
+.cord>li{margin:0;position:relative;min-width:0}
+.cord__node{grid-row:3/5;z-index:1}
+.cord__node::before{content:"";display:block;width:18px;height:18px;border-radius:50%;background:var(--m2);box-shadow:inset 0 0 0 4px var(--m3)}
+.cord__node b,.cord__node span{position:absolute;left:50%;translate:-50% 0;white-space:nowrap;line-height:1.35}
+.cord__node b{top:calc(18px + .5rem);font-family:var(--f-d);font-weight:400;font-size:1.15rem}
+.cord__node span{top:calc(18px + .5rem + 1.6rem);font-size:.875rem;color:var(--ink-2)}
+.cord__seg{grid-row:2/4;display:grid;align-content:end;justify-items:center;padding:0 .4rem;text-align:center}
+.cord__wire{display:block;width:100%;height:40px;margin-bottom:-22px;overflow:visible}
+.cord__wire path{fill:none;vector-effect:non-scaling-stroke}
+.cord__wire .w0{stroke:var(--s3);stroke-width:8;stroke-linecap:round}
+.cord__wire .w1{stroke:var(--s1);stroke-width:4;stroke-dasharray:3 3;translate:0 -1px}
+.cord__wire .w2{stroke:var(--s2);stroke-width:4;stroke-dasharray:3 3;stroke-dashoffset:3;translate:0 1px}
+.cord__seg .txt{font-size:1rem;line-height:1.4;padding-bottom:.5rem}
+.cord__seg .num{font-size:1.6rem;margin-right:.15rem}
+.cord__seg--plain .txt{color:var(--ink-2)}
+.cord__seg--cut::after{content:"";width:100%;height:0;margin:8.5px 0;border-top:2px dashed var(--s2)}
+.cord__span{grid-row:1;grid-column:5/10;display:flex;align-items:baseline;gap:.4rem;border-top:1.5px solid var(--ink);padding:.5rem 0 0 1.4rem;margin-bottom:3.2rem}
+.cord__span::before,.cord__span::after{content:"";position:absolute;top:-2px;width:1.5px;height:14px;background:var(--ink)}
+.cord__span::before{left:9px}.cord__span::after{right:9px}
+.cord__span .num{font-size:1.6rem}
+.service__list{display:grid;gap:.6rem}
+.svc{background:var(--day);clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%)}
+.svc summary{display:grid;grid-template-columns:auto minmax(0,1fr) 1.8rem;align-items:center;gap:0 1.4rem;cursor:pointer;list-style:none;padding:1rem 1.4rem;min-height:4.2rem}
+.svc summary::-webkit-details-marker{display:none}
+.svc summary:hover{background:color-mix(in oklch,var(--m1) 30%,var(--day))}
+.svc summary:focus-visible{outline:3px solid var(--brass-ink);outline-offset:-5px}
+.svc__k{font-family:var(--f-d);font-size:1.5rem;letter-spacing:.2em;min-width:4.2rem}
+.svc__gist{font-size:1.08rem}
+.svc__mark{width:1.4rem;height:1.4rem;border-radius:50%;background:var(--m2);box-shadow:inset 0 0 0 2px var(--m3);background-image:linear-gradient(var(--m3),var(--m3));background-size:2px 60%;background-repeat:no-repeat;background-position:center;transition:rotate .25s}
+.svc[open] .svc__mark{rotate:90deg}
+.svc__body{padding:0 1.6rem 1.4rem calc(1.4rem + 5.6rem);columns:2 22rem;column-gap:3rem}
+.svc__body p{margin:0;break-inside:avoid}
+.svc__body p+p{margin-top:.7em}
+
+/* 結帳 */
+.checkout{padding:clamp(3rem,6vw,5rem) var(--gut);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);grid-template-areas:"h h" "lead lead" "form order";gap:.6rem clamp(2rem,5vw,5rem);align-items:start}
+.checkout h2{grid-area:h}.checkout__lead{grid-area:lead;margin:0 0 1.6rem;color:var(--ink-2);max-width:36em}
+.order{grid-area:order;position:sticky;top:calc(var(--mast-h) + 1.2rem);background:var(--day-2);padding:1.4rem 1.4rem 1.2rem;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%)}
+.co{grid-area:form}
+.order h3,.co h3{font-size:1.45rem;margin:0 0 .8rem}
+.order__list{list-style:none;margin:0;padding:0}
+.order__row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:.3rem 1rem;padding:.6rem 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.order__row .num{font-size:1.1rem}
+.order__empty{color:var(--ink-2);padding:.4rem 0 .8rem;border-bottom:1px solid var(--rule);margin:0}
+.order__sum{margin:.8rem 0 0;display:grid;gap:.3rem}
+.order__sum div{display:flex;justify-content:space-between;gap:1rem}
+.order__sum dd{margin:0}
+.order__sum .total{border-top:1px solid var(--ink);padding-top:.5rem;margin-top:.3rem}
+.order__sum .total .num{font-size:1.5rem}
+html.js .co__pick{display:none}
+html:not(.js) .order{display:none}
+.co__pick{display:grid;grid-template-columns:1fr 1fr;gap:.6rem 1.4rem;margin:0 0 .6rem}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem 1.4rem}
+.fld{display:grid;align-content:start;gap:.25rem;min-width:0}
+.fld--wide{grid-column:1/-1}
+.fld label,.fld legend{font-size:.95rem;color:var(--ink-2)}
+.fld input,.fld select,.fld textarea{width:100%;min-height:46px;border:0;border-bottom:1.5px solid var(--ink-2);background:var(--day-2);padding:.5rem .7rem;color:var(--ink);border-radius:0;font:inherit}
+.fld input:focus-visible,.fld select:focus-visible,.fld textarea:focus-visible{outline:3px solid var(--brass-ink);outline-offset:1px}
+.fld textarea{resize:vertical;line-height:1.6}
+.fld input[aria-invalid=true]{border-color:oklch(0.5 0.17 28);background:oklch(0.97 0.02 28)}
+.fld__err{font-size:.875rem;color:oklch(0.45 0.16 28);margin:0}
+.pay{display:grid;gap:.4rem;margin:.2rem 0 0;border:0;padding:0}
+.pay label{display:grid;grid-template-columns:auto 1fr;gap:0 .7rem;align-items:center;padding:.55rem .8rem;background:var(--day-2);cursor:pointer;font-size:1rem;color:var(--ink)}
+.pay label:has(input:checked){box-shadow:inset 0 0 0 1.5px var(--ink)}
+.pay input{grid-row:1/span 2;width:1.1rem;height:1.1rem;accent-color:var(--brass-ink);margin:0}
+.pay label b{font-weight:500}.pay label span{font-size:.875rem;color:var(--ink-2);line-height:1.5}
+.co__act{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.4rem;margin:1.2rem 0 0}
+.co__msg{margin:.8rem 0 0}
+.co__msg--bad{color:oklch(0.45 0.16 28)}
+.co__msg--ok{background:var(--lit);color:var(--ink);padding:.7rem 1rem;max-width:34em}
+
+/* ===== 版權頁 ===== */
+.colophon{background:var(--night);color:var(--porc-2);padding:2.8rem var(--gut) 2rem}
+.colophon__in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:1.2rem 3rem}
+.colophon__brand{display:flex;align-items:center;gap:.5rem;font-family:var(--f-d);font-size:1.35rem;letter-spacing:.12em;color:var(--porc);margin:0}
+.colophon__brand svg{width:24px;height:24px;color:var(--brass)}
+.colophon dl{display:grid;grid-template-columns:auto 1fr;gap:.25rem 1.2rem;margin:0;font-size:.95rem}
+.colophon dt{color:var(--porc-2)}
+.colophon dd{margin:0;color:var(--porc)}
+.colophon__foot{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem;padding-top:1rem;margin-top:.4rem;border-top:1px solid var(--night-3);font-size:.875rem}
+.colophon a{color:var(--porc)}
+
+/* ===== 購物車抽屜 ===== */
+.cart{position:fixed;inset:0 0 0 auto;width:min(460px,100%);height:100dvh;max-height:none;max-width:none;margin:0;border:0;padding:0;background:var(--day);color:var(--ink);--focus-ring:3px solid var(--brass-ink);--selection-bg:var(--brass);--selection-fg:var(--ink)}
+.cart::backdrop{background:oklch(0.2 0.05 262 / .6)}
+html.js .cart[open]{animation:f14-drawer .32s cubic-bezier(.2,.7,.2,1)}
+@keyframes f14-drawer{from{translate:40% 0;opacity:.4}to{translate:0 0;opacity:1}}
+.cart__in{display:grid;grid-template-rows:auto 1fr auto;height:100%}
+.cart__head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.4rem;background:var(--day-2)}
+.cart__head h2{font-size:1.6rem;display:flex;align-items:baseline;gap:.6rem}
+.cart__head h2 small{font-family:var(--f-t);font-size:.95rem;color:var(--ink-2)}
+.cart__close{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--day);cursor:pointer}
+.cart__close svg{width:18px;height:18px}
+.cart__body{overflow:auto;padding:0 1.4rem}
+.cart__empty{padding:1.4rem 0;color:var(--ink-2);margin:0}
+.cart:not([data-items="0"]) .cart__empty{display:none}
+.cart__list{list-style:none;margin:0;padding:0}
+.cart__row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"sw name rm" "sw unit rm" "sw qty line";gap:.2rem 1rem;align-items:center;padding:1rem 0;border-bottom:1px solid var(--rule)}
+.cart__row .sw{grid-area:sw;align-self:start;margin-top:.2rem;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--sw);box-shadow:0 0 0 1.5px var(--sw-2)}
+.cart__name{grid-area:name;font-family:var(--f-d);font-size:1.1rem;line-height:1.3}
+.cart__name small{display:block;font-family:var(--f-t);color:var(--ink-2);font-size:.9rem}
+.cart__unit{grid-area:unit;font-size:.9rem;color:var(--ink-2)}
+.cart__qty{grid-area:qty;margin-top:.4rem}
+.cart__qty .stepper{grid-template-columns:40px 3rem 40px}
+.cart__qty .stepper button{width:40px;height:40px;font-size:1.15rem;background:var(--day-2)}
+.cart__qty .stepper button:hover{background:var(--day-3)}
+.cart__qty .stepper output{height:40px;line-height:40px;font-size:1.15rem}
+.cart__line{grid-area:line;justify-self:end;align-self:end;font-family:var(--f-d);font-size:1.3rem}
+.cart__rm{grid-area:rm;align-self:start;font-size:.875rem;color:var(--ink-2);text-decoration:underline;text-underline-offset:.2em;cursor:pointer;min-height:44px}
+.cart__rm:hover{color:var(--ink)}
+.cart__foot{padding:1rem 1.4rem 1.4rem;background:var(--day-2);display:grid;gap:.9rem}
+.cart__sum{margin:0;display:grid;gap:.2rem}
+.cart__sum div{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.cart__sum dd{margin:0}
+.cart__sum .num{font-size:1.7rem}
+.cart__act{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;align-items:center;margin:0}
+.cart__more{text-decoration:underline;text-underline-offset:.2em;cursor:pointer;min-height:44px;color:var(--ink-2)}
+.cart[data-items="0"] .cart__go{opacity:.45;pointer-events:none}
+
+/* ===== 404 ===== */
+.lost{min-height:calc(100dvh - var(--mast-h) - 8rem);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:2rem var(--gut);align-items:center;padding:2rem var(--gut) 4rem;max-width:1200px;margin-inline:auto}
+.lost .lamp{max-height:72vh;width:100%;height:auto;--r:1}
+.lost h1{font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.15;margin:0 0 1rem}
+.lost p{max-width:28em;margin:0}
+.lost p+p{margin-top:.7rem}
+.lost__code{font-family:var(--f-d);font-size:1.4rem;color:var(--brass);letter-spacing:.1em}
+.lost__act{display:flex;flex-wrap:wrap;gap:.8rem 1.4rem;align-items:center;margin-top:1.6rem}
+
+/* ===== 窄螢幕 ===== */
+@media (max-width:1180px){
+  .spec__figs{grid-template-columns:1fr 1fr}
+  .story h3{font-size:1.6rem}
+}
+@media (max-width:1040px){
+  .checkout,.colophon__in{grid-template-columns:1fr;grid-template-areas:none}
+  .checkout h2,.checkout__lead,.order,.co{grid-area:auto}
+  .order{position:static}
+  .mast__nav{display:none}
+  .mast__cart{margin-left:auto}
+}
+@media (min-width:761px) and (max-width:1100px){
+  .night{background:var(--desk)}
+  .dial{position:relative;right:auto;top:auto;margin:1.8rem auto 3.4rem}
+}
+@media (max-width:1000px){
+  .bench{padding-top:2.6rem}
+  .bench__head{display:block}
+  .bench__head h2{font-size:2.4rem}
+  .bench__head p{font-size:.9375rem}
+  .bench__in{display:flex;flex-direction:column}
+  .bench__track{display:block;order:-1}
+  .bench__frame{position:relative;top:0;height:min(50vh,430px);padding:4px 10px 6px}
+  .only-d{display:none}.only-m{display:inline}
+  .bench__flow{z-index:auto}
+  .lamp .lab{display:none;visibility:hidden}
+  .parts{display:flex;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;gap:12px;padding:6px 24px 10px;scroll-padding-inline:24px;scrollbar-width:none}
+  .parts::-webkit-scrollbar{display:none}
+  .story,.story:nth-child(even){flex:0 0 min(84%,420px);min-height:0;grid-column:auto;scroll-snap-align:start;align-content:start;padding:1.2rem 1.1rem 1.3rem;background:var(--night);clip-path:polygon(18px 0,100% 0,100% 100%,0 100%,0 18px)}
+  .story::after{display:none}
+  .story--outro{display:grid;grid-template-columns:minmax(0,1fr);align-content:center;justify-items:start;gap:.8rem}
+  .story--outro p{margin:0;font-family:var(--f-d);font-size:1.7rem;line-height:1.3}
+  .story h3{font-size:1.55rem}
+  .story__text{font-size:.9375rem;line-height:1.7}
+  .story__facts{font-size:.875rem;gap:.2rem 1rem}
+  html.js .parts__nav{display:flex;justify-content:center;gap:1rem;margin:.6rem 0 0}
+  .parts__nav button{width:48px;height:48px;border-radius:50%;background:var(--night-3);display:grid;place-items:center;cursor:pointer}
+  .parts__nav svg{width:20px;height:20px}
+  .buy{min-height:0;display:block;padding:1.6rem var(--gut) 2.6rem}
+  .buy__do{margin-top:1.2rem}
+  .buy h2{font-size:1.9rem}
+  .colors__row{gap:.5rem;justify-content:space-between}
+  .swatch{width:30%}
+  .swatch small{display:none}
+}
+@media (max-width:760px){
+  :root{--mast-h:0px}
+  .mast{position:static;height:56px}
+  .night{background:var(--desk)}
+  .night__frame{width:100%}
+  .night__scene{aspect-ratio:390/760}
+  .scene--d{display:none}.scene--m{display:block}
+  .night__where{left:16px;top:20px;font-size:.8125rem;letter-spacing:.14em}
+  .night__lit{left:4%;top:55.4%;width:92%;height:36.4%}
+  .night h1{font-size:4.6rem}
+  .night h1 small{font-size:1rem;letter-spacing:.24em}
+  .night__lead{font-size:.9375rem;line-height:1.65;margin-top:.5rem;max-width:19em}
+  .night__buy{margin-top:.6rem;gap:.2rem .9rem}
+  .night__price{font-size:1.5rem}
+  .night__ship{font-size:.8125rem}
+  .night__buy .btn{min-height:44px;padding:.4em 1.1em;font-size:1rem}
+  .dial{--R:58px;--dot:30px;--kn:50px;--cy:76px;right:auto;left:6px;top:70px;width:156px;height:150px}
+  .dial__pos{font-size:.75rem}
+  .dial__pos input{border-width:7px}
+  .dial__hint{font-size:.75rem}
+  .spec{padding-top:2.6rem}
+  .spec__figs{grid-template-columns:1fr;margin-top:1.4rem}
+  .elev__svg{max-height:none;width:84%;margin-inline:auto}
+  .elev__svg .dim text{font-size:40px}
+  .reach__svg .luxT,.reach__svg .bookT,.reach__svg .scale text{font-size:24px}
+  .mats{margin-top:2.4rem}
+  .mats__row{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;gap:1.1rem;margin:1rem calc(-1 * var(--gut)) 0;padding:.3rem var(--gut) .8rem;scroll-padding-inline:var(--gut)}
+  .mat{flex:0 0 8.6rem;max-width:none;scroll-snap-align:start}
+  .mat:nth-child(even){margin-top:0}
+  .mat__chip{width:5.6rem;height:5.6rem;margin-bottom:.3rem}
+  .mat__name{font-size:1.3rem}
+  .mat__note{font-size:.875rem}
+  .cord{display:flex;flex-direction:column;padding:.2rem 0 1rem 0;margin:1.4rem 0 0 8px;border-left:9px solid transparent;border-image:repeating-linear-gradient(-58deg,var(--s2) 0 3px,var(--s1) 3px 6px) 9}
+  .cord__span{order:1}.cord__end{order:2}
+  .cord__node{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 .7rem;padding:.3rem 0 .3rem 1.6rem;min-height:2.3rem}
+  .cord__node::before{position:absolute;left:-14px;top:.5rem}
+  .cord__node b,.cord__node span{position:static;translate:none;white-space:normal}
+  .cord__seg{display:flex;align-items:baseline;gap:.3rem;padding:.2rem 0 .2rem 1.6rem;text-align:left}
+  .cord__seg::after,.cord__wire{display:none}
+  .cord__seg .txt{padding:0}
+  .cord__seg--cut{display:none}
+  .cord__span{display:flex;border:0;margin:0;padding:.2rem 0 .2rem 1.6rem}
+  .cord__span::before,.cord__span::after{display:none}
+  .svc summary{grid-template-columns:auto minmax(0,1fr) 1.5rem;gap:0 .8rem;padding:.8rem 1rem}
+  .svc__k{font-size:1.2rem;min-width:0;letter-spacing:.1em}
+  .svc__gist{font-size:.95rem;line-height:1.5}
+  .svc__body{padding:0 1rem 1.1rem;columns:1;font-size:.9375rem}
+  .checkout{padding-block:2.4rem 2.6rem;gap:.4rem}
+  .checkout__lead{margin-bottom:.8rem}
+  .f-grid{gap:.7rem}
+  .fld input,.fld select{min-height:44px}
+  .order{padding:1.1rem 1rem}
+  .co__pick,.f-grid{grid-template-columns:1fr}
+  .colophon{padding-block:2rem 1.4rem}
+  .colophon__in{gap:.8rem}
+  .colophon dl{font-size:.875rem}
+  .cart{width:100%}
+  .cart__row{grid-template-areas:"sw name name" "sw unit unit" "qty qty line" "rm rm rm"}
+  .cart__rm{justify-self:end}
+  .lost{grid-template-columns:1fr;padding-top:1rem}
+  .lost .lamp{max-height:46vh}
+}
+
+/* ===== 招牌時刻：捲動＝拆解（桌機縱向讀；手機橫向滑卡片） ===== */
+@media screen and (prefers-reduced-motion:no-preference){
+@supports (animation-timeline:view()) and (timeline-scope:--a){
+  html.js .bench__in{timeline-scope:--s1,--s2,--s3,--s4,--s5,--s6,--s7,--s8,--s9,--buy;animation:f14-k1 linear both,f14-k2 linear both,f14-k3 linear both,f14-k4 linear both,f14-k5 linear both,f14-k6 linear both,f14-k7 linear both,f14-k8 linear both,f14-k9 linear both,f14-r linear both,f14-on linear both;animation-timeline:--s1,--s2,--s3,--s4,--s5,--s6,--s7,--s8,--s9,--buy,--buy;animation-range:entry 12% entry 88%,entry 12% entry 88%,entry 12% entry 88%,entry 12% entry 88%,entry 12% entry 88%,entry 12% entry 88%,entry 12% entry 88%,entry 12% entry 88%,entry 12% entry 88%,entry 0% entry 70%,entry 55% entry 100%}
+  @media (min-width:1001px){html.js .story[data-k="1"]{view-timeline:--s1 block}html.js .story[data-k="2"]{view-timeline:--s2 block}html.js .story[data-k="3"]{view-timeline:--s3 block}html.js .story[data-k="4"]{view-timeline:--s4 block}html.js .story[data-k="5"]{view-timeline:--s5 block}html.js .story[data-k="6"]{view-timeline:--s6 block}html.js .story[data-k="7"]{view-timeline:--s7 block}html.js .story[data-k="8"]{view-timeline:--s8 block}html.js .story[data-k="9"]{view-timeline:--s9 block}html.js .buy{view-timeline:--buy block}}
+  @media (max-width:1000px){html.js .story[data-k="1"]{view-timeline:--s1 inline}html.js .story[data-k="2"]{view-timeline:--s2 inline}html.js .story[data-k="3"]{view-timeline:--s3 inline}html.js .story[data-k="4"]{view-timeline:--s4 inline}html.js .story[data-k="5"]{view-timeline:--s5 inline}html.js .story[data-k="6"]{view-timeline:--s6 inline}html.js .story[data-k="7"]{view-timeline:--s7 inline}html.js .story[data-k="8"]{view-timeline:--s8 inline}html.js .story[data-k="9"]{view-timeline:--s9 inline}html.js .story--outro{view-timeline:--buy inline}}
+}}
+@keyframes f14-k1{from{--k1:0}to{--k1:1}}@keyframes f14-k2{from{--k2:0}to{--k2:1}}@keyframes f14-k3{from{--k3:0}to{--k3:1}}@keyframes f14-k4{from{--k4:0}to{--k4:1}}@keyframes f14-k5{from{--k5:0}to{--k5:1}}@keyframes f14-k6{from{--k6:0}to{--k6:1}}@keyframes f14-k7{from{--k7:0}to{--k7:1}}@keyframes f14-k8{from{--k8:0}to{--k8:1}}@keyframes f14-k9{from{--k9:0}to{--k9:1}}
+@keyframes f14-r{from{--r:0}to{--r:1}}
+@keyframes f14-on{from{--on:0}to{--on:1}}
+
+@media (prefers-reduced-motion:reduce){
+  .lampart .c1,.lampart .c2,.lampart .c3,.scene .poolDot,.scene .poolCore,.scene .beam{transition:none}
+  .dial__knob i{transition:none}
+  .nod,html.js .bench:has(input:checked) .nod{animation:none}
+  .badge.is-bump{animation:none}
+  html.js .cart[open]{animation:none}
+  .svc__mark{transition:none}
+}
+@media print{
+  :root{--night:#fff;--night-2:#fff;--night-3:#eee;--night-4:#000;--desk:#fff;--desk-2:#ccc;--desk-3:#999;--porc:#000;--porc-2:#222;--porc-3:#666;--lit:#f2f2f2;--beam:#ddd;--day:#fff;--day-2:#fff;--day-3:#ccc;--ink:#000;--ink-2:#222;--rule:#999;--c1:#f2f2f2;--c2:#cfcfcf;--c3:#9a9a9a;--m1:#e0e0e0;--m2:#bdbdbd;--m3:#7a7a7a;--s1:#777;--s2:#444;--s3:#111;--rim:#e6e6e6;--brass:#555;--brass-ink:#333}
+  .mast,.cart,.night__buy .btn,.buy__act,.co__act,.dial,.parts__nav,.bench__hint{display:none !important}
+  .bench__in{display:block;background:#fff}
+  .bench__track{display:block}
+  .bench__frame{position:static;height:auto;padding:0}
+  .bench__frame .lamp{max-height:60vh;height:auto}
+  .lamp .light{display:none}
+  .parts{display:block}
+  .story{min-height:0;padding:.6rem 0;break-inside:avoid}
+  .story::after{display:none}
+  .buy{min-height:0;display:block;padding:1rem 0}
+  .colophon{background:#fff;color:#000}
+  a{text-decoration:underline}
+}
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="mast">
+<a class="mast__brand" href="./"><svg viewBox="0 0 28 28" aria-hidden="true" focusable="false"><path d="M6 25h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M14 25V13" stroke="currentColor" stroke-width="2.4"/><path d="M14 13L20 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M15.5 2.5L26 6.5 21 13z" fill="currentColor"/></svg><span>一盞</span></a>
+<nav class="mast__nav" aria-label="回到主頁"><a href="./#parts">九個零件</a><a href="./#spec">量過的數字</a><a href="./#service">寄出與保固</a></nav>
+</header>
+<main id="main" class="lost">
+<svg class="lamp lampart" viewBox="0 280.02 760 671.98" role="img" aria-label="一盞閱讀燈，插頭掉在牆上插座旁邊，燈沒亮"><defs><clipPath id="n-cy1"><rect x="292" y="846" width="224" height="26"/><ellipse cx="404" cy="872" rx="112" ry="40.32"/></clipPath><clipPath id="n-cy2"><rect x="459.73" y="842" width="30" height="15"/><ellipse cx="474.73" cy="857" rx="15" ry="5.4"/></clipPath><clipPath id="n-cy3"><rect x="389" y="830" width="30" height="16"/><ellipse cx="404" cy="846" rx="15" ry="5.4"/></clipPath><clipPath id="n-cy4"><rect x="395" y="520" width="18" height="312"/><ellipse cx="404" cy="832" rx="9" ry="3.24"/></clipPath><clipPath id="n-bl5"><circle cx="404" cy="520" r="24"/></clipPath><clipPath id="n-bl6"><circle cx="256.19" cy="336.02" r="16"/></clipPath><clipPath id="n-rd7"><rect x="-7.5" y="-7.5" width="15" height="251" rx="7.5"/></clipPath><clipPath id="n-sh8"><path d="M-13 0C-13 59 -64 66.08 -64 118L64 118C64 66.08 13 59 13 0Z"/></clipPath></defs><path d="M384.27 830.24H463.81M358.47 833.64H496.8M339.7 837.04H513.77M318.22 840.44H527.46M310.98 843.84H539.27M300.08 847.24H549.24M293.21 850.64H553.13M286.47 854.04H566.71M277.17 857.44H571.13M270.96 860.84H574.19M265.86 864.24H581.99M264.74 867.64H582.59M261.78 871.04H583.12M259.5 874.44H589.98M261.75 877.84H587.09M263.83 881.24H585.57M259.31 884.64H587.9M261.73 888.04H585.79M259.18 891.44H584.28M263.76 894.84H585.02M269.85 898.24H577.09M270.28 901.64H574.31M279.33 905.04H567.9M284.49 908.44H563.68M287.78 911.84H560.41M293.7 915.24H548.85M306.95 918.64H546.55M313.89 922.04H529.4M330.03 925.44H516.84M341.59 928.84H501.33M368.84 932.24H483.41M414.6 935.64H434.86" class="shd"/><path class="axis" d="M404 376V898"/><g class="part part-felt" style="--tx:calc(var(--k1)*0);--ty:calc(var(--k1)*34);--ko:var(--k1)"><ellipse cx="404" cy="875" rx="108" ry="38.88" class="s3"/><ellipse cx="404" cy="873" rx="102" ry="36.72" class="s2"/><path d="M510.95 876.17l2.58 0.57M510.49 878.8l2.8 0.44M510.41 879.07l2.2 0.29M509.72 881l1.64 0.48M508.52 883.32l1.61 1.19M507.55 884.8l2.67 0.32M505.45 887.36l1.18 1.44M504.38 888.47l1.74 1.73M501.26 891.21l2.87 1.37M499.68 892.4l1.45 2.75M497.77 893.73l0.63 1.33M494.89 895.52l1.29 1.29M492.52 896.84l0.8 2.1M489.54 898.36l1.09 0.94M484.6 900.57l0.06 1.55M479.7 902.48l0.34 1.84M478.53 902.9l0.65 2.82M472.19 904.96l0.38 2.78M468.44 906.04l-0.32 1.31M467.57 906.27l-0.26 1.65M459.54 908.23l0.82 2.76M455.8 909.02l1.7 2.03M449.99 910.11l2.12 2.49M448.97 910.28l0.52 1.28M442.99 911.21l1.03 2.2M437.52 911.92l0.16 1.25M430.98 912.62l-0.6 1.56M429.16 912.79l1.1 2.64M423.38 913.24l1.35 2.11M416.84 913.6l0.42 1.31M413.75 913.72l1.07 1.49M405.7 913.88l-0.28 1.32M401.33 913.87l-0.07 1.5M394.6 913.73l0.9 2.86M388.54 913.47l-0.66 1.03M387.35 913.41l1.68 2.66M381.43 913.01l-1.13 2.58M377.52 912.67l0.61 2.67M368.97 911.74l-0.88 1.39M367.48 911.54l0.58 1.82M360.43 910.51l0.21 2.73M356.77 909.89l-2.12 2.24M350.65 908.7l-0.81 1.44M347.27 907.97l-0.06 1.49M343.4 907.04l-2.56 2.25M339.59 906.05l-0.17 1.25M335.97 905.01l-1.41 1.53M331.2 903.49l0.11 2.61M327.2 902.07l-2.02 1.52M323.23 900.5l-1.37 1.46M320.48 899.3l-1.59 2.25M315.64 896.93l-0.08 1.5M313.23 895.59l-1.04 0.92M311.35 894.45l-1.81 2.39M308.08 892.23l-1.18 1.56M305.97 890.58l-0.8 2.74M304.09 888.92l-2.4 1.56M303.04 887.87l-1.34 2.43M301.39 886.03l-2.06 0.75M299.44 883.26l-2.21 1.44M298.22 880.85l-1.28 0.97M298.03 880.38l-1.69 0.23M297.28 877.81l-3.44 0.79M297.07 876.41l-3.65 1.45" class="tx-fuzz"/></g><g class="part part-cable" style="--tx:calc(var(--k9)*24);--ty:calc(var(--k9)*40);--ko:var(--k9)"><path d="M487.6 850l16 1.5l5 10l-18 2.5z" class="s3"/><path d="M493.6 857C553.6 859 583.76 912 633.6 914C693.6 916 595.27 900.05 629.27 894.05" class="cable"/><g transform="translate(629.27 894.05) rotate(-26)"><rect x="-13" y="-8" width="8" height="16" rx="2" class="s3"/><rect x="-6" y="-11" width="30" height="22" rx="4" class="s2"/><path d="M-2 -11h22a4 4 0 0 1 4 4v3h-30v-3a4 4 0 0 1 4 -4z" class="s1"/><rect x="24" y="-6.5" width="12" height="3" class="m1"/><rect x="24" y="3.5" width="12" height="3" class="m1"/></g><g transform="translate(705.27 838.05)"><rect x="0" y="0" width="54" height="80" rx="4" class="c2"/><rect x="19" y="14" width="5" height="12" class="s3"/><rect x="30" y="14" width="5" height="12" class="s3"/><rect x="19" y="52" width="5" height="12" class="s3"/><rect x="30" y="52" width="5" height="12" class="s3"/><circle cx="27" cy="40" r="2.2" class="s3"/></g><path d="M493.6 857C553.6 859 583.76 912 633.6 914C693.6 916 595.27 900.05 629.27 894.05" class="tx-braidA"/><path d="M493.6 857C553.6 859 583.76 912 633.6 914C693.6 916 595.27 900.05 629.27 894.05" class="tx-braidB"/></g><g class="part part-base" style="--tx:calc(0);--ty:calc(0);--ko:var(--k1)"><g clip-path="url(#n-cy1)"><rect x="292" y="804.68" width="27.48" height="108.64" class="c2"/><rect x="318.88" y="804.68" width="36.44" height="108.64" class="c1"/><rect x="354.72" y="804.68" width="76.76" height="108.64" class="c2"/><rect x="430.88" y="804.68" width="85.72" height="108.64" class="c3"/></g><ellipse cx="404" cy="846" rx="112" ry="40.32" class="c1"/><ellipse cx="404" cy="846" rx="100" ry="36" class="c2"/><ellipse cx="404" cy="846" rx="98" ry="35.28" class="c1"/><ellipse cx="404" cy="846" rx="17" ry="6.12" class="s3"/><path d="M417.44 886.03V912.03M424.85 885.62V911.62M432.16 885.02V911.02M439.35 884.26V910.26M446.38 883.32V909.32M453.22 882.22V908.22M459.84 880.95V906.95M466.21 879.53V905.53M472.3 877.96V903.96M478.08 876.24V902.24M483.54 874.39V900.39M488.63 872.41V898.41M493.35 870.31V896.31M497.67 868.11V894.11M501.56 865.8V891.8M505.03 863.41V889.41M508.03 860.93V886.93M510.58 858.4V884.4M512.64 855.8V881.8" class="tx-c"/><path d="M338.92 880.82V902.82" class="tx-hi"/><path d="M415.52 845.42h.01M424.63 837.11h.01M345.91 862.98h.01M345.15 842.77h.01M395.8 833.67h.01M383.87 879.18h.01M352.14 828.74h.01M441.46 849.68h.01M370.73 834.17h.01M446.97 868.92h.01M393.84 842.91h.01M419.47 848.51h.01M339.53 862.42h.01M354.93 820.67h.01M355.59 823.61h.01M417.91 844.66h.01M465.97 821.5h.01M489.92 851.18h.01M334.26 839.36h.01M381.79 854.02h.01M472.71 860.34h.01M395.68 848.97h.01M332.82 844.98h.01M369.23 816.47h.01M319.94 846.59h.01M459.6 854.72h.01M400.03 830.48h.01M463.96 824.4h.01M437.84 854.43h.01M398.81 839.93h.01M434.17 813.98h.01M356.62 874.22h.01M448.75 823.85h.01M331.2 851.29h.01M363.99 852.12h.01M461.15 872.41h.01M391.46 840.08h.01M343.8 830.62h.01M424.81 857.27h.01M452.11 840.9h.01M471.33 847.91h.01M359.39 876.14h.01M358.62 828.5h.01M480.38 846.47h.01M487.32 852.22h.01M444.04 843.5h.01M349.77 819.98h.01M341.75 831.99h.01M341.6 861.16h.01M326.65 833.28h.01M445.69 830.41h.01M408.74 816.82h.01M405.93 859.78h.01M450.5 832.61h.01M469.45 838.88h.01M364.66 828.31h.01M468.12 865.4h.01M345.28 824.17h.01M409.82 848.06h.01M423.25 816.27h.01M413.78 865.2h.01M403.51 839.62h.01M406.16 853.97h.01M372.14 877.43h.01M379.27 866.19h.01M386.66 834.45h.01M351.17 821.77h.01M369.6 825.79h.01M453.27 859.16h.01M460.46 834.12h.01M484.86 827.48h.01M370.7 836.39h.01M355.34 825.18h.01M328.18 827.57h.01M342.24 870.43h.01M465.46 852.89h.01M404.48 850.02h.01M338.88 845.48h.01M419.12 827.61h.01M437.06 815.33h.01M367.07 852.87h.01M337.58 837.51h.01M337.81 870.09h.01M363.92 825.82h.01M384.72 846.68h.01M369.49 854.83h.01M386.36 843.89h.01M351.57 838.87h.01M361.65 839.79h.01M436.34 859.87h.01M386.1 863.49h.01M353.4 826.82h.01M456.76 856.22h.01M444.87 872.78h.01M361.83 842.18h.01M397.42 846.23h.01M438.85 862.31h.01M322.25 828.58h.01M350.65 864.92h.01M343.36 843.57h.01M384.51 851.66h.01M342.93 828.87h.01M386.76 845.98h.01M393.37 855.22h.01M340.07 820.5h.01M462.08 834.1h.01M424.52 822.89h.01M452.43 848.18h.01M423.19 842.64h.01M353.91 872.01h.01M442.58 829.32h.01M406.82 814.68h.01M375.08 835.68h.01M441.91 851.26h.01M356.82 828.97h.01M339.52 844.37h.01M367.21 869.99h.01M417.71 815.13h.01M481.31 862.5h.01M349.62 839.9h.01" class="tx-spk"/><path d="M292 859a112 40.32 0 0 0 224 0" class="tx-seam"/><path d="M449.73 858a25 9 0 0 1 50 0" class="tx-tick"/></g><g class="part part-knob" style="--tx:calc(var(--k2)*0);--ty:calc(var(--k2)*-50);--ko:var(--k2)"><ellipse cx="474.73" cy="858.5" rx="17.5" ry="6.3" class="c3"/><g clip-path="url(#n-cy2)"><rect x="459.73" y="835.6" width="4.2" height="27.8" class="m2"/><rect x="463.33" y="835.6" width="5.4" height="27.8" class="m1"/><rect x="468.13" y="835.6" width="10.8" height="27.8" class="m2"/><rect x="478.33" y="835.6" width="12" height="27.8" class="m3"/><rect x="459.2" y="843" width="1.2" height="19.86" class="m3" opacity="0.5"/><rect x="459.78" y="843" width="1.2" height="19.86" class="m3" opacity="0.61"/><rect x="460.9" y="843" width="1.2" height="19.86" class="m3" opacity="0.71"/><rect x="462.54" y="843" width="1.2" height="19.86" class="m3" opacity="0.8"/><rect x="464.62" y="843" width="1.2" height="19.86" class="m3" opacity="0.88"/><rect x="467.06" y="843" width="1.2" height="19.86" class="m3" opacity="0.94"/><rect x="469.78" y="843" width="1.2" height="19.86" class="m3" opacity="0.98"/><rect x="472.66" y="843" width="1.2" height="19.86" class="m3" opacity="1"/><rect x="475.6" y="843" width="1.2" height="19.86" class="m3" opacity="1"/><rect x="478.49" y="843" width="1.2" height="19.86" class="m3" opacity="0.98"/><rect x="481.2" y="843" width="1.2" height="19.86" class="m3" opacity="0.94"/><rect x="483.65" y="843" width="1.2" height="19.86" class="m3" opacity="0.88"/><rect x="485.73" y="843" width="1.2" height="19.86" class="m3" opacity="0.8"/><rect x="487.36" y="843" width="1.2" height="19.86" class="m3" opacity="0.71"/><rect x="488.49" y="843" width="1.2" height="19.86" class="m3" opacity="0.61"/><rect x="489.06" y="843" width="1.2" height="19.86" class="m3" opacity="0.5"/></g><ellipse cx="474.73" cy="842" rx="15" ry="5.4" class="m1"/><ellipse cx="474.73" cy="842" rx="10" ry="3.6" class="m2"/><circle cx="467.23" cy="841.5" r="2" class="c1"/><g class="tx-m"><ellipse cx="474.73" cy="842" rx="3" ry="1.08"/><ellipse cx="474.73" cy="842" rx="4.6" ry="1.66"/><ellipse cx="474.73" cy="842" rx="6.2" ry="2.23"/><ellipse cx="474.73" cy="842" rx="7.8" ry="2.81"/><ellipse cx="474.73" cy="842" rx="9.4" ry="3.38"/></g></g><g class="part part-collar" style="--tx:calc(var(--k3)*0);--ty:calc(var(--k3)*-32);--ko:var(--k3)"><g clip-path="url(#n-cy3)"><rect x="389" y="823.6" width="4.2" height="28.8" class="m2"/><rect x="392.6" y="823.6" width="5.4" height="28.8" class="m1"/><rect x="397.4" y="823.6" width="10.8" height="28.8" class="m2"/><rect x="407.6" y="823.6" width="12" height="28.8" class="m3"/></g><ellipse cx="404" cy="830" rx="15" ry="5.4" class="m1"/><circle cx="422" cy="838" r="4.4" class="m3"/><circle cx="422" cy="838" r="3.1" class="m1"/><rect x="419.2" y="837.3" width="5.6" height="1.4" class="m3"/><path d="M389 834a15 5.4 0 0 0 30 0M389 838a15 5.4 0 0 0 30 0M389 842a15 5.4 0 0 0 30 0" class="tx-m"/></g><g class="part part-stem" style="--tx:calc(var(--k3)*0);--ty:calc(var(--k3)*-62);--ko:var(--k3)"><g clip-path="url(#n-cy4)"><rect x="395" y="515.76" width="2.76" height="320.48" class="c2"/><rect x="397.16" y="515.76" width="3.48" height="320.48" class="c1"/><rect x="400.04" y="515.76" width="6.72" height="320.48" class="c2"/><rect x="406.16" y="515.76" width="7.44" height="320.48" class="c3"/></g><ellipse cx="404" cy="520" rx="9" ry="3.24" class="c1"/><path d="M406.7 527.09V835.09M409.24 526.64V834.64M411.25 525.92V833.92M412.55 525.01V833.01" class="tx-c"/><path d="M398.77 528.64V832.64" class="tx-hi"/></g><g class="part part-jscrew" style="--tx:calc(var(--k3)*0 + var(--k4)*44);--ty:calc(var(--k3)*-62 + var(--k4)*-46);--ko:var(--k4)"><rect x="424" y="512" width="20" height="9" class="m1"/><rect x="424" y="521" width="20" height="11" class="m2"/><rect x="425" y="512.56" width="18" height="1.1" class="m3" opacity="0.42"/><rect x="425" y="514.78" width="18" height="1.1" class="m3" opacity="0.65"/><rect x="425" y="517.01" width="18" height="1.1" class="m3" opacity="0.84"/><rect x="425" y="519.23" width="18" height="1.1" class="m3" opacity="0.96"/><rect x="425" y="521.45" width="18" height="1.1" class="m3" opacity="1"/><rect x="425" y="523.67" width="18" height="1.1" class="m3" opacity="0.96"/><rect x="425" y="525.89" width="18" height="1.1" class="m3" opacity="0.84"/><rect x="425" y="528.12" width="18" height="1.1" class="m3" opacity="0.65"/><rect x="425" y="530.34" width="18" height="1.1" class="m3" opacity="0.42"/><ellipse cx="444" cy="522" rx="4.2" ry="10" class="m2"/><ellipse cx="444" cy="522" rx="2.6" ry="6.2" class="m1"/><rect x="442.82" y="517" width="2.35" height="10" class="m3"/></g><g class="part part-joint" style="--tx:calc(var(--k3)*0 + var(--k4)*0);--ty:calc(var(--k3)*-62 + var(--k4)*-46);--ko:var(--k4)"><g clip-path="url(#n-bl5)"><circle cx="404" cy="520" r="24" class="m3"/><circle cx="400.16" cy="516.16" r="22.08" class="m2"/><circle cx="394.88" cy="510.4" r="12" class="m1"/></g><g clip-path="url(#n-bl5)" class="tx-m"><circle cx="394.88" cy="510.4" r="25.92"/><circle cx="394.88" cy="510.4" r="29.04"/><circle cx="394.88" cy="510.4" r="32.16"/><circle cx="394.88" cy="510.4" r="35.28"/><circle cx="394.88" cy="510.4" r="38.4"/></g><path d="M389.12 515.2a15.84 15.84 0 0 1 12 -11.04" class="tx-hi"/></g><g class="part part-arm" style="--tx:calc(var(--k3)*0 + var(--k4)*0 + var(--k5)*-30.06);--ty:calc(var(--k3)*-62 + var(--k4)*-46 + var(--k5)*-37.42);--ko:var(--k5)"><g transform="translate(404 520) rotate(141.22)"><g clip-path="url(#n-rd7)"><rect x="-7.5" y="-8.5" width="2.4" height="253" class="c2"/><rect x="-5.7" y="-8.5" width="3" height="253" class="c1"/><rect x="-3.3" y="-8.5" width="5.7" height="253" class="c2"/><rect x="1.8" y="-8.5" width="6.3" height="253" class="c3"/></g></g><g transform="translate(404 520) rotate(141.22)"><path d="M2.57 10.5V231.5M4.66 10.5V231.5M6.27 10.5V231.5M7.25 10.5V231.5" class="tx-c"/><path d="M-3.15 12V228.5" class="tx-hi"/></g></g><g class="part part-hscrew" style="--tx:calc(var(--k3)*0 + var(--k4)*0 + var(--k5)*-30.06 + var(--k6)*-45.77);--ty:calc(var(--k3)*-62 + var(--k4)*-46 + var(--k5)*-37.42 + var(--k6)*-44.94);--ko:var(--k6)"><rect x="227.19" y="329.52" width="16" height="6.75" class="m1"/><rect x="227.19" y="336.27" width="16" height="8.25" class="m2"/><rect x="228.19" y="329.81" width="14" height="1.1" class="m3" opacity="0.42"/><rect x="228.19" y="331.47" width="14" height="1.1" class="m3" opacity="0.65"/><rect x="228.19" y="333.14" width="14" height="1.1" class="m3" opacity="0.84"/><rect x="228.19" y="334.81" width="14" height="1.1" class="m3" opacity="0.96"/><rect x="228.19" y="336.47" width="14" height="1.1" class="m3" opacity="1"/><rect x="228.19" y="338.14" width="14" height="1.1" class="m3" opacity="0.96"/><rect x="228.19" y="339.81" width="14" height="1.1" class="m3" opacity="0.84"/><rect x="228.19" y="341.47" width="14" height="1.1" class="m3" opacity="0.65"/><rect x="228.19" y="343.14" width="14" height="1.1" class="m3" opacity="0.42"/><ellipse cx="227.19" cy="337.02" rx="3.15" ry="7.5" class="m2"/><ellipse cx="227.19" cy="337.02" rx="1.95" ry="4.65" class="m1"/><rect x="226.31" y="333.27" width="1.76" height="7.5" class="m3"/></g><g class="part part-head" style="--tx:calc(var(--k3)*0 + var(--k4)*0 + var(--k5)*-30.06 + var(--k6)*-32.57);--ty:calc(var(--k3)*-62 + var(--k4)*-46 + var(--k5)*-37.42 + var(--k6)*-40.54);--ko:var(--k6)"><g clip-path="url(#n-bl6)"><circle cx="256.19" cy="336.02" r="16" class="m3"/><circle cx="253.63" cy="333.46" r="14.72" class="m2"/><circle cx="250.11" cy="329.62" r="8" class="m1"/></g><g clip-path="url(#n-bl6)" class="tx-m"><circle cx="250.11" cy="329.62" r="17.28"/><circle cx="250.11" cy="329.62" r="19.36"/><circle cx="250.11" cy="329.62" r="21.44"/><circle cx="250.11" cy="329.62" r="23.52"/><circle cx="250.11" cy="329.62" r="25.6"/></g><path d="M246.27 332.82a10.56 10.56 0 0 1 8 -7.36" class="tx-hi"/></g><g class="part part-shade" style="--tx:calc(var(--k3)*0 + var(--k4)*0 + var(--k5)*-30.06 + var(--k6)*-32.57 + var(--k7)*14.64);--ty:calc(var(--k3)*-62 + var(--k4)*-46 + var(--k5)*-37.42 + var(--k6)*-40.54 + var(--k7)*82.71);--ko:var(--k7)"><g transform="translate(256.19 345.62) rotate(-10.04)"><g clip-path="url(#n-sh8)"><rect x="-64" y="-2" width="15.96" height="122" class="c2"/><rect x="-48.64" y="-2" width="21.08" height="122" class="c1"/><rect x="-28.16" y="-2" width="44.12" height="122" class="c2"/><rect x="15.36" y="-2" width="49.24" height="122" class="c3"/></g><rect x="-15.5" y="-7" width="31" height="9" class="m2"/><rect x="-15.5" y="-7" width="13.02" height="9" class="m1"/><ellipse cx="0" cy="-7" rx="15.5" ry="5.58" class="m1"/><ellipse cx="0" cy="118" rx="64" ry="28.16" class="c3"/><ellipse cx="0" cy="118" rx="59" ry="25.76" class="rim"/></g><g transform="translate(256.19 345.62) rotate(-10.04)"><path d="M2.86 2C2.86 59 14.08 66.08 14.08 117M4.01 2C4.01 59 19.75 66.08 19.75 117M5.13 2C5.13 59 25.26 66.08 25.26 117M6.21 2C6.21 59 30.55 66.08 30.55 117M7.23 2C7.23 59 35.59 66.08 35.59 117M8.19 2C8.19 59 40.32 66.08 40.32 117M9.08 2C9.08 59 44.71 66.08 44.71 117M9.9 2C9.9 59 48.73 66.08 48.73 117M10.63 2C10.63 59 52.33 66.08 52.33 117M11.27 2C11.27 59 55.5 66.08 55.5 117M11.82 2C11.82 59 58.19 66.08 58.19 117M12.27 2C12.27 59 60.39 66.08 60.39 117M12.61 2C12.61 59 62.08 66.08 62.08 117" class="tx-c"/><path d="M-26.88 6C-23.04 59 -49.92 70.8 -51.2 114" class="tx-hi"/><g class="tx-spun"><ellipse cx="0" cy="118" rx="22.46" ry="9.81" opacity="0.63"/><ellipse cx="0" cy="118" rx="25.59" ry="11.17" opacity="0.55"/><ellipse cx="0" cy="118" rx="31.47" ry="13.74" opacity="0.66"/><ellipse cx="0" cy="118" rx="36.11" ry="15.76" opacity="0.47"/><ellipse cx="0" cy="118" rx="40.8" ry="17.81" opacity="0.58"/><ellipse cx="0" cy="118" rx="44.98" ry="19.64" opacity="0.42"/><ellipse cx="0" cy="118" rx="48.31" ry="21.09" opacity="0.53"/><ellipse cx="0" cy="118" rx="53.97" ry="23.56" opacity="0.55"/></g><path d="M-59 118a59 25.76 0 0 1 118 0a59 14.94 0 0 0 -118 0Z" class="rimShade"/><path d="M-59 118a59 25.76 0 0 0 118 0" class="rimEdge"/></g></g><g class="part part-led" style="--tx:calc(var(--k3)*0 + var(--k4)*0 + var(--k5)*-30.06 + var(--k6)*-32.57 + var(--k7)*14.64 + var(--k8)*22.31);--ty:calc(var(--k3)*-62 + var(--k4)*-46 + var(--k5)*-37.42 + var(--k6)*-40.54 + var(--k7)*82.71 + var(--k8)*126.04);--ko:var(--k8)"><g transform="translate(273.62 444.09) rotate(-10.04)"><ellipse cx="0" cy="0" rx="31.5" ry="13.88" class="s2"/><ellipse cx="0" cy="0" rx="27" ry="11.88" class="led"/><ellipse cx="-8.1" cy="-2.97" rx="10.8" ry="4.75" class="ledHi"/><circle cx="-28.5" cy="0" r="1.7" class="m1"/><circle cx="28.5" cy="0" r="1.7" class="m1"/></g><g transform="translate(273.62 444.09) rotate(-10.04)"><path d="M-16 -4.2h.01M-9.6 -4.2h.01M-3.2 -4.2h.01M3.2 -4.2h.01M9.6 -4.2h.01M16 -4.2h.01M-19.2 0h.01M-12.8 0h.01M-6.4 0h.01M0 0h.01M6.4 0h.01M12.8 0h.01M19.2 0h.01M-16 4.2h.01M-9.6 4.2h.01M-3.2 4.2h.01M3.2 4.2h.01M9.6 4.2h.01M16 4.2h.01" class="tx-led"/><ellipse cx="0" cy="0" rx="31.5" ry="13.88" class="tx-seam"/></g></g></svg>
+<div>
+<p class="lost__code">404</p>
+<h1>插頭掉了，這一頁沒亮</h1>
+<p>你找的頁面不在這裡：可能網址抄錯一個字，也可能那一頁已經下架。燈本身沒事，插回去就好。</p>
+<p class="lost__act"><a class="btn btn--lit" href="./">回到一盞</a><a href="./#spec">看數字</a><a href="./#service">寄出與保固</a></p>
+</div>
+</main>
+<footer class="colophon"><div class="colophon__in"><p class="colophon__foot"><span>一盞工作室・高雄市鹽埕區</span><span>© 一盞工作室</span></p></div></footer>
+
+</body>
+</html>

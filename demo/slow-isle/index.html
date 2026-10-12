@@ -1,0 +1,1037 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F27" data-slug="slow-isle">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>慢島旅行社｜臺東三天兩夜，自己放，看哪一天的水太急</title>
+<meta name="description" content="臺東池上、鹿野、都蘭、長濱的三天兩夜慢行。把活動石頭放進三天的溪裡，馬上算出每一天的節奏指數與每人費用概估；公式寫在頁面上，放好複製網址就能報價。">
+
+<meta name="generator" content="套版網站平台 F27">
+<link rel="icon" href="assets/mark.svg">
+<link rel="preload" href="fonts/01-noto-serif-tc.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/02-gloock.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"Noto Serif TC";src:url("fonts/01-noto-serif-tc.woff2") format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Gloock";src:url("fonts/02-gloock.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root{
+  --ground:oklch(0.40 0.085 200);
+  --ground-2:oklch(0.355 0.075 203);
+  --water:oklch(0.315 0.068 206);
+  --pool:oklch(0.35 0.07 204);
+  --night:oklch(0.25 0.05 222);
+  --deep:oklch(0.22 0.045 212);
+  --deep-2:oklch(0.33 0.05 212);
+  --foam:oklch(0.965 0.016 195);
+  --mist:oklch(0.86 0.045 195);
+  --line:oklch(0.56 0.07 198);
+  --contour:oklch(0.47 0.07 202);
+  --apricot:oklch(0.83 0.12 62);
+  --sand:oklch(0.86 0.05 78);
+  --sand-2:oklch(0.77 0.055 74);
+  --sand-3:oklch(0.70 0.055 72);
+  --ink:oklch(0.25 0.05 212);
+  --ink-2:oklch(0.36 0.06 208);
+  --stone:oklch(0.87 0.03 190);
+  --rice:oklch(0.915 0.07 125);
+  --tea:oklch(0.88 0.065 70);
+  --sea:oklch(0.93 0.035 220);
+  --terrace:oklch(0.90 0.05 165);
+  --focus-ring:3px solid var(--apricot);
+  --focus-offset:2px;
+  --selection-bg:var(--apricot);
+  --selection-fg:var(--deep);
+  --f-zh:"Noto Serif TC",serif;
+  --f-num:"Gloock","Noto Serif TC",serif;
+  --gut:clamp(16px,2.8vw,40px);
+  --hp:20px;
+  color-scheme:light;
+}
+html{background:var(--ground)}
+body{background:var(--ground);color:var(--foam);font-family:var(--f-zh);font-size:1.0625rem;line-height:1.85;font-weight:400}
+h1,h2,h3{margin:0;color:var(--foam)}
+h2,h3{font-weight:600}
+a{color:inherit;text-underline-offset:.24em;text-decoration-thickness:1.5px}
+p{margin:0}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums lining-nums;font-weight:400}
+.skip{background:var(--deep);color:var(--foam)}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+button{font-family:inherit}
+section:focus,main:focus,.river:focus{outline:none}
+
+/* ===== 頂列 ===== */
+.top{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px 36px;padding:12px var(--gut)}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--foam)}
+.brand svg{width:40px;height:26px;flex:none}
+.brand b{font-size:1.3rem;font-weight:700;letter-spacing:.06em;line-height:1}
+.brand span{font-size:.875rem;color:var(--mist);letter-spacing:.04em;white-space:nowrap}
+.nav{display:flex;flex-wrap:wrap;gap:4px 24px}
+.nav a{font-size:.9375rem;font-weight:600;text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-bottom-color:var(--foam)}
+.tel{font-size:1.125rem;text-decoration:none;white-space:nowrap;letter-spacing:.02em}
+.tel:hover{text-decoration:underline}
+
+/* ===== 首屏：一句隨筆＋一條溪＋沙灘 ===== */
+.planner{padding:18px var(--gut) 0}
+.h-l h1{font-size:clamp(1.75rem,3.3vw,2.9rem);font-weight:500;line-height:1.4;letter-spacing:.02em;max-width:34em;text-wrap:balance}
+.h-l h1 em{font-style:normal;text-decoration:underline wavy var(--apricot) 1.5px;text-underline-offset:.32em;text-decoration-skip-ink:none}
+.nojs{margin-top:10px;font-size:.9375rem;color:var(--foam);border-top:2px dashed #ffb572;padding-top:8px;max-width:46em}
+html.js .nojs{display:none}
+
+/* --- 溪（手機／平板：直向） --- */
+.river{position:relative;display:grid;container-type:inline-size;grid-template-columns:62px minmax(0,1fr) 96px;grid-template-rows:auto 52px calc(17 * var(--hp)) 40px calc(17 * var(--hp)) 40px calc(17 * var(--hp)) auto auto;margin-top:16px}
+.load{grid-row:1;grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:6px}
+.load-l{grid-column:1/-1;font-size:.875rem;font-weight:600;color:var(--mist)}
+.ld{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:7px;min-height:44px;padding:3px 10px 3px 9px;background:transparent;color:var(--foam);border:2px solid var(--mist);border-radius:22px;font-size:.9375rem;font-weight:600;line-height:1.3;text-align:left}
+.ld:hover{background:var(--ground-2)}
+.ld[aria-pressed="true"]{background:var(--foam);color:var(--deep);border-color:var(--foam)}
+.ld-w{width:34px;height:14px;overflow:visible}
+.ld-w path{fill:none;stroke:currentColor;stroke-width:1.6;vector-effect:non-scaling-stroke}
+.ld-x{grid-template-columns:minmax(0,1fr);border-style:dashed;color:var(--mist)}
+.stn{display:grid;justify-items:center;gap:2px;font-size:.8125rem;font-weight:600;line-height:1.3;color:var(--mist);white-space:nowrap}
+.stn i{display:block;width:16px;height:16px;border:3px solid var(--foam);border-radius:50%;background:var(--ground)}
+.stn-a{grid-row:2;grid-column:2;align-self:end;justify-self:center;grid-auto-flow:row;padding-bottom:4px}
+.stn-l{display:none}
+.cap{display:none}
+.rows{grid-column:2;grid-row:3/8;display:grid;grid-template-rows:subgrid;grid-template-columns:minmax(0,1fr)}
+.run{position:relative;grid-row:auto}
+.run0{grid-row:1}.run1{grid-row:3}.run2{grid-row:5}
+.wv{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.wv-h{display:none}
+.w-fill{fill:var(--water)}
+.w-top{fill:none;stroke:var(--foam);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.w-bot{fill:none;stroke:var(--line);stroke-width:1.5}
+.w-c{fill:none;stroke:var(--contour);stroke-width:1.2;stroke-dasharray:2 6;stroke-linecap:round}
+.w-c2{stroke-dasharray:1 9}
+.bend{position:relative}
+.bend0{grid-row:4;grid-column:2}.bend1{grid-row:6;grid-column:2}
+.bd-s{display:none}
+.bend::before{content:"";position:absolute;inset:-2px 22%;background:var(--night);border-radius:46% 54% 50% 50% / 30% 30% 70% 70%}
+.zc{position:absolute;left:50%;top:50%;translate:-50% -50%;display:flex;align-items:center;gap:6px;font-size:.8125rem;font-weight:600;color:var(--mist);white-space:nowrap}
+.zc::before{content:"";width:10px;height:10px;border-radius:50%;box-shadow:-3px 0 0 0 var(--mist);translate:3px 0}
+.zs{display:none}
+.zc[data-z="0"] .zs0,.zc[data-z="1"] .zs1,.zc[data-z="2"] .zs2,.zc[data-z="3"] .zs3,.zc[data-z="4"] .zs4{display:inline}
+.dl{grid-column:3;display:grid;align-content:start;justify-items:start;gap:0;padding:4px 0 0 12px;line-height:1.2}
+.dl0{grid-row:3}.dl1{grid-row:5}.dl2{grid-row:7}
+.dl-n{font-size:.875rem;font-weight:700}
+.dl-i{font-size:2.6rem;line-height:1;margin:4px 0 6px;letter-spacing:-.01em;white-space:nowrap}
+.dl[data-lv="2"] .dl-i{color:var(--apricot)}
+.lv{display:none;padding:0 8px;border:1.5px solid currentColor;border-radius:11px;font-size:.75rem;font-weight:700;line-height:1.55}
+.dl[data-lv="0"] .lv0{display:inline-block;color:var(--mist)}
+.dl[data-lv="1"] .lv1{display:inline-block;color:var(--foam)}
+.dl[data-lv="2"] .lv2{display:inline-block;color:var(--deep);background:var(--apricot);border-color:var(--apricot)}
+.dl-eq{margin-top:8px;font-size:.75rem;line-height:1.55;color:var(--mist)}
+.dl-eq b{font-size:.875rem;color:var(--foam)}
+.end{grid-row:8;grid-column:2;display:grid;justify-items:center;gap:6px;padding-bottom:8px}
+.tail{display:block;width:44px;height:calc(var(--b) * var(--hp));min-height:6px;background:var(--water) url(assets/current-v.svg) repeat-y center top;border-radius:0 0 22px 22px}
+.bk{padding:0 8px;background:var(--deep);color:var(--foam);font-size:.8125rem;font-weight:700;line-height:22px;border-radius:11px}
+.bk b{font-weight:400}
+.fx{grid-row:9;grid-column:1/-1;display:grid;gap:4px;margin-top:10px;max-width:48em}
+.fx-f{font-size:1.0625rem;font-weight:700;letter-spacing:.02em}
+.fx-n{font-size:.875rem;line-height:1.8;color:var(--mist)}
+
+/* 時段（水裡的一段） */
+.cell{position:absolute;left:18px;right:28px;top:calc(var(--x0) * var(--hp));height:calc(var(--len) * var(--hp));cursor:pointer;border-radius:4px}
+.cell::after{content:"";position:absolute;left:-10px;top:0;width:8px;height:2px;background:var(--line)}
+.cell:focus-visible{outline:var(--focus-ring);outline-offset:1px;z-index:3}
+.sl{position:absolute;right:calc(100% + 24px);top:0;display:grid;justify-items:end;width:56px;font-size:.8125rem;line-height:1.25;color:var(--mist);white-space:nowrap}
+.sl b{font-weight:700;color:var(--foam)}
+.sl .num{font-size:.75rem}
+.run1 .sl .num,.run2 .sl .num{display:none}
+.cell:not(.has)::before{content:"";position:absolute;inset:3px 4px;border:1.5px dashed var(--line);border-radius:40% 46% 42% 48% / 30% 34% 30% 36%;background:var(--pool)}
+.trv{position:absolute;left:0;right:0;top:0;height:calc(var(--t) / var(--len) * 100%);display:flex;align-items:center;justify-content:center;overflow:hidden;background:url(assets/current-v.svg) repeat-y center top;transition:height .22s cubic-bezier(.3,.7,.2,1)}
+.cell:not(.has) .trv{display:none}
+.trv-t{padding:0 6px;background:var(--deep);color:var(--foam);font-size:.6875rem;font-weight:700;line-height:15px;white-space:nowrap;border-radius:8px}
+.trv-t b{font-weight:400}
+.cell>.chip{position:absolute;left:0;right:0;top:calc(var(--t) / var(--len) * 100%);width:auto;height:calc(min(var(--h),var(--len) - var(--t)) / var(--len) * 100%);rotate:0deg;transition:top .22s cubic-bezier(.3,.7,.2,1),height .22s cubic-bezier(.3,.7,.2,1)}
+.cell>.chip::after{content:"";position:absolute;inset:-5px -9px;border:1px solid oklch(0.965 0.016 195 / .28);border-radius:var(--pb);pointer-events:none}
+.cell>.chip.rest::after{border-style:dashed}
+/* 觸控目標：1 小時的石頭只有 20px 高（長度＝時間，不能加高）；可點範圍用隱形的 ::before 往上下長，但不超出自己的時段（超出最多 2px）。點石頭與點時段在 JS 裡是同一件事 */
+.cell>.chip::before{content:"";position:absolute;left:-9px;right:-9px;top:calc(-1 * min(13px, var(--t) * var(--hp) + 2px));bottom:calc(-1 * min(13px, (var(--len) - var(--t) - min(var(--h), var(--len) - var(--t))) * var(--hp) + 2px))}
+.ovf{display:none;position:absolute;right:-6px;bottom:-9px;z-index:2;padding:0 7px;background:var(--apricot);color:var(--deep);font-size:.6875rem;font-weight:700;line-height:17px;white-space:nowrap;border-radius:9px}
+.cell.over .ovf{display:block}
+.river.placing .cell{cursor:copy}
+.river.placing .cell.ok::before{border-color:var(--mist);border-style:solid}
+.river.placing .cell.ok:not(.has){outline:2px dashed var(--mist);outline-offset:2px}
+.river.placing .cell.no{opacity:.5}
+.cell.hov{outline:3px solid var(--apricot) !important;outline-offset:2px}
+.cell.fly{z-index:4}
+
+/* 石頭 */
+.chip{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto;align-content:center;column-gap:6px;container-type:size;margin:0;padding:3px 12px 3px 10px;border:0;border-radius:var(--pb);background:radial-gradient(ellipse 70% 60% at 28% 22%,oklch(1 0 0 / .38),transparent 70%),url(assets/speckle.svg),var(--zc,var(--stone));color:var(--deep);text-align:left;cursor:grab;touch-action:manipulation;user-select:none;-webkit-user-select:none;box-shadow:inset 0 -2px 0 oklch(0.22 0.045 212 / .14)}
+.chip .gl{grid-row:1/span 2;align-self:center;width:17px;height:17px}
+.k-n{font-size:.875rem;font-weight:700;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.k-m{font-size:.75rem;font-weight:500;line-height:1.35;color:var(--deep-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.k-m .num{font-size:.8125rem}
+.z1{--zc:var(--rice)}.z2{--zc:var(--tea)}.z3{--zc:var(--sea)}.z4{--zc:var(--terrace)}
+.chip.rest{background:var(--water);background-image:none;color:var(--foam);box-shadow:inset 0 0 0 2px var(--mist)}
+.chip.rest .k-m{color:var(--mist)}
+.cell>.chip{padding-inline:8px}
+@container (max-width:92px){.chip .gl{display:none}.chip .k-n{white-space:normal;font-size:.8125rem;line-height:1.2;overflow:visible}.chip .k-m{display:none}}
+@container (max-height:34px){.chip .k-m{display:none}.chip .gl{grid-row:1}}
+.chip:hover{filter:brightness(1.04)}
+.chip[aria-pressed="true"]{outline:3px solid var(--apricot);outline-offset:2px}
+.chip.lifted{opacity:.35}
+/* 輔助動效 2：放下時從游標位置滑進水裡，順便把沙灘上的斜角扶正 */
+.chip.land{animation:f27-land .24s cubic-bezier(.3,.7,.2,1)}
+@keyframes f27-land{from{translate:var(--fx,0) var(--fy,0);rotate:var(--rot,-2deg)}to{translate:0 0;rotate:0deg}}
+.drag-ghost{position:fixed;z-index:60;left:0;top:0;pointer-events:none;margin:0;outline:3px solid var(--apricot);rotate:var(--rot,-2deg)}
+html.dragging,html.dragging *{cursor:grabbing !important;user-select:none}
+
+/* --- 沙灘（籌碼盤） --- */
+.beach{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin:26px calc(var(--gut) * -1) 0;padding:44px var(--gut) 34px;background:var(--sand) url(assets/sand.svg);color:var(--ink)}
+.shore{position:absolute;left:0;top:-1px;width:100%;height:40px;pointer-events:none}
+.sh-f{fill:var(--ground)}
+.sh-e{fill:none;stroke:var(--foam);stroke-width:2;stroke-opacity:.7}
+.bh{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 18px;margin-bottom:14px}
+.bh h2{font-size:1.25rem;line-height:1.3;color:var(--ink)}
+.hint{font-size:.9375rem;color:var(--ink-2)}
+.tray{display:flex;flex-wrap:wrap;gap:16px 30px;align-items:flex-start}
+.tg{display:flex;align-items:flex-start;gap:10px}
+.tgl{flex:none;display:grid;justify-items:start;width:46px;padding-top:4px;font-size:.9375rem;font-weight:700;line-height:1.25;color:var(--ink)}
+.tgl .gl{width:20px;height:20px;color:var(--ink-2)}
+.tgl small{font-size:.75rem;font-weight:500;color:var(--ink-2)}
+.tg-c{display:flex;flex-wrap:wrap;gap:10px 8px}
+.ts{position:relative;display:block;flex:none;width:calc(70px + var(--h) * 18px);height:50px}
+.ts>.chip::after{content:"";position:absolute;inset:-2.5px 0} /* 觸控目標：沙灘上的石頭手機版只有 40–43px 高，可點範圍上下各多 2.5px，畫面不變 */
+.ts>.chip{width:100%;height:100%;rotate:var(--rot);box-shadow:inset 0 -2px 0 oklch(0.22 0.045 212 / .14),0 0 0 1.5px var(--ink)}
+.ts>.chip.rest{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink-2)}
+.ts>.chip.rest .k-m{color:var(--ink-2)}
+.wet{display:none;align-items:center;width:100%;height:100%;padding:0 12px;border-radius:var(--pb);rotate:var(--rot);background:var(--sand-2);box-shadow:inset 0 2px 0 var(--sand-3);font-size:.8125rem;font-weight:600;line-height:1.25;color:var(--ink);cursor:pointer}
+.ts:not(:has(.chip)) .wet{display:flex}
+.voice{min-height:120px;padding-top:6px;color:var(--ink)}
+.vc-k{font-size:.8125rem;font-weight:700;color:var(--ink-2);letter-spacing:.04em}
+.vc-n{margin-top:2px;font-size:1.2rem;font-weight:700;line-height:1.4}
+.vc-b{margin-top:6px;font-size:.9375rem;line-height:1.85}
+.rn,.rb{display:none}
+.voice[data-r="draft"] .rn-draft,.voice[data-r="draft"] .rb-draft{display:inline}
+.voice[data-r="two"] .rn-two,.voice[data-r="two"] .rb-two{display:inline}
+.voice[data-r="coast"] .rn-coast,.voice[data-r="coast"] .rb-coast{display:inline}
+.voice[data-r="all"] .rn-all,.voice[data-r="all"] .rb-all{display:inline}
+.voice[data-r="custom"] .rn-custom,.voice[data-r="custom"] .rb-custom{display:inline}
+.voice[data-r="empty"] .rn-empty,.voice[data-r="empty"] .rb-empty{display:inline}
+.nt{display:none}
+.nt.on{display:block}
+.voice.has-c .vc-r{display:none}
+.nt-n{display:flex;align-items:center;gap:8px;font-size:1.2rem;font-weight:700;line-height:1.4}
+.nt-n .gl{width:22px;height:22px;color:var(--ink-2)}
+.nt-m{margin-top:2px;font-size:.8125rem;font-weight:600;color:var(--ink-2)}
+.nt-b{margin-top:6px;font-size:.9375rem;line-height:1.85}
+.how{margin:0 calc(var(--gut) * -1);padding:10px var(--gut) 18px;background:var(--sand) url(assets/sand.svg);color:var(--ink)}
+html:not(.js) .how{display:none}
+.how kbd{font:inherit;font-size:.875em;font-weight:700;padding:0 .4em;margin:0 1px;border:1px solid currentColor;border-bottom-width:2px;border-radius:4px;white-space:nowrap}
+.how div{display:grid;gap:6px;max-width:38em;padding-bottom:6px;font-size:.9375rem;line-height:1.8}
+
+/* ===== 一疊錢 ===== */
+.cost{padding:clamp(56px,6vw,92px) var(--gut) clamp(48px,5vw,76px);background:var(--ground)}
+.cost-h{display:grid;gap:10px;max-width:40em}
+.cost-h h2{font-size:clamp(1.75rem,3vw,2.6rem);line-height:1.3}
+.cost-lead{font-size:.9375rem;color:var(--mist)}
+.cairn-w{position:relative;display:grid;grid-template-columns:minmax(0,1fr);margin-top:30px}
+.cairn{display:grid;justify-items:center;margin:0;padding:0 0 4px;list-style:none}
+.cs{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:10px;width:calc(150px + var(--w) * (100% - 150px));max-width:340px;min-height:58px;margin-top:-5px;padding:6px 18px;border-radius:var(--pb);rotate:var(--rot);translate:var(--dx) 0;background:var(--stone) url(assets/speckle.svg);color:var(--deep);box-shadow:inset 0 -2px 0 oklch(0.22 0.045 212 / .16);transition:width .3s cubic-bezier(.3,.7,.2,1)}
+.cs-plan{background-color:var(--mist)}
+.cs-car{background-color:var(--sea)}
+.cs-act{background-color:var(--rice)}
+.cs-room{background-color:var(--tea)}
+.cs-k{font-size:.875rem;font-weight:700}
+.cs b{font-size:1.45rem;line-height:1}
+.wl{display:block;width:100%;height:20px;margin-top:-6px}
+.wl path{fill:none;stroke:var(--foam);stroke-width:2;vector-effect:non-scaling-stroke}
+.cn{display:grid;align-content:start;gap:2px;margin-top:18px}
+.cn-k{font-size:1.0625rem;font-weight:700}
+.cn-v{font-size:.9375rem;color:var(--foam)}
+.cn-v b{font-size:1.15rem}
+.cn-n{font-size:.875rem;line-height:1.8;color:var(--mist)}
+.sum{display:grid;justify-items:start;gap:6px;margin-top:30px}
+.sum-k{font-size:1rem;font-weight:700;color:var(--mist)}
+.sum-v{display:flex;align-items:baseline;gap:10px;line-height:.9}
+.sum-v .cur{font-size:1.5rem;color:var(--mist)}
+.sum-v b{font-size:clamp(4rem,9vw,7.5rem);color:var(--apricot);letter-spacing:-.01em}
+.sum-a{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin-top:14px}
+.sum-n{max-width:30em;font-size:.875rem;line-height:1.8;color:var(--mist)}
+.ppl{display:flex;align-items:center;gap:8px}
+.ppl-l{font-size:.875rem;font-weight:600;color:var(--mist)}
+.pb{width:44px;height:44px;display:grid;place-items:center;background:transparent;color:var(--foam);border:2px solid var(--mist);border-radius:50%;font-size:1.25rem;line-height:1}
+.pb:hover{background:var(--deep-2)}
+.pb:disabled{opacity:.4;cursor:not-allowed}
+.ppl-n{min-width:1.4em;text-align:center;font-size:1.9rem;line-height:1}
+.cp{min-height:44px;padding:4px 18px;background:var(--foam);color:var(--deep);border:0;border-radius:22px;font-size:.9375rem;font-weight:700}
+.cp:hover{background:var(--mist)}
+.cp-b{display:none}
+.cp.ok .cp-a{display:none}
+.cp.ok .cp-b{display:inline}
+.cx{display:grid;gap:14px;margin:40px 0 0;padding-top:20px;border-top:2px solid var(--line)}
+.cx div{display:grid;gap:2px;max-width:36em}
+.cx dt{font-size:1.0625rem;font-weight:700}
+.cx dd{margin:0;font-size:.9375rem;color:var(--mist)}
+
+/* ===== 段落共用 ===== */
+.sec{padding:clamp(56px,7vw,104px) var(--gut)}
+.sec h2{font-size:clamp(1.75rem,3vw,2.6rem);line-height:1.3;letter-spacing:.01em}
+.sec-lead{margin-top:12px;font-size:1rem;color:var(--mist);max-width:34em}
+
+/* ===== 三條溪：隨筆沿著河岸繞排 ===== */
+.rts{background:var(--water)}
+.rts-top{max-width:36em}
+.rt{display:flow-root;margin-top:52px}
+.mq{position:relative;float:left;width:104px;height:420px;margin:6px 14px 0 0;shape-margin:4px}
+.rt-r .mq{float:right;margin:6px 0 0 14px}
+.mq svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.mq-f{fill:var(--ground)}
+.mq-c{fill:none;stroke:var(--foam);stroke-width:1.6;stroke-dasharray:1 5;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.mq-s{position:absolute;width:var(--w);height:calc(var(--w) * .68);translate:-50% -50%;border-radius:var(--pb);background:var(--zc,var(--stone))}
+.mq-s.rest{background:transparent;box-shadow:inset 0 0 0 2px var(--mist)}
+.mq-d{display:none}
+.rt-h{font-size:clamp(1.5rem,2.4vw,2.1rem);font-weight:600;line-height:1.3}
+.rt-days{display:flex;flex-wrap:wrap;gap:2px 14px;margin:6px 0 0;padding:0;list-style:none;font-size:.8125rem;font-weight:600;color:var(--mist)}
+.rt-days b{font-size:1.1rem;color:var(--foam)}
+.rt-days .lvl2,.rt-days .lvl2 b{color:var(--apricot)}
+.es{margin-top:14px;font-size:1rem;line-height:1.95}
+.rt-f{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:16px}
+.es-c{font-size:.875rem;color:var(--mist)}
+.es-c b{font-size:1.15rem;color:var(--foam)}
+.rt-go{min-height:44px;padding:4px 18px;background:transparent;color:var(--foam);border:2px solid var(--foam);border-radius:22px;font-size:.9375rem;font-weight:700}
+.rt-go:hover{background:var(--foam);color:var(--deep)}
+
+/* ===== 契約：六顆踏石 ===== */
+.ct{background:var(--night)}
+.ct-top{display:grid;gap:12px;max-width:40em}
+.ct-note{font-size:.9375rem;line-height:1.8;color:var(--mist)}
+.steps-w{position:relative}
+.path{position:absolute;inset:44px 0 20px;width:100%;height:calc(100% - 64px);overflow:visible;pointer-events:none}
+.path path{fill:none;stroke:var(--mist);stroke-opacity:.55;stroke-width:2;stroke-dasharray:1 9;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.path-d{display:none}
+.steps{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:40px;margin:52px 0 16px;padding:0;list-style:none}
+.stp{position:relative;isolation:isolate;display:grid;align-content:center;gap:4px;width:84%;margin-left:6%;padding:14px 10px 16px;color:var(--deep)}
+.stp::before{content:"";position:absolute;z-index:-1;inset:-16px -22px;border-radius:var(--pm);rotate:var(--r,0deg);background:var(--stone) url(assets/speckle.svg);box-shadow:inset 0 -2px 0 oklch(0.22 0.045 212 / .14)}
+.stp:nth-child(even){margin-left:12%}
+.tone1::before{background-color:oklch(0.84 0.035 168)}
+.tone2::before{background-color:oklch(0.89 0.025 210)}
+.stp-k{font-size:1.2rem;line-height:1.35;color:var(--deep)}
+.stp-v{font-size:.9375rem;line-height:1.75;color:var(--deep)}
+
+/* ===== 出發前：一段刻意的空白 ===== */
+.bf{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+.bf-gap{position:relative;display:grid;place-items:center;height:200px}
+.gap-s{display:block;width:180px;height:64px;border-radius:var(--pb);border:2px dashed var(--mist)}
+.gap-k{position:absolute;display:grid;justify-items:center;font-size:.8125rem;font-weight:600;line-height:1.4;color:var(--mist)}
+.gap-k b{font-size:1rem;color:var(--foam)}
+.coda{font-size:1.15rem;line-height:2;font-weight:500;color:var(--foam);max-width:30em}
+.bf-l{display:grid;gap:12px;margin-top:10px}
+.ri{font-size:.9375rem;line-height:1.8;color:var(--mist);max-inline-size:38em}
+.ri b{margin-right:.7em;font-size:1.05rem;font-weight:700;color:var(--foam)}
+
+/* ===== 頁尾 ===== */
+.foot{display:grid;grid-template-columns:auto 1fr;gap:14px 48px;align-items:end;padding:32px var(--gut) 34px;background:var(--deep)}
+.foot .brand b{font-size:1.6rem}
+.foot address{font-style:normal;display:grid;gap:2px;font-size:.9375rem;color:var(--mist)}
+.foot address .num{font-size:1.25rem;color:var(--foam);text-decoration:none}
+.foot-n{grid-column:1/-1;font-size:.8125rem;color:var(--mist)}
+
+/* ===== 404 ===== */
+.e404{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(28px,4vw,72px);align-items:center;padding:clamp(40px,6vw,88px) var(--gut)}
+.e404 h1{font-size:clamp(1.8rem,3.6vw,3rem);font-weight:500;line-height:1.4}
+.e404 .lead{margin-top:16px;font-size:1.0625rem;color:var(--mist);max-width:34em}
+.e404-l{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 0;padding:0;list-style:none}
+.e404-l a{display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border:2px solid var(--foam);border-radius:23px;font-weight:700;text-decoration:none}
+.e404-l li:first-child a{background:var(--foam);color:var(--deep)}
+.e404-f{margin:0}
+.mini{position:relative;height:120px}
+.mini svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.mini-hole{position:absolute;left:46%;top:30%;width:28%;height:44%;border-radius:var(--pb);border:2px dashed var(--apricot)}
+.mini-s{position:absolute;left:12%;top:32%;width:20%;height:42%;border-radius:var(--pb);background:var(--sea) url(assets/speckle.svg)}
+.e404-f figcaption{margin-top:12px;font-size:.9375rem;color:var(--mist)}
+
+/* ===== 平板以上 ===== */
+@media (min-width:760px){
+  :root{--hp:26px}
+  .river{grid-template-columns:minmax(0,1fr) minmax(0,420px) minmax(0,1fr);grid-template-rows:auto 58px calc(17 * var(--hp)) 50px calc(17 * var(--hp)) 50px calc(17 * var(--hp)) auto auto}
+  .river .dl{justify-self:start}
+  .load{grid-template-columns:repeat(4,auto);justify-content:start;align-items:center}
+  .load-l{grid-column:auto}
+  .ld-w{width:44px;height:16px}
+  .beach{grid-template-columns:minmax(0,1fr) minmax(260px,340px);gap:0 44px}
+  .tray-w{grid-column:1}
+  .cost{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) minmax(0,1fr);column-gap:28px}
+  .cairn-w{grid-column:1/-1;grid-template-columns:subgrid;grid-template-rows:repeat(4,62px) 30px;margin-top:34px}
+  .cairn{grid-column:2;grid-row:1/5;grid-template-rows:subgrid;align-self:stretch}
+  .cs{align-self:center;margin-top:0}
+  .cn{position:relative;margin-top:0;align-self:start}
+  .cn-plan{grid-column:1;grid-row:1/3;text-align:right;justify-items:end}
+  .cn-car{grid-column:3;grid-row:2/4}
+  .cn-act{grid-column:1;grid-row:3/5;text-align:right;justify-items:end}
+  .cn-room{grid-column:3;grid-row:4/6}
+  .cn-k::after{content:"";display:inline-block;vertical-align:middle;width:44px;height:0;margin:0 0 0 12px;border-top:1.5px solid var(--line)}
+  .cn-car .cn-k::before,.cn-room .cn-k::before{content:"";display:inline-block;vertical-align:middle;width:44px;height:0;margin:0 12px 0 0;border-top:1.5px solid var(--line)}
+  .cn-car .cn-k::after,.cn-room .cn-k::after{display:none}
+  .wl{grid-column:2;grid-row:5;align-self:start;margin-top:2px}
+  .cost-h{grid-column:1/3;grid-row:1;align-self:end}
+  .sum{grid-column:3;grid-row:1;justify-items:end;text-align:right;margin:0}
+  .sum-a{justify-content:end}
+  .sum-v b{font-size:clamp(4rem,7vw,6.4rem)}
+  .cairn-w{grid-row:2}
+  .cx{grid-column:1/-1;grid-row:3;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(28px,4vw,72px);margin:34px 0 0;padding-top:18px}
+  .mq{width:200px;height:440px;margin-right:30px}
+  .rt-r .mq{margin-left:30px}
+  .rts{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2vw,32px);align-items:start}
+  .rts-top{grid-column:1/8;grid-row:1}
+  .rt{margin-top:44px}
+  .rt0{grid-column:1/7;grid-row:2}
+  .rt1{grid-column:7/13;grid-row:3;margin-top:-250px}
+  .rt2{grid-column:1/7;grid-row:4;margin-top:-200px}
+  .es{font-size:1.125rem;line-height:1.95}
+  .steps{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) minmax(0,1.1fr);grid-auto-flow:column;grid-template-rows:auto auto;gap:30px clamp(28px,3vw,52px)}
+  .stp,.stp:nth-child(even){width:auto;margin:0;padding:18px 8px 20px}
+  .stp::before{inset:-14px -24px}
+  .path-d{display:block}.path-m{display:none}
+  .steps{padding-inline:20px}
+  .stp:nth-child(even){margin:0 0 0 22%}
+  .stp0{margin-right:4%}.stp2{margin-right:14%}.stp4{margin-right:2%}
+  .stp3{margin-left:30%}.stp5{margin-left:12%}
+  .bf{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2vw,32px);row-gap:0}
+  .bf h2{grid-column:1/6;grid-row:1;align-self:center}
+  .bf-gap{grid-column:7/11;grid-row:1;height:200px}
+  .coda{margin-top:150px}
+  .gap-s{width:220px;height:78px}
+  .coda{grid-column:6/13;grid-row:3;font-size:clamp(1.2rem,1.6vw,1.45rem)}
+  .bf-l{grid-column:1/13;grid-row:4;display:block;columns:2 22em;column-gap:56px;margin-top:56px}
+  .ri{break-inside:avoid;margin-bottom:12px}
+  .e404{grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:calc(100svh - 170px)}
+}
+
+/* ===== 桌機：三天排成來回的蛇形 ===== */
+@media (min-width:1180px){
+  .river{grid-template-columns:140px minmax(0,1fr) 140px;grid-template-rows:72px 108px 76px 108px 76px 108px auto;margin-top:6px;--hw:calc((100cqw - 280px) / 17)}
+  .load{grid-row:1;grid-column:2/4;justify-self:end;align-self:center;display:flex;flex-wrap:nowrap;gap:8px;margin:0}
+  .load-l{margin-right:4px}
+  .ld{padding:4px 14px 4px 10px}
+  .river .dl{padding:0;display:flex;flex-wrap:nowrap;align-items:baseline;gap:4px 12px;align-self:center}
+  .river .dl0{grid-row:1;grid-column:2;justify-self:start;align-self:end;padding-bottom:4px}
+  .river .dl1{grid-row:3;grid-column:2;justify-self:end}
+  .river .dl2{grid-row:5;grid-column:2;justify-self:start}
+  .dl-i{font-size:3.6rem;margin:0;line-height:.9}
+  .dl-n{font-size:.9375rem}
+  .dl-eq{margin:0}
+  .dl-lv{align-self:center}
+  .stn-a{grid-row:2;grid-column:1;align-self:center;justify-self:end;grid-auto-flow:column;align-items:center;gap:6px;margin-right:54px;padding:0;font-size:.75rem;translate:0 -1px}
+  .stn-a span{order:-1}
+  .cap{display:block;grid-row:2;grid-column:1;justify-self:end;width:48px;height:108px}
+  .cap path{fill:var(--water)}
+  .rows{grid-row:2/7;grid-column:2}
+  .wv-h{display:block}.wv-v{display:none}
+  .bend::before{display:none}
+  .bd-s{display:block;width:140px;height:292px;overflow:visible}
+  .bd-f{fill:var(--night)}
+  .bd-e{fill:none;stroke:var(--foam);stroke-opacity:.6;stroke-width:2.4;stroke-dasharray:1 7;stroke-linecap:round}
+  .bend0{grid-row:2/5;grid-column:3}
+  .bend1{grid-row:4/7;grid-column:1}
+  .zc{left:92px;top:147px;writing-mode:vertical-rl;flex-direction:column;gap:6px;font-size:.9375rem;letter-spacing:.12em}
+  .bend1 .zc{left:48px}
+  .end{grid-row:6;grid-column:3;display:flex;align-items:center;justify-items:start;gap:0;padding:0;position:relative}
+  .tail{width:calc(var(--b) * var(--hw));height:46px;min-height:0;background:var(--water) url(assets/current.svg) repeat-x left center;border-radius:0 24px 24px 0}
+  .end .bk{position:absolute;left:0;top:-4px}
+  .stn-b{margin-left:6px}
+  .fx{grid-row:7;grid-column:2/4;grid-template-columns:auto minmax(0,1fr);align-items:baseline;column-gap:24px;max-width:none;margin-top:14px}
+  .fx-n{max-width:52em}
+  .cell{left:calc(var(--x0) / 17 * 100%);right:auto;width:calc(var(--len) / 17 * 100%);top:22px;height:78px}
+  .rev .cell{left:calc((17 - var(--x0) - var(--len)) / 17 * 100%)}
+  .cell::after{left:0;top:3px;width:2px;height:12px}
+  .rev .cell::after{left:auto;right:0}
+  .sl{right:auto;left:8px;top:0;display:flex;gap:6px;align-items:baseline;width:auto;justify-items:start}
+  .rev .sl{left:auto;right:8px}
+  .cell:not(.has)::before{inset:20px 5px 2px}
+  .trv{left:0;right:auto;top:20px;bottom:2px;height:auto;width:calc(var(--t) / var(--len) * 100%);background:url(assets/current.svg) repeat-x left center}
+  .rev .trv{left:auto;right:0}
+  .trv-t{position:absolute;bottom:2px;left:4px}
+  .rev .trv-t{left:auto;right:4px}
+  .cell>.chip{top:20px;bottom:2px;height:auto;left:calc(var(--t) / var(--len) * 100%);right:auto;width:calc(min(var(--h),var(--len) - var(--t)) / var(--len) * 100%);transition:left .22s cubic-bezier(.3,.7,.2,1),right .22s cubic-bezier(.3,.7,.2,1),width .22s cubic-bezier(.3,.7,.2,1)}
+  .rev .cell>.chip{left:auto;right:calc(var(--t) / var(--len) * 100%)}
+  .cell>.chip::before{display:none}
+  .ovf{right:4px;top:-1px;bottom:auto}
+  .rev .ovf{right:auto;left:4px}
+  .beach{margin-top:30px;grid-template-columns:fit-content(66%) minmax(300px,1fr);column-gap:clamp(40px,5vw,80px);padding-top:50px}
+  .voice{max-width:30em;padding-top:42px}
+  .ts{width:calc(84px + var(--h) * 22px);height:54px}
+  .tray{gap:18px 34px}
+}
+@media (max-width:759px){
+  body{font-size:1rem}
+  .top{grid-template-columns:minmax(0,1fr) auto;padding-block:10px}
+  .brand span{display:none}
+  .nav{grid-column:1/-1;grid-row:2;flex-wrap:nowrap;overflow-x:auto;gap:18px;scrollbar-width:none}
+  .nav a{flex:none}
+  .h-l h1{font-size:1.7rem;line-height:1.5}
+  .ld{font-size:.875rem;padding:3px 8px}
+  .ld-w{width:26px}
+  .fx-f{font-size:1rem}
+  .fx-n{font-size:.8125rem;line-height:1.7}
+  .dl-i{font-size:2.3rem}
+  .river{grid-template-rows:auto 40px calc(17 * var(--hp)) 34px calc(17 * var(--hp)) 34px calc(17 * var(--hp)) auto auto}
+  .stn-a{grid-auto-flow:column;align-items:center;gap:8px;padding-bottom:6px}
+  .beach{padding:40px var(--gut) 26px;gap:16px}
+  .bh{margin-bottom:10px}
+  .tray{gap:8px 7px;align-items:center}
+  .tg,.tg-c{display:contents}
+  .tgl{width:auto;display:flex;align-items:center;gap:4px;padding:0 4px 0 0;font-size:.875rem}
+  .tgl .gl{width:16px;height:16px}
+  .tgl small{display:none}
+  .ts{width:calc(78px + var(--h) * 12px);height:40px}
+  .tray{row-gap:7px}
+  .ts>.chip{padding:2px 8px}
+  .ts>.chip .gl,.ts>.chip .k-m{display:none}
+  .ts>.chip .k-n{font-size:.8125rem;white-space:normal;line-height:1.2}
+  .wet{padding:0 8px;font-size:.75rem}
+  .voice{min-height:0}
+  .vc-n,.nt-n{font-size:1.1rem}
+  .vc-b,.nt-b{font-size:.875rem;line-height:1.8}
+  .cost{padding:44px var(--gut) 40px}
+  .cairn-w{margin-top:22px}
+  .cs{min-height:48px;max-width:300px}
+  .cs b{font-size:1.25rem}
+  .cairn-w{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px}
+  .cairn,.wl{grid-column:1/-1}
+  .cairn{grid-row:1}.wl{grid-row:2}
+  .cn{margin-top:12px}
+  .cn-k{font-size:1rem}
+  .cn-n{font-size:.8125rem;line-height:1.7}
+  .sum{margin-top:18px}
+  .sum-a{gap:10px 12px;margin-top:10px}
+  .cp{padding:4px 14px;font-size:.875rem}
+  .ppl{gap:6px}
+  .sum-v b{font-size:3.6rem}
+  .cx{margin-top:26px;gap:10px}
+  .cx dd{font-size:.875rem}
+  .sec{padding:38px var(--gut) 40px}
+  .sec h2,.cost-h h2{font-size:1.55rem}
+  .sec-lead{font-size:.9375rem}
+  .rt{margin-top:34px}
+  .mq{width:78px;height:400px;margin:4px 10px 0 0}
+  .rt-r .mq{margin:4px 0 0 10px}
+  .rt-days{gap:0 12px}
+  .rd-n,.rd-l{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .es{margin-top:8px;font-size:.9375rem;line-height:1.8}
+  .rt-f{margin-top:10px}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 30px;margin:44px 12px 50px}
+  .stp,.stp:nth-child(even){width:auto;margin:0;padding:4px 0 6px}
+  .stp:nth-child(even){translate:0 38px}
+  .stp::before{inset:-13px -12px;border-radius:var(--ps)}
+  .stp-k{font-size:1.1rem}
+  .stp-v{font-size:.8125rem;line-height:1.7}
+  .stp-k{font-size:1rem}
+  .bf{gap:14px}
+  .bf-gap{display:none}
+  .gap-s{width:150px;height:54px}
+  .coda{font-size:.9375rem;line-height:1.9}
+  .ri{font-size:.875rem;line-height:1.75}
+  .bf-l{gap:8px}
+  .foot{grid-template-columns:minmax(0,1fr);padding:26px var(--gut) 28px;gap:10px}
+  .foot address{font-size:.875rem}
+}
+@media (pointer:coarse){
+  .nav a{min-block-size:44px;display:inline-flex;align-items:center}
+  .cell>.chip,.ts>.chip{min-block-size:0}
+}
+
+/* ===== 降級動效：只換狀態，不位移 ===== */
+@media (prefers-reduced-motion:reduce){
+  .trv,.cell>.chip,.cs{transition:none}
+  .chip.land{animation:none}
+  .drag-ghost{rotate:none}
+}
+
+/* ===== 列印：印出來就是一份行程表 ===== */
+@media print{
+  html,body,.cost,.ct,.rts,.foot,.beach,.how{background:#fff !important;color:#000 !important}
+  *{color:#000 !important}
+  .nav,.beach,.how,.load,.wv,.bend svg,.cp,.ppl button,.rt-go,.mq,.cap,.shore{display:none !important}
+  .cell::before{border-color:#000 !important;background:#fff !important}
+  .cell>.chip,.cs,.stp{background:#fff !important;box-shadow:inset 0 0 0 1px #000 !important}
+  .trv{background:repeating-linear-gradient(135deg,#999 0 1px,transparent 1px 6px) !important}
+  .trv-t,.bk,.ovf{background:#fff !important}
+  .sec{padding:24px 0}
+  a{text-decoration:underline}
+}
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0"><defs><symbol id="gz0" viewBox="0 0 24 24"><path d="M15.5 4.2A8.2 8.2 0 1 0 19.8 16 7.24 7.24 0 0 1 15.5 4.2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol><symbol id="gz1" viewBox="0 0 24 24"><path d="M3 21L4.5 18.82L6 16.71L7.5 14.72L9 12.91L10.5 11.3L12 9.91L13.5 8.72L15 7.71L16.5 6.82L18 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><g fill="currentColor"><ellipse cx="10.54" cy="14.34" rx="2.3" ry="1.05" transform="rotate(-74.99 10.54 14.34)"/><ellipse cx="11.93" cy="12.84" rx="2.3" ry="1.05" transform="rotate(-70.87 11.93 12.84)"/><ellipse cx="13.3" cy="11.55" rx="2.3" ry="1.05" transform="rotate(-66.36 13.3 11.55)"/><ellipse cx="14.68" cy="10.46" rx="2.3" ry="1.05" transform="rotate(-62.03 14.68 10.46)"/><ellipse cx="16.07" cy="9.51" rx="2.3" ry="1.05" transform="rotate(-58.57 16.07 9.51)"/><ellipse cx="18" cy="8.1" rx="2.3" ry="1.05" transform="rotate(-28 18 8.1)"/></g></symbol><symbol id="gz2" viewBox="0 0 24 24"><g transform="rotate(-31.45 12 12)"><path d="M3 12C7 4.6 15 4.2 21 12C15 19.8 7 19.4 3 12Z" fill="currentColor" fill-opacity=".22" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M4.6 12H19.4M9 12L11.4 8.8M9 12L11.4 15.2M12.4 12L14.8 9.4M12.4 12L14.8 14.6M15.8 12L18.2 10M15.8 12L18.2 14" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></g></symbol><symbol id="gz3" viewBox="0 0 24 24"><path d="M2.5 8.6C5.1 4.8 11 4.8 12 7S19.3 9.4 21.5 6.4M4.1 13.8C6.7 10 11.25 10 12.25 12.2S18.2 14.6 20.4 11.6M5.7 19C8.3 15.2 11.45 15.2 12.45 17.4S16.99 19.8 19.19 16.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol><symbol id="gz4" viewBox="0 0 24 24"><path d="M2 5Q9 6.37 11 8.4L15 8.4M5.6 9.6Q12.6 11.48 14.6 13L18.6 13M9.2 14.2Q16.2 15.45 18.2 17.6L22.2 17.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 20.5H22" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2.4 1.8"/></symbol><path id="rv0a" d="M0 11L4 10.8L8 10.2L12 9.3L16 8.4L20 7.7L24 7.5L28 7.8L32 8.4L36 9.1L40 9.9L44 10.7L48 11.5L52 12.3L56 12.9L60 13.5L64 14L68 14.4L72 14.6L76 14.7L80 14.6L84 14.4L88 14L92 13.5L96 12.9L100 12.2L104 11.5L108 10.6L112 9.8L116 9L120 8.3L124 7.6L128 7.1L132 6.7L136 6.5L140 6.5L144 6.7L148 7.1L152 7.6L156 8.4L160 9.2L164 10.2L168 11.2L172 12.2L176 13.2L180 14.1L184 14.9L188 15.5L192 15.8L196 16L200 16L204 15.7L208 15.3L212 14.6L216 13.8L220 12.9L224 12L228 11L232 10.1L236 9.2L240 8.4L244 7.8L248 7.3L252 7L256 6.9L260 6.9L264 7.1L268 7.5L272 8L276 8.6L280 9.3L284 10.1L288 10.8L292 11.6L296 12.3L300 13L304 13.6L308 14.1L312 14.4L316 14.6L320 14.7L324 14.7L328 14.4L332 14.1L336 13.5L340 12.9L344 12.2L348 11.4L352 10.5L356 9.6L360 8.8L364 8L368 7.4L372 6.9L376 6.7L380 7.2L384 8.2L388 9.3L392 10.2L396 10.8L400 11L400 100L396 100.1L392 100.2L388 100.3L384 100.2L380 100.1L376 99.8L372 99.5L368 99.3L364 99L360 98.8L356 98.6L352 98.5L348 98.4L344 98.3L340 98.3L336 98.4L332 98.5L328 98.6L324 98.8L320 99L316 99.3L312 99.5L308 99.8L304 100.1L300 100.4L296 100.6L292 100.9L288 101.1L284 101.3L280 101.5L276 101.6L272 101.6L268 101.7L264 101.6L260 101.5L256 101.4L252 101.3L248 101L244 100.8L240 100.6L236 100.3L232 100L228 99.7L224 99.4L220 99.2L216 98.9L212 98.7L208 98.6L204 98.5L200 98.4L196 98.3L192 98.4L188 98.4L184 98.5L180 98.7L176 98.9L172 99.1L168 99.4L164 99.6L160 99.9L156 100.2L152 100.5L148 100.7L144 101L140 101.2L136 101.4L132 101.5L128 101.6L124 101.7L120 101.7L116 101.6L112 101.5L108 101.4L104 101.2L100 101L96 100.7L92 100.5L88 100.2L84 99.9L80 99.6L76 99.3L72 99.1L68 98.9L64 98.7L60 98.5L56 98.4L52 98.4L48 98.3L44 98.4L40 98.5L36 98.6L32 98.8L28 99L24 99.2L20 99.6L16 99.8L12 100L8 100.1L4 100L0 100Z" vector-effect="non-scaling-stroke"/><path id="rv0b" d="M0 11L4 10.8L8 10.2L12 9.3L16 8.4L20 7.7L24 7.5L28 7.8L32 8.4L36 9.1L40 9.9L44 10.7L48 11.5L52 12.3L56 12.9L60 13.5L64 14L68 14.4L72 14.6L76 14.7L80 14.6L84 14.4L88 14L92 13.5L96 12.9L100 12.2L104 11.5L108 10.6L112 9.8L116 9L120 8.3L124 7.6L128 7.1L132 6.7L136 6.5L140 6.5L144 6.7L148 7.1L152 7.6L156 8.4L160 9.2L164 10.2L168 11.2L172 12.2L176 13.2L180 14.1L184 14.9L188 15.5L192 15.8L196 16L200 16L204 15.7L208 15.3L212 14.6L216 13.8L220 12.9L224 12L228 11L232 10.1L236 9.2L240 8.4L244 7.8L248 7.3L252 7L256 6.9L260 6.9L264 7.1L268 7.5L272 8L276 8.6L280 9.3L284 10.1L288 10.8L292 11.6L296 12.3L300 13L304 13.6L308 14.1L312 14.4L316 14.6L320 14.7L324 14.7L328 14.4L332 14.1L336 13.5L340 12.9L344 12.2L348 11.4L352 10.5L356 9.6L360 8.8L364 8L368 7.4L372 6.9L376 6.7L380 7.2L384 8.2L388 9.3L392 10.2L396 10.8L400 11" vector-effect="non-scaling-stroke"/><path id="rv0c" d="M0 100L4 100L8 100.1L12 100L16 99.8L20 99.6L24 99.2L28 99L32 98.8L36 98.6L40 98.5L44 98.4L48 98.3L52 98.4L56 98.4L60 98.5L64 98.7L68 98.9L72 99.1L76 99.3L80 99.6L84 99.9L88 100.2L92 100.5L96 100.7L100 101L104 101.2L108 101.4L112 101.5L116 101.6L120 101.7L124 101.7L128 101.6L132 101.5L136 101.4L140 101.2L144 101L148 100.7L152 100.5L156 100.2L160 99.9L164 99.6L168 99.4L172 99.1L176 98.9L180 98.7L184 98.5L188 98.4L192 98.4L196 98.3L200 98.4L204 98.5L208 98.6L212 98.7L216 98.9L220 99.2L224 99.4L228 99.7L232 100L236 100.3L240 100.6L244 100.8L248 101L252 101.3L256 101.4L260 101.5L264 101.6L268 101.7L272 101.6L276 101.6L280 101.5L284 101.3L288 101.1L292 100.9L296 100.6L300 100.4L304 100.1L308 99.8L312 99.5L316 99.3L320 99L324 98.8L328 98.6L332 98.5L336 98.4L340 98.3L344 98.3L348 98.4L352 98.5L356 98.6L360 98.8L364 99L368 99.3L372 99.5L376 99.8L380 100.1L384 100.2L388 100.3L392 100.2L396 100.1L400 100" vector-effect="non-scaling-stroke"/><path id="rv0d" d="M0 19L4 18.7L8 17.9L12 16.5L16 15L20 13.8L24 13.2L28 13.5L32 14.5L36 15.6L40 16.8L44 18.2L48 19.6L52 20.9L56 22.2L60 23.2L64 24.1L68 24.7L72 25L76 25L80 24.7L84 24.2L88 23.4L92 22.4L96 21.2L100 19.9L104 18.5L108 17.2L112 16L116 14.8L120 13.9L124 13.2L128 12.8L132 12.7L136 12.9L140 13.4L144 14.1L148 15.1L152 16.2L156 17.5L160 18.9L164 20.2L168 21.5L172 22.6L176 23.6L180 24.3L184 24.7L188 24.9L192 24.8L196 24.4L200 23.7L204 22.9L208 21.9L212 20.8L216 19.7L220 18.6L224 17.6L228 16.7L232 16L236 15.5L240 15.2L244 15.1L248 15.2L252 15.5L256 15.9L260 16.5L264 17.1L268 17.7L272 18.4L276 19L280 19.5L284 20L288 20.3L292 20.6L296 20.8L300 20.8L304 20.8L308 20.8L312 20.7L316 20.5L320 20.4L324 20.3L328 20.1L332 19.9L336 19.8L340 19.6L344 19.4L348 19.2L352 18.9L356 18.6L360 18.3L364 18L368 17.6L372 17.2L376 17L380 17.1L384 17.4L388 17.9L392 18.4L396 18.8L400 19" vector-effect="non-scaling-stroke"/><path id="rv0e" d="M0 91L4 91.1L8 91.3L12 91.5L16 91.7L20 91.9L24 91.9L28 91.8L32 91.6L36 91.5L40 91.3L44 91.1L48 90.9L52 90.7L56 90.5L60 90.4L64 90.2L68 90.1L72 89.9L76 89.8L80 89.8L84 89.7L88 89.7L92 89.7L96 89.7L100 89.8L104 89.9L108 90L112 90.1L116 90.3L120 90.5L124 90.6L128 90.8L132 91L136 91.2L140 91.4L144 91.6L148 91.7L152 91.9L156 92L160 92.1L164 92.2L168 92.3L172 92.3L176 92.3L180 92.3L184 92.2L188 92.2L192 92L196 91.9L200 91.8L204 91.6L208 91.4L212 91.3L216 91.1L220 90.9L224 90.7L228 90.5L232 90.3L236 90.2L240 90L244 89.9L248 89.8L252 89.8L256 89.7L260 89.7L264 89.7L268 89.7L272 89.8L276 89.9L280 90L284 90.2L288 90.3L292 90.5L296 90.7L300 90.9L304 91L308 91.2L312 91.4L316 91.6L320 91.8L324 91.9L328 92L332 92.1L336 92.2L340 92.3L344 92.3L348 92.3L352 92.3L356 92.2L360 92.1L364 92L368 91.9L372 91.8L376 91.6L380 91.3L384 91.1L388 91L392 91L396 91L400 91" vector-effect="non-scaling-stroke"/><path id="rv1a" d="M0 11L4 11.4L8 13.2L12 13.9L16 10.6L20 4.1L24 0.1L28 3.5L32 12.2L36 20.4L40 22.9L44 18.3L48 9.2L52 1.1L56 -1L60 4.1L64 13.3L68 21.1L72 22.8L76 17.3L80 8.2L84 0.9L88 -0.2L92 5.3L96 14.1L100 20.8L104 21.5L108 15.9L112 7.6L116 1.6L120 1.3L124 6.8L128 14.6L132 20L136 19.9L140 14.5L144 7.3L148 2.4L152 2.8L156 8L160 14.9L164 19.4L168 18.8L172 13.6L176 6.8L180 2.5L184 3.3L188 8.8L192 15.7L196 19.9L200 18.8L204 12.9L208 5.7L212 1.5L216 2.9L220 9.4L224 17L228 21.3L232 19.4L236 12.3L240 4.2L244 0L248 2.4L252 10.1L256 18.6L260 22.7L264 19.7L268 11.4L272 2.7L276 -1.1L280 2.4L284 11.1L288 19.8L292 23.2L296 19.2L300 10.3L304 1.9L308 -0.9L312 3.4L316 12.2L320 20.1L324 22.4L328 17.9L332 9.4L336 2.1L340 0.3L344 4.9L348 12.9L352 19.6L356 20.9L360 16.3L364 8.8L368 2.8L372 1.8L376 6.6L380 13L384 15.8L388 14.4L392 11.8L396 10.8L400 11L400 100L396 99.8L392 99.6L388 100.2L384 101.7L380 103.2L376 103.2L372 101.4L368 98.9L364 96.8L360 96L356 97L352 99.2L348 101.7L344 103.6L340 103.9L336 102.6L332 100.2L328 97.7L324 96.2L320 96.3L316 97.9L312 100.5L308 102.8L304 104L300 103.4L296 101.5L292 98.9L288 96.8L284 96L280 96.9L276 99.1L272 101.7L268 103.6L264 103.9L260 102.6L256 100.2L252 97.7L248 96.2L244 96.3L240 97.9L236 100.4L232 102.8L228 104L224 103.5L220 101.5L216 98.9L212 96.8L208 96L204 96.9L200 99.1L196 101.7L192 103.6L188 103.9L184 102.6L180 100.2L176 97.7L172 96.2L168 96.3L164 97.9L160 100.4L156 102.8L152 103.9L148 103.5L144 101.5L140 98.9L136 96.8L132 96L128 96.9L124 99.1L120 101.7L116 103.5L112 103.9L108 102.7L104 100.3L100 97.8L96 96.2L92 96.2L88 97.9L84 100.4L80 102.7L76 103.9L72 103.5L68 101.6L64 99L60 96.8L56 96L52 96.9L48 99.1L44 101.6L40 103.5L36 103.9L32 102.7L28 100.3L24 97.9L20 97L16 97.7L12 99.1L8 100.1L4 100.2L0 100Z" vector-effect="non-scaling-stroke"/><path id="rv1b" d="M0 11L4 11.4L8 13.2L12 13.9L16 10.6L20 4.1L24 0.1L28 3.5L32 12.2L36 20.4L40 22.9L44 18.3L48 9.2L52 1.1L56 -1L60 4.1L64 13.3L68 21.1L72 22.8L76 17.3L80 8.2L84 0.9L88 -0.2L92 5.3L96 14.1L100 20.8L104 21.5L108 15.9L112 7.6L116 1.6L120 1.3L124 6.8L128 14.6L132 20L136 19.9L140 14.5L144 7.3L148 2.4L152 2.8L156 8L160 14.9L164 19.4L168 18.8L172 13.6L176 6.8L180 2.5L184 3.3L188 8.8L192 15.7L196 19.9L200 18.8L204 12.9L208 5.7L212 1.5L216 2.9L220 9.4L224 17L228 21.3L232 19.4L236 12.3L240 4.2L244 0L248 2.4L252 10.1L256 18.6L260 22.7L264 19.7L268 11.4L272 2.7L276 -1.1L280 2.4L284 11.1L288 19.8L292 23.2L296 19.2L300 10.3L304 1.9L308 -0.9L312 3.4L316 12.2L320 20.1L324 22.4L328 17.9L332 9.4L336 2.1L340 0.3L344 4.9L348 12.9L352 19.6L356 20.9L360 16.3L364 8.8L368 2.8L372 1.8L376 6.6L380 13L384 15.8L388 14.4L392 11.8L396 10.8L400 11" vector-effect="non-scaling-stroke"/><path id="rv1c" d="M0 100L4 100.2L8 100.1L12 99.1L16 97.7L20 97L24 97.9L28 100.3L32 102.7L36 103.9L40 103.5L44 101.6L48 99.1L52 96.9L56 96L60 96.8L64 99L68 101.6L72 103.5L76 103.9L80 102.7L84 100.4L88 97.9L92 96.2L96 96.2L100 97.8L104 100.3L108 102.7L112 103.9L116 103.5L120 101.7L124 99.1L128 96.9L132 96L136 96.8L140 98.9L144 101.5L148 103.5L152 103.9L156 102.8L160 100.4L164 97.9L168 96.3L172 96.2L176 97.7L180 100.2L184 102.6L188 103.9L192 103.6L196 101.7L200 99.1L204 96.9L208 96L212 96.8L216 98.9L220 101.5L224 103.5L228 104L232 102.8L236 100.4L240 97.9L244 96.3L248 96.2L252 97.7L256 100.2L260 102.6L264 103.9L268 103.6L272 101.7L276 99.1L280 96.9L284 96L288 96.8L292 98.9L296 101.5L300 103.4L304 104L308 102.8L312 100.5L316 97.9L320 96.3L324 96.2L328 97.7L332 100.2L336 102.6L340 103.9L344 103.6L348 101.7L352 99.2L356 97L360 96L364 96.8L368 98.9L372 101.4L376 103.2L380 103.2L384 101.7L388 100.2L392 99.6L396 99.8L400 100" vector-effect="non-scaling-stroke"/><path id="rv1d" d="M0 19L4 19.7L8 21.5L12 20.5L16 15.1L20 9.7L24 10.4L28 17.2L32 24.3L36 27.3L40 25.6L44 21.3L48 16.8L52 13.7L56 12.5L60 13.9L64 17.8L68 23.3L72 27.7L76 27.6L80 21.9L84 13.1L88 6.9L92 8.2L96 17.1L100 28.2L104 33.9L108 29.5L112 17.6L116 6.3L120 3.6L124 11.5L128 24.6L132 33.5L136 32.2L140 21.9L144 10.2L148 5.2L152 9.9L156 20.2L160 28.6L164 29.6L168 23.7L172 15.8L176 11.3L180 12.3L184 16.8L188 21.3L192 23.3L196 22.9L200 21.5L204 19.9L208 17.8L212 15.2L216 13.4L220 14.4L224 19.3L228 25.6L232 29L236 25.8L240 16.8L244 7.8L248 5.5L252 12.8L256 25.3L260 34.6L264 33.4L268 22L272 8L276 1.2L280 6.6L284 20.5L288 33.2L292 35.9L296 27.3L300 13.6L304 4.5L308 5.6L312 15.1L316 25.9L320 30.9L324 27.9L328 20.2L332 13.4L336 11.3L340 13.6L344 17.8L348 21.2L352 23L356 23.4L360 22.6L364 20.3L368 16.5L372 12.9L376 12.4L380 16.5L384 21.3L388 22.8L392 20.8L396 19.1L400 19" vector-effect="non-scaling-stroke"/><path id="rv1e" d="M0 91L4 91L8 90.7L12 89.9L16 89.1L20 89.1L24 90.1L28 91.8L32 93.3L36 94.1L40 93.9L44 92.8L48 91.1L52 89.4L56 88.2L60 87.9L64 88.5L68 89.9L72 91.6L76 93.2L80 94.1L84 94L88 93L92 91.3L96 89.6L100 88.3L104 87.9L108 88.4L112 89.7L116 91.4L120 93L124 94L128 94L132 93.1L136 91.5L140 89.8L144 88.4L148 87.9L152 88.3L156 89.5L160 91.2L164 92.9L168 93.9L172 94.1L176 93.3L180 91.7L184 90L188 88.5L192 87.9L196 88.2L200 89.4L204 91L208 92.7L212 93.9L216 94.1L220 93.4L224 91.9L228 90.2L232 88.7L236 87.9L240 88.1L244 89.2L248 90.8L252 92.6L256 93.8L260 94.1L264 93.5L268 92.1L272 90.4L276 88.8L280 87.9L284 88L288 89L292 90.6L296 92.4L300 93.7L304 94.1L308 93.6L312 92.3L316 90.6L320 89L324 88L328 88L332 88.9L336 90.5L340 92.2L344 93.6L348 94.1L352 93.7L356 92.5L360 90.8L364 89.1L368 88.1L372 87.9L376 88.9L380 90.4L384 91.6L388 92L392 91.6L396 91.2L400 91" vector-effect="non-scaling-stroke"/><path id="rv2a" d="M0 11L4 10.7L8 9.6L12 7.8L16 6.3L20 6.1L24 7.7L28 10.8L32 14.1L36 16.7L40 18.3L44 18.6L48 17.6L52 15.5L56 12.6L60 9.6L64 6.9L68 5L72 4.2L76 4.6L80 6.1L84 8.4L88 11L92 13.6L96 15.7L100 16.9L104 17L108 16.2L112 14.4L116 12.1L120 9.6L124 7.4L128 5.8L132 5.1L136 5.4L140 6.7L144 8.7L148 11.2L152 13.7L156 15.8L160 17.1L164 17.4L168 16.5L172 14.7L176 12.1L180 9.2L184 6.6L188 4.6L192 3.7L196 4.1L200 5.7L204 8.4L208 11.5L212 14.7L216 17.2L220 18.7L224 18.9L228 17.7L232 15.2L236 12L240 8.7L244 5.7L248 3.6L252 2.9L256 3.6L260 5.6L264 8.5L268 11.8L272 14.8L276 17.2L280 18.4L284 18.3L288 16.9L292 14.6L296 11.7L300 8.8L304 6.3L308 4.8L312 4.4L316 5.1L320 6.8L324 9.2L328 11.8L332 14.2L336 16L340 16.9L344 16.8L348 15.7L352 13.8L356 11.4L360 9L364 6.9L368 5.5L372 5L376 5.9L380 7.9L384 10L388 11.4L392 11.7L396 11.3L400 11L400 100L396 99.9L392 99.5L388 99.2L384 99.3L380 99.8L376 100.6L372 101.5L368 102.2L364 102.6L360 102.7L356 102.4L352 101.9L348 101.2L344 100.3L340 99.4L336 98.5L332 97.8L328 97.4L324 97.3L320 97.6L316 98.1L312 98.8L308 99.7L304 100.6L300 101.5L296 102.2L292 102.6L288 102.7L284 102.4L280 101.9L276 101.2L272 100.3L268 99.3L264 98.5L260 97.8L256 97.4L252 97.3L248 97.6L244 98.1L240 98.8L236 99.7L232 100.7L228 101.5L224 102.2L220 102.6L216 102.7L212 102.4L208 101.9L204 101.1L200 100.3L196 99.3L192 98.5L188 97.8L184 97.4L180 97.3L176 97.6L172 98.1L168 98.9L164 99.8L160 100.7L156 101.5L152 102.2L148 102.6L144 102.7L140 102.4L136 101.9L132 101.1L128 100.2L124 99.3L120 98.5L116 97.8L112 97.4L108 97.3L104 97.6L100 98.1L96 98.9L92 99.8L88 100.7L84 101.5L80 102.2L76 102.6L72 102.7L68 102.4L64 101.9L60 101.1L56 100.2L52 99.3L48 98.5L44 97.8L40 97.4L36 97.3L32 97.6L28 98.1L24 98.9L20 99.8L16 100.4L12 100.6L8 100.4L4 100.1L0 100Z" vector-effect="non-scaling-stroke"/><path id="rv2b" d="M0 11L4 10.7L8 9.6L12 7.8L16 6.3L20 6.1L24 7.7L28 10.8L32 14.1L36 16.7L40 18.3L44 18.6L48 17.6L52 15.5L56 12.6L60 9.6L64 6.9L68 5L72 4.2L76 4.6L80 6.1L84 8.4L88 11L92 13.6L96 15.7L100 16.9L104 17L108 16.2L112 14.4L116 12.1L120 9.6L124 7.4L128 5.8L132 5.1L136 5.4L140 6.7L144 8.7L148 11.2L152 13.7L156 15.8L160 17.1L164 17.4L168 16.5L172 14.7L176 12.1L180 9.2L184 6.6L188 4.6L192 3.7L196 4.1L200 5.7L204 8.4L208 11.5L212 14.7L216 17.2L220 18.7L224 18.9L228 17.7L232 15.2L236 12L240 8.7L244 5.7L248 3.6L252 2.9L256 3.6L260 5.6L264 8.5L268 11.8L272 14.8L276 17.2L280 18.4L284 18.3L288 16.9L292 14.6L296 11.7L300 8.8L304 6.3L308 4.8L312 4.4L316 5.1L320 6.8L324 9.2L328 11.8L332 14.2L336 16L340 16.9L344 16.8L348 15.7L352 13.8L356 11.4L360 9L364 6.9L368 5.5L372 5L376 5.9L380 7.9L384 10L388 11.4L392 11.7L396 11.3L400 11" vector-effect="non-scaling-stroke"/><path id="rv2c" d="M0 100L4 100.1L8 100.4L12 100.6L16 100.4L20 99.8L24 98.9L28 98.1L32 97.6L36 97.3L40 97.4L44 97.8L48 98.5L52 99.3L56 100.2L60 101.1L64 101.9L68 102.4L72 102.7L76 102.6L80 102.2L84 101.5L88 100.7L92 99.8L96 98.9L100 98.1L104 97.6L108 97.3L112 97.4L116 97.8L120 98.5L124 99.3L128 100.2L132 101.1L136 101.9L140 102.4L144 102.7L148 102.6L152 102.2L156 101.5L160 100.7L164 99.8L168 98.9L172 98.1L176 97.6L180 97.3L184 97.4L188 97.8L192 98.5L196 99.3L200 100.3L204 101.1L208 101.9L212 102.4L216 102.7L220 102.6L224 102.2L228 101.5L232 100.7L236 99.7L240 98.8L244 98.1L248 97.6L252 97.3L256 97.4L260 97.8L264 98.5L268 99.3L272 100.3L276 101.2L280 101.9L284 102.4L288 102.7L292 102.6L296 102.2L300 101.5L304 100.6L308 99.7L312 98.8L316 98.1L320 97.6L324 97.3L328 97.4L332 97.8L336 98.5L340 99.4L344 100.3L348 101.2L352 101.9L356 102.4L360 102.7L364 102.6L368 102.2L372 101.5L376 100.6L380 99.8L384 99.3L388 99.2L392 99.5L396 99.9L400 100" vector-effect="non-scaling-stroke"/><path id="rv2d" d="M0 19L4 18.9L8 17.8L12 15.3L16 12.5L20 11L24 12.2L28 16.1L32 21L36 25.6L40 29L44 30.3L48 29.4L52 26.4L56 22L60 17L64 12.5L68 9.4L72 8.3L76 9.4L80 12.4L84 16.6L88 21.1L92 25L96 27.5L100 28.2L104 27L108 24.2L112 20.6L116 16.9L120 13.8L124 11.9L128 11.6L132 12.7L136 14.9L140 17.7L144 20.5L148 22.8L152 24.2L156 24.6L160 23.9L164 22.6L168 20.8L172 19L176 17.3L180 16.2L184 15.4L188 15.2L192 15.4L196 15.9L200 16.7L204 17.7L208 19L212 20.3L216 21.7L220 22.9L224 23.7L228 24L232 23.5L236 22.1L240 20.1L244 17.5L248 15L252 12.9L256 11.7L260 11.8L264 13.2L268 15.9L272 19.4L276 22.9L280 26L284 27.8L288 28L292 26.4L296 23.3L300 19.3L304 15.1L308 11.6L312 9.5L316 9.3L320 11.1L324 14.4L328 18.7L332 23.1L336 26.6L340 28.6L344 28.6L348 26.7L352 23.2L356 18.9L360 14.6L364 11.3L368 9.6L372 9.8L376 12.3L380 16.1L384 19.3L388 20.7L392 20.5L396 19.5L400 19" vector-effect="non-scaling-stroke"/><path id="rv2e" d="M0 91L4 91.1L8 91.3L12 91.5L16 91.4L20 91L24 90.4L28 89.8L32 89.4L36 89L40 88.9L44 88.9L48 89.2L52 89.6L56 90.1L60 90.7L64 91.3L68 91.9L72 92.4L76 92.8L80 93L84 93.1L88 93L92 92.7L96 92.2L100 91.7L104 91L108 90.4L112 89.8L116 89.4L120 89.1L124 88.9L128 88.9L132 89.2L136 89.5L140 90.1L144 90.6L148 91.3L152 91.9L156 92.4L160 92.8L164 93L168 93.1L172 93L176 92.7L180 92.2L184 91.7L188 91L192 90.4L196 89.9L200 89.4L204 89.1L208 88.9L212 88.9L216 89.1L220 89.5L224 90L228 90.6L232 91.3L236 91.9L240 92.4L244 92.8L248 93L252 93.1L256 93L260 92.7L264 92.2L268 91.7L272 91.1L276 90.4L280 89.9L284 89.4L288 89.1L292 88.9L296 88.9L300 89.1L304 89.5L308 90L312 90.6L316 91.2L320 91.8L324 92.4L328 92.8L332 93L336 93.1L340 93L344 92.7L348 92.3L352 91.7L356 91.1L360 90.5L364 89.9L368 89.4L372 89.1L376 89L380 89.3L384 89.9L388 90.4L392 90.8L396 91L400 91" vector-effect="non-scaling-stroke"/></defs></svg>
+    <header class="top">
+      <a class="brand" href="#main"><svg viewBox="0 0 44 28" aria-hidden="true" focusable="false"><path d="M6 16.5C10 16.5 12.5 9 19 8.2C25 7.4 27.6 13.4 32 14.6C34.6 15.3 36.6 15.6 38 16.5Z" fill="currentColor"/><path d="M2 21.5C7 18.6 10 24.4 15 21.5S23 18.6 28 21.5S36 24.4 42 21.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><b>慢島旅行社</b><span>臺東・三天兩夜</span></a>
+      <nav class="nav" aria-label="主選單"><a href="#planner">三天的溪</a><a href="#cost">錢怎麼算</a><a href="#routes">三條路線</a><a href="#contract">契約重點</a><a href="#before">出發前</a></nav>
+      <a class="tel num" href="tel:0890000727">089-000-0727</a>
+    </header>
+    <main id="main">
+      <section class="planner" id="planner" aria-labelledby="h1">
+      <div class="h-l"><h1 id="h1"><em>水聲急了</em>，就拿掉一顆</h1><p class="nojs">溪水沒有流起來（這個瀏覽器沒有開啟網頁互動）：水裡停在預設的草稿，石頭搬不動；三條路線的全文、錢怎麼算，都寫在下面。</p></div>
+      <div class="river" id="bw">
+      <h2 class="sr-only" id="bd-h">三天的溪，每天五個時段</h2>
+      <div class="dl dl0" id="dh0" data-lv="0"><span class="dl-n">第一天</span><span class="dl-i num" data-o="i0">3.3</span><span class="dl-lv"><span class="lv lv0">從容</span><span class="lv lv1">剛好</span><span class="lv lv2">太滿</span></span><span class="dl-eq">＝ 活動 <b class="num" data-o="a0">2.5</b> ＋ 車程 <b class="num" data-o="m0">0.5</b> × 1.5</span></div>
+      <div class="load" role="group" aria-labelledby="load-l"><p class="load-l" id="load-l">換一條排好的</p><button type="button" class="ld" data-route="two" aria-pressed="false"><svg class="ld-w" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 15L3 14.3L6 13.8L9 13.4L12 13.2L15 13.2L18 13.4L21 13.7L24 14.3L27 14.9L30 15.7L33 16.6L36 17.6L39 18.7L42 19.8L45 20.9L48 22L51 23.1L54 24.1L57 25L60 25.7L63 26.3L66 26.8L69 27L72 27.1L75 27L78 26.7L81 26.2L84 25.5L87 24.7L90 23.7L93 22.6L96 21.4L99 20.1L102 18.9L105 17.6L108 16.4L111 15.2L114 14.2L117 13.3L120 12.6L123 12.1L126 11.8L129 11.7L132 11.9L135 12.3L138 12.9L141 13.7L144 14.7L147 15.8L150 17.1L153 18.5L156 19.9L159 21.3L162 22.7L165 24L168 25.2L171 26.2L174 27.1L177 27.7L180 28.2L183 28.4L186 28.4L189 28.1L192 27.6L195 27L198 26.1L201 25.1L204 23.9L207 22.7L210 21.4L213 20L216 18.8L219 17.5L222 16.4L225 15.3L228 14.4L231 13.7L234 13.2L237 12.9L240 12.7L243 12.8L246 13L249 13.5L252 14.1L255 14.8L258 15.7L261 16.7L264 17.8L267 18.9L270 20L273 21.1L276 22.2L279 23.2L282 24.2L285 25L288 25.6L291 26.2L294 26.5L297 26.7L300 26.7L303 26.6L306 26.2L309 25.7L312 25L315 24.2L318 23.3L321 22.2L324 21.1L327 20L330 18.8L333 17.6L336 16.5L339 15.5L342 14.5L345 13.8L348 13.1L351 12.7L354 12.4L357 12.4L360 12.5L363 12.9L366 13.4L369 14.2L372 15.1L375 16.1L378 17.3L381 18.5L384 19.8L387 21.2L390 22.5L393 23.7L396 24.8L399 25.9L402 25.8L405 26.3L408 26.7L411 26.9L414 26.9L417 26.7L420 26.4L423 25.9L426 25.3L429 24.6L432 23.8L435 22.9L438 21.9L441 20.9L444 19.9L447 18.9L450 17.9L453 17L456 16.1L459 15.4L462 14.7L465 14.2L468 13.8L471 13.5L474 13.4L477 13.4L480 13.6L483 14L486 14.5L489 15.1L492 15.9L495 16.7L498 17.7L501 18.7L504 19.8L507 20.9L510 22L513 23.1L516 24.1L519 25.1L522 25.9L525 26.6L528 27.1L531 27.5L534 27.7L537 27.8L540 27.6L543 27.2L546 26.7L549 26L552 25.1L555 24.1L558 23L561 21.8L564 20.6L567 19.3L570 18L573 16.8L576 15.7L579 14.7L582 13.8L585 13L588 12.5L591 12.1L594 11.9L597 11.9L600 12.1L603 12.5L606 13.1L609 13.8L612 14.7L615 15.7L618 16.8L621 17.9L624 19.1L627 20.3L630 21.5L633 22.6L636 23.6L639 24.6L642 25.4L645 26L648 26.5L651 26.9L654 27L657 27L660 26.9L663 26.6L666 26.1L669 25.5L672 24.7L675 23.9L678 23L681 22L684 21L687 20L690 19L693 18L696 17.1L699 16.3L702 15.5L705 14.8L708 14.3L711 13.9L714 13.6L717 13.5L720 13.6L723 13.7L726 14.1L729 14.5L732 15.2L735 15.9L738 16.7L741 17.7L744 18.7L747 19.8L750 20.9L753 22.1L756 23.2L759 24.3L762 25.3L765 26.2L768 26.9L771 27.5L774 27.8L777 28L780 27.9L783 27.5L786 26.9L789 26L792 24.9L795 23.5L798 22L801 20.3L804 18.9L807 17.5L810 16.1L813 14.9L816 13.9L819 13.1L822 12.6L825 12.4L828 12.4L831 12.8L834 13.6L837 14.6L840 15.9L843 17.4L846 19.1L849 20.8L852 22.6L855 24.2L858 25.7L861 26.9L864 27.8L867 28.4L870 28.5L873 28.2L876 27.5L879 26.4L882 24.9L885 23.1L888 21.2L891 19.2L894 17.1L897 15.2L900 13.5L903 12.1L906 11.1L909 10.5L912 10.4L915 10.8L918 11.7L921 13L924 14.7L927 16.6L930 18.8L933 21.1L936 23.3L939 25.4L942 27.2L945 28.7L948 29.7L951 30.2L954 30.2L957 29.7L960 28.7L963 27.2L966 25.4L969 23.3L972 21.1L975 18.8L978 16.5L981 14.5L984 12.8L987 11.4L990 10.5L993 10.1L996 10.2L999 10.8L1002 11.9L1005 13.3L1008 15.1L1011 17.1L1014 19.2L1017 21.3L1020 23.3L1023 25.1L1026 26.6L1029 27.8L1032 28.5L1035 28.9L1038 28.7L1041 28.1L1044 27.2L1047 25.9L1050 24.3L1053 22.5L1056 20.6L1059 18.7L1062 16.9L1065 15.3L1068 14L1071 12.9L1074 12.2L1077 11.9L1080 12L1083 12.5L1086 13.4L1089 14.6L1092 16L1095 17.7L1098 19.5L1101 21.3L1104 23.1L1107 24.7L1110 26.2L1113 27.3L1116 28L1119 28.4L1122 28.3L1125 27.8L1128 27L1131 25.7L1134 24.1L1137 22.3L1140 20.4L1143 18.4L1146 16.4L1149 14.6L1152 13.1L1155 11.8L1158 11L1161 10.6L1164 10.7L1167 11.2L1170 12.2L1173 13.7L1176 15.5L1179 17.5L1182 19.7L1185 21.9L1188 24.1L1191 26.1L1194 27.8L1197 29L1200 29.9"/></svg><span>只做兩件事</span></button><button type="button" class="ld" data-route="coast" aria-pressed="false"><svg class="ld-w" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 13.6L3 12.3L6 11.5L9 11.2L12 11.5L15 12.3L18 13.6L21 15.2L24 17.2L27 19.3L30 21.5L33 23.6L36 25.4L39 26.9L42 28L45 28.6L48 28.7L51 28.2L54 27.2L57 25.7L60 23.9L63 21.8L66 19.5L69 17.3L72 15.2L75 13.3L78 11.9L81 10.9L84 10.5L87 10.7L90 11.5L93 12.9L96 14.7L99 16.9L102 19.3L105 21.8L108 24.3L111 26.5L114 28.3L117 29.6L120 30.4L123 30.4L126 29.9L129 28.6L132 26.8L135 24.6L138 22L141 19.3L144 16.6L147 14.1L150 12L153 10.4L156 9.4L159 9L162 9.4L165 10.4L168 12L171 14.2L174 16.7L177 19.4L180 22.1L183 24.7L186 26.9L189 28.7L192 29.9L195 30.5L198 30.4L201 29.7L204 28.3L207 26.5L210 24.2L213 21.8L216 19.2L219 16.8L222 14.6L225 12.8L228 11.4L231 10.6L234 10.4L237 10.9L240 11.8L243 13.3L246 15.2L249 17.3L252 19.6L255 21.9L258 24L261 25.8L264 27.3L267 28.2L270 28.7L273 28.6L276 28L279 26.9L282 25.4L285 23.5L288 21.4L291 19.2L294 17.1L297 15.2L300 13.5L303 12.3L306 11.5L309 11.2L312 11.5L315 12.4L318 13.7L321 15.4L324 17.5L327 19.7L330 22L333 24.2L336 26.2L339 27.8L342 29L345 29.6L348 29.6L351 28.9L354 27.7L357 25.9L360 23.7L363 21.2L366 18.5L369 15.9L372 13.4L375 11.4L378 10L381 9.2L384 9.2L387 9.9L390 11.4L393 13.6L396 16.3L399 19.3L402 22L405 24.5L408 26.7L411 28.3L414 29.3L417 29.6L420 29.1L423 27.9L426 26.1L429 23.9L432 21.3L435 18.6L438 16.1L441 13.8L444 12.1L447 11L450 10.6L453 11L456 12.2L459 14.1L462 16.4L465 19.1L468 21.9L471 24.5L474 26.8L477 28.6L480 29.6L483 29.8L486 29.2L489 27.8L492 25.7L495 23L498 20.1L501 17.1L504 14.3L507 12L510 10.3L513 9.4L516 9.4L519 10.3L522 12.1L525 14.6L528 17.6L531 20.9L534 24.1L537 27.1L540 29.4L543 31L546 31.6L549 31.3L552 29.9L555 27.7L558 24.8L561 21.5L564 18L567 14.7L570 11.8L573 9.6L576 8.3L579 8L582 8.8L585 10.5L588 13L591 16.1L594 19.6L597 23L600 26.2L603 28.8L606 30.7L609 31.6L612 31.5L615 30.4L618 28.5L621 25.8L624 22.7L627 19.4L630 16.2L633 13.4L636 11.2L639 9.8L642 9.2L645 9.6L648 10.9L651 12.9L654 15.5L657 18.4L660 21.5L663 24.3L666 26.7L669 28.5L672 29.6L675 29.8L678 29.2L681 27.9L684 25.8L687 23.3L690 20.6L693 17.8L696 15.2L699 13.1L702 11.5L705 10.7L708 10.6L711 11.4L714 12.9L717 15L720 17.5L723 20.3L726 23L729 25.5L732 27.6L735 29L738 29.7L741 29.6L744 28.6L747 27L750 24.7L753 22.1L756 19.3L759 16.5L762 14L765 11.9L768 10.4L771 9.7L774 9.8L777 10.6L780 12.1L783 14.2L786 16.7L789 19.5L792 22.3L795 24.9L798 27.2L801 27.6L804 28.5L807 28.8L810 28.6L813 27.9L816 26.7L819 25.1L822 23.3L825 21.3L828 19.2L831 17.3L834 15.5L837 14L840 12.8L843 12L846 11.7L849 11.8L852 12.3L855 13.2L858 14.5L861 16.1L864 17.9L867 19.8L870 21.7L873 23.5L876 25.3L879 26.7L882 27.9L885 28.7L888 29L891 28.9L894 28.3L897 27.3L900 25.9L903 24.2L906 22.2L909 20.1L912 18L915 15.9L918 14L921 12.4L924 11.1L927 10.3L930 10L933 10.2L936 10.9L939 12L942 13.6L945 15.6L948 17.7L951 20L954 22.3L957 24.5L960 26.5L963 28.1L966 29.3L969 30L972 30.2L975 29.9L978 29.1L981 27.9L984 26.2L987 24.2L990 22.1L993 19.8L996 17.6L999 15.6L1002 13.8L1005 12.3L1008 11.3L1011 10.7L1014 10.6L1017 10.9L1020 11.7L1023 13L1026 14.5L1029 16.3L1032 18.3L1035 20.3L1038 22.2L1041 24L1044 25.6L1047 26.9L1050 27.8L1053 28.3L1056 28.4L1059 28.1L1062 27.3L1065 26.2L1068 24.8L1071 23.2L1074 21.5L1077 19.6L1080 17.8L1083 16.1L1086 14.7L1089 13.4L1092 12.5L1095 12L1098 11.9L1101 12.2L1104 12.8L1107 13.9L1110 15.2L1113 16.8L1116 18.6L1119 20.5L1122 22.4L1125 24.2L1128 25.8L1131 27.1L1134 28.1L1137 28.7L1140 28.8L1143 28.6L1146 27.8L1149 26.7L1152 25.2L1155 23.4L1158 21.4L1161 19.3L1164 17.2L1167 15.2L1170 13.4L1173 11.9L1176 10.9L1179 10.2L1182 10.1L1185 10.5L1188 11.4L1191 12.7L1194 14.4L1197 16.4L1200 18.6"/></svg><span>沿著海岸線</span></button><button type="button" class="ld" data-route="all" aria-pressed="false"><svg class="ld-w" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 10.3L3 6.9L6 7L9 10.4L12 16.2L15 22.9L18 28.9L21 32.5L24 32.9L27 30L30 24.5L33 17.9L36 11.8L39 7.8L42 6.9L45 9.5L48 14.7L51 21.4L54 27.8L57 32.2L60 33.5L63 31.3L66 26.2L69 19.4L72 12.6L75 7.7L78 5.9L81 7.7L84 12.8L87 19.8L90 27L93 32.5L96 34.9L99 33.4L102 28.4L105 21.1L108 13.4L111 7.3L114 4.4L117 5.5L120 10.4L123 17.9L126 26L129 32.6L132 36.1L135 35.4L138 30.6L141 23.1L144 14.8L147 7.7L150 3.8L153 4L156 8.5L159 15.9L162 24.3L165 31.7L168 36L171 36.2L174 32.2L177 25L180 16.7L183 9.2L186 4.6L189 4L192 7.5L195 14.2L198 22.3L201 29.7L204 34.5L207 35.6L210 32.6L213 26.4L216 18.7L219 11.4L222 6.5L225 5.1L228 7.6L231 13.1L234 20.4L237 27.4L240 32.4L243 34.1L246 32.2L249 27.2L252 20.5L255 13.7L258 8.6L261 6.5L264 7.9L267 12.4L270 18.8L273 25.4L276 30.6L279 33.1L282 32.1L285 28.1L288 22L291 15.3L294 9.9L297 7.1L300 7.5L303 11.2L306 17.2L309 24L312 29.8L315 33.1L318 33L321 29.6L324 23.7L327 16.6L330 10.4L333 6.5L336 6.1L339 9.4L342 15.6L345 23.1L348 29.9L351 34.3L354 34.8L357 31.3L360 24.5L363 16.2L366 8.9L369 4.5L372 4.5L375 9.1L378 17L381 26L384 33.5L387 37L390 35.3L393 28.8L396 19.3L399 9.9L402 5.9L405 5.2L408 9.3L411 16.9L414 25.6L417 32.3L420 34.8L423 32.2L426 25.3L429 16.5L432 9L435 5.4L438 7.1L441 13.6L444 22.5L447 30.4L450 34.5L453 33.2L456 26.7L459 17.7L462 9.4L465 5.2L468 6.7L471 13.4L474 22.8L477 31.2L480 35.3L483 33.4L486 26.3L489 16.5L492 8L495 4.1L498 6.3L501 14L504 24.2L507 32.9L510 36.7L513 33.9L516 25.6L519 15L522 6.1L525 2.6L528 5.9L531 14.8L534 25.9L537 34.8L540 38.1L543 34.2L546 24.8L549 13.3L552 4.3L555 1.4L558 5.8L561 15.8L564 27.5L567 36.3L570 38.8L573 33.9L576 23.5L579 11.8L582 3.3L585 1.3L588 6.7L591 17.2L594 28.8L597 36.9L600 38.3L603 32.6L606 22L609 10.8L612 3.2L615 2.3L618 8.2L621 18.7L624 29.5L627 36.5L630 36.9L633 30.8L636 20.6L639 10.3L642 4L645 3.9L648 10.1L651 20L654 29.8L657 35.5L660 35.2L663 29L666 19.4L669 10.2L672 4.9L675 5.6L678 11.9L681 21.2L684 30L687 34.8L690 33.8L693 27.4L696 18.3L699 9.8L702 5.3L705 6.6L708 13.1L711 22.3L714 30.6L717 34.8L720 33.2L723 26.4L726 17.1L729 8.9L732 4.9L735 6.8L738 13.8L741 23.3L744 31.7L747 35.6L750 33.5L753 26.3L756 16.6L759 8.1L762 3.9L765 5.8L768 12.9L771 22.8L774 31.7L777 36.5L780 35.3L783 28.6L786 18.8L789 9.4L792 3.5L795 3.4L798 9L801 18.7L804 27L807 32.8L810 34.3L813 31.1L816 24.3L819 16.3L822 9.5L825 6.2L828 7.2L831 12.3L834 19.8L837 27.2L840 32.5L843 33.8L846 31L849 24.8L852 17.1L855 10.3L858 6.3L861 6.4L864 10.6L867 17.6L870 25.4L873 31.7L876 34.7L879 33.3L882 27.9L885 20.1L888 12.1L891 6.3L894 4.6L897 7.3L900 13.9L903 22.5L906 30.4L909 35.4L912 35.8L915 31.6L918 23.9L921 14.8L924 7.3L927 3.4L930 4.4L933 10L936 18.7L939 27.9L942 34.7L945 37.3L948 34.7L951 27.8L954 18.5L957 9.7L960 3.9L963 2.9L966 6.9L969 14.8L972 24.2L975 32.3L978 36.8L981 36.2L984 30.9L987 22.5L990 13.4L993 6.3L996 3.4L999 5.3L1002 11.6L1005 20.2L1008 28.7L1011 34.4L1014 35.9L1017 32.6L1020 25.7L1023 17.3L1026 9.8L1029 5.4L1032 5.4L1035 9.6L1038 16.8L1041 24.8L1044 31.3L1047 34.4L1050 33.2L1053 28.1L1056 20.8L1059 13.3L1062 7.9L1065 6.1L1068 8.4L1071 14L1074 21.4L1077 28.4L1080 32.8L1083 33.4L1086 30.1L1089 23.8L1092 16.4L1095 10L1098 6.6L1101 7.1L1104 11.4L1107 18.3L1110 25.7L1113 31.6L1116 34.1L1119 32.4L1122 27L1125 19.5L1128 12L1131 6.8L1134 5.4L1137 8.3L1140 14.8L1143 22.9L1146 30.3L1149 34.8L1152 34.9L1155 30.6L1158 23.1L1161 14.5L1164 7.4L1167 3.9L1170 5.2L1173 10.9L1176 19.4L1179 28.2L1182 34.7L1185 36.8L1188 34L1191 27L1194 17.9L1197 9.3L1200 3.8"/></svg><span>第一次來，全都要</span></button><button type="button" class="ld ld-x" data-route="empty" aria-pressed="false"><span>全部撿回沙灘</span></button></div>
+      <div class="stn stn-a"><i aria-hidden="true"></i><span>臺東火車站</span><b class="stn-l" aria-hidden="true"></b></div>
+      <svg class="cap" viewBox="0 0 48 108" aria-hidden="true" focusable="false"><path d="M48 11C18 11 4 30 4 55.5S18 100 48 100Z"/></svg>
+      <div class="rows" role="grid" aria-labelledby="bd-h" aria-describedby="how-b"><div role="row" class="run run0" id="run0"><span role="rowheader" class="sr-only">第一天</span>
+      <svg class="wv wv-h" viewBox="0 0 400 108" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#rv0a" class="w-fill"/><use href="#rv0d" class="w-c"/><use href="#rv0e" class="w-c w-c2"/><use href="#rv0c" class="w-bot"/><use href="#rv0b" class="w-top"/></svg>
+      <svg class="wv wv-v" viewBox="0 0 108 400" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g transform="translate(108 0) rotate(90)"><use href="#rv0a" class="w-fill"/><use href="#rv0d" class="w-c"/><use href="#rv0e" class="w-c w-c2"/><use href="#rv0c" class="w-bot"/><use href="#rv0b" class="w-top"/></g></svg>
+      <div role="gridcell" class="cell" id="g0" data-i="0" tabindex="0" style="--x0:0;--len:3;--t:0;--o:0"><span class="sl" id="sl0"><b>清晨</b><span class="num">05–08</span></span><span class="trv"><span class="trv-t">車程 <b class="num">0</b> 分</span></span><span class="ovf">多 <b class="num">0</b> 分</span></div><div role="gridcell" class="cell" id="g1" data-i="1" tabindex="-1" style="--x0:3;--len:4;--t:0;--o:0"><span class="sl" id="sl1"><b>上午</b><span class="num">08–12</span></span><span class="trv"><span class="trv-t">車程 <b class="num">0</b> 分</span></span><span class="ovf">多 <b class="num">0</b> 分</span></div><div role="gridcell" class="cell has" id="g2" data-i="2" tabindex="-1" style="--x0:7;--len:5;--t:0.5;--o:0"><span class="sl" id="sl2"><b>午後</b><span class="num">12–17</span></span><span class="trv"><span class="trv-t">車程 <b class="num">30</b> 分</span></span><button type="button" class="chip z3" id="k12" data-c="12" aria-pressed="false" style="--h:2.5;--pb:25px 24px 16px 22px / 51% 43% 57% 44%;--rot:0.4deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz3"/></svg><span class="k-n">漂流木工坊</span><span class="k-m"><span class="num">2.5</span> 時・NT$ 850</span></button><span class="ovf">多 <b class="num">0</b> 分</span></div><div role="gridcell" class="cell has" id="g3" data-i="3" tabindex="-1" style="--x0:12;--len:2;--t:0;--o:0"><span class="sl" id="sl3"><b>黃昏</b><span class="num">17–19</span></span><span class="trv"><span class="trv-t">車程 <b class="num">0</b> 分</span></span><button type="button" class="chip z0 rest" id="k19" data-c="19" aria-pressed="false" style="--h:1.5;--pb:20px 18px 23px 26px / 57% 39% 43% 53%;--rot:-1.2deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz0"/></svg><span class="k-n">陽台發呆</span><span class="k-m"><span class="num">1.5</span> 時・免費</span></button><span class="ovf">多 <b class="num">0</b> 分</span></div><div role="gridcell" class="cell" id="g4" data-i="4" tabindex="-1" style="--x0:14;--len:3;--t:0;--o:0"><span class="sl" id="sl4"><b>夜裡</b><span class="num">19–22</span></span><span class="trv"><span class="trv-t">車程 <b class="num">0</b> 分</span></span><span class="ovf">多 <b class="num">0</b> 分</span></div></div><div role="row" class="run run1 rev" id="run1"><span role="rowheader" class="sr-only">第二天</span>
+      <svg class="wv wv-h" viewBox="0 0 400 108" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#rv1a" class="w-fill"/><use href="#rv1d" class="w-c"/><use href="#rv1e" class="w-c w-c2"/><use href="#rv1c" class="w-bot"/><use href="#rv1b" class="w-top"/></svg>
+      <svg class="wv wv-v" viewBox="0 0 108 400" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g transform="translate(108 0) rotate(90)"><use href="#rv1a" class="w-fill"/><use href="#rv1d" class="w-c"/><use href="#rv1e" class="w-c w-c2"/><use href="#rv1c" class="w-bot"/><use href="#rv1b" class="w-top"/></g></svg>
+      <div role="gridcell" class="cell has" id="g5" data-i="5" tabindex="-1" style="--x0:0;--len:3;--t:0;--o:0"><span class="sl" id="sl5"><b>清晨</b><span class="num">05–08</span></span><span class="trv"><span class="trv-t">車程 <b class="num">0</b> 分</span></span><button type="button" class="chip z3" id="k8" data-c="8" aria-pressed="false" style="--h:1;--pb:22px 29px 25px 17px / 54% 61% 41% 61%;--rot:0.5deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz3"/></svg><span class="k-n">海邊等日出</span><span class="k-m"><span class="num">1</span> 時・免費</span></button><span class="ovf">多 <b class="num">0</b> 分</span></div><div role="gridcell" class="cell has" id="g6" data-i="6" tabindex="-1" style="--x0:3;--len:4;--t:0;--o:0"><span class="sl" id="sl6"><b>上午</b><span class="num">08–12</span></span><span class="trv"><span class="trv-t">車程 <b class="num">0</b> 分</span></span><button type="button" class="chip z3" id="k9" data-c="9" aria-pressed="false" style="--h:3;--pb:17px 20px 16px 20px / 46% 54% 50% 51%;--rot:-2.5deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz3"/></svg><span class="k-n">淺灘浮潛</span><span class="k-m"><span class="num">3</span> 時・NT$ 1,600</span></button><span class="ovf">多 <b class="num">0</b> 分</span></div><div role="gridcell" class="cell has" id="g7" data-i="7" tabindex="-1" style="--x0:7;--len:5;--t:1;--o:0"><span class="sl" id="sl7"><b>午後</b><span class="num">12–17</span></span><span class="trv"><span class="trv-t">車程 <b class="num">60</b> 分</span></span><button type="button" class="chip z4" id="k15" data-c="15" aria-pressed="false" style="--h:2;--pb:16px 16px 21px 23px / 45% 59% 45% 60%;--rot:-2.2deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz4"/></svg><span class="k-n">海蝕洞步道</span><span class="k-m"><span class="num">2</span> 時・免費</span></button><span class="ovf">多 <b class="num">0</b> 分</span></div><div role="gridcell" class="cell has" id="g8" data-i="8" tabindex="-1" style="--x0:12;--len:2;--t:0;--o:0"><span class="sl" id="sl8"><b>黃昏</b><span class="num">17–19</span></span><span class="trv"><span class="trv-t">車程 <b class="num">0</b> 分</span></span><button type="button" class="chip z4" id="k13" data-c="13" aria-pressed="false" style="--h:1.5;--pb:30px 29px 28px 14px / 42% 39% 62% 46%;--rot:0.7deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz4"/></svg><span class="k-n">梯田看海</span><span class="k-m"><span class="num">1.5</span> 時・免費</span></button><span class="ovf">多 <b class="num">0</b> 分</span></div><div role="gridcell" class="cell has" id="g9" data-i="9" tabindex="-1" style="--x0:14;--len:3;--t:0;--o:0"><span class="sl" id="sl9"><b>夜裡</b><span class="num">19–22</span></span><span class="trv"><span class="trv-t">車程 <b class="num">0</b> 分</span></span><button type="button" class="chip z4" id="k16" data-c="16" aria-pressed="false" style="--h:1.5;--pb:28px 24px 25px 18px / 47% 45% 43% 44%;--rot:1.6deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz4"/></svg><span class="k-n">漁村晚餐</span><span class="k-m"><span class="num">1.5</span> 時・NT$ 800</span></button><span class="ovf">多 <b class="num">0</b> 分</span></div></div><div role="row" class="run run2" id="run2"><span role="rowheader" class="sr-only">第三天</span>
+      <svg class="wv wv-h" viewBox="0 0 400 108" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#rv2a" class="w-fill"/><use href="#rv2d" class="w-c"/><use href="#rv2e" class="w-c w-c2"/><use href="#rv2c" class="w-bot"/><use href="#rv2b" class="w-top"/></svg>
+      <svg class="wv wv-v" viewBox="0 0 108 400" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g transform="translate(108 0) rotate(90)"><use href="#rv2a" class="w-fill"/><use href="#rv2d" class="w-c"/><use href="#rv2e" class="w-c w-c2"/><use href="#rv2c" class="w-bot"/><use href="#rv2b" class="w-top"/></g></svg>
+      <div role="gridcell" class="cell has" id="g10" data-i="10" tabindex="-1" style="--x0:0;--len:3;--t:0;--o:0"><span class="sl" id="sl10"><b>清晨</b><span class="num">05–08</span></span><span class="trv"><span class="trv-t">車程 <b class="num">0</b> 分</span></span><button type="button" class="chip z4" id="k14" data-c="14" aria-pressed="false" style="--h:1;--pb:26px 28px 16px 18px / 59% 57% 57% 43%;--rot:-2deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz4"/></svg><span class="k-n">漁港看卸魚</span><span class="k-m"><span class="num">1</span> 時・免費</span></button><span class="ovf">多 <b class="num">0</b> 分</span></div><div role="gridcell" class="cell has" id="g11" data-i="11" tabindex="-1" style="--x0:3;--len:4;--t:0;--o:0"><span class="sl" id="sl11"><b>上午</b><span class="num">08–12</span></span><span class="trv"><span class="trv-t">車程 <b class="num">0</b> 分</span></span><button type="button" class="chip z0 rest" id="k17" data-c="17" aria-pressed="false" style="--h:1.5;--pb:29px 29px 17px 19px / 40% 39% 57% 47%;--rot:-1.9deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz0"/></svg><span class="k-n">賴床吃早餐</span><span class="k-m"><span class="num">1.5</span> 時・免費</span></button><span class="ovf">多 <b class="num">0</b> 分</span></div><div role="gridcell" class="cell has" id="g12" data-i="12" tabindex="-1" style="--x0:7;--len:5;--t:1.25;--o:0"><span class="sl" id="sl12"><b>午後</b><span class="num">12–17</span></span><span class="trv"><span class="trv-t">車程 <b class="num">75</b> 分</span></span><button type="button" class="chip z1" id="k1" data-c="1" aria-pressed="false" style="--h:2;--pb:22px 16px 20px 18px / 42% 50% 40% 47%;--rot:-2.4deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz1"/></svg><span class="k-n">稻田邊騎車</span><span class="k-m"><span class="num">2</span> 時・NT$ 250</span></button><span class="ovf">多 <b class="num">0</b> 分</span></div><div role="gridcell" class="cell" id="g13" data-i="13" tabindex="-1" style="--x0:12;--len:2;--t:0;--o:0"><span class="sl" id="sl13"><b>黃昏</b><span class="num">17–19</span></span><span class="trv"><span class="trv-t">車程 <b class="num">0</b> 分</span></span><span class="ovf">多 <b class="num">0</b> 分</span></div><div role="gridcell" class="cell" id="g14" data-i="14" tabindex="-1" style="--x0:14;--len:3;--t:0;--o:0"><span class="sl" id="sl14"><b>夜裡</b><span class="num">19–22</span></span><span class="trv"><span class="trv-t">車程 <b class="num">0</b> 分</span></span><span class="ovf">多 <b class="num">0</b> 分</span></div></div></div>
+      <div class="bend bend0"><svg class="bd-s" viewBox="0 0 140 292" aria-hidden="true" focusable="false"><path class="bd-f" d="M0 11L11.88 11.68L23.69 13.15L35.4 15.38L46.95 18.51L58.15 22.8L68.75 28.43L78.51 35.37L87.37 43.37L95.45 52.05L103.04 61.04L110.39 70.21L117.55 79.63L124.27 89.55L130.03 100.17L134.27 111.52L136.61 123.41L137.07 135.51L136.05 147.5L134.15 159.24L131.94 170.77L129.65 182.24L127.12 193.77L123.9 205.28L119.47 216.47L113.5 226.97L106 236.44L97.26 244.76L87.74 252.06L77.8 258.61L67.64 264.65L57.24 270.25L46.49 275.23L35.31 279.29L23.74 282.15L11.91 283.69L0 284L0 195L4.13 194.73L8.23 194.18L12.29 193.36L16.29 192.27L20.23 190.87L24.03 189.12L27.64 186.97L30.96 184.4L33.93 181.43L36.51 178.13L38.7 174.6L40.56 170.92L42.16 167.16L43.58 163.36L44.87 159.52L46.03 155.62L47.01 151.61L47.71 147.5L48 143.3L47.79 139.07L47 134.91L45.63 130.89L43.75 127.1L41.44 123.57L38.84 120.3L36.03 117.26L33.1 114.4L30.04 111.69L26.86 109.13L23.52 106.76L19.98 104.64L16.25 102.86L12.33 101.49L8.28 100.56L4.15 100.08L0 100Z"/><path class="bd-e" d="M0 11L11.88 11.68L23.69 13.15L35.4 15.38L46.95 18.51L58.15 22.8L68.75 28.43L78.51 35.37L87.37 43.37L95.45 52.05L103.04 61.04L110.39 70.21L117.55 79.63L124.27 89.55L130.03 100.17L134.27 111.52L136.61 123.41L137.07 135.51L136.05 147.5L134.15 159.24L131.94 170.77L129.65 182.24L127.12 193.77L123.9 205.28L119.47 216.47L113.5 226.97L106 236.44L97.26 244.76L87.74 252.06L77.8 258.61L67.64 264.65L57.24 270.25L46.49 275.23L35.31 279.29L23.74 282.15L11.91 283.69L0 284"/></svg><span class="zc" id="zc0" data-z="3"><span class="zs zs0">住市區</span><span class="zs zs1">住池上</span><span class="zs zs2">住鹿野</span><span class="zs zs3">住都蘭</span><span class="zs zs4">住長濱</span></span></div><div class="bend bend1"><svg class="bd-s" viewBox="0 0 140 292" aria-hidden="true" focusable="false"><path class="bd-f" d="M140 11L128.12 11.74L116.37 13.47L104.75 15.96L93.28 19.14L82 23.13L71.12 28.19L60.91 34.55L51.67 42.23L43.52 51.02L36.35 60.52L29.84 70.37L23.66 80.33L17.61 90.43L11.87 100.86L6.88 111.83L3.26 123.39L1.49 135.38L1.72 147.5L3.64 159.43L6.7 171L10.29 182.26L14.01 193.36L17.88 204.44L22.24 215.49L27.54 226.24L34.16 236.31L42.18 245.32L51.4 253.09L61.44 259.7L71.94 265.39L82.68 270.43L93.62 274.93L104.82 278.8L116.33 281.75L128.1 283.53L140 284L140 195L135.87 194.72L131.79 194.07L127.77 193.13L123.83 191.92L119.96 190.48L116.16 188.79L112.49 186.78L109.01 184.43L105.81 181.69L102.98 178.56L100.59 175.09L98.66 171.37L97.15 167.48L96 163.52L95.1 159.53L94.38 155.54L93.79 151.54L93.32 147.5L93.06 143.39L93.09 139.23L93.53 135.05L94.48 130.93L95.98 126.97L98 123.25L100.49 119.83L103.33 116.73L106.43 113.93L109.69 111.38L113.06 109.03L116.54 106.87L120.14 104.9L123.87 103.17L127.74 101.76L131.75 100.73L135.86 100.14L140 100Z"/><path class="bd-e" d="M140 11L128.12 11.74L116.37 13.47L104.75 15.96L93.28 19.14L82 23.13L71.12 28.19L60.91 34.55L51.67 42.23L43.52 51.02L36.35 60.52L29.84 70.37L23.66 80.33L17.61 90.43L11.87 100.86L6.88 111.83L3.26 123.39L1.49 135.38L1.72 147.5L3.64 159.43L6.7 171L10.29 182.26L14.01 193.36L17.88 204.44L22.24 215.49L27.54 226.24L34.16 236.31L42.18 245.32L51.4 253.09L61.44 259.7L71.94 265.39L82.68 270.43L93.62 274.93L104.82 278.8L116.33 281.75L128.1 283.53L140 284"/></svg><span class="zc" id="zc1" data-z="4"><span class="zs zs0">住市區</span><span class="zs zs1">住池上</span><span class="zs zs2">住鹿野</span><span class="zs zs3">住都蘭</span><span class="zs zs4">住長濱</span></span></div>
+      <div class="dl dl1" id="dh1" data-lv="2"><span class="dl-n">第二天</span><span class="dl-i num" data-o="i1">10.5</span><span class="dl-lv"><span class="lv lv0">從容</span><span class="lv lv1">剛好</span><span class="lv lv2">太滿</span></span><span class="dl-eq">＝ 活動 <b class="num" data-o="a1">9</b> ＋ 車程 <b class="num" data-o="m1">1</b> × 1.5</span></div><div class="dl dl2" id="dh2" data-lv="1"><span class="dl-n">第三天</span><span class="dl-i num" data-o="i2">6.4</span><span class="dl-lv"><span class="lv lv0">從容</span><span class="lv lv1">剛好</span><span class="lv lv2">太滿</span></span><span class="dl-eq">＝ 活動 <b class="num" data-o="a2">3</b> ＋ 車程 <b class="num" data-o="m2">2.25</b> × 1.5</span></div>
+      <div class="end" id="zc2" style="--b:1"><span class="tail" aria-hidden="true"></span><span class="bk">回車站 <b class="num" data-o="bk">60</b> 分</span><span class="stn stn-b"><i aria-hidden="true"></i><span>臺東火車站</span></span></div>
+      <p class="fx"><span class="fx-f">節奏指數 ＝ 活動時數 ＋ 車程時數 × 1.5</span><span class="fx-n">坐車比走路累，在車上被搖晃的一小時算一個半小時；空心的石頭是留白，不算活動時數。5 以下從容，超過 7.5 太滿，第三天另外加上回車站的車程。</span></p>
+    </div>
+      <div class="beach" id="beach">
+      <svg class="shore" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="sh-f" d="M0 0L0 12.1L10 12.0L20 11.9L30 11.6L40 11.3L50 10.9L60 10.5L70 10.0L80 9.6L90 9.2L100 8.9L110 8.6L120 8.5L130 8.5L140 8.7L150 9.0L160 9.5L170 10.1L180 10.8L190 11.6L200 12.5L210 13.5L220 14.5L230 15.5L240 16.4L250 17.3L260 18.1L270 18.8L280 19.4L290 19.9L300 20.2L310 20.4L320 20.4L330 20.4L340 20.2L350 20.0L360 19.7L370 19.4L380 19.0L390 18.8L400 18.5L410 18.4L420 18.3L430 18.4L440 18.6L450 18.9L460 19.3L470 19.8L480 20.4L490 21.1L500 21.8L510 22.5L520 23.3L530 23.9L540 24.6L550 25.1L560 25.5L570 25.8L580 25.9L590 25.9L600 25.8L610 25.4L620 25.0L630 24.4L640 23.7L650 23.0L660 22.2L670 21.3L680 20.5L690 19.8L700 19.1L710 18.4L720 17.9L730 17.5L740 17.2L750 17.1L760 17.0L770 17.1L780 17.3L790 17.5L800 17.7L810 18.0L820 18.3L830 18.5L840 18.7L850 18.8L860 18.8L870 18.6L880 18.4L890 18.0L900 17.4L910 16.8L920 16.0L930 15.1L940 14.2L950 13.3L960 12.3L970 11.4L980 10.5L990 9.7L1000 9.0L1010 8.4L1020 7.9L1030 7.6L1040 7.4L1050 7.4L1060 7.6L1070 7.8L1080 8.2L1090 8.6L1100 9.1L1110 9.7L1120 10.2L1130 10.7L1140 11.1L1150 11.5L1160 11.8L1170 12.0L1180 12.0L1190 12.0L1200 11.8L1200 0Z"/><path class="sh-e" d="M0 12.1L10 12.0L20 11.9L30 11.6L40 11.3L50 10.9L60 10.5L70 10.0L80 9.6L90 9.2L100 8.9L110 8.6L120 8.5L130 8.5L140 8.7L150 9.0L160 9.5L170 10.1L180 10.8L190 11.6L200 12.5L210 13.5L220 14.5L230 15.5L240 16.4L250 17.3L260 18.1L270 18.8L280 19.4L290 19.9L300 20.2L310 20.4L320 20.4L330 20.4L340 20.2L350 20.0L360 19.7L370 19.4L380 19.0L390 18.8L400 18.5L410 18.4L420 18.3L430 18.4L440 18.6L450 18.9L460 19.3L470 19.8L480 20.4L490 21.1L500 21.8L510 22.5L520 23.3L530 23.9L540 24.6L550 25.1L560 25.5L570 25.8L580 25.9L590 25.9L600 25.8L610 25.4L620 25.0L630 24.4L640 23.7L650 23.0L660 22.2L670 21.3L680 20.5L690 19.8L700 19.1L710 18.4L720 17.9L730 17.5L740 17.2L750 17.1L760 17.0L770 17.1L780 17.3L790 17.5L800 17.7L810 18.0L820 18.3L830 18.5L840 18.7L850 18.8L860 18.8L870 18.6L880 18.4L890 18.0L900 17.4L910 16.8L920 16.0L930 15.1L940 14.2L950 13.3L960 12.3L970 11.4L980 10.5L990 9.7L1000 9.0L1010 8.4L1020 7.9L1030 7.6L1040 7.4L1050 7.4L1060 7.6L1070 7.8L1080 8.2L1090 8.6L1100 9.1L1110 9.7L1120 10.2L1130 10.7L1140 11.1L1150 11.5L1160 11.8L1170 12.0L1180 12.0L1190 12.0L1200 11.8" vector-effect="non-scaling-stroke"/></svg>
+      <div class="tray-w">
+        <div class="bh"><h2 id="tray-h">沙灘上的石頭</h2><p class="hint" id="tray-hint">從沙灘撿一顆，放進那一天的水裡</p></div>
+        <div class="tray" id="tray" role="toolbar" aria-labelledby="tray-h" aria-describedby="tray-hint how-b"><div class="tg tg1"><p class="tgl" id="tgl1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz1"/></svg><span>池上</span><small>稻田</small></p><div class="tg-c"><span class="ts" id="ts0" data-for="0" style="--h:1.5;--pb:30px 29px 18px 24px / 55% 48% 62% 49%;--rot:0.8deg"><span class="wet" aria-hidden="true">清晨走田埂</span><button type="button" class="chip z1" id="k0" data-c="0" aria-pressed="false" style="--h:1.5;--pb:30px 29px 18px 24px / 55% 48% 62% 49%;--rot:0.8deg" tabindex="0"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz1"/></svg><span class="k-n">清晨走田埂</span><span class="k-m"><span class="num">1.5</span> 時・免費</span></button></span><span class="ts" id="ts1" data-for="1" style="--h:2;--pb:22px 16px 20px 18px / 42% 50% 40% 47%;--rot:-2.4deg"><span class="wet" aria-hidden="true">稻田邊騎車</span></span><span class="ts" id="ts2" data-for="2" style="--h:1;--pb:26px 19px 17px 15px / 48% 52% 57% 45%;--rot:-0.9deg"><span class="wet" aria-hidden="true">水圳邊午飯</span><button type="button" class="chip z1" id="k2" data-c="2" aria-pressed="false" style="--h:1;--pb:26px 19px 17px 15px / 48% 52% 57% 45%;--rot:-0.9deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz1"/></svg><span class="k-n">水圳邊午飯</span><span class="k-m"><span class="num">1</span> 時・NT$ 280</span></button></span><span class="ts" id="ts3" data-for="3" style="--h:1;--pb:17px 25px 23px 26px / 43% 55% 49% 56%;--rot:-0.4deg"><span class="wet" aria-hidden="true">看碾米</span><button type="button" class="chip z1" id="k3" data-c="3" aria-pressed="false" style="--h:1;--pb:17px 25px 23px 26px / 43% 55% 49% 56%;--rot:-0.4deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz1"/></svg><span class="k-n">看碾米</span><span class="k-m"><span class="num">1</span> 時・NT$ 120</span></button></span></div></div><div class="tg tg2"><p class="tgl" id="tgl2"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz2"/></svg><span>鹿野</span><small>高台</small></p><div class="tg-c"><span class="ts" id="ts4" data-for="4" style="--h:1.5;--pb:30px 18px 26px 16px / 46% 48% 44% 42%;--rot:1.9deg"><span class="wet" aria-hidden="true">高台看雲海</span><button type="button" class="chip z2" id="k4" data-c="4" aria-pressed="false" style="--h:1.5;--pb:30px 18px 26px 16px / 46% 48% 44% 42%;--rot:1.9deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz2"/></svg><span class="k-n">高台看雲海</span><span class="k-m"><span class="num">1.5</span> 時・免費</span></button></span><span class="ts" id="ts5" data-for="5" style="--h:2.5;--pb:26px 23px 16px 18px / 39% 53% 59% 44%;--rot:0.8deg"><span class="wet" aria-hidden="true">茶園揉茶</span><button type="button" class="chip z2" id="k5" data-c="5" aria-pressed="false" style="--h:2.5;--pb:26px 23px 16px 18px / 39% 53% 59% 44%;--rot:0.8deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz2"/></svg><span class="k-n">茶園揉茶</span><span class="k-m"><span class="num">2.5</span> 時・NT$ 680</span></button></span><span class="ts" id="ts6" data-for="6" style="--h:1;--pb:30px 25px 20px 19px / 54% 61% 60% 55%;--rot:-0.7deg"><span class="wet" aria-hidden="true">紅烏龍茶席</span><button type="button" class="chip z2" id="k6" data-c="6" aria-pressed="false" style="--h:1;--pb:30px 25px 20px 19px / 54% 61% 60% 55%;--rot:-0.7deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz2"/></svg><span class="k-n">紅烏龍茶席</span><span class="k-m"><span class="num">1</span> 時・NT$ 350</span></button></span><span class="ts" id="ts7" data-for="7" style="--h:1.5;--pb:29px 27px 29px 16px / 39% 59% 45% 59%;--rot:-0.8deg"><span class="wet" aria-hidden="true">龍田騎單車</span><button type="button" class="chip z2" id="k7" data-c="7" aria-pressed="false" style="--h:1.5;--pb:29px 27px 29px 16px / 39% 59% 45% 59%;--rot:-0.8deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz2"/></svg><span class="k-n">龍田騎單車</span><span class="k-m"><span class="num">1.5</span> 時・NT$ 200</span></button></span></div></div><div class="tg tg3"><p class="tgl" id="tgl3"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz3"/></svg><span>都蘭</span><small>海邊</small></p><div class="tg-c"><span class="ts" id="ts8" data-for="8" style="--h:1;--pb:22px 29px 25px 17px / 54% 61% 41% 61%;--rot:0.5deg"><span class="wet" aria-hidden="true">海邊等日出</span></span><span class="ts" id="ts9" data-for="9" style="--h:3;--pb:17px 20px 16px 20px / 46% 54% 50% 51%;--rot:-2.5deg"><span class="wet" aria-hidden="true">淺灘浮潛</span></span><span class="ts" id="ts10" data-for="10" style="--h:2;--pb:15px 27px 28px 18px / 42% 45% 59% 45%;--rot:2.2deg"><span class="wet" aria-hidden="true">海岸野菜晚餐</span><button type="button" class="chip z3" id="k10" data-c="10" aria-pressed="false" style="--h:2;--pb:15px 27px 28px 18px / 42% 45% 59% 45%;--rot:2.2deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz3"/></svg><span class="k-n">海岸野菜晚餐</span><span class="k-m"><span class="num">2</span> 時・NT$ 950</span></button></span><span class="ts" id="ts11" data-for="11" style="--h:1.5;--pb:16px 24px 23px 19px / 41% 41% 40% 45%;--rot:0.2deg"><span class="wet" aria-hidden="true">沙灘看星星</span><button type="button" class="chip z3" id="k11" data-c="11" aria-pressed="false" style="--h:1.5;--pb:16px 24px 23px 19px / 41% 41% 40% 45%;--rot:0.2deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz3"/></svg><span class="k-n">沙灘看星星</span><span class="k-m"><span class="num">1.5</span> 時・免費</span></button></span><span class="ts" id="ts12" data-for="12" style="--h:2.5;--pb:25px 24px 16px 22px / 51% 43% 57% 44%;--rot:0.4deg"><span class="wet" aria-hidden="true">漂流木工坊</span></span></div></div><div class="tg tg4"><p class="tgl" id="tgl4"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz4"/></svg><span>長濱</span><small>海稻田</small></p><div class="tg-c"><span class="ts" id="ts13" data-for="13" style="--h:1.5;--pb:30px 29px 28px 14px / 42% 39% 62% 46%;--rot:0.7deg"><span class="wet" aria-hidden="true">梯田看海</span></span><span class="ts" id="ts14" data-for="14" style="--h:1;--pb:26px 28px 16px 18px / 59% 57% 57% 43%;--rot:-2deg"><span class="wet" aria-hidden="true">漁港看卸魚</span></span><span class="ts" id="ts15" data-for="15" style="--h:2;--pb:16px 16px 21px 23px / 45% 59% 45% 60%;--rot:-2.2deg"><span class="wet" aria-hidden="true">海蝕洞步道</span></span><span class="ts" id="ts16" data-for="16" style="--h:1.5;--pb:28px 24px 25px 18px / 47% 45% 43% 44%;--rot:1.6deg"><span class="wet" aria-hidden="true">漁村晚餐</span></span></div></div><div class="tg tg0"><p class="tgl" id="tgl0"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz0"/></svg><span>就地</span><small>不出門</small></p><div class="tg-c"><span class="ts" id="ts17" data-for="17" style="--h:1.5;--pb:29px 29px 17px 19px / 40% 39% 57% 47%;--rot:-1.9deg"><span class="wet" aria-hidden="true">賴床吃早餐</span></span><span class="ts" id="ts18" data-for="18" style="--h:1.5;--pb:18px 16px 27px 19px / 59% 51% 48% 54%;--rot:1.1deg"><span class="wet" aria-hidden="true">午睡</span><button type="button" class="chip z0 rest" id="k18" data-c="18" aria-pressed="false" style="--h:1.5;--pb:18px 16px 27px 19px / 59% 51% 48% 54%;--rot:1.1deg" tabindex="-1"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz0"/></svg><span class="k-n">午睡</span><span class="k-m"><span class="num">1.5</span> 時・免費</span></button></span><span class="ts" id="ts19" data-for="19" style="--h:1.5;--pb:20px 18px 23px 26px / 57% 39% 43% 53%;--rot:-1.2deg"><span class="wet" aria-hidden="true">陽台發呆</span></span></div></div></div>
+      </div>
+      <div class="voice" id="voice" data-r="draft" aria-live="off">
+      <div class="vc-r"><p class="vc-k">水裡現在是</p><p class="vc-n"><span class="rn rn-draft">一份放到一半的草稿</span><span class="rn rn-two">只做兩件事</span><span class="rn rn-coast">沿著海岸線</span><span class="rn rn-all">第一次來，全都要</span><span class="rn rn-custom">你自己放的這一條</span><span class="rn rn-empty">一條空空的溪</span></p><p class="vc-b"><span class="rb rb-draft">第二天從日出一路放到晚餐，指數衝過十，那一段的水面擠成一團碎浪。把浮潛或梯田撿回沙灘，看水怎麼慢慢平下來。</span><span class="rb rb-two">一天只放兩顆石頭，其餘都是平的水，讓縱谷的風決定你要在哪一條田埂上停下來。</span><span class="rb rb-coast">從都蘭往北到長濱，第三天的清晨留給漁港和梯田，回車站那一段路正好把海岸線倒著再看一遍。</span><span class="rb rb-all">什麼都想看的放法，三天的指數都過九。放在這裡不是推薦，是讓你看見水有多急。</span><span class="rb rb-custom">每挪一顆，那一天的水面和下面那一疊錢都會重算。放好了，複製網址傳給慢島，就照這一份報價。</span><span class="rb rb-empty">三天都還是平的水面。從沙灘挑一顆開始；或者就讓它空著，也是一種走法。</span></p></div>
+      <div class="vc-c"><div class="nt" id="nt0"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz1"/></svg>清晨走田埂</p><p class="nt-m">池上・1.5 時・免費・可放在清晨</p><p class="nt-b">五點半的田埂還是濕的，露水順著稻葉滑下來，走不到一百公尺，褲管就重了；遠處有人在巡水，鋤頭敲到水門的聲音，隔著整片田傳過來。</p></div><div class="nt" id="nt1"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz1"/></svg>稻田邊騎車</p><p class="nt-m">池上・2 時・NT$ 250・可放在上午、午後、黃昏</p><p class="nt-b">車道兩邊都是田，風一來，稻葉翻出背面的銀白，一層一層往西倒，像有人用手掌順著摸過去；騎慢一點，鏈條的聲音會比你的呼吸還大。</p></div><div class="nt" id="nt2"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz1"/></svg>水圳邊午飯</p><p class="nt-m">池上・1 時・NT$ 280・可放在午後</p><p class="nt-b">便當攤在水圳的水泥邊上吃，水聲比想像中急，冰涼的空氣從水面浮上來，白飯的熱氣一下子就散了；配菜是那天市場有什麼就是什麼。</p></div><div class="nt" id="nt3"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz1"/></svg>看碾米</p><p class="nt-m">池上・1 時・NT$ 120・可放在上午、午後</p><p class="nt-b">碾米機一開，整間屋子都在震，米糠的味道是甜的，像烤過的穀片；碾米的人會抓一把剛碾好的米倒進你手心，還是溫的。</p></div><div class="nt" id="nt4"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz2"/></svg>高台看雲海</p><p class="nt-m">鹿野・1.5 時・免費・可放在清晨</p><p class="nt-b">天還沒全亮，縱谷被一層白霧蓋住，只露出遠處幾座山頭，像浮在水上；太陽一出來，霧從邊緣開始退，底下的田和屋頂一塊一塊浮上來。</p></div><div class="nt" id="nt5"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz2"/></svg>茶園揉茶</p><p class="nt-m">鹿野・2.5 時・NT$ 680・可放在上午、午後</p><p class="nt-b">茶菁在掌心揉到出水，指縫裡都是青草和蜂蜜之間的味道；手會痠，揉到第三輪才明白師傅的手臂為什麼那麼粗。帶走的那一小包，是你自己揉的。</p></div><div class="nt" id="nt6"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz2"/></svg>紅烏龍茶席</p><p class="nt-m">鹿野・1 時・NT$ 350・可放在午後、黃昏</p><p class="nt-b">茶湯是琥珀色的，入口先是一點焙火的焦香，尾韻帶熟果的酸；坐在茶園邊的廊下，看午後的影子從這一排茶樹慢慢爬到下一排。</p></div><div class="nt" id="nt7"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz2"/></svg>龍田騎單車</p><p class="nt-m">鹿野・1.5 時・NT$ 200・可放在上午、午後、黃昏</p><p class="nt-b">村子的路是棋盤格，兩旁的老樹把路遮成一條一條的隧道，騎到哪個路口都長得差不多；迷路也無所謂，每條路最後都會繞回村口那棵最大的樹下。</p></div><div class="nt" id="nt8"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz3"/></svg>海邊等日出</p><p class="nt-m">都蘭・1 時・免費・可放在清晨</p><p class="nt-b">太平洋那一側的天先變成鐵灰，再變成淡橘，海面上有一道光從很遠的地方慢慢鋪過來；石頭是冰的，坐久了要墊外套，浪聲一陣一陣，沒有停過。</p></div><div class="nt" id="nt9"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz3"/></svg>淺灘浮潛</p><p class="nt-m">都蘭・3 時・NT$ 1,600・可放在上午、午後</p><p class="nt-b">臉一埋進水裡，聲音就全不見了，只剩自己的呼吸在管子裡來回；礁石上的小魚對你沒什麼興趣。教練看海況決定能不能下水，風浪大就換別的。</p></div><div class="nt" id="nt10"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz3"/></svg>海岸野菜晚餐</p><p class="nt-m">都蘭・2 時・NT$ 950・可放在夜裡</p><p class="nt-b">桌上是一整盤叫不出名字的野菜，有的苦、有的帶點黏、有的像嫩豌豆，配一尾鹽烤的魚；屋外是浪，屋裡是油煙和炭火的味道。</p></div><div class="nt" id="nt11"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz3"/></svg>沙灘看星星</p><p class="nt-m">都蘭・1.5 時・免費・可放在夜裡</p><p class="nt-b">關掉手電筒之後要等十分鐘，眼睛才會習慣黑；先看到最亮的幾顆，然後是一整片。浪聲就在腳邊，天上那條淡淡的白帶子，比你以為的還寬。</p></div><div class="nt" id="nt12"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz3"/></svg>漂流木工坊</p><p class="nt-m">都蘭・2.5 時・NT$ 850・可放在午後</p><p class="nt-b">颱風後沖上岸的木頭，曬乾了是灰白色的，摸起來像骨頭；砂紙磨過之後，木紋裡的鹽會浮出來，做好的東西帶一點海的味道，很久都不散。</p></div><div class="nt" id="nt13"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz4"/></svg>梯田看海</p><p class="nt-m">長濱・1.5 時・免費・可放在上午、黃昏</p><p class="nt-b">稻田一階一階往海邊下去，田埂的盡頭就是太平洋，綠和藍中間只隔著一條公路；黃昏時稻穗被逆光照出一圈金色的毛邊，海反而暗了下來。</p></div><div class="nt" id="nt14"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz4"/></svg>漁港看卸魚</p><p class="nt-m">長濱・1 時・免費・可放在清晨</p><p class="nt-b">船一靠岸，冰塊和魚一起倒在地上，鬼頭刀的藍綠色在晨光裡還會閃；喊價很快，聽不懂也沒關係，看大家的手勢就知道成交了沒。</p></div><div class="nt" id="nt15"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz4"/></svg>海蝕洞步道</p><p class="nt-m">長濱・2 時・免費・可放在上午、午後</p><p class="nt-b">步道沿著海崖往上，洞口很大，裡面是涼的，岩壁上有水一滴一滴往下滲；站在洞裡往外看，海被框成一塊發亮的長方形。</p></div><div class="nt" id="nt16"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz4"/></svg>漁村晚餐</p><p class="nt-m">長濱・1.5 時・NT$ 800・可放在夜裡</p><p class="nt-b">港邊的小館子，菜單寫在牆上，今天有什麼就寫什麼；煎得焦脆的魚皮、一碗放了很多薑絲的湯，窗外漁船的燈一盞一盞亮起來。</p></div><div class="nt" id="nt17"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz0"/></svg>賴床吃早餐</p><p class="nt-m">就地・1.5 時・免費・可放在上午</p><p class="nt-b">早餐慢慢吃，第二杯咖啡續完才起身；窗簾沒拉好的那一條縫，光剛好落在被子上，沒有什麼要趕的。</p></div><div class="nt" id="nt18"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz0"/></svg>午睡</p><p class="nt-m">就地・1.5 時・免費・可放在午後</p><p class="nt-b">中午過後最熱，蟬聲像一張蓋下來的網；拉上窗簾睡一覺，醒來的時候影子已經換了邊，風也涼了。</p></div><div class="nt" id="nt19"><p class="nt-n"><svg class="gl" aria-hidden="true" focusable="false"><use href="#gz0"/></svg>陽台發呆</p><p class="nt-m">就地・1.5 時・免費・可放在黃昏、夜裡</p><p class="nt-b">坐在陽台上什麼都不做，看天色從橘轉成灰藍，再暗到看不見遠處的山；有狗在叫，有人在收衣服，有一台機車慢慢騎過去。</p></div></div>
+    </div>
+    </div>
+      <div class="how" id="how"><div id="how-b"><p>拖進水裡就放好；不方便拖，點石頭再點時段（手機也是點兩下）。</p><p>鍵盤：在沙灘的石頭上按 <kbd>Enter</kbd> 拿起，用方向鍵在水裡移到時段，再按 <kbd>Enter</kbd> 放下；<kbd>Delete</kbd> 把那一顆撿回沙灘，<kbd>Esc</kbd> 取消。</p><p>一個時段只放得下一顆。車程算在石頭前面；石頭加車程比時段長，多出來的那一截標成杏色。</p></div></div>
+      <p class="sr-only" id="live" aria-live="polite"></p>
+    </section>
+      <section class="cost" id="cost" aria-labelledby="cost-h">
+      <div class="cost-h"><h2 id="cost-h">這三天的錢疊起來</h2><p class="cost-lead">數字跟著上面的溪走，每挪一顆石頭，這一疊就重新疊一次。單位是新臺幣，每人計。</p></div>
+      <div class="sum">
+        <p class="sum-k">三天兩夜，每人約</p>
+        <p class="sum-v"><span class="cur num">NT$</span><b class="num" data-o="tot">11,250</b></p>
+        <div class="sum-a">
+          <div class="ppl" role="group" aria-labelledby="ppl-l"><span class="ppl-l" id="ppl-l">幾個人</span><button type="button" class="pb" data-dn="-1" aria-label="少一個人" aria-controls="ppl">−</button><output class="ppl-n num" id="ppl" aria-live="off">2</output><button type="button" class="pb" data-dn="1" aria-label="多一個人" aria-controls="ppl">＋</button></div>
+          <button type="button" class="cp" id="cp"><span class="cp-a">複製這條溪的網址</span><span class="cp-b">網址複製好了</span></button>
+        </div>
+        <p class="sum-n">四捨五入到十元。照你放的這一份報價，最後以報價單為準；放好了，把網址傳給慢島就行。</p>
+      </div>
+      <div class="cairn-w">
+        <ol class="cairn" role="list"><li class="cs cs-plan" style="--w:0.375;--pb:40% 62% 61% 38% / 59% 41% 47% 53%;--rot:0.1deg;--dx:-3px"><span class="cs-k">規劃與保險</span><b class="num" data-o="cP">1,500</b></li><li class="cs cs-car" style="--w:0.563;--pb:55% 41% 45% 61% / 53% 51% 39% 42%;--rot:0.4deg;--dx:-7px"><span class="cs-k">包車</span><b class="num" data-o="cC">2,250</b></li><li class="cs cs-act" style="--w:0.875;--pb:42% 53% 53% 38% / 40% 39% 48% 54%;--rot:0.6deg;--dx:8px"><span class="cs-k">活動</span><b class="num" data-o="cA">3,500</b></li><li class="cs cs-room" style="--w:1.000;--pb:53% 54% 61% 39% / 59% 60% 39% 58%;--rot:0.1deg;--dx:2px"><span class="cs-k">住宿</span><b class="num" data-o="cR2">4,000</b></li></ol>
+        <div class="cn cn-plan"><p class="cn-k">規劃與保險</p><p class="cn-n">排行程、出發前的聯絡、旅途中隨時打得通的那支電話，以及旅行業依規定投保的責任保險與履約保證。</p></div><div class="cn cn-car"><p class="cn-k">包車</p><p class="cn-v"><b class="num" data-o="cM">3.75</b> 時 × <span class="num">1,200</span> ÷ <b class="num" data-o="cN">2</b> 人</p><p class="cn-n">司機兼嚮導，一台車最多坐四個人。車程每小時 1,200 元，整台車的人平分；在活動地點等你的時間，不算錢。</p></div><div class="cn cn-act"><p class="cn-k">活動</p><p class="cn-n">每顆石頭上標的價錢，是那個活動本身的錢：材料、老師、船和裝備。看雲、看海、看星星，不收錢。</p></div><div class="cn cn-room"><p class="cn-k">住宿</p><p class="cn-v"><span class="num">2</span> 晚 × <b class="num" data-o="cR">2,000</b></p><p class="cn-n">兩人一室、含早餐，每晚每人 2,000 元；一個人來，每晚另加 1,400 元。</p></div>
+        <svg class="wl" viewBox="0 0 1200 24" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 9.7L3 9.5L6 9.4L9 9.2L12 9.1L15 9L18 9L21 8.9L24 8.9L27 8.9L30 8.9L33 8.9L36 9L39 9L42 9.1L45 9.2L48 9.3L51 9.5L54 9.6L57 9.8L60 10L63 10.2L66 10.4L69 10.6L72 10.9L75 11.1L78 11.4L81 11.7L84 12L87 12.3L90 12.6L93 12.8L96 13.1L99 13.4L102 13.7L105 14L108 14.2L111 14.5L114 14.7L117 15L120 15.2L123 15.3L126 15.5L129 15.6L132 15.8L135 15.8L138 15.9L141 15.9L144 15.9L147 15.9L150 15.8L153 15.7L156 15.6L159 15.5L162 15.3L165 15.1L168 14.9L171 14.6L174 14.4L177 14.1L180 13.8L183 13.5L186 13.2L189 12.9L192 12.6L195 12.2L198 11.9L201 11.6L204 11.3L207 11L210 10.7L213 10.4L216 10.2L219 9.9L222 9.7L225 9.5L228 9.3L231 9.2L234 9.1L237 8.9L240 8.9L243 8.8L246 8.7L249 8.7L252 8.7L255 8.7L258 8.8L261 8.9L264 8.9L267 9L270 9.2L273 9.3L276 9.4L279 9.6L282 9.8L285 10L288 10.2L291 10.4L294 10.7L297 10.9L300 11.1L303 11.4L306 11.6L309 11.9L312 12.2L315 12.4L318 12.7L321 13L324 13.2L327 13.5L330 13.7L333 14L336 14.2L339 14.4L342 14.6L345 14.8L348 15L351 15.2L354 15.3L357 15.4L360 15.5L363 15.5L366 15.6L369 15.6L372 15.6L375 15.6L378 15.5L381 15.4L384 15.3L387 15.2L390 15L393 14.9L396 14.7L399 14.5L402 13.9L405 13.7L408 13.5L411 13.2L414 13L417 12.8L420 12.5L423 12.3L426 12.1L429 11.8L432 11.6L435 11.4L438 11.2L441 11L444 10.8L447 10.6L450 10.4L453 10.3L456 10.1L459 10L462 9.8L465 9.7L468 9.6L471 9.5L474 9.4L477 9.3L480 9.2L483 9.1L486 9.1L489 9L492 9L495 9L498 9L501 9.1L504 9.1L507 9.2L510 9.2L513 9.3L516 9.4L519 9.6L522 9.7L525 9.9L528 10.1L531 10.2L534 10.4L537 10.7L540 10.9L543 11.1L546 11.4L549 11.6L552 11.9L555 12.1L558 12.4L561 12.6L564 12.9L567 13.2L570 13.4L573 13.6L576 13.9L579 14.1L582 14.3L585 14.5L588 14.7L591 14.8L594 15L597 15.1L600 15.2L603 15.3L606 15.3L609 15.4L612 15.4L615 15.4L618 15.4L621 15.4L624 15.3L627 15.2L630 15.1L633 15L636 14.9L639 14.8L642 14.6L645 14.4L648 14.3L651 14.1L654 13.9L657 13.7L660 13.5L663 13.3L666 13.1L669 12.9L672 12.6L675 12.4L678 12.2L681 12L684 11.8L687 11.6L690 11.4L693 11.2L696 11L699 10.8L702 10.6L705 10.4L708 10.3L711 10.1L714 10L717 9.8L720 9.7L723 9.6L726 9.5L729 9.4L732 9.3L735 9.2L738 9.1L741 9.1L744 9L747 9L750 9L753 9L756 9L759 9.1L762 9.1L765 9.2L768 9.3L771 9.4L774 9.6L777 9.7L780 9.9L783 10.1L786 10.3L789 10.5L792 10.8L795 11.1L798 11.3L801 11.7L804 11.9L807 12.2L810 12.5L813 12.7L816 13L819 13.2L822 13.4L825 13.7L828 13.9L831 14.1L834 14.3L837 14.5L840 14.7L843 14.8L846 15L849 15.1L852 15.2L855 15.3L858 15.3L861 15.4L864 15.4L867 15.4L870 15.3L873 15.2L876 15.1L879 15L882 14.9L885 14.7L888 14.5L891 14.2L894 14L897 13.7L900 13.4L903 13.1L906 12.8L909 12.5L912 12.1L915 11.8L918 11.4L921 11.1L924 10.7L927 10.4L930 10L933 9.7L936 9.4L939 9.1L942 8.9L945 8.6L948 8.4L951 8.2L954 8.1L957 8L960 7.9L963 7.8L966 7.8L969 7.9L972 7.9L975 8L978 8.1L981 8.3L984 8.5L987 8.7L990 8.9L993 9.2L996 9.5L999 9.8L1002 10.1L1005 10.4L1008 10.7L1011 11.1L1014 11.4L1017 11.8L1020 12.1L1023 12.4L1026 12.8L1029 13.1L1032 13.4L1035 13.6L1038 13.9L1041 14.1L1044 14.4L1047 14.6L1050 14.7L1053 14.9L1056 15L1059 15.1L1062 15.2L1065 15.3L1068 15.3L1071 15.3L1074 15.3L1077 15.3L1080 15.2L1083 15.1L1086 15L1089 14.9L1092 14.7L1095 14.6L1098 14.4L1101 14.2L1104 13.9L1107 13.7L1110 13.4L1113 13.2L1116 12.9L1119 12.6L1122 12.3L1125 12L1128 11.7L1131 11.4L1134 11.1L1137 10.8L1140 10.5L1143 10.2L1146 9.9L1149 9.6L1152 9.3L1155 9.1L1158 8.9L1161 8.7L1164 8.5L1167 8.3L1170 8.2L1173 8.1L1176 8L1179 8L1182 8L1185 8L1188 8.1L1191 8.2L1194 8.3L1197 8.5L1200 8.7"/></svg>
+      </div>
+      <dl class="cx"><div><dt>石頭以外的花費</dt><dd>往返臺東的火車票、沒有放進石頭裡的那幾頓飯、個人的旅遊平安保險。</dd></div><div><dt>路上不會出現的</dt><dd>購物站、小費、行程中臨時加價。司機不推銷任何東西。</dd></div></dl>
+    </section>
+      <section class="sec rts" id="routes" aria-labelledby="rts-h">
+      <div class="rts-top"><h2 id="rts-h">慢島排過的三條溪</h2><p class="sec-lead">三條都是慢島帶人走過的排法，可以整條載進上面的溪裡，再一顆一顆換掉。</p></div>
+      <article class="rt rt0 rt-l" aria-labelledby="rt0-h">
+          <div class="mq" style="shape-outside:polygon(0 0, 79.55% 0%, 68.38% 4%, 59.76% 8%, 61.83% 12%, 72.63% 16%, 81.95% 20%, 81.01% 24%, 70.88% 28%, 61.13% 32%, 60.56% 36%, 69.39% 40%, 79.65% 44%, 82.47% 48%, 75.53% 52%, 64.53% 56%, 58.97% 60%, 65.23% 64%, 78.48% 68%, 83.64% 72%, 72.26% 76%, 57.82% 80%, 60.68% 84%, 77.18% 88%, 84.19% 92%, 71.91% 96%, 57.5% 100%, 0 100%)" aria-hidden="true">
+            <svg viewBox="0 0 100 300" preserveAspectRatio="none" focusable="false"><g><path class="mq-f" d="M37.4 0L35.01 3L32.23 6L29.24 9L26.23 12L23.4 15L20.92 18L18.95 21L17.61 24L17.01 27L17.17 30L18.08 33L19.68 36L21.88 39L24.53 42L27.46 45L30.48 48L33.41 51L36.04 54L38.22 57L39.79 60L40.67 63L40.8 66L40.17 69L38.82 72L36.86 75L34.4 78L31.61 81L28.66 84L25.73 87L23.02 90L20.68 93L18.86 96L17.66 99L17.15 102L17.35 105L18.24 108L19.77 111L21.83 114L24.3 117L27.02 120L29.84 123L32.59 126L35.11 129L37.25 132L38.88 135L39.93 138L40.32 141L40.05 144L39.12 147L37.59 150L35.55 153L33.12 156L30.43 159L27.61 162L24.83 165L22.24 168L20.02 171L18.3 174L17.23 177L16.9 180L17.37 183L18.66 186L20.72 189L23.44 192L26.66 195L30.17 198L33.7 201L36.98 204L39.72 207L41.67 210L42.62 213L42.42 216L41.06 219L38.61 222L35.25 225L31.28 228L27.06 231L23 234L19.53 237L17 240L15.7 243L15.77 246L17.22 249L19.91 252L23.56 255L27.81 258L32.24 261L36.41 264L39.9 267L42.38 270L43.59 273L43.41 276L41.87 279L39.11 282L35.41 285L31.13 288L26.71 291L22.57 294L19.13 297L16.73 300L41.5 300L43.9 297L47.34 294L51.48 291L55.91 288L60.18 285L63.88 282L66.64 279L68.19 276L68.36 273L67.15 270L64.68 267L61.18 264L57.01 261L52.58 258L48.33 255L44.68 252L41.99 249L40.55 246L40.49 243L41.82 240L44.38 237L47.89 234L51.99 231L56.26 228L60.28 225L63.7 222L66.22 219L67.64 216L67.9 213L67.03 210L65.15 207L62.48 204L59.28 201L55.82 198L52.38 195L49.23 192L46.59 189L44.6 186L43.38 183L42.97 180L43.36 177L44.49 174L46.25 171L48.53 168L51.15 165L53.97 162L56.82 159L59.53 156L61.97 153L64.01 150L65.54 147L66.47 144L66.74 141L66.34 138L65.29 135L63.65 132L61.5 129L58.98 126L56.22 123L53.39 120L50.65 117L48.17 114L46.1 111L44.56 108L43.66 105L43.44 102L43.94 99L45.13 96L46.94 93L49.27 90L51.97 87L54.88 84L57.82 81L60.6 78L63.05 75L65.01 72L66.34 69L66.97 66L66.83 63L65.95 60L64.37 57L62.19 54L59.56 51L56.63 48L53.61 45L50.68 42L48.03 39L45.83 36L44.23 33L43.32 30L43.16 27L43.76 24L45.1 21L47.07 18L49.55 15L52.38 12L55.39 9L58.38 6L61.16 3L63.55 0Z"/><path class="mq-c" d="M50.47 0L48.08 3L45.31 6L42.32 9L39.31 12L36.47 15L33.99 18L32.02 21L30.69 24L30.08 27L30.24 30L31.15 33L32.76 36L34.95 39L37.6 42L40.53 45L43.56 48L46.48 51L49.12 54L51.29 57L52.87 60L53.75 63L53.88 66L53.26 69L51.92 72L49.96 75L47.5 78L44.71 81L41.77 84L38.85 87L36.14 90L33.81 93L32 96L30.8 99L30.3 102L30.5 105L31.4 108L32.93 111L35 114L37.48 117L40.21 120L43.03 123L45.79 126L48.3 129L50.45 132L52.09 135L53.13 138L53.53 141L53.26 144L52.33 147L50.8 150L48.76 153L46.33 156L43.62 159L40.79 162L37.99 165L35.38 168L33.13 171L31.39 174L30.29 177L29.93 180L30.38 183L31.63 186L33.65 189L36.34 192L39.52 195L42.99 198L46.49 201L49.73 204L52.44 207L54.35 210L55.26 213L55.03 216L53.64 219L51.16 222L47.77 225L43.77 228L39.52 231L35.45 234L31.95 237L29.41 240L28.09 243L28.16 246L29.61 249L32.29 252L35.95 255L40.2 258L44.63 261L48.8 264L52.29 267L54.77 270L55.98 273L55.8 276L54.26 279L51.5 282L47.8 285L43.52 288L39.09 291L34.96 294L31.52 297L29.12 300"/></g></svg>
+            <i class="mq-s z1" style="left:49.12%;top:18%;--w:24px;--pb:39% 38% 55% 47% / 36% 50% 51% 55%"></i><i class="mq-s z0 rest" style="left:49.96%;top:25%;--w:21px;--pb:60% 50% 57% 38% / 47% 57% 42% 60%"></i><i class="mq-s z1" style="left:30.5%;top:35%;--w:21px;--pb:58% 39% 41% 56% / 37% 58% 63% 45%"></i><i class="mq-s z0 rest" style="left:52.33%;top:49%;--w:21px;--pb:61% 60% 54% 49% / 53% 48% 42% 40%"></i><i class="mq-s z2" style="left:30.29%;top:59%;--w:17px;--pb:62% 54% 37% 53% / 53% 40% 40% 63%"></i><i class="mq-s z2" style="left:49.73%;top:68%;--w:21px;--pb:44% 36% 50% 45% / 63% 54% 49% 36%"></i><i class="mq-s z2" style="left:47.77%;top:75%;--w:28px;--pb:54% 37% 58% 63% / 41% 54% 61% 52%"></i>
+            <span class="mq-d lvl0" style="top:4.00%"><b class="num">3.5</b></span><span class="mq-d lvl0" style="top:37.33%"><b class="num">3.3</b></span><span class="mq-d lvl0" style="top:70.66%"><b class="num">4.8</b></span>
+          </div>
+          <h3 class="rt-h" id="rt0-h">只做兩件事</h3>
+          <ol class="rt-days" role="list"><li class="lvl0"><span class="rd-n">第一天</span><b class="num">3.5</b><span class="rd-l">從容</span></li><li class="lvl0"><span class="rd-n">第二天</span><b class="num">3.3</b><span class="rd-l">從容</span></li><li class="lvl0"><span class="rd-n">第三天</span><b class="num">4.8</b><span class="rd-l">從容</span></li></ol>
+          <p class="es">一天只排兩件事。第一天下午到池上，沿著田騎車，風從海岸山脈那頭翻過來；傍晚什麼都別做，坐在陽台上看天色變灰。第二天清晨走一趟會把褲管打濕的田埂，午後睡一覺，黃昏才往鹿野去喝一杯紅烏龍。第三天看完雲海、揉完一包自己的茶就回家。車窗外的縱谷一路往後退，你會覺得好像少做了什麼——那個感覺，就是這條路線要的。</p>
+          <p class="rt-f"><span class="es-c">兩人同行，每人約 <b class="num">NT$ 7,980</b></span><button type="button" class="rt-go" data-route="two" aria-describedby="rt0-h">載進上面的溪</button></p>
+        </article><article class="rt rt1 rt-r" aria-labelledby="rt1-h">
+          <div class="mq" style="shape-outside:polygon(100% 0, 37.45% 0%, 44% 4%, 27.94% 8%, 15% 12%, 25.91% 16%, 43.25% 20%, 39.12% 24%, 19.59% 28%, 17.38% 32%, 37.69% 36%, 44.76% 40%, 24.57% 44%, 14.93% 48%, 34.82% 52%, 45.82% 56%, 27.76% 60%, 14.65% 64%, 27.79% 68%, 43.5% 72%, 38.04% 76%, 20.97% 80%, 16.41% 84%, 30.29% 88%, 43.22% 92%, 37.13% 96%, 20.53% 100%, 100% 100%)" aria-hidden="true">
+            <svg viewBox="0 0 100 300" preserveAspectRatio="none" focusable="false"><g transform="translate(100 0) scale(-1 1)"><path class="mq-f" d="M22.33 0L18.44 3L15.89 6L14.96 9L15.77 12L18.22 15L22.03 18L26.75 21L31.83 24L36.69 27L40.76 30L43.56 33L44.78 36L44.26 39L42.07 42L38.47 45L33.86 48L28.8 51L23.86 54L19.61 57L16.55 60L15.04 63L15.27 66L17.25 69L20.76 72L25.4 75L30.65 78L35.86 81L40.41 84L43.71 87L45.32 90L45 93L42.75 96L38.83 99L33.71 102L28.05 105L22.6 108L18.1 111L15.2 114L14.34 117L15.66 120L19.05 123L24.04 126L29.95 129L35.96 132L41.18 135L44.85 138L46.43 141L45.66 144L42.65 147L37.82 150L31.91 153L25.77 156L20.31 159L16.32 162L14.35 165L14.66 168L17.14 171L21.39 174L26.78 177L32.54 180L37.88 183L42.12 186L44.72 189L45.42 192L44.19 195L41.26 198L37.02 201L32.04 204L26.92 207L22.24 210L18.51 213L16.09 216L15.22 219L15.91 222L18.04 225L21.36 228L25.48 231L29.97 234L34.39 237L38.29 240L41.31 243L43.16 246L43.68 249L42.81 252L40.64 255L37.37 258L33.34 261L28.93 264L24.59 267L20.75 270L17.79 273L16 276L15.56 279L16.51 282L18.77 285L22.09 288L26.17 291L30.58 294L34.9 297L38.69 300L63.47 300L59.67 297L55.35 294L50.94 291L46.87 288L43.54 285L41.29 282L40.34 279L40.78 276L42.57 273L45.53 270L49.37 267L53.71 264L58.11 261L62.15 258L65.41 255L67.59 252L68.45 249L67.93 246L66.06 243L63.03 240L59.1 237L54.66 234L50.12 231L45.96 228L42.6 225L40.42 222L39.68 219L40.5 216L42.86 213L46.53 210L51.15 207L56.21 204L61.13 201L65.3 198L68.18 195L69.35 192L68.59 189L65.92 186L61.63 183L56.24 180L50.43 177L44.99 174L40.69 171L38.18 168L37.84 165L39.77 162L43.74 159L49.18 156L55.31 153L61.22 150L66.05 147L69.07 144L69.85 141L68.29 138L64.63 135L59.43 132L53.45 129L47.56 126L42.59 123L39.24 120L37.95 117L38.85 114L41.78 111L46.31 108L51.8 105L57.5 102L62.66 99L66.62 96L68.9 93L69.25 90L67.68 87L64.41 84L59.9 81L54.71 78L49.5 75L44.88 72L41.39 69L39.44 66L39.22 63L40.75 60L43.82 57L48.08 54L53.02 51L58.09 48L62.69 45L66.3 42L68.48 39L69 36L67.79 33L64.98 30L60.92 27L56.06 24L50.97 21L46.25 18L42.45 15L40 12L39.19 9L40.12 6L42.67 3L46.55 0Z"/><path class="mq-c" d="M34.44 0L30.56 3L28 6L27.08 9L27.88 12L30.33 15L34.14 18L38.86 21L43.95 24L48.8 27L52.87 30L55.68 33L56.89 36L56.37 39L54.18 42L50.58 45L45.98 48L40.91 51L35.97 54L31.72 57L28.65 60L27.13 63L27.36 66L29.32 69L32.82 72L37.45 75L42.68 78L47.88 81L52.41 84L55.69 87L57.28 90L56.95 93L54.69 96L50.74 99L45.61 102L39.93 105L34.46 108L29.94 111L27.02 114L26.14 117L27.45 120L30.82 123L35.8 126L41.7 129L47.69 132L52.9 135L56.57 138L58.14 141L57.36 144L54.35 147L49.52 150L43.61 153L37.47 156L32.02 159L28.05 162L26.1 165L26.42 168L28.91 171L33.19 174L38.6 177L44.39 180L49.76 183L54.02 186L56.65 189L57.38 192L56.19 195L53.28 198L49.08 201L44.13 204L39.03 207L34.38 210L30.68 213L28.3 216L27.45 219L28.16 222L30.32 225L33.66 228L37.8 231L42.31 234L46.74 237L50.66 240L53.69 243L55.54 246L56.07 249L55.2 252L53.03 255L49.76 258L45.72 261L41.32 264L36.98 267L33.14 270L30.18 273L28.39 276L27.95 279L28.9 282L31.15 285L34.48 288L38.55 291L42.97 294L47.28 297L51.08 300"/></g></svg>
+            <i class="mq-s z3" style="left:59.09%;top:17%;--w:28px;--pb:47% 53% 52% 58% / 60% 47% 57% 56%"></i><i class="mq-s z3" style="left:44.31%;top:29%;--w:24px;--pb:43% 40% 61% 47% / 63% 50% 54% 48%"></i><i class="mq-s z3" style="left:54.39%;top:34%;--w:17px;--pb:39% 57% 54% 58% / 39% 36% 58% 58%"></i><i class="mq-s z0 rest" style="left:69.18%;top:41%;--w:21px;--pb:42% 45% 57% 37% / 43% 38% 45% 62%"></i><i class="mq-s z4" style="left:56.39%;top:51%;--w:24px;--pb:45% 47% 55% 40% / 54% 58% 55% 49%"></i><i class="mq-s z4" style="left:45.98%;top:62%;--w:21px;--pb:39% 47% 62% 49% / 61% 64% 53% 42%"></i><i class="mq-s z4" style="left:55.87%;top:68%;--w:17px;--pb:54% 53% 53% 61% / 46% 62% 37% 49%"></i><i class="mq-s z4" style="left:71.84%;top:74%;--w:21px;--pb:43% 36% 50% 49% / 58% 45% 59% 61%"></i>
+            <span class="mq-d lvl1" style="top:4.00%"><b class="num">5.3</b></span><span class="mq-d lvl1" style="top:37.33%"><b class="num">6.0</b></span><span class="mq-d lvl0" style="top:70.66%"><b class="num">4.8</b></span>
+          </div>
+          <h3 class="rt-h" id="rt1-h">沿著海岸線</h3>
+          <ol class="rt-days" role="list"><li class="lvl1"><span class="rd-n">第一天</span><b class="num">5.3</b><span class="rd-l">剛好</span></li><li class="lvl1"><span class="rd-n">第二天</span><b class="num">6.0</b><span class="rd-l">剛好</span></li><li class="lvl0"><span class="rd-n">第三天</span><b class="num">4.8</b><span class="rd-l">從容</span></li></ol>
+          <p class="es">海岸線上的時間，是被日出和浪切開的。第一天下午在都蘭磨一塊漂流木，晚上吃一整盤叫不出名字的野菜；第二天天沒亮就到海邊等太陽，回去賴床到九點，午後往北開一個小時，去長濱走海蝕洞，晚上在漁港邊吃魚。第三天的清晨留給卸魚的漁港和一階一階的梯田，回車站的那一個半小時，剛好把整條海岸線倒著再看一遍。</p>
+          <p class="rt-f"><span class="es-c">兩人同行，每人約 <b class="num">NT$ 9,900</b></span><button type="button" class="rt-go" data-route="coast" aria-describedby="rt1-h">載進上面的溪</button></p>
+        </article><article class="rt rt2 rt-l" aria-labelledby="rt2-h">
+          <div class="mq" style="shape-outside:polygon(0 0, 77.94% 0%, 46.87% 4%, 87.14% 8%, 61.78% 12%, 57.05% 16%, 89.06% 20%, 48.11% 24%, 75.84% 28%, 73.54% 32%, 49.88% 36%, 90.47% 40%, 42.92% 44%, 87.95% 48%, 52.07% 52%, 73.39% 56%, 70.82% 60%, 53.29% 64%, 88.71% 68%, 44.3% 72%, 84.4% 76%, 63.54% 80%, 56.89% 84%, 88.4% 88%, 45.48% 92%, 81.49% 96%, 67.76% 100%, 0 100%)" aria-hidden="true">
+            <svg viewBox="0 0 100 300" preserveAspectRatio="none" focusable="false"><g><path class="mq-f" d="M42.25 0L29.78 3L18.1 6L11.13 9L11.19 12L18.26 15L29.99 18L42.44 21L51.45 24L54 27L49.25 30L38.78 33L26.09 36L15.43 39L10.37 42L12.59 45L21.36 48L33.74 51L45.61 54L53.01 57L53.42 60L46.62 63L34.84 66L22.03 69L12.64 72L10.06 75L15.39 78L26.92 81L40.63 84L51.5 87L55.36 90L50.54 93L38.64 96L24.13 99L12.76 102L9.24 105L15.3 108L28.7 111L44.03 114L54.78 117L56.18 120L47.38 123L32.06 126L16.93 129L8.86 132L11.66 135L24.22 138L40.9 141L54.03 144L57.5 147L49.67 150L34.16 153L18.16 156L9.04 159L10.95 162L22.91 165L39.38 168L52.87 171L57.34 174L50.94 177L36.65 180L20.87 183L10.45 186L9.78 189L18.92 192L33.82 195L48.11 198L55.9 201L54.12 204L43.68 207L28.94 210L15.84 213L9.5 216L12.24 219L22.82 222L37.04 225L49.42 228L55.29 231L52.54 234L42.3 237L28.44 240L16.13 243L9.91 246L12.05 249L21.75 252L35.42 255L47.97 258L54.76 261L53.26 264L44.04 267L30.5 270L17.69 273L10.34 276L11.19 279L19.93 282L33.3 285L46.35 288L54.24 291L54.03 294L45.81 297L32.63 300L51.76 300L64.95 297L73.17 294L73.37 291L65.49 288L52.44 285L39.06 282L30.33 279L29.48 276L36.82 273L49.64 270L63.17 267L72.4 264L73.9 261L67.11 258L54.55 255L40.89 252L31.19 249L29.04 246L35.25 243L47.54 240L61.38 237L71.6 234L74.31 231L68.4 228L55.98 225L41.72 222L31.09 219L28.3 216L34.6 213L47.64 210L62.32 207L72.71 204L74.44 201L66.6 198L52.24 195L37.29 192L28.09 189L28.72 186L39.08 183L54.82 180L69.06 177L75.42 174L70.91 171L57.39 168L40.88 165L28.89 162L26.97 159L36.07 156L52.06 153L67.57 150L75.41 147L71.95 144L58.84 141L42.19 138L29.67 135L26.92 132L35.04 129L50.22 126L65.6 123L74.47 120L73.14 117L62.46 114L47.21 111L33.88 108L27.9 105L31.5 102L42.95 99L57.54 96L69.52 93L74.42 90L70.63 87L59.84 84L46.2 81L34.73 78L29.47 75L32.11 72L41.55 69L54.4 66L66.23 63L73.06 60L72.67 57L65.29 54L53.43 51L41.05 48L32.28 45L30.06 42L35.12 39L45.78 36L58.47 33L68.94 30L73.69 27L71.14 24L62.12 21L49.68 18L37.95 15L30.87 12L30.81 9L37.79 6L49.46 3L61.94 0Z"/><path class="mq-c" d="M52.09 0L39.62 3L27.94 6L20.97 9L21.03 12L28.11 15L39.83 18L52.28 21L61.29 24L63.85 27L59.1 30L48.62 33L35.94 36L25.28 39L20.21 42L22.44 45L31.21 48L43.59 51L55.45 54L62.84 57L63.24 60L56.42 63L44.62 66L31.79 69L22.37 72L19.77 75L25.06 78L36.56 81L50.23 84L61.06 87L64.89 90L60.03 93L48.09 96L33.54 99L22.13 102L18.57 105L24.59 108L37.96 111L53.25 114L63.96 117L65.32 120L56.49 123L41.14 126L25.99 129L17.89 132L20.66 135L33.21 138L49.87 141L62.99 144L66.45 147L58.62 150L43.11 153L27.11 156L18 159L19.92 162L31.9 165L48.39 168L61.89 171L66.38 174L60 177L45.74 180L29.98 183L19.59 186L18.94 189L28.11 192L43.03 195L57.36 198L65.17 201L63.41 204L53 207L38.29 210L25.22 213L18.9 216L21.66 219L32.27 222L46.51 225L58.91 228L64.8 231L62.07 234L51.84 237L37.99 240L25.69 243L19.48 246L21.62 249L31.32 252L44.98 255L57.54 258L64.33 261L62.83 264L53.6 267L40.07 270L27.26 273L19.91 276L20.76 279L29.49 282L42.87 285L55.92 288L63.81 291L63.6 294L55.38 297L42.19 300"/></g></svg>
+            <i class="mq-s z1" style="left:63.85%;top:9%;--w:17px;--pb:41% 52% 51% 46% / 63% 54% 50% 50%"></i><i class="mq-s z2" style="left:43.59%;top:17%;--w:28px;--pb:37% 47% 41% 51% / 37% 52% 46% 52%"></i><i class="mq-s z2" style="left:19.77%;top:25%;--w:17px;--pb:42% 40% 44% 45% / 44% 54% 52% 38%"></i><i class="mq-s z3" style="left:64.89%;top:30%;--w:21px;--pb:47% 41% 58% 51% / 42% 50% 36% 40%"></i><i class="mq-s z3" style="left:22.13%;top:34%;--w:17px;--pb:46% 52% 63% 47% / 53% 50% 47% 47%"></i><i class="mq-s z3" style="left:41.14%;top:42%;--w:31px;--pb:38% 53% 54% 50% / 37% 45% 38% 54%"></i><i class="mq-s z3" style="left:58.62%;top:50%;--w:28px;--pb:64% 62% 50% 58% / 50% 37% 43% 62%"></i><i class="mq-s z4" style="left:45.74%;top:60%;--w:21px;--pb:37% 46% 59% 60% / 47% 57% 59% 53%"></i><i class="mq-s z4" style="left:19.59%;top:62%;--w:21px;--pb:41% 38% 41% 54% / 50% 50% 49% 45%"></i><i class="mq-s z4" style="left:63.41%;top:68%;--w:17px;--pb:54% 58% 59% 38% / 61% 51% 46% 60%"></i><i class="mq-s z4" style="left:46.51%;top:75%;--w:24px;--pb:50% 46% 46% 59% / 52% 60% 42% 61%"></i><i class="mq-s z1" style="left:44.98%;top:85%;--w:24px;--pb:48% 57% 40% 44% / 45% 55% 46% 50%"></i><i class="mq-s z2" style="left:20.76%;top:93%;--w:21px;--pb:49% 45% 56% 56% / 63% 38% 63% 44%"></i>
+            <span class="mq-d lvl2" style="top:4.00%"><b class="num">9.4</b></span><span class="mq-d lvl2" style="top:37.33%"><b class="num">11.0</b></span><span class="mq-d lvl2" style="top:70.66%"><b class="num">9.9</b></span>
+          </div>
+          <h3 class="rt-h" id="rt2-h">第一次來，全都要</h3>
+          <ol class="rt-days" role="list"><li class="lvl2"><span class="rd-n">第一天</span><b class="num">9.4</b><span class="rd-l">太滿</span></li><li class="lvl2"><span class="rd-n">第二天</span><b class="num">11.0</b><span class="rd-l">太滿</span></li><li class="lvl2"><span class="rd-n">第三天</span><b class="num">9.9</b><span class="rd-l">太滿</span></li></ol>
+          <p class="es">這一條是給第一次來、什麼都想看的人排的。排出來不是為了推薦，是為了讓水自己說話：三天的指數都在九以上，第二天黃昏那一段，車程加上看梯田，已經比黃昏本身還長。真要這樣走也行，司機開得動；只是回家以後，你記得最清楚的，大概會是車窗。</p>
+          <p class="rt-f"><span class="es-c">兩人同行，每人約 <b class="num">NT$ 13,650</b></span><button type="button" class="rt-go" data-route="all" aria-describedby="rt2-h">載進上面的溪</button></p>
+        </article>
+    </section>
+      <section class="sec ct" id="contract" aria-labelledby="ct-h">
+      <div class="ct-top"><h2 id="ct-h">從報名走到回家的六顆踏石</h2><p class="ct-note">這六顆石頭是慢島用白話替契約書做的摘要，真正算數的，是報名時交到你手上的那一份契約書。</p></div>
+      <div class="steps-w"><svg class="path path-d" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M13.4 23.3C15.8 32.0 21.7 75.3 27.7 75.3C33.6 75.3 43.6 22.7 49.1 23.2C54.6 23.7 55.0 78.8 60.8 78.5C66.6 78.2 79.4 22.2 84.0 21.6C88.6 21.0 87.6 65.9 88.3 74.7"/></svg><svg class="path path-m" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M24.7 15.2C32.6 16.2 72.1 16.1 72.2 21.4C72.3 26.8 25.2 41.4 25.3 47.5C25.5 53.6 73.2 52.7 73.1 58.0C73.1 63.3 24.7 73.9 24.9 79.3C25.2 84.6 66.3 88.5 74.6 90.3"/></svg><ol class="steps" role="list"><li class="stp stp0 tone0" style="--pb:60% 56% 48% 50% / 52% 53% 41% 53%;--pm:29% 27% 36% 38% / 28% 36% 38% 40%;--ps:28px 27px 21px 21px / 43% 60% 56% 39%;--r:-1.2deg"><h3 class="stp-k">報名</h3><p class="stp-v">先拿到契約書，再付錢。慢島用的是主管機關公告的國內旅遊定型化契約書，報名時就把整份交給你，有合理的審閱期間，可以帶回家慢慢看。</p></li><li class="stp stp1 tone1" style="--pb:57% 53% 55% 40% / 53% 52% 41% 45%;--pm:23% 35% 23% 38% / 26% 29% 23% 33%;--ps:25px 28px 29px 15px / 60% 54% 53% 46%;--r:-2.1deg"><h3 class="stp-k">付訂金</h3><p class="stp-v">訂金、尾款各多少、什麼時候付，都寫在契約裡；行程與費用一經確認，出發前不會再多出別的名目。</p></li><li class="stp stp2 tone2" style="--pb:56% 44% 54% 58% / 46% 48% 59% 57%;--pm:24% 36% 24% 32% / 28% 25% 24% 25%;--ps:21px 23px 16px 29px / 46% 39% 49% 43%;--r:-0.7deg"><h3 class="stp-k">出發前想取消</h3><p class="stp-v">你這邊取消，要負擔的比例依通知的時間點而定，離出發越近，比例越高，確切級距寫在契約書裡。若是慢島這邊無法成行，會依契約退還已繳的費用，並負擔約定的賠償。</p></li><li class="stp stp3 tone0" style="--pb:40% 53% 59% 59% / 45% 56% 51% 45%;--pm:38% 23% 23% 23% / 29% 37% 34% 27%;--ps:20px 21px 20px 23px / 49% 56% 55% 55%;--r:-2.1deg"><h3 class="stp-k">颱風、地震</h3><p class="stp-v">因為不可抗力不能出發，或必須中途改變行程，依契約處理：可以改期，或扣除已經發生的必要費用後退款，天氣不算誰的錯。</p></li><li class="stp stp4 tone1" style="--pb:49% 48% 48% 57% / 54% 44% 59% 54%;--pm:38% 25% 40% 22% / 30% 25% 33% 23%;--ps:24px 16px 16px 19px / 49% 44% 53% 40%;--r:-1.7deg"><h3 class="stp-k">路上改行程</h3><p class="stp-v">海況不好時浮潛換成揉茶、下雨時騎車換成碾米，司機會先問過你；費用多退少補，當天說清楚。</p></li><li class="stp stp5 tone2" style="--pb:45% 54% 56% 50% / 50% 60% 55% 41%;--pm:39% 24% 26% 32% / 32% 33% 24% 29%;--ps:25px 25px 20px 22px / 55% 61% 54% 60%;--r:1.2deg"><h3 class="stp-k">回來之後</h3><p class="stp-v">有不滿意的地方，先跟慢島說；談不攏，也可以向各縣市政府的消費者服務中心，或旅行業的品質保障組織申訴。</p></li></ol></div>
+    </section>
+      <section class="sec bf" id="before" aria-labelledby="bf-h">
+      <h2 id="bf-h">出發前</h2>
+      <div class="bf-gap"><span class="gap-s" style="--pb:58% 44% 62% 59% / 50% 45% 60% 64%" aria-hidden="true"></span><p class="gap-k">第二天・午後<b>空著</b></p></div>
+      <p class="coda">慢島的溪裡，從來沒有人把十五個時段全部放滿過。放到第九、第十顆，通常就會有人停下來說：那第二天下午，我們就空著吧。那一段空白後來會變成什麼，誰也說不準——也許是一場午睡，也許是在水圳邊多坐了一個小時，看一隻白鷺鷥在田裡走了一整個下午。</p>
+      <div class="bf-l"><p class="ri"><b>集合</b>第一天在臺東火車站前集合，時間看你搭哪一班車到；第三天送回車站，回程的車票請自己訂。</p><p class="ri"><b>行李</b>縱谷早晚涼、海邊白天曬：一件薄外套、一頂帽子、一雙可以弄濕的鞋。</p><p class="ri"><b>看天</b>浮潛、日出和看星星都要看天。前一晚司機會打電話來，一起決定要不要換。</p><p class="ri"><b>人數</b>一台車最多四個人，從頭到尾是同一位司機；人再多，就分兩台車、兩位司機，各自排。</p><p class="ri"><b>報名</b>打電話，或把網址傳過來——你放的每一顆石頭，都記在網址裡。</p></div>
+    </section>
+    </main>
+    <footer class="foot">
+      <a class="brand" href="#main"><svg viewBox="0 0 44 28" aria-hidden="true" focusable="false"><path d="M6 16.5C10 16.5 12.5 9 19 8.2C25 7.4 27.6 13.4 32 14.6C34.6 15.3 36.6 15.6 38 16.5Z" fill="currentColor"/><path d="M2 21.5C7 18.6 10 24.4 15 21.5S23 18.6 28 21.5S36 24.4 42 21.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><b>慢島旅行社</b></a>
+      <address><span>臺東縣臺東市慢行路 27 號</span><a class="num" href="tel:0890000727">089-000-0727</a><span>週一至週六 10:00–18:00，週日在路上</span></address>
+      <p class="foot-n">車程與價格是平常日子的估算，最後以報價單和契約書寫的為準。字型：Noto Serif TC、Gloock（SIL Open Font License）。© 慢島旅行社</p>
+    </footer>
+    <template id="tp-placed">已把「<span data-k="n"></span>」放進<span data-k="w"></span>。</template><template id="tp-removed">「<span data-k="n"></span>」撿回沙灘了。</template><template id="tp-badslot">「<span data-k="n"></span>」只能放在<span data-k="w"></span>，換一個時段試試。</template><template id="tp-over">注意：<span data-k="w"></span>放不下，車程加活動比這個時段多出 <span data-k="m"></span> 分鐘。</template><template id="tp-picked">已拿起「<span data-k="n"></span>」。用方向鍵選一個時段，Enter 放下，Esc 取消。</template><template id="tp-day"><span data-k="w"></span>的節奏指數 <span data-k="i"></span>，<span data-k="lv"></span>；每人約新臺幣 <span data-k="c"></span> 元。</template><template id="tp-loaded">已載入「<span data-k="n"></span>」。</template><template id="tp-cancel">取消了，石頭還在原來的地方。</template><template id="tp-cleared">石頭都撿回沙灘了，溪裡是空的。</template><template id="tp-copied">網址複製好了，貼給慢島或同行的人就行。</template><template id="tp-copyFail">這個瀏覽器不讓複製，請直接從網址列複製。</template><template id="tp-ppl"><span data-k="n"></span> 個人同行，每人約新臺幣 <span data-k="c"></span> 元。</template><template id="tp-sep">、</template>
+    <script type="application/json" id="f27-data">{"C":[{"z":1,"h":1.5,"p":0,"r":0,"s":[0]},{"z":1,"h":2,"p":250,"r":0,"s":[1,2,3]},{"z":1,"h":1,"p":280,"r":0,"s":[2]},{"z":1,"h":1,"p":120,"r":0,"s":[1,2]},{"z":2,"h":1.5,"p":0,"r":0,"s":[0]},{"z":2,"h":2.5,"p":680,"r":0,"s":[1,2]},{"z":2,"h":1,"p":350,"r":0,"s":[2,3]},{"z":2,"h":1.5,"p":200,"r":0,"s":[1,2,3]},{"z":3,"h":1,"p":0,"r":0,"s":[0]},{"z":3,"h":3,"p":1600,"r":0,"s":[1,2]},{"z":3,"h":2,"p":950,"r":0,"s":[4]},{"z":3,"h":1.5,"p":0,"r":0,"s":[4]},{"z":3,"h":2.5,"p":850,"r":0,"s":[2]},{"z":4,"h":1.5,"p":0,"r":0,"s":[1,3]},{"z":4,"h":1,"p":0,"r":0,"s":[0]},{"z":4,"h":2,"p":0,"r":0,"s":[1,2]},{"z":4,"h":1.5,"p":800,"r":0,"s":[4]},{"z":0,"h":1.5,"p":0,"r":1,"s":[1]},{"z":0,"h":1.5,"p":0,"r":1,"s":[2]},{"z":0,"h":1.5,"p":0,"r":1,"s":[3,4]}],"T":[[0,1,0.5,0.5,1.5],[1,0,0.5,1.25,1.25],[0.5,0.5,0,0.75,1.5],[0.5,1.25,0.75,0,1],[1.5,1.25,1.5,1,0]],"S":[3,4,5,2,3],"K":{"w":1.5,"lo":5,"hi":7.5,"car":1200,"room":2000,"solo":1400,"plan":1500,"nights":2,"nMax":4},"R":{"draft":[-1,-1,12,19,-1,8,9,15,13,16,14,17,1,-1,-1],"two":[-1,-1,1,19,-1,0,-1,18,6,-1,4,5,-1,-1,-1],"coast":[-1,-1,12,-1,10,8,17,15,-1,16,14,13,-1,-1,-1],"all":[-1,3,5,6,11,8,9,12,13,16,14,15,1,7,-1]},"J":[3.9380243468936533,0.017180329011753204,3.3123674109485],"W":400,"H":108,"n0":2}</script>
+<script>
+(function(){
+'use strict';
+var d=document,el=d.getElementById('f27-data');if(!el)return;
+var D=JSON.parse(el.textContent);
+var $=function(s,r){return (r||d).querySelector(s);},$$=function(s,r){return Array.prototype.slice.call((r||d).querySelectorAll(s));};
+var rm=matchMedia('(prefers-reduced-motion: reduce)');
+function compute(plan, n, C, T, S, K) {
+  var zone = 0, cells = [], days = [], costAct = 0, moveSum = 0, d, s;
+  for (d = 0; d < 3; d++) {
+    var act = 0, move = 0, back = 0;
+    for (s = 0; s < 5; s++) {
+      var c = plan[d * 5 + s];
+      if (c == null || c < 0) { cells.push({ t: 0, over: 0 }); continue; }
+      var ch = C[c], t = 0;
+      if (ch.z > 0) { t = T[zone][ch.z]; zone = ch.z; }
+      cells.push({ t: t, over: Math.max(0, t + ch.h - S[s]) });
+      if (!ch.r) act += ch.h;
+      move += t; costAct += ch.p;
+    }
+    if (d === 2) { back = T[zone][0]; move += back; }
+    var idx = act + move * K.w;
+    days.push({ act: act, move: move, idx: idx, lv: idx <= K.lo ? 0 : idx <= K.hi ? 1 : 2, sleep: zone, back: back });
+    moveSum += move;
+  }
+  var room1 = K.room + (n === 1 ? K.solo : 0);
+  var car = moveSum * K.car / n;
+  var total = Math.round((costAct + car + K.nights * room1 + K.plan) / 10) * 10;
+  return { cells: cells, days: days, costAct: costAct, moveSum: moveSum, car: car, room1: room1, total: total, top: Math.max(days[0].lv, days[1].lv, days[2].lv) };
+}
+function fmtH(x) { return String(Math.round(x * 100) / 100); }
+function fmtN(x) { var s = String(Math.round(x)), o = ''; while (s.length > 3) { o = ',' + s.slice(-3) + o; s = s.slice(0, -3); } return s + o; }
+function fmtI(x) { return (Math.round(x * 10 + 1e-9) / 10).toFixed(1); }
+function ribbon(i, W, H, j) {
+  var v = Math.max(0, i), P = 300 / (1 + Math.pow(v, 1.5) / 4), A = Math.min(10.5, 1.6 + v * 0.85);
+  var T = 11, B = H - 8, x, top = '', bot = '', c1 = '', c2 = '', back = [], r = function (n) { return Math.round(n * 10) / 10; };
+  for (x = 0; x <= W; x += 4) {
+    var e = Math.min(1, x / 28, (W - x) / 28); e = e * e * (3 - 2 * e);
+    var ph = 2 * Math.PI * x / P + j, jit = 1 + 0.16 * Math.sin(x / 37 + j * 2.3);
+    var yt = T + A * e * jit * Math.sin(ph);
+    var yb = B + 0.38 * A * e * Math.sin(ph * 0.83 + 1.7 + j);
+    var cmd = x ? 'L' : 'M';
+    top += cmd + x + ' ' + r(yt);
+    back.unshift('L' + x + ' ' + r(yb));
+    bot += cmd + x + ' ' + r(yb);
+    c1 += cmd + x + ' ' + r(yt + 8 + 0.55 * A * e * Math.sin(ph * 1.21 + 0.9 + j));
+    c2 += cmd + x + ' ' + r(B - 9 + 0.3 * A * e * Math.sin(ph * 0.71 + 2.6 - j));
+  }
+  return [top + back.join('') + 'Z', top, bot, c1, c2];
+}
+function txt(e){return e?e.textContent.replace(/\s+/g,' ').trim():'';}
+function tpl(id,vals){var t=d.getElementById(id);if(!t)return '';var w=d.createElement('div');w.appendChild(t.content.cloneNode(true));$$('[data-k]',w).forEach(function(s){var v=vals&&vals[s.dataset.k];if(v!=null)s.textContent=v;});return txt(w);}
+var live=d.getElementById('live'),sayT=0;
+function say(t){clearTimeout(sayT);live.textContent='';sayT=setTimeout(function(){live.textContent=t;},60);}
+
+/* ---------- 元素 ---------- */
+var NC=D.C.length,planner=d.getElementById('planner'),river=d.getElementById('bw'),tray=d.getElementById('tray'),voice=d.getElementById('voice');
+var cells=[],chips=[],homes=[],notes=[],i;
+for(i=0;i<15;i++)cells.push(d.getElementById('g'+i));
+for(i=0;i<NC;i++){chips.push(d.getElementById('k'+i));homes.push(d.getElementById('ts'+i));notes.push(d.getElementById('nt'+i));}
+var outs={};$$('[data-o]').forEach(function(e){(outs[e.dataset.o]=outs[e.dataset.o]||[]).push(e);});
+function out(k,v){(outs[k]||[]).forEach(function(e){e.textContent=v;});}
+var dhs=[0,1,2].map(function(k){return d.getElementById('dh'+k);}),zcs=[0,1,2].map(function(k){return d.getElementById('zc'+k);});
+var rv=[0,1,2].map(function(k){return ['a','b','c','d','e'].map(function(s){return d.getElementById('rv'+k+s);});});
+var cs={room:$('.cs-room'),act:$('.cs-act'),car:$('.cs-car'),plan:$('.cs-plan')};
+var ppl=d.getElementById('ppl'),pbs=$$('.pb'),cp=d.getElementById('cp'),lds=$$('.ld');
+
+/* ---------- 狀態 ---------- */
+var plan=D.R.draft.slice(),n=D.n0,route='draft',sel=-1,ST=null,curI=null,wraf=0;
+function chipName(c){return txt($('.k-n',chips[c]));}
+function dayName(k){return txt($('.dl-n',dhs[k]));}
+function slotName(s){return txt($('#sl'+s+' b'));}
+function where(j){return dayName(Math.floor(j/5))+slotName(j%5);}
+function allowed(c,j){return D.C[c].s.indexOf(j%5)>=0;}
+function same(a,b){for(var j=0;j<15;j++)if(a[j]!==b[j])return false;return true;}
+function detect(){for(var k in D.R)if(same(plan,D.R[k]))return k;return plan.every(function(x){return x<0;})?'empty':'custom';}
+
+/* ---------- 網址 hash（不寫任何持久儲存） ---------- */
+function enc(){return '#p-'+plan.map(function(x){return x<0?'-':String.fromCharCode(97+x);}).join('')+'-'+n;}
+function writeHash(){
+  if(!history.replaceState)return;
+  if(route==='draft'&&n===D.n0){if(/^#p-/.test(location.hash))history.replaceState(null,'',location.pathname+location.search);return;}
+  var h=enc();if(location.hash!==h)history.replaceState(null,'',h);
+}
+function readHash(){
+  var m=/^#p-([a-t-]{15})-([1-4])$/.exec(location.hash);if(!m)return false;
+  var p=m[1].split('').map(function(ch){return ch==='-'?-1:ch.charCodeAt(0)-97;}),seen={};
+  for(var j=0;j<15;j++){var c=p[j];if(c<0)continue;if(c>=NC||seen[c]||!allowed(c,j))return false;seen[c]=1;}
+  plan=p;n=Math.min(D.K.nMax,Math.max(1,+m[2]));return true;
+}
+
+/* ---------- 搬石頭＋重算 ---------- */
+function trayChips(){return $$('.chip',tray);}
+function rovingTray(t){var list=trayChips();if(!list.length)return;if(typeof t==='number')t=chips[t];if(!t||list.indexOf(t)<0)t=list.filter(function(x){return x.tabIndex===0;})[0]||list[0];list.forEach(function(x){x.tabIndex=x===t?0:-1;});}
+function roveGrid(t){cells.forEach(function(x){x.tabIndex=x===t?0:-1;});}
+function sync(){
+  var keep=trayChips().filter(function(x){return x.tabIndex===0;})[0];
+  for(var c=0;c<NC;c++){var pos=plan.indexOf(c),host=pos>=0?cells[pos]:homes[c],ch=chips[c];
+    if(ch.parentNode!==host){if(pos>=0)host.insertBefore(ch,$('.ovf',host));else host.appendChild(ch);}
+    if(pos>=0)ch.tabIndex=-1;}
+  rovingTray(keep);
+}
+function drawWater(v){v.forEach(function(x,k){var P=ribbon(x,D.W,D.H,D.J[k]);for(var s=0;s<5;s++)rv[k][s].setAttribute('d',P[s]);out('i'+k,fmtI(x));});}
+function breathe(t,anim){
+  cancelAnimationFrame(wraf);
+  if(!curI||!anim||rm.matches){curI=t.slice();drawWater(curI);return;}
+  var from=curI.slice(),t0=performance.now(),dur=650;
+  var step=function(now){var k=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-k,3);curI=from.map(function(v,j){return v+(t[j]-v)*e;});drawWater(curI);if(k<1)wraf=requestAnimationFrame(step);else{curI=t.slice();drawWater(curI);}};
+  wraf=requestAnimationFrame(step);
+}
+function update(anim){
+  ST=compute(plan,n,D.C,D.T,D.S,D.K);
+  cells.forEach(function(c,j){var f=ST.cells[j];c.style.setProperty('--t',f.t);c.style.setProperty('--o',f.over);c.classList.toggle('has',plan[j]>=0);c.classList.toggle('over',f.over>0);$('.trv-t b',c).textContent=Math.round(f.t*60);$('.ovf b',c).textContent=Math.round(f.over*60);});
+  ST.days.forEach(function(x,k){dhs[k].dataset.lv=x.lv;out('a'+k,fmtH(x.act));out('m'+k,fmtH(x.move));if(k<2)zcs[k].dataset.z=x.sleep;});
+  zcs[2].style.setProperty('--b',ST.days[2].back);out('bk',Math.round(ST.days[2].back*60));
+  var am={room:D.K.nights*ST.room1,act:ST.costAct,car:Math.round(ST.car),plan:D.K.plan},mx=Math.max(am.room,am.act,am.car,am.plan);
+  for(var k in cs)if(cs[k])cs[k].style.setProperty('--w',(am[k]/mx).toFixed(3));
+  out('tot',fmtN(ST.total));out('cA',fmtN(am.act));out('cC',fmtN(am.car));out('cR2',fmtN(am.room));out('cP',fmtN(am.plan));out('cM',fmtH(ST.moveSum));out('cN',n);out('cR',fmtN(ST.room1));
+  ppl.textContent=n;pbs[0].disabled=n<=1;pbs[1].disabled=n>=D.K.nMax;
+  route=detect();voice.dataset.r=route;
+  lds.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.route===route));});
+  writeHash();
+  breathe(ST.days.map(function(x){return x.idx;}),anim);
+}
+
+/* ---------- 選取（點選替代）---------- */
+function showNote(c){notes.forEach(function(x,j){x.classList.toggle('on',j===c);});voice.classList.toggle('has-c',c>=0);}
+function select(c){
+  if(sel>=0)chips[sel].setAttribute('aria-pressed','false');
+  sel=c;chips[c].setAttribute('aria-pressed','true');
+  river.classList.add('placing');cells.forEach(function(x,j){var ok=allowed(c,j);x.classList.toggle('ok',ok);x.classList.toggle('no',!ok);});
+  showNote(c);
+}
+function deselect(){
+  if(sel>=0)chips[sel].setAttribute('aria-pressed','false');
+  sel=-1;river.classList.remove('placing');cells.forEach(function(x){x.classList.remove('ok','no','hov');});showNote(-1);
+}
+function bestCell(c){var j,first=null;for(j=0;j<15;j++){if(!allowed(c,j))continue;if(first===null)first=j;if(plan[j]<0)return cells[j];}return cells[first===null?0:first];}
+function flip(e,r){
+  if(rm.matches||!r)return;var r2=e.getBoundingClientRect(),dx=r.left-r2.left,dy=r.top-r2.top;if(Math.abs(dx)+Math.abs(dy)<2)return;
+  var host=e.parentNode;host.classList.add('fly');e.style.setProperty('--fx',Math.round(dx)+'px');e.style.setProperty('--fy',Math.round(dy)+'px');
+  e.classList.remove('land');void e.offsetWidth;e.classList.add('land');
+  var done=function(){e.classList.remove('land');host.classList.remove('fly');e.removeEventListener('animationend',done);e.removeEventListener('animationcancel',done);};
+  e.addEventListener('animationend',done);e.addEventListener('animationcancel',done);
+}
+function place(c,j,fromRect){
+  if(!allowed(c,j)){say(tpl('tp-badslot',{n:chipName(c),w:D.C[c].s.map(slotName).join(tpl('tp-sep'))}));return false;}
+  var from=plan.indexOf(c),occ=plan[j];
+  if(from===j)return true;
+  var r0=fromRect||chips[c].getBoundingClientRect();
+  if(from>=0)plan[from]=(occ>=0&&allowed(occ,from))?occ:-1;
+  plan[j]=c;
+  sync();update(true);flip(chips[c],r0);
+  var dd=Math.floor(j/5),x=ST.days[dd],f=ST.cells[j];
+  var msg=tpl('tp-placed',{n:chipName(c),w:where(j)});
+  if(f.over>0)msg+=' '+tpl('tp-over',{w:where(j),m:Math.round(f.over*60)});
+  msg+=' '+tpl('tp-day',{w:dayName(dd),i:fmtI(x.idx),lv:txt($('.lv'+x.lv,dhs[dd])),c:fmtN(ST.total)});
+  say(msg);return true;
+}
+function unplace(c){var from=plan.indexOf(c);if(from<0)return;plan[from]=-1;sync();update(true);say(tpl('tp-removed',{n:chipName(c)}));}
+function load(k){
+  deselect();
+  if(k==='empty'){plan=plan.map(function(){return -1;});sync();update(true);say(tpl('tp-cleared'));return;}
+  if(!D.R[k])return;plan=D.R[k].slice();sync();update(true);say(tpl('tp-loaded',{n:txt($('.rn-'+k,voice))}));
+}
+
+/* ---------- 點擊 ---------- */
+var suppress=false;
+d.addEventListener('click',function(e){
+  if(suppress){suppress=false;return;}
+  var t=e.target,kb=e.detail===0,b;
+  if(!t.closest)return;
+  if((b=t.closest('.ld'))){load(b.dataset.route);return;}
+  if((b=t.closest('.pb'))){n=Math.max(1,Math.min(D.K.nMax,n+(+b.dataset.dn)));update(false);say(tpl('tp-ppl',{n:n,c:fmtN(ST.total)}));return;}
+  if(t.closest('#cp')){copy();return;}
+  if(!planner.contains(t))return;
+  var cell=t.closest('.cell');
+  if(cell){
+    var j=+cell.dataset.i;roveGrid(cell);
+    if(sel>=0){var c=sel;deselect();place(c,j);return;}
+    if(plan[j]>=0){select(plan[j]);say(tpl('tp-picked',{n:chipName(plan[j])}));}
+    return;
+  }
+  var ch=t.closest('.chip');
+  if(ch&&tray.contains(ch)){
+    var c2=+ch.dataset.c;rovingTray(ch);
+    if(sel===c2){deselect();say(tpl('tp-cancel'));return;}
+    select(c2);say(tpl('tp-picked',{n:chipName(c2)}));
+    if(kb){var g=bestCell(c2);roveGrid(g);g.focus();}
+    return;
+  }
+  var home=t.closest('.ts');
+  if(home&&!$('.chip',home)){var c3=+home.dataset.for;if(sel===c3){deselect();unplace(c3);}else{select(c3);say(tpl('tp-picked',{n:chipName(c3)}));}return;}
+  if(t.closest('.beach')&&sel>=0&&plan.indexOf(sel)>=0){var c4=sel;deselect();unplace(c4);}
+});
+$$('.rt-go').forEach(function(b){b.addEventListener('click',function(){
+  load(b.dataset.route);river.scrollIntoView({behavior:rm.matches?'auto':'smooth',block:'start'});
+  var g=cells.filter(function(x){return x.tabIndex===0;})[0]||cells[0];setTimeout(function(){g.focus({preventScroll:true});},rm.matches?0:500);
+});});
+
+/* ---------- 鍵盤：方向鍵照畫面上的方向走（第二天在桌機上是由右往左流） ---------- */
+function near(from,key){
+  var a=from.getBoundingClientRect(),ax=a.left+a.width/2,ay=a.top+a.height/2,best=null,bs=1e9;
+  cells.forEach(function(c){if(c===from)return;var r=c.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2,dx=x-ax,dy=y-ay,s;
+    if(key==='ArrowRight'){if(dx<=4||Math.abs(dy)>Math.max(a.height,r.height)*.6)return;s=dx;}
+    else if(key==='ArrowLeft'){if(dx>=-4||Math.abs(dy)>Math.max(a.height,r.height)*.6)return;s=-dx;}
+    else if(key==='ArrowDown'){if(dy<=4)return;s=dy+Math.abs(dx)*2;}
+    else{if(dy>=-4)return;s=-dy+Math.abs(dx)*2;}
+    if(s<bs){bs=s;best=c;}});
+  return best;
+}
+river.addEventListener('keydown',function(e){
+  var cell=e.target.closest('.cell');if(!cell)return;var j=+cell.dataset.i,k=e.key,nx=null;
+  if(k==='Enter'||k===' '){e.preventDefault();cell.click();return;}
+  if(k==='Delete'||k==='Backspace'){if(plan[j]>=0){e.preventDefault();var c=plan[j];if(sel===c)deselect();unplace(c);}return;}
+  if(k==='Escape'){if(sel>=0){e.preventDefault();var c0=sel;deselect();say(tpl('tp-cancel'));if(plan.indexOf(c0)<0){rovingTray(c0);chips[c0].focus();}}return;}
+  if(k==='Home')nx=cells[Math.floor(j/5)*5];else if(k==='End')nx=cells[Math.floor(j/5)*5+4];
+  else if(k==='ArrowRight'||k==='ArrowLeft'||k==='ArrowUp'||k==='ArrowDown')nx=near(cell,k)||cell;else return;
+  e.preventDefault();roveGrid(nx);nx.focus();
+});
+river.addEventListener('focusin',function(e){var cell=e.target.closest('.cell');if(cell&&sel<0){var c=plan[+cell.dataset.i];showNote(c>=0?c:-1);}});
+tray.addEventListener('keydown',function(e){
+  var ch=e.target.closest('.chip');if(!ch)return;var list=trayChips(),j=list.indexOf(ch),k=e.key;
+  if(k==='Escape'){if(sel>=0){e.preventDefault();deselect();say(tpl('tp-cancel'));}return;}
+  if(k==='ArrowRight'||k==='ArrowDown')j++;else if(k==='ArrowLeft'||k==='ArrowUp')j--;else if(k==='Home')j=0;else if(k==='End')j=list.length-1;else return;
+  e.preventDefault();j=Math.max(0,Math.min(list.length-1,j));rovingTray(list[j]);list[j].focus();
+});
+tray.addEventListener('focusin',function(e){var ch=e.target.closest('.chip');if(ch&&sel<0)showNote(+ch.dataset.c);});
+planner.addEventListener('focusout',function(e){if(sel<0&&!(e.relatedTarget&&(tray.contains(e.relatedTarget)||river.contains(e.relatedTarget))))showNote(-1);});
+tray.addEventListener('mouseover',function(e){var ch=e.target.closest('.chip');if(ch&&sel<0)showNote(+ch.dataset.c);});
+tray.addEventListener('mouseleave',function(){if(sel<0&&!tray.contains(d.activeElement))showNote(-1);});
+d.addEventListener('keydown',function(e){if(e.key==='Escape'&&sel>=0&&!planner.contains(e.target)){deselect();say(tpl('tp-cancel'));}});
+
+/* ---------- 拖曳（滑鼠／觸控筆；手指用點選替代，不擋捲動）---------- */
+var drag=null;
+planner.addEventListener('pointerdown',function(e){
+  if(e.button!==0||e.pointerType==='touch')return;var ch=e.target.closest('.chip');if(!ch)return;
+  drag={c:+ch.dataset.c,el:ch,x:e.clientX,y:e.clientY,px:e.clientX,py:e.clientY,on:false,g:null,ox:0,oy:0,hov:null,raf:0};
+});
+function dragStart(e){
+  var r=drag.el.getBoundingClientRect(),g=drag.el.cloneNode(true);drag.on=true;drag.ox=e.clientX-r.left;drag.oy=e.clientY-r.top;
+  g.removeAttribute('id');g.setAttribute('aria-hidden','true');g.tabIndex=-1;g.classList.add('drag-ghost');g.style.width=Math.max(r.width,96)+'px';g.style.height=Math.max(r.height,44)+'px';
+  d.body.appendChild(g);drag.g=g;drag.el.classList.add('lifted');select(drag.c);d.documentElement.classList.add('dragging');
+}
+function dragHover(){
+  var u=d.elementFromPoint(drag.px,drag.py),c=u&&u.closest('.cell');
+  if(drag.hov&&drag.hov!==c)drag.hov.classList.remove('hov');if(c)c.classList.add('hov');drag.hov=c;
+}
+function dragMove(e){
+  drag.px=e.clientX;drag.py=e.clientY;
+  drag.g.style.transform='translate('+(e.clientX-drag.ox)+'px,'+(e.clientY-drag.oy)+'px)';
+  dragHover();
+  if(!drag.raf)drag.raf=requestAnimationFrame(edge);
+}
+/* 沙灘在溪的下面：拖到視窗上下緣時自己捲動，石頭跟著游標走 */
+function edge(){
+  if(!drag||!drag.on){return;}drag.raf=0;
+  var m=72,v=0,h=innerHeight;
+  if(drag.py<m)v=-Math.ceil((m-drag.py)/4);else if(drag.py>h-m)v=Math.ceil((drag.py-(h-m))/4);
+  if(v){scrollBy(0,v);dragHover();drag.raf=requestAnimationFrame(edge);}
+}
+function dragEnd(e,cancel){
+  var dr=drag;drag=null;if(!dr||!dr.on)return;if(dr.raf)cancelAnimationFrame(dr.raf);suppress=true;setTimeout(function(){suppress=false;},0);
+  var gr=dr.g.getBoundingClientRect();dr.g.remove();dr.el.classList.remove('lifted');d.documentElement.classList.remove('dragging');if(dr.hov)dr.hov.classList.remove('hov');
+  deselect();if(cancel)return;
+  var u=d.elementFromPoint(e.clientX,e.clientY),c=u&&u.closest('.cell');
+  if(c){roveGrid(c);place(dr.c,+c.dataset.i,gr);}else if(u&&u.closest('.beach'))unplace(dr.c);
+}
+addEventListener('pointermove',function(e){if(!drag)return;if(!drag.on){if(Math.abs(e.clientX-drag.x)+Math.abs(e.clientY-drag.y)<6)return;dragStart(e);}dragMove(e);});
+addEventListener('pointerup',function(e){if(drag)dragEnd(e,false);});
+addEventListener('pointercancel',function(e){if(drag)dragEnd(e,true);});
+
+/* ---------- 複製網址 ---------- */
+function copy(){
+  var ok=function(){cp.classList.add('ok');say(tpl('tp-copied'));setTimeout(function(){cp.classList.remove('ok');},2400);},bad=function(){say(tpl('tp-copyFail'));};
+  try{if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(location.href).then(ok,bad);else bad();}catch(_){bad();}
+}
+
+/* ---------- 頁內錨點：捲過去但不蓋掉網址裡的行程 ---------- */
+d.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a||e.defaultPrevented)return;var id=a.getAttribute('href').slice(1),t=id&&d.getElementById(id);if(!t)return;
+  e.preventDefault();t.scrollIntoView({behavior:rm.matches?'auto':'smooth',block:'start'});if(!t.hasAttribute('tabindex'))t.setAttribute('tabindex','-1');t.focus({preventScroll:true});
+});
+addEventListener('hashchange',function(){if(readHash()){deselect();sync();update(true);}});
+
+/* ---------- 起始 ---------- */
+readHash();sync();update(false);
+})();
+</script>
+</body>
+</html>

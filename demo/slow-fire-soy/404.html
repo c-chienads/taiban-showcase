@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F08" data-slug="slow-fire-soy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>找不到頁面｜慢火釀造所 Slow Fire Soy Works｜西螺黑豆蔭油</title>
+<meta name="description" content="找不到這個頁面。">
+
+<meta name="generator" content="套版網站平台 F08">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%20color%3D%22%23261b14%22%20viewBox%3D%220%200%2032%2032%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2214.6%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%221.6%22%2F%3E%3Cpath%20d%3D%22M21.2%2016L30%2016M20.9%2017.8L29.2%2020.8M20%2019.3L26.7%2025M18.6%2020.5L23%2028.1M16.9%2021.1L18.4%2029.8M15.1%2021.1L13.6%2029.8M13.4%2020.5L9%2028.1M12%2019.3L5.3%2025M11.1%2017.8L2.8%2020.8M10.8%2016L2%2016M11.1%2014.2L2.8%2011.2M12%2012.7L5.3%207M13.4%2011.5L9%203.9M15.1%2010.9L13.6%202.2M16.9%2010.9L18.4%202.2M18.6%2011.5L23%203.9M20%2012.7L26.7%207M20.9%2014.2L29.2%2011.2%22%20stroke%3D%22currentColor%22%20stroke-width%3D%221.1%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%229.6%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%22.9%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%223.6%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E">
+<link rel="preload" href="fonts/01-noto-serif-tc.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/02-newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"Noto Serif TC";src:url("fonts/01-noto-serif-tc.woff2") format("woff2");font-weight:400 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Newsreader";src:url("fonts/02-newsreader.woff2") format("woff2");font-weight:300 500;font-style:normal;font-display:swap}
+@font-face{font-family:"Newsreader";src:url("fonts/03-newsreader.woff2") format("woff2");font-weight:300 400;font-style:italic;font-display:swap}
+@layer flagship {
+
+@property --ink-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --tc { syntax: "<color>"; inherits: false; initial-value: transparent; }
+
+:root{
+  /* 生土（未上釉的胎）＋琥珀釉＋天目／醬色：第二輪離開青綠，轉向陶與醬 */
+  --bg: oklch(0.80 0.02 70);
+  --bg-2: oklch(0.755 0.024 66);
+  --band: oklch(0.74 0.10 74);
+  --band-2: oklch(0.60 0.11 62);
+  --ink: oklch(0.22 0.025 50);
+  --ink-2: oklch(0.30 0.035 50);
+  --accent: oklch(0.34 0.075 56);
+  --soy: oklch(0.27 0.045 45);
+  --soy-2: oklch(0.34 0.055 48);
+  --paper: oklch(0.965 0.012 85);
+  --paper-2: oklch(0.86 0.03 75);
+  --amber-l: oklch(0.82 0.10 78);
+  --sun: oklch(0.72 0.14 70);
+  --porcelain: oklch(0.92 0.018 82);
+  --rule: oklch(0.30 0.035 50 / .3);
+  --rule-2: oklch(0.25 0.03 50 / .52);
+  --focus-ring: 3px double var(--accent);
+  --focus-offset: 3px;
+  --selection-bg: oklch(0.27 0.045 45);
+  --selection-fg: oklch(0.965 0.012 85);
+  --ink-mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cfilter%20id%3D%22s%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%3CfeGaussianBlur%20stdDeviation%3D%221.1%22%2F%3E%3C%2Ffilter%3E%3Cg%20filter%3D%22url(%23s)%22%20fill%3D%22%23000%22%3E%3Cpath%20d%3D%22M164.7%20100C164.8%20101.1%20164.9%20102.2%20165.3%20103.4C165.8%20104.6%20166.6%20105.8%20167.4%20107.1C168.2%20108.4%20169.8%20109.8%20170.4%20111.1C170.9%20112.5%20171.2%20113.9%20170.7%20115C170.1%20116.2%20168.4%20117.1%20167.2%20118C166%20119%20164.6%20119.7%20163.8%20120.7C162.9%20121.7%20162.6%20122.8%20162.3%20123.9C162%20125.1%20162%20126.3%20161.9%20127.6C161.8%20128.8%20161.9%20130.2%20161.8%20131.5C161.6%20132.8%20161.5%20134.1%20161.2%20135.3C160.8%20136.5%20160.4%20137.8%20159.7%20138.8C159%20139.8%20158.1%20140.7%20157.1%20141.5C156%20142.2%20154.7%20142.8%20153.4%20143.3C152.2%20143.8%20150.7%20144.1%20149.3%20144.4C148%20144.8%20146.6%20145%20145.3%20145.3C144.1%20145.7%20142.9%20146%20141.8%20146.5C140.8%20146.9%20139.9%20147.5%20139%20148.1C138.1%20148.8%20137.3%20149.5%20136.6%20150.3C135.8%20151.1%20135.1%20152.1%20134.4%20153C133.7%20153.9%20133%20154.9%20132.3%20155.9C131.5%20156.9%20130.8%20157.9%20130%20158.8C129.2%20159.7%20128.3%20160.7%20127.4%20161.5C126.5%20162.4%20125.5%20163.2%20124.5%20163.9C123.5%20164.6%20122.5%20165.2%20121.4%20165.7C120.3%20166.2%20119.1%20166.6%20117.9%20166.9C116.7%20167.1%20115.5%20167.3%20114.3%20167.3C113.1%20167.3%20111.8%20167.2%20110.6%20167C109.4%20166.8%20108.1%20166.4%20106.9%20166C105.7%20165.6%20104.5%20165.1%20103.4%20164.6C102.2%20164.1%20101.1%20163.5%20100%20162.9C98.9%20162.3%2097.8%20161.6%2096.8%20161C95.8%20160.4%2094.8%20159.8%2093.8%20159.2C92.8%20158.7%2091.8%20158.1%2090.9%20157.6C89.9%20157.1%2089%20156.7%2088%20156.2C87.1%20155.8%2086.2%20155.5%2085.2%20155.1C84.3%20154.8%2083.4%20154.5%2082.4%20154.1C81.5%20153.8%2080.5%20153.6%2079.6%20153.2C78.6%20152.9%2077.7%20152.6%2076.7%20152.3C75.8%20151.9%2074.9%20151.5%2074%20151.1C73.1%20150.6%2072.2%20150.1%2071.4%20149.5C70.6%20149%2069.8%20148.3%2069.1%20147.7C68.3%20147%2067.6%20146.2%2067%20145.4C66.4%20144.6%2065.8%20143.7%2065.3%20142.8C64.8%20141.9%2064.4%20141%2064%20140C63.6%20139.1%2063.2%20138.1%2062.9%20137.1C62.5%20136.2%2062.3%20135.2%2062%20134.2C61.7%20133.3%2061.4%20132.3%2061.2%20131.5C60.9%20130.6%2060.6%20129.7%2060.3%20128.9C59.9%20128%2059.6%20127.2%2059.2%20126.5C58.7%20125.8%2058.2%20125.1%2057.3%20124.6C56.5%20124.1%2055.5%20123.7%2054.1%20123.4C52.6%20123.1%2050.6%20123.1%2048.8%20122.8C47.1%20122.5%2044.7%20122.3%2043.3%20121.7C42%20121.2%2041%20120.3%2040.7%20119.3C40.5%20118.2%2041.3%20116.8%2041.9%20115.6C42.4%20114.3%2043.6%20113%2044.2%20111.9C44.8%20110.7%2045.2%20109.7%2045.3%20108.7C45.5%20107.6%2045.3%20106.7%2045.1%20105.8C44.9%20104.8%2044.5%20103.9%2044.2%20102.9C43.9%20102%2043.6%20101%2043.2%20100C42.8%2099%2042.5%2098%2042%2097C41.5%2095.9%2040.9%2094.9%2040.1%2093.7C39.3%2092.6%2038.3%2091.4%2037.1%2090C35.8%2088.7%2034.2%2087.3%2032.6%2085.7C31%2084.1%2028.9%2082.3%2027.4%2080.5C25.9%2078.8%2024.3%2076.8%2023.4%2075.1C22.6%2073.4%2022.3%2071.7%2022.4%2070.2C22.5%2068.7%2023.3%2067.4%2024.1%2066.2C24.8%2065%2026%2063.9%2026.8%2062.7C27.6%2061.5%2028.3%2060.3%2028.8%2058.9C29.2%2057.5%2029.4%2055.9%2029.6%2054.3C29.9%2052.7%2029.9%2050.9%2030.2%2049.3C30.6%2047.7%2030.9%2046%2031.5%2044.6C32.1%2043.1%2033%2041.7%2033.8%2040.4C34.7%2039.1%2035.6%2037.8%2036.7%2036.7C37.7%2035.5%2038.8%2034.3%2040.2%2033.6C41.6%2032.8%2043.2%2032.3%2045.2%2032.3C47.1%2032.3%2049.6%2033%2051.8%2033.7C54.1%2034.5%2056.7%2035.8%2058.9%2036.7C61.1%2037.6%2063.1%2038.6%2064.8%2039C66.5%2039.5%2067.9%2039.7%2069.2%2039.6C70.6%2039.6%2071.7%2039.2%2072.8%2038.9C73.9%2038.5%2075%2038%2076%2037.6C77.1%2037.2%2078.2%2036.7%2079.3%2036.3C80.4%2035.9%2081.5%2035.6%2082.7%2035.3C83.8%2035.1%2085%2034.9%2086.1%2034.8C87.3%2034.8%2088.5%2034.8%2089.7%2034.9C90.9%2035%2092.1%2035.3%2093.2%2035.6C94.4%2036%2095.6%2036.4%2096.7%2037C97.8%2037.5%2098.9%2038.1%20100%2038.8C101.1%2039.5%20102.1%2040.3%20103.1%2041.1C104.1%2041.9%20105%2042.8%20105.9%2043.7C106.8%2044.6%20107.7%2045.5%20108.5%2046.3C109.3%2047.2%20110.1%2048.1%20110.9%2049C111.6%2049.8%20112.3%2050.6%20113%2051.4C113.7%2052.1%20114.4%2052.9%20115.1%2053.5C115.8%2054.2%20116.5%2054.8%20117.1%2055.4C117.8%2055.9%20118.5%2056.4%20119.2%2056.9C119.9%2057.4%20120.6%2057.8%20121.3%2058.2C122%2058.6%20122.7%2059%20123.5%2059.3C124.2%2059.7%20125%2060%20125.8%2060.3C126.5%2060.7%20127.3%2061%20128.1%2061.3C128.9%2061.6%20129.7%2062%20130.5%2062.3C131.4%2062.6%20132.2%2063%20133%2063.3C133.9%2063.7%20134.7%2064.1%20135.6%2064.4C136.4%2064.8%20137.3%2065.2%20138.1%2065.7C139%2066.1%20139.9%2066.5%20140.7%2067C141.6%2067.5%20142.5%2068%20143.4%2068.5C144.2%2069%20145.1%2069.5%20146%2070.1C146.9%2070.7%20147.8%2071.3%20148.7%2071.9C149.5%2072.5%20150.4%2073.2%20151.3%2073.9C152.1%2074.6%20153%2075.3%20153.8%2076.1C154.6%2076.8%20155.4%2077.6%20156.1%2078.5C156.9%2079.3%20157.6%2080.2%20158.2%2081.1C158.9%2082%20159.5%2082.9%20160.1%2083.9C160.7%2084.9%20161.2%2085.9%20161.6%2086.9C162.1%2087.9%20162.5%2089%20162.8%2090C163.2%2091.1%20163.5%2092.2%20163.7%2093.3C164%2094.4%20164.1%2095.5%20164.3%2096.6C164.4%2097.7%20164.5%2098.9%20164.7%20100Z%22%2F%3E%3Ccircle%20cx%3D%22159.7%22%20cy%3D%2274.6%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%2228.1%22%20cy%3D%22100.6%22%20r%3D%224.3%22%2F%3E%3Ccircle%20cx%3D%22125.3%22%20cy%3D%22172.8%22%20r%3D%222.8%22%2F%3E%3Ccircle%20cx%3D%22183.6%22%20cy%3D%22120.4%22%20r%3D%222%22%2F%3E%3Ccircle%20cx%3D%22159.5%22%20cy%3D%22153.4%22%20r%3D%223.7%22%2F%3E%3Ccircle%20cx%3D%22142.7%22%20cy%3D%2251.9%22%20r%3D%222%22%2F%3E%3Ccircle%20cx%3D%2268.9%22%20cy%3D%2235.2%22%20r%3D%224.1%22%2F%3E%3Ccircle%20cx%3D%2242.5%22%20cy%3D%22127.8%22%20r%3D%223.3%22%2F%3E%3Ccircle%20cx%3D%22124.5%22%20cy%3D%22176.1%22%20r%3D%224.5%22%2F%3E%3Ccircle%20cx%3D%2216.7%22%20cy%3D%2273.6%22%20r%3D%221.8%22%2F%3E%3Ccircle%20cx%3D%22163.6%22%20cy%3D%22145.9%22%20r%3D%221.9%22%2F%3E%3Ccircle%20cx%3D%2289.4%22%20cy%3D%2215.3%22%20r%3D%222.8%22%2F%3E%3Ccircle%20cx%3D%2265.5%22%20cy%3D%2233.7%22%20r%3D%224.4%22%2F%3E%3Ccircle%20cx%3D%2229.5%22%20cy%3D%2294.9%22%20r%3D%223.3%22%2F%3E%3Ccircle%20cx%3D%2290.5%22%20cy%3D%2222.5%22%20r%3D%222.2%22%2F%3E%3Ccircle%20cx%3D%2223.6%22%20cy%3D%2281.5%22%20r%3D%222.5%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+
+  --maxw: 1360px;
+  --m: clamp(20px, 4.4vw, 64px);
+  --padx: max(var(--m), (100% - var(--maxw)) / 2);
+  --sp: clamp(140px, 15.5vw, 224px);
+  --gut: clamp(20px, 3vw, 48px);
+  --a: 1.42; --b: 1;
+  --spx: calc(var(--padx) + (100% - 2 * var(--padx) - var(--sp) - 2 * var(--gut)) * var(--a) / (var(--a) + var(--b)) + var(--gut) + var(--sp) / 2);
+  --cols: [zh-start] minmax(0, calc((100% - var(--sp) - 2 * var(--gut)) * var(--a) / (var(--a) + var(--b)))) [zh-end sp-start] var(--sp) [sp-end en-start] minmax(0, 1fr) [en-end];
+
+  /* 主語言＝繁中（預設） */
+  --zh-c: var(--ink);  --en-c: var(--ink-2);
+  --zh-fs: 1.1875rem;  --en-fs: 1rem;
+  --en-fst: italic;    --en-w: 400;
+  --zh-h1: clamp(2.5rem, 4.3vw, 3.9rem);  --en-h1: clamp(1.45rem, 2.1vw, 1.95rem);
+  --zh-h2: clamp(1.9rem, 2.7vw, 2.45rem); --en-h2: clamp(1.15rem, 1.45vw, 1.35rem);
+  --zh-h3: 1.5rem;     --en-h3: 1.125rem;
+  --zh-hw: 700;        --en-hw: 400;
+  --zh-nm: clamp(3.1rem, 5.4vw, 5.1rem);  --en-nm: clamp(1.55rem, 2.2vw, 2rem);
+  --zh-nmw: 800;
+  --zh-o: 1; --en-o: 2;
+  --zh-gl: 0; --en-gl: 1;
+  --zh-sumo: none; --en-sumo: inline-flex;
+  --en-alt: normal; --en-h1w: 400; --en-h1lh: 1.16;
+  --lz-fs: 1rem; --le-fs: .9375rem;
+}
+/* 主語言＝English：無 JS 靠 :has(radio)，有 JS 靠 data-lead */
+:root[data-lead="en"], :root:not(.js):has(#lead-en:checked){
+  --a: 1; --b: 1.42;
+  --zh-c: var(--ink-2); --en-c: var(--ink);
+  --zh-fs: .9375rem;    --en-fs: 1.25rem;
+  --en-fst: normal;     --en-w: 400;
+  --zh-h1: clamp(1.35rem, 1.9vw, 1.75rem); --en-h1: clamp(2.6rem, 4.6vw, 4.3rem);
+  --zh-h2: clamp(1.1rem, 1.4vw, 1.3rem);   --en-h2: clamp(2rem, 3vw, 2.75rem);
+  --zh-h3: 1.0625rem;   --en-h3: 1.625rem;
+  --zh-hw: 600;         --en-hw: 400;
+  --zh-nm: clamp(1.6rem, 2.2vw, 2rem);     --en-nm: clamp(2.9rem, 5vw, 4.6rem);
+  --zh-nmw: 700;
+  --zh-o: 2; --en-o: 1;
+  --zh-gl: 1; --en-gl: 0;
+  --en-alt: italic; --en-h1w: 300; --en-h1lh: 1.04;
+  --lz-fs: .875rem; --le-fs: 1.0625rem;
+  --zh-sumo: inline-flex; --en-sumo: none;
+}
+
+html{ background: var(--bg) url("assets/grain.svg") 0 0 / 360px 360px; color: var(--ink); }
+body{ font-family: "Newsreader", "Noto Serif TC", serif; font-size: 1rem; background: transparent; font-optical-sizing: auto; }
+a{ text-decoration-thickness: 1px; text-underline-offset: .22em; text-decoration-color: color-mix(in oklch, currentColor 45%, transparent); }
+a:hover{ text-decoration-color: var(--accent); }
+@media (hover: hover) and (pointer: fine){
+  .tel:hover{ color: var(--accent); text-decoration-thickness: 3px; }
+  .brand:hover b{ color: var(--amber-l); }
+  .more > summary:hover{ color: var(--sum-h, var(--ink)); text-decoration-thickness: 2px; }
+}
+::selection{ background: var(--selection-bg); color: var(--selection-fg); }
+
+/* ---------- 兩種語言各自的排印 ---------- */
+.zh{ grid-column: zh; color: var(--zh-c); font-size: var(--zh-fs); line-height: 1.8; font-kerning: normal; font-feature-settings: "kern"; text-align: justify; text-justify: inter-character; }
+.en{ grid-column: en; color: var(--en-c); font-size: var(--en-fs); line-height: 1.5; font-style: var(--en-fst); font-weight: var(--en-w); hyphens: auto; -webkit-hyphens: auto; hanging-punctuation: first allow-end last; font-feature-settings: "kern", "liga", "pnum"; text-align: start; }
+.en em{ font-style: var(--en-alt); }
+.zh p + p, .en p + p{ margin-top: .9em; }
+/* 收合的另一半：摘要列像一行旁註連結；展開後的段落接在第一句後面 */
+.more > p, .more > .tally, .more > dl{ margin-block-start: .9em; }
+.more > summary{ display: inline-flex; align-items: center; gap: .4em; margin-block-start: .4em; cursor: pointer; list-style: none; font-size: .9375rem; font-style: normal; color: var(--sum-c, var(--accent)); text-decoration: underline; text-underline-offset: .25em; text-decoration-thickness: 1px; }
+.more > summary::-webkit-details-marker{ display: none; }
+.more > summary::after{ content: "+"; font-weight: 600; text-decoration: none; }
+.more[open] > summary::after{ content: "–"; }
+.zh .more > summary{ letter-spacing: .08em; }
+.zh > .more[open] > summary{ display: var(--zh-sumo); } .en > .more[open] > summary{ display: var(--en-sumo); }
+.sp{ grid-column: sp; align-self: start; position: relative; z-index: 1; }
+.tnum{ font-variant-numeric: tabular-nums lining-nums; }
+
+/* ---------- 版面：每個區塊都是三道 ---------- */
+.sec{ position: relative; display: grid; grid-template-columns: var(--cols); column-gap: var(--gut); align-items: baseline; padding-inline: var(--padx); scroll-margin-top: 64px; }
+.pair{ display: contents; }
+.ph{ grid-column: 1 / -1; display: grid; grid-template-columns: var(--cols); column-gap: var(--gut); align-items: baseline; margin: 0; }
+.ph .zh{ font-size: var(--zh-h2); font-weight: var(--zh-hw); line-height: 1.3; letter-spacing: .04em; font-feature-settings: "palt"; text-align: start; }
+.ph .en{ font-size: var(--en-h2); font-weight: var(--en-hw); line-height: 1.12; letter-spacing: -.005em; font-variation-settings: "opsz" 60; }
+.ph .bead{ align-self: center; justify-self: center; inline-size: 22px; block-size: 22px; border-radius: 50%; background: var(--band-2); box-shadow: inset 0 -3px 0 oklch(0.50 0.10 58), 0 0 0 5px var(--bg); }
+
+/* 書脊上的流釉：琥珀釉從口緣一路流下，在最後一支瓶子底下結成珠 */
+.glaze{ position: relative; }
+.glaze > .lede{ z-index: 1; }
+.drip{ position: absolute; z-index: 0; inset-block: 0 110px; inline-size: 28px; pointer-events: none;
+  inset-inline-start: calc(var(--spx) - 14px);
+  background: url("assets/drip.svg") 0 0 / 28px 960px repeat-y; }
+.drip-end{ position: absolute; inset-inline-start: 0; inset-block-start: 100%; inline-size: 28px; block-size: 60px; }
+.de-fill{ fill: oklch(0.62 0.11 64); } .de-bead{ fill: oklch(0.50 0.10 58); }
+
+/* ---------- 刊頭（天目口緣）與主語言切換 ---------- */
+.top::after{ content: ""; position: absolute; inset-inline: 0; inset-block-start: 100%; block-size: 16px; pointer-events: none; }
+.top{ position: sticky; inset-block-start: 0; z-index: 20; display: grid; grid-template-columns: auto 1fr auto; align-items: center; column-gap: clamp(16px, 3vw, 48px); padding: 10px var(--padx); background: var(--soy); border-block-end: 2px solid var(--band-2); --focus-ring: 3px double var(--amber-l); }
+.brand{ display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--paper); }
+.brand .mark{ inline-size: 34px; block-size: 34px; color: var(--amber-l); flex: none; }
+.brand b{ font-family: "Noto Serif TC", serif; font-size: 1.125rem; font-weight: 700; letter-spacing: .14em; }
+.brand i{ display: block; font-size: .875rem; line-height: 1.2; color: var(--paper-2); font-style: italic; letter-spacing: .005em; }
+.brand span{ line-height: 1.25; }
+.nav{ display: flex; justify-content: center; gap: clamp(14px, 2.2vw, 36px); }
+.nav a{ display: grid; text-decoration: none; padding-block: 4px; line-height: 1.25; text-align: center; }
+.nav a b{ font-family: "Noto Serif TC", serif; font-weight: 600; font-size: .9375rem; letter-spacing: .12em; color: var(--paper); }
+.nav a i{ font-size: .8125rem; color: var(--paper-2); }
+.nav a:hover b{ color: var(--amber-l); }
+.lead{ display: flex; align-items: center; gap: 8px; border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+.lead legend{ float: inline-start; display: grid; line-height: 1.2; margin-inline-end: 6px; padding: 0; text-align: end; }
+.lead legend b{ font-family: "Noto Serif TC", serif; font-weight: 600; font-size: .8125rem; letter-spacing: .14em; color: var(--paper); }
+.lead legend i{ font-size: .8125rem; color: var(--paper-2); }
+.lead input{ position: absolute; opacity: 0; inline-size: 1px; block-size: 1px; margin: 0; }
+/* 釉試片：掛孔＋浸釉下緣；被選的那片浸過琥珀釉 */
+.lead label{ position: relative; display: grid; place-items: center; min-inline-size: 64px; block-size: 40px; padding: 8px 12px 4px; cursor: pointer; border: 1.5px solid var(--paper-2); border-radius: 3px 3px 10px 10px; color: var(--paper); font-size: .9375rem; line-height: 1; background: transparent; }
+.lead label::before{ content: ""; position: absolute; inset-block-start: 4px; inset-inline-start: 50%; inline-size: 5px; block-size: 5px; margin-inline-start: -2.5px; border-radius: 50%; border: 1.2px solid currentColor; }
+.lead label[for="lead-zh"]{ font-family: "Noto Serif TC", serif; font-weight: 600; letter-spacing: .1em; }
+.lead label[for="lead-en"]{ font-style: italic; }
+.lead input:focus-visible + label{ outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+:root:not(.js) .lead input:checked + label,
+:root.js:not([data-lead="en"]) #lead-zh + label,
+:root.js[data-lead="en"] #lead-en + label{ background: var(--band); border-color: var(--band); color: var(--ink); box-shadow: inset 0 -5px 0 var(--band-2); }
+
+/* ---------- 首屏：琥珀積釉帶（帶開片）＋流下的釉 ---------- */
+.lede{ --drop: 150px; padding-block: clamp(44px, 6vw, 92px) calc(var(--drop) + 12px); row-gap: 0;
+  /* 首屏書脊加寬：甕與斗笠兩側各留 ≥40px，不貼左欄文字 */
+  --sp: clamp(150px, 19.5vw, 280px);
+  --spx: calc(var(--padx) + (100% - 2 * var(--padx) - var(--sp) - 2 * var(--gut)) * var(--a) / (var(--a) + var(--b)) + var(--gut) + var(--sp) / 2);
+  --cols: [zh-start] minmax(0, calc((100% - var(--sp) - 2 * var(--gut)) * var(--a) / (var(--a) + var(--b)))) [zh-end sp-start] var(--sp) [sp-end en-start] minmax(0, 1fr) [en-end]; }
+.lede .pair > .zh{ padding-inline-end: 14px; }
+/* 標題不受加寬的書脊影響：中文標題可伸進書脊上方（甕在下方，不重疊） */
+@media (min-width: 761px){ .lede h1 > .zh{ grid-column: zh-start / sp-end; } }
+.lede::before{ content: ""; position: absolute; inset: 0 0 var(--drop) 0; z-index: -1; background: url("assets/crackle.svg") 0 0 / 640px 640px, var(--band); }
+.lede .band-edge{ position: absolute; inset-inline: 0; inset-block-start: calc(100% - var(--drop) - 1px); inline-size: 100%; block-size: 150px; }
+.be-fill{ fill: var(--band); } .be-rim{ fill: none; stroke: var(--band-2); stroke-width: 2.2; stroke-opacity: .6; } .be-bead{ fill: var(--band-2); }
+.lede h1{ grid-column: 1 / -1; display: grid; grid-template-columns: var(--cols); column-gap: var(--gut); align-items: baseline; margin-block-end: clamp(28px, 3.6vw, 56px); }
+.lede h1 .zh{ font-size: var(--zh-h1); font-weight: var(--zh-hw); line-height: 1.3; letter-spacing: .03em; font-feature-settings: "palt"; text-align: start; }
+.lede h1 .en{ font-size: var(--en-h1); font-weight: var(--en-h1w); line-height: var(--en-h1lh); letter-spacing: -.012em; font-variation-settings: "opsz" 72; }
+.lede .h1-line{ display: block; text-indent: 0; }
+/* 開引號懸掛：「 與 “ 掛進左邊界，字身對齊下一行 */
+.lede h1 .zh .h1-line:first-child{ text-indent: -.5em; }
+.lede h1 .en .h1-line:first-child{ text-indent: -.4em; }
+.lede .sp{ position: absolute; inline-size: var(--jw); inset-inline-start: calc(var(--spx) - var(--jw) / 2); inset-block-end: calc(var(--drop) - 30px); z-index: 2; --jw: clamp(190px, 19vw, 272px); }
+.lede .jar{ position: relative; inline-size: 100%; block-size: auto; overflow: visible; }
+.tag{ position: absolute; inline-size: calc(var(--jw) * .42); block-size: auto; inset-inline-end: calc(var(--jw) * .02); inset-block-start: calc(var(--jw) * .4); overflow: visible; transform: rotate(-7deg); transform-origin: 0 0; }
+.tg-str{ fill: none; stroke: oklch(0.45 0.05 60); stroke-width: 1.6; } .tg-paper{ fill: var(--paper); stroke: oklch(0.30 0.03 60 / .25); stroke-width: .8; }
+.tg-hole{ fill: none; stroke: oklch(0.45 0.05 60); stroke-width: 1.4; } .tg-rest{ stroke: oklch(0.76 0.025 70); stroke-width: .9; } .tg-done{ stroke: oklch(0.52 0.12 58); stroke-width: 1.5; }
+.tg-n{ font-family: "Newsreader", serif; font-style: italic; font-size: 25px; font-weight: 400; fill: var(--ink); } .tg-d{ font-family: "Newsreader", serif; font-size: 10px; fill: var(--ink-2); letter-spacing: .04em; }
+.lede .meta{ margin-block-start: clamp(22px, 2.6vw, 40px); padding-block-start: 14px; border-block-start: 1px solid var(--rule-2); }
+.lede .meta.zh{ font-size: .9375rem; letter-spacing: .05em; color: var(--ink); }
+.lede .meta.en{ font-size: .9375rem; color: var(--ink-2); }
+.meta span + span::before{ content: "・"; margin-inline: .3em; color: var(--ink-2); }
+.meta.en span + span::before{ content: "·"; margin-inline: .45em; }
+
+/* ---------- 六道工序：每一道一層醬色，從生豆的灰一路深到熟醬 ---------- */
+.steps{ padding-block: clamp(40px, 5vw, 72px) 0; }
+.steps .ph, .sauces .ph, .log .ph, .buy .ph{ padding-block-end: clamp(22px, 2.6vw, 40px); }
+.step > *, .buy .row > *{ grid-row: var(--row); }
+.band{ grid-column: 1 / -1; align-self: stretch; z-index: -1; --tc: var(--tone); background: var(--tc); box-shadow: 0 0 0 100vmax var(--tc); clip-path: inset(0 -100vmax); }
+.rule{ align-self: start; block-size: 0; border-block-start: 1px solid var(--rule); }
+.rule.rz{ grid-column: zh; } .rule.re{ grid-column: en; }
+.step > .zh, .step > .en{ padding-block: 30px 40px; }
+.step > .sp{ display: flex; flex-direction: column; align-items: center; gap: 4px; padding-block: 24px 26px; }
+.step.dark{ --zh-c: var(--paper); --en-c: var(--paper-2); --t-c: var(--paper-2); --num-c: var(--amber-l); --tick: var(--paper-2); --sum-c: var(--paper-2); --sum-h: var(--amber-l); --focus-ring: 3px double var(--amber-l); }
+:root[data-lead="en"] .step.dark, :root:not(.js):has(#lead-en:checked) .step.dark{ --zh-c: var(--paper-2); --en-c: var(--paper); }
+.step h3{ margin: 0 0 .35em; }
+.step .zh h3{ font-size: var(--zh-h3); font-weight: var(--zh-hw); letter-spacing: .08em; line-height: 1.35; text-align: start; }
+.step .en h3{ font-size: var(--en-h3); font-weight: var(--en-hw); line-height: 1.2; font-variation-settings: "opsz" 36; }
+.step h3 .t{ margin-inline-start: .7em; font-size: max(.95rem, .6em); font-weight: 500; letter-spacing: .06em; color: var(--t-c, var(--accent)); }
+.step .en h3 .t{ font-style: var(--en-alt); letter-spacing: 0; }
+.no{ font-size: 2.625rem; line-height: 1; font-weight: 300; font-style: italic; color: var(--num-c, var(--accent)); font-variation-settings: "opsz" 72; text-shadow: 0 0 0 var(--tone), 3px 0 0 var(--tone), -3px 0 0 var(--tone), 0 4px 0 var(--tone), 0 -4px 0 var(--tone); }
+.gauge{ inline-size: 84px; block-size: 84px; overflow: visible; }
+.g-body{ fill: var(--porcelain); } .g-line{ fill: none; stroke: var(--ink); stroke-width: 1.5; }
+.g-fill{ fill: oklch(0.42 0.10 48); } .g-surf{ stroke: oklch(0.62 0.12 62); stroke-width: 1.4; }
+.g-tick{ stroke: var(--tick, var(--ink-2)); stroke-width: 1; } .g-tick.on{ stroke: var(--num-c, var(--accent)); stroke-width: 2; } .g-rule{ stroke: var(--tick, var(--ink-2)); stroke-width: .8; }
+.calw{ display: grid; justify-items: center; gap: 6px; padding: 8px 6px 10px; background: var(--tone); }
+.cal{ inline-size: 100%; max-inline-size: 216px; block-size: auto; }
+.d-sun{ fill: var(--sun); } .d-cloud{ fill: none; stroke: var(--tick, var(--ink-2)); stroke-width: 1.3; } .d-rain{ fill: var(--tick, var(--ink-2)); }
+.lg{ display: inline-block; inline-size: .95em; block-size: .95em; vertical-align: -.1em; margin-inline: .12em .08em; }
+.tally{ margin-top: .7em; font-size: .9375rem; text-align: start; }
+.steps > .band-edge{ position: absolute; inset-inline: 0; inset-block-start: calc(100% - 1px); inline-size: 100%; block-size: 150px; z-index: 0; }
+.steps > .band-edge .be-fill{ fill: var(--soy); } .steps > .band-edge .be-rim{ stroke: oklch(0.20 0.03 45); } .steps > .band-edge .be-bead{ fill: oklch(0.19 0.035 45); }
+
+/* ---------- 三支醬：瓶子站在層板上 ---------- */
+.sauces{ padding-block: clamp(120px, 11vw, 168px) 150px; }
+.sauce{ grid-column: 1 / -1; display: grid; grid-template-columns: var(--cols); column-gap: var(--gut); align-items: baseline; border-block-end: 1.5px solid var(--rule-2); padding-block-start: clamp(40px, 5vw, 72px); }
+.sauces .ph + .sauce{ padding-block-start: clamp(4px, .8vw, 12px); }
+.sauce > .zh, .sauce > .en{ padding-block-end: clamp(32px, 4vw, 56px); }
+.sauce > .sp{ align-self: end; display: flex; justify-content: center; margin-block-end: -6px; }
+.btl{ inline-size: 100%; max-inline-size: 220px; block-size: auto; overflow: visible; }
+.nm{ margin: 0 0 .5rem; }
+.nm .zh-n{ display: block; font-size: var(--zh-nm); font-weight: var(--zh-nmw); line-height: 1.12; letter-spacing: .1em; font-feature-settings: "palt"; }
+.nm .en-n{ display: block; font-size: var(--en-nm); font-weight: 300; line-height: 1.02; letter-spacing: -.015em; font-variation-settings: "opsz" 72; }
+.nm .sub{ display: block; margin-block-start: .5rem; font-size: 1rem; font-weight: 500; letter-spacing: .12em; color: var(--accent); line-height: 1.4; }
+.en .nm .sub{ font-style: var(--en-alt); font-weight: 400; letter-spacing: 0; font-size: 1.0625rem; }
+.spec{ display: grid; grid-template-columns: max-content 1fr; gap: 3px 16px; margin: 1.1rem 0 0; padding-block-start: .8rem; border-block-start: 1px dotted var(--rule-2); font-size: .9375rem; line-height: 1.5; font-style: normal; }
+.spec dt{ color: var(--ink-2); } .zh .spec dt{ letter-spacing: .12em; }
+.spec dd{ margin: 0; color: var(--ink); font-variant-numeric: tabular-nums lining-nums; }
+.sauce-thick > .zh, .sauce-thick > .en{ align-self: end; }
+
+/* ---------- 曬場日誌：四十一天的天氣是一條軸，中文紀事掛在上面、English 掛在下面 ---------- */
+.log{ padding-block: clamp(24px, 3vw, 48px) clamp(32px, 4vw, 56px); }
+.axis{ grid-column: 1 / -1; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); grid-template-rows: auto 120px auto; margin: 6px 0 0; }
+.axis > ol{ display: contents; list-style: none; }
+.ev{ display: contents; }
+.ev .lz, .ev .le{ grid-column: var(--col); padding-inline: 11px 16px; border-inline-start: 1px solid var(--rule-2); }
+.ev .lz{ grid-row: 1; align-self: stretch; padding-block: 4px 14px; font-size: var(--lz-fs); line-height: 1.7; color: var(--zh-c); }
+.ev .le{ grid-row: 3; align-self: stretch; padding-block: 12px 4px; font-size: var(--le-fs); line-height: 1.42; color: var(--en-c); font-style: var(--en-fst); hyphens: auto; }
+.ev .lm{ display: block; margin-block-end: 5px; color: var(--ink-2); font-style: normal; }
+.ev .ld{ display: block; font-size: 1rem; line-height: 1.2; color: var(--ink); font-variant-numeric: tabular-nums lining-nums; letter-spacing: .01em; }
+.ev .ls{ display: block; font-size: .875rem; line-height: 1.4; letter-spacing: .02em; text-wrap: balance; }
+.ev .le .ld{ font-style: italic; } .ev .le .ls{ font-style: italic; letter-spacing: 0; }
+.ax-mid{ grid-column: 1 / -1; grid-row: 2; position: relative; }
+.ax-wire{ position: absolute; inset: 0; inline-size: 100%; block-size: 100%; overflow: visible; }
+.ax-wire path{ fill: none; stroke: var(--rule-2); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.ax-wire .ax-line{ stroke: var(--ink-2); stroke-width: 1.4; }
+.wd{ position: absolute; inset-block-start: 60px; inline-size: 10px; block-size: 10px; margin: -5px 0 0 -5px; border-radius: 50%; }
+.wd.s{ background: var(--sun); } .wd.c{ border: 1.4px solid var(--ink-2); background: var(--bg); } .wd.r{ block-size: 6px; margin-block-start: -1px; border-radius: 6px 6px 0 0; background: var(--ink-2); }
+.ax-dot{ position: absolute; inset-block-start: 60px; inline-size: 18px; block-size: 18px; margin: -9px 0 0 -9px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 3px var(--bg), 0 0 0 4.4px var(--ink-2); }
+.ax-cap{ grid-column: 1 / -1; margin-block-start: 22px; display: flex; flex-wrap: wrap; gap: 4px 28px; font-size: .875rem; color: var(--ink-2); }
+.ax-cap span[lang="en"]{ font-style: italic; }
+.st-sun{ --c: var(--sun); } .st-fire{ --c: oklch(0.52 0.15 42); } .st-ready{ --c: oklch(0.60 0.11 62); } .st-aged{ --c: oklch(0.29 0.04 46); } .st-koji{ --c: oklch(0.80 0.11 105); } .st-rest{ --c: oklch(0.70 0.015 70); }
+
+/* ---------- 購買 ---------- */
+.buy{ padding-block: clamp(48px, 5vw, 80px) clamp(64px, 6vw, 96px); }
+.buy .row > .zh, .buy .row > .en{ padding-block: 18px 28px; }
+.buy h3{ margin: 0 0 .3em; font-weight: var(--zh-hw); }
+.buy .zh h3{ font-size: 1.25rem; letter-spacing: .12em; }
+.buy .en h3{ font-size: 1.25rem; font-weight: 400; font-variation-settings: "opsz" 36; }
+.next{ grid-row: 2 / span 4; display: grid; justify-items: center; text-align: center; gap: 6px; padding: 18px 8px 22px; background: var(--bg); border-block: 1.5px solid var(--rule-2); }
+.next .big{ font-size: clamp(2.6rem, 4vw, 3.6rem); font-weight: 300; line-height: 1; letter-spacing: -.01em; color: var(--accent); font-variation-settings: "opsz" 72; font-variant-numeric: lining-nums; }
+.next .nz{ font-family: "Noto Serif TC", serif; font-size: .9375rem; font-weight: 600; letter-spacing: .14em; color: var(--ink); }
+.next .ne{ font-size: .9375rem; font-style: italic; color: var(--ink-2); line-height: 1.35; }
+.next .mark{ inline-size: 40px; block-size: 40px; color: var(--accent); margin-block-end: 6px; }
+.tel{ display: inline-block; margin-block-start: .2em; font-size: 1.625rem; line-height: 1.3; color: var(--ink); font-variant-numeric: tabular-nums lining-nums; text-decoration-thickness: 2px; text-decoration-color: var(--accent); }
+.tel-l{ display: block; font-size: .9375rem; color: var(--ink-2); }
+.zh .tel-l{ letter-spacing: .12em; }
+
+/* ---------- 頁尾：一缸熟醬的液面＋壓在醬色裡的窯印 ---------- */
+.foot{ position: relative; background: var(--soy); color: var(--paper); padding: 72px var(--padx) 44px; --focus-ring: 3px double var(--amber-l); }
+.foot .surface{ position: absolute; inset-inline: 0; inset-block-start: -36px; inline-size: 100%; block-size: 70px; }
+.sf-fill{ fill: var(--soy); } .sf-rim{ fill: none; stroke: oklch(0.45 0.07 55); stroke-width: 1.6; } .sf-shine{ fill: none; stroke: var(--amber-l); stroke-opacity: .35; stroke-width: 1.4; stroke-linecap: round; }
+.foot-in{ display: grid; grid-template-columns: var(--cols); column-gap: var(--gut); align-items: baseline; }
+.foot .zh{ color: var(--paper); font-size: 1rem; font-style: normal; }
+.foot .en{ color: var(--paper-2); font-size: 1rem; font-style: normal; }
+.foot .f1{ font-size: 1.375rem; line-height: 1.3; color: var(--paper); }
+.foot .zh .f1{ font-family: "Noto Serif TC", serif; font-weight: 700; letter-spacing: .2em; }
+.foot .en .f1{ font-style: italic; }
+.foot .sp{ grid-row: 1 / span 2; display: flex; justify-content: center; align-self: center; }
+.seal{ inline-size: min(100%, 150px); block-size: auto; }
+.foot .col{ grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 32px; margin-block-start: 36px; padding-block-start: 14px; border-block-start: 1px solid oklch(0.86 0.03 75 / .3); font-size: .875rem; line-height: 1.6; color: var(--paper-2); }
+.foot .col span[lang="en"]{ font-style: italic; }
+
+/* ---------- 手機底部錨點列 ---------- */
+.dock{ display: none; }
+
+/* ---------- 墨暈：主語言切換的 View Transition ---------- */
+@media (prefers-reduced-motion: no-preference){
+  ::view-transition-group(root){ animation-duration: 1.5s; }
+  ::view-transition-old(root){ animation: none; }
+  ::view-transition-new(root){
+    animation: ink-spread 1.5s linear both;
+    -webkit-mask-image: var(--ink-mask); mask-image: var(--ink-mask);
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+    -webkit-mask-size: var(--ink-r) var(--ink-r); mask-size: var(--ink-r) var(--ink-r);
+    -webkit-mask-position: calc(var(--ink-x, 80vw) - var(--ink-r) / 2) calc(var(--ink-y, 32px) - var(--ink-r) / 2);
+    mask-position: calc(var(--ink-x, 80vw) - var(--ink-r) / 2) calc(var(--ink-y, 32px) - var(--ink-r) / 2);
+  }
+  /* 墨先慢慢吃進陶面，再一口氣化開；被浸到的地方先是醬色，乾了才露出新的版面 */
+  @keyframes ink-spread{
+    0%{ --ink-r: 0px; filter: sepia(1) saturate(1.8) hue-rotate(-14deg) brightness(.62) contrast(1.1); animation-timing-function: cubic-bezier(.3,.2,.5,1); }
+    38%{ --ink-r: 62vmax; filter: sepia(.8) saturate(1.6) hue-rotate(-12deg) brightness(.76); animation-timing-function: cubic-bezier(.5,0,.6,1); }
+    70%{ --ink-r: 150vmax; filter: sepia(.3) saturate(1.2) brightness(.92); animation-timing-function: ease-in; }
+    100%{ --ink-r: 340vmax; filter: none; }
+  }
+  /* 不支援 View Transitions 的瀏覽器：字級／字色／欄寬直接過渡 */
+  @supports not (view-transition-name: none){
+    .sec, .ph, .sauce, .foot-in{ transition: grid-template-columns .5s cubic-bezier(.3,.6,.2,1); }
+    .zh, .en, .nm span, .drip{ transition: font-size .45s ease, color .45s ease, inset-inline-start .5s cubic-bezier(.3,.6,.2,1); }
+  }
+  /* 輔助一：工序每一層的底色在進場時由上一道的顏色「沁」成自己的醬色；輔助二：刻度缸注入醬液 */
+  @supports (animation-timeline: view()){
+    .band{ animation: tone linear both; animation-timeline: view(); animation-range: entry 0% entry 35%; }
+    .step > .sp{ view-timeline: --stp block; }
+    .g-liq{ animation: rise linear both; animation-timeline: --stp; animation-range: entry 40% cover 55%; }
+  }
+}
+@keyframes tone{ from{ --tc: var(--prev); } to{ --tc: var(--tone); } }
+@keyframes rise{ from{ transform: translateY(var(--drop)); } to{ transform: none; } }
+@media (prefers-reduced-motion: reduce){
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*){ animation: none !important; }
+  .g-liq, .band, .step{ animation: none !important; transform: none !important; }
+}
+
+/* ---------- 平板 ---------- */
+@media (max-width: 1100px){
+  .nav a i{ display: none; }
+  /* 日誌：欄太窄就改成直的時間軸 */
+  .axis{ display: block; padding-inline-start: 22px; border-inline-start: 2px solid var(--rule-2); margin-inline-start: 8px; }
+  .axis > ol{ display: block; }
+  .ax-mid{ display: none; }
+  .ev{ position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: var(--gut); padding-block: 14px 18px; border-block-end: 1px solid var(--rule); }
+  .ev::before{ content: ""; position: absolute; inset-inline-start: -32px; inset-block-start: 22px; inline-size: 16px; block-size: 16px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 3px var(--bg); }
+  .ev .lz, .ev .le{ grid-column: auto; grid-row: auto; border: 0; padding: 0; align-self: start; }
+}
+@media (max-width: 900px){
+  .nav{ display: none; } .top{ grid-template-columns: 1fr auto; }
+  /* 底部錨點列：上緣留一段透明、不吃點擊的緩衝帶（文字滑進列底下時不會被半截量到） */
+  .dock{ position: fixed; inset-inline: 0; inset-block-end: 0; z-index: 30; display: block; padding-block-start: 16px; pointer-events: none; --focus-ring: 3px double var(--amber-l); --focus-offset: -4px; }
+  .dock-in{ display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); background: var(--soy); border-block-start: 2px solid var(--band-2); padding-block-end: env(safe-area-inset-bottom); pointer-events: auto; }
+  .dock a{ display: grid; place-items: center; align-content: center; min-block-size: 46px; padding: 3px 2px; color: var(--paper); text-decoration: none; line-height: 1.15; }
+  .dock b{ font-family: "Noto Serif TC", serif; font-weight: 600; font-size: .875rem; letter-spacing: .08em; }
+  .dock i{ font-size: .75rem; color: var(--paper-2); }
+  .foot{ padding-block-end: 96px; }
+}
+
+/* ---------- 手機：主語言在上；另一語言只留第一句，其餘收進「Read in English／閱讀中文全文」 ---------- */
+@media (max-width: 760px){
+  .sec, .foot-in{ display: block; padding-inline: 20px; }
+  .foot{ padding-inline: 20px; }
+  .drip, .ph .bead{ display: none; }
+  .pair, .ph, .lede h1, .sauce, .foot-in{ display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; }
+  .pair > *, .ph > *, .lede h1 > *, .sauce > *, .foot-in > *{ grid-column: 1; grid-row: auto; }
+  .rule, .band{ display: none; }
+  .lede h1 .zh .h1-line:first-child{ text-indent: 0; }
+  .pair > .zh, .ph > .zh, .lede h1 > .zh, .sauce > .zh{ order: var(--zh-o); }
+  .pair > .en, .ph > .en, .lede h1 > .en, .sauce > .en{ order: var(--en-o); }
+  .pair > .sp, .sauce > .sp{ order: 0; }
+  .zh, .en{ text-align: start; }
+  .pair > .zh, .sauce > .zh{ border-inline-start: calc(var(--zh-gl) * 2px) solid var(--rule-2); padding-inline-start: calc(var(--zh-gl) * 14px); }
+  .pair > .en, .sauce > .en{ border-inline-start: calc(var(--en-gl) * 2px) solid var(--rule-2); padding-inline-start: calc(var(--en-gl) * 14px); }
+  .step.dark > .zh, .step.dark > .en{ border-inline-start-color: oklch(0.86 0.03 75 / .5); }
+  :root{ --zh-h1: 2.05rem; --en-h1: 1.3rem; --zh-h2: 1.75rem; --en-h2: 1.125rem; --zh-nm: 2.9rem; --en-nm: 1.5rem; --zh-fs: 1.0625rem; --en-fs: 1rem; --zh-h3: 1.3125rem; }
+  :root[data-lead="en"], :root:not(.js):has(#lead-en:checked){ --zh-h1: 1.3rem; --en-h1: 2.35rem; --zh-h2: 1.125rem; --en-h2: 1.75rem; --zh-nm: 1.5rem; --en-nm: 2.6rem; --zh-fs: .9375rem; --en-fs: 1.125rem; --en-h3: 1.375rem; --zh-h3: 1.0625rem; }
+
+  .top{ padding: 8px 16px; column-gap: 10px; }
+  .brand{ gap: 9px; } .brand .mark{ inline-size: 30px; block-size: 30px; } .brand b{ font-size: 1rem; letter-spacing: .1em; } .brand i{ font-size: .8125rem; }
+  .lead legend{ display: none; }
+  .lead label{ min-inline-size: 52px; block-size: 44px; padding: 10px 8px 4px; font-size: .875rem; }
+  .lede{ --drop: 120px; padding-block: 32px calc(var(--drop) + 8px); }
+  .lede h1{ row-gap: 10px; margin-block-end: 18px; }
+  /* 甕置中、放大 1.2 倍 */
+  .lede .sp{ position: relative; inset: auto; --jw: 202px; inline-size: 202px; margin: 6px auto 22px; }
+  .lede .pair > .en{ margin-block-start: calc(var(--en-gl) * 16px); }
+  .lede .pair > .zh{ margin-block-start: calc(var(--zh-gl) * 16px); }
+  .lede .meta{ margin-block-start: 0; }
+  .lede .meta.en{ border-block-start: 0; padding-block-start: 4px; }
+  .ph{ row-gap: 6px; }
+  .ph > .en{ border: 0; padding: 0; }
+  .step{ display: grid; grid-template-columns: 64px minmax(0, 1fr); column-gap: 14px; padding: 22px 20px 28px; margin-inline: -20px; --tc: var(--tone); background: var(--tc); }
+  .step > .sp{ grid-column: 1; grid-row: 1 / span 2; padding: 2px 0 0; }
+  .step > .zh, .step > .en{ grid-column: 2; padding-block: 0; }
+  .step > .zh{ padding-block-end: calc(var(--en-gl) * 12px); } .step > .en{ padding-block-end: calc(var(--zh-gl) * 12px); }
+  .step .no{ font-size: 2rem; } .gauge{ inline-size: 60px; block-size: 60px; }
+  .step.sun{ grid-template-columns: minmax(0, 1fr); }
+  .step.sun > .sp{ grid-row: auto; grid-column: 1; flex-direction: row; justify-content: flex-start; align-items: flex-start; gap: 14px; padding-block-end: 14px; }
+  .step.sun > .zh, .step.sun > .en{ grid-column: 1; }
+  .calw{ padding: 0; } .cal{ max-inline-size: 216px; }
+  .steps > .band-edge{ block-size: 110px; }
+  .sauces{ padding-block: 104px 64px; }
+  .sauce{ padding-block-start: 36px; border-block-end: 0; }
+  .sauce > .sp{ justify-content: flex-start; margin: 0 0 22px; padding-block-end: 0; border-block-end: 1.5px solid var(--rule-2); }
+  .btl{ max-inline-size: 150px; }
+  .sauce > .zh, .sauce > .en{ padding-block-end: 18px; }
+  .axis{ margin-inline-start: 6px; padding-inline-start: 18px; }
+  .ev{ grid-template-columns: minmax(0, 1fr); row-gap: 8px; }
+  .ev::before{ inset-inline-start: -28px; }
+  .ev .lz{ order: var(--zh-o); } .ev .le{ order: var(--en-o); }
+  .ev .lz{ border-inline-start: calc(var(--zh-gl) * 2px) solid var(--rule-2); padding-inline-start: calc(var(--zh-gl) * 12px); }
+  .ev .le{ border-inline-start: calc(var(--en-gl) * 2px) solid var(--rule-2); padding-inline-start: calc(var(--en-gl) * 12px); }
+  .ax-cap{ display: grid; }
+  .next{ grid-row: auto; margin-block-end: 18px; grid-template-columns: auto 1fr; justify-items: start; text-align: start; column-gap: 16px; align-items: center; }
+  .next .mark{ grid-row: 1 / span 3; margin: 0; }
+  .buy .row{ display: grid; grid-template-columns: minmax(0, 1fr); border-block-start: 1px solid var(--rule); padding-block: 16px 22px; }
+  .buy .row > .zh, .buy .row > .en{ border-block-start: 0; padding-block: 0; }
+  .buy .row > *{ grid-row: auto; }
+  .buy .row > .zh{ margin-block-start: calc(var(--zh-gl) * 12px); } .buy .row > .en{ margin-block-start: calc(var(--en-gl) * 12px); }
+  .buy .row > .zh{ order: var(--zh-o); } .buy .row > .en{ order: var(--en-o); }
+  .foot{ padding-block-start: 56px; }
+  .foot-in > .sp{ justify-content: flex-start; margin-block-end: 18px; }
+  .foot-in > .en{ margin-block-start: 14px; }
+  .seal{ inline-size: 96px; }
+  .foot .col{ display: grid; gap: 4px; }
+}
+/* 首屏不放底部列：捲過約半屏才從底緣滑上來（不支援捲動時間軸或要求降級動效時＝一直都在；鍵盤聚焦進來就立刻現身） */
+@media (max-width: 900px) and (prefers-reduced-motion: no-preference){
+  @supports (animation-timeline: scroll()){
+    .dock{ animation: dock-in linear both; animation-timeline: scroll(root); animation-range: 0 min(52vh, 420px); }
+    .dock:focus-within{ animation: none; }
+  }
+}
+@keyframes dock-in{ from{ transform: translateY(100%); } to{ transform: none; } }
+@media (max-width: 760px) and (prefers-reduced-motion: no-preference){
+  @supports (animation-timeline: view()){
+    .step{ animation: tone linear both; animation-timeline: view(); animation-range: entry 0% entry 30%; }
+  }
+}
+
+/* ---------- 列印：去釉、去動效、黑字，兩語等大並列 ---------- */
+@media print{
+  html{ background: #fff !important; }
+  .top, .dock, .drip, .band-edge, .surface, .lead, .gauge, .calw, .ph .bead, .band, .ax-mid{ display: none !important; }
+  .more > summary{ display: none !important; }
+  .lede::before{ display: none !important; }
+  .lede, .foot, .step{ background: none !important; padding-block: 12pt !important; }
+  .zh, .en, .foot .zh, .foot .en, .ev .lz, .ev .le, .foot .col{ color: #000 !important; font-size: 10.5pt !important; }
+  .lede h1 .zh, .lede h1 .en{ font-size: 20pt !important; }
+  .nm .zh-n, .nm .en-n{ font-size: 18pt !important; }
+  .ph .zh, .ph .en{ font-size: 16pt !important; margin-block-start: 10pt; }
+  .step h3, .buy h3{ font-size: 12.5pt !important; }
+  .lede .sp, .tag{ display: none !important; }
+  .rule{ border-color: #999 !important; }
+  .sec{ padding-block: 14pt !important; break-inside: auto; }
+  .btl, .jar{ max-inline-size: 3cm !important; }
+  .axis, .axis > ol{ display: block !important; }
+  .ev{ display: block !important; padding-block: 6pt; border-block-end: 1px solid #999; }
+  main a, footer a{ color: #000 !important; text-decoration: underline; }
+}
+
+.nf h1 .h1-line:first-child{ text-indent: 0; }
+.nf .nf-drip{ inset-block: calc(100% - var(--drop) + 8px) 0; z-index: 0; }
+.nf .nf-tag{ margin-block-start: 1.1em; padding-block-start: .7em; border-block-start: 1px dotted var(--rule-2); color: var(--ink-2); }
+.nf .zh .nf-tag{ letter-spacing: .06em; font-weight: 600; }
+.back{ display: inline-block; margin-block-start: 1.2em; font-size: 1.125rem; color: var(--ink); text-decoration-thickness: 2px; text-decoration-color: var(--accent); }
+.back::after{ content: " →"; }
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="top">
+<a class="brand" href="./"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="14.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M21.2 16L30 16M20.9 17.8L29.2 20.8M20 19.3L26.7 25M18.6 20.5L23 28.1M16.9 21.1L18.4 29.8M15.1 21.1L13.6 29.8M13.4 20.5L9 28.1M12 19.3L5.3 25M11.1 17.8L2.8 20.8M10.8 16L2 16M11.1 14.2L2.8 11.2M12 12.7L5.3 7M13.4 11.5L9 3.9M15.1 10.9L13.6 2.2M16.9 10.9L18.4 2.2M18.6 11.5L23 3.9M20 12.7L26.7 7M20.9 14.2L29.2 11.2" stroke="currentColor" stroke-width="1.1"/><circle cx="16" cy="16" r="9.6" fill="none" stroke="currentColor" stroke-width=".9"/><circle cx="16" cy="16" r="3.6" fill="currentColor"/></svg><span><b>慢火釀造所</b><i lang="en">Slow Fire Soy Works</i></span></a>
+<span></span>
+<span></span>
+</header><main id="main"><section class="sec lede nf" aria-labelledby="nf-h">
+<h1 id="nf-h"><span class="zh"><span class="h1-line">這一甕，</span><span class="h1-line">還沒到開的時候。</span></span><span class="en" lang="en"><span class="h1-line">This jar isn’t</span><span class="h1-line">ready to open.</span></span></h1>
+<div class="pair"><div class="zh"><p>你要找的頁面可能還在曬，也可能從沒下過甕。開好的醬都在曬場。</p><p class="nf-tag">第 404 日</p><p><a class="back" href="./">回到曬場</a></p></div>
+<div class="sp"><svg class="jar" viewBox="0 0 260 319" aria-hidden="true" focusable="false"><defs><clipPath id="jar-400674c"><path d="M178 58C178.4 58.8 180.8 61.3 180.5 63C180.2 64.7 176.7 65.8 176 68C175.3 70.2 169.9 70.5 176.2 76.2C182.4 81.9 203.6 91.6 213.5 102.4C223.3 113.2 231.6 126.7 235.4 140.9C239.1 155.1 237 172.7 236.2 187.5C235.3 202.3 233.5 216.3 230.2 229.6C226.9 242.9 221 256.1 216.4 267.1C211.7 278.2 204.9 289.8 202.1 296C199.2 302.3 199.8 303.3 199.4 304.7Q130 307.1 60.6 304.7C60.2 303.3 60.8 302.3 57.9 296C55.1 289.8 48.3 278.2 43.6 267.1C39 256.1 33.1 242.9 29.8 229.6C26.5 216.3 24.7 202.3 23.8 187.5C23 172.7 20.9 155.1 24.6 140.9C28.4 126.7 36.7 113.2 46.5 102.4C56.4 91.6 77.6 81.9 83.8 76.2C90.1 70.5 84.7 70.2 84 68C83.3 65.8 79.8 64.7 79.5 63C79.2 61.3 81.6 58.8 82 58Z"/></clipPath><filter id="jar-400674g" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="2" seed="32"/><feDisplacementMap in="SourceGraphic" scale="3" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="jar-400674r" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="98"/><feDisplacementMap in="SourceGraphic" scale="2.2" xChannelSelector="R" yChannelSelector="G"/></filter></defs><ellipse cx="130" cy="306.7" rx="91.6" ry="6" fill="#261b14" fill-opacity=".18"/><g clip-path="url(#jar-400674c)"><rect width="260" height="319" fill="#9f634c"/><g fill="#7e4835" fill-opacity=".6"><circle cx="152.1" cy="277.6" r="0.8"/><circle cx="124.3" cy="266.6" r="1.4"/><circle cx="175.2" cy="248.4" r="1"/><circle cx="58.2" cy="285.1" r="1.4"/><circle cx="171.7" cy="294.4" r="0.6"/><circle cx="58.2" cy="275.4" r="1.2"/><circle cx="72.5" cy="248.4" r="0.9"/><circle cx="95.5" cy="293.7" r="0.7"/><circle cx="212.6" cy="236.6" r="0.6"/><circle cx="172.4" cy="281.2" r="0.6"/><circle cx="46.1" cy="265" r="0.7"/><circle cx="56.2" cy="234.9" r="0.6"/><circle cx="54.6" cy="281.8" r="0.6"/><circle cx="67.8" cy="233.3" r="0.5"/><circle cx="113" cy="266.9" r="1.2"/><circle cx="186.1" cy="284.3" r="1.3"/><circle cx="224.9" cy="232.7" r="1.2"/><circle cx="181.5" cy="286.5" r="0.7"/><circle cx="139.4" cy="269" r="0.5"/><circle cx="92.8" cy="267.1" r="1.3"/><circle cx="58.2" cy="261.2" r="1"/><circle cx="88.5" cy="272.1" r="1.2"/><circle cx="67.9" cy="290.3" r="0.9"/><circle cx="191.1" cy="271" r="1.4"/><circle cx="52.1" cy="244.1" r="1.3"/><circle cx="100.3" cy="256.1" r="1.1"/><circle cx="128.8" cy="232.5" r="1"/><circle cx="185.4" cy="263.2" r="1.1"/><circle cx="159.7" cy="248.7" r="0.6"/><circle cx="122.6" cy="255.3" r="1"/><circle cx="89.5" cy="298.9" r="1.3"/><circle cx="129.5" cy="263" r="1.2"/><circle cx="182" cy="294.8" r="0.8"/><circle cx="180.6" cy="280.3" r="0.5"/><circle cx="132" cy="293" r="0.6"/><circle cx="104.2" cy="263.5" r="1.1"/><circle cx="127.3" cy="237.3" r="0.8"/><circle cx="75.9" cy="234.7" r="0.6"/><circle cx="107.3" cy="266.2" r="1.2"/><circle cx="133.7" cy="278.2" r="0.9"/><circle cx="134" cy="237.1" r="1.1"/><circle cx="65.2" cy="258.2" r="1.3"/><circle cx="171.1" cy="249" r="0.8"/><circle cx="139.4" cy="284.1" r="1"/><circle cx="150.7" cy="243.8" r="0.5"/><circle cx="74" cy="272.2" r="0.7"/><circle cx="50" cy="250.8" r="1.2"/><circle cx="45.2" cy="254.2" r="1.1"/><circle cx="100.3" cy="231.1" r="1.2"/><circle cx="83.1" cy="283.7" r="1.1"/><circle cx="107" cy="250" r="0.5"/><circle cx="48.6" cy="243" r="0.6"/><circle cx="217.4" cy="232.6" r="1.2"/><circle cx="104.5" cy="280.1" r="1.4"/><circle cx="91.4" cy="242.4" r="0.8"/><circle cx="126.3" cy="237.8" r="1"/><circle cx="179.5" cy="292.1" r="0.6"/><circle cx="189.3" cy="292" r="0.8"/><circle cx="181.4" cy="300.6" r="0.5"/><circle cx="43.7" cy="237.2" r="1.2"/><circle cx="102.1" cy="273.3" r="0.9"/><circle cx="171.5" cy="260.1" r="1.1"/><circle cx="195.1" cy="248.3" r="0.7"/><circle cx="188.5" cy="252.3" r="0.8"/><circle cx="203.1" cy="273" r="0.9"/><circle cx="179.8" cy="295.8" r="0.6"/><circle cx="193" cy="264.2" r="1.2"/><circle cx="81.8" cy="256.9" r="0.7"/><circle cx="187.1" cy="241.2" r="0.8"/><circle cx="122" cy="274.6" r="1"/></g><rect x="0" y="298.7" width="260" height="9" fill="#7e4835" fill-opacity=".55"/><g filter="url(#jar-400674g)"><path d="M0 0H260V236L260 236L255 236L250 235.8L245 235.3L240 234.6L235 234L230 233.8L225 233.8L220 233.9L215 234L210 234L205 233.5L200 232.4L195 231.4L190 230.7L185 230.5L180 230.4L175 230.4L170 230.3L165 230.2L160 230.3L155 230.5L150 230.6L145 230.5L140 230.2L135 229.9L130 229.6L125 229.4L120 229.1L115 228.8L110 228.5L105 228.3L100 228.8L95 229.9L90 231.1L85 231.7L80 231.4L75 230.5L70 229.4L65 228.7L60 228.4L55 227.9L50 227.4L45 226.9L40 226.8L35 227.1L30 227.6L25 228L20 228L15 227.4L10 226.6L5 225.8L0 225.3ZM47.6 226.1C51.6 229.6 54.2 230.7 52.9 231.4A4.7 4.7 0 1 0 60.6 231.4C59.4 230.7 62 229.6 66 226.1ZM70.4 229.1C74.4 232.6 76.5 239.3 75.6 251.8A3.2 3.2 0 1 0 80.9 251.8C80 239.3 82.1 232.6 86.1 229.1ZM91.5 226.7C95.5 230.2 98 234.1 96.8 240.3A4.4 4.4 0 1 0 103.9 240.3C102.8 234.1 105.3 230.2 109.3 226.7ZM113.7 227.2C117.7 230.7 119.8 231.1 118.9 231.5A3.3 3.3 0 1 0 124.3 231.5C123.4 231.1 125.5 230.7 129.5 227.2ZM139.3 228.6C143.3 232.1 145.6 244 144.6 265.7A3.7 3.7 0 1 0 150.6 265.7C149.6 244 151.8 232.1 155.8 228.6ZM171.5 228.4C175.5 231.9 177.6 233.4 176.8 236.1A3 3 0 1 0 181.7 236.1C180.9 233.4 183 231.9 187 228.4ZM207.5 232C211.5 235.5 214.1 240.2 212.9 247.3A4.8 4.8 0 1 0 220.8 247.3C219.5 240.2 222.1 235.5 226.1 232Z" fill="#88461c"/><path d="M0 0H260V231.5L260 231.5L255 231.5L250 231.3L245 230.8L240 230.1L235 229.5L230 229.3L225 229.3L220 229.4L215 229.5L210 229.5L205 229L200 227.9L195 226.9L190 226.2L185 226L180 225.9L175 225.9L170 225.8L165 225.7L160 225.8L155 226L150 226.1L145 226L140 225.7L135 225.4L130 225.1L125 224.9L120 224.6L115 224.3L110 224L105 223.8L100 224.3L95 225.4L90 226.6L85 227.2L80 226.9L75 226L70 224.9L65 224.2L60 223.9L55 223.4L50 222.9L45 222.4L40 222.3L35 222.6L30 223.1L25 223.5L20 223.5L15 222.9L10 222.1L5 221.3L0 220.8ZM49 221.6C53 225.1 55 225.4 54.2 225.8A3.1 3.1 0 1 0 59.3 225.8C58.5 225.4 60.6 225.1 64.6 221.6ZM71.4 224.6C75.4 228.1 77.1 232 76.5 240.2A2.1 2.1 0 1 0 80 240.2C79.4 232 81.1 228.1 85.1 224.6ZM92.8 222.2C96.8 225.7 98.8 227.8 98 231.9A2.9 2.9 0 1 0 102.7 231.9C102 227.8 103.9 225.7 107.9 222.2ZM114.7 222.7C118.7 226.2 120.4 225.9 119.8 226.2A2.2 2.2 0 1 0 123.4 226.2C122.8 225.9 124.5 226.2 128.5 222.7ZM140.4 224.1C144.4 227.6 146.2 235 145.6 249.3A2.4 2.4 0 1 0 149.6 249.3C148.9 235 150.7 227.6 154.7 224.1ZM172.5 223.9C176.5 227.4 178.1 227.9 177.6 229.7A2 2 0 1 0 180.9 229.7C180.4 227.9 182 227.4 186 223.9ZM209 227.5C213 231 215.1 233.6 214.2 238.3A3.2 3.2 0 1 0 219.4 238.3C218.6 233.6 220.7 231 224.7 227.5Z" fill="#352117"/></g><path d="M229.9 146.3q0.9 9.6 -0.2 19.3M99.9 200.6q-0.8 16.6 0.5 33.1M196.4 187.9q0.6 7.4 -0.6 14.8M37.7 220.8q-1.1 11 -0.6 21.9M46.6 216.7q-1.2 10.8 0.5 21.6M170.1 97.2q0.8 17 0.8 34.1M149.2 111q0.6 17.2 0 34.3M196.1 123.6q1.5 5.1 0.8 10.2M135 141.5q1.4 8.2 1 16.3M208.7 180.9q-0.7 17.5 -0.3 35.1M168.5 202.2q0.6 5.3 -1 10.6M43.8 192.5q-0.5 11 0.9 21.9M108.2 173.3q-0.3 8.5 0.3 17.1M221.2 119.3q-0.6 10.4 -0.1 20.7M139.7 157.9q1.2 15.1 -0.1 30.1M218.5 134.7q-0.3 10.8 0.5 21.6M70.5 213.3q-1.2 18 -0.5 36.1M111.9 212.5q0.6 19.1 0.4 38.2M119 177.9q0.8 19.2 0.1 38.4M226.1 109.5q0.5 14.3 -0.2 28.7M134.8 201.4q-1.2 5.8 -0.9 11.7M94.6 215.1q-1.1 15.8 0.4 31.5M94.8 127.9q0.3 18.4 -0.7 36.8M159.9 171q-0.1 10.3 -0.6 20.6M120.1 193.5q0.4 12.3 -0.5 24.7M228.8 110.5q0.1 11.7 0.7 23.5M149 87.3q1.1 11.9 -0.7 23.7M171.2 161.7q0.1 5.8 0 11.7M232.8 190.7q0.5 12.3 -0.2 24.6M153.5 101.4q0 7.6 0.2 15.2M104 132.7q1.5 19.9 0.3 39.9M72.3 198.3q0.8 7.7 -0.6 15.4M125.3 89.8q-0.7 12.8 0.3 25.7M198.7 103.3q0.1 8.3 0.9 16.5M173.7 208.2q-1 18.7 0.2 37.5M187.1 188.2q0.7 9.3 -1 18.5M64.8 83.3q-0.1 13.7 0.9 27.4M134.9 197.5q-0.4 18 -0.4 36M60.3 134q-0.5 14 -0.3 28M175.4 128.5q-0.9 12.4 -0.8 24.9M55.3 99.8q1.1 13.5 1 27M170.9 212.1q-0.8 13.1 0.5 26.2M160.9 104.2q-0.2 12.4 0.5 24.8M226 213.7q-0.3 8.3 0 16.6M163 110.7q-1.1 16.3 0.6 32.7M101.1 129q0.1 6.3 0.7 12.6M192.2 144q0.3 16.1 0.5 32.3M99.4 209.1q-1.4 7.5 -0.9 15.1M181.9 132.8q-0.1 10.1 0.7 20.3M86 97.4q-1.1 11.1 -0.9 22.2M117.5 177.7q0.4 15.8 -0.5 31.5M88.3 191.4q-0.3 15.8 -0.2 31.6M70.9 118.1q-0.2 8.6 0.1 17.2M47.4 122.5q-0.9 5 0.9 10.1M182.1 122.9q0.8 6.6 0.9 13.2M118.9 172.9q0.3 9.6 -0.6 19.3M67.1 126.4q-0.9 13 -0.1 26M156.8 181.9q1.5 5.6 -0.7 11.2M174.9 150.1q-0.3 12.7 -0.9 25.3M59.8 81.5q1 6.6 0.9 13.1M94.3 200.7q0.4 15.6 0.8 31.3M79.2 172.5q1.4 12 -0.4 23.9M158.6 109.9q0.8 12 0.1 23.9M97.2 168.5q-0.1 8.3 -0.4 16.6M35 187.4q0.7 7.7 -0.9 15.4M161 212.4q0.4 19.3 -0.4 38.5M208.9 171.3q1.5 11 0.5 22.1M155.6 127.4q0.2 14.4 0.5 28.7M153.5 160.7q1.4 6.5 -0.4 13M215.3 185q-1.4 12 -0.2 24M119.2 159.1q-1.5 12.1 -0.5 24.1M28 145.7q-0.5 13.1 -0.9 26.2M67.3 121.7q-1.2 16 0.8 32M111.4 102.6q-0.9 19.8 0 39.5M168.5 167.2q0.2 14.7 0.7 29.3M163.2 109.6q-0.8 11 -0.6 22.1M78.9 132.4q0.1 6.3 -0.9 12.6M148.9 164.4q1.4 13 -1 26M105.7 210.6q0.4 14 -0.4 27.9M82 87q1 10.9 -0.4 21.8M195.6 88.7q0.2 9.4 -0.2 18.9M216.6 211.8q-1.2 11.4 -0.3 22.7M214.6 188.3q-1 10 0.2 19.9M208.7 179.5q0.5 6.7 0.1 13.3M130.5 190.2q0 7.9 0.6 15.9M114.9 196.9q-0.5 11.1 -0.9 22.3M91.9 192q1.4 18.1 -0.2 36.2M128.8 166.6q-1 12.9 0.5 25.8M199.3 91.1q1.1 10 -0.7 19.9M188.4 159.4q0 16.8 1 33.6M35.5 104q0.2 10.5 -0.4 20.9M39.8 135.9q0.4 13.7 -0.8 27.4M40.7 191.2q1 14.6 -0.9 29.3M40.3 164.8q0.2 12.1 -0.6 24.2M72.5 81.2q-1.3 5 -0.3 10M66 158.4q-1 17.7 -0.9 35.3M27.5 154.4q-1.1 12.2 -0.1 24.4M224.6 212.1q-0.5 8.2 -0.5 16.3M173.5 164.6q0.4 6.7 0.4 13.4M131.8 127.5q-1.4 15.8 -0.9 31.5M63.6 151.1q0.9 17.5 -0.2 35.1M203.2 219.5q-0.9 10 0.3 20M41 148.5q0.9 5.4 0 10.8M169.8 169.8q-0.5 19.2 0.6 38.4M217.7 157.3q-0.2 11.2 -0.1 22.5M207.9 171.8q-0.8 10 0.6 20M211 181.7q1.2 16.1 0.5 32.2M86.1 93q0.1 12.9 -0.3 25.8M207.5 100.1q0.4 19.4 0.8 38.8M50.4 95.8q-0.4 6.7 0.2 13.3" stroke="#995425" stroke-opacity=".45" stroke-width=".8" fill="none" stroke-linecap="round"/><path d="M87.4 92C86.5 93 83.7 96 82.1 98C80.5 100 78.8 102 77.7 104C76.6 106 76.3 108 75.6 110C74.9 112 74.2 114 73.4 116C72.7 118 72 120 71.3 122C70.6 124 69.9 126 69.2 128C68.5 130 67.8 132 67.1 134C66.4 136 65.4 138 65 140C64.6 142 64.7 144 64.6 146C64.6 148 64.6 150 64.6 152C64.5 154 64.5 156 64.5 158C64.5 160 64.4 162 64.4 164C64.4 166 64.4 168 64.4 170C64.3 172 64.3 174 64.3 176C64.3 178 64.2 180 64.2 182C64.2 184 64.1 186 64.2 188C64.3 190 64.6 192 64.7 194C64.9 196 65.1 198 65.3 200C65.5 202 65.6 204 65.8 206C66 208 66.2 210 66.3 212C66.5 214 66.8 217 66.9 218" stroke="#f1e6da" stroke-opacity=".3" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M183.6 92C184.7 93 188.2 96 190.2 98C192.3 100 194.5 102 195.8 104C197.2 106 197.6 108 198.5 110C199.4 112 200.3 114 201.1 116C202 118 202.9 120 203.8 122C204.7 124 205.6 126 206.5 128C207.4 130 208.2 132 209.1 134C210 136 211.3 138 211.8 140C212.3 142 212.2 144 212.2 146C212.3 148 212.3 150 212.3 152C212.4 154 212.4 156 212.4 158C212.4 160 212.5 162 212.5 164C212.5 166 212.6 168 212.6 170C212.6 172 212.6 174 212.7 176C212.7 178 212.7 180 212.7 182C212.8 184 212.9 186 212.8 188C212.7 190 212.3 192 212.1 194C211.9 196 211.6 198 211.4 200C211.2 202 211 204 210.8 206C210.5 208 210.3 210 210.1 212C209.9 214 209.5 217 209.4 218" stroke="#f1e6da" stroke-opacity=".12" stroke-width="3" fill="none"/><g filter="url(#jar-400674r)" fill="#eeebe2" fill-opacity=".86" font-family="'Noto Serif TC',serif" font-weight="800"><text x="100" y="142" font-size="30" text-anchor="middle">肆</text><text x="100" y="174" font-size="30" text-anchor="middle">〇</text><text x="100" y="206" font-size="30" text-anchor="middle">肆</text></g><rect x="0" y="58" width="260" height="10" fill="#995425"/></g><path d="M178 58C178.4 58.8 180.8 61.3 180.5 63C180.2 64.7 176.7 65.8 176 68C175.3 70.2 169.9 70.5 176.2 76.2C182.4 81.9 203.6 91.6 213.5 102.4C223.3 113.2 231.6 126.7 235.4 140.9C239.1 155.1 237 172.7 236.2 187.5C235.3 202.3 233.5 216.3 230.2 229.6C226.9 242.9 221 256.1 216.4 267.1C211.7 278.2 204.9 289.8 202.1 296C199.2 302.3 199.8 303.3 199.4 304.7Q130 307.1 60.6 304.7C60.2 303.3 60.8 302.3 57.9 296C55.1 289.8 48.3 278.2 43.6 267.1C39 256.1 33.1 242.9 29.8 229.6C26.5 216.3 24.7 202.3 23.8 187.5C23 172.7 20.9 155.1 24.6 140.9C28.4 126.7 36.7 113.2 46.5 102.4C56.4 91.6 77.6 81.9 83.8 76.2C90.1 70.5 84.7 70.2 84 68C83.3 65.8 79.8 64.7 79.5 63C79.2 61.3 81.6 58.8 82 58Z" fill="none" stroke="#261b14" stroke-opacity=".3" stroke-width=".9"/><path d="M66 68Q100 80 130 77Q164 81 196 68L186 82Q130 89 76 82Z" fill="#f7f3e9"/><path d="M72 81Q130 88 188 81" stroke="#846d51" stroke-width="2" fill="none"/><path d="M8 63L130 8L252 63Q130 73 8 63Z" fill="#d0b380"/><path d="M130 11L10 63M130 11L19.2 64.1M130 11L28.5 65.2M130 11L37.7 66.2M130 11L46.9 67.2M130 11L56.2 68.1M130 11L65.4 69M130 11L74.6 69.7M130 11L83.8 70.4M130 11L93.1 71M130 11L102.3 71.4M130 11L111.5 71.7M130 11L120.8 71.9M130 11L130 72M130 11L139.2 71.9M130 11L148.5 71.7M130 11L157.7 71.4M130 11L166.9 71M130 11L176.2 70.4M130 11L185.4 69.7M130 11L194.6 69M130 11L203.8 68.1M130 11L213.1 67.2M130 11L222.3 66.2M130 11L231.5 65.2M130 11L240.8 64.1M130 11L250 63" stroke="#9d784d" stroke-opacity=".55" stroke-width=".9" fill="none"/><path d="M92.8 24.2Q130 30 167.2 24.2M61.8 37.7Q130 45 198.2 37.7M30.8 51.2Q130 60 229.2 51.2" stroke="#9d784d" stroke-opacity=".7" stroke-width="1.1" fill="none"/><path d="M6 64Q130 42 254 64Q130 74 6 64Z" fill="#d0b380" stroke="#9d784d" stroke-width="1.2"/><circle cx="130" cy="10" r="3.2" fill="#9d784d"/></svg></div>
+<div class="en" lang="en"><p>That page is still in the sun, or was never brewed. Everything ready is back in the yard.</p><p class="nf-tag">Day 404. Even we don’t wait this long.</p><p><a class="back" href="./">Back to the yard</a></p></div></div>
+<div class="drip nf-drip" aria-hidden="true"></div>
+<svg class="band-edge" viewBox="0 0 2400 150" preserveAspectRatio="xMidYMin slice" aria-hidden="true" focusable="false"><path class="be-fill" d="M0 0H2400V18.5L2400 18.5L2392 18.3L2384 18.3L2376 18.3L2368 18.3L2360 18.3L2352 18.3L2344 18.6L2336 18.9L2328 19.1L2320 19.1L2312 19L2304 18.9L2296 18.8L2288 18.6L2280 18.5L2272 18.3L2264 18.1L2256 18.2L2248 18.5L2240 18.9L2232 19L2224 18.6L2216 18L2208 17.4L2200 17.2L2192 17.4L2184 17.7L2176 18L2168 18L2160 17.8L2152 17.5L2144 17.3L2136 17.1L2128 17L2120 16.9L2112 16.8L2104 16.8L2096 17L2088 17.4L2080 17.7L2072 17.6L2064 17.3L2056 16.8L2048 16.7L2040 17.1L2032 17.9L2024 18.8L2016 19.4L2008 19.5L2000 19.1L1992 18.6L1984 18.5L1976 18.9L1968 19.5L1960 20.1L1952 20.3L1944 20.3L1936 20.2L1928 20.1L1920 20L1912 19.9L1904 19.8L1896 19.7L1888 19.6L1880 19.4L1872 19.1L1864 18.9L1856 18.9L1848 19.2L1840 19.6L1832 20L1824 19.9L1816 19.7L1808 19.4L1800 19.2L1792 18.8L1784 18.1L1776 17.2L1768 16.6L1760 16.4L1752 16.3L1744 16.2L1736 16L1728 15.8L1720 15.9L1712 15.9L1704 15.9L1696 15.6L1688 15.3L1680 15L1672 14.9L1664 15L1656 15L1648 15L1640 15.1L1632 15.7L1624 16.4L1616 17L1608 17L1600 16.6L1592 16L1584 15.6L1576 15.7L1568 16.2L1560 16.9L1552 17.2L1544 17.2L1536 17.1L1528 16.9L1520 16.9L1512 16.6L1504 15.8L1496 15L1488 14.7L1480 15.1L1472 16.1L1464 17L1456 17.3L1448 17.1L1440 16.8L1432 16.5L1424 16.4L1416 16.2L1408 16L1400 15.9L1392 16.1L1384 16.8L1376 17.7L1368 18.4L1360 18.8L1352 19.1L1344 19.3L1336 19.6L1328 19.8L1320 19.9L1312 19.8L1304 19.8L1296 19.7L1288 19.5L1280 19.2L1272 19L1264 19.1L1256 19.6L1248 20L1240 20.1L1232 19.8L1224 19.1L1216 18.5L1208 18.2L1200 18.7L1192 19.7L1184 20.6L1176 20.9L1168 20.2L1160 19L1152 18L1144 17.7L1136 18L1128 18.4L1120 18.7L1112 18.4L1104 18L1096 17.6L1088 17.2L1080 16.9L1072 16.8L1064 16.8L1056 16.7L1048 16.4L1040 15.7L1032 15.1L1024 14.7L1016 15L1008 15.6L1000 16.2L992 16.6L984 16.9L976 17.5L968 18L960 18.4L952 18.6L944 18.9L936 19.1L928 19.3L920 19.2L912 19.1L904 18.9L896 18.8L888 18.6L880 18.4L872 18.1L864 18L856 17.9L848 17.8L840 17.7L832 17.5L824 17.5L816 17.4L808 17.3L800 17.1L792 16.6L784 16L776 15.8L768 15.8L760 15.7L752 15.7L744 15.8L736 16.4L728 17.4L720 18.3L712 18.9L704 18.8L696 18.5L688 18.1L680 18.2L672 18.6L664 19L656 19.3L648 19.4L640 19.9L632 20.5L624 20.9L616 20.6L608 20L600 19.4L592 18.7L584 18.1L576 16.9L568 15.6L560 14.6L552 14.4L544 14.9L536 15.5L528 15.8L520 15.7L512 15.4L504 15.1L496 15L488 15.3L480 15.7L472 16.1L464 16.3L456 16.1L448 15.6L440 15.2L432 15.1L424 14.9L416 14.5L408 14.2L400 14.2L392 14.7L384 15.4L376 16L368 16.2L360 16.2L352 16.3L344 16.4L336 16.7L328 17.2L320 17.7L312 18.2L304 18.3L296 17.9L288 17.4L280 17.2L272 17.3L264 17.3L256 17.3L248 17.2L240 17.2L232 17.2L224 17.2L216 17.1L208 17.2L200 17.6L192 18L184 17.9L176 17.6L168 17.2L160 16.9L152 16.7L144 16.1L136 15.4L128 14.8L120 14.9L112 15.5L104 16.3L96 17L88 17.2L80 16.8L72 16.4L64 16.2L56 16.8L48 17.8L40 18.9L32 19.5L24 19.7L16 19.5L8 19.2L0 19.1Z"/><path class="be-fill" d="M94.9 14.1C98.9 17.6 102.2 23.1 100.4 30.1A6.6 6.6 0 1 0 111.3 30.1C109.5 23.1 112.8 17.6 116.8 14.1ZM241.2 15.3C245.2 18.8 249.8 25.6 247 31.7A10.5 10.5 0 1 0 264.2 31.7C261.4 25.6 266 18.8 270 15.3ZM419.4 13.1C423.4 16.6 426.6 32.2 424.8 58.1A6.6 6.6 0 1 0 435.7 58.1C433.9 32.2 437.2 16.6 441.2 13.1ZM478.9 13.2C482.9 16.7 485.6 41.9 484.2 86.8A5.1 5.1 0 1 0 492.6 86.8C491.2 41.9 494 16.7 498 13.2ZM607.7 18.8C611.7 22.3 616 26.8 613.4 29A9.9 9.9 0 1 0 629.5 29C626.9 26.8 631.3 22.3 635.3 18.8ZM788.6 15C792.6 18.5 795.6 25.6 794 36.3A5.9 5.9 0 1 0 803.7 36.3C802.1 25.6 805.1 18.5 809.1 15ZM901.1 17.1C905.1 20.6 907.8 28.2 906.4 40.5A5.1 5.1 0 1 0 914.8 40.5C913.4 28.2 916.1 20.6 920.1 17.1ZM1014.5 12.8C1018.5 16.3 1021.9 42.9 1020 88.9A6.9 6.9 0 1 0 1031.4 88.9C1029.5 42.9 1032.9 16.3 1036.9 12.8ZM1205.7 16.5C1209.7 20 1212.5 25.5 1211.1 34.1A5.1 5.1 0 1 0 1219.4 34.1C1218.1 25.5 1220.8 20 1224.8 16.5ZM1378.2 14.1C1382.2 17.6 1386.7 25.2 1383.9 32.7A10.5 10.5 0 1 0 1401.1 32.7C1398.3 25.2 1402.9 17.6 1406.9 14.1ZM1503.5 14.8C1507.5 18.3 1511.2 34.7 1509.1 60.6A8.1 8.1 0 1 0 1522.3 60.6C1520.2 34.7 1523.9 18.3 1527.9 14.8ZM1624.1 13.2C1628.1 16.7 1632.7 24.3 1629.9 31.6A10.6 10.6 0 1 0 1647.3 31.6C1644.5 24.3 1649.1 16.7 1653.1 13.2ZM1705.6 13.9C1709.6 17.4 1713.3 23.6 1711.2 30.5A8.1 8.1 0 1 0 1724.5 30.5C1722.3 23.6 1726.1 17.4 1730.1 13.9ZM1881.7 17.7C1885.7 21.2 1889.1 35.6 1887.2 58.7A7.1 7.1 0 1 0 1898.8 58.7C1896.9 35.6 1900.3 21.2 1904.3 17.7ZM2005.6 17.4C2009.6 20.9 2013.2 26 2011.2 31.5A7.5 7.5 0 1 0 2023.5 31.5C2021.5 26 2025.1 20.9 2029.1 17.4ZM2071.1 15.7C2075.1 19.2 2078 39 2076.5 73.4A5.7 5.7 0 1 0 2085.9 73.4C2084.4 39 2087.3 19.2 2091.3 15.7ZM2188.8 15.2C2192.8 18.7 2196.4 41.7 2194.4 80.4A7.6 7.6 0 1 0 2206.9 80.4C2204.9 41.7 2208.5 18.7 2212.5 15.2ZM2345.2 16.3C2349.2 19.8 2352.6 36.7 2350.7 64.6A7 7 0 1 0 2362.2 64.6C2360.4 36.7 2363.8 19.8 2367.8 16.3Z"/><path class="be-rim" d="M0 19.1L8 19.2L16 19.5L24 19.7L32 19.5L40 18.9L48 17.8L56 16.8L64 16.2L72 16.4L80 16.8L88 17.2L96 17L104 16.3L112 15.5L120 14.9L128 14.8L136 15.4L144 16.1L152 16.7L160 16.9L168 17.2L176 17.6L184 17.9L192 18L200 17.6L208 17.2L216 17.1L224 17.2L232 17.2L240 17.2L248 17.2L256 17.3L264 17.3L272 17.3L280 17.2L288 17.4L296 17.9L304 18.3L312 18.2L320 17.7L328 17.2L336 16.7L344 16.4L352 16.3L360 16.2L368 16.2L376 16L384 15.4L392 14.7L400 14.2L408 14.2L416 14.5L424 14.9L432 15.1L440 15.2L448 15.6L456 16.1L464 16.3L472 16.1L480 15.7L488 15.3L496 15L504 15.1L512 15.4L520 15.7L528 15.8L536 15.5L544 14.9L552 14.4L560 14.6L568 15.6L576 16.9L584 18.1L592 18.7L600 19.4L608 20L616 20.6L624 20.9L632 20.5L640 19.9L648 19.4L656 19.3L664 19L672 18.6L680 18.2L688 18.1L696 18.5L704 18.8L712 18.9L720 18.3L728 17.4L736 16.4L744 15.8L752 15.7L760 15.7L768 15.8L776 15.8L784 16L792 16.6L800 17.1L808 17.3L816 17.4L824 17.5L832 17.5L840 17.7L848 17.8L856 17.9L864 18L872 18.1L880 18.4L888 18.6L896 18.8L904 18.9L912 19.1L920 19.2L928 19.3L936 19.1L944 18.9L952 18.6L960 18.4L968 18L976 17.5L984 16.9L992 16.6L1000 16.2L1008 15.6L1016 15L1024 14.7L1032 15.1L1040 15.7L1048 16.4L1056 16.7L1064 16.8L1072 16.8L1080 16.9L1088 17.2L1096 17.6L1104 18L1112 18.4L1120 18.7L1128 18.4L1136 18L1144 17.7L1152 18L1160 19L1168 20.2L1176 20.9L1184 20.6L1192 19.7L1200 18.7L1208 18.2L1216 18.5L1224 19.1L1232 19.8L1240 20.1L1248 20L1256 19.6L1264 19.1L1272 19L1280 19.2L1288 19.5L1296 19.7L1304 19.8L1312 19.8L1320 19.9L1328 19.8L1336 19.6L1344 19.3L1352 19.1L1360 18.8L1368 18.4L1376 17.7L1384 16.8L1392 16.1L1400 15.9L1408 16L1416 16.2L1424 16.4L1432 16.5L1440 16.8L1448 17.1L1456 17.3L1464 17L1472 16.1L1480 15.1L1488 14.7L1496 15L1504 15.8L1512 16.6L1520 16.9L1528 16.9L1536 17.1L1544 17.2L1552 17.2L1560 16.9L1568 16.2L1576 15.7L1584 15.6L1592 16L1600 16.6L1608 17L1616 17L1624 16.4L1632 15.7L1640 15.1L1648 15L1656 15L1664 15L1672 14.9L1680 15L1688 15.3L1696 15.6L1704 15.9L1712 15.9L1720 15.9L1728 15.8L1736 16L1744 16.2L1752 16.3L1760 16.4L1768 16.6L1776 17.2L1784 18.1L1792 18.8L1800 19.2L1808 19.4L1816 19.7L1824 19.9L1832 20L1840 19.6L1848 19.2L1856 18.9L1864 18.9L1872 19.1L1880 19.4L1888 19.6L1896 19.7L1904 19.8L1912 19.9L1920 20L1928 20.1L1936 20.2L1944 20.3L1952 20.3L1960 20.1L1968 19.5L1976 18.9L1984 18.5L1992 18.6L2000 19.1L2008 19.5L2016 19.4L2024 18.8L2032 17.9L2040 17.1L2048 16.7L2056 16.8L2064 17.3L2072 17.6L2080 17.7L2088 17.4L2096 17L2104 16.8L2112 16.8L2120 16.9L2128 17L2136 17.1L2144 17.3L2152 17.5L2160 17.8L2168 18L2176 18L2184 17.7L2192 17.4L2200 17.2L2208 17.4L2216 18L2224 18.6L2232 19L2240 18.9L2248 18.5L2256 18.2L2264 18.1L2272 18.3L2280 18.5L2288 18.6L2296 18.8L2304 18.9L2312 19L2320 19.1L2328 19.1L2336 18.9L2344 18.6L2352 18.3L2360 18.3L2368 18.3L2376 18.3L2384 18.3L2392 18.3L2400 18.5"/><g class="be-bead"><ellipse cx="105.8" cy="30.4" rx="4.1" ry="4.6"/><ellipse cx="255.6" cy="32.2" rx="6.5" ry="7.4"/><ellipse cx="430.3" cy="58.4" rx="4.1" ry="4.6"/><ellipse cx="488.4" cy="87" rx="3.2" ry="3.6"/><ellipse cx="621.5" cy="29.5" rx="6.1" ry="6.9"/><ellipse cx="798.8" cy="36.6" rx="3.6" ry="4.1"/><ellipse cx="910.6" cy="40.7" rx="3.2" ry="3.6"/><ellipse cx="1025.7" cy="89.2" rx="4.3" ry="4.8"/><ellipse cx="1215.3" cy="34.3" rx="3.1" ry="3.5"/><ellipse cx="1392.5" cy="33.2" rx="6.5" ry="7.3"/><ellipse cx="1515.7" cy="61" rx="5" ry="5.7"/><ellipse cx="1638.6" cy="32.1" rx="6.6" ry="7.4"/><ellipse cx="1717.8" cy="30.9" rx="5" ry="5.7"/><ellipse cx="1893" cy="59.1" rx="4.4" ry="5"/><ellipse cx="2017.3" cy="31.9" rx="4.7" ry="5.3"/><ellipse cx="2081.2" cy="73.7" rx="3.6" ry="4"/><ellipse cx="2200.6" cy="80.8" rx="4.7" ry="5.3"/><ellipse cx="2356.5" cy="65" rx="4.4" ry="4.9"/></g></svg>
+</section></main><footer class="foot"><svg class="surface" viewBox="0 0 2400 70" preserveAspectRatio="xMidYMin slice" aria-hidden="true" focusable="false"><path class="sf-fill" d="M0 33.3L10 33.3L20 33.2L30 33L40 32.9L50 32.8L60 32.8L70 32.9L80 33.2L90 33.7L100 34.2L110 34.6L120 34.8L130 34.9L140 34.9L150 35L160 35L170 35.1L180 35.2L190 35.2L200 35.1L210 35L220 34.8L230 34.7L240 34.6L250 34.6L260 34.3L270 33.9L280 33.4L290 32.8L300 32.4L310 32.1L320 31.9L330 31.8L340 31.6L350 31.4L360 31L370 30.6L380 30.2L390 29.7L400 29.3L410 28.8L420 28.4L430 28L440 27.3L450 26.5L460 25.6L470 24.7L480 24.1L490 23.8L500 23.7L510 23.6L520 23.6L530 23.7L540 23.9L550 24L560 24.4L570 25.2L580 26.1L590 27L600 27.8L610 28.3L620 28.7L630 29.2L640 29.7L650 30.2L660 30.7L670 31.1L680 31.4L690 31.4L700 31.3L710 31.1L720 31L730 31.1L740 31.3L750 31.7L760 32.2L770 32.5L780 32.8L790 33L800 33L810 33.3L820 33.6L830 33.9L840 34.3L850 34.4L860 34.4L870 34.3L880 34.1L890 33.9L900 33.7L910 33.5L920 33.5L930 33.4L940 33.3L950 33.1L960 33L970 32.9L980 32.9L990 32.8L1000 32.8L1010 32.8L1020 32.7L1030 32.7L1040 32.7L1050 32.8L1060 33.1L1070 33.4L1080 33.6L1090 33.7L1100 33.6L1110 33.4L1120 33.1L1130 32.8L1140 32.6L1150 32.3L1160 32L1170 31.8L1180 31.7L1190 31.7L1200 31.7L1210 31.6L1220 31.4L1230 31L1240 30.4L1250 29.7L1260 29L1270 28.5L1280 28.2L1290 28.3L1300 28.7L1310 29.2L1320 29.8L1330 30.3L1340 30.6L1350 30.6L1360 30.6L1370 30.5L1380 30.5L1390 30.5L1400 30.5L1410 30.4L1420 30.1L1430 29.6L1440 29.1L1450 28.6L1460 28.3L1470 28.4L1480 28.5L1490 28.6L1500 28.7L1510 28.9L1520 29L1530 29L1540 29.3L1550 29.8L1560 30.3L1570 30.7L1580 31L1590 30.9L1600 30.5L1610 29.9L1620 29.2L1630 28.5L1640 27.9L1650 27.7L1660 27.5L1670 27.2L1680 26.9L1690 26.7L1700 26.4L1710 26.3L1720 26.4L1730 26.8L1740 27.3L1750 27.8L1760 28.2L1770 28.2L1780 27.9L1790 27.1L1800 26.2L1810 25.4L1820 24.7L1830 24.5L1840 24.7L1850 25.2L1860 25.9L1870 26.6L1880 27.3L1890 27.8L1900 28.1L1910 28.2L1920 28.3L1930 28.4L1940 28.6L1950 28.9L1960 29.5L1970 30.6L1980 31.9L1990 33.3L2000 34.5L2010 35.3L2020 35.5L2030 35.6L2040 35.4L2050 35.1L2060 34.9L2070 34.7L2080 34.7L2090 34.8L2100 34.8L2110 34.8L2120 34.8L2130 34.6L2140 34.3L2150 33.8L2160 32.9L2170 32L2180 31.1L2190 30.4L2200 30L2210 30.1L2220 30.5L2230 31.1L2240 31.6L2250 31.8L2260 31.6L2270 30.9L2280 29.9L2290 28.9L2300 27.9L2310 27.2L2320 26.9L2330 26.8L2340 26.8L2350 26.9L2360 27L2370 27.1L2380 27.1L2390 27.3L2400 27.5V70H0Z"/><path class="sf-rim" d="M0 33.3L10 33.3L20 33.2L30 33L40 32.9L50 32.8L60 32.8L70 32.9L80 33.2L90 33.7L100 34.2L110 34.6L120 34.8L130 34.9L140 34.9L150 35L160 35L170 35.1L180 35.2L190 35.2L200 35.1L210 35L220 34.8L230 34.7L240 34.6L250 34.6L260 34.3L270 33.9L280 33.4L290 32.8L300 32.4L310 32.1L320 31.9L330 31.8L340 31.6L350 31.4L360 31L370 30.6L380 30.2L390 29.7L400 29.3L410 28.8L420 28.4L430 28L440 27.3L450 26.5L460 25.6L470 24.7L480 24.1L490 23.8L500 23.7L510 23.6L520 23.6L530 23.7L540 23.9L550 24L560 24.4L570 25.2L580 26.1L590 27L600 27.8L610 28.3L620 28.7L630 29.2L640 29.7L650 30.2L660 30.7L670 31.1L680 31.4L690 31.4L700 31.3L710 31.1L720 31L730 31.1L740 31.3L750 31.7L760 32.2L770 32.5L780 32.8L790 33L800 33L810 33.3L820 33.6L830 33.9L840 34.3L850 34.4L860 34.4L870 34.3L880 34.1L890 33.9L900 33.7L910 33.5L920 33.5L930 33.4L940 33.3L950 33.1L960 33L970 32.9L980 32.9L990 32.8L1000 32.8L1010 32.8L1020 32.7L1030 32.7L1040 32.7L1050 32.8L1060 33.1L1070 33.4L1080 33.6L1090 33.7L1100 33.6L1110 33.4L1120 33.1L1130 32.8L1140 32.6L1150 32.3L1160 32L1170 31.8L1180 31.7L1190 31.7L1200 31.7L1210 31.6L1220 31.4L1230 31L1240 30.4L1250 29.7L1260 29L1270 28.5L1280 28.2L1290 28.3L1300 28.7L1310 29.2L1320 29.8L1330 30.3L1340 30.6L1350 30.6L1360 30.6L1370 30.5L1380 30.5L1390 30.5L1400 30.5L1410 30.4L1420 30.1L1430 29.6L1440 29.1L1450 28.6L1460 28.3L1470 28.4L1480 28.5L1490 28.6L1500 28.7L1510 28.9L1520 29L1530 29L1540 29.3L1550 29.8L1560 30.3L1570 30.7L1580 31L1590 30.9L1600 30.5L1610 29.9L1620 29.2L1630 28.5L1640 27.9L1650 27.7L1660 27.5L1670 27.2L1680 26.9L1690 26.7L1700 26.4L1710 26.3L1720 26.4L1730 26.8L1740 27.3L1750 27.8L1760 28.2L1770 28.2L1780 27.9L1790 27.1L1800 26.2L1810 25.4L1820 24.7L1830 24.5L1840 24.7L1850 25.2L1860 25.9L1870 26.6L1880 27.3L1890 27.8L1900 28.1L1910 28.2L1920 28.3L1930 28.4L1940 28.6L1950 28.9L1960 29.5L1970 30.6L1980 31.9L1990 33.3L2000 34.5L2010 35.3L2020 35.5L2030 35.6L2040 35.4L2050 35.1L2060 34.9L2070 34.7L2080 34.7L2090 34.8L2100 34.8L2110 34.8L2120 34.8L2130 34.6L2140 34.3L2150 33.8L2160 32.9L2170 32L2180 31.1L2190 30.4L2200 30L2210 30.1L2220 30.5L2230 31.1L2240 31.6L2250 31.8L2260 31.6L2270 30.9L2280 29.9L2290 28.9L2300 27.9L2310 27.2L2320 26.9L2330 26.8L2340 26.8L2350 26.9L2360 27L2370 27.1L2380 27.1L2390 27.3L2400 27.5"/><path class="sf-shine" d="M0 38.3L10 38.3L20 38.2L30 38L40 37.9L50 37.8L60 37.8L70 37.9L80 38.2L90 38.7L100 39.2L110 39.6L120 39.8L130 39.9M71 37.9L81 38.3L91 38.7L101 39.2L111 39.6L121 39.8L131 39.9L141 39.9L151 40L161 40.1L171 40.1L181 40.2M239.2 39.6L249.2 39.6L259.2 39.3L269.2 38.9L279.2 38.4L289.2 37.9L299.2 37.4L309.2 37.1L319.2 36.9L329.2 36.8M345.3 36.5L355.3 36.2L365.3 35.8L375.3 35.4L385.3 34.9L395.3 34.5L405.3 34M442.3 32.1L452.3 31.3L462.3 30.4L472.3 29.6L482.3 29L492.3 28.7L502.3 28.6L512.3 28.6M514.9 28.6L524.9 28.7L534.9 28.8L544.9 29M614.8 33.5L624.8 34L634.8 34.4L644.8 34.9L654.8 35.4L664.8 35.9L674.8 36.3M817.2 38.5L827.2 38.9L837.2 39.2L847.2 39.4L857.2 39.5L867.2 39.4M1015.3 37.7L1025.3 37.7L1035.3 37.7L1045.3 37.7L1055.3 38M1158.9 37L1168.9 36.8L1178.9 36.7L1188.9 36.7L1198.9 36.7L1208.9 36.6L1218.9 36.4L1228.9 36.1L1238.9 35.5L1248.9 34.8M1257.1 34.2L1267.1 33.6L1277.1 33.3L1287.1 33.2L1297.1 33.5L1307.1 34.1L1317.1 34.7L1327.1 35.2L1337.1 35.5L1347.1 35.6L1357.1 35.6L1367.1 35.5M1400.3 35.5L1410.3 35.4L1420.3 35.1L1430.3 34.6L1440.3 34L1450.3 33.6L1460.3 33.3L1470.3 33.4L1480.3 33.5L1490.3 33.6L1500.3 33.8M1615.2 34.5L1625.2 33.8L1635.2 33.2L1645.2 32.8L1655.2 32.6L1665.2 32.4L1675.2 32.1L1685.2 31.8L1695.2 31.5L1705.2 31.3L1715.2 31.3L1725.2 31.6L1735.2 32L1745.2 32.6M1705.4 31.3L1715.4 31.3L1725.4 31.6L1735.4 32.1M1822.9 29.6L1832.9 29.5L1842.9 29.9L1852.9 30.4L1862.9 31.1L1872.9 31.8L1882.9 32.4M1994.2 38.8L2004.2 39.8L2014.2 40.4L2024.2 40.6L2034.2 40.5L2044.2 40.3L2054.2 40L2064.2 39.8L2074.2 39.7M2108.4 39.8L2118.4 39.8L2128.4 39.7L2138.4 39.4L2148.4 38.9L2158.4 38.1L2168.4 37.1L2178.4 36.3L2188.4 35.5L2198.4 35.1L2208.4 35.1L2218.4 35.5L2228.4 36M2294.9 33.4L2304.9 32.5L2314.9 32L2324.9 31.9L2334.9 31.8L2344.9 31.9L2354.9 31.9L2364.9 32L2374.9 32.1L2384.9 32.2"/></svg>
+<div class="foot-in">
+<div class="zh"><p class="f1">慢火釀造所</p><p>雲林西螺・民國六十年起</p><p>黑豆、鹽、日頭，還有很多耐心。</p></div>
+<div class="sp"><svg class="seal" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><defs><filter id="fs80265" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="20"/><feDisplacementMap in="SourceGraphic" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter></defs><g class="stamp" transform="rotate(-3 60 60)" filter="url(#fs80265)" font-family="'Noto Serif TC',serif" font-weight="800"><rect x="13.2" y="13.2" width="92" height="92" rx="5.5" fill="none" stroke="#1f0f08" stroke-width="6.4"/><text x="59.2" y="54.1" font-size="40.5" text-anchor="middle" fill="#1f0f08" transform="scale(1.55 1)" transform-origin="59.2 59.2">慢</text><text x="59.2" y="95.4" font-size="40.5" text-anchor="middle" fill="#1f0f08" transform="scale(1.55 1)" transform-origin="59.2 59.2">火</text><rect x="14.9" y="14.9" width="92" height="92" rx="5.5" fill="none" stroke="#855732" stroke-width="6.4"/><text x="60.9" y="55.8" font-size="40.5" text-anchor="middle" fill="#855732" transform="scale(1.55 1)" transform-origin="60.9 60.9">慢</text><text x="60.9" y="97.1" font-size="40.5" text-anchor="middle" fill="#855732" transform="scale(1.55 1)" transform-origin="60.9 60.9">火</text><rect x="14" y="14" width="92" height="92" rx="5.5" fill="none" stroke="#45281a" stroke-width="6.4"/><text x="60" y="54.9" font-size="40.5" text-anchor="middle" fill="#45281a" transform="scale(1.55 1)" transform-origin="60 60">慢</text><text x="60" y="96.2" font-size="40.5" text-anchor="middle" fill="#45281a" transform="scale(1.55 1)" transform-origin="60 60">火</text></g></svg></div>
+<div class="en" lang="en"><p class="f1">Slow Fire Soy Works</p><p>Xiluo, Yunlin · since 1971</p><p>Black beans, salt, sun and patience.</p></div>
+<p class="col"><span>本頁以 Noto Serif TC 與 Newsreader 排印。</span><span lang="en">Set in Noto Serif TC and Newsreader.</span><span>© 民國一一五年　慢火釀造所</span></p>
+</div></footer>
+
+</body>
+</html>

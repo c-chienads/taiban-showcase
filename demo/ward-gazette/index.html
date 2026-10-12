@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F11" data-slug="ward-gazette">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>里民公報｜三榕里社區報 第一八七期</title>
+<meta name="description" content="三榕里辦公處發行的社區報：榕樹下的涼亭不拆了、垃圾車改週二四六、里長信箱、花台認養、分類小廣告，還有一張拔河奪冠的號外。">
+
+<meta name="generator" content="套版網站平台 F11">
+<link rel="icon" href="data:,">
+<link rel="preload" href="fonts/01-noto-sans-tc.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/02-noto-serif-tc.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"Noto Sans TC";src:url("fonts/01-noto-sans-tc.woff2") format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Serif TC";src:url("fonts/02-noto-serif-tc.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root {
+  --paper: #f4e1c0;
+  --paper-back: #e6d0aa;
+  --tint: #e9d6b3;
+  --ink: #1d1a16;
+  --ink-2: #3d372d;
+  --spot: #ccf541;
+  --serif: "Noto Serif TC", serif;
+  --sans: "Noto Sans TC", "Noto Serif TC", sans-serif;
+  --gut: 32px;
+  --focus-ring: 2px dashed var(--ink);
+  --focus-offset: 3px;
+  --selection-bg: var(--spot);
+  --selection-fg: var(--ink);
+}
+html { background: var(--paper); color: var(--ink); }
+body {
+  background: var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 .09 0 0 0 0 .1 0 0 0 0 .12 .34 0 0 0 -.15'/%3E%3C/filter%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.03 .7' numOctaves='1' stitchTiles='stitch' seed='9'/%3E%3CfeColorMatrix values='0 0 0 0 .1 0 0 0 0 .11 0 0 0 0 .13 .5 0 0 0 -.4'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)'/%3E%3Crect width='260' height='260' filter='url(%23f)'/%3E%3C/svg%3E");
+  font-family: var(--serif); font-weight: 500; font-size: 16px; line-height: 1.75;
+  font-feature-settings: "palt" 0;
+  text-spacing-trim: trim-start;
+  hanging-punctuation: allow-end;
+}
+a { color: var(--ink); text-decoration-line: underline; text-decoration-thickness: 1px; text-underline-offset: .22em; }
+@media (hover: hover) and (pointer: fine) { a:hover { background-color: #ccf541; color: #1d1a16; text-decoration-thickness: 2px; } }
+:focus-visible { background-color: var(--spot); }
+.sheet { --pad: 40px; max-width: 1440px; margin: 0 auto; padding: 22px var(--pad) 40px; }
+.tnum, time { font-variant-numeric: tabular-nums; }
+q { quotes: none; }
+
+/* ---- 報頭 ---- */
+.mast-top { display: flex; justify-content: space-between; gap: 16px; font: 500 13px/1.6 var(--sans); padding-bottom: 6px; border-bottom: 1px solid var(--ink); }
+.mast-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.25fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 18px 0 16px; }
+.ear { border: 1px solid var(--ink); padding: 10px 14px 12px; font: 400 14px/1.6 var(--sans); align-self: stretch; }
+.ear-h { font: 900 14px/1 var(--sans); letter-spacing: .2em; display: flex; align-items: center; gap: 8px; padding-bottom: 8px; margin-bottom: 8px; border-bottom: 3px double var(--ink); }
+.wx-main { display: grid; grid-template-columns: 64px 1fr; grid-template-rows: auto auto; column-gap: 10px; align-items: center; }
+.ico-wx { width: 64px; height: 48px; grid-row: span 2; color: var(--ink); }
+.wx-sky { font: 700 16px/1.3 var(--sans); }
+.wx-temp { font: 900 30px/1 var(--sans); display: flex; align-items: baseline; gap: 2px; }
+.wx-temp small { font-size: 14px; font-weight: 700; margin-left: 2px; }
+.wx-dash { font-weight: 400; }
+.wx-rain { margin-top: 6px; }
+.wx-rows { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; margin-top: 4px; }
+.wx-rows div { display: flex; gap: 6px; border-top: 1px dotted var(--ink); padding: 5px 0 1px; }
+.wx-rows div:nth-child(-n+2) { grid-column: 1 / -1; }
+.wx-rows dt { font-weight: 700; white-space: nowrap; }
+.wx-rows dd { margin: 0; }
+.flag-wrap { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 18px; }
+.flag-wrap .emblem { width: 92px; height: 92px; color: var(--ink); }
+.flag { margin: 0; line-height: 0; font-size: 64px; }
+.flag-svg { width: 100%; height: auto; aspect-ratio: 4120 / 936; display: block; overflow: visible; }
+.flag-svg .fi { fill: var(--ink); }
+.flag-svg .fo { fill: none; stroke: var(--paper); stroke-linejoin: round; }
+.flag-svg .fi2 { fill: none; stroke: var(--ink); stroke-linejoin: round; }
+.flag-svg .fv { fill: var(--paper); }
+.flag-svg .fs { fill: none; stroke: var(--paper); }
+.flag-svg .flag-spot { fill: var(--spot); }
+.flag-svg .flag-dry { fill: none; stroke: color-mix(in oklab, var(--spot) 45%, var(--paper)); stroke-linecap: round; }
+.flag-sub { grid-column: 2; display: flex; justify-content: space-between; font: 700 15px/1 var(--sans); letter-spacing: .9em; margin-top: 10px; padding-left: .45em; }
+.ear-toc ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 3px; }
+.ear-toc li { display: grid; grid-template-columns: auto 1fr; gap: 8px; align-items: baseline; }
+.ear-toc .pgt { font: 900 12px/1 var(--sans); background: var(--ink); color: var(--paper); padding: 3px 4px 2px; letter-spacing: .05em; }
+.ear-toc a { font: 700 15px/1.55 var(--sans); text-decoration-style: dotted; }
+.dateline { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 0; font: 500 15px/1.5 var(--serif); padding: 7px 0 6px; border-top: 4px solid var(--ink); border-bottom: 1px solid var(--ink); position: relative; }
+.dateline::before { content: ""; position: absolute; left: 0; right: 0; top: 2px; border-top: 1px solid var(--ink); }
+.dateline span { padding: 0 14px; border-left: 1px solid var(--ink); }
+.dateline span:first-child { border-left: none; padding-left: 0; }
+.dateline span:last-child { padding-right: 0; }
+.dl-no { font-family: var(--sans); font-weight: 900; }
+
+/* ---- 共通：欄、標題 ---- */
+.pg { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: var(--gut); }
+.ruled { position: relative; }
+.kicker { font: 700 18px/1.4 var(--sans); display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+.kicker::before { content: ""; width: 14px; height: 14px; background: var(--ink); flex: none; }
+.hed { font-family: var(--sans); font-weight: 900; line-height: 1.12; text-wrap: balance; letter-spacing: -.01em; }
+/* 平體：字身壓扁（高:寬＝0.8 或 0.9），台灣報紙照相打字的「平二」「平一」 */
+.flat2 { width: 80%; transform: scaleX(1.25); transform-origin: 0 0; }
+.flat1 { width: 90%; transform: scaleX(1.1112); transform-origin: 0 0; }
+.hed-xl { font-size: 72px; margin: 4px 0 10px; }
+.hed-xl span { display: inline-block; }
+.hed-xl span + span { margin-left: .2em; }
+.hed-l { font-size: 34px; margin: 2px 0 8px; }
+.hed-m { font-size: 30px; font-weight: 900; line-height: 1.25; margin-bottom: 8px; }
+.dek { font: 500 22.5px/1.6 var(--serif); padding: 8px 0 12px; border-top: 1px solid var(--ink); max-width: 46em; text-wrap: pretty; }
+.dek-s { font-size: 17px; }
+.byline { font: 700 14px/1.6 var(--sans); margin: 14px 0 6px; }
+/* 欄寬 ≥18 字的內文欄左右對齊（字距均分、允許任兩字間斷行，不讓 auto-phrase 把詞組整塊推到下一行而撐開字距）；不到 14 字的窄欄齊左 */
+.cols { text-align: justify; text-justify: inter-character; word-break: normal; }
+.narrow, .narrow p { text-align: left; }
+.cols p { text-indent: 2em; }
+.cols-lead { column-count: 3; column-gap: var(--gut); column-rule: 1px solid var(--ink); }
+.cols-3 { column-count: 3; column-gap: var(--gut); column-rule: 1px solid var(--ink); }
+.cols-2 { column-count: 2; column-gap: 24px; column-rule: 1px solid var(--ink); }
+.first::first-letter { initial-letter: 2; font-family: var(--sans); font-weight: 900; background: var(--ink); color: var(--paper); padding: 2px 6px; margin-right: 8px; }
+@supports not (initial-letter: 2) { .first::first-letter { float: left; font-size: 3.1em; line-height: 1; margin: 4px 8px 0 -2em; padding: 4px 6px; } }
+.cols .first { text-indent: 0; }
+em { text-emphasis: filled dot var(--ink); text-emphasis-position: under right; font-style: normal; }
+mark.hl {
+  color: var(--ink); padding: 0 .12em; margin: 0 -.06em;
+  background: linear-gradient(176deg, transparent 12%, var(--spot) 13%, var(--spot) 88%, transparent 90%) no-repeat 0 60% / 100% 78%;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.pq { break-inside: avoid; margin: 14px 0 16px; padding: 10px 0 8px; border-top: 4px solid var(--ink); border-bottom: 1px solid var(--ink); text-align: start; }
+.pq p { text-indent: 0; font: 500 26px/1.4 var(--serif); margin-left: -.5em; }
+.pq .pq-by { font: 400 14px/1.6 var(--sans); margin: 6px 0 0; text-align: end; }
+.jump { text-indent: 0 !important; margin-top: 10px; font: 700 14px/1.6 var(--sans); }
+.jump a { display: inline-flex; align-items: center; gap: 8px; text-decoration-style: solid; }
+.ico-fist { width: 36px; height: 18px; flex: none; color: var(--ink); }
+.photo { margin: 6px 0 4px; }
+.photo img { width: 100%; height: auto; outline: 1px solid var(--ink); outline-offset: -1px; }
+.photo figcaption { font: 500 14px/1.65 var(--serif); padding: 6px 0 2px; text-align: justify; }
+.tri { font-family: var(--sans); font-size: .8em; margin-right: .3em; }
+.credit { font-family: var(--sans); font-size: 13px; white-space: nowrap; }
+
+/* ---- 一版 ---- */
+.pg1 { padding-top: 20px; }
+.lead { grid-column: 1 / span 4; }
+.second { grid-column: 5 / span 2; position: relative; }
+.second::before { content: ""; position: absolute; left: calc(var(--gut) / -2); top: 0; bottom: 0; border-left: 1px solid var(--ink); }
+.sched { width: 100%; margin-top: 14px; font: 400 14px/1.5 var(--sans); border-top: 3px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.sched caption { caption-side: top; text-align: start; font: 900 15px/1.4 var(--sans); padding-bottom: 6px; }
+.cap-in { display: flex; align-items: center; gap: 8px; }
+.ico-rc { width: 22px; height: 20px; flex: none; color: var(--ink); }
+.sched th, .sched td { padding: 5px 2px; text-align: center; border-bottom: 1px dotted var(--ink); }
+.sched thead th { font-weight: 900; }
+.sched thead th.on { background: linear-gradient(170deg, transparent 10%, var(--spot) 12%, var(--spot) 86%, transparent 88%) no-repeat 0 50% / 100% 78%; }
+.sched tbody th { text-align: start; font-weight: 700; white-space: nowrap; padding-right: 6px; }
+.dot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; background: var(--ink); vertical-align: middle; }
+.none { display: inline-block; width: 10px; height: 1.5px; background: var(--ink); vertical-align: middle; }
+
+/* ---- 號外夾頁 ---- */
+.extra { margin: 30px 0 8px; position: relative; }
+.extra-tab {
+  list-style: none; cursor: pointer; position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 22px;
+  min-height: 92px; padding: 0 84px 0 0; background: var(--spot); border: 1.5px solid var(--ink); box-shadow: 0 3px 0 -1px var(--paper-back), 0 3px 0 0 var(--ink);
+}
+.extra-tab::-webkit-details-marker { display: none; }
+.extra-tab::marker { content: ""; }
+.stamp { align-self: stretch; overflow: hidden; display: flex; align-items: flex-start; padding: 0 18px; background: var(--ink); color: var(--spot); }
+.stamp { align-items: center; }
+.stamp span { font: 900 86px/1 var(--sans); display: block; transform: translateY(4px) scaleX(1.12); transform-origin: 0 50%; margin-right: 12px; }
+.tab-text { font: 900 26px/1.3 var(--sans); display: flex; align-items: baseline; min-width: 0; }
+.tab-teaser { overflow: hidden; text-overflow: clip; white-space: nowrap; }
+.tab-cut { font-weight: 400; }
+.tab-cta { font: 700 16px/1 var(--sans); border: 1.5px solid var(--ink); padding: 9px 12px; background: var(--paper); white-space: nowrap; }
+.extra-tab:focus-visible .tab-cta { background-color: #1d1a16; color: #ccf541; }
+@media (hover: hover) and (pointer: fine) { .extra-tab:hover .tab-cta { background-color: #1d1a16; color: #ccf541; } }
+.extra-tab:focus-visible { outline-offset: 4px; background-color: var(--spot); }
+.cta-close, .extra[open] .cta-open, .tab-open { display: none; }
+.extra[open] .extra-tab { min-height: 0; padding-block: 8px; grid-template-columns: minmax(0, 1fr) auto; padding-left: 16px; }
+.extra[open] .stamp, .extra[open] .tab-text { display: none; }
+.extra[open] .tab-open { display: block; font: 900 17px/1.3 var(--sans); letter-spacing: .2em; }
+.extra[open] .cta-close { display: inline; }
+.dogear { position: absolute; top: -1.5px; right: -1.5px; width: 66px; height: 66px; overflow: visible; transform-origin: 100% 0; transition: transform .28s cubic-bezier(.3, .7, .3, 1), opacity .2s ease-out; pointer-events: none; }
+.de-cut { fill: var(--paper); }
+.de-shadow { fill: var(--ink); opacity: .22; }
+.de-flap { fill: var(--paper-back); stroke: var(--ink); stroke-width: 1.5; stroke-linejoin: round; }
+.de-line { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 3 3; fill: none; }
+.extra-tab:focus-visible .dogear { transform: scale(1.32); }
+@media (hover: hover) and (pointer: fine) { .extra-tab:hover .dogear { transform: scale(1.32); } }
+.extra[open] .dogear { transform: scale(.85); opacity: 0; }
+.extra-sheet { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); border: 1.5px solid var(--ink); border-top: 0; perspective: 2600px; background: var(--paper); }
+.leaf { padding: 22px 26px 26px; position: relative; }
+.leaf-a { border-right: 1px dashed var(--ink); transform-style: preserve-3d; transform-origin: 100% 50%; z-index: 2; background: var(--paper); }
+.leaf-a .face { backface-visibility: hidden; }
+.leaf-a .back { position: absolute; inset: 0; transform: rotateY(180deg); backface-visibility: hidden; background: var(--paper-back); overflow: hidden; display: none; }
+.leaf-a .back span { position: absolute; right: 20px; top: 10px; font: 900 180px/1 var(--sans); color: #d9c39d; transform: scaleX(-1); }
+.x-stamp { font: 900 150px/.86 var(--sans); letter-spacing: -.02em; display: inline-block; background: var(--spot); padding: 8px 14px 0; margin-bottom: 16px; border-bottom: 8px solid var(--ink); }
+.hed-x { font-size: 76px; line-height: 1.08; margin: 4px 0 10px; }
+.hed-x span { display: block; }
+.leaf-a .dek { font-size: 22px; border-top: 4px solid var(--ink); padding-top: 12px; margin-top: 6px; }
+.leaf-b { display: flex; flex-direction: column; gap: 14px; }
+.leaf-b .photo { margin-top: 0; }
+.score { width: 100%; font: 700 17px/1.5 var(--sans); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+.score caption { caption-side: top; text-align: start; font: 900 15px/1.5 var(--sans); padding-bottom: 4px; }
+.score th, .score td { padding: 6px 4px; border-bottom: 1px dotted var(--ink); text-align: start; }
+.score td.win { background: linear-gradient(172deg, transparent 8%, var(--spot) 10%, var(--spot) 88%, transparent 90%); }
+.x-printed { font: 400 14px/1.6 var(--sans); text-align: end; margin-top: auto; }
+
+/* ---- 留白欄：號外之後一整格空白，讓眼睛休息 ---- */
+.blank { position: relative; height: 230px; margin: 26px 0 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); display: flex; align-items: flex-end; justify-content: flex-end; padding: 0 0 12px; }
+/* 版位標記：原本那則公告的四角 */
+.blank-mark { position: absolute; left: 50%; top: 50%; width: min(560px, 70%); height: 96px; translate: -50% -58%;
+  background:
+    linear-gradient(var(--ink), var(--ink)) 0 0 / 18px 1px, linear-gradient(var(--ink), var(--ink)) 0 0 / 1px 18px,
+    linear-gradient(var(--ink), var(--ink)) 100% 0 / 18px 1px, linear-gradient(var(--ink), var(--ink)) 100% 0 / 1px 18px,
+    linear-gradient(var(--ink), var(--ink)) 0 100% / 18px 1px, linear-gradient(var(--ink), var(--ink)) 0 100% / 1px 18px,
+    linear-gradient(var(--ink), var(--ink)) 100% 100% / 18px 1px, linear-gradient(var(--ink), var(--ink)) 100% 100% / 1px 18px;
+  background-repeat: no-repeat; opacity: .55; }
+.blank-note { font: 500 14px/1.6 var(--serif); max-width: 34em; text-align: end; }
+
+/* ---- 二版 ---- */
+.pg2 { margin: 30px calc(-1 * var(--pad)) 0; padding: 0 var(--pad); } /* 跑頭的陰影帶要出血到紙邊：讓區塊自己撐到紙邊，出血不再算進手機橫向溢出（I32） */
+.runhead { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 0 22px; align-items: baseline; font: 500 14px/1.5 var(--sans); padding: 26px 0 6px; border-bottom: 3px solid var(--ink); margin-bottom: 22px; position: relative; }
+.runhead::before { content: ""; position: absolute; left: calc(-1 * var(--pad)); right: calc(-1 * var(--pad)); top: 0; height: 14px; background: linear-gradient(to bottom, rgb(29 26 22 / .1), transparent); border-top: 1px solid rgb(29 26 22 / .3); }
+.rh-name { font: 900 20px/1 var(--sans); letter-spacing: .12em; }
+.rh-pg { font-weight: 900; background: var(--ink); color: var(--paper); padding: 1px 8px; }
+.colhead { font: 900 22px/1 var(--sans); display: inline-flex; margin-bottom: 10px; }
+.colhead span { background: var(--ink); color: var(--paper); padding: 8px 12px 7px; letter-spacing: .14em; }
+.letters { grid-column: 1 / span 4; }
+.lt-intro { font: 400 14px/1.6 var(--sans); margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--ink); }
+.qa { margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px dotted var(--ink); }
+.qa p { text-indent: 0; }
+.qa .q { break-inside: avoid; break-after: avoid; font-family: var(--sans); font-weight: 700; font-size: 15.5px; line-height: 1.7; }
+.qa .a { margin-top: 6px; }
+.qa-tag { display: inline-block; font: 900 14px/1 var(--sans); border: 1.5px solid var(--ink); padding: 3px 4px; margin-right: 6px; vertical-align: 2px; }
+.qa-a { background: var(--spot); color: var(--ink); }
+.who { display: block; text-align: end; font-weight: 400; font-size: 14px; }
+.minutes { grid-column: 5 / span 2; position: relative; }
+.minutes::before { content: ""; position: absolute; left: calc(var(--gut) / -2); top: 0; bottom: 0; border-left: 1px solid var(--ink); }
+.mn-title { font: 700 18px/1.45 var(--serif); font-weight: 500; text-align: center; padding: 6px 0; border-top: 3px double var(--ink); border-bottom: 3px double var(--ink); margin-bottom: 10px; }
+.mn-meta { font-size: 15px; line-height: 1.65; }
+.mn-meta div { display: grid; grid-template-columns: 3em 1fr; gap: 8px; }
+.mn-meta dt { font-family: var(--sans); font-weight: 700; text-align-last: justify; }
+.mn-meta dd { margin: 0; word-break: keep-all; overflow-wrap: anywhere; }
+.mn-items { margin: 10px 0 0; padding: 0; list-style: none; counter-reset: none; }
+.mn-items li { padding: 8px 0; border-top: 1px dotted var(--ink); font-size: 15px; line-height: 1.7; }
+.mn-items b { font-family: var(--sans); font-weight: 900; margin-right: .5em; }
+.mn-items .res { padding-left: 1em; }
+.mn-items .res b { background: var(--spot); padding: 0 .35em; }
+.mn-motion, .mn-end { font-size: 15px; border-top: 1px dotted var(--ink); padding-top: 8px; margin-top: 2px; }
+.mn-end { text-align: end; }
+.essay {
+  grid-column: 1 / span 2; grid-row: 3; margin-top: 26px; writing-mode: vertical-rl; height: 430px; background: var(--tint);
+  border: 1px solid var(--ink); outline: 1px solid var(--ink); outline-offset: 4px; padding: 18px 16px; justify-self: stretch;
+}
+/* 直排時 block 的 inline 方向是高度：不設 fit-content 會被撐成整欄高的黑條 */
+.es-col { font: 900 14px/1 var(--sans); background: var(--ink); color: var(--paper); padding: 8px 4px 4px; margin-left: 10px; letter-spacing: .3em; height: fit-content; }
+.es-title { font: 900 32px/1.2 var(--sans); margin-left: 14px; letter-spacing: .08em; }
+.es-text { font-size: 18px; line-height: 1.85; text-align: justify; text-indent: 1em; }
+.es-by { font: 700 14px/1.8 var(--sans); text-align: end; margin-right: 8px; }
+.adopt { grid-column: 3 / span 4; grid-row: 3; margin-top: 26px; position: relative; }
+.adopt::before { content: ""; position: absolute; left: calc(var(--gut) / -2); top: 0; bottom: 0; border-left: 1px solid var(--ink); }
+.ad-note { font-size: 15px; margin-bottom: 10px; }
+.ad-path { display: block; font: 700 14px/1.6 var(--sans); margin-top: 4px; }
+.planters {
+  list-style: none; margin: 4px 0 0; padding: 0 0 6px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 14px; position: relative;
+  border-bottom: 3px solid var(--ink);
+}
+/* 溪邊步道：一條蜿蜒的虛線把六座花台串起來（偶數號花台在步道另一側，錯落） */
+.planters::before { content: ""; position: absolute; left: -6px; right: -6px; top: 52px; height: 70px; background: url(assets/park-path.svg) center / 100% 100% no-repeat; pointer-events: none; }
+.pl { position: relative; display: flex; flex-direction: column; font: 400 14px/1.5 var(--sans); }
+.pl:nth-child(even) { margin-top: 46px; }
+.pl-art { width: 100%; height: auto; aspect-ratio: 140 / 104; color: var(--ink); overflow: visible; }
+.pl-no { display: flex; align-items: baseline; gap: 6px; border-top: 2px solid var(--ink); padding-top: 5px; margin-top: 2px; }
+.pl-no b { font: 900 15px/1.3 var(--sans); background: var(--ink); color: var(--paper); padding: 1px 5px; flex: none; }
+.pl-what { font-weight: 700; font-size: 15px; }
+.pl-who { margin-top: 2px; }
+.pl-note { font-family: var(--serif); font-size: 14.5px; margin-top: 1px; }
+.pl-vacant .pl-art { opacity: 1; }
+.vacant-box { display: inline-block; border: 1.5px dashed var(--ink); padding: 1px 8px; font-weight: 700; }
+.cont { grid-column: 1 / span 2; grid-row: 4; margin-top: 30px; position: relative; text-align: left; font-size: 16.5px; line-height: 1.85; }
+.cont .ct-h, .cont .ct-back { column-span: all; }
+.cont p { text-indent: 2em; }
+.ct-h { font: 900 22px/1.3 var(--sans); margin-bottom: 8px; padding-bottom: 6px; border-bottom: 3px solid var(--ink); }
+.ct-up { display: block; font: 700 14px/1.6 var(--sans); }
+.ct-back { text-indent: 0 !important; margin-top: 6px; font: 700 14px/1.6 var(--sans); }
+
+.notice-box { margin-top: 18px; padding: 6px 8px 6px; font-size: 15px; }
+.nb-h { font: 900 17px/1.3 var(--sans); text-align: center; letter-spacing: .35em; padding: 0 0 6px .35em; border-bottom: 1px solid var(--ink); margin-bottom: 6px; }
+.nb-list { margin: 0; padding: 0; list-style: none; }
+.nb-list li { display: grid; grid-template-columns: 2em 1fr; padding: 3px 0; text-align: left; }
+.nb-n { font-family: var(--sans); font-weight: 700; }
+.nb-by { text-align: end; font: 700 14px/1.6 var(--sans); margin-top: 2px; }
+.cal { grid-column: 3 / span 4; grid-row: 4; margin-top: 22px; position: relative; }
+.cal::before { content: ""; position: absolute; left: calc(var(--gut) / -2); top: 0; bottom: 0; border-left: 1px solid var(--ink); }
+.cal-wrap { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0 22px; align-items: start; position: relative; padding-top: 18px; }
+/* 里辦公處牆上的撕頁月曆：上緣一排裝訂孔 */
+.cal-wrap::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 10px; background: radial-gradient(circle at 50% 50%, var(--ink) 0 2.6px, transparent 3.2px) 0 0 / 22px 10px repeat-x; border-bottom: 1px solid var(--ink); }
+.cal-month { display: grid; justify-items: start; padding-top: 4px; }
+.cm-n { font: 900 112px/.82 var(--sans); letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+.cm-zh { font: 900 22px/1.2 var(--sans); letter-spacing: .3em; margin-top: 10px; }
+.cm-lunar { font: 500 14px/1.5 var(--serif); writing-mode: vertical-rl; margin-top: 12px; letter-spacing: .1em; }
+.cal-t { width: 100%; table-layout: fixed; font: 400 15px/1.3 var(--sans); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+.cal-t th { font-weight: 900; padding: 6px 6px 5px; text-align: start; border-bottom: 1px solid var(--ink); }
+.cal-t td { height: 62px; padding: 5px 6px; vertical-align: top; text-align: start; border-bottom: 1px dotted var(--ink); border-left: 1px dotted var(--ink); }
+.cal-t td:first-child { border-left: 0; }
+.cal-t .d { display: inline-grid; place-items: center; min-width: 26px; height: 26px; font-variant-numeric: tabular-nums; font-weight: 500; }
+.cal-t .ev .d { font-weight: 900; border-bottom: 2px solid var(--ink); }
+.cal-t .today .d { background: var(--ink); color: var(--paper); font-weight: 900; border: 0; }
+.cal-t .hol .d { background: linear-gradient(172deg, transparent 8%, var(--spot) 10%, var(--spot) 88%, transparent 90%); }
+.cal-t .evt { display: block; font-size: 14px; line-height: 1.35; font-weight: 700; margin-top: 3px; text-wrap: balance; }
+.cal-list { display: none; margin: 0; padding: 0; list-style: none; font: 400 15px/1.5 var(--sans); border-top: 3px solid var(--ink); grid-column: 1 / -1; }
+.cal-list li { display: grid; grid-template-columns: 6.6em 1fr; gap: 8px; padding: 5px 0; border-bottom: 1px dotted var(--ink); }
+.cl-d { font-weight: 900; white-space: nowrap; }
+
+/* ---- 分類小廣告 ---- */
+.classifieds { margin-top: 34px; border-top: 1px solid var(--ink); padding-top: 6px; }
+.cl-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; background: var(--ink); color: var(--paper); padding: 8px 14px; margin-bottom: 14px; }
+.cl-head h2 { font: 900 26px/1.2 var(--sans); letter-spacing: .3em; }
+.cl-head p { font: 400 14px/1.5 var(--sans); }
+.cl-cols { column-count: 6; column-gap: 18px; column-rule: 1px solid var(--ink); font: 400 15px/1.65 var(--sans); }
+.ad-sec { break-after: avoid; font: 900 15px/1 var(--sans); text-align: center; letter-spacing: .5em; padding: 6px 0 5px .5em; border-top: 3px solid var(--ink); border-bottom: 1px solid var(--ink); margin: 0 0 8px; }
+.ad-sec:not(:first-child) { margin-top: 6px; }
+.ad { break-inside: avoid; margin: 0 0 10px; padding: 6px 8px; text-align: left; }
+.ad .tag { font: 900 15px/1 var(--sans); background: var(--ink); color: var(--paper); padding: 3px 4px; margin-right: 6px; display: inline-block; }
+.frame-plain { border-bottom: 1px dotted var(--ink); padding: 0 0 9px; }
+.frame-meander, .frame-rope, .frame-zig, .frame-wenwu { border: 12px solid transparent; padding: 4px 6px; }
+.frame-meander { border-image: url(assets/border-meander.svg) 12 round; }
+.frame-rope { border-image: url(assets/border-rope.svg) 12 round; }
+.frame-zig { border-image: url(assets/border-zig.svg) 12 round; }
+.frame-wenwu { border-image: url(assets/border-wenwu.svg) 12 round; }
+.ad-cat .ad-h, .notice .n-h { font: 900 18px/1.3 var(--sans); text-align: center; letter-spacing: .3em; margin-bottom: 6px; padding-left: .3em; }
+.ad-cat img { width: 120px; height: 120px; margin: 0 auto 6px; outline: 1px solid var(--ink); }
+.notice { padding: 6px 8px 8px; }
+.notice p { margin-bottom: 4px; }
+.n-by { text-align: end; font-weight: 700; }
+.n-closing { text-align: left; }
+.n-obit { border: 5px solid var(--ink); outline: 1px solid var(--ink); outline-offset: -9px; padding: 14px 14px 12px; }
+.n-err { border: 1px solid var(--ink); }
+.n-err .n-h { font-size: 15px; text-align: start; }
+
+/* ---- 版權欄 ---- */
+.colophon { margin-top: 30px; border-top: 4px solid var(--ink); padding-top: 14px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr) minmax(0, 1.7fr); gap: var(--gut); font: 400 14px/1.7 var(--sans); }
+.co-brand { display: grid; grid-template-columns: 60px 1fr; column-gap: 14px; align-items: center; align-content: start; }
+.co-brand .emblem { width: 60px; height: 60px; grid-row: span 2; color: var(--ink); }
+.co-name { font: 900 26px/1.1 var(--sans); letter-spacing: .14em; }
+.co-rows div { display: grid; grid-template-columns: 5em 1fr; gap: 8px; border-bottom: 1px dotted var(--ink); padding: 3px 0 6px; }
+.co-rows dt { font-weight: 700; text-align-last: justify; }
+.co-rows dd { margin: 0; }
+.co-notes p + p { margin-top: 6px; }
+.co-recycle { display: flex; gap: 10px; align-items: center; font-weight: 700; }
+.co-recycle .ico-rc { width: 30px; height: 28px; }
+.co-end { grid-column: 1 / -1; display: flex; justify-content: space-between; border-top: 1px solid var(--ink); padding-top: 8px; font-weight: 700; }
+
+/* ---- 動效：招牌（號外翻開）＋輔助（螢光筆、折角掀起） ---- */
+@media (prefers-reduced-motion: no-preference) {
+  .extra[open] .leaf-a { animation: unfold 1.35s both; }
+  .extra[open] .leaf-a .back { display: block; }
+  .extra[open] .leaf-b::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to right, rgb(29 26 22 / .45), transparent 70%); animation: shade 1.35s cubic-bezier(.25, .6, .3, 1) both; }
+  @supports (animation-timeline: view()) {
+    mark.hl, .sched thead th.on { animation: swipe linear both; animation-timeline: view(); animation-range: entry 30% cover 36%; }
+  }
+}
+@keyframes unfold {
+  0% { transform: rotateY(-179deg); animation-timing-function: cubic-bezier(.5, 0, .7, .4); }
+  38% { transform: rotateY(-128deg); animation-timing-function: cubic-bezier(.25, .6, .3, 1); }
+  100% { transform: rotateY(0); }
+}
+@keyframes shade { 0% { opacity: 1; visibility: visible; } 100% { opacity: 0; visibility: hidden; } }
+@keyframes swipe { from { background-size: 0% 78%; } to { background-size: 100% 78%; } }
+@media (prefers-reduced-motion: reduce) {
+  .dogear { transition: none; }
+  .extra[open] .leaf-a, mark.hl { animation: none; }
+}
+
+/* ---- 中寬：三欄 ---- */
+@media (max-width: 1180px) {
+  .sheet { --pad: 28px; }
+  .mast-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .flag-wrap { grid-column: 1 / -1; grid-row: 1; max-width: 760px; justify-self: center; width: 100%; }
+  .pg { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lead, .second, .letters, .minutes, .essay, .adopt, .cal, .cont { grid-column: 1 / -1; grid-row: auto; }
+  .second::before, .minutes::before, .adopt::before, .cal::before { display: none; }
+  .second, .minutes, .adopt, .cal, .cont { border-top: 3px solid var(--ink); padding-top: 14px; margin-top: 26px; }
+  /* 中寬：直書小欄與轉版續稿並排，不讓直書框橫跨整版留下一大塊空白 */
+  .essay { grid-column: 1; grid-row: 4; }
+  .cont { grid-column: 2; grid-row: 4; }
+  .adopt { grid-row: 5; }
+  .cal { grid-row: 6; }
+  .cl-cols { column-count: 4; }
+  .planters { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 18px; }
+  .planters::before { display: none; }
+  .pl:nth-child(even) { margin-top: 0; }
+  .pl:nth-child(3n+2) { margin-top: 30px; }
+  .hed-xl { font-size: 64px; }
+  .colophon { grid-template-columns: 1fr 1fr; }
+  .co-notes { grid-column: 1 / -1; }
+}
+/* ---- 手機 ---- */
+@media (max-width: 900px) {
+  .cols-lead { column-count: 2; }
+}
+@media (max-width: 720px) {
+  :root { --gut: 20px; }
+  body { font-size: 16px; }
+  .sheet { --pad: 16px; padding-top: 12px; padding-bottom: 28px; }
+  .mast-top { flex-wrap: wrap; font-size: 12.5px; justify-content: center; text-align: center; gap: 0 12px; }
+  .mt-mid { display: none; }
+  .mast-row { gap: 14px; padding-top: 14px; }
+  .flag-wrap { gap: 10px; grid-template-columns: 52px 1fr; }
+  .flag-wrap .emblem { width: 52px; height: 52px; }
+  .flag-sub { font-size: 12.5px; letter-spacing: .5em; }
+  .ear { padding: 8px 10px 10px; font-size: 13px; }
+  .wx-main { grid-template-columns: 44px 1fr; column-gap: 6px; }
+  .ico-wx { width: 44px; height: 34px; }
+  .wx-temp { font-size: 24px; }
+  .wx-rows { grid-template-columns: 1fr; }
+  .ear-toc a { font-size: 14px; }
+  .dateline { display: grid; grid-template-columns: auto auto; justify-content: center; gap: 2px 0; font-size: 13.5px; }
+  .dateline span { padding: 0 10px; }
+  .dateline span:first-child, .dateline span:nth-child(3) { border-left: none; padding-left: 10px; text-align: end; }
+  .dateline span:last-child { grid-column: 1 / -1; text-align: center; border-left: 0; border-top: 1px dotted var(--ink); margin-top: 3px; padding: 2px 10px 0; }
+  .pg { grid-template-columns: minmax(0, 1fr); }
+  .essay, .cont, .adopt, .cal { grid-column: 1; grid-row: auto; }
+  .kicker { font-size: 15.5px; }
+  .hed-xl { font-size: 40px; margin-bottom: 8px; }
+  .hed-xl span + span { margin-left: 0; }
+  .hed-l { font-size: 28px; }
+  .dek { font-size: 17.5px; }
+  .cols-lead, .cols-3, .cols-2 { column-count: 1; }
+  .narrow, .narrow p { text-align: justify; }
+  .pq p { font-size: 22px; }
+  .extra-tab { grid-template-columns: auto minmax(0, 1fr); gap: 12px; padding-right: 54px; min-height: 76px; }
+  .stamp { padding: 0 10px; }
+  .stamp span { font-size: 54px; transform: translateY(3px) scaleX(1.1); margin-right: 6px; }
+  .tab-text { font-size: 17px; flex-wrap: wrap; }
+  .tab-teaser { white-space: normal; }
+  .tab-cut { display: none; }
+  .tab-cta { grid-column: 1 / -1; justify-self: start; margin: 0 0 12px 12px; font-size: 14px; padding: 8px 10px; }
+  .dogear { width: 48px; height: 48px; }
+  .extra-sheet { grid-template-columns: minmax(0, 1fr); }
+  .leaf { padding: 16px 14px 18px; }
+  .leaf-a { border-right: 0; border-bottom: 1px dashed var(--ink); transform-origin: 50% 0; }
+  .extra-sheet { perspective: 1400px; }
+  .extra[open] .extra-tab { grid-template-columns: minmax(0, 1fr) auto; padding: 8px 10px 8px 12px; gap: 10px; }
+  .extra[open] .tab-open { font-size: 14px; letter-spacing: .08em; }
+  .extra[open] .tab-cta { grid-column: auto; margin: 0; }
+  .leaf-a .back { transform: rotateX(180deg); }
+  .x-stamp { font-size: 84px; }
+  .hed-x { font-size: 40px; }
+  .leaf-b .dek { font-size: 18px; }
+  .colhead { font-size: 19px; }
+  .qa .q, .qa .a { position: relative; padding-left: 42px; }
+  .qa .q { font-size: 16.5px; }
+  .qa .a { margin-top: 8px; }
+  .qa-tag { position: absolute; left: 0; top: .2em; display: grid; place-items: center; width: 30px; height: 30px; margin: 0; padding: 0; font-size: 16px; vertical-align: 0; }
+  .essay { height: 430px; margin-top: 24px; padding: 16px 12px; }
+  .es-title { font-size: 26px; }
+  .es-text { font-size: 16px; line-height: 1.7; }
+  .planters { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 10px; row-gap: 16px; }
+  .pl:nth-child(3n+2) { margin-top: 22px; }
+  .pl { font-size: 14px; }
+  .pl-no { flex-wrap: wrap; gap: 2px 5px; }
+  .pl-no b { font-size: 14px; }
+  .pl-what { font-size: 14px; }
+  .pl-note { font-size: 14px; }
+  .blank { height: 150px; }
+  .blank-mark { height: 64px; }
+  .cal-wrap { grid-template-columns: auto minmax(0, 1fr); gap: 12px 14px; }
+  .cm-n { font-size: 72px; }
+  .cm-zh { font-size: 17px; }
+  .cm-lunar { display: none; }
+  .cal-t { font-size: 14px; }
+  .cal-t th { padding: 5px 2px; text-align: center; }
+  .cal-t td { height: auto; padding: 3px 0; text-align: center; vertical-align: middle; border-left: 0; }
+  .cal-t .d { min-width: 0; width: 26px; }
+  .cal-t .ev .d { border-bottom: 0; border: 1.5px solid var(--ink); border-radius: 50%; }
+  .cal-t .evt { display: none; }
+  .cal-list { display: block; }
+  .cont { text-align: justify; text-justify: inter-character; word-break: normal; }
+  .cl-head h2 { font-size: 21px; }
+  .cl-head p { font-size: 14px; }
+  .cl-cols { column-count: 2; column-gap: 14px; font-size: 14px; }
+  .ad-cat img { width: 100%; height: auto; }
+  .colophon { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .co-end { flex-wrap: wrap; gap: 6px; }
+}
+/* ---- 小手機：首屏瘦身（天氣縮成一行、要目折行、日期條單列） ---- */
+@media (max-width: 600px) {
+  .mast-top { display: none; }
+  .mast-row { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 10px 0 10px; }
+  .flag-wrap { grid-column: 1; }
+  .flag-sub { margin-top: 6px; }
+  .ear { border: 0; padding: 0; }
+  .ear-h { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .ear-wx { grid-row: 2; display: flex; align-items: center; gap: 10px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 4px 0; font-size: 14px; }
+  .wx-main { display: flex; align-items: center; gap: 8px; }
+  .ico-wx { width: 34px; height: 26px; }
+  .wx-sky { font-size: 14px; }
+  .wx-temp { font-size: 19px; }
+  .wx-temp small { font-size: 12px; }
+  .wx-rain { margin: 0 0 0 auto; font-weight: 700; white-space: nowrap; }
+  .wx-rain-x { display: none; }
+  .wx-rows { display: none; }
+  .ear-toc { grid-row: 3; min-width: 0; }
+  .ear-toc ol { display: flex; flex-wrap: wrap; gap: 6px; padding: 2px 0 6px; }
+  .ear-toc li { display: flex; flex: none; border: 1.5px solid var(--ink); padding: 0; }
+  .ear-toc .pgt { display: none; }
+  .ear-toc a { position: relative; display: flex; align-items: center; min-block-size: 38px; padding: 0 10px; white-space: nowrap; font-size: 14px; line-height: 1.4; }
+  .ear-toc a::after { content: ""; position: absolute; inset: -3.5px 0; } /* 觸控目標：畫面不變，可點範圍上下各多 3.5px（≥44px） */
+  .dateline { display: flex; flex-wrap: nowrap; justify-content: space-between; font-size: 13px; padding: 6px 0 5px; }
+  .dateline span, .dateline span:first-child, .dateline span:nth-child(3) { padding: 0 8px; text-align: start; white-space: nowrap; }
+  .dateline span:first-child { padding-left: 0; }
+  .dateline .dl-lunar, .dateline .dl-pages { display: none; }
+  .dateline .dl-no { padding-right: 0; }
+}
+@media (max-width: 720px) and (prefers-reduced-motion: no-preference) {
+  /* 手機：左半張改成從刊頭摺線往下攤開（不讓一整張長紙翻到畫面外） */
+  @keyframes unfold-v { 0% { transform: rotateX(-86deg); } 100% { transform: rotateX(0); } }
+  .extra[open] .leaf-a { animation: unfold-v 1.1s cubic-bezier(.2, .7, .25, 1) both; }
+  .extra[open] .leaf-a .back, .extra[open] .leaf-b::after { display: none; }
+}
+
+@media (max-width: 340px) { .essay { height: 470px; } .es-text { font-size: 15px; } }
+
+/* ---- 列印 ---- */
+@media print {
+  @page { margin: 12mm; }
+  html, body { background: #fff !important; color: #000 !important; }
+  .sheet { max-width: none; padding: 0; }
+  :root { --paper: #fff; --tint: #fff; --spot: #fff; --ink: #000; }
+  a { color: #000; text-decoration: none; }
+  mark.hl { background: none; text-decoration: underline; }
+  .extra::details-content { content-visibility: visible; display: block; height: auto; }
+  .extra > .extra-sheet { display: grid !important; }
+  .dogear, .tab-cta, .ico-fist, .jump, .ct-back { display: none !important; }
+  .leaf-a { animation: none !important; transform: none !important; }
+  .runhead::before { display: none; }
+  .ad, .qa, figure, .notice, table { break-inside: avoid; }
+  .flag-svg .flag-spot { display: none; }
+  img { filter: grayscale(1); }
+}
+
+.s404 { min-height: 100dvh; }
+.mast-404 .flag-wrap { max-width: 560px; margin: 6px auto 14px; }
+.clip-page { position: relative; margin-top: 20px; }
+.clip-cols { column-count: 4; column-gap: var(--gut); column-rule: 1px solid var(--ink); text-align: justify; text-justify: inter-character; }
+.clip-cols p { text-indent: 2em; }
+.clip-cols .g-hed { text-indent: 0; font: 900 24px/1.3 var(--sans); padding: 8px 0 6px; border-top: 3px solid var(--ink); margin-top: 6px; break-after: avoid; }
+.clip-cols .g-hed:first-child { margin-top: 0; }
+.hole {
+  position: absolute; left: 50%; top: 70px; translate: -50% 0; width: min(560px, calc(100% - 24px)); padding: 46px 40px 36px;
+  background: #cdb88e; color: var(--ink); border: 2px dashed var(--ink); box-shadow: inset 0 8px 16px rgb(29 26 22 / .28), 0 0 0 10px var(--paper);
+}
+.hole .sc { position: absolute; top: -17px; left: 30px; background: var(--paper); padding: 0 6px; line-height: 0; }
+.ico-sc { width: 48px; height: 28px; color: var(--ink); }
+.hole h1 { font: 900 44px/1.15 var(--sans); margin-bottom: 14px; }
+.hole p { font-size: 17px; }
+.hole .back { margin-top: 18px; font: 700 16px/1.6 var(--sans); }
+.hole .back a { display: inline-flex; gap: 8px; align-items: center; }
+@media (max-width: 720px) { .clip-cols { column-count: 2; } .hole { padding: 34px 20px 24px; top: 40px; } .hole h1 { font-size: 32px; } }
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<div class="sheet"><header class="mast">
+  <div class="mast-top">
+    <span>三榕里辦公處　發行</span>
+    <span class="mt-mid">每月第一、三個星期五出刊</span>
+    <span>印一千二百份・免費贈閱・每戶一份</span>
+  </div>
+  <div class="mast-row">
+    <section class="ear ear-wx" aria-labelledby="wx-h">
+      <h2 id="wx-h" class="ear-h">今日天氣</h2>
+      <div class="wx-main"><svg class="ico-wx" viewBox="0 0 64 48" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="24" cy="18" r="9"/><path d="M24 3v4M24 29v4M9 18h4M35 18h4M13.4 7.4l2.8 2.8M31.8 25.8l2.8 2.8M13.4 28.6l2.8-2.8M31.8 10.2l2.8-2.8"/></g><path d="M22 42h30a8 8 0 0 0 0-16a11 11 0 0 0-21-3a9 9 0 0 0-9 19z" fill="var(--paper)" stroke="currentColor" stroke-width="2.4"/><path d="M27 37h22" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 3"/></svg><p class="wx-sky">晴時多雲</p>
+        <p class="wx-temp"><span class="tnum">24</span><span class="wx-dash">–</span><span class="tnum">31</span><small>℃</small></p></div>
+      <p class="wx-rain">降雨<span class="wx-rain-x">機率</span> <span class="tnum">20</span>%</p>
+      <dl class="wx-rows"><div><dt>曬棉被</dt><dd>適宜，午後收</dd></div><div><dt>蚊子</dt><dd>多，倒掉積水</dd></div><div><dt>日出</dt><dd>05:45</dd></div><div><dt>日落</dt><dd>17:44</dd></div></dl>
+    </section>
+    <div class="flag-wrap">
+      <svg class="emblem" viewBox="-40 -40 80 80" aria-hidden="true" focusable="false"><circle r="37.5" fill="none" stroke="currentColor" stroke-width="3"/><circle r="32" fill="none" stroke="currentColor" stroke-width="1"/><path d="M-24.7 -3.9a4.7 4.7 0 1 1 9.4 0a4.7 4.7 0 1 1 -9.4 0ZM-14.6 -3.9a4.7 4.7 0 1 1 9.4 0a4.7 4.7 0 1 1 -9.4 0ZM-20.8 -7.8a5.9 5.9 0 1 1 11.7 0a5.9 5.9 0 1 1 -11.7 0ZM-20.5 -1.9a5.5 5.5 0 1 1 10.9 0a5.5 5.5 0 1 1 -10.9 0ZM-16.7 1.6L-17.7 21H-12.3L-13.3 1.6Z" fill="currentColor"/><path d="M-20.5 0.8V12.1M-9.1 0.8V10.6M-18.6 2.3V13.3" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M-18.9 -8.6a3.9 3.9 0 0 1 3.9 -3.1" stroke="var(--paper)" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M5.3 -3.9a4.7 4.7 0 1 1 9.4 0a4.7 4.7 0 1 1 -9.4 0ZM15.4 -3.9a4.7 4.7 0 1 1 9.4 0a4.7 4.7 0 1 1 -9.4 0ZM9.1 -7.8a5.9 5.9 0 1 1 11.7 0a5.9 5.9 0 1 1 -11.7 0ZM9.5 -1.9a5.5 5.5 0 1 1 10.9 0a5.5 5.5 0 1 1 -10.9 0ZM13.3 1.6L12.3 21H17.7L16.7 1.6Z" fill="currentColor"/><path d="M9.5 0.8V12.1M20.9 0.8V10.6M11.4 2.3V13.3" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M11.1 -8.6a3.9 3.9 0 0 1 3.9 -3.1" stroke="var(--paper)" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M-12.7 -5.1a6.1 6.1 0 1 1 12.2 0a6.1 6.1 0 1 1 -12.2 0ZM0.5 -5.1a6.1 6.1 0 1 1 12.2 0a6.1 6.1 0 1 1 -12.2 0ZM-7.6 -10.2a7.7 7.7 0 1 1 15.3 0a7.7 7.7 0 1 1 -15.3 0ZM-7.1 -2.5a7.1 7.1 0 1 1 14.3 0a7.1 7.1 0 1 1 -14.3 0ZM-2.2 2L-3.5 21H3.5L2.2 2Z" fill="currentColor"/><path d="M-7.1 1V15.3M7.7 1V13.2M-4.7 3.1V17.3" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M-5.1 -11.2a5.1 5.1 0 0 1 5.1 -4.1" stroke="var(--paper)" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M-27 21.5h54" stroke="currentColor" stroke-width="2.2"/></svg>
+      <h1 class="flag"><span class="sr-only">里民公報・三榕里</span><svg class="flag-svg" viewBox="0 -40 4120 1040" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+<defs><g id="mg"><path id="mg0" transform="translate(0 0)" d="M29 902H746L828 797Q828 797 843 808Q858 820 882 838Q905 856 930 876Q955 896 976 914Q972 930 946 930H37ZM115 690H683L760 592Q760 592 774 602Q789 613 811 630Q833 647 857 666Q881 685 901 702Q899 710 891 714Q883 718 872 718H123ZM710 110H700L766 37L899 140Q895 146 886 152Q876 158 860 161V550Q860 554 839 562Q818 571 790 578Q761 585 735 585H710ZM136 110V49L294 110H751V138H285V572Q285 579 266 591Q248 603 219 612Q190 621 158 621H136ZM206 306H758V334H206ZM206 507H758V535H206ZM420 118H574V917H420Z"/><path id="mg1" transform="translate(1040 0)" d="M85 822Q120 815 183 801Q246 787 326 768Q405 748 488 726L490 736Q444 773 357 833Q270 893 151 961ZM220 95 256 117V849L132 874L196 824Q205 868 198 900Q192 931 178 950Q163 970 147 979L64 829Q94 811 102 798Q110 785 110 763V95ZM110 48 270 106H256V166Q256 166 222 166Q187 166 110 166V106ZM562 326Q561 405 574 476Q586 548 616 610Q646 671 696 718Q746 765 821 794Q836 799 846 796Q856 794 864 784Q876 768 894 736Q911 704 925 674L935 677L918 814Q949 844 958 868Q966 891 951 917Q934 945 902 952Q869 959 832 952Q794 945 760 933Q658 889 592 825Q525 761 488 682Q450 602 434 512Q418 422 416 326ZM678 106 742 36 874 136Q870 142 860 148Q851 154 835 157V365Q835 369 814 378Q794 386 766 394Q739 401 714 401H688V106ZM776 318V346H196V318ZM776 106V134H196V106ZM801 418Q801 418 815 428Q829 439 851 456Q873 473 897 492Q921 510 940 527Q936 543 911 543H194V515H725Z"/><path id="mg2" transform="translate(2080 0)" d="M599 449Q595 460 580 466Q565 473 537 467L569 456Q541 503 498 556Q455 609 404 662Q353 714 300 758Q248 802 201 831V817H280Q273 888 252 928Q230 969 200 980L141 795Q141 795 150 792Q160 790 172 786Q183 781 189 776Q210 759 234 725Q258 691 283 647Q308 603 330 555Q352 507 369 460Q386 414 394 377ZM167 803Q213 803 284 799Q355 795 443 788Q531 781 626 772Q722 763 816 751L817 763Q724 804 576 854Q427 904 222 954ZM582 82 623 14 735 89Q725 102 698 109Q671 116 636 118Q661 189 712 250Q762 310 833 354Q904 399 992 424L990 436Q943 454 908 496Q873 537 861 583Q753 506 692 384Q631 261 609 98V82ZM634 82V110H488L479 82ZM483 157Q479 166 468 171Q458 176 440 174Q361 326 256 421Q152 516 22 575L13 567Q68 512 122 436Q175 359 220 268Q265 177 292 79ZM586 584Q685 613 750 652Q815 692 851 736Q887 780 900 822Q912 864 905 898Q898 932 877 952Q856 971 825 970Q794 970 758 943Q749 896 732 848Q714 801 690 756Q666 710 638 668Q609 626 577 590Z"/><path id="mg3" transform="translate(3120 0)" d="M471 375Q468 384 460 390Q451 395 434 394Q407 427 366 468Q326 508 282 540H269Q279 510 287 473Q295 436 302 398Q308 361 311 330ZM86 335Q150 350 184 374Q219 397 230 423Q241 449 235 471Q229 493 211 506Q193 520 169 519Q145 518 120 496Q119 455 106 413Q93 371 77 340ZM325 944Q324 948 296 960Q267 972 216 972H191V538H325ZM354 35Q353 45 346 52Q340 58 322 61V317H191V22ZM400 609Q400 609 412 618Q424 628 443 642Q462 657 482 674Q503 690 519 705Q515 721 491 721H32L24 693H335ZM390 467Q390 467 406 480Q422 492 444 510Q466 528 483 544Q480 560 457 560H59L51 532H338ZM405 234Q405 234 423 248Q441 262 465 282Q489 302 508 320Q505 336 481 336H36L28 308H348ZM371 90Q371 90 388 104Q406 117 430 136Q453 156 471 173Q467 189 444 189H70L62 161H317ZM774 94 836 37 945 124Q940 130 931 134Q922 139 907 142Q906 211 902 253Q898 295 888 318Q879 341 860 354Q839 368 812 372Q786 377 746 377Q746 353 743 338Q740 323 731 311Q721 300 707 292Q693 284 670 279V267Q687 268 711 269Q735 270 746 270Q763 270 769 264Q777 256 780 216Q783 177 784 94ZM501 41 643 94H629V940Q629 946 602 962Q574 977 524 977H501V94ZM661 450Q686 550 738 625Q790 700 857 754Q924 807 994 845L991 856Q951 861 921 888Q891 916 874 963Q813 905 768 834Q724 762 694 670Q664 577 648 456ZM785 441 848 374 964 469Q956 483 927 487Q915 579 884 668Q854 758 795 835Q736 912 635 968L627 957Q690 893 724 808Q759 724 775 629Q791 534 796 441ZM866 441V469H582V441ZM858 94V122H583V94Z"/></g><clipPath id="mc"><use href="#mg0"/><use href="#mg1"/><use href="#mg2"/><use href="#mg3"/></clipPath></defs>
+<path class="flag-spot" d="M24 608L54 589L556 591L1057 585L1559 581L2060 583L2562 573L3063 567L3565 568L4066 570L4126 556L4086 924L4066 911L3565 916L3063 925L2562 921L2060 933L1559 928L1057 928L556 930L54 945L-6 929Z"/><path class="flag-dry" d="M74 700L4036 677M74 842L4036 813" stroke-width="13" stroke-dasharray="221 441 403 233 267 302"/>
+<g clip-path="url(#mc)" class="flag-ink">
+<use href="#mg" class="fi"/>
+<use href="#mg" class="fo" stroke-width="108"/>
+<use href="#mg" class="fi2" stroke-width="94"/>
+<path class="fv" d="M1949.9 554.2L1943.8 535.6L1958.2 538.1ZM4097.7 225.3L4082.1 214.4L4094.7 208ZM3671.7 491L3651.6 478.8L3666.7 469.8ZM1845.1 867.9L1824.6 869.4L1830.8 855.4ZM1277.7 174.7L1246.5 171.8L1259.4 152.2ZM836.2 552.3L847.4 565.9L834.6 568.5ZM2472.2 362.6L2485.2 384.4L2466.3 385.3ZM4082.9 296.6L4058.7 306.1L4060.9 286.8ZM135.6 869.5L163.8 888.6L141.3 900.5ZM2791.9 101.2L2813.4 93.3L2811 110.3ZM710.5 880L710.2 916.3L686.4 903.4ZM3859.4 724.6L3890.3 710L3889.1 735.5ZM1847.9 826.8L1847.1 863.8L1823 850.3ZM2001.8 149.1L1992.7 179.6L1975.8 162.9ZM1836 404.5L1853.5 422.6L1835.4 427.7ZM1728.5 466.1L1706.9 444.9L1728.4 438.1ZM3802.8 573.6L3775.1 592.2L3772.6 567.4ZM2847.8 901.8L2866.1 890.4L2867.2 906.4ZM2307.7 710.5L2327.9 729.3L2308.5 736ZM1276.6 162.9L1309.9 154.3L1303.8 179.2ZM3750.7 85.7L3776.2 90.4L3764.2 105.5ZM1728.8 949.9L1694.7 936.5L1715.5 918.7ZM655 895.1L662.8 864.8L680 880.6ZM2200.2 797.4L2231.8 779L2232.8 806.3ZM3570.2 386.2L3597.1 370.2L3598.3 393.6ZM2413.1 537.5L2420.4 567.7L2398 561.9ZM2432.1 461.2L2458.3 447.5L2458.2 469.5ZM3522 291.8L3527 320.5L3506.3 313.7ZM2426.8 723.5L2430.1 704L2441.8 713ZM3989.2 953.3L4003.7 965.4L3990.6 970.7ZM3662 455L3692.2 445.6L3687.8 468.8ZM3957.9 382.9L3967.8 361.6L3978.4 375.6ZM2701.3 101.5L2679.2 104.5L2684.9 88.9ZM3561.7 401.8L3543.9 394.7L3554.9 385.5ZM161.5 279.5a3.9 3.9 0 1 1 7.8 0a3.9 3.9 0 1 1 -7.8 0ZM3661.2 294.9a6.4 6.4 0 1 1 12.8 0a6.4 6.4 0 1 1 -12.8 0ZM595.5 519.4a5 5 0 1 1 10.1 0a5 5 0 1 1 -10.1 0ZM980.1 732a4.8 4.8 0 1 1 9.7 0a4.8 4.8 0 1 1 -9.7 0ZM2776.3 912.5a6.8 6.8 0 1 1 13.5 0a6.8 6.8 0 1 1 -13.5 0ZM773.6 66a4.1 4.1 0 1 1 8.2 0a4.1 4.1 0 1 1 -8.2 0ZM1383.1 672.1a4.8 4.8 0 1 1 9.6 0a4.8 4.8 0 1 1 -9.6 0ZM1390.8 845.3a6.1 6.1 0 1 1 12.1 0a6.1 6.1 0 1 1 -12.1 0ZM2407.5 627.6a4.8 4.8 0 1 1 9.7 0a4.8 4.8 0 1 1 -9.7 0ZM865.2 597.9a6.9 6.9 0 1 1 13.8 0a6.9 6.9 0 1 1 -13.8 0ZM858.1 894.4a3.4 3.4 0 1 1 6.8 0a3.4 3.4 0 1 1 -6.8 0ZM3723.2 731.9a3 3 0 1 1 6 0a3 3 0 1 1 -6 0ZM294.3 655.3a2.7 2.7 0 1 1 5.3 0a2.7 2.7 0 1 1 -5.3 0ZM2991.9 667.8a4.4 4.4 0 1 1 8.9 0a4.4 4.4 0 1 1 -8.9 0ZM1453.8 839.6a2.8 2.8 0 1 1 5.6 0a2.8 2.8 0 1 1 -5.6 0ZM3939.8 452.2a3.3 3.3 0 1 1 6.7 0a3.3 3.3 0 1 1 -6.7 0ZM1758.2 338.1a4.8 4.8 0 1 1 9.6 0a4.8 4.8 0 1 1 -9.6 0ZM2004.3 789.4a5.1 5.1 0 1 1 10.3 0a5.1 5.1 0 1 1 -10.3 0ZM2874.3 677.2a5.3 5.3 0 1 1 10.6 0a5.3 5.3 0 1 1 -10.6 0ZM2304.6 79.3a6.9 6.9 0 1 1 13.9 0a6.9 6.9 0 1 1 -13.9 0ZM692.3 495.7a6.9 6.9 0 1 1 13.8 0a6.9 6.9 0 1 1 -13.8 0ZM767.6 764.2a5.5 5.5 0 1 1 11 0a5.5 5.5 0 1 1 -11 0ZM77.8 790.2a5.7 5.7 0 1 1 11.4 0a5.7 5.7 0 1 1 -11.4 0ZM3521.1 340.6a6.9 6.9 0 1 1 13.9 0a6.9 6.9 0 1 1 -13.9 0ZM578.2 220.8a5.8 5.8 0 1 1 11.6 0a5.8 5.8 0 1 1 -11.6 0ZM3342.2 151.3a3.4 3.4 0 1 1 6.8 0a3.4 3.4 0 1 1 -6.8 0ZM435.3 236.2a7 7 0 1 1 14 0a7 7 0 1 1 -14 0ZM3013.6 196.2a6.6 6.6 0 1 1 13.2 0a6.6 6.6 0 1 1 -13.2 0ZM4105.3 936a6.1 6.1 0 1 1 12.1 0a6.1 6.1 0 1 1 -12.1 0ZM1477.1 383.6a4.1 4.1 0 1 1 8.2 0a4.1 4.1 0 1 1 -8.2 0ZM1481 901.6a5.1 5.1 0 1 1 10.2 0a5.1 5.1 0 1 1 -10.2 0ZM1987.7 173a3.6 3.6 0 1 1 7.2 0a3.6 3.6 0 1 1 -7.2 0ZM312.4 623.8a3.6 3.6 0 1 1 7.3 0a3.6 3.6 0 1 1 -7.3 0ZM3841.2 243.8a3.7 3.7 0 1 1 7.3 0a3.7 3.7 0 1 1 -7.3 0ZM3962.4 874.2a3.4 3.4 0 1 1 6.8 0a3.4 3.4 0 1 1 -6.8 0ZM434.4 271.8a5.9 5.9 0 1 1 11.8 0a5.9 5.9 0 1 1 -11.8 0ZM901.2 654.1a4.3 4.3 0 1 1 8.7 0a4.3 4.3 0 1 1 -8.7 0ZM11.5 639.1a5.5 5.5 0 1 1 11 0a5.5 5.5 0 1 1 -11 0ZM2318 512.8a3.5 3.5 0 1 1 7.1 0a3.5 3.5 0 1 1 -7.1 0ZM3923.3 322.9a6.8 6.8 0 1 1 13.6 0a6.8 6.8 0 1 1 -13.6 0ZM336.2 267.3a6.7 6.7 0 1 1 13.3 0a6.7 6.7 0 1 1 -13.3 0ZM155.7 223.8a7 7 0 1 1 13.9 0a7 7 0 1 1 -13.9 0ZM2317.5 218.3a3.8 3.8 0 1 1 7.6 0a3.8 3.8 0 1 1 -7.6 0ZM1495 733.8a3.2 3.2 0 1 1 6.5 0a3.2 3.2 0 1 1 -6.5 0ZM1725.2 880.5a6.2 6.2 0 1 1 12.4 0a6.2 6.2 0 1 1 -12.4 0ZM949.3 156.3a4.5 4.5 0 1 1 9 0a4.5 4.5 0 1 1 -9 0ZM965.7 246.9a5.2 5.2 0 1 1 10.5 0a5.2 5.2 0 1 1 -10.5 0ZM3739.2 114.1a5.2 5.2 0 1 1 10.5 0a5.2 5.2 0 1 1 -10.5 0ZM1574.8 896a3 3 0 1 1 5.9 0a3 3 0 1 1 -5.9 0ZM3912.8 689.3a3.4 3.4 0 1 1 6.7 0a3.4 3.4 0 1 1 -6.7 0ZM2499.6 539.8a5.9 5.9 0 1 1 11.7 0a5.9 5.9 0 1 1 -11.7 0ZM1983.1 679.3a2.5 2.5 0 1 1 5.1 0a2.5 2.5 0 1 1 -5.1 0ZM707.8 478.7a3.8 3.8 0 1 1 7.6 0a3.8 3.8 0 1 1 -7.6 0ZM1228.6 97.9a4.3 4.3 0 1 1 8.6 0a4.3 4.3 0 1 1 -8.6 0ZM2724.8 808.1a5.2 5.2 0 1 1 10.5 0a5.2 5.2 0 1 1 -10.5 0ZM354.5 543.3a6.7 6.7 0 1 1 13.3 0a6.7 6.7 0 1 1 -13.3 0ZM1444 386.7a3.1 3.1 0 1 1 6.2 0a3.1 3.1 0 1 1 -6.2 0ZM2575.7 412a6.9 6.9 0 1 1 13.8 0a6.9 6.9 0 1 1 -13.8 0ZM3394.4 184.1a4.5 4.5 0 1 1 9.1 0a4.5 4.5 0 1 1 -9.1 0ZM1501.9 727.2a4.2 4.2 0 1 1 8.4 0a4.2 4.2 0 1 1 -8.4 0ZM3661.1 484.2a6.3 6.3 0 1 1 12.5 0a6.3 6.3 0 1 1 -12.5 0ZM2563.3 497.8a5.7 5.7 0 1 1 11.5 0a5.7 5.7 0 1 1 -11.5 0ZM3089 207.6a5.3 5.3 0 1 1 10.6 0a5.3 5.3 0 1 1 -10.6 0ZM2357.3 690a3.1 3.1 0 1 1 6.2 0a3.1 3.1 0 1 1 -6.2 0ZM3769.3 366.7a3 3 0 1 1 6.1 0a3 3 0 1 1 -6.1 0ZM1617.3 535.4a4.4 4.4 0 1 1 8.9 0a4.4 4.4 0 1 1 -8.9 0ZM1036.1 814.4a6.4 6.4 0 1 1 12.8 0a6.4 6.4 0 1 1 -12.8 0ZM3314.9 679.3a6.1 6.1 0 1 1 12.2 0a6.1 6.1 0 1 1 -12.2 0ZM2905.7 814.7a6 6 0 1 1 11.9 0a6 6 0 1 1 -11.9 0ZM2578.4 756.4a2.7 2.7 0 1 1 5.4 0a2.7 2.7 0 1 1 -5.4 0Z"/>
+<path class="fs" d="M484.5 533.5q412 -3.2 990.9 8.1M1359.9 270.4q412 -5.3 629.1 8.2M1046.9 528.9q412 -0.8 690.5 4.1" stroke-width="5"/>
+</g></svg></h1>
+      <p class="flag-sub" aria-hidden="true"><span>三榕里</span><span>社區報</span></p>
+    </div>
+    <nav class="ear ear-toc" aria-labelledby="toc-h">
+      <h2 id="toc-h" class="ear-h">本期要目</h2>
+      <ol role="list"><li><span class="pgt">一版</span><a href="#lead">涼亭不拆了</a></li><li><span class="pgt">一版</span><a href="#recycle">回收改二四六</a></li><li><span class="pgt">夾頁</span><a href="#extra">號外：拔河奪冠</a></li><li><span class="pgt">二版</span><a href="#letters">里長信箱</a></li><li><span class="pgt">二版</span><a href="#ads">分類小廣告</a></li></ol>
+    </nav>
+  </div>
+  <p class="dateline">
+    <span><time datetime="2026-10-02">中華民國一一五年十月二日</time></span><span>星期五</span><span class="dl-lunar">農曆八月廿二</span><span class="dl-no">第一八七期</span><span class="dl-pages">本期二版・號外夾頁一張</span>
+  </p>
+</header><main id="main"><section class="pg pg1" aria-label="第一版">
+  <article class="lead" id="lead" aria-labelledby="lead-h">
+    <p class="kicker">里民大會九十一票對十六票</p>
+    <h2 id="lead-h" class="hed hed-xl flat2"><span>榕樹下的涼亭</span><span>不拆了</span></h2>
+    <p class="dek">改為原地修繕：屋瓦重鋪、白蟻蛀空的樑柱換新；經費由里辦公處、福德祠與里民樂捐分攤，預定春節前完工</p>
+    <figure class="photo photo-lead">
+      <img src="assets/plate-pavilion.svg" width="880" height="500" alt="鋼筆排線插畫：三棵老榕樹下的涼亭，屋頂缺了幾片瓦，柱子之間拉著螢光色封鎖線；前景長椅上有阿伯搧扇子，右邊停著一台腳踏車。">
+      <figcaption><span class="tri" aria-hidden="true">▲</span>颱風過後掉了三片瓦的涼亭，目前仍以封鎖線圍起。長椅上的阿伯說，他每天還是來這裡坐，「看它有沒有好一點」。<span class="credit">（本報繪製）</span></figcaption>
+    </figure>
+    <p class="byline">〔本報志工記者吳佩芬／三榕里報導〕</p>
+    <div class="cols cols-lead">
+      <p class="first">九月二十日晚上七點半，三榕里活動中心擠進一百零七位里民，連走廊都站滿了人。這場里民大會只討論一件事：三棵老榕樹下那座涼亭，要拆，還是要修？</p><p class="">涼亭是民國六十八年由當時的里長發起、里民出錢出力蓋的，四十七年來是全里的客廳：早上有人打太極，中午有人睡午覺，晚上是下棋和講古的地方。今年七月颱風過後，屋頂掉了三片瓦，一根樑柱被白蟻蛀空，里辦公處先拉起封鎖線，區公所評估後建議「拆除，改建為鋼構休憩設施」。</p><p>消息一出，里長信箱一週收到四十一封信。住在二鄰、退休三十年的木工師傅黃金水說：「<q>樑換一根就好，拆掉太可惜了，那是我爸爸那一輩一根一根扛來的。</q>」也有人擔心安全：「修了以後，會不會再壞？」</p><blockquote class="pq"><p>「一根一根扛來的。」</p><p class="pq-by">黃金水，退休木工師傅</p></blockquote><p class="">大會上，黃師傅帶來自己畫的修繕圖，逐一說明哪幾根樑要換、瓦片怎麼補、白蟻怎麼防。舉手表決時，<em>九十一票</em>贊成原地修繕、十六票贊成改建，涼亭留了下來。</p>
+      <p class="jump"><a href="#lead-cont"><svg class="ico-fist" viewBox="0 0 40 20" aria-hidden="true" focusable="false"><path d="M2 6.5h8.5l2-2.5h6c1.8 0 2.2 1.5 1 2.2H37a1.9 1.9 0 0 1 0 3.8H22.6M22 10h3.2a1.7 1.7 0 0 1 0 3.4H21M21 13.4h2.6a1.6 1.6 0 0 1 0 3.2H20M20 16.6h1.4a1.5 1.5 0 0 1 0 3H11.5L10 18H2" fill="var(--paper)" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M2 5v15" stroke="currentColor" stroke-width="3"/></svg><span>涼亭修繕經費怎麼來，下轉第二版</span></a></p>
+    </div>
+  </article>
+  <article class="second" id="recycle" aria-labelledby="rc-h">
+    <p class="kicker">十月十三日起實施</p>
+    <h2 id="rc-h" class="hed hed-l flat1">垃圾車改週二、四、六</h2>
+    <p class="dek dek-s">收運時間提早半小時，晚上七點半在榕園街口等車</p>
+    <figure class="photo">
+      <img src="assets/plate-truck.svg" width="520" height="340" alt="鋼筆排線插畫：騎樓街口的垃圾車放著音樂，三位里民提著垃圾袋排隊，車尾穿螢光背心的清潔隊員伸手接過垃圾。">
+      <figcaption><span class="tri" aria-hidden="true">▲</span>傍晚七點，〈少女的祈禱〉從街角響起。穿螢光背心的清潔隊員說，車子每個點只停六分鐘。</figcaption>
+    </figure>
+    <div class="cols cols-2 narrow"><p>區清潔隊配合路線調整，自<mark class="hl">十月十三日（星期二）起</mark>，本里垃圾車與資源回收車改為<mark class="hl">每週二、四、六晚上七點半</mark>抵達榕園街口，比原來提早三十分鐘；週日、週一、週三、週五停收。</p><p>清潔隊提醒：聽到音樂就請出門，廚餘請用有蓋的容器，保麗龍要洗乾淨再回收；舊衣請直接投到里辦公處旁的回收箱，不必等車。</p></div>
+    <table class="sched">
+      <caption><span class="cap-in"><svg class="ico-rc" viewBox="0 0 48 44" aria-hidden="true" focusable="false"><path d="M27.3 11.7L34.9 24.8M39.4 32.6L30.1 27.6L39.6 22.1ZM33.9 34.5L18.7 34.5M9.7 34.5L18.7 29L18.7 40ZM10.8 28.8L18.4 15.7M22.9 7.9L23.2 18.4L13.6 12.9Z" fill="currentColor" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round"/></svg><span>本里收運表（十月十三日起）</span></span></caption>
+      <thead><tr><td></td><th scope="col" class="">一</th><th scope="col" class="on">二</th><th scope="col" class="">三</th><th scope="col" class="on">四</th><th scope="col" class="">五</th><th scope="col" class="on">六</th><th scope="col" class="">日</th></tr></thead>
+      <tbody><tr><th scope="row">一般垃圾</th><td><span class="none" role="img" aria-label="不收"></span></td><td class="on"><span class="dot" role="img" aria-label="有收"></span></td><td><span class="none" role="img" aria-label="不收"></span></td><td class="on"><span class="dot" role="img" aria-label="有收"></span></td><td><span class="none" role="img" aria-label="不收"></span></td><td class="on"><span class="dot" role="img" aria-label="有收"></span></td><td><span class="none" role="img" aria-label="不收"></span></td></tr><tr><th scope="row">資源回收</th><td><span class="none" role="img" aria-label="不收"></span></td><td class="on"><span class="dot" role="img" aria-label="有收"></span></td><td><span class="none" role="img" aria-label="不收"></span></td><td class="on"><span class="dot" role="img" aria-label="有收"></span></td><td><span class="none" role="img" aria-label="不收"></span></td><td class="on"><span class="dot" role="img" aria-label="有收"></span></td><td><span class="none" role="img" aria-label="不收"></span></td></tr><tr><th scope="row">廚餘</th><td><span class="none" role="img" aria-label="不收"></span></td><td class="on"><span class="dot" role="img" aria-label="有收"></span></td><td><span class="none" role="img" aria-label="不收"></span></td><td><span class="none" role="img" aria-label="不收"></span></td><td><span class="none" role="img" aria-label="不收"></span></td><td class="on"><span class="dot" role="img" aria-label="有收"></span></td><td><span class="none" role="img" aria-label="不收"></span></td></tr></tbody>
+    </table>
+    <section class="notice-box frame-wenwu" aria-labelledby="nb-h">
+      <h3 id="nb-h" class="nb-h">里辦公處公告</h3>
+      <ol class="nb-list" role="list"><li><span class="nb-n">一、</span><span>十月九日（星期五）上午九時至下午四時，三榕街、渡頭街一帶汰換自來水管，<mark class="hl">停水七小時</mark>，請事先儲水。</span></li><li><span class="nb-n">二、</span><span>社區大掃除訂於十月十八日（星期日）上午八時，請到各鄰鄰長家門口集合，穿長袖、自備手套。</span></li><li><span class="nb-n">三、</span><span>活動中心冷氣即日起開放至晚上九時。</span></li></ol>
+      <p class="nb-by">三榕里辦公處　啟</p>
+    </section>
+  </article>
+</section><details class="extra" id="extra">
+  <summary class="extra-tab">
+    <span class="stamp" aria-hidden="true"><span>號外</span></span>
+    <span class="tab-text"><span class="sr-only">號外：</span><span class="tab-teaser">區長青運動會拔河決賽，三榕里隊</span><span class="tab-cut" aria-hidden="true">……</span></span>
+    <span class="tab-open" aria-hidden="true">里民公報號外・第一八七期附張</span>
+    <span class="tab-cta"><span class="cta-open">翻開號外</span><span class="cta-close">收起號外</span></span>
+    <svg class="dogear" viewBox="0 0 60 60" aria-hidden="true" focusable="false"><path class="de-cut" d="M0 -2H62V60Z"/><path class="de-shadow" d="M2 0L60 58L60 64L-4 0Z"/><path class="de-flap" d="M0 0L60 60H0Z"/><path class="de-line" d="M0.8 0.8L59.2 59.2" /></svg>
+  </summary>
+  <div class="extra-sheet">
+    <div class="leaf leaf-a">
+      <div class="face">
+        <p class="x-stamp" aria-hidden="true">號外</p>
+        <p class="kicker">第三十一屆區長青運動會</p>
+        <h2 class="hed hed-x flat2"><span>三榕里隊</span><span>拔河奪冠</span></h2>
+        <p class="dek">決賽三戰兩勝擊敗北岸里，十六名隊員平均六十三歲：「贏在腳底沒打滑。」</p>
+        <div class="cols cols-2"><p>十月一日上午，區長青運動會拔河決賽在國小操場舉行。三榕里隊第一局被北岸里拖過中線，休息五分鐘後換了站位，第二、三局穩住陣腳連扳兩城，奪下睽違十二年的冠軍。</p><p>隊長、在市場賣豬肉的鄭阿龍說，祕訣是全隊穿了同一款雨鞋：「別人以為我們要去抓魚。」</p><p>冠軍獎盃將放在活動中心展示，獎金六千元，全隊決議全數捐作涼亭修繕。</p></div>
+      </div>
+      <div class="back" aria-hidden="true"><span>號外</span></div>
+    </div>
+    <div class="leaf leaf-b">
+      <figure class="photo">
+        <img src="assets/plate-tug.svg" width="660" height="360" alt="鋼筆排線插畫：拔河決賽，左邊綁螢光頭巾的三榕里隊員整排往後仰，繩子中央的紅布被拉過白線，後方裁判舉手，看台坐滿加油的人。" loading="lazy">
+        <figcaption><span class="tri" aria-hidden="true">▲</span>決賽第三局，紅布被拉過白線的那一刻。綁螢光頭巾的是三榕里隊。</figcaption>
+      </figure>
+      <table class="score">
+        <caption>決賽比分</caption>
+        <tbody><tr><th scope="row">第一局</th><td class="">北岸里勝</td></tr><tr><th scope="row">第二局</th><td class="win">三榕里勝</td></tr><tr><th scope="row">第三局</th><td class="win">三榕里勝</td></tr></tbody>
+      </table>
+      <p class="x-printed">本報號外　十月一日晚間九時付印</p>
+    </div>
+  </div>
+</details>
+<aside class="blank" aria-label="本欄空白">
+  <span class="blank-mark" aria-hidden="true"></span>
+  <p class="blank-note">本欄原定刊登「涼亭拆除公告」。里民大會決議不拆，特此留白。</p>
+</aside><section class="pg pg2" aria-label="第二版">
+  <p class="runhead"><span class="rh-name">里民公報</span><span class="rh-pg">第二版</span><span>生活・公告</span><span>中華民國一一五年十月二日　星期五</span></p>
+  <article class="letters" id="letters" aria-labelledby="lt-h">
+    <h2 id="lt-h" class="colhead"><span>里長信箱</span></h2>
+    <p class="lt-intro">里民來信，里長回覆。信請投里辦公處門口的綠色信箱，可不具名。</p>
+    <div class="cols cols-3">
+      <div class="qa">
+        <p class="q"><b class="qa-tag">問</b>巷口的路燈壞了兩個禮拜，晚上回家好暗，可以修嗎？<span class="who">住二十一巷的上班族</span></p>
+        <p class="a"><b class="qa-tag qa-a">答</b>已經報修，工班說零件要等，<mark class="hl">十月八日前</mark>會換好。這段時間里辦公處在巷口先放了一盞太陽能燈，請不要帶走它。</p>
+      </div><div class="qa">
+        <p class="q"><b class="qa-tag">問</b>公園的溜滑梯被太陽曬得好燙，小孩滑下來會燙到，可以加遮陽網嗎？<span class="who">四鄰　張媽媽</span></p>
+        <p class="a"><b class="qa-tag qa-a">答</b>遮陽網要等明年的預算。里辦公處先在溜滑梯旁邊掛了一支溫度計，超過四十度就插上「燙」的牌子，請家長幫忙看一眼。</p>
+      </div><div class="qa">
+        <p class="q"><b class="qa-tag">問</b>有人在榕樹下餵貓，碗放一整晚，招來螞蟻跟老鼠。<span class="who">不具名</span></p>
+        <p class="a"><b class="qa-tag qa-a">答</b>已經和餵貓的志工談過，他們同意晚上九點前收碗，並在福德祠後方設固定餵食點；位置圖貼在福德祠公告欄。</p>
+      </div><div class="qa">
+        <p class="q"><b class="qa-tag">問</b>活動中心的桌球桌可以借嗎？放學後想跟同學去打。<span class="who">十鄰　國二生</span></p>
+        <p class="a"><b class="qa-tag qa-a">答</b>可以。週一到週五下午四點到六點，到里辦公處登記、押學生證就能借，球拍自備。打完請把網子收好、燈關掉。</p>
+      </div><div class="qa">
+        <p class="q"><b class="qa-tag">問</b>我想學用手機叫計程車，里辦公處有開課嗎？<span class="who">七鄰　李阿嬤</span></p>
+        <p class="a"><b class="qa-tag qa-a">答</b>有！每週四下午兩點，活動中心「阿公阿嬤手機班」，大學生志工一對一教，免費，請帶自己的手機來。</p>
+      </div>
+    </div>
+  </article>
+  <article class="minutes" aria-labelledby="mn-h">
+    <h2 id="mn-h" class="colhead"><span>大會紀錄</span></h2>
+    <h3 class="mn-title">三榕里一一五年度第二次里民大會紀錄</h3>
+    <dl class="mn-meta"><div><dt>時間</dt><dd>一一五年九月二十日（星期日）下午七時三十分</dd></div><div><dt>地點</dt><dd>三榕里活動中心</dd></div><div><dt>出席</dt><dd>里民一百零七人（簽到簿存里辦公處）</dd></div><div><dt>主席</dt><dd>陳玉霞里長</dd></div><div><dt>紀錄</dt><dd>林文彬幹事</dd></div></dl>
+    <ol class="mn-items" role="list"><li><p><b>案由一</b>榕樹下涼亭拆除或修繕案。</p><p class="res"><b>決議</b>原地修繕（贊成九十一票、改建十六票）。</p></li><li><p><b>案由二</b>社區大掃除日期案。</p><p class="res"><b>決議</b>十月十八日（星期日）上午八時，各鄰集合後分區清掃，完成後活動中心供應鹹粥。</p></li><li><p><b>案由三</b>活動中心冷氣開放至晚上九時案。</p><p class="res"><b>決議</b>通過，電費由使用團體分攤。</p></li></ol>
+    <p class="mn-motion">臨時動議：溪邊步道加設照明，列入明年度建議事項。</p>
+    <p class="mn-end">散會：下午九時十分。</p>
+  </article>
+  <aside class="essay" aria-labelledby="es-h">
+    <p class="es-col">榕下閒話</p>
+    <h2 id="es-h" class="es-title">樹記得</h2>
+    <p class="es-text">三棵榕樹裡，最老的那棵據說一百二十歲。它看過牛車、腳踏車、摩托車，現在看大家低頭滑手機。樹不會說話，樹下的人會：誰家孩子考上大學、誰家的狗走丟了、哪一攤肉圓漲了五塊，全里都是在這裡先聽到的。七月颱風那晚，老榕斷了一根枝，剛好擱在涼亭的屋頂上；隔天大家都說，是樹捨不得涼亭一個人淋雨。涼亭留下來，故事就還有地方說。</p>
+    <p class="es-by">巷口　老張</p>
+  </aside>
+  <article class="adopt" aria-labelledby="ad-h">
+    <h2 id="ad-h" class="hed hed-m">三榕公園花台認養</h2>
+    <p class="ad-note">每座花台由一戶或一個團體照顧一年。澆水、除草、換季都由認養人決定。<span class="ad-path">沿溪邊步道，從公園東門數過去：</span></p>
+    <ol class="planters" role="list"><li class="pl">
+      <svg class="pl-art" viewBox="0 0 140 104" aria-hidden="true" focusable="false"><path d="M34 78V26" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M34 68Q30.5 61.6 23.5 63.5Q27 69.9 34 68Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M34 68Q41.2 68.6 43.5 61.7Q36.2 61.1 34 68Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M34 57.5Q32.3 51.2 25.9 52.5Q27.6 58.8 34 57.5Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M34 57.5Q40.2 59.6 42.7 53.6Q36.5 51.4 34 57.5Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M34 47Q32.9 41.1 27.2 43Q28.3 48.9 34 47Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M34 47Q39.8 48.6 40.6 42.6Q34.8 41.1 34 47Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M34 36.5Q33.3 30.6 27.6 32.1Q28.3 38 34 36.5Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M34 36.5Q39.5 38.7 40.9 32.9Q35.4 30.7 34 36.5Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M34 26Q37.5 22.2 34.6 18Q31.1 21.8 34 26Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M54 78V18" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M54 68Q50.8 61.3 43.5 62.6Q46.7 69.3 54 68Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M54 68Q61.3 69.4 64.5 62.7Q57.2 61.3 54 68Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M54 55.5Q52 49.2 45.6 50.9Q47.6 57.1 54 55.5Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M54 55.5Q60.4 56.8 62.2 50.5Q55.7 49.2 54 55.5Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M54 43Q52.8 36.7 46.5 37.9Q47.7 44.1 54 43Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M54 43Q60.2 44.5 61.8 38.3Q55.6 36.8 54 43Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M54 30.5Q53.5 24.8 48 26.6Q48.5 32.3 54 30.5Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M54 30.5Q59.5 32.3 60 26.6Q54.6 24.8 54 30.5Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M54 18Q57.5 14.2 54.5 10Q51.1 13.8 54 18Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M86 78V30" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M86 68Q84 61.2 76.9 61.8Q78.9 68.6 86 68Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M86 68Q93 69.1 95.6 62.4Q88.5 61.3 86 68Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M86 58.5Q82.9 52 76 53.7Q79 60.2 86 58.5Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M86 58.5Q93 60.1 95.9 53.6Q89 52 86 58.5Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M86 49Q83.6 43.1 77.7 45.5Q80.1 51.4 86 49Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M86 49Q92.3 50.2 93.4 43.9Q87.2 42.7 86 49Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M86 39.5Q84.3 33.8 78.9 36.4Q80.6 42.1 86 39.5Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M86 39.5Q91.6 41.5 92.8 35.7Q87.1 33.7 86 39.5Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M86 30Q88.7 25.6 85 22.1Q82.3 26.4 86 30Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M106 78V22" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M106 68Q102.5 61.2 95 62.5Q98.5 69.3 106 68Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M106 68Q113.6 68.3 116.2 61.1Q108.6 60.8 106 68Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M106 56.5Q103.4 49.9 96.5 51.1Q99 57.7 106 56.5Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M106 56.5Q113 57.5 115.4 50.8Q108.4 49.8 106 56.5Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M106 45Q103.9 38.8 97.5 40.5Q99.6 46.7 106 45Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M106 45Q112.5 45.9 113.9 39.5Q107.4 38.6 106 45Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M106 33.5Q105.2 27.8 99.9 30Q100.7 35.6 106 33.5Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M106 33.5Q111 36.2 112.4 30.7Q107.4 28 106 33.5Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M106 22Q108.6 17.6 104.9 14.1Q102.3 18.5 106 22Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M14 78h112l-7 22H21Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.8" /><path d="M17 85H123M26 85v7M44 85v7M62 85v7M80 85v7M98 85v7M116 85v7M19 92H121M35 92v7M53 92v7M71 92v7M89 92v7M107 92v7" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-width=".9"/></svg>
+      <p class="pl-no"><b>一號</b><span class="pl-what">九層塔、紫蘇</span></p>
+      <p class="pl-who">陳家阿嬤</p>
+      <p class="pl-note">可以摘，請說一聲</p>
+    </li><li class="pl">
+      <svg class="pl-art" viewBox="0 0 140 104" aria-hidden="true" focusable="false"><path d="M44 78Q42.19519959855825 45 43.09759979927912 12" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M43.5 54.9Q38.3 45.6 28.4 49.4Q33.5 58.7 43.5 54.9Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M43.3 41.7Q51.9 44.9 56.4 36.9Q47.8 33.7 43.3 41.7Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M37.1 14Q43.1 0 49.1 14Z" fill="currentColor"/><path d="M36.1 15l3 -6M50.1 15l-3 -6" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/><path d="M72 78Q71.53782269731164 41 71.76891134865582 4" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M71.9 52.1Q66.7 42.8 56.8 46.6Q61.9 55.9 71.9 52.1Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M71.8 37.3Q80.4 40.5 85 32.5Q76.3 29.3 71.8 37.3Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M73.3 -4.9L71.8 -13L70.2 -4.9M77 -3.3L79.1 -11.3L74.2 -4.7M79.7 -0.3L85.1 -6.6L77.7 -2.7M80.8 3.6L88.3 0.2L80.1 0.5M80.1 7.5L88.3 7.8L80.8 4.4M77.7 10.7L85.1 14.6L79.7 8.3M74.2 12.7L79.1 19.3L77 11.3M70.2 12.9L71.8 21L73.3 12.9M66.5 11.3L64.4 19.3L69.3 12.7M63.9 8.3L58.5 14.6L65.8 10.7M62.8 4.4L55.2 7.8L63.5 7.5M63.5 0.5L55.2 0.2L62.8 3.6M65.8 -2.7L58.5 -6.6L63.9 -0.3M69.3 -4.7L64.4 -11.3L66.5 -3.3" fill="var(--paper)" stroke="currentColor" stroke-width="1.2"/><circle cx="71.8" cy="4" r="9" fill="currentColor"/><path d="M70.9 -1a0.9 0.9 0 1 1 1.8 0a0.9 0.9 0 1 1 -1.8 0ZM74.1 0.2a0.9 0.9 0 1 1 1.8 0a0.9 0.9 0 1 1 -1.8 0ZM75.8 3.1a0.9 0.9 0 1 1 1.8 0a0.9 0.9 0 1 1 -1.8 0ZM75.2 6.5a0.9 0.9 0 1 1 1.8 0a0.9 0.9 0 1 1 -1.8 0ZM72.6 8.7a0.9 0.9 0 1 1 1.8 0a0.9 0.9 0 1 1 -1.8 0ZM69.2 8.7a0.9 0.9 0 1 1 1.8 0a0.9 0.9 0 1 1 -1.8 0ZM66.5 6.5a0.9 0.9 0 1 1 1.8 0a0.9 0.9 0 1 1 -1.8 0ZM65.9 3.1a0.9 0.9 0 1 1 1.8 0a0.9 0.9 0 1 1 -1.8 0ZM67.7 0.2a0.9 0.9 0 1 1 1.8 0a0.9 0.9 0 1 1 -1.8 0Z" fill="var(--paper)"/><path d="M100 78Q102.22583552636206 49 101.11291776318103 20" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M100.7 57.7Q95.5 48.4 85.6 52.2Q90.8 61.5 100.7 57.7Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M100.9 46.1Q109.5 49.3 114 41.3Q105.4 38.1 100.9 46.1Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M95.1 22Q101.1 8 107.1 22Z" fill="currentColor"/><path d="M94.1 23l3 -6M108.1 23l-3 -6" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/><path d="M14 78h112l-7 22H21Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.8" /><path d="M17 85H123M26 85v7M44 85v7M62 85v7M80 85v7M98 85v7M116 85v7M19 92H121M35 92v7M53 92v7M71 92v7M89 92v7M107 92v7" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-width=".9"/></svg>
+      <p class="pl-no"><b>二號</b><span class="pl-what">向日葵</span></p>
+      <p class="pl-who">三榕國小四年二班</p>
+      <p class="pl-note">十月底開花</p>
+    </li><li class="pl">
+      <svg class="pl-art" viewBox="0 0 140 104" aria-hidden="true" focusable="false"><path d="M20.1 74C20.1 72.7 19.7 68.5 20.2 66C20.6 63.4 21.2 61.1 22.6 58.8C24.1 56.5 26.8 54.1 28.8 52.3C30.9 50.5 32.8 49.8 35 47.9C37.2 46 39.3 42.3 42.1 40.8C44.9 39.2 48.7 39.6 51.7 38.6C54.6 37.6 56.9 35.5 59.9 34.7C63 33.9 66.7 33.6 70 33.6C73.3 33.5 76.3 33.8 79.5 34.3C82.7 34.9 86.3 35.9 89.2 37C92.1 38.2 94.1 39.9 96.7 41.1C99.3 42.4 102.3 42.5 104.8 44.4C107.3 46.3 109.5 50 111.6 52.3C113.7 54.6 116.3 55.9 117.4 58.2C118.5 60.5 118 63.5 118 66.1C118 68.7 117.6 72.7 117.6 74Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.8"/><path d="M34 74l6.2 -13.9M43 74l6.7 -13.3M52 74l7.7 -17.2M61 74l9.7 -10.3M70 74l8.7 -10.2M79 74l7.4 -12.5M88 74l8.6 -12.8M97 74l8.6 -18.1M106 74l8.7 -14.6" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><path d="M84.4 61.7h5.2M87 59.1v5.2M100.1 55.2h5.2M102.7 52.6v5.2M39.5 55.6h5.2M42.1 53v5.2M47.6 64h5.2M50.2 61.4v5.2M43 59.2h5.2M45.6 56.6v5.2M87.9 64.4h5.2M90.5 61.8v5.2M51.2 43.4h5.2M53.8 40.8v5.2M71.9 35.8h5.2M74.5 33.2v5.2M58.6 56.3h5.2M61.2 53.7v5.2M98.8 57.6h5.2M101.4 55v5.2M66.2 57.4h5.2M68.8 54.8v5.2M37.6 59.1h5.2M40.2 56.5v5.2M70.4 53.3h5.2M73 50.7v5.2" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/><path d="M14 78h112l-7 22H21Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.8" /><path d="M17 85H123M26 85v7M44 85v7M62 85v7M80 85v7M98 85v7M116 85v7M19 92H121M35 92v7M53 92v7M71 92v7M89 92v7M107 92v7" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-width=".9"/></svg>
+      <p class="pl-no"><b>三號</b><span class="pl-what">七里香</span></p>
+      <p class="pl-who">黃金水師傅</p>
+      <p class="pl-note">請勿折枝</p>
+    </li><li class="pl pl-vacant">
+      <svg class="pl-art" viewBox="0 0 140 104" aria-hidden="true" focusable="false"><path d="M70 80V40" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"/><path d="M50 22h40v20H50Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.8"/><path d="M57 29h26M57 35h16" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke-dasharray="2 3"/><path d="M23.7 74a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0ZM39.2 73.5a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0ZM50 73.5a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0ZM65.7 75.6a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0ZM85.3 74.6a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0ZM99.1 73.5a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0ZM112.1 74.8a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0Z" fill="currentColor"/><path d="M14 78h112l-7 22H21Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.8" stroke-dasharray="5 4"/></svg>
+      <p class="pl-no"><b>四號</b><span class="pl-what">空著</span></p>
+      <p class="pl-who"><span class="vacant-box">等你來認養</span></p>
+      <p class="pl-note">歡迎洽里辦公處</p>
+    </li><li class="pl">
+      <svg class="pl-art" viewBox="0 0 140 104" aria-hidden="true" focusable="false"><path d="M70 78C68 60 72 52 70 44M70 48L56 34M70 44L84 30" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/><path d="M39.8 27.9Q45.7 25.1 45.3 18.6Q39.4 21.4 39.8 27.9Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M32.6 32.6Q32.1 25.4 25.7 22.3Q26.1 29.4 32.6 32.6Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M97.8 33.9Q98.4 27.2 92.6 23.9Q92 30.6 97.8 33.9Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M84.2 28.7Q89.5 26.2 88.5 20.5Q83.1 22.9 84.2 28.7Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M64.8 28.3Q66.1 21.6 60.6 17.4Q59.4 24.1 64.8 28.3Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M51.6 27.7Q56.2 23.4 53.8 17.5Q49.2 21.8 51.6 27.7Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M42.2 21.8Q41.9 15.8 36.1 14.3Q36.4 20.3 42.2 21.8Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M83.1 15.8Q81.2 9.3 74.5 8.2Q76.4 14.7 83.1 15.8Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M50.2 28.8Q55.9 25.4 55.3 18.7Q49.5 22.1 50.2 28.8Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M76.4 23.1Q76.7 16.2 70.7 12.9Q70.4 19.8 76.4 23.1Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M91.6 30.6Q94.8 25.4 90.8 20.8Q87.6 26 91.6 30.6Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M95.5 27.4Q98.2 20.5 93.7 14.6Q91 21.5 95.5 27.4Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M55.9 22.2Q60.2 16.7 57.3 10.3Q53 15.8 55.9 22.2Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M75.6 28.7Q76 21.4 69.9 17.3Q69.5 24.6 75.6 28.7Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M46.4 28.9Q47 21.7 41 17.6Q40.5 24.8 46.4 28.9Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M89.2 30.7Q91 24.8 86 21.1Q84.2 27.1 89.2 30.7Z" fill="currentColor" stroke="currentColor" stroke-width="1.3"/><path d="M51.7 28a1.3 1.3 0 1 1 2.6 0a1.3 1.3 0 1 1 -2.6 0ZM54.5 29a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0ZM52.8 30.6a1 1 0 1 1 2 0a1 1 0 1 1 -2 0ZM64.2 16.9a1.3 1.3 0 1 1 2.6 0a1.3 1.3 0 1 1 -2.6 0ZM67 17.9a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0ZM65.3 19.5a1 1 0 1 1 2 0a1 1 0 1 1 -2 0ZM80.1 26.5a1.3 1.3 0 1 1 2.6 0a1.3 1.3 0 1 1 -2.6 0ZM82.9 27.5a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0ZM81.2 29.1a1 1 0 1 1 2 0a1 1 0 1 1 -2 0ZM47.9 33.3a1.3 1.3 0 1 1 2.6 0a1.3 1.3 0 1 1 -2.6 0ZM50.7 34.3a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0ZM49 35.9a1 1 0 1 1 2 0a1 1 0 1 1 -2 0ZM63.4 40.4a1.3 1.3 0 1 1 2.6 0a1.3 1.3 0 1 1 -2.6 0ZM66.2 41.4a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0ZM64.5 43a1 1 0 1 1 2 0a1 1 0 1 1 -2 0ZM47.8 19.3a1.3 1.3 0 1 1 2.6 0a1.3 1.3 0 1 1 -2.6 0ZM50.6 20.3a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0ZM48.9 21.9a1 1 0 1 1 2 0a1 1 0 1 1 -2 0ZM79.1 23.5a1.3 1.3 0 1 1 2.6 0a1.3 1.3 0 1 1 -2.6 0ZM81.9 24.5a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0ZM80.2 26.1a1 1 0 1 1 2 0a1 1 0 1 1 -2 0ZM57.5 16.2a1.3 1.3 0 1 1 2.6 0a1.3 1.3 0 1 1 -2.6 0ZM60.3 17.2a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0ZM58.6 18.8a1 1 0 1 1 2 0a1 1 0 1 1 -2 0ZM54.6 29.3a1.3 1.3 0 1 1 2.6 0a1.3 1.3 0 1 1 -2.6 0ZM57.4 30.3a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0ZM55.7 31.9a1 1 0 1 1 2 0a1 1 0 1 1 -2 0ZM68.9 22.4a1.3 1.3 0 1 1 2.6 0a1.3 1.3 0 1 1 -2.6 0ZM71.7 23.4a1.1 1.1 0 1 1 2.2 0a1.1 1.1 0 1 1 -2.2 0ZM70 25a1 1 0 1 1 2 0a1 1 0 1 1 -2 0Z" fill="currentColor"/><path d="M14 78h112l-7 22H21Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.8" /><path d="M17 85H123M26 85v7M44 85v7M62 85v7M80 85v7M98 85v7M116 85v7M19 92H121M35 92v7M53 92v7M71 92v7M89 92v7M107 92v7" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-width=".9"/></svg>
+      <p class="pl-no"><b>五號</b><span class="pl-what">桂花</span></p>
+      <p class="pl-who">福德祠志工隊</p>
+      <p class="pl-note">九月到十一月開花</p>
+    </li><li class="pl">
+      <svg class="pl-art" viewBox="0 0 140 104" aria-hidden="true" focusable="false"><path d="M40 78V38M40 58l-12 -10M40 50l11 -9" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 50Q25.3 44.7 19.3 45Q22.1 50.3 28 50Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M25 44Q25.7 34 27.2 31Q28.7 34 29.4 44Z" fill="currentColor"/><path d="M51 43Q56.9 43.3 59.7 38Q53.7 37.7 51 43Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M50.2 37Q50.9 27 52.4 24Q53.9 27 54.6 37Z" fill="currentColor"/><path d="M40 40Q43.2 35 40 30Q36.8 35 40 40Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M37.8 34Q38.5 24 40 21Q41.5 24 42.2 34Z" fill="currentColor"/><path d="M70 78V28M70 53l-12 -10M70 43l11 -9" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 45Q55.3 39.7 49.3 40Q52.1 45.3 58 45Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M55.3 39Q56 29 57.5 26Q59 29 59.7 39Z" fill="currentColor"/><path d="M81 36Q86.9 36.3 89.7 31Q83.7 30.7 81 36Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M81.5 30Q82.2 20 83.7 17Q85.2 20 85.9 30Z" fill="currentColor"/><path d="M70 30Q73.2 25 70 20Q66.8 25 70 30Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M69.3 24Q70 14 71.5 11Q73 14 73.7 24Z" fill="currentColor"/><path d="M100 78V40M100 59l-12 -10M100 51.400000000000006l11 -9" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M88 51Q85.3 45.7 79.3 46Q82.1 51.3 88 51Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M84.2 45Q84.9 35 86.4 32Q87.9 35 88.6 45Z" fill="currentColor"/><path d="M111 44.4Q116.9 44.7 119.7 39.4Q113.7 39.1 111 44.4Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M111.2 38.4Q111.9 28.4 113.4 25.4Q114.9 28.4 115.6 38.4Z" fill="currentColor"/><path d="M100 42Q103.2 37 100 32Q96.8 37 100 42Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M94.8 36Q95.5 26 97 23Q98.5 26 99.2 36Z" fill="currentColor"/><path d="M14 78h112l-7 22H21Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.8" /><path d="M17 85H123M26 85v7M44 85v7M62 85v7M80 85v7M98 85v7M116 85v7M19 92H121M35 92v7M53 92v7M71 92v7M89 92v7M107 92v7" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-width=".9"/></svg>
+      <p class="pl-no"><b>六號</b><span class="pl-what">朝天椒</span></p>
+      <p class="pl-who">張家兄妹</p>
+      <p class="pl-note">果實轉紅後由認養人採收</p>
+    </li></ol>
+  </article>
+  <article class="cal" aria-labelledby="cal-h">
+    <h2 id="cal-h" class="colhead"><span>十月行事曆</span></h2>
+    <div class="cal-wrap"><div class="cal-month" aria-hidden="true"><span class="cm-n">10</span><span class="cm-zh">十月</span><span class="cm-lunar">農曆八月廿一至九月廿二</span></div>
+  <table class="cal-t">
+    <caption class="sr-only">民國一一五年十月</caption>
+    <thead><tr><th scope="col">日</th><th scope="col">一</th><th scope="col">二</th><th scope="col">三</th><th scope="col">四</th><th scope="col">五</th><th scope="col">六</th></tr></thead>
+    <tbody><tr><td></td><td></td><td></td><td></td><td class="" ><span class="d">1</span></td><td class="today" aria-current="date"><span class="d">2</span></td><td class="" ><span class="d">3</span></td></tr><tr><td class="" ><span class="d">4</span></td><td class="" ><span class="d">5</span></td><td class="" ><span class="d">6</span></td><td class="" ><span class="d">7</span></td><td class="ev" ><span class="d">8</span><span class="evt">二十一巷路燈換新</span></td><td class="ev" ><span class="d">9</span><span class="evt">三榕街一帶停水</span></td><td class="ev hol" ><span class="d">10</span><span class="evt">國慶日</span></td></tr><tr><td class="" ><span class="d">11</span></td><td class="" ><span class="d">12</span></td><td class="ev" ><span class="d">13</span><span class="evt">垃圾車新時刻上路</span></td><td class="" ><span class="d">14</span></td><td class="ev" ><span class="d">15</span><span class="evt">阿公阿嬤手機班</span></td><td class="ev" ><span class="d">16</span><span class="evt">本報第一八八期出刊</span></td><td class="" ><span class="d">17</span></td></tr><tr><td class="ev" ><span class="d">18</span><span class="evt">社區大掃除・吃鹹粥</span></td><td class="" ><span class="d">19</span></td><td class="" ><span class="d">20</span></td><td class="" ><span class="d">21</span></td><td class="" ><span class="d">22</span></td><td class="" ><span class="d">23</span></td><td class="" ><span class="d">24</span></td></tr><tr><td class="" ><span class="d">25</span></td><td class="" ><span class="d">26</span></td><td class="" ><span class="d">27</span></td><td class="" ><span class="d">28</span></td><td class="" ><span class="d">29</span></td><td class="" ><span class="d">30</span></td><td class="ev" ><span class="d">31</span><span class="evt">王記商號最後營業日</span></td></tr></tbody>
+  </table>
+  <ol class="cal-list" role="list"><li><span class="cl-d"><span class="tnum">8</span>日（四）</span><span>二十一巷路燈換新</span></li><li><span class="cl-d"><span class="tnum">9</span>日（五）</span><span>三榕街一帶停水</span></li><li><span class="cl-d"><span class="tnum">10</span>日（六）</span><span>國慶日</span></li><li><span class="cl-d"><span class="tnum">13</span>日（二）</span><span>垃圾車新時刻上路</span></li><li><span class="cl-d"><span class="tnum">15</span>日（四）</span><span>阿公阿嬤手機班</span></li><li><span class="cl-d"><span class="tnum">16</span>日（五）</span><span>本報第一八八期出刊</span></li><li><span class="cl-d"><span class="tnum">18</span>日（日）</span><span>社區大掃除・吃鹹粥</span></li><li><span class="cl-d"><span class="tnum">31</span>日（六）</span><span>王記商號最後營業日</span></li></ol></div>
+  </article>
+  <article class="cont" id="lead-cont" aria-labelledby="ct-h">
+    <h2 id="ct-h" class="ct-h"><span class="ct-up">上接第一版</span>涼亭不拆了</h2>
+    <p>修繕經費估計約四十二萬元。里辦公處的建設經費支出二十萬元，福德祠管理委員會捐助十萬元，其餘由里民樂捐；截至十月一日，已收到樂捐十一萬三千元，另有三位師傅表示願意義務出工。</p><p>里長陳玉霞說，工程預計十一月開工、春節前完工，施工期間涼亭周邊會圍起來，「下棋的伯伯們請暫時移駕到活動中心，泡茶的熱水由里辦公處準備。」</p><p>樂捐請洽里辦公處，一律開立收據；捐款名單將刊登於本報，不願具名者請事先告知。</p>
+    <p class="ct-back"><a href="#lead">回頭條</a></p>
+  </article>
+</section><section class="classifieds" id="ads" aria-labelledby="cl-h">
+  <div class="cl-head"><h2 id="cl-h">分類小廣告</h2><p>免費刊登・每則五十字以內・請投里辦公處信箱・刊登前會打電話跟您確認</p></div>
+  <div class="cl-cols"><h3 class="ad-sec">徵求</h3><p class="ad frame-plain"><b class="tag">徵</b>家教：國二數學，每週二、四晚上，到府教學，時薪面議。洽榕園街十八號三樓。</p><p class="ad frame-meander"><b class="tag">徵</b>三榕長青合唱團缺男低音兩位，不需識譜。每週三上午九時，活動中心二號教室練唱。</p><h3 class="ad-sec">出讓・贈送</h3><p class="ad frame-plain"><b class="tag">讓</b>嬰兒推車一台，用了一年半，可平躺，送雨罩。八百元。洽二鄰林太太。</p><p class="ad frame-rope"><b class="tag">送</b>自家種的絲瓜，太多吃不完。放在福德祠旁的桌上，自取，一人兩條。</p><p class="ad frame-plain"><b class="tag">送</b>直立式鋼琴一台，去年調過音。三樓無電梯，需自行搬運；十月底前聯絡瓦窯巷三號。</p><p class="ad frame-zig"><b class="tag">送</b>小貓三隻，已斷奶、已驅蟲。限本里，需承諾結紮。</p><h3 class="ad-sec">招租・服務</h3><p class="ad frame-plain"><b class="tag">租</b>一樓店面，渡頭街口，約八坪，適合早餐店或洗衣店。月租面議。</p><p class="ad frame-wenwu"><b class="tag">修</b>紗窗、紗門、換鎖。本里四十年老店，隨叫隨到，週日公休。瓦窯巷七號，找老周。</p><p class="ad frame-plain"><b class="tag">教</b>毛筆字，週六上午，兒童、成人皆可，筆墨自備。</p><h3 class="ad-sec">尋物</h3><p class="ad frame-plain"><b class="tag">尋</b>黑色鑰匙一串，掛黃色小鴨。九月二十八日在公園遺失，拾獲請送里辦公處，必有薄禮。</p><div class="ad ad-cat frame-zig"><p class="ad-h">尋貓啟事</p><img src="assets/plate-cat.svg" width="200" height="200" alt="鋼筆畫像：橘白色的貓「肉鬆」坐著看鏡頭，左耳缺一角，脖子上有項圈和鈴鐺。"><p><b class="tag">尋</b>「肉鬆」：橘白色公貓，左耳有缺角，戴紅色項圈。九月三十日晚上從三榕街二十一巷走失。很怕生，看到請不要追，通知十二鄰吳家即可，感激不盡。</p></div><h3 class="ad-sec">啟事</h3><div class="ad notice n-closing frame-wenwu"><p class="n-h">歇業謝啟</p><p>王記商號自民國七十一年開業，承蒙鄉親照顧四十四年。因店主年事已高，訂於十月三十一日歇業。賒的帳不用還了，玻璃罐裡的糖，請小朋友來拿完。</p><p class="n-by">王阿土　敬啟</p></div><div class="ad notice n-obit"><p class="n-h">訃告</p><p>黃家愛犬來福，於九月二十六日凌晨在家中安詳離世，享壽十六歲。生前每日清晨隨主人巡守三榕街。謹此敬告鄰里，並感謝這些年照顧牠的街坊。</p><p class="n-by">黃家　泣啟</p></div><div class="ad notice n-err"><p class="n-h">更正</p><p>本報第一八六期第二版〈社區大掃除〉一文，日期誤植為十月十一日，正確為十月十八日（星期日），特此更正並致歉。</p></div></div>
+</section></main><footer class="colophon">
+  <div class="co-brand"><svg class="emblem" viewBox="-40 -40 80 80" aria-hidden="true" focusable="false"><circle r="37.5" fill="none" stroke="currentColor" stroke-width="3"/><circle r="32" fill="none" stroke="currentColor" stroke-width="1"/><path d="M-24.7 -3.9a4.7 4.7 0 1 1 9.4 0a4.7 4.7 0 1 1 -9.4 0ZM-14.6 -3.9a4.7 4.7 0 1 1 9.4 0a4.7 4.7 0 1 1 -9.4 0ZM-20.8 -7.8a5.9 5.9 0 1 1 11.7 0a5.9 5.9 0 1 1 -11.7 0ZM-20.5 -1.9a5.5 5.5 0 1 1 10.9 0a5.5 5.5 0 1 1 -10.9 0ZM-16.7 1.6L-17.7 21H-12.3L-13.3 1.6Z" fill="currentColor"/><path d="M-20.5 0.8V12.1M-9.1 0.8V10.6M-18.6 2.3V13.3" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M-18.9 -8.6a3.9 3.9 0 0 1 3.9 -3.1" stroke="var(--paper)" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M5.3 -3.9a4.7 4.7 0 1 1 9.4 0a4.7 4.7 0 1 1 -9.4 0ZM15.4 -3.9a4.7 4.7 0 1 1 9.4 0a4.7 4.7 0 1 1 -9.4 0ZM9.1 -7.8a5.9 5.9 0 1 1 11.7 0a5.9 5.9 0 1 1 -11.7 0ZM9.5 -1.9a5.5 5.5 0 1 1 10.9 0a5.5 5.5 0 1 1 -10.9 0ZM13.3 1.6L12.3 21H17.7L16.7 1.6Z" fill="currentColor"/><path d="M9.5 0.8V12.1M20.9 0.8V10.6M11.4 2.3V13.3" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M11.1 -8.6a3.9 3.9 0 0 1 3.9 -3.1" stroke="var(--paper)" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M-12.7 -5.1a6.1 6.1 0 1 1 12.2 0a6.1 6.1 0 1 1 -12.2 0ZM0.5 -5.1a6.1 6.1 0 1 1 12.2 0a6.1 6.1 0 1 1 -12.2 0ZM-7.6 -10.2a7.7 7.7 0 1 1 15.3 0a7.7 7.7 0 1 1 -15.3 0ZM-7.1 -2.5a7.1 7.1 0 1 1 14.3 0a7.1 7.1 0 1 1 -14.3 0ZM-2.2 2L-3.5 21H3.5L2.2 2Z" fill="currentColor"/><path d="M-7.1 1V15.3M7.7 1V13.2M-4.7 3.1V17.3" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M-5.1 -11.2a5.1 5.1 0 0 1 5.1 -4.1" stroke="var(--paper)" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M-27 21.5h54" stroke="currentColor" stroke-width="2.2"/></svg><p class="co-name">里民公報</p><p class="co-no">第一八七期・下期十月十六日出刊</p></div>
+  <dl class="co-rows"><div><dt>發行</dt><dd>三榕里辦公處</dd></div><div><dt>發行人</dt><dd>陳玉霞（里長）</dd></div><div><dt>總編輯</dt><dd>林文彬（幹事）</dd></div><div><dt>志工記者</dt><dd>吳佩芬、鄭阿龍、三榕國小校刊社</dd></div><div><dt>地址</dt><dd>三榕街一號（活動中心一樓）</dd></div><div><dt>辦公時間</dt><dd>週一至週五　上午九時至下午五時</dd></div></dl>
+  <div class="co-notes"><p>歡迎里民投稿，每篇五百字以內，請投入里辦公處門口的信箱。分類小廣告免費刊登，每則五十字以內。</p><p>主標採平二黑體，內文採明體；本期插圖由志工以鋼筆排線繪製，印刷廠壓黑、螢光綠兩版。</p><p class="co-recycle"><svg class="ico-rc" viewBox="0 0 48 44" aria-hidden="true" focusable="false"><path d="M27.3 11.7L34.9 24.8M39.4 32.6L30.1 27.6L39.6 22.1ZM33.9 34.5L18.7 34.5M9.7 34.5L18.7 29L18.7 40ZM10.8 28.8L18.4 15.7M22.9 7.9L23.2 18.4L13.6 12.9Z" fill="currentColor" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round"/></svg><span>舊報紙請放進紙類回收；也可送到里辦公處，轉給三榕幼兒園做美勞材料。</span></p></div>
+  <p class="co-end"><span>（本報完）</span><a href="#main">回第一版</a></p>
+</footer></div>
+<script>
+(()=>{const d=document.getElementById('extra');if(!d)return;const go=()=>{if(location.hash==='#extra'&&!d.open)d.open=true};addEventListener('hashchange',go);go();})();
+</script>
+</body>
+</html>

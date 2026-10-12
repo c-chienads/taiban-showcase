@@ -1,0 +1,1510 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F28" data-slug="tolerance-works">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>公差精工｜板件 CNC 詢價：輸入尺寸，產生圖面與詢價單</title>
+<meta name="description" content="台中大里的 CNC 銑削加工廠。輸入板件的長寬厚、孔數孔徑、四角、公差等級與數量，產生技術圖面、重量、工時、交期與參考單價，再組成可複製或列印的詢價單。">
+
+<meta name="generator" content="套版網站平台 F28">
+<link rel="icon" href="assets/mark.svg">
+<link rel="preload" href="fonts/01-noto-sans-tc.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/02-saira.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"Noto Sans TC";src:url("fonts/01-noto-sans-tc.woff2") format("woff2");font-weight:400 600;font-style:normal;font-display:swap}
+@font-face{font-family:"Saira";src:url("fonts/02-saira.woff2") format("woff2");font-weight:400 700;font-stretch:75% 100%;font-style:normal;font-display:swap}
+@font-face{font-family:"Azeret Mono";src:url("fonts/03-azeret-mono.woff2") format("woff2");font-weight:400 500;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root{
+  --con:oklch(0.62 0.013 75);--con-l:oklch(0.80 0.010 80);--con-ll:oklch(0.86 0.008 80);--con-d:oklch(0.50 0.013 75);
+  --gra:oklch(0.25 0.008 75);--gra-2:oklch(0.30 0.009 75);--gra-3:oklch(0.39 0.010 75);
+  --line:oklch(0.93 0.008 85);--line-2:oklch(0.74 0.010 80);
+  --yel:oklch(0.87 0.17 95);--ink:oklch(0.15 0.010 75);
+  --sans:"Noto Sans TC",system-ui,sans-serif;--num:"Saira","Noto Sans TC",sans-serif;--mono:"Azeret Mono","Noto Sans TC",monospace;
+  --focus-ring:2px dashed oklch(0.15 0.010 75);--focus-offset:3px;
+  --selection-bg:oklch(0.87 0.17 95);--selection-fg:oklch(0.15 0.010 75);
+  --pad:40px;
+  color-scheme:light;
+}
+html{background:var(--con)}
+body{background:var(--con);color:var(--ink);font:400 16px/1.75 var(--sans)}
+.n,.tnum,.u,.ro dd,.op-c,.op-s,.gm-c,.gm-v,.tm-v,.fm-a,.ct-v,.ax-l,.el,.nt .v{font-family:var(--num);font-stretch:87.5%;font-variant-numeric:tabular-nums}
+a{text-underline-offset:.22em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+h1,h2{font-weight:600;letter-spacing:-.01em}
+b,strong{font-weight:600}
+h2{font-size:34px;line-height:1.2}
+.sec-lead{max-width:44em;font-size:15.5px;margin-top:10px}
+.vh{position:absolute;inset:0;width:100%;height:100%;margin:0;appearance:none;-webkit-appearance:none;background:none;border:0;border-radius:0;cursor:pointer;z-index:1}
+.vh:focus-visible{outline:var(--focus-ring);outline-offset:2px}
+.vh:disabled{cursor:not-allowed}
+.nt .dev{font-size:12px}
+.dev{display:inline-grid;grid-template-rows:auto auto;vertical-align:-.36em;font-family:var(--num);font-stretch:87.5%;font-size:.7em;line-height:1.02;margin-inline:.1em .15em;font-variant-numeric:tabular-nums}
+
+/* ---------- 頂列 ---------- */
+.top{display:flex;align-items:center;gap:28px;padding:0 var(--pad);min-height:60px;border-bottom:2px solid var(--ink)}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-size:20px;letter-spacing:.06em}
+.mk{width:30px;height:30px}
+.mk-d{stroke:var(--ink)}
+.nav{display:flex;gap:22px;margin-left:auto;font-size:15px;font-weight:500}
+.nav a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-bottom-color:var(--ink)}
+.tel{font-family:var(--num);font-stretch:87.5%;font-size:19px;font-weight:600;text-decoration:none;font-variant-numeric:tabular-nums}
+.hd-rfq{display:inline-flex;align-items:baseline;gap:4px;padding:6px 12px;background:var(--ink);color:var(--yel);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+.hd-rfq .n{font-family:var(--num);font-stretch:87.5%;font-size:18px}
+.hd-rfq:focus-visible{outline-offset:3px}
+
+/* ---------- 選型器 ---------- */
+.tool{padding:20px var(--pad) 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);column-gap:48px;align-items:end}
+.tool>h1,.tool>.lead{margin-bottom:16px}
+.tool>h1{grid-column:1;grid-row:1;margin-bottom:10px}
+.tool>.lead{grid-column:2;grid-row:1/3}
+.tool>.rg{grid-column:1;grid-row:2;margin-bottom:16px}
+.tool>.cfg,.tool>.nojs{grid-column:1/-1}
+/* 輸入範圍：像圖框標題欄的一排「欄名＋數值」，單位統一寫在最後 */
+.rg{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 16px;margin:0;font-size:13.5px;line-height:1.45}
+.rg-l{display:flex;flex-wrap:wrap;gap:2px 16px;margin:0}
+.rg-l>div{display:flex;align-items:baseline;gap:5px;white-space:nowrap}
+.rg dt{font-weight:600}
+.rg dd{margin:0;font-family:var(--num);font-stretch:87.5%;font-weight:500;font-size:15px;font-variant-numeric:tabular-nums}
+.rg-k{padding-right:14px;border-right:2px solid var(--ink);font-weight:600}
+.rg-u{font-weight:500}
+h1{font-size:44px;line-height:1.15}
+.h1-p{display:inline-block}
+.lead{font-size:15px;line-height:1.7}
+.strip{display:flex;gap:28px;align-items:stretch;margin-bottom:12px;flex-wrap:wrap}
+.strip>.grp{flex:1 1 auto}.strip .opts{flex:1}.strip .op{flex:1 1 0}
+.seq{flex:0 0 auto;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;line-height:1.3;white-space:nowrap;padding:0 2px}
+.sq-a{width:22px;height:12px;flex:none}
+.sq-1{background:var(--ink);color:var(--yel);padding:4px 9px;font-weight:600}
+.grp{display:flex;align-items:stretch;gap:4px;position:relative}
+.grp>legend{float:left;writing-mode:vertical-rl;font-size:13px;font-weight:600;letter-spacing:.18em;padding:6px 6px 6px 0;border-right:2px solid var(--ink);margin-right:4px;line-height:1}
+.opts{display:flex;gap:4px;flex-wrap:wrap}
+.op{position:relative;display:grid;align-content:center;gap:1px;padding:7px 12px 6px;min-height:66px;background:var(--con-l);border:2px solid transparent;cursor:pointer;line-height:1.25;transition:background-color .12s}
+.op-m{grid-template-columns:auto minmax(0,1fr);column-gap:12px}
+.op-m>.op-c,.op-m>.op-n,.op-m>.op-s{grid-column:2}
+.sw{grid-column:1;grid-row:1/4;align-self:center;width:34px;height:34px;color:var(--ink)}
+.op:hover{background:var(--con-ll)}
+.op:has(input:checked){background:var(--yel);border-color:var(--ink)}
+.op:has(input:disabled){cursor:not-allowed;background:repeating-linear-gradient(-45deg,var(--con-l) 0 5px,var(--con-ll) 5px 10px);text-decoration:line-through}
+.op-c{font-size:20px;font-weight:600;line-height:1.1}
+.op-m .op-c{font-size:23px}
+.op-n{font-size:12.5px;font-weight:500}
+.op-s{font-size:12px}
+.op-m{min-width:92px}
+.ci{width:16px;height:16px;flex:none}
+/* 圖面註記欄裡的次要選擇（公差等級、四角） */
+.sel{border:0;margin:0;padding:0;min-width:0}
+.sel>legend{float:left;width:100%;padding:0;margin:0 0 4px}
+.sopts{clear:both;display:flex;gap:3px}
+.so{position:relative;flex:1 1 0;display:flex;align-items:center;justify-content:center;gap:4px;min-height:36px;border:1px solid var(--gra-3);background:var(--gra-2);color:var(--line);cursor:pointer;transition:background-color .12s}
+.so:hover{border-color:var(--line-2)}
+.so-c{font-family:var(--num);font-stretch:87.5%;font-size:16px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.so:has(input:checked){background:var(--yel);color:var(--ink);border-color:var(--yel)}
+.so:has(input:disabled){cursor:not-allowed;color:var(--line-2);background:repeating-linear-gradient(-45deg,var(--gra-2) 0 4px,var(--gra) 4px 8px)}
+.so:has(input:disabled) .so-c{text-decoration:line-through}
+.so .vh:focus-visible{outline:2px dashed var(--yel);outline-offset:2px}
+.nt-c .v{display:block;margin-top:5px}
+.g-pom{display:none;font-size:12px;color:var(--line);margin-top:2px}
+.cfg:has(input[name="m"][value="pom"]:checked) .g-pom{display:block}
+
+.canvas{container:cv/inline-size;background:var(--gra);color:var(--line)}
+.cv-in{display:grid;grid-template-columns:minmax(0,1fr)}
+.dwg{container:dw/inline-size;position:relative;min-width:0;align-self:start}
+.vw svg{display:block;width:100%;height:auto;max-width:none}
+.vw-w{display:none}
+.notes{padding:16px 18px 18px;font-size:13.5px;line-height:1.5}
+.nt-h{font-size:13px;font-weight:600;letter-spacing:.12em;color:var(--line);padding-bottom:8px;border-bottom:2px solid var(--line-2)}
+.nt{counter-reset:nt;margin:0;padding:0}
+.nt li{counter-increment:nt;display:grid;grid-template-columns:1.7em minmax(0,1fr);grid-template-rows:auto auto;column-gap:4px;padding:5px 0 6px;border-bottom:1px solid var(--gra-3)}
+.nt li::before{grid-row:1/3}
+.nt .k{font-size:12px;line-height:1.35}
+.nt .v{font-size:14.5px;line-height:1.4}
+.nt li::before{content:counter(nt);font-family:var(--num);color:var(--line-2)}
+.nt .k{color:var(--line-2)}
+.nt-x{margin-top:10px;font-size:12px;color:var(--line-2)}
+.nt-live{margin-top:12px;padding:2px 0 2px 10px;border-left:2px solid var(--yel);font-size:12.5px;line-height:1.55;color:var(--line)}
+.nt-live:not(.on){position:absolute;width:1px;height:1px;margin:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* 圖面（SVG 內的線型與字） */
+.dw{font-family:var(--num);font-stretch:87.5%}
+.dw .ol{fill:none;stroke:var(--line);stroke-width:2.2;stroke-linejoin:round}
+.dw .pf{fill:var(--gra-2)}
+.dw .hf{fill:var(--gra)}
+.dw .cl{fill:none;stroke:var(--line-2);stroke-width:1;stroke-dasharray:16 3 2.5 3}
+.dw .hd{fill:none;stroke:var(--line-2);stroke-width:1.1;stroke-dasharray:5 3}
+.dw .tn{fill:none;stroke:var(--line-2);stroke-width:1}
+.dw .ht{fill:none;stroke:var(--line-2);stroke-width:1}
+.dw .htd{stroke-dasharray:4 2.5}
+.dw .dm{fill:none;stroke:var(--yel);stroke-width:1}
+.dw .ah{fill:var(--yel)}
+.dw .dt,.dw .tl,.dw .lb2{fill:var(--yel);paint-order:stroke;stroke:var(--gra);stroke-width:4px;stroke-linejoin:round}
+.dw .dt{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.dw .tl{font-size:12px;font-weight:500}
+.dw .lb2{font-family:var(--sans);font-size:13px;font-weight:500}
+.dw .cp{fill:none;stroke:var(--line);stroke-width:3.2}
+.dw .cpl{fill:var(--line);font-size:15px;font-weight:600}
+.dw .fr,.dw .fs{fill:none;stroke:var(--line);stroke-width:1.2}
+.dw .bx{fill:var(--gra)}
+.dw .ft{fill:var(--line);font-size:13px;font-weight:500}
+.dw .dtm{fill:var(--line)}
+.dw .lb{fill:var(--line-2);font-family:var(--sans);font-size:13px;letter-spacing:.06em}
+.dw .is-t{fill:var(--gra-2);stroke:var(--line);stroke-width:1.8;stroke-linejoin:round}
+.dw .is-f{fill:oklch(0.35 0.010 75);stroke:oklch(0.35 0.010 75);stroke-width:.8}
+.dw .is-r{fill:oklch(0.44 0.011 78);stroke:oklch(0.44 0.011 78);stroke-width:.8}
+.dw .is-w{fill:oklch(0.40 0.010 75)}
+.dw .is-h{fill:none;stroke:var(--line);stroke-width:1.2}
+.dw .is-e{fill:none;stroke:var(--line);stroke-width:1.8;stroke-linecap:round}
+.dw-t .dt{font-size:13px}.dw-t .tl{font-size:12px}.dw-t .ft{font-size:12px}.dw-t .lb,.dw-t .lb2{font-size:12px}.dw-t .cpl{font-size:13px}
+
+/* 尺寸輸入：窄版排在圖下 */
+.dims{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 14px;padding:4px 16px 16px}
+.din{display:grid;gap:3px;align-content:start}
+.dl{font-size:13px;color:var(--line-2);display:flex;gap:4px}
+.dl-k{font-family:var(--num);color:var(--yel)}
+.fld{display:flex;align-items:stretch;background:var(--gra-2);border:2px solid var(--yel);min-height:46px;position:relative}
+.fld input,.fld select{background:none;border:0;border-radius:0;color:var(--yel);font-family:var(--num);font-stretch:87.5%;font-weight:600;font-size:22px;font-variant-numeric:tabular-nums;width:100%;min-width:0;padding:0 34px 0 8px;text-align:right;-moz-appearance:textfield;appearance:textfield}
+.fld input::-webkit-inner-spin-button,.fld input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.fld select{appearance:none;text-align:left;cursor:pointer;padding:0 24px 0 8px}
+.fld select option{background:var(--gra);color:var(--line)}
+.fld-n::after{content:"";position:absolute;right:8px;top:50%;margin-top:-2px;border:5px solid transparent;border-top-color:var(--yel);pointer-events:none}
+.fld .u{position:absolute;right:7px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--line-2);white-space:nowrap;pointer-events:none}
+.fld input:focus-visible,.fld select:focus-visible{outline:2px dashed var(--yel);outline-offset:4px}
+.din-H{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);grid-template-rows:auto auto;column-gap:10px;row-gap:3px}
+.din-H>.dl-n{grid-area:1/1}.din-H>.fld-n{grid-area:2/1}.din-H>.x{grid-area:2/2;align-self:center}.din-H>.dl-d{grid-area:1/3}.din-H>.fld-d{grid-area:2/3}
+.din-H .x{font-family:var(--num);color:var(--yel);font-size:18px;font-weight:600}
+
+/* 中寬：直版圖面＋右側註記 */
+@container cv (min-width:700px){
+  .cv-in{grid-template-columns:minmax(0,520px) minmax(0,1fr)}
+  .notes{border-left:1px solid var(--gra-3)}
+}
+/* 寬版：圖面＋輸入框疊在尺寸線上＋右側註記欄 */
+@container cv (min-width:1100px){
+  .cv-in{grid-template-columns:minmax(0,1fr) 316px}
+  .vw-w{display:block}.vw-t{display:none}
+  .dims{--u:calc(100cqw / 1040);position:absolute;inset:0;display:block;padding:0;pointer-events:none}
+  .din{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);pointer-events:auto;display:block}
+  .din-H{transform:translate(0,-50%);display:flex;align-items:center;gap:calc(var(--u) * 5)}
+  .dl{position:absolute;right:calc(100% + var(--u) * 4);top:50%;transform:translateY(-50%);font-size:calc(var(--u) * 13);line-height:1;font-weight:600}
+  .din-H .dl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .dl-zh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .fld{min-height:0;height:calc(var(--u) * 29);border-width:2px}
+  .fld input,.fld select{font-size:calc(var(--u) * 17.5);width:calc(3.1ch + var(--u) * 30);padding:0 calc(var(--u) * 24) 0 calc(var(--u) * 5)}
+  .fld select{width:calc(var(--u) * 42);padding:0 calc(var(--u) * 14) 0 calc(var(--u) * 6)}
+  .fld .u{right:calc(var(--u) * 5)}
+  .fld input:focus-visible,.fld select:focus-visible{outline-offset:calc(var(--u) * 3)}
+  .fld-n::after{right:calc(var(--u) * 5);border-width:calc(var(--u) * 4.5)}
+  .fld .u{font-size:calc(var(--u) * 11)}
+  .din-H .x{font-size:calc(var(--u) * 16)}
+  .notes{padding:18px 20px}
+}
+
+/* 結果列 */
+.readout{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:end;gap:20px 36px;padding:12px 0 0}
+.ro-k{display:block;font-size:13px;font-weight:500;line-height:1.3}
+.qty{display:inline-flex;align-items:center;border:2px solid var(--ink);background:var(--con-l);margin-top:4px}
+.qty input{width:3.6ch;border:0;background:none;font-family:var(--num);font-stretch:87.5%;font-weight:600;font-size:24px;text-align:right;font-variant-numeric:tabular-nums;-moz-appearance:textfield;appearance:textfield;padding:0}
+.qty input::-webkit-inner-spin-button,.qty input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.qty .u{font-size:13px;margin:0 6px 0 4px}
+.st{width:40px;height:44px;border:0;background:none;font-size:22px;font-weight:500;line-height:1}
+.st:hover{background:var(--con-ll)}
+.qty input:focus-visible{outline:var(--focus-ring);outline-offset:2px}
+.ro-l{display:flex;flex-wrap:wrap;gap:8px 34px;margin:0}
+.ro dd{margin:0;display:flex;align-items:baseline;white-space:nowrap}
+.ro .n{font-size:26px;font-weight:600;line-height:1.15}
+.ro-p .n{font-size:33px}
+.ro .n-m{font-size:24px}
+.ro .n-s{font-size:22px;font-weight:400;margin:0 1px}
+.ro .u{font-size:13px;margin-left:3px}
+.ro .u-l{margin:0 3px 0 0}
+.ro-go{display:flex;align-items:center;gap:16px}
+.add{min-height:54px;padding:0 26px;background:var(--yel);color:var(--ink);border:2px solid var(--ink);font:600 17px/1 var(--sans);letter-spacing:.06em;transition:background-color .12s,color .12s}
+.add:hover{background:var(--ink);color:var(--yel)}
+.cnt{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;text-decoration:none;white-space:nowrap}
+.cnt .n{font-size:20px;font-weight:600}
+.cnt-th{display:inline-flex;align-items:center;justify-content:center;width:56px;height:40px;background:var(--gra);overflow:hidden}
+.cnt-th .th{max-width:48px;max-height:32px;width:auto;height:auto}
+.nojs{margin-top:12px;font-size:13.5px;font-weight:500;max-width:60em}
+html.js .nojs{display:none}
+
+/* ---------- 詢價單 ---------- */
+.rfq{padding:84px var(--pad) 0;display:grid;grid-template-columns:auto minmax(0,1fr) auto;column-gap:40px;align-items:center}
+.rfq>.buyer-d,.rfq>.msg,.rfq>.doc{grid-column:1/-1}
+.rfq-h{display:flex;align-items:baseline;gap:16px;padding-right:40px;border-right:2px solid var(--ink)}
+.rfq-n{font-size:15px;white-space:nowrap}
+.rfq-n .n{font-size:30px;font-weight:600;margin-right:4px}
+.rfq-lead{max-width:39em;font-size:15px;line-height:1.65}
+.rfq>.buyer-d{margin-top:22px}
+.buyer-d summary{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px 0 12px;border:2px solid var(--ink);font-weight:600;font-size:15px;cursor:pointer;list-style:none;background:var(--con-l)}
+.buyer-d summary::-webkit-details-marker{display:none}
+.buyer-d summary::before{content:"+";font-family:var(--num);font-size:22px;line-height:1;width:14px;text-align:center}
+.buyer-d[open] summary::before{content:"−"}
+.buyer-d summary:hover{background:var(--con-ll)}
+.buyer-d summary:focus-visible{outline:var(--focus-ring);outline-offset:3px}
+.buyer{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) minmax(0,1.6fr);gap:12px 14px;align-items:end;margin-top:12px}
+.by-n{grid-column:1/-1;font-size:13.5px}
+.bf{display:grid;gap:4px}
+.bf label{font-size:13px;font-weight:500}
+.bf input{height:44px;border:2px solid var(--ink);background:var(--con-l);padding:0 10px;font-size:15px;min-width:0;width:100%}
+.bf input::placeholder{color:oklch(0.36 0.01 75)}
+.bf input:focus-visible{outline:var(--focus-ring);outline-offset:2px;background:var(--con-ll)}
+.acts{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.ac{min-height:44px;padding:0 18px;border:2px solid var(--ink);background:var(--ink);color:var(--yel);font:600 15px/1 var(--sans);letter-spacing:.04em}
+.ac:hover{background:var(--gra-3)}
+.ac-x{background:none;color:var(--ink)}
+.ac-x:hover{background:var(--con-l)}
+html:not(.js) .acts,html:not(.js) .rm{display:none}
+.msg{font-size:14px;font-weight:500;min-height:1.5em;margin:8px 0 6px}
+.doc{background:var(--gra);color:var(--line);padding:6px 28px 14px;font:400 13.5px/1.75 var(--mono)}
+.doc{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,2fr);grid-template-rows:auto 1fr;column-gap:30px}
+.r-hd{grid-column:1;grid-row:1}
+.r-ft{grid-column:1;grid-row:2;border-top:1px dashed var(--gra-3)}
+.items,.empty{grid-column:2;grid-row:1/3}
+.row{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding:16px 0}
+.items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:30px;align-content:start;border-left:1px dashed var(--gra-3);padding-left:30px}
+.items .row:nth-child(n+3){border-top:1px dashed var(--gra-3)}
+.gut{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:10px;font-family:var(--sans);min-height:34px}
+.gt{font-size:12px;color:var(--line-2);line-height:1.4}
+.th{display:block;overflow:visible}
+.th-p{fill:var(--gra-2);stroke:var(--yel);stroke-width:1.2}
+.th-h{fill:var(--gra);stroke:var(--yel);stroke-width:.9}
+.rm{min-height:32px;padding:0 10px;border:1px solid var(--line-2);background:none;color:var(--line);font-size:13px}
+.rm:hover{border-color:var(--yel);color:var(--yel)}
+.rm:focus-visible,.ac:focus-visible,.add:focus-visible,.st:focus-visible{outline:2px dashed var(--yel);outline-offset:3px}
+.ac:focus-visible,.add:focus-visible,.st:focus-visible{outline-color:var(--ink)}
+.txt{margin:0;font:inherit;white-space:pre-wrap;overflow-wrap:anywhere;word-break:normal}
+.txt .k{color:var(--line-2)}
+.empty{padding:22px 0 22px 30px;font-family:var(--sans);font-size:14px;border-left:1px dashed var(--gra-3)}
+
+/* ---------- 加工範圍（行程圖｜範圍外） ---------- */
+.rng{padding:96px var(--pad) 0}
+.rng-hd{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:40px;align-items:end;margin-bottom:22px}
+.rng-hd h2{padding-right:40px;border-right:2px solid var(--ink)}
+.rng .sec-lead{margin:0;max-width:52em;font-size:15.5px;font-weight:500;line-height:1.7}
+.env{margin:0;display:grid;grid-template-columns:minmax(0,62fr) minmax(0,38fr)}
+.env-in{position:relative;background:var(--con-ll)}
+.env-fig{position:relative}
+.env-svg{display:block;width:100%;height:auto}
+.eg{fill:none;stroke:oklch(0.72 0.010 80);stroke-width:1}
+.ecfg{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-dasharray:8 5}
+.eo{fill:none;stroke:var(--ink);stroke-width:3.5}
+.ept{fill:var(--yel);stroke:var(--ink);stroke-width:2}
+.eph{fill:var(--con-ll);stroke:var(--ink);stroke-width:1.5}
+.edm{fill:none;stroke:var(--ink);stroke-width:1.2}
+.eah{fill:var(--ink)}
+.el{position:absolute;margin:0;font-size:13.5px;line-height:1.35}
+.el-x{left:50%;top:calc(560 / 570 * 100%);transform:translate(-50%,-100%);background:var(--con-ll);padding:0 6px}
+.el-y{right:4px;top:50%;transform:translateY(-50%);background:var(--con-ll);padding:2px 0;writing-mode:vertical-rl}
+.el-t{left:calc(54 / 880 * 100%);top:calc(30 / 570 * 100%);font-family:var(--sans);font-weight:600;font-size:15px}
+.el-g{display:block;font-weight:500;font-size:12.5px}
+.el-c{left:calc(52 / 880 * 100%);top:calc(var(--y) + 8px);font-family:var(--sans)}
+.el-p{left:var(--x);top:var(--y);transform:translateY(calc(-100% - 6px));font-family:var(--sans);font-weight:600;white-space:nowrap}
+.env-spec{position:absolute;right:calc(64 / 880 * 100%);top:calc(36 / 570 * 100%);margin:0;display:grid;gap:4px;font-size:13.5px;line-height:1.4;max-width:46%}
+.env-spec div{display:grid;grid-template-columns:5.2em minmax(0,1fr);gap:8px}
+.env-spec dt{font-weight:600}
+.env-spec dd{margin:0}
+/* 範圍外：斜線欄（斜線＝範圍外，與公差尺右端同一個記號），高度與行程圖相同，項目平均分布 */
+.env-out{position:relative;padding:22px 24px 22px 26px;display:flex;flex-direction:column;gap:10px;background:repeating-linear-gradient(-45deg,var(--con-d) 0 2px,var(--con) 2px 11px);border-left:2px solid currentColor}
+.eo-h{align-self:flex-start;background:var(--ink);color:var(--con-ll);font-size:19px;font-weight:600;padding:4px 14px;letter-spacing:.18em}
+.eo-l{margin:0;padding:0;flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:8px}
+.eo-l li{background:var(--con-ll);padding:7px 12px 8px;display:grid;gap:1px;border-left:2px solid var(--ink)}
+.eo-a{font-size:15px;font-weight:600;line-height:1.4}
+.eo-t{display:inline-block;margin-right:9px;padding:0 7px;background:var(--ink);color:var(--con-ll);font-size:12px;font-weight:600;letter-spacing:.1em;line-height:1.55;vertical-align:.08em}
+.eo-b{font-size:13.5px;line-height:1.45}
+
+/* ---------- 公差等級 ---------- */
+.gr{margin-top:96px;padding:72px var(--pad) 64px;background:var(--gra);color:var(--line);display:flex;gap:36px;align-items:flex-start}
+.gr-v{writing-mode:vertical-rl;font-size:46px;line-height:1;letter-spacing:.14em;margin:0;padding:0 20px 0 0;border-right:2px solid var(--yel);color:var(--line)}
+.gr-main{flex:1 1 auto;min-width:0}
+.gr-sub{font-size:26px;font-weight:600;line-height:1.3}
+.gr .sec-lead{color:var(--line)}
+.ruler{position:relative;height:410px;margin-top:30px}
+.refs{position:absolute;inset:0 0 auto 0;height:100px;margin:0;padding:0}
+.rf{position:absolute;left:var(--a);top:calc(var(--r, 0) * 38px);height:calc(100px - var(--r, 0) * 38px);width:max(3px,calc(var(--b) - var(--a)))}
+.rf:nth-child(2){--r:1}
+.rf-bar{position:absolute;left:0;right:0;bottom:4px;height:7px;background:var(--line-2);min-width:3px}
+.rf::before{content:"";position:absolute;left:0;top:34px;bottom:11px;border-left:1px solid var(--line-2)}
+.rf-t,.rf-v{position:absolute;left:0;white-space:nowrap;font-size:13px;line-height:1.3}
+.rf-t{top:0}
+.rf:nth-child(2) .rf-t,.rf:nth-child(2) .rf-v{left:8px}
+.rf-v{top:17px;color:var(--line-2);font-family:var(--num);font-stretch:87.5%}
+.axis{position:absolute;left:0;right:0;top:104px;height:52px;z-index:1}
+.ax-svg{position:absolute;inset:0 0 auto 0;width:100%;height:22px}
+.ax-svg path{fill:none;stroke:var(--line);stroke-width:1.4;vector-effect:non-scaling-stroke}
+.ax-l{position:absolute;left:var(--x);top:27px;transform:translateX(calc(-100% - 5px));font-size:14px;line-height:1;white-space:nowrap}
+.ax-l:first-of-type{transform:translateX(5px)}
+.ax-u{position:absolute;right:0;top:-22px;font-size:13px;color:var(--line-2);background:var(--gra);padding:0 4px}
+.gms{position:absolute;left:0;right:0;top:176px;margin:0;padding:0}
+.gm{position:absolute;left:var(--x);top:0;width:min(170px,12.4%);padding:0 0 0 12px;border-left:2px solid var(--line-2);line-height:1.4}
+.gm::before{content:"";position:absolute;left:-2px;top:-44px;height:44px;border-left:2px solid var(--line-2)}
+.gm.on,.gm.on::before{border-color:var(--yel)}
+.gm-c{font-size:30px;font-weight:600;line-height:1}
+.gm.on .gm-c{color:var(--yel)}
+.gm-v{font-size:22px;margin:2px 0 6px}
+.gm-k{font-size:14px;font-weight:600}
+.gm-d{font-size:12.5px;color:var(--line-2);margin-top:4px}
+.zone{position:absolute;top:176px}
+.zone p{font-size:13.5px;line-height:1.5}
+.zl{left:0;width:calc(var(--b) - 24px);padding-top:4px}
+.zl p{max-width:15em;color:var(--line-2)}
+.zr{left:var(--a);right:0;top:0;bottom:0;background:repeating-linear-gradient(-45deg,var(--gra-3) 0 1.5px,transparent 1.5px 10px);border-left:2px solid var(--line-2)}
+.zr p{position:absolute;left:14px;right:10px;top:176px;background:var(--gra);padding:6px 8px;font-weight:500}
+.gr-note{margin-top:8px;max-width:50em;font-size:15px;color:var(--line)}
+
+/* ---------- 報價與交期：兩條尺寸鏈 ---------- */
+.calc{padding:64px var(--pad) 56px;background:var(--yel);color:var(--ink);display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr);column-gap:56px;align-items:start}
+.calc-n{padding-top:4px}
+.calc .sec-lead{margin:14px 0 0;font-size:15px;font-weight:500}
+.chain{display:flex;align-items:flex-start;gap:0;margin-top:30px}
+.ch-p{display:block;margin-top:0}
+.ch-m{position:relative;flex:1 1 auto;min-width:0}
+/* 總尺寸：線＋兩端箭頭，數字在線上方；兩端延伸線往下接到條 */
+.ch-all{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:12px;height:72px;margin:0;border-bottom:1.5px solid currentColor}
+.ch-all::before,.ch-all::after{content:"";position:absolute;bottom:-5.75px;width:15px;height:10px;background:currentColor}
+.ch-all::before{left:0;clip-path:polygon(0 50%,100% 0,100% 100%)}
+.ch-all::after{right:0;clip-path:polygon(100% 50%,0 0,0 100%)}
+.ch-m::before,.ch-m::after{content:"";position:absolute;top:56px;height:64px;border-left:1px solid currentColor}
+.ch-m::before{left:0}.ch-m::after{right:0}
+.ch-k{font-size:14px;font-weight:600;padding-bottom:9px}
+.ch-v{display:flex;align-items:baseline;gap:6px;line-height:1;padding-bottom:5px}
+.ch-v b{font-family:var(--num);font-stretch:87.5%;font-size:66px;font-weight:600}
+.ch-v small{font-size:15px;font-weight:500}
+.ch-v .dev{font-size:17px;vertical-align:baseline;align-self:center;margin-left:2px}
+/* 鏈式尺寸＋比例條 */
+.ch-row{display:flex;gap:2px}
+.sg{position:relative;flex:var(--v) 1 0;min-width:0;display:grid;grid-template-rows:40px 52px auto;row-gap:8px;transition:flex-grow .24s ease-out}
+.ch-p .sg{min-width:9.5rem}
+.sg::before{content:"";position:absolute;left:0;top:30px;height:18px;border-left:1px solid currentColor}
+.sg:last-child::after{content:"";position:absolute;right:0;top:30px;height:18px;border-left:1px solid currentColor}
+.sg-dim{position:relative;margin:0;display:flex;justify-content:center;align-items:flex-end;gap:3px;border-bottom:1px solid currentColor;padding-bottom:3px;line-height:1;white-space:nowrap}
+.sg-dim::before,.sg-dim::after{content:"";position:absolute;bottom:-4.5px;width:11px;height:8px;background:currentColor}
+.sg-dim::before{left:0;clip-path:polygon(0 50%,100% 0,100% 100%)}
+.sg-dim::after{right:0;clip-path:polygon(100% 50%,0 0,0 100%)}
+.sg-dim b{font-family:var(--num);font-stretch:87.5%;font-size:30px;font-weight:600}
+.sg-dim small{font-size:13px;font-weight:500}
+.sg-bar{margin:0;background:var(--ink);color:var(--yel);display:flex;align-items:center;padding:0 12px;font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;min-width:0}
+.sg-d{margin:0;font-size:13px;line-height:1.5;padding-right:10px}
+.ch-lim{margin:10px 0 0;font-size:14px;font-weight:500}
+.eq-sub{margin:22px 0 0;padding:12px 0 0;border-top:2px solid var(--ink);font-size:14px;line-height:1.7}
+.eq-sub b{font-family:var(--num);font-stretch:87.5%;font-weight:600}
+/* 交期：確認訂單之前是參考尺寸（括號、虛線框），之後是基準起算的鏈 */
+.ch-l{margin-top:26px}
+.ch-pre{flex:3 1 0;min-width:0;padding:120px 14px 0 0}
+.ch-pk{font-size:13px;font-weight:500;margin:8px 0 0}
+.ch-refs{display:flex;gap:2px}
+.rf2{flex:var(--v) 1 0;min-width:0;height:52px;display:flex;align-items:center;justify-content:space-between;gap:6px;padding:0 10px;border:2px dashed var(--ink);font-size:13.5px;font-weight:500;white-space:nowrap}
+.ch-l .ch-m{flex:var(--tot,6) 1 0;transition:flex-grow .24s ease-out;border-left:3px solid currentColor;padding-left:0}
+.ch-l .ch-m::before{display:none}
+.ch-l .sg{min-width:4.5rem}
+.ch-dat{position:absolute;top:0;right:calc(100% + 3px);display:flex;align-items:center;gap:6px;margin:0;font-size:13.5px;font-weight:600;white-space:nowrap}
+.ch-dt{width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:12px solid currentColor}
+.days-k{margin:6px 0 0;font-size:13px;line-height:1.55;max-width:26em}
+.ch-l .ch-all{height:62px}
+.ch-l .ch-v b{font-size:54px}
+.ch-l .ch-m::after{top:46px}
+.ch-l .ch-pre{padding-top:110px}
+
+/* ---------- 材質與係數 ---------- */
+.mat{padding:52px var(--pad) 0}
+.mt-t{width:100%;margin-top:18px;border-top:3px solid var(--ink);font-size:15px}
+.mt-t th,.mt-t td{text-align:left;padding:7px 14px 7px 0;vertical-align:baseline;border-bottom:1px solid var(--con-d)}
+.mt-t thead th{font-size:13px;font-weight:600;padding-top:10px;line-height:1.3;vertical-align:bottom}
+.mt-t thead small{display:block;font-family:var(--num);font-stretch:87.5%;font-weight:500;font-size:12.5px}
+.mt-t tbody th{font-weight:500;white-space:nowrap}
+.mt-c{font-family:var(--num);font-stretch:87.5%;font-size:22px;font-weight:600;margin-right:10px}
+.mt-t td.tnum,.mt-t td .tnum{font-size:20px;font-weight:600}
+.mt-bar{display:inline-block;vertical-align:middle;height:8px;width:calc(var(--r) * 90px);background:var(--ink);margin-left:10px}
+.mt-x{font-size:14px;max-width:16em}
+.mt-t tbody tr.on{background:var(--yel)}
+.mt-t tbody tr.on th{box-shadow:inset 6px 0 0 var(--ink)}
+.mt-t tbody tr.on th .mt-c{padding-left:16px}
+
+/* ---------- 送圖 ---------- */
+.send{padding:60px var(--pad) 64px;display:flex;gap:44px;align-items:flex-start}
+.send-v{writing-mode:vertical-rl;font-size:46px;line-height:1;letter-spacing:.14em;margin:0;padding:0 20px 0 0;border-right:2px solid var(--ink)}
+.send-l{flex:0 0 230px;margin-top:0;font-size:15px}
+.fmt{display:grid;grid-template-columns:repeat(2,auto);gap:22px 40px;margin:6px 0 0;padding:0;flex:0 0 auto}
+.fmt li{display:grid;line-height:1.3}
+.fm-a{font-size:66px;font-weight:600;line-height:1;font-stretch:80%;letter-spacing:.01em}
+.fm-b{font-family:var(--num);font-size:14px;margin-top:6px}
+.fm-c{font-size:13.5px}
+.ct{margin:6px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;flex:1 1 auto;border-top:2px solid var(--ink)}
+.ct div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:10px;padding:9px 0;border-bottom:1px solid var(--con-d)}
+.ct div:nth-child(3){grid-column:1/-1}
+.ct dt{font-size:13px;font-weight:600}
+.ct dt{padding-top:3px}
+.ct dd{margin:0;display:grid}
+.ct-v{font-size:19px;font-weight:600;line-height:1.35}
+.ct-v a{text-decoration:none}
+.ct-n{font-size:13px}
+
+/* ---------- 頁尾 ---------- */
+.foot{background:var(--gra);color:var(--line);padding:26px var(--pad) 28px;display:grid;gap:6px;font-size:13.5px}
+.ft-b{display:flex;align-items:center;gap:10px;font-size:17px}
+.foot .mk-d{stroke:var(--yel)}
+.ft-n{color:var(--line-2)}
+
+/* ---------- 404 ---------- */
+.e404{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);gap:40px;align-items:center;padding:72px var(--pad) 96px;min-height:calc(100dvh - 150px)}
+.e404 .lead{margin-top:14px;font-size:16px}
+.e4-l{margin-top:22px;padding:0;display:flex;gap:10px;flex-wrap:wrap}
+.e4-l a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:2px solid var(--ink);text-decoration:none;font-weight:600}
+.e4-l li:first-child a{background:var(--yel)}
+.e4-f{margin:0;background:var(--gra);color:var(--line);padding:18px 18px 14px}
+.e4-f svg{width:100%;height:auto;font-family:var(--num);font-stretch:87.5%}
+.e4-f .ph{fill:none;stroke:var(--line);stroke-width:2;stroke-dasharray:22 4 3 4 3 4}
+.e4-f .dm{fill:none;stroke:var(--yel);stroke-width:1.2}
+.e4-f .ah{fill:var(--yel)}
+.e4-f .dt{fill:var(--yel);font-size:24px;font-weight:600}
+.e4-f .cl{fill:none;stroke:var(--line-2);stroke-width:1;stroke-dasharray:16 3 2.5 3}
+.e4-f figcaption{font-size:13.5px;margin-top:8px;color:var(--line-2)}
+
+/* ---------- 平板：橫排放不下的兩段，收成上下堆疊／換行（第九輪 X08：768 曾溢出 170px） ----------
+   報價與交期：左欄 280px＋間距 56px 之後，尺寸鏈每段有最小寬（單價三段 9.5rem、交期五段 4.5rem），≤960px 時右欄不夠寬 → 左欄改到鏈的上方，鏈用滿內容寬
+   送圖：四個格式欄與聯絡欄並排，≤1200px 時聯絡欄被擠到 <410px（電話、時限逐字斷行，≤1000px 還把頁面撐寬）→ 聯絡欄換到下一行，用滿寬 */
+@media (min-width:761px) and (max-width:960px){
+  .calc{display:block}
+  .calc-c{margin-top:34px}
+}
+@media (min-width:761px) and (max-width:1200px){
+  .tool>.lead{grid-row:1}
+  .tool>.rg{grid-column:1/-1}
+  .send{flex-wrap:wrap;row-gap:30px}
+  .ct{flex:1 1 100%;margin-top:0}
+}
+
+/* ---------- 手機 ---------- */
+@media (max-width:760px){
+  :root{--pad:16px}
+  h2{font-size:27px}
+  .top{flex-wrap:wrap;gap:0 14px;padding-top:6px}
+  .brand{font-size:18px}
+  .tel{margin-left:auto;font-size:16px}
+  .hd-rfq{padding:4px 8px;font-size:13px}.hd-rfq .n{font-size:16px}
+  .mat{padding-top:36px}
+  .mt-t{font-size:12.5px;margin-top:18px}
+  .mt-t th,.mt-t td{padding:7px 6px 7px 0;white-space:normal}
+  .mt-t thead th{font-size:12px}
+  .mt-t thead small{font-size:12px}
+  .mt-c{font-size:15px;display:block;margin:0}.mt-n{font-size:12px;display:block}
+  .mt-t td.tnum,.mt-t td .tnum{font-size:15px}
+  .mt-bar{display:none}
+  .mt-t th:last-child,.mt-x{display:none}
+  .mt-t .tnum,.mt-t td.tnum{white-space:nowrap;overflow-wrap:normal}
+  .mt-t thead th{white-space:nowrap}
+  .mt-t tbody tr.on th .mt-c,.mt-t tbody tr.on th .mt-n{padding-left:10px}
+  .nav{order:3;width:calc(100% + 18px);margin:0 -9px;padding:0 9px;gap:18px;overflow-x:auto;white-space:nowrap;font-size:14px;scrollbar-width:none}
+  .nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 9px;margin-inline:-9px}
+  .st{width:44px}
+  .tool{padding-top:20px}
+  .tool{grid-template-columns:minmax(0,1fr)}
+  .tool>h1,.tool>.lead,.tool>.rg{grid-column:1;grid-row:auto}
+  .tool>h1{margin-bottom:8px}.tool>.lead{margin-bottom:10px}.tool>.rg{margin-bottom:14px;gap:2px 12px;font-size:13px}
+  .rg-k{border-right:0;padding-right:0}
+  .rg-u{margin-left:auto}
+  .rg-l{order:1;flex:1 1 100%;gap:2px 12px}
+  h1{font-size:29px;line-height:1.25}
+  .lead{font-size:14.5px}
+  .strip{flex-direction:column;gap:8px}
+  .seq{order:-1;font-size:13px;gap:6px;white-space:normal;flex-wrap:wrap}
+  .sq-a{width:16px}
+  .opts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));flex:1;gap:3px}
+  .g-m .opts{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .op{min-width:0;padding:6px 6px 5px;min-height:50px}
+  .op-m{min-width:0;padding:6px 4px 5px;grid-template-columns:minmax(0,1fr)}
+  .op-m>.op-c,.op-m>.op-n,.op-m>.op-s{grid-column:1}
+  .sw{display:none}
+  .op-c{font-size:17px}
+  .op-m .op-c{font-size:14.5px;letter-spacing:-.01em}
+  .op-n{font-size:12px}.op-s{font-size:12px;letter-spacing:-.02em}
+  .nt-c{grid-column:1/-1}
+  .so{min-height:44px}
+  .nt-c .v{display:inline-block;margin:4px 10px 0 0}
+  .g-pom{display:none}
+  .dims{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:2px 14px 14px}
+  .fld{min-height:44px}
+  .fld input,.fld select{font-size:20px}
+  .notes{padding:10px 14px 14px;font-size:13px}
+  .nt{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:14px}
+  .nt li{padding:4px 0}
+  .nt .v{font-size:13.5px}
+  .nt-x{display:none}
+  .nt-live{margin-top:10px}
+  .readout{grid-template-columns:minmax(0,1fr);gap:12px;padding-top:14px}
+  .ro-l{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 12px}
+  .ro-p,.ro-l .ro:last-child{grid-column:1/-1;display:flex;align-items:baseline;gap:10px}
+  .ro .n{font-size:24px}.ro-p .n,.ro .n-m{font-size:21px}.ro .n-s{font-size:17px}
+  .ro-go{gap:12px}
+  .add{flex:1 1 auto}
+  .rfq{padding-top:44px}
+  .rfq-lead{font-size:14px}
+  .rfq{grid-template-columns:minmax(0,1fr);row-gap:10px}
+  .rfq-h{border-right:0;padding-right:0}
+  .rfq>.buyer-d{margin-top:4px}
+  .buyer{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .bf:first-of-type,.bf-w{grid-column:1/-1}
+  .doc{padding:2px 14px 10px;font-size:12.5px;margin-inline:-16px;display:block}
+  .row{padding:9px 0}
+  .r-hd .gut,.r-ft .gut{display:none}
+  .items{grid-template-columns:minmax(0,1fr);border-left:0;padding-left:0}
+  .items .row,.r-ft{border-top:1px dashed var(--gra-3)}
+  .empty{border-left:0;padding-left:0}
+  .rm{min-height:44px}
+  .rng{padding-top:36px}
+  .rng-hd{display:block;margin-bottom:16px}
+  .rng-hd h2{padding-right:0;border-right:0;margin-bottom:8px}
+  .env{grid-template-columns:minmax(0,1fr);margin-inline:-16px}
+  .env-spec{position:static;max-width:none;padding:10px 16px 14px;border-top:1px solid oklch(0.72 0.010 80)}
+  .el{font-size:12px}
+  .el-t{font-size:12px}
+  .el-c{display:none}
+  .env-out{padding:14px 16px 16px;gap:8px;border-left:0}
+  .eo-l{gap:5px}
+  .eo-l li{display:block;padding:4px 9px 5px;line-height:1.45}
+  .eo-a{font-size:13.5px}
+  .eo-b{font-size:12.5px;margin-left:.5em}
+  .eo-h{font-size:17px}
+  .rng .sec-lead{font-size:14px}
+  .gr{margin-top:0;padding:36px var(--pad) 32px;display:block}
+  .gr-v{writing-mode:horizontal-tb;font-size:30px;letter-spacing:.06em;padding:0 0 8px;border-right:0;border-bottom:2px solid var(--yel);display:inline-block}
+  .gr-sub{font-size:20px;margin-top:10px}
+  .ruler{height:auto;margin-top:26px}
+  .refs{position:relative;height:132px}
+  .rf:nth-child(3){--r:2}
+  .rf{top:calc(var(--r, 0) * 36px);height:calc(132px - var(--r, 0) * 36px)}
+  .rf::before{top:36px}
+  .rf-t,.rf-v{font-size:12px}
+  .rf:nth-child(3) .rf-t,.rf:nth-child(3) .rf-v{left:auto;right:-6px}
+  .axis{position:relative;top:0;height:48px}
+  .ax-l{font-size:12px}
+  .ax-l:nth-of-type(even){top:34px}
+  .gms{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 12px;margin-top:16px}
+  .gm{position:static;width:auto;padding-left:10px}
+  .gm-c{font-size:24px}.gm-v{font-size:18px;margin-bottom:3px}.gm-k{font-size:13px}.gm-d{font-size:12px;margin-top:2px}
+  .gm-d:nth-of-type(5){display:none}
+  .gr .sec-lead,.gr-note{font-size:14px}
+  .gm::before{display:none}
+  .zone{position:static;margin-top:14px}
+  .zl{width:auto}
+  .zr{padding:10px 0}
+  .zr p{position:static;margin-left:10px;display:inline-block}
+  .calc{padding:36px var(--pad) 34px;display:block}
+  .calc .sec-lead{font-size:14px;margin-top:8px}
+  .ch-p{margin-top:16px}
+  .ch-all{height:58px;gap:8px}
+  .ch-m::before,.ch-m::after{top:44px;height:54px}
+  .ch-k{font-size:12.5px;padding-bottom:6px}
+  .ch-v b{font-size:44px}
+  .ch-v small{font-size:12.5px}
+  .ch-v .dev{font-size:13px}
+  .sg{grid-template-rows:34px 48px auto;row-gap:6px}
+  .sg::before,.sg:last-child::after{top:26px;height:14px}
+  .ch-p .sg{min-width:5.4rem}
+  .sg-dim b{font-size:22px}
+  .sg-dim small{font-size:12px}
+  .sg-bar{font-size:12.5px;padding:0 6px;white-space:normal;line-height:1.2}
+  .sg-d{font-size:12px;padding-right:4px}
+  .sg-x{display:none}
+  .ch-lim{font-size:12.5px}
+  .eq-sub{font-size:13px;margin-top:14px}
+  .ch-l{flex-wrap:wrap;margin-top:22px}
+  .ch-l .ch-pre{flex:1 1 100%;padding:0 0 12px;display:flex;align-items:center;gap:10px}
+  .ch-refs{flex:1 1 auto}
+  .ch-pk{margin:0;flex:0 0 7.5em;font-size:12px;line-height:1.35}
+  .rf2{height:40px;font-size:12.5px;padding:0 6px}
+  .ch-l .ch-m{flex:1 1 100%}
+  .ch-l .sg{min-width:2.9rem}
+  .ch-l .sg-d{display:none}
+  .ch-dat{position:static;margin:8px 0 0 -3px;font-size:12.5px;flex-direction:row-reverse;justify-content:flex-end}
+  .ch-dt{border-top:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:12px solid currentColor;margin-left:-4px}
+  .ch-l .ch-all{height:52px}
+  .ch-l .ch-v b{font-size:40px}
+  .ch-l .ch-m::after{top:38px;height:54px}
+  .ch-pre{flex-wrap:wrap}
+  .ch-pre .days-k{flex:1 1 100%;margin:4px 0 0;font-size:12px;max-width:none}
+  .send{padding:36px var(--pad) 32px;display:block}
+  .send-v{writing-mode:horizontal-tb;font-size:30px;letter-spacing:.06em;padding:0 0 8px;border-right:0;border-bottom:2px solid var(--ink);display:inline-block}
+  .send-l{margin-top:12px}
+  .send .sec-lead{font-size:14px}
+  .fmt{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;margin-top:20px}
+  .fm-a{font-size:34px}
+  .ct{margin-top:26px}
+  .ct{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:14px}
+  .ct div{grid-template-columns:minmax(0,1fr);gap:0;padding:8px 0}
+  .ct div:nth-child(3){grid-column:1/-1}
+  .ct-v{font-size:17px}
+  .e404{grid-template-columns:minmax(0,1fr);padding:40px var(--pad) 56px;min-height:0}
+}
+@media (max-width:760px){.foot{padding:24px var(--pad) 28px}.mat .sec-lead,.send .sec-lead{font-size:14px}}
+/* 材質表：≤360px 時六欄的不換行標題加起來（308px）比內容寬（視窗－32px）還寬，320 曾溢出 4px。標題文字改成可換行（單位小字 g/cm³、元/kg、工作天 仍不換行），表格就能縮進欄位；≥360px 時表格放得下，換行不會發生，外觀不變 */
+@media (max-width:360px){.mt-t thead th{white-space:normal}.mt-t thead small{white-space:nowrap}}
+@media (pointer:coarse){.rm{min-height:44px}label.ro-k,.bf label,label.dl{min-block-size:0}}
+
+/* ---------- 動效 ---------- */
+@media (prefers-reduced-motion:reduce){
+  .sg,.ch-m,.ch-l .ch-m,.op,.so,.add{transition:none}
+}
+
+/* ---------- 列印：只印圖面與詢價單 ---------- */
+@media print{
+  html,body{background:#fff;color:#000}
+  .nav,.tel,.hd-rfq,.mat,.tool>h1,.tool>.lead,.strip,.readout,.sopts,.g-pom,.nojs,.acts,.buyer-d,.msg,.nt-live,.rfq-lead,.rng,.gr,.calc,.send,.ft-n,.dims,.rm{display:none!important}
+  .rfq{display:block}.rfq-h{border:0}
+  .top{border-bottom:1px solid #000}
+  .tool,.rfq{padding:12px 0 0}
+  .canvas{display:block;background:#fff;color:#000}
+  .vw-w{display:none!important}.vw-t{display:block!important;max-width:120mm}
+  .dw .ol,.dw .fr,.dw .fs,.dw .cp{stroke:#000}.dw .pf,.dw .hf,.dw .bx{fill:#fff}.dw .cl,.dw .hd,.dw .tn,.dw .ht{stroke:#555}
+  .dw .dm{stroke:#000}.dw .ah,.dw .dtm{fill:#000}.dw .dt,.dw .tl,.dw .lb2{fill:#000;stroke:#fff}.dw .ft,.dw .cpl,.dw .lb{fill:#000;stroke:none}
+  .notes{border:0;color:#000}.nt .k,.nt li::before,.nt-x{color:#333}.nt-h{color:#000}
+  .doc{background:#fff;color:#000;padding:0}.txt .k{color:#333}.th-p{fill:#fff;stroke:#000}.th-h{fill:#fff;stroke:#000}
+  .row{break-inside:avoid}
+  .foot{background:#fff;color:#000;padding:8px 0}
+  a{text-decoration:none}
+}
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="top">
+      <a class="brand" href="#main"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5 11.5h22v15H5z" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="11.5" cy="19" r="2.7" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="20.5" cy="19" r="2.7" fill="none" stroke="currentColor" stroke-width="2.2"/><path class="mk-d" d="M5 6.2h22M5 3.6v5.2M27 3.6v5.2" fill="none" stroke-width="2"/></svg><b>公差精工</b></a>
+      <nav class="nav" aria-label="主選單"><a href="#tool">選型器</a><a href="#rfq">詢價單</a><a href="#range">加工範圍</a><a href="#grade">公差等級</a><a href="#calc">報價與交期</a><a href="#send">送圖</a></nav>
+      <a class="tel" href="tel:+886400000228">04-0000-0228</a>
+      <a class="hd-rfq" href="#rfq">詢價單 <span class="n" data-o="nq">2</span> 項</a>
+    </header>
+    <main id="main">
+      <section class="tool" id="tool" aria-labelledby="h1">
+      <h1 id="h1">板件銑削的圖面與詢價單</h1>
+      <p class="lead" id="cfg-lead">對象：矩形板件、貫穿孔、四角倒角或圓角。改任一數值，圖面、重量、工時、交期與參考單價同步重算。</p>
+      <div class="rg" id="cfg-rg" role="group" aria-label="輸入範圍"><span class="rg-k">輸入範圍</span><dl class="rg-l"><div><dt>長</dt><dd>20–400</dd></div><div><dt>寬</dt><dd>20–300</dd></div><div><dt>厚</dt><dd>3–50</dd></div><div><dt>孔徑</dt><dd>Ø2–30</dd></div><div><dt>孔間距、孔邊距</dt><dd>≥3</dd></div><div><dt>數量</dt><dd>1–999 件</dd></div></dl><span class="rg-u">單位 mm</span></div>
+      <form class="cfg" id="cfg" action="#tool" method="get" aria-label="板件參數" aria-describedby="cfg-seq cfg-rg">
+        <div class="strip">
+      <fieldset class="grp g-m"><legend>材質</legend><div class="opts"><label class="op op-m"><input class="vh" type="radio" name="m" value="al" checked><svg class="sw" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><defs><clipPath id="sw-al"><rect x="1" y="1" width="28" height="28"/></clipPath></defs><g clip-path="url(#sw-al)" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M-30.0 30L0.0 0"/><path d="M-22.5 30L7.5 0"/><path d="M-15.0 30L15.0 0"/><path d="M-7.5 30L22.5 0"/><path d="M0.0 30L30.0 0"/><path d="M7.5 30L37.5 0"/><path d="M15.0 30L45.0 0"/><path d="M22.5 30L52.5 0"/><path d="M30.0 30L60.0 0"/><path d="M37.5 30L67.5 0"/><path d="M45.0 30L75.0 0"/><path d="M52.5 30L82.5 0"/></g><rect x="1" y="1" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"/></svg><span class="op-c">6061-T6</span><span class="op-n">鋁合金</span><span class="op-s"><span class="tnum">2.70</span> g/cm³</span></label><label class="op op-m"><input class="vh" type="radio" name="m" value="s45c"><svg class="sw" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><defs><clipPath id="sw-s45c"><rect x="1" y="1" width="28" height="28"/></clipPath></defs><g clip-path="url(#sw-s45c)" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M-30.0 30L0.0 0"/><path d="M-25.5 30L4.5 0"/><path d="M-21.0 30L9.0 0"/><path d="M-16.5 30L13.5 0"/><path d="M-12.0 30L18.0 0"/><path d="M-7.5 30L22.5 0"/><path d="M-3.0 30L27.0 0"/><path d="M1.5 30L31.5 0"/><path d="M6.0 30L36.0 0"/><path d="M10.5 30L40.5 0"/><path d="M15.0 30L45.0 0"/><path d="M19.5 30L49.5 0"/><path d="M24.0 30L54.0 0"/><path d="M28.5 30L58.5 0"/><path d="M33.0 30L63.0 0"/><path d="M37.5 30L67.5 0"/><path d="M42.0 30L72.0 0"/><path d="M46.5 30L76.5 0"/><path d="M51.0 30L81.0 0"/><path d="M55.5 30L85.5 0"/></g><rect x="1" y="1" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"/></svg><span class="op-c">S45C</span><span class="op-n">中碳鋼</span><span class="op-s"><span class="tnum">7.85</span> g/cm³</span></label><label class="op op-m"><input class="vh" type="radio" name="m" value="sus"><svg class="sw" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><defs><clipPath id="sw-sus"><rect x="1" y="1" width="28" height="28"/></clipPath></defs><g clip-path="url(#sw-sus)" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M-30.0 30L0.0 0"/><path d="M-28.2 30L1.8 0"/><path d="M-22.0 30L8.0 0"/><path d="M-20.2 30L9.8 0"/><path d="M-14.0 30L16.0 0"/><path d="M-12.2 30L17.8 0"/><path d="M-6.0 30L24.0 0"/><path d="M-4.2 30L25.8 0"/><path d="M2.0 30L32.0 0"/><path d="M3.8 30L33.8 0"/><path d="M10.0 30L40.0 0"/><path d="M11.8 30L41.8 0"/><path d="M18.0 30L48.0 0"/><path d="M19.8 30L49.8 0"/><path d="M26.0 30L56.0 0"/><path d="M27.8 30L57.8 0"/><path d="M34.0 30L64.0 0"/><path d="M35.8 30L65.8 0"/><path d="M42.0 30L72.0 0"/><path d="M43.8 30L73.8 0"/><path d="M50.0 30L80.0 0"/><path d="M51.8 30L81.8 0"/><path d="M58.0 30L88.0 0"/><path d="M59.8 30L89.8 0"/></g><rect x="1" y="1" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"/></svg><span class="op-c">SUS304</span><span class="op-n">不鏽鋼</span><span class="op-s"><span class="tnum">7.93</span> g/cm³</span></label><label class="op op-m"><input class="vh" type="radio" name="m" value="bs"><svg class="sw" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><defs><clipPath id="sw-bs"><rect x="1" y="1" width="28" height="28"/></clipPath></defs><g clip-path="url(#sw-bs)" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M-30.0 30L0.0 0"/><path d="M-24.5 30L5.5 0" stroke-dasharray="3 2.2"/><path d="M-19.0 30L11.0 0"/><path d="M-13.5 30L16.5 0" stroke-dasharray="3 2.2"/><path d="M-8.0 30L22.0 0"/><path d="M-2.5 30L27.5 0" stroke-dasharray="3 2.2"/><path d="M3.0 30L33.0 0"/><path d="M8.5 30L38.5 0" stroke-dasharray="3 2.2"/><path d="M14.0 30L44.0 0"/><path d="M19.5 30L49.5 0" stroke-dasharray="3 2.2"/><path d="M25.0 30L55.0 0"/><path d="M30.5 30L60.5 0" stroke-dasharray="3 2.2"/><path d="M36.0 30L66.0 0"/><path d="M41.5 30L71.5 0" stroke-dasharray="3 2.2"/><path d="M47.0 30L77.0 0"/><path d="M52.5 30L82.5 0" stroke-dasharray="3 2.2"/><path d="M58.0 30L88.0 0"/></g><rect x="1" y="1" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"/></svg><span class="op-c">C3604</span><span class="op-n">快削黃銅</span><span class="op-s"><span class="tnum">8.50</span> g/cm³</span></label><label class="op op-m"><input class="vh" type="radio" name="m" value="pom"><svg class="sw" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><defs><clipPath id="sw-pom"><rect x="1" y="1" width="28" height="28"/></clipPath></defs><g clip-path="url(#sw-pom)" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M-30.0 30L0.0 0"/><path d="M-30.0 0L0.0 30"/><path d="M-23.0 30L7.0 0"/><path d="M-23.0 0L7.0 30"/><path d="M-16.0 30L14.0 0"/><path d="M-16.0 0L14.0 30"/><path d="M-9.0 30L21.0 0"/><path d="M-9.0 0L21.0 30"/><path d="M-2.0 30L28.0 0"/><path d="M-2.0 0L28.0 30"/><path d="M5.0 30L35.0 0"/><path d="M5.0 0L35.0 30"/><path d="M12.0 30L42.0 0"/><path d="M12.0 0L42.0 30"/><path d="M19.0 30L49.0 0"/><path d="M19.0 0L49.0 30"/><path d="M26.0 30L56.0 0"/><path d="M26.0 0L56.0 30"/><path d="M33.0 30L63.0 0"/><path d="M33.0 0L63.0 30"/><path d="M40.0 30L70.0 0"/><path d="M40.0 0L70.0 30"/><path d="M47.0 30L77.0 0"/><path d="M47.0 0L77.0 30"/><path d="M54.0 30L84.0 0"/><path d="M54.0 0L84.0 30"/></g><rect x="1" y="1" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"/></svg><span class="op-c">POM</span><span class="op-n">聚甲醛</span><span class="op-s"><span class="tnum">1.41</span> g/cm³</span></label></div></fieldset>
+      <p class="seq" id="cfg-seq"><span class="sq sq-1">選材質</span><svg class="sq-a" viewBox="0 0 22 12" aria-hidden="true" focusable="false"><path d="M1 6h17" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M21 6l-7-3.6v7.2z" fill="currentColor"/></svg><span class="sq">改黃框尺寸</span><svg class="sq-a" viewBox="0 0 22 12" aria-hidden="true" focusable="false"><path d="M1 6h17" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M21 6l-7-3.6v7.2z" fill="currentColor"/></svg><span class="sq">加入詢價單</span></p>
+    </div>
+        <div class="canvas" id="canvas"><div class="cv-in">
+          <div class="dwg">
+            <p class="sr-only">圖面包含上視圖、剖面 A–A 與右視圖；所有尺寸以上方輸入欄與圖面註記為準。</p>
+            <div class="vw vw-w"><svg id="dw-w" class="dw dw-w" viewBox="0 0 1040 520" aria-hidden="true" focusable="false"><g class="Lo"><path class="pf ol" d="M154.4 100H509.6A14.4 14.4 0 0 1 524 114.4V325.6A14.4 14.4 0 0 1 509.6 340H154.4A14.4 14.4 0 0 1 140 325.6V114.4A14.4 14.4 0 0 1 154.4 100Z"/><path class="ol" d="M140 412H524V450.4H140ZM161 412L161 450.4M181.4 412L181.4 450.4M321.8 412L321.8 450.4M342.2 412L342.2 450.4M482.6 412L482.6 450.4M503 412L503 450.4"/><path class="ol" d="M624 412H864V450.4H624Z"/><g class="iso"><path class="is-r" d="M636.94 275.32L637.34 277.09L637.34 302.95L636.94 301.18ZM637.34 277.09L638.53 278.74L638.53 304.61L637.34 302.95ZM638.53 278.74L640.42 280.16L640.42 306.03L638.53 304.61ZM640.42 280.16L763.6 351.29L763.6 377.15L640.42 306.03ZM763.6 351.29L766.06 352.38L766.06 378.24L763.6 377.15ZM766.06 352.38L768.93 353.06L768.93 378.93L766.06 378.24ZM768.93 353.06L772 353.3L772 379.16L768.93 378.93Z"/><path class="is-f" d="M987.58 231.67L989.47 230.25L989.47 256.11L987.58 257.53ZM989.47 230.25L990.66 228.6L990.66 254.46L989.47 256.11ZM990.66 228.6L991.06 226.82L991.06 252.68L990.66 254.46ZM772 353.3L775.08 353.06L775.08 378.93L772 379.16ZM775.08 353.06L777.94 352.38L777.94 378.24L775.08 378.93ZM777.94 352.38L780.4 351.29L780.4 377.15L777.94 378.24ZM780.4 351.29L987.58 231.67L987.58 257.53L780.4 377.15Z"/><path class="is-t" d="M987.58 231.67L989.47 230.25L990.66 228.6L991.06 226.82L990.66 225.05L989.47 223.39L987.58 221.97L864.4 150.85L861.94 149.76L859.07 149.07L856 148.84L852.92 149.07L850.06 149.76L847.6 150.85L640.42 270.47L638.53 271.89L637.34 273.54L636.94 275.32L637.34 277.09L638.53 278.74L640.42 280.16L763.6 351.29L766.06 352.38L768.93 353.06L772 353.3L775.08 353.06L777.94 352.38L780.4 351.29Z"/><clipPath id="w-ic"><path d="M777.95 331.69L776.48 331.01L774.78 330.54L772.95 330.3L771.06 330.3L769.22 330.54L767.53 331.01L766.05 331.69L764.88 332.54L764.06 333.52L763.64 334.58L763.64 335.67L764.06 336.73L764.88 337.71L766.05 338.56L767.53 339.24L769.22 339.71L771.06 339.95L772.95 339.95L774.78 339.71L776.48 339.24L777.95 338.56L779.13 337.71L779.95 336.73L780.36 335.67L780.36 334.58L779.95 333.52L779.13 332.54ZM871.74 277.54L870.27 276.86L868.57 276.39L866.74 276.15L864.85 276.15L863.02 276.39L861.32 276.86L859.85 277.54L858.67 278.39L857.85 279.37L857.43 280.43L857.43 281.52L857.85 282.58L858.67 283.56L859.85 284.41L861.32 285.09L863.02 285.56L864.85 285.8L866.74 285.8L868.57 285.56L870.27 285.09L871.74 284.41L872.92 283.56L873.74 282.58L874.16 281.52L874.16 280.43L873.74 279.37L872.92 278.39ZM965.54 223.39L964.06 222.71L962.37 222.24L960.53 221.99L958.65 221.99L956.81 222.24L955.11 222.71L953.64 223.39L952.46 224.24L951.65 225.22L951.23 226.28L951.23 227.37L951.65 228.43L952.46 229.41L953.64 230.26L955.11 230.94L956.81 231.41L958.65 231.65L960.53 231.65L962.37 231.41L964.06 230.94L965.54 230.26L966.71 229.41L967.53 228.43L967.95 227.37L967.95 226.28L967.53 225.22L966.71 224.24ZM674.36 271.88L672.89 271.2L671.19 270.73L669.35 270.49L667.47 270.49L665.63 270.73L663.94 271.2L662.46 271.88L661.29 272.73L660.47 273.71L660.05 274.77L660.05 275.86L660.47 276.92L661.29 277.9L662.46 278.75L663.94 279.43L665.63 279.9L667.47 280.14L669.35 280.14L671.19 279.9L672.89 279.43L674.36 278.75L675.54 277.9L676.35 276.92L676.77 275.86L676.77 274.77L676.35 273.71L675.54 272.73ZM768.15 217.73L766.68 217.05L764.98 216.58L763.15 216.34L761.26 216.34L759.43 216.58L757.73 217.05L756.26 217.73L755.08 218.58L754.26 219.56L753.84 220.62L753.84 221.71L754.26 222.77L755.08 223.75L756.26 224.6L757.73 225.28L759.43 225.75L761.26 225.99L763.15 225.99L764.98 225.75L766.68 225.28L768.15 224.6L769.33 223.75L770.15 222.77L770.57 221.71L770.57 220.62L770.15 219.56L769.33 218.58ZM861.95 163.58L860.47 162.9L858.78 162.43L856.94 162.19L855.05 162.19L853.22 162.43L851.52 162.9L850.05 163.58L848.87 164.43L848.05 165.41L847.64 166.47L847.64 167.56L848.05 168.62L848.87 169.6L850.05 170.45L851.52 171.13L853.22 171.6L855.05 171.84L856.94 171.84L858.78 171.6L860.47 171.13L861.95 170.45L863.12 169.6L863.94 168.62L864.36 167.56L864.36 166.47L863.94 165.41L863.12 164.43Z"/></clipPath><path class="is-w" d="M777.95 331.69L776.48 331.01L774.78 330.54L772.95 330.3L771.06 330.3L769.22 330.54L767.53 331.01L766.05 331.69L764.88 332.54L764.06 333.52L763.64 334.58L763.64 335.67L764.06 336.73L764.88 337.71L766.05 338.56L767.53 339.24L769.22 339.71L771.06 339.95L772.95 339.95L774.78 339.71L776.48 339.24L777.95 338.56L779.13 337.71L779.95 336.73L780.36 335.67L780.36 334.58L779.95 333.52L779.13 332.54ZM871.74 277.54L870.27 276.86L868.57 276.39L866.74 276.15L864.85 276.15L863.02 276.39L861.32 276.86L859.85 277.54L858.67 278.39L857.85 279.37L857.43 280.43L857.43 281.52L857.85 282.58L858.67 283.56L859.85 284.41L861.32 285.09L863.02 285.56L864.85 285.8L866.74 285.8L868.57 285.56L870.27 285.09L871.74 284.41L872.92 283.56L873.74 282.58L874.16 281.52L874.16 280.43L873.74 279.37L872.92 278.39ZM965.54 223.39L964.06 222.71L962.37 222.24L960.53 221.99L958.65 221.99L956.81 222.24L955.11 222.71L953.64 223.39L952.46 224.24L951.65 225.22L951.23 226.28L951.23 227.37L951.65 228.43L952.46 229.41L953.64 230.26L955.11 230.94L956.81 231.41L958.65 231.65L960.53 231.65L962.37 231.41L964.06 230.94L965.54 230.26L966.71 229.41L967.53 228.43L967.95 227.37L967.95 226.28L967.53 225.22L966.71 224.24ZM674.36 271.88L672.89 271.2L671.19 270.73L669.35 270.49L667.47 270.49L665.63 270.73L663.94 271.2L662.46 271.88L661.29 272.73L660.47 273.71L660.05 274.77L660.05 275.86L660.47 276.92L661.29 277.9L662.46 278.75L663.94 279.43L665.63 279.9L667.47 280.14L669.35 280.14L671.19 279.9L672.89 279.43L674.36 278.75L675.54 277.9L676.35 276.92L676.77 275.86L676.77 274.77L676.35 273.71L675.54 272.73ZM768.15 217.73L766.68 217.05L764.98 216.58L763.15 216.34L761.26 216.34L759.43 216.58L757.73 217.05L756.26 217.73L755.08 218.58L754.26 219.56L753.84 220.62L753.84 221.71L754.26 222.77L755.08 223.75L756.26 224.6L757.73 225.28L759.43 225.75L761.26 225.99L763.15 225.99L764.98 225.75L766.68 225.28L768.15 224.6L769.33 223.75L770.15 222.77L770.57 221.71L770.57 220.62L770.15 219.56L769.33 218.58ZM861.95 163.58L860.47 162.9L858.78 162.43L856.94 162.19L855.05 162.19L853.22 162.43L851.52 162.9L850.05 163.58L848.87 164.43L848.05 165.41L847.64 166.47L847.64 167.56L848.05 168.62L848.87 169.6L850.05 170.45L851.52 171.13L853.22 171.6L855.05 171.84L856.94 171.84L858.78 171.6L860.47 171.13L861.95 170.45L863.12 169.6L863.94 168.62L864.36 167.56L864.36 166.47L863.94 165.41L863.12 164.43Z"/><path class="hf" clip-path="url(#w-ic)" d="M777.95 357.55L776.48 356.87L774.78 356.4L772.95 356.16L771.06 356.16L769.22 356.4L767.53 356.87L766.05 357.55L764.88 358.4L764.06 359.38L763.64 360.44L763.64 361.53L764.06 362.59L764.88 363.57L766.05 364.42L767.53 365.1L769.22 365.57L771.06 365.81L772.95 365.81L774.78 365.57L776.48 365.1L777.95 364.42L779.13 363.57L779.95 362.59L780.36 361.53L780.36 360.44L779.95 359.38L779.13 358.4ZM871.74 303.4L870.27 302.72L868.57 302.25L866.74 302.01L864.85 302.01L863.02 302.25L861.32 302.72L859.85 303.4L858.67 304.25L857.85 305.23L857.43 306.29L857.43 307.38L857.85 308.44L858.67 309.42L859.85 310.27L861.32 310.95L863.02 311.42L864.85 311.66L866.74 311.66L868.57 311.42L870.27 310.95L871.74 310.27L872.92 309.42L873.74 308.44L874.16 307.38L874.16 306.29L873.74 305.23L872.92 304.25ZM965.54 249.25L964.06 248.57L962.37 248.1L960.53 247.86L958.65 247.86L956.81 248.1L955.11 248.57L953.64 249.25L952.46 250.1L951.65 251.08L951.23 252.14L951.23 253.23L951.65 254.29L952.46 255.27L953.64 256.12L955.11 256.8L956.81 257.27L958.65 257.51L960.53 257.51L962.37 257.27L964.06 256.8L965.54 256.12L966.71 255.27L967.53 254.29L967.95 253.23L967.95 252.14L967.53 251.08L966.71 250.1ZM674.36 297.74L672.89 297.06L671.19 296.59L669.35 296.35L667.47 296.35L665.63 296.59L663.94 297.06L662.46 297.74L661.29 298.59L660.47 299.57L660.05 300.63L660.05 301.72L660.47 302.78L661.29 303.76L662.46 304.61L663.94 305.29L665.63 305.76L667.47 306.01L669.35 306.01L671.19 305.76L672.89 305.29L674.36 304.61L675.54 303.76L676.35 302.78L676.77 301.72L676.77 300.63L676.35 299.57L675.54 298.59ZM768.15 243.59L766.68 242.91L764.98 242.44L763.15 242.2L761.26 242.2L759.43 242.44L757.73 242.91L756.26 243.59L755.08 244.44L754.26 245.42L753.84 246.48L753.84 247.57L754.26 248.63L755.08 249.61L756.26 250.46L757.73 251.14L759.43 251.61L761.26 251.85L763.15 251.85L764.98 251.61L766.68 251.14L768.15 250.46L769.33 249.61L770.15 248.63L770.57 247.57L770.57 246.48L770.15 245.42L769.33 244.44ZM861.95 189.44L860.47 188.76L858.78 188.29L856.94 188.05L855.05 188.05L853.22 188.29L851.52 188.76L850.05 189.44L848.87 190.29L848.05 191.27L847.64 192.33L847.64 193.42L848.05 194.48L848.87 195.46L850.05 196.31L851.52 196.99L853.22 197.46L855.05 197.7L856.94 197.7L858.78 197.46L860.47 196.99L861.95 196.31L863.12 195.46L863.94 194.48L864.36 193.42L864.36 192.33L863.94 191.27L863.12 190.29Z"/><path class="is-h" d="M777.95 331.69L776.48 331.01L774.78 330.54L772.95 330.3L771.06 330.3L769.22 330.54L767.53 331.01L766.05 331.69L764.88 332.54L764.06 333.52L763.64 334.58L763.64 335.67L764.06 336.73L764.88 337.71L766.05 338.56L767.53 339.24L769.22 339.71L771.06 339.95L772.95 339.95L774.78 339.71L776.48 339.24L777.95 338.56L779.13 337.71L779.95 336.73L780.36 335.67L780.36 334.58L779.95 333.52L779.13 332.54ZM871.74 277.54L870.27 276.86L868.57 276.39L866.74 276.15L864.85 276.15L863.02 276.39L861.32 276.86L859.85 277.54L858.67 278.39L857.85 279.37L857.43 280.43L857.43 281.52L857.85 282.58L858.67 283.56L859.85 284.41L861.32 285.09L863.02 285.56L864.85 285.8L866.74 285.8L868.57 285.56L870.27 285.09L871.74 284.41L872.92 283.56L873.74 282.58L874.16 281.52L874.16 280.43L873.74 279.37L872.92 278.39ZM965.54 223.39L964.06 222.71L962.37 222.24L960.53 221.99L958.65 221.99L956.81 222.24L955.11 222.71L953.64 223.39L952.46 224.24L951.65 225.22L951.23 226.28L951.23 227.37L951.65 228.43L952.46 229.41L953.64 230.26L955.11 230.94L956.81 231.41L958.65 231.65L960.53 231.65L962.37 231.41L964.06 230.94L965.54 230.26L966.71 229.41L967.53 228.43L967.95 227.37L967.95 226.28L967.53 225.22L966.71 224.24ZM674.36 271.88L672.89 271.2L671.19 270.73L669.35 270.49L667.47 270.49L665.63 270.73L663.94 271.2L662.46 271.88L661.29 272.73L660.47 273.71L660.05 274.77L660.05 275.86L660.47 276.92L661.29 277.9L662.46 278.75L663.94 279.43L665.63 279.9L667.47 280.14L669.35 280.14L671.19 279.9L672.89 279.43L674.36 278.75L675.54 277.9L676.35 276.92L676.77 275.86L676.77 274.77L676.35 273.71L675.54 272.73ZM768.15 217.73L766.68 217.05L764.98 216.58L763.15 216.34L761.26 216.34L759.43 216.58L757.73 217.05L756.26 217.73L755.08 218.58L754.26 219.56L753.84 220.62L753.84 221.71L754.26 222.77L755.08 223.75L756.26 224.6L757.73 225.28L759.43 225.75L761.26 225.99L763.15 225.99L764.98 225.75L766.68 225.28L768.15 224.6L769.33 223.75L770.15 222.77L770.57 221.71L770.57 220.62L770.15 219.56L769.33 218.58ZM861.95 163.58L860.47 162.9L858.78 162.43L856.94 162.19L855.05 162.19L853.22 162.43L851.52 162.9L850.05 163.58L848.87 164.43L848.05 165.41L847.64 166.47L847.64 167.56L848.05 168.62L848.87 169.6L850.05 170.45L851.52 171.13L853.22 171.6L855.05 171.84L856.94 171.84L858.78 171.6L860.47 171.13L861.95 170.45L863.12 169.6L863.94 168.62L864.36 167.56L864.36 166.47L863.94 165.41L863.12 164.43Z"/><path class="is-e" d="M987.58 257.53L989.47 256.11M989.47 256.11L990.66 254.46M990.66 254.46L991.06 252.68M636.94 301.18L637.34 302.95M637.34 302.95L638.53 304.61M638.53 304.61L640.42 306.03M640.42 306.03L763.6 377.15M763.6 377.15L766.06 378.24M766.06 378.24L768.93 378.93M768.93 378.93L772 379.16M772 379.16L775.08 378.93M775.08 378.93L777.94 378.24M777.94 378.24L780.4 377.15M780.4 377.15L987.58 257.53M991.06 226.82L991.06 252.68M636.94 275.32L636.94 301.18"/></g></g><g class="Ls"><clipPath id="w-hc"><rect x="140" y="412" width="21" height="38.4"/><rect x="181.4" y="412" width="140.4" height="38.4"/><rect x="342.2" y="412" width="140.4" height="38.4"/><rect x="503" y="412" width="21" height="38.4"/></clipPath><path class="ht" clip-path="url(#w-hc)" d="M101.6 450.4L140 412M109.6 450.4L148 412M117.6 450.4L156 412M125.6 450.4L164 412M133.6 450.4L172 412M141.6 450.4L180 412M149.6 450.4L188 412M157.6 450.4L196 412M165.6 450.4L204 412M173.6 450.4L212 412M181.6 450.4L220 412M189.6 450.4L228 412M197.6 450.4L236 412M205.6 450.4L244 412M213.6 450.4L252 412M221.6 450.4L260 412M229.6 450.4L268 412M237.6 450.4L276 412M245.6 450.4L284 412M253.6 450.4L292 412M261.6 450.4L300 412M269.6 450.4L308 412M277.6 450.4L316 412M285.6 450.4L324 412M293.6 450.4L332 412M301.6 450.4L340 412M309.6 450.4L348 412M317.6 450.4L356 412M325.6 450.4L364 412M333.6 450.4L372 412M341.6 450.4L380 412M349.6 450.4L388 412M357.6 450.4L396 412M365.6 450.4L404 412M373.6 450.4L412 412M381.6 450.4L420 412M389.6 450.4L428 412M397.6 450.4L436 412M405.6 450.4L444 412M413.6 450.4L452 412M421.6 450.4L460 412M429.6 450.4L468 412M437.6 450.4L476 412M445.6 450.4L484 412M453.6 450.4L492 412M461.6 450.4L500 412M469.6 450.4L508 412M477.6 450.4L516 412M485.6 450.4L524 412M493.6 450.4L532 412M501.6 450.4L540 412M509.6 450.4L548 412M517.6 450.4L556 412"/></g><g class="Lh"><circle class="hf ol" cx="171.2" cy="308.8" r="10.2"/><circle class="hf ol" cx="332" cy="308.8" r="10.2"/><circle class="hf ol" cx="492.8" cy="308.8" r="10.2"/><circle class="hf ol" cx="171.2" cy="131.2" r="10.2"/><circle class="hf ol" cx="332" cy="131.2" r="10.2"/><circle class="hf ol" cx="492.8" cy="131.2" r="10.2"/><path class="cl" d="M152 308.8L512 308.8M152 131.2L512 131.2M171.2 112L171.2 328M332 112L332 328M492.8 112L492.8 328M171.2 406L171.2 456.4M332 406L332 456.4M492.8 406L492.8 456.4M655.2 405L655.2 457.4M832.8 405L832.8 457.4"/><path class="hd" d="M645 412L645 450.4M665.4 412L665.4 450.4M822.6 412L822.6 450.4M843 412L843 450.4"/><path class="tn" d="M638.4 412L638.4 450.4M849.6 412L849.6 450.4"/></g><g class="Ld"><path class="dm" d="M140 97L140 49M524 97L524 49M140 54L524 54M137 100L49 100M137 340L49 340M54 100L54 199M54 254L54 340M140 343L140 379M171.2 343L171.2 379M140 374L171.2 374M171.2 343L171.2 379M492.8 343L492.8 379M171.2 374L492.8 374M527 308.8L563 308.8M527 340L563 340M558 308.8L558 340M527 131.2L563 131.2M527 308.8L563 308.8M558 131.2L558 208.3M558 230.3L558 308.8M867 412L895 412M867 450.4L895 450.4M890 412L890 450.4M117 308.8L117 295.8M584 308.8L584 295.8M500.01 123.99L572 78M572 78L586 78M519.78 335.78L544 360M544 360L554 360M313.28 400L313.28 403"/><path class="ah" d="M140 54L149 51.6L149 56.4ZM524 54L515 56.4L515 51.6ZM54 100L56.4 109L51.6 109ZM54 340L51.6 331L56.4 331ZM140 374L149 371.6L149 376.4ZM171.2 374L162.2 376.4L162.2 371.6ZM171.2 374L180.2 371.6L180.2 376.4ZM492.8 374L483.8 376.4L483.8 371.6ZM558 308.8L560.4 317.8L555.6 317.8ZM558 340L555.6 331L560.4 331ZM558 131.2L560.4 140.2L555.6 140.2ZM558 308.8L555.6 299.8L560.4 299.8ZM890 412L892.4 421L887.6 421ZM890 450.4L887.6 441.4L892.4 441.4ZM117 287.8L119.4 296.8L114.6 296.8ZM584 287.8L586.4 296.8L581.6 296.8ZM500.01 123.99L506.3 117.12L508.89 121.17ZM519.78 335.78L527.84 340.45L524.45 343.84ZM313.28 412L310.88 403L315.68 403Z"/><text class="tl" x="374" y="41">±0.05</text><text class="tl" x="54" y="248" text-anchor="middle">±0.05</text><text class="dt" x="155.6" y="368" text-anchor="middle">13</text><text class="dt" x="332" y="368" text-anchor="middle">2×67</text><text class="dt" x="565" y="329.65">13</text><text class="dt" x="558" y="221.5" text-anchor="middle">74</text><text class="tl" x="946" y="462.2" text-anchor="middle">±0.05</text><path class="cp" d="M131 308.8L117 308.8M570 308.8L584 308.8"/><text class="cpl" x="117" y="282.8" text-anchor="middle">A</text><text class="cpl" x="584" y="282.8" text-anchor="middle">A</text><text class="lb2" x="740" y="83.1">貫穿</text><text class="dt" x="557" y="365.1">4×R6</text><text class="lb" x="610" y="158">等角圖</text><text class="lb" x="22" y="42">上視圖</text><text class="lb" x="124" y="435.88" text-anchor="end">剖面 A–A</text><text class="lb" x="624" y="477.4">右視圖</text></g><g class="Lf"><rect class="fr" x="590" y="94" width="140.4" height="24"/><path class="fr" d="M708.4 94L708.4 118"/><path class="fr" d="M686.4 94L686.4 118"/><path class="fr" d="M664.4 94L664.4 118"/><path class="fr" d="M614 94L614 118"/><circle class="fs" cx="602" cy="106" r="5.2"/><path class="fs" d="M594 106L610 106M602 98L602 114"/><text class="ft" x="639.2" y="110.68" text-anchor="middle">Ø0.10</text><text class="ft" x="675.4" y="110.68" text-anchor="middle">A</text><text class="ft" x="697.4" y="110.68" text-anchor="middle">B</text><text class="ft" x="719.4" y="110.68" text-anchor="middle">C</text><rect class="fr" x="301.28" y="378" width="67.12" height="22"/><path class="fr" d="M325.28 378L325.28 400"/><path class="fs" d="M305.28 393L310.28 385H321.28L316.28 393Z"/><text class="ft" x="346.84" y="393.68" text-anchor="middle">0.05</text><path class="dtm" d="M503 450.4L513 450.4L508 458.4Z"/><path class="fr" d="M508 458.4L508 466.4"/><rect class="fr bx" x="498" y="466.4" width="20" height="20"/><text class="ft" x="508" y="481.08" text-anchor="middle">A</text><path class="dtm" d="M140 70L140 80L132 75Z"/><path class="fr" d="M132 75L124 75"/><rect class="fr bx" x="104" y="65" width="20" height="20"/><text class="ft" x="114" y="79.68" text-anchor="middle">B</text><path class="dtm" d="M89 340L99 340L94 348Z"/><path class="fr" d="M94 348L94 356"/><rect class="fr bx" x="84" y="356" width="20" height="20"/><text class="ft" x="94" y="370.68" text-anchor="middle">C</text><path class="fs" d="M634 402L640 411.5M640 411.5L652 391M652 391L692 391"/><text class="ft" x="655" y="387">Ra 3.2</text></g></svg></div>
+            <div class="vw vw-t"><svg id="dw-t" class="dw dw-t" viewBox="0 0 360 366" aria-hidden="true" focusable="false"><g class="Lo"><path class="pf ol" d="M73.2 84H250.8A7.2 7.2 0 0 1 258 91.2V196.8A7.2 7.2 0 0 1 250.8 204H73.2A7.2 7.2 0 0 1 66 196.8V91.2A7.2 7.2 0 0 1 73.2 84Z"/><path class="ol" d="M66 296H258V315.2H66ZM76.5 296L76.5 315.2M86.7 296L86.7 315.2M156.9 296L156.9 315.2M167.1 296L167.1 315.2M237.3 296L237.3 315.2M247.5 296L247.5 315.2"/></g><g class="Ls"><clipPath id="t-hc"><rect x="66" y="296" width="10.5" height="19.2"/><rect x="86.7" y="296" width="70.2" height="19.2"/><rect x="167.1" y="296" width="70.2" height="19.2"/><rect x="247.5" y="296" width="10.5" height="19.2"/></clipPath><path class="ht" clip-path="url(#t-hc)" d="M46.8 315.2L66 296M54.8 315.2L74 296M62.8 315.2L82 296M70.8 315.2L90 296M78.8 315.2L98 296M86.8 315.2L106 296M94.8 315.2L114 296M102.8 315.2L122 296M110.8 315.2L130 296M118.8 315.2L138 296M126.8 315.2L146 296M134.8 315.2L154 296M142.8 315.2L162 296M150.8 315.2L170 296M158.8 315.2L178 296M166.8 315.2L186 296M174.8 315.2L194 296M182.8 315.2L202 296M190.8 315.2L210 296M198.8 315.2L218 296M206.8 315.2L226 296M214.8 315.2L234 296M222.8 315.2L242 296M230.8 315.2L250 296M238.8 315.2L258 296M246.8 315.2L266 296M254.8 315.2L274 296"/></g><g class="Lh"><circle class="hf ol" cx="81.6" cy="188.4" r="5.1"/><circle class="hf ol" cx="162" cy="188.4" r="5.1"/><circle class="hf ol" cx="242.4" cy="188.4" r="5.1"/><circle class="hf ol" cx="81.6" cy="99.6" r="5.1"/><circle class="hf ol" cx="162" cy="99.6" r="5.1"/><circle class="hf ol" cx="242.4" cy="99.6" r="5.1"/><path class="cl" d="M67.5 188.4L256.5 188.4M67.5 99.6L256.5 99.6M81.6 85.5L81.6 202.5M162 85.5L162 202.5M242.4 85.5L242.4 202.5M81.6 290L81.6 321.2M162 290L162 321.2M242.4 290L242.4 321.2"/></g><g class="Ld"><path class="dm" d="M66 207L66 261M258 207L258 261M66 256L258 256M63 84L13 84M63 204L13 204M18 84L18 133.86M18 167.46L18 204M66 207L66 233M81.6 207L81.6 233M51 228L96.6 228M81.6 207L81.6 233M242.4 207L242.4 233M81.6 228L242.4 228M261 188.4L287 188.4M261 204L287 204M282 173.4L282 219M261 99.6L287 99.6M261 188.4L287 188.4M282 99.6L282 133.86M282 153.46L282 188.4M261 296L287 296M261 315.2L287 315.2M282 281L282 330.2M43 188.4L43 175.4M308 188.4L308 175.4M246.01 95.99L118.82 25M118.82 25L131.82 25M255.89 201.89L278 224M278 224L288 224M158.64 286L158.64 287"/><path class="ah" d="M66 256L75 253.6L75 258.4ZM258 256L249 258.4L249 253.6ZM18 84L20.4 93L15.6 93ZM18 204L15.6 195L20.4 195ZM66 228L57 230.4L57 225.6ZM81.6 228L90.6 225.6L90.6 230.4ZM81.6 228L90.6 225.6L90.6 230.4ZM242.4 228L233.4 230.4L233.4 225.6ZM282 188.4L279.6 179.4L284.4 179.4ZM282 204L284.4 213L279.6 213ZM282 99.6L284.4 108.6L279.6 108.6ZM282 188.4L279.6 179.4L284.4 179.4ZM282 296L279.6 287L284.4 287ZM282 315.2L284.4 324.2L279.6 324.2ZM43 167.4L45.4 176.4L40.6 176.4ZM308 167.4L310.4 176.4L305.6 176.4ZM246.01 95.99L236.98 93.7L239.32 89.51ZM255.89 201.89L263.95 206.56L260.56 209.95ZM158.64 296L156.24 287L161.04 287Z"/><text class="dt" x="162" y="250" text-anchor="middle">160<tspan class="tl" dx="4">±0.05</tspan></text><text class="dt" x="18" y="145.3" text-anchor="middle">100</text><text class="tl" x="18" y="160.3" text-anchor="middle">±0.05</text><text class="dt" x="73.8" y="222" text-anchor="middle">13</text><text class="dt" x="162" y="222" text-anchor="middle">2×67</text><text class="dt" x="289" y="200.75">13</text><text class="dt" x="282" y="145.3" text-anchor="middle">74</text><text class="dt" x="289" y="310.15">16<tspan class="tl" dx="3">±0.05</tspan></text><path class="cp" d="M57 188.4L43 188.4M294 188.4L308 188.4"/><text class="cpl" x="43" y="162.4" text-anchor="middle">A</text><text class="cpl" x="308" y="162.4" text-anchor="middle">A</text><text class="dt" x="134.82" y="30">6×Ø8.5 <tspan class="lb2">貫穿</tspan></text><text class="dt" x="291" y="228.42">4×R6</text><text class="lb" x="4" y="74">上視圖</text><text class="lb" x="54" y="309.92" text-anchor="end">剖面 A–A</text></g><g class="Lf"><rect class="fr" x="214.4" y="13" width="137.6" height="22"/><path class="fr" d="M330 13L330 35"/><path class="fr" d="M308 13L308 35"/><path class="fr" d="M286 13L286 35"/><path class="fr" d="M238.4 13L238.4 35"/><circle class="fs" cx="226.4" cy="24" r="5.2"/><path class="fs" d="M218.4 24L234.4 24M226.4 16L226.4 32"/><text class="ft" x="262.2" y="28.32" text-anchor="middle">Ø0.10</text><text class="ft" x="297" y="28.32" text-anchor="middle">A</text><text class="ft" x="319" y="28.32" text-anchor="middle">B</text><text class="ft" x="341" y="28.32" text-anchor="middle">C</text><rect class="fr" x="146.64" y="264" width="64.88" height="22"/><path class="fr" d="M170.64 264L170.64 286"/><path class="fs" d="M150.64 279L155.64 271H166.64L161.64 279Z"/><text class="ft" x="191.08" y="279.32" text-anchor="middle">0.05</text><path class="dtm" d="M237 315.2L247 315.2L242 323.2Z"/><path class="fr" d="M242 323.2L242 331.2"/><rect class="fr bx" x="232" y="331.2" width="20" height="20"/><text class="ft" x="242" y="345.52" text-anchor="middle">A</text><path class="dtm" d="M66 246L66 256L58 251Z"/><path class="fr" d="M58 251L50 251"/><rect class="fr bx" x="30" y="241" width="20" height="20"/><text class="ft" x="40" y="255.32" text-anchor="middle">B</text><path class="dtm" d="M35 204L45 204L40 212Z"/><path class="fr" d="M40 212L40 220"/><rect class="fr bx" x="30" y="220" width="20" height="20"/><text class="ft" x="40" y="234.32" text-anchor="middle">C</text></g></svg></div>
+            <div class="dims" id="dims">
+      <div class="din din-L" style="--x:31.923%;--y:6.923%"><label class="dl" for="p-L"><span class="dl-zh">長</span><span class="dl-k">L</span></label><span class="fld"><input id="p-L" name="L" type="number" inputmode="decimal" min="20" max="400" step="1" value="160"><span class="u">mm</span></span></div>
+      <div class="din din-W" style="--x:5.192%;--y:41.346%"><label class="dl" for="p-W"><span class="dl-zh">寬</span><span class="dl-k">W</span></label><span class="fld"><input id="p-W" name="W" type="number" inputmode="decimal" min="20" max="300" step="1" value="100"><span class="u">mm</span></span></div>
+      <div class="din din-T" style="--x:90.962%;--y:82.923%"><label class="dl" for="p-T"><span class="dl-zh">厚</span><span class="dl-k">T</span></label><span class="fld"><input id="p-T" name="T" type="number" inputmode="decimal" min="3" max="50" step="1" value="16"><span class="u">mm</span></span></div>
+      <div class="din din-H" style="--x:56.731%;--y:15.000%">
+        <label class="dl dl-n" for="p-n"><span class="dl-zh">孔數</span></label><span class="fld fld-n"><select id="p-n" name="n"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="6" selected>6</option><option value="8">8</option></select></span>
+        <span class="x" aria-hidden="true">×Ø</span>
+        <label class="dl dl-d" for="p-d"><span class="dl-zh">孔徑</span></label><span class="fld fld-d"><input id="p-d" name="d" type="number" inputmode="decimal" min="2" max="30" step="0.5" value="8.5"><span class="u">mm</span></span>
+      </div>
+    </div>
+          </div>
+          <aside class="notes" aria-label="圖面註記">
+      <p class="nt-h">圖面註記</p>
+      <ol class="nt" role="list">
+        <li><span class="k">材質</span><span class="v" data-o="mat">6061-T6 鋁合金</span></li>
+        <li class="nt-c"><fieldset class="sel g-g" aria-describedby="g-pom"><legend class="k">未註公差</legend><span class="sopts"><label class="so"><input class="vh" type="radio" name="g" value="t1"><span class="so-c">T1</span><span class="sr-only">±0.10 mm</span></label><label class="so"><input class="vh" type="radio" name="g" value="t2" checked><span class="so-c">T2</span><span class="sr-only">±0.05 mm</span></label><label class="so"><input class="vh" type="radio" name="g" value="t3"><span class="so-c">T3</span><span class="sr-only">±0.02 mm</span></label><label class="so"><input class="vh" type="radio" name="g" value="t4"><span class="so-c">T4</span><span class="sr-only">±0.01 mm</span></label></span></fieldset><span class="v"><span class="dev"><span>+<span data-o="tol">0.05</span></span><span>−<span data-o="tol">0.05</span></span></span> mm（<span data-o="g">T2</span>）</span><span class="g-pom" id="g-pom">POM 最嚴 T3</span></li>
+        <li><span class="k">孔位置度</span><span class="v">Ø<span data-o="pos">0.10</span> mm（基準 A、B、C）</span></li>
+        <li><span class="k">平面度</span><span class="v"><span data-o="flat">0.05</span> mm</span></li>
+        <li class="nt-c"><fieldset class="sel g-c"><legend class="k">四角</legend><span class="sopts"><label class="so so-k"><input class="vh" type="radio" name="c" value="C1"><svg class="ci" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><path d="M4 26V9.2L9.2 4H26" fill="none" stroke="currentColor" stroke-width="2.4"/></svg><span class="so-c">C1</span><span class="sr-only">倒角 1 mm</span></label><label class="so so-k"><input class="vh" type="radio" name="c" value="C3"><svg class="ci" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><path d="M4 26V13.600000000000001L13.600000000000001 4H26" fill="none" stroke="currentColor" stroke-width="2.4"/></svg><span class="so-c">C3</span><span class="sr-only">倒角 3 mm</span></label><label class="so so-k"><input class="vh" type="radio" name="c" value="R3"><svg class="ci" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><path d="M4 26V13.600000000000001A9.600000000000001 9.600000000000001 0 0 1 13.600000000000001 4H26" fill="none" stroke="currentColor" stroke-width="2.4"/></svg><span class="so-c">R3</span><span class="sr-only">圓角 R3 mm</span></label><label class="so so-k"><input class="vh" type="radio" name="c" value="R6" checked><svg class="ci" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><path d="M4 26V20.200000000000003A16.200000000000003 16.200000000000003 0 0 1 20.200000000000003 4H26" fill="none" stroke="currentColor" stroke-width="2.4"/></svg><span class="so-c">R6</span><span class="sr-only">圓角 R6 mm</span></label></span></fieldset></li>
+        <li><span class="k">表面粗糙度／銳角</span><span class="v">Ra 3.2 µm；去毛邊 C0.2 mm</span></li>
+        <li><span class="k">毛胚</span><span class="v"><span data-o="st">166 × 106 × 19</span> mm，<span data-o="kgS">0.90</span> kg</span></li>
+      </ol>
+      <p class="nt-x">第三角法｜尺寸單位 mm</p>
+      <p class="nt-live" id="live" aria-live="polite"></p>
+    </aside>
+        </div></div>
+        <div class="readout">
+      <div class="ro ro-q"><label class="ro-k" for="p-q">數量</label><span class="qty"><button type="button" class="st" data-st="-1" aria-label="數量減 1">−</button><input id="p-q" name="q" type="number" inputmode="numeric" min="1" max="999" step="1" value="20"><span class="u">件</span><button type="button" class="st" data-st="1" aria-label="數量加 1">＋</button></span></div>
+      <dl class="ro-l">
+        <div class="ro"><dt class="ro-k">成品重量</dt><dd><span class="n" data-o="kgP">0.68</span><span class="u">kg</span></dd></div>
+        <div class="ro"><dt class="ro-k">單件工時</dt><dd><span class="n" data-o="t">23.0</span><span class="u">min</span></dd></div>
+        <div class="ro"><dt class="ro-k">交期</dt><dd><span class="n" data-o="lead">6</span><span class="u">工作天</span></dd></div>
+        <div class="ro ro-p"><dt class="ro-k">參考單價（未稅）</dt><dd><span class="u u-l">NT$</span><span class="n" data-o="lo">500</span><span class="n n-s">–</span><span class="n" data-o="hi">640</span><span class="u">／件</span></dd></div>
+        <div class="ro"><dt class="ro-k">小計（未稅）</dt><dd><span class="u u-l">NT$</span><span class="n n-m" data-o="slo">10,000</span><span class="n n-s">–</span><span class="n n-m" data-o="shi">12,800</span></dd></div>
+      </dl>
+      <div class="ro-go"><button type="button" class="add" id="add">加入詢價單</button><a class="cnt" href="#rfq"><span class="cnt-th" id="cnt-th"><svg class="th" viewBox="0 0 30.2 20.0" width="30.2" height="20.0" aria-hidden="true" focusable="false"><path class="th-p" d="M1.84 1.5H28.36L28.7 1.84V18.16L28.36 18.5H1.84L1.5 18.16V1.84Z"/><path class="th-h" d="M3.45 10a0.94 0.94 0 1 0 1.87 0a0.94 0.94 0 1 0 -1.87 0M24.88 10a0.94 0.94 0 1 0 1.87 0a0.94 0.94 0 1 0 -1.87 0"/></svg></span>詢價單 <span class="n" data-o="nq">2</span> 項</a></div>
+    </div>
+      </form>
+      <p class="nojs">瀏覽器未執行腳本：圖面與數字停在預設參數，輸入框可以填，但不會重算。下方詢價單已列出預設品項的文字，可直接選取複製。</p>
+    </section>
+      <section class="rfq" id="rfq" aria-labelledby="rfq-h">
+        <div class="rfq-h"><h2 id="rfq-h">詢價單</h2><p class="rfq-n"><span class="n" data-o="nq">2</span> 項</p></div>
+        <p class="rfq-lead">「加入詢價單」的品項累積在這裡（預放兩個範例，可刪除）。本站不寄出、不保存：複製或列印後，傳真至 04-0000-0229，或來電後以電子郵件寄送。目前參數與品項記在網址的 # 之後，複製網址就能把同一組設定交給對方。</p>
+        <div class="acts"><button type="button" class="ac" id="rfq-copy">複製全文</button><button type="button" class="ac" id="rfq-print">列印</button><button type="button" class="ac ac-x" id="rfq-clear">清空</button></div>
+          <details class="buyer-d"><summary>填寫詢價方（選填）</summary>
+            <form class="buyer" id="buyer" aria-label="詢價方資料">
+              <div class="bf"><label for="b-co">公司名稱</label><input id="b-co" name="co" autocomplete="organization" maxlength="40"></div>
+              <div class="bf"><label for="b-who">聯絡人</label><input id="b-who" name="who" autocomplete="name" maxlength="20"></div>
+              <div class="bf"><label for="b-tel">電話</label><input id="b-tel" name="tel" type="tel" autocomplete="tel" maxlength="20" placeholder="09xx-xxx-xxx"></div>
+              <div class="bf"><label for="b-due">需求交期</label><input id="b-due" name="due" type="date"></div>
+              <div class="bf bf-w"><label for="b-note">備註</label><input id="b-note" name="note" maxlength="60" placeholder="例：需陽極處理，另請報價"></div>
+              <p class="by-n">只寫進下方的詢價單文字；本站不送出、不保存。</p>
+            </form>
+          </details>
+        <p class="msg" id="msg" role="status"></p>
+        <div class="doc" id="doc" role="region" aria-label="詢價單文字">
+          <div class="row r-hd"><div class="gut"><span class="gt">縮圖同一比例</span></div><pre class="txt" id="doc-hd"><span class="k">詢價單｜</span>公差精工有限公司
+<span class="k">日期　　　</span><span data-k="date">＿＿＿＿＿＿</span>
+<span class="k">詢價方　　</span><span data-k="co">＿＿＿＿＿＿＿＿</span>
+<span class="k">聯絡人　　</span><span data-k="who">＿＿＿＿</span><span class="k">　電話　</span><span data-k="tel">＿＿＿＿＿＿</span>
+<span class="k">需求交期　</span><span data-k="due">＿＿＿＿＿＿</span>
+<span class="k">備註　　　</span><span data-k="note">無</span></pre></div>
+          <div class="items" id="items"><div class="row r-it"><div class="gut"><svg class="th" viewBox="0 0 57.4 37.0" width="57.4" height="37.0" aria-hidden="true" focusable="false"><path class="th-p" d="M3.54 1.5H53.86A2.04 2.04 0 0 1 55.9 3.54V33.46A2.04 2.04 0 0 1 53.86 35.5H3.54A2.04 2.04 0 0 1 1.5 33.46V3.54A2.04 2.04 0 0 1 3.54 1.5Z"/><path class="th-h" d="M4.47 31.08a1.45 1.45 0 1 0 2.89 0a1.45 1.45 0 1 0 -2.89 0M27.26 31.08a1.45 1.45 0 1 0 2.89 0a1.45 1.45 0 1 0 -2.89 0M50.04 31.08a1.45 1.45 0 1 0 2.89 0a1.45 1.45 0 1 0 -2.89 0M4.47 5.92a1.45 1.45 0 1 0 2.89 0a1.45 1.45 0 1 0 -2.89 0M27.26 5.92a1.45 1.45 0 1 0 2.89 0a1.45 1.45 0 1 0 -2.89 0M50.04 5.92a1.45 1.45 0 1 0 2.89 0a1.45 1.45 0 1 0 -2.89 0"/></svg><button type="button" class="rm" data-i="0">刪除<span class="sr-only">品項 1</span></button></div><pre class="txt"><span class="k">品項 </span><span data-k="i">1</span>
+<span class="k">　材質　　</span><span data-k="mat">6061-T6 鋁合金</span>
+<span class="k">　尺寸　　</span><span data-k="dim">160 × 100 × 16</span> mm（長 × 寬 × 厚）
+<span class="k">　孔　　　</span><span data-k="holes">6 × Ø8.5 mm 貫穿</span>
+<span class="k">　四角　　</span><span data-k="cor">R6</span> mm
+<span class="k">　公差　　</span><span data-k="g">T2</span>　未註公差 ±<span data-k="tol">0.05</span> mm
+<span class="k">　　　　　</span>孔位置度 Ø<span data-k="pos">0.10</span> mm
+<span class="k">　數量　　</span><span data-k="q">20</span> 件
+<span class="k">　參考單價 </span>NT$ <span data-k="lo">500</span>–<span data-k="hi">640</span>／件（未稅）
+<span class="k">　預估交期 </span><span data-k="lead">6</span> 工作天（自確認訂單日起算）</pre></div><div class="row r-it"><div class="gut"><svg class="th" viewBox="0 0 30.2 20.0" width="30.2" height="20.0" aria-hidden="true" focusable="false"><path class="th-p" d="M1.84 1.5H28.36L28.7 1.84V18.16L28.36 18.5H1.84L1.5 18.16V1.84Z"/><path class="th-h" d="M3.45 10a0.94 0.94 0 1 0 1.87 0a0.94 0.94 0 1 0 -1.87 0M24.88 10a0.94 0.94 0 1 0 1.87 0a0.94 0.94 0 1 0 -1.87 0"/></svg><button type="button" class="rm" data-i="1">刪除<span class="sr-only">品項 2</span></button></div><pre class="txt"><span class="k">品項 </span><span data-k="i">2</span>
+<span class="k">　材質　　</span><span data-k="mat">POM 聚甲醛</span>
+<span class="k">　尺寸　　</span><span data-k="dim">80 × 50 × 10</span> mm（長 × 寬 × 厚）
+<span class="k">　孔　　　</span><span data-k="holes">2 × Ø5.5 mm 貫穿</span>
+<span class="k">　四角　　</span><span data-k="cor">C1</span> mm
+<span class="k">　公差　　</span><span data-k="g">T2</span>　未註公差 ±<span data-k="tol">0.05</span> mm
+<span class="k">　　　　　</span>孔位置度 Ø<span data-k="pos">0.10</span> mm
+<span class="k">　數量　　</span><span data-k="q">100</span> 件
+<span class="k">　參考單價 </span>NT$ <span data-k="lo">130</span>–<span data-k="hi">170</span>／件（未稅）
+<span class="k">　預估交期 </span><span data-k="lead">6</span> 工作天（自確認訂單日起算）</pre></div></div>
+          <p class="empty" id="empty" hidden>詢價單沒有品項。在上方圖面調整參數後，按「加入詢價單」。</p>
+          <div class="row r-ft"><div class="gut"></div><pre class="txt"><span class="k">附註</span>
+1. 參考單價依本站公式估算：材料費＋加工費＋開機費÷數量；未稅，不含表面處理與運費。
+2. 交期以工作天計，自確認訂單日起算。
+3. 本詢價單未經審圖。圖面檔（STEP／DXF／PDF）請另附。
+<span class="k">聯絡　</span>電話 04-0000-0228　傳真 04-0000-0229</pre></div>
+        </div>
+    </section>
+      <section class="rng" id="range" aria-labelledby="rng-h">
+      <div class="rng-hd"><h2 id="rng-h">加工範圍</h2><p class="sec-lead">立式銑床兩台，行程相同。線上選型器只開放到 400 × 300 × 50 mm；更大的板件、異形件，請直接送圖面。</p></div>
+      <figure class="env">
+        <div class="env-in"><div class="env-fig">
+          <svg class="env-svg" viewBox="0 0 880 570" aria-hidden="true" focusable="false">
+            <path class="eg" d="M140 20V520M240 20V520M340 20V520M440 20V520M540 20V520M640 20V520M740 20V520M40 120H840M40 220H840M40 320H840M40 420H840"/>
+            <rect class="ecfg" x="40" y="220" width="400" height="300"/>
+            <g id="env-part"><path class="ept" d="M66 400H214A6 6 0 0 1 220 406V494A6 6 0 0 1 214 500H66A6 6 0 0 1 60 494V406A6 6 0 0 1 66 400Z"/><path class="eph" d="M68.75 487a4.25 4.25 0 1 0 8.5 0a4.25 4.25 0 1 0 -8.5 0M135.75 487a4.25 4.25 0 1 0 8.5 0a4.25 4.25 0 1 0 -8.5 0M202.75 487a4.25 4.25 0 1 0 8.5 0a4.25 4.25 0 1 0 -8.5 0M68.75 413a4.25 4.25 0 1 0 8.5 0a4.25 4.25 0 1 0 -8.5 0M135.75 413a4.25 4.25 0 1 0 8.5 0a4.25 4.25 0 1 0 -8.5 0M202.75 413a4.25 4.25 0 1 0 8.5 0a4.25 4.25 0 1 0 -8.5 0"/></g>
+            <rect class="eo" x="40" y="20" width="800" height="500"/>
+            <path class="edm" d="M40 527V552M840 527V552M40 545H840M847 20H872M847 520H872M865 20V520"/>
+            <path class="eah" d="M40 545l10-3.2v6.4zM840 545l-10-3.2v6.4zM865 20l-3.2 10h6.4zM865 520l-3.2-10h6.4z"/>
+          </svg>
+          <p class="el el-x"><span class="tnum">800</span> mm</p>
+          <p class="el el-y"><span class="tnum">500</span> mm</p>
+          <p class="el el-t">銑削行程 X 800 × Y 500 mm<span class="el-g">格線 100 mm</span></p>
+          <p class="el el-c" style="--y:38.596%">線上選型器上限<br>400 × 300 × 50 mm</p>
+          <p class="el el-p" id="env-lab" style="--y:70.175%;--x:6.818%">目前板件 <span class="tnum" data-o="lw">160 × 100</span> mm</p>
+          </div><dl class="env-spec"><div><dt>Z 行程</dt><dd>300 mm</dd></div><div><dt>單件重量</dt><dd>30 kg 以下（人工上下料）</dd></div><div><dt>最小孔徑</dt><dd>Ø1.0 mm，深度 8 倍孔徑以內</dd></div><div><dt>最小內角</dt><dd>R0.5 mm</dd></div><div><dt>最嚴公差</dt><dd>±0.01 mm（T4）</dd></div></dl>
+        </div>
+        <div class="env-out">
+          <p class="eo-h">設備與製程之外</p>
+          <ul class="eo-l" role="list"><li><span class="eo-a"><span class="eo-t">無設備</span>鑄造、鍛造、板金折彎、焊接</span><span class="eo-b">毛胚請用板材或棒材送料</span></li><li><span class="eo-a"><span class="eo-t">客供</span>熱處理（淬火、調質、滲碳）</span><span class="eo-b">請先處理好再送料，硬度 HRC 40 以下</span></li><li><span class="eo-a"><span class="eo-t">外協</span>表面處理（陽極、電鍍、烤漆、發黑）</span><span class="eo-b">可代送外包廠，費用與交期另列</span></li><li><span class="eo-a"><span class="eo-t">無設備</span>±0.005 mm 以下的公差</span><span class="eo-b">需研磨；本廠只有銑床</span></li><li><span class="eo-a"><span class="eo-t">無設備</span>車床件、軸類</span><span class="eo-b">本廠只做銑削</span></li><li><span class="eo-a"><span class="eo-t">超限</span>單件 30 kg 以上，或超出 800 × 500 × 300 mm</span><span class="eo-b">人工上下料與行程的上限</span></li></ul>
+        </div>
+        <figcaption class="sr-only">銑削行程 X 800 × Y 500 × Z 300 mm；線上選型器上限 400 × 300 × 50 mm；目前板件以同一比例畫在行程框左下角。</figcaption>
+      </figure>
+    </section>
+      <section class="gr" id="grade" aria-labelledby="gr-h">
+      <h2 class="gr-v" id="gr-h">公差等級</h2>
+      <div class="gr-main">
+      <p class="gr-sub">每一級的工時係數、量具與抽檢</p><p class="sec-lead">四級公差各自對應的量具、抽檢比例、檢驗天數與工時係數；參照物與四級畫在同一把對數尺上。</p>
+      <div class="ruler">
+        <ul class="refs" role="list"><li class="rf" style="--a:29.15%;--b:29.15%"><span class="rf-bar" aria-hidden="true"></span><span class="rf-t">影印紙 1 張（80 g/m²）</span><span class="rf-v">約 0.10 mm</span></li><li class="rf" style="--a:29.15%;--b:41.70%"><span class="rf-bar" aria-hidden="true"></span><span class="rf-t">頭髮直徑</span><span class="rf-v">約 0.05–0.10 mm</span></li><li class="rf" style="--a:67.55%;--b:70.85%"><span class="rf-bar" aria-hidden="true"></span><span class="rf-t">保鮮膜</span><span class="rf-v">約 0.01 mm</span></li></ul>
+        <div class="axis" aria-hidden="true">
+          <svg class="ax-svg" viewBox="0 0 1000 22" preserveAspectRatio="none"><path d="M0 0H1000M0 0V22M166 0V22M291.5 0V22M417 0V22M583 0V22M708.5 0V22M834 0V22M1000 0V22M40.4 0V11M92.5 0V11M310.59999999999997 0V11M331.9 0V11M356.1 0V11M384 0V11M457.40000000000003 0V11M509.5 0V11M727.6 0V11M748.9 0V11M773.1 0V11M801 0V11M874.5 0V11M926.5999999999999 0V11"/></svg>
+          <span class="ax-l" style="--x:0.00%">0.5</span><span class="ax-l" style="--x:16.60%">0.2</span><span class="ax-l" style="--x:29.15%">0.1</span><span class="ax-l" style="--x:41.70%">0.05</span><span class="ax-l" style="--x:58.30%">0.02</span><span class="ax-l" style="--x:70.85%">0.01</span><span class="ax-l" style="--x:83.40%">0.005</span><span class="ax-l" style="--x:100.00%">0.002</span>
+          <span class="ax-u">mm</span>
+        </div>
+        <div class="zone zl" style="--b:29.15%"><p>寬於 ±0.10 mm：一律以 T1 計價</p></div>
+        <ol class="gms" role="list"><li class="gm" data-g="t1" style="--x:29.15%">
+          <p class="gm-c">T1</p>
+          <p class="gm-v"><span class="dev"><span>+0.10</span><span>−0.10</span></span> mm</p>
+          <p class="gm-k">工時係數 <span class="tnum">×1.00</span></p>
+          <p class="gm-d">量具：游標卡尺</p>
+          <p class="gm-d">首件全尺寸；量產每 10 件抽 1 件</p>
+          <p class="gm-d">檢驗 <span class="tnum">1</span> 工作天</p>
+        </li><li class="gm on" data-g="t2" style="--x:41.70%">
+          <p class="gm-c">T2</p>
+          <p class="gm-v"><span class="dev"><span>+0.05</span><span>−0.05</span></span> mm</p>
+          <p class="gm-k">工時係數 <span class="tnum">×1.25</span></p>
+          <p class="gm-d">量具：分厘卡、塞規</p>
+          <p class="gm-d">首件全尺寸；量產每 5 件抽 1 件</p>
+          <p class="gm-d">檢驗 <span class="tnum">1</span> 工作天</p>
+        </li><li class="gm" data-g="t3" style="--x:58.30%">
+          <p class="gm-c">T3</p>
+          <p class="gm-v"><span class="dev"><span>+0.02</span><span>−0.02</span></span> mm</p>
+          <p class="gm-k">工時係數 <span class="tnum">×1.60</span></p>
+          <p class="gm-d">量具：分厘卡、塞規、高度規</p>
+          <p class="gm-d">標註尺寸全數量測</p>
+          <p class="gm-d">檢驗 <span class="tnum">1</span> 工作天</p>
+        </li><li class="gm" data-g="t4" style="--x:70.85%">
+          <p class="gm-c">T4</p>
+          <p class="gm-v"><span class="dev"><span>+0.01</span><span>−0.01</span></span> mm</p>
+          <p class="gm-k">工時係數 <span class="tnum">×2.20</span></p>
+          <p class="gm-d">量具：三次元量測</p>
+          <p class="gm-d">全數量測，隨貨附量測紀錄</p>
+          <p class="gm-d">檢驗 <span class="tnum">2</span> 工作天</p>
+        </li></ol>
+        <div class="zone zr" style="--a:83.40%"><p>±0.005 mm 以下：需研磨，範圍外</p></div>
+      </div>
+      <p class="gr-note">POM 的熱膨脹約為鋁的 4.8 倍：長 200 mm 的尺寸，室溫差 5 °C 就變化約 0.11 mm。所以 POM 最嚴只接 T3。</p>
+      </div>
+    </section>
+      <section class="calc" id="calc" aria-labelledby="calc-h">
+      <div class="calc-n">
+        <h2 id="calc-h">報價與交期</h2><p class="sec-lead">參考單價＝材料費＋加工費＋開機費÷數量；交期＝排程＋備料＋加工＋檢驗＋出貨。數字取自上方選型器的目前參數。</p>
+        <p class="eq-sub">單件工時 <b><span data-o="t">23.0</span> min</b> ＝（裝夾 <span class="tnum" data-o="tFix">4.0</span>＋銑面 <span class="tnum" data-o="tFace">5.3</span>＋外形 <span class="tnum" data-o="tCont">3.5</span>＋鑽孔 <span class="tnum" data-o="tDrill">4.2</span>＋去毛邊 <span class="tnum" data-o="tEdge">1.4</span>）min × 材質係數 <span class="tnum" data-o="mk">1.0</span> × 公差係數 <span class="tnum" data-o="gk">1.25</span></p>
+      </div>
+      <div class="calc-c">
+      <div class="chain ch-p" role="group" aria-label="參考單價的組成">
+        <div class="ch-m">
+          <p class="ch-all"><span class="ch-k">參考單價</span><span class="ch-v"><b class="tnum" data-o="unit">559</b><span class="dev"><span>+15%</span><span>−10%</span></span><small>元／件</small></span></p>
+          <div class="ch-row"><div class="sg" data-sk="pm" style="--v:162.5"><p class="sg-dim"><b class="tnum" data-o="pm">162</b><small>元</small></p><p class="sg-bar">材料費</p><p class="sg-d">毛胚 <span class="tnum" data-o="kgS">0.90</span> kg × <span class="tnum" data-o="mp">180</span> 元/kg</p></div><div class="sg" data-sk="pt" style="--v:322.0"><p class="sg-dim"><b class="tnum" data-o="pt">322</b><small>元</small></p><p class="sg-bar">加工費</p><p class="sg-d"><span class="tnum" data-o="t">23.0</span> min × <span class="tnum">14</span> 元/min</p></div><div class="sg" data-sk="psq" style="--v:75.0"><p class="sg-dim"><b class="tnum" data-o="psq">75</b><small>元</small></p><p class="sg-bar">開機費 ÷ 數量</p><p class="sg-d"><span class="tnum">1,500</span> 元 ÷ <span class="tnum" data-o="q">20</span> 件<span class="sg-x">；含加工程式、治具、首件量測</span></p></div></div>
+        </div>
+        <p class="ch-lim">極限：上 NT$ <span class="tnum" data-o="hi">640</span>／下 NT$ <span class="tnum" data-o="lo">500</span>（未稅，四捨五入到 10 元）</p>
+      </div>
+      <div class="chain ch-l" id="days" role="group" aria-label="交期的組成" style="--tot:6">
+        <div class="ch-pre"><div class="ch-refs"><span class="rf2" style="--v:1"><span>審圖</span><span class="tnum">(≤1)</span></span><span class="rf2" style="--v:2"><span>報價</span><span class="tnum">(≤2)</span></span></div><p class="ch-pk">確認訂單之前，參考尺寸</p><p class="days-k">每段長度＝工作天數。每日可排機時 960 min，超過即順延一天。</p></div>
+        <div class="ch-m">
+          <p class="ch-all"><span class="ch-k">交期</span><span class="ch-v"><b class="tnum" data-o="lead">6</b><small>工作天</small></span></p>
+          <div class="ch-row"><div class="sg" data-dk="sch" style="--v:2"><p class="sg-dim"><b class="tnum" data-o="d-sch">2</b><small>天</small></p><p class="sg-bar">排程</p><p class="sg-d">依接單當週排程</p></div><div class="sg" data-dk="prep" style="--v:1"><p class="sg-dim"><b class="tnum" data-o="d-prep">1</b><small>天</small></p><p class="sg-bar">備料</p><p class="sg-d"><span data-o="prepN">6061-T6</span> 備料</p></div><div class="sg" data-dk="mach" style="--v:1"><p class="sg-dim"><b class="tnum" data-o="d-mach">1</b><small>天</small></p><p class="sg-bar">加工</p><p class="sg-d"><span class="tnum" data-o="q">20</span> 件 × <span class="tnum" data-o="t">23.0</span> min ÷ <span class="tnum">960</span> min，無條件進位</p></div><div class="sg" data-dk="insp" style="--v:1"><p class="sg-dim"><b class="tnum" data-o="d-insp">1</b><small>天</small></p><p class="sg-bar">檢驗</p><p class="sg-d">依公差等級</p></div><div class="sg" data-dk="ship" style="--v:1"><p class="sg-dim"><b class="tnum" data-o="d-ship">1</b><small>天</small></p><p class="sg-bar">出貨</p><p class="sg-d">包裝、交運</p></div></div>
+          <p class="ch-dat">確認訂單＝第 0 天<span class="ch-dt" aria-hidden="true"></span></p>
+        </div>
+      </div>
+      </div>
+    </section>
+      <section class="mat" id="mat" aria-labelledby="mat-h">
+      <h2 id="mat-h">材質與係數</h2>
+      <p class="sec-lead">公式用到的係數；材料單價每月依進料價調整。黃色列＝目前選型的材質。</p>
+      <table class="mt-t">
+        <thead><tr><th scope="col">材質</th><th scope="col">密度<small>g/cm³</small></th><th scope="col">材料單價<small>元/kg</small></th><th scope="col">工時係數</th><th scope="col">備料<small>工作天</small></th><th scope="col">最嚴公差</th><th scope="col">備註</th></tr></thead>
+        <tbody><tr class="on" data-m="al"><th scope="row"><span class="mt-c">6061-T6</span><span class="mt-n">鋁合金</span></th><td><span class="tnum">2.70</span><span class="mt-bar" style="--r:0.318" aria-hidden="true"></span></td><td class="tnum">180</td><td class="tnum">×1.0</td><td class="tnum">1</td><td><span class="tnum">±0.01</span> mm（T4）</td><td class="mt-x">工時係數的基準材</td></tr><tr class="" data-m="s45c"><th scope="row"><span class="mt-c">S45C</span><span class="mt-n">中碳鋼</span></th><td><span class="tnum">7.85</span><span class="mt-bar" style="--r:0.924" aria-hidden="true"></span></td><td class="tnum">60</td><td class="tnum">×1.6</td><td class="tnum">2</td><td><span class="tnum">±0.01</span> mm（T4）</td><td class="mt-x">需防鏽包裝；未含熱處理</td></tr><tr class="" data-m="sus"><th scope="row"><span class="mt-c">SUS304</span><span class="mt-n">不鏽鋼</span></th><td><span class="tnum">7.93</span><span class="mt-bar" style="--r:0.933" aria-hidden="true"></span></td><td class="tnum">140</td><td class="tnum">×2.2</td><td class="tnum">2</td><td><span class="tnum">±0.01</span> mm（T4）</td><td class="mt-x">加工硬化，刀具耗損高</td></tr><tr class="" data-m="bs"><th scope="row"><span class="mt-c">C3604</span><span class="mt-n">快削黃銅</span></th><td><span class="tnum">8.50</span><span class="mt-bar" style="--r:1.000" aria-hidden="true"></span></td><td class="tnum">330</td><td class="tnum">×0.8</td><td class="tnum">3</td><td><span class="tnum">±0.01</span> mm（T4）</td><td class="mt-x">材料單價最高，切屑回收不折價</td></tr><tr class="" data-m="pom"><th scope="row"><span class="mt-c">POM</span><span class="mt-n">聚甲醛</span></th><td><span class="tnum">1.41</span><span class="mt-bar" style="--r:0.166" aria-hidden="true"></span></td><td class="tnum">220</td><td class="tnum">×0.7</td><td class="tnum">1</td><td><span class="tnum">±0.02</span> mm（T3）</td><td class="mt-x">熱膨脹約為鋁的 4.8 倍</td></tr></tbody>
+      </table>
+    </section>
+      <section class="send" id="send" aria-labelledby="send-h">
+      <h2 class="send-v" id="send-h">送圖</h2>
+      <p class="sec-lead send-l">已有圖面，直接傳檔；沒有圖面，用上方選型器產生詢價單，附手繪草圖的照片也可以。</p>
+      <ul class="fmt" role="list"><li><span class="fm-a">STEP</span><span class="fm-b">.stp／.step</span><span class="fm-c">3D 模型，優先</span></li><li><span class="fm-a">IGES</span><span class="fm-b">.igs</span><span class="fm-c">3D 模型</span></li><li><span class="fm-a">DXF</span><span class="fm-b">.dxf</span><span class="fm-c">2D 外形，需另附厚度</span></li><li><span class="fm-a">PDF</span><span class="fm-b">.pdf</span><span class="fm-c">2D 圖面，需含尺寸與公差</span></li></ul>
+      <dl class="ct"><div><dt>電話</dt><dd><span class="ct-v"><a href="tel:+886400000228">04-0000-0228</a></span><span class="ct-n">週一至週五 08:00–17:30</span></dd></div><div><dt>傳真</dt><dd><span class="ct-v">04-0000-0229</span><span class="ct-n">24 小時收件</span></dd></div><div><dt>地址</dt><dd><span class="ct-v">台中市大里區工具機三街 12 號</span><span class="ct-n">來廠請先來電約時間</span></dd></div><div><dt>審圖回覆</dt><dd><span class="ct-v">1 個工作天內</span><span class="ct-n">自收到圖面起算</span></dd></div><div><dt>報價單</dt><dd><span class="ct-v">2 個工作天內</span><span class="ct-n">自收到圖面起算</span></dd></div></dl>
+    </section>
+    </main>
+    <footer class="foot">
+      <p class="ft-b"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5 11.5h22v15H5z" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="11.5" cy="19" r="2.7" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="20.5" cy="19" r="2.7" fill="none" stroke="currentColor" stroke-width="2.2"/><path class="mk-d" d="M5 6.2h22M5 3.6v5.2M27 3.6v5.2" fill="none" stroke-width="2"/></svg><b>公差精工有限公司</b></p>
+      <p class="ft-a">台中市大里區工具機三街 12 號｜電話 <a href="tel:+886400000228">04-0000-0228</a>｜傳真 04-0000-0229｜週一至週五 08:00–17:30</p>
+      <p class="ft-n">參考單價與交期為公式估算，正式報價以審圖後的報價單為準。字型：Noto Sans TC、Saira、Azeret Mono（SIL Open Font License 1.1）。</p>
+    </footer>
+    <template id="tp-item"><span class="k">品項 </span><span data-k="i"></span>
+<span class="k">　材質　　</span><span data-k="mat"></span>
+<span class="k">　尺寸　　</span><span data-k="dim"></span> mm（長 × 寬 × 厚）
+<span class="k">　孔　　　</span><span data-k="holes"></span>
+<span class="k">　四角　　</span><span data-k="cor"></span> mm
+<span class="k">　公差　　</span><span data-k="g"></span>　未註公差 ±<span data-k="tol"></span> mm
+<span class="k">　　　　　</span>孔位置度 Ø<span data-k="pos"></span> mm
+<span class="k">　數量　　</span><span data-k="q"></span> 件
+<span class="k">　參考單價 </span>NT$ <span data-k="lo"></span>–<span data-k="hi"></span>／件（未稅）
+<span class="k">　預估交期 </span><span data-k="lead"></span> 工作天（自確認訂單日起算）</template>
+    <template id="tp-head"><span class="k">詢價單｜</span>公差精工有限公司
+<span class="k">日期　　　</span><span data-k="date">＿＿＿＿＿＿</span>
+<span class="k">詢價方　　</span><span data-k="co">＿＿＿＿＿＿＿＿</span>
+<span class="k">聯絡人　　</span><span data-k="who">＿＿＿＿</span><span class="k">　電話　</span><span data-k="tel">＿＿＿＿＿＿</span>
+<span class="k">需求交期　</span><span data-k="due">＿＿＿＿＿＿</span>
+<span class="k">備註　　　</span><span data-k="note">無</span></template>
+    <template id="tp-rh"><span data-k="n"></span> × Ø<span data-k="d"></span> mm 貫穿</template>
+    <template id="tp-rh0">無</template>
+    <template id="tp-rm"><button type="button" class="rm">刪除<span class="sr-only">品項 <span data-k="i"></span></span></button></template>
+    <template id="tp-w-thru">貫穿</template>
+    <template id="tp-w-plan">上視圖</template>
+    <template id="tp-w-sec">剖面</template>
+    <template id="tp-w-rv">右視圖</template>
+    <template id="tp-w-iso">等角圖</template>
+    <template id="tp-live">圖面已更新：<span data-k="dim"></span> mm，<span data-k="holes"></span>；參考單價 NT$ <span data-k="p"></span>／件，交期 <span data-k="lead"></span> 工作天。</template>
+    <template id="tp-lh"><span data-k="n"></span> 孔 Ø<span data-k="d"></span> mm</template>
+    <template id="tp-lh0">無孔</template>
+    <template id="tp-clamp">「<span data-k="what"></span>」的範圍是 <span data-k="lo"></span>–<span data-k="hi"></span> <span data-k="u"></span>，已改為 <span data-k="v"></span> <span data-k="u"></span>。</template>
+    <template id="tp-dia">孔徑上限 <span data-k="v"></span> mm：孔與孔、孔與邊至少留 3 mm。</template>
+    <template id="tp-pom">POM 最嚴接 T3，公差等級已改為 T3。</template>
+    <template id="tp-added">已加入詢價單：品項 <span data-k="i"></span>，共 <span data-k="n"></span> 項。</template>
+    <template id="tp-removed">已刪除一個品項，目前 <span data-k="n"></span> 項。</template>
+    <template id="tp-copied">已複製 <span data-k="n"></span> 行文字，可貼到電子郵件或文件。</template>
+    <template id="tp-copyfail">瀏覽器不允許自動複製：文字已全選，請按 Ctrl＋C（Mac 為 ⌘＋C）。</template>
+    <template id="tp-cleared">詢價單已清空。</template>
+    <template id="tp-full">詢價單最多 30 項。</template>
+    <script type="application/json" id="f28-data">{"M":[{"id":"al","code":"6061-T6","rho":2.7,"price":180,"k":1,"prep":1,"maxG":4},{"id":"s45c","code":"S45C","rho":7.85,"price":60,"k":1.6,"prep":2,"maxG":4},{"id":"sus","code":"SUS304","rho":7.93,"price":140,"k":2.2,"prep":2,"maxG":4},{"id":"bs","code":"C3604","rho":8.5,"price":330,"k":0.8,"prep":3,"maxG":4},{"id":"pom","code":"POM","rho":1.41,"price":220,"k":0.7,"prep":1,"maxG":3}],"G":[{"id":"t1","code":"T1","tol":"0.10","pos":"0.20","flat":"0.10","k":1,"insp":1,"v":0.1},{"id":"t2","code":"T2","tol":"0.05","pos":"0.10","flat":"0.05","k":1.25,"insp":1,"v":0.05},{"id":"t3","code":"T3","tol":"0.02","pos":"0.05","flat":"0.03","k":1.6,"insp":1,"v":0.02},{"id":"t4","code":"T4","tol":"0.01","pos":"0.02","flat":"0.02","k":2.2,"insp":2,"v":0.01}],"C":["C1","C3","R3","R6"],"N":[0,1,2,3,4,6,8],"LIM":{"L":[20,400],"W":[20,300],"T":[3,50],"d":[2,30],"q":[1,999]},"WIDE":{"id":"w","vw":1040,"vh":520,"X0":140,"Y0":100,"gapV":72,"gapH":100,"mL":560,"mWT":310,"mLW":669,"rv":true,"box":true,"fs":15,"ft":12,"fl":13},"TALL":{"id":"t","vw":360,"vh":440,"X0":66,"Y0":84,"gapV":92,"gapH":0,"mL":224,"mWT":230,"mLW":9999,"rv":false,"box":false,"fs":13,"ft":12,"fl":12},"def":{"m":"al","L":160,"W":100,"T":16,"n":6,"d":8.5,"g":"t2","c":"R6","q":20},"list":[{"m":"al","L":160,"W":100,"T":16,"n":6,"d":8.5,"g":"t2","c":"R6","q":20},{"m":"pom","L":80,"W":50,"T":10,"n":2,"d":5.5,"g":"t2","c":"C1","q":100}],"TH_S":0.34,"log":[-0.3010299956639812,-2.6989700043360187]}</script>
+<script>
+(function(){
+'use strict';
+var d=document,de=d.getElementById('f28-data');if(!de)return;
+var D=JSON.parse(de.textContent),NS='http://www.w3.org/2000/svg';
+var $=function(s,r){return (r||d).querySelector(s);},$$=function(s,r){return Array.prototype.slice.call((r||d).querySelectorAll(s));};
+var rm=matchMedia('(prefers-reduced-motion: reduce)');
+function nf(v) { v = Math.round(v * 10) / 10; return v % 1 ? v.toFixed(1) : String(v); }
+function fmt(n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+function cornerOf(code) { return { t: String(code).charAt(0), v: +String(code).slice(1) || 0 }; }
+function holesOf(p) {
+  var n = p.n, d = p.d, L = p.L, W = p.W, i, j;
+  var e = Math.max(Math.ceil(d * 1.5 * 2) / 2, 6);
+  var cols = [0, 1, 2, 3, 2, 0, 3, 0, 4][n] || 0;
+  var rows = (n === 4 || n === 6 || n === 8) ? 2 : (cols ? 1 : 0);
+  var xs = [], ys = [], pts = [];
+  if (cols === 1) xs = [L / 2]; else for (i = 0; i < cols; i++) xs.push(e + (L - 2 * e) * i / (cols - 1));
+  if (rows === 1) ys = [W / 2]; else if (rows === 2) ys = [e, W - e];
+  for (j = 0; j < ys.length; j++) for (i = 0; i < xs.length; i++) pts.push([xs[i], ys[j]]);
+  return { e: e, cols: cols, rows: rows, xs: xs, ys: ys, pts: pts, px: cols > 1 ? (L - 2 * e) / (cols - 1) : 0, py: rows > 1 ? W - 2 * e : 0 };
+}
+function holesOk(p) {
+  if (!p.n) return true;
+  var h = holesOf(p), d = p.d;
+  if (h.cols > 1 && h.px < d + 3) return false;
+  if (h.cols === 1 && p.L < d + 6) return false;
+  if (h.rows > 1 && h.py < d + 3) return false;
+  if (h.rows === 1 && p.W < d + 6) return false;
+  return true;
+}
+function maxDia(p) { for (var d = 30; d > 2; d -= 0.5) if (holesOk({ L: p.L, W: p.W, n: p.n, d: d })) return d; return 2; }
+function calc(p, m, g) {
+  var c = cornerOf(p.c), k = c.v;
+  var area = p.L * p.W - (c.t === 'C' ? 2 * k * k : (4 - Math.PI) * k * k) - p.n * Math.PI * p.d * p.d / 4;
+  var st = [p.L + 6, p.W + 6, p.T + 3];
+  var kgS = st[0] * st[1] * st[2] * m.rho / 1e6, kgP = area * p.T * m.rho / 1e6;
+  var tFix = 4, tFace = 2 * p.L * p.W / 6000, tCont = 2 * (p.L + p.W) * Math.ceil(p.T / 5) / 600;
+  var tDrill = p.n * (0.5 + p.T / 80) * (p.d > 10 ? 1.5 : 1), tEdge = c.t === 'C' ? 1.6 : 1.4;
+  var base = tFix + tFace + tCont + tDrill + tEdge;
+  var t = Math.round(base * m.k * g.k * 10) / 10;
+  var mach = Math.ceil(p.q * t / 960);
+  var lead = { sch: 2, prep: m.prep, mach: mach, insp: g.insp, ship: 1 };
+  lead.total = lead.sch + lead.prep + lead.mach + lead.insp + lead.ship;
+  var pm = kgS * m.price, pt = t * 14, ps = 1500, unit = pm + pt + ps / p.q;
+  var r10 = function (v) { return Math.max(10, Math.round(v / 10) * 10); };
+  return { st: st, kgS: kgS, kgP: kgP, parts: [tFix, tFace, tCont, tDrill, tEdge], base: base, t: t, lead: lead, pm: pm, pt: pt, ps: ps, unit: unit, lo: r10(unit * 0.9), hi: r10(unit * 1.15) };
+}
+function fitScale(p, lay) {
+  var S = [4, 3.2, 2.4, 2, 1.6, 1.2, 1, 0.8, 0.6, 0.5, 0.4], i, s;
+  for (i = 0; i < S.length; i++) {
+    s = S[i];
+    if (p.L * s <= lay.mL && (p.W + p.T) * s <= lay.mWT && (!lay.rv || (p.L + p.W) * s <= lay.mLW)) return s;
+  }
+  return 0.4;
+}
+function fitH(p, lay) {
+  if (lay.rv) return lay.vh;
+  var s = p.s || fitScale(p, lay);
+  return Math.min(lay.vh, Math.max(300, Math.ceil(lay.Y0 + (p.W + p.T) * s + lay.gapV + 36 + 14)));
+}
+function plateD(x0, y0, x1, y1, t, k) {
+  var r = function (v) { return Math.round(v * 100) / 100; };
+  x0 = r(x0); y0 = r(y0); x1 = r(x1); y1 = r(y1); k = r(k);
+  if (!(k > 0.2)) return 'M' + x0 + ' ' + y0 + 'H' + x1 + 'V' + y1 + 'H' + x0 + 'Z';
+  if (t === 'C') return 'M' + r(x0 + k) + ' ' + y0 + 'H' + r(x1 - k) + 'L' + x1 + ' ' + r(y0 + k) + 'V' + r(y1 - k) + 'L' + r(x1 - k) + ' ' + y1 + 'H' + r(x0 + k) + 'L' + x0 + ' ' + r(y1 - k) + 'V' + r(y0 + k) + 'Z';
+  var a = 'A' + k + ' ' + k + ' 0 0 1 ';
+  return 'M' + r(x0 + k) + ' ' + y0 + 'H' + r(x1 - k) + a + x1 + ' ' + r(y0 + k) + 'V' + r(y1 - k) + a + r(x1 - k) + ' ' + y1 + 'H' + r(x0 + k) + a + x0 + ' ' + r(y1 - k) + 'V' + r(y0 + k) + a + r(x0 + k) + ' ' + y0 + 'Z';
+}
+function thumb(p, s, x0, y0) {
+  var c = cornerOf(p.c), Ls = p.L * s, Ws = p.W * s, k = Math.min(c.v * s, Ls / 3, Ws / 3), h = holesOf(p), hd = '', i, r = p.d * s / 2, cx, cy;
+  for (i = 0; i < h.pts.length; i++) {
+    cx = Math.round((x0 + h.pts[i][0] * s) * 100) / 100; cy = Math.round((y0 + Ws - h.pts[i][1] * s) * 100) / 100;
+    hd += 'M' + Math.round((cx - r) * 100) / 100 + ' ' + cy + 'a' + Math.round(r * 100) / 100 + ' ' + Math.round(r * 100) / 100 + ' 0 1 0 ' + Math.round(2 * r * 100) / 100 + ' 0a' + Math.round(r * 100) / 100 + ' ' + Math.round(r * 100) / 100 + ' 0 1 0 ' + Math.round(-2 * r * 100) / 100 + ' 0';
+  }
+  return { plate: plateD(x0, y0, x0 + Ls, y0 + Ws, c.t, k), holes: hd };
+}
+function drawPart(p, lay, w) {
+  var R = function (v) { return Math.round(v * 100) / 100; };
+  var s = p.s || fitScale(p, lay);
+  var X0 = lay.X0, Y0 = lay.Y0, Ls = p.L * s, Ws = p.W * s, Ts = p.T * s, X1 = X0 + Ls, Y1 = Y0 + Ws;
+  var ST = Y1 + lay.gapV, SB = ST + Ts, RV0 = X1 + lay.gapH;
+  var h = holesOf(p), c = cornerOf(p.c), k = Math.min(c.v * s, Ls / 3, Ws / 3), rr = p.d * s / 2;
+  var fs = lay.fs, ft = lay.ft, fl = lay.fl, boxed = !!lay.box, g = p.g;
+  var X = function (x) { return X0 + x * s; }, Y = function (y) { return Y1 - y * s; };
+  var tol = '±' + g.tol;
+  var o = { s: s, box: {} }, O = '', H = '', S = '', D = '', F = '';
+  var dl = '', da = '';            // 尺寸線、箭頭（細線、黃）
+  var cl = '', hl = '', th = '';   // 中心線、隱藏線、細實線
+  function ln(x1, y1, x2, y2) { return 'M' + R(x1) + ' ' + R(y1) + 'L' + R(x2) + ' ' + R(y2); }
+  function arrow(x, y, dx, dy) {
+    var L = 9, Wd = 2.4, bx = x - dx * L, by = y - dy * L;
+    return 'M' + R(x) + ' ' + R(y) + 'L' + R(bx - dy * Wd) + ' ' + R(by + dx * Wd) + 'L' + R(bx + dy * Wd) + ' ' + R(by - dx * Wd) + 'Z';
+  }
+  function tx(x, y, t, cls, anchor) { return '<text class="' + cls + '" x="' + R(x) + '" y="' + R(y) + '"' + (anchor && anchor !== 'start' ? ' text-anchor="' + anchor + '"' : '') + '>' + t + '</text>'; }
+  function tw(t, size) { var n = 0, i, ch; for (i = 0; i < t.length; i++) { ch = t.charCodeAt(i); n += ch > 0x2e80 ? 1 : (ch === 32 ? 0.3 : 0.56); } return n * size; }
+  function dimH(xa, xb, yObj, yD, t, tl, key) {
+    var dir = yD < yObj ? -1 : 1, mx = (xa + xb) / 2;
+    dl += ln(xa, yObj + dir * 3, xa, yD + dir * 5) + ln(xb, yObj + dir * 3, xb, yD + dir * 5);
+    if (xb - xa >= 24) { dl += ln(xa, yD, xb, yD); da += arrow(xa, yD, -1, 0) + arrow(xb, yD, 1, 0); }
+    else { dl += ln(xa - 15, yD, xb + 15, yD); da += arrow(xa, yD, 1, 0) + arrow(xb, yD, -1, 0); }
+    if (key && boxed) { o.box[key] = [R(mx), R(yD - 18)]; if (tl) D += tx(mx + 42, yD - 13, tl, 'tl'); }
+    else D += tx(mx, yD - 6, t + (tl ? '<tspan class="tl" dx="4">' + tl + '</tspan>' : ''), 'dt', 'middle');
+  }
+  function dimV(ya, yb, xObj, xD, t, tl, key) {
+    var dir = xD < xObj ? -1 : 1, my = (ya + yb) / 2, span = yb - ya, bk = key && boxed;
+    var up = bk ? 21 : fs * 0.78, dn = bk ? (tl ? 34 : 21) : (fs * 0.42 + (tl ? ft + 6 : 4));
+    var room = span > up + dn + 22;
+    dl += ln(xObj + dir * 3, ya, xD + dir * 5, ya) + ln(xObj + dir * 3, yb, xD + dir * 5, yb);
+    if (span >= 24) {
+      da += arrow(xD, ya, 0, -1) + arrow(xD, yb, 0, 1);
+      if (room) dl += ln(xD, ya, xD, my - up) + ln(xD, my + dn, xD, yb); else dl += ln(xD, ya, xD, yb);
+    } else { dl += ln(xD, ya - 15, xD, yb + 15); da += arrow(xD, ya, 0, 1) + arrow(xD, yb, 0, -1); }
+    if (bk) {
+      var bx = room ? xD : xD + dir * 56, by = room ? my - 5 : my;
+      if (!room) bx = dir < 0 ? Math.max(48, bx) : Math.min(lay.vw - 52, bx);
+      o.box[key] = [R(bx), R(by)];
+      if (tl) D += tx(bx, by + (room ? 33 : 31), tl, 'tl', 'middle');
+    } else if (room) {
+      D += tx(xD, my + fs * 0.1, t, 'dt', 'middle');
+      if (tl) D += tx(xD, my + fs * 0.1 + ft + 3, tl, 'tl', 'middle');
+    } else {
+      D += tx(xD + dir * 7, my + fs * 0.35, t + (tl ? '<tspan class="tl" dx="3">' + tl + '</tspan>' : ''), 'dt', dir > 0 ? 'start' : 'end');
+    }
+  }
+  function fcf(x, y, cells, hgt) {   // 公差框：cells=[{w, sym|t}]
+    var out = '', cx = x, i, cw, m;
+    for (i = 0; i < cells.length; i++) {
+      cw = cells[i].w; m = cx + cw / 2;
+      if (cells[i].sym === 'pos') out += '<circle class="fs" cx="' + R(m) + '" cy="' + R(y + hgt / 2) + '" r="5.2"/><path class="fs" d="' + ln(m - 8, y + hgt / 2, m + 8, y + hgt / 2) + ln(m, y + hgt / 2 - 8, m, y + hgt / 2 + 8) + '"/>';
+      else if (cells[i].sym === 'flat') out += '<path class="fs" d="M' + R(m - 8) + ' ' + R(y + hgt / 2 + 4) + 'L' + R(m - 3) + ' ' + R(y + hgt / 2 - 4) + 'H' + R(m + 8) + 'L' + R(m + 3) + ' ' + R(y + hgt / 2 + 4) + 'Z"/>';
+      else out += tx(m, y + hgt / 2 + fl * 0.36, cells[i].t, 'ft', 'middle');
+      if (i) out = '<path class="fr" d="' + ln(cx, y, cx, y + hgt) + '"/>' + out;
+      cx += cw;
+    }
+    return '<rect class="fr" x="' + R(x) + '" y="' + R(y) + '" width="' + R(cx - x) + '" height="' + hgt + '"/>' + out;
+  }
+  function datum(x, y, dx, dy, letter) {  // 三角形底邊在 (x,y)，朝 (dx,dy) 伸出引線與方框
+    var px = -dy, py = dx, tipx = x + dx * 8, tipy = y + dy * 8, bx = x + dx * 16, by = y + dy * 16;
+    var cx = bx + dx * 10, cy = by + dy * 10;
+    return '<path class="dtm" d="M' + R(x + px * 5) + ' ' + R(y + py * 5) + 'L' + R(x - px * 5) + ' ' + R(y - py * 5) + 'L' + R(tipx) + ' ' + R(tipy) + 'Z"/>' +
+      '<path class="fr" d="' + ln(tipx, tipy, bx, by) + '"/><rect class="fr bx" x="' + R(cx - 10) + '" y="' + R(cy - 10) + '" width="20" height="20"/>' + tx(cx, cy + fl * 0.36, letter, 'ft', 'middle');
+  }
+
+  /* ---- 外形 ---- */
+  O += '<path class="pf ol" d="' + plateD(X0, Y0, X1, Y1, c.t, k) + '"/>';
+  // 剖面 A–A：外框＋孔壁
+  var ycut = h.rows ? h.ys[0] : p.W / 2, cutHoles = h.rows ? h.xs : [], segs = [], a0 = X0, i, j;
+  for (i = 0; i < cutHoles.length; i++) { segs.push([a0, X(cutHoles[i]) - rr]); a0 = X(cutHoles[i]) + rr; }
+  segs.push([a0, X1]);
+  var sd = 'M' + R(X0) + ' ' + R(ST) + 'H' + R(X1) + 'V' + R(SB) + 'H' + R(X0) + 'Z';
+  for (i = 0; i < cutHoles.length; i++) sd += ln(X(cutHoles[i]) - rr, ST, X(cutHoles[i]) - rr, SB) + ln(X(cutHoles[i]) + rr, ST, X(cutHoles[i]) + rr, SB);
+  O += '<path class="ol" d="' + sd + '"/>';
+  // 右視圖
+  if (lay.rv) {
+    O += '<path class="ol" d="M' + R(RV0) + ' ' + R(ST) + 'H' + R(RV0 + Ws) + 'V' + R(SB) + 'H' + R(RV0) + 'Z"/>';
+    if (k > 0.2) {
+      var e1 = ln(RV0 + k, ST, RV0 + k, SB) + ln(RV0 + Ws - k, ST, RV0 + Ws - k, SB);
+      if (c.t === 'C') O += '<path class="ol" d="' + e1 + '"/>'; else th += e1;
+    }
+  }
+
+  /* ---- 孔與中心線 ---- */
+  for (i = 0; i < h.pts.length; i++) H += '<circle class="hf ol" cx="' + R(X(h.pts[i][0])) + '" cy="' + R(Y(h.pts[i][1])) + '" r="' + R(rr) + '"/>';
+  var ov = Math.max(5, rr * 0.35) + 4;
+  for (j = 0; j < h.ys.length; j++) cl += ln(X(h.xs[0]) - rr - ov, Y(h.ys[j]), X(h.xs[h.xs.length - 1]) + rr + ov, Y(h.ys[j]));
+  for (i = 0; i < h.xs.length; i++) cl += ln(X(h.xs[i]), Y(h.ys[h.ys.length - 1]) - rr - ov, X(h.xs[i]), Y(h.ys[0]) + rr + ov);
+  for (i = 0; i < cutHoles.length; i++) cl += ln(X(cutHoles[i]), ST - 6, X(cutHoles[i]), SB + 6);
+  if (lay.rv) for (j = 0; j < h.ys.length; j++) {
+    hl += ln(RV0 + (h.ys[j] - p.d / 2) * s, ST, RV0 + (h.ys[j] - p.d / 2) * s, SB) + ln(RV0 + (h.ys[j] + p.d / 2) * s, ST, RV0 + (h.ys[j] + p.d / 2) * s, SB);
+    cl += ln(RV0 + h.ys[j] * s, ST - 7, RV0 + h.ys[j] * s, SB + 7);
+  }
+  H += (cl ? '<path class="cl" d="' + cl + '"/>' : '') + (hl ? '<path class="hd" d="' + hl + '"/>' : '') + (th ? '<path class="tn" d="' + th + '"/>' : '');
+
+  /* ---- 剖面線（45°，避開孔） ---- */
+  // 剖面線依材質：鋼＝密單線、鋁＝疏單線、不鏽鋼＝雙線、銅合金＝實虛交替、塑膠＝交叉線（與材質選項的樣張同一套規則）
+  var HS = { al: [8, 0, 0, 0], s45c: [5, 0, 0, 0], sus: [8.5, 2.2, 0, 0], bs: [6, 0, 1, 0], pom: [8, 0, 0, 1] };
+  var hs = HS[p.m] || [6.5, 0, 0, 0], hd = '', hd2 = '', u, sp = hs[0], n0 = 0, cid = lay.id + '-hc';
+  for (u = X0 - Ts; u < X1; u += sp, n0++) {
+    if (hs[2] && n0 % 2) hd2 += ln(u, SB, u + Ts, ST); else hd += ln(u, SB, u + Ts, ST);
+    if (hs[1]) hd += ln(u + hs[1], SB, u + hs[1] + Ts, ST);
+    if (hs[3]) hd += ln(u, ST, u + Ts, SB);
+  }
+  S = '<clipPath id="' + cid + '">' + segs.filter(function (q) { return q[1] - q[0] > 0.5; }).map(function (q) { return '<rect x="' + R(q[0]) + '" y="' + R(ST) + '" width="' + R(q[1] - q[0]) + '" height="' + R(Ts) + '"/>'; }).join('') + '</clipPath><path class="ht" clip-path="url(#' + cid + ')" d="' + hd + '"/>' + (hd2 ? '<path class="ht htd" clip-path="url(#' + cid + ')" d="' + hd2 + '"/>' : '');
+
+  /* ---- 尺寸 ---- */
+  var yCh = boxed ? Y1 + 34 : Y1 + 24;              // 孔位鏈式尺寸
+  if (boxed) dimH(X0, X1, Y0, Y0 - 46, nf(p.L), tol, 'L');
+  else dimH(X0, X1, Y1, Y1 + 52, nf(p.L), tol, null);
+  dimV(Y0, Y1, X0, X0 - (boxed ? 86 : 48), nf(p.W), tol, 'W');
+  if (h.cols) {
+    dimH(X0, X(h.xs[0]), Y1, yCh, nf(h.xs[0]), '', null);
+    if (h.cols > 1) dimH(X(h.xs[0]), X(h.xs[h.cols - 1]), Y1, yCh, h.cols > 2 ? (h.cols - 1) + '×' + nf(h.px) : nf(h.px), '', null);
+    var xYd = X1 + (boxed ? 34 : 24);
+    dimV(Y(h.ys[0]), Y1, X1, xYd, nf(h.ys[0]), '', null);
+    if (h.rows > 1) dimV(Y(h.ys[1]), Y(h.ys[0]), X1, xYd, nf(h.py), '', null);
+  }
+  if (lay.rv) dimV(ST, SB, RV0 + Ws, RV0 + Ws + 26, nf(p.T), tol, 'T');
+  else dimV(ST, SB, X1, X1 + 24, nf(p.T), tol, 'T');
+
+  // 剖切線（只畫兩端粗線＋視向箭頭）
+  var yc = Y(ycut), cp = '', ca = '', xr = X1 + (boxed ? 46 : 36), xl = X0 - 9;
+  cp += ln(xl, yc, xl - 14, yc) + ln(xr, yc, xr + 14, yc);
+  ca += ln(xl - 14, yc, xl - 14, yc - 13) + ln(xr + 14, yc, xr + 14, yc - 13);
+  da += arrow(xl - 14, yc - 21, 0, -1) + arrow(xr + 14, yc - 21, 0, -1);
+  D += '<path class="cp" d="' + cp + '"/>';
+  dl += ca;
+  D += tx(xl - 14, yc - 26, 'A', 'cpl', 'middle') + tx(xr + 14, yc - 26, 'A', 'cpl', 'middle');
+
+  // 孔的引出標註＋位置度公差框
+  var thru = w.thru, posW = [24, tw('Ø' + g.pos, fl) + 14, 22, 22, 22];
+  if (boxed) {
+    var Ex = X1 + (h.rows === 1 && Ws < 90 ? 74 : 48), Ey = Y0 - 22;
+    if (h.pts.length) {
+      var hp = h.pts[h.pts.length - 1], hx = X(hp[0]) + rr * 0.707, hy = Y(hp[1]) - rr * 0.707;
+      dl += ln(hx, hy, Ex, Ey) + ln(Ex, Ey, Ex + 14, Ey);
+      da += arrow(hx, hy, (hx - Ex) / Math.hypot(hx - Ex, hy - Ey), (hy - Ey) / Math.hypot(hx - Ex, hy - Ey));
+      D += tx(Ex + 18 + 150, Ey + fs * 0.34, thru, 'lb2');
+      F += fcf(Ex + 18, Ey + 16, [{ w: posW[0], sym: 'pos' }, { w: posW[1], t: 'Ø' + g.pos }, { w: 22, t: 'A' }, { w: 22, t: 'B' }, { w: 22, t: 'C' }], 24);
+    }
+    o.box.H = [R(Ex + 18), R(Ey)];
+  } else if (h.pts.length) {
+    var ct = h.pts.length + '×Ø' + nf(p.d) + ' ', cw = tw(ct, fs) + tw(thru, fl), fw = posW.reduce(function (a, b) { return a + b; }, 0);
+    var xt = Math.max(8, Math.min(lay.vw - 8 - cw - 8 - fw, X1 - cw * 0.6)), yt = 30;
+    var hp2 = h.pts[h.pts.length - 1], hx2 = X(hp2[0]) + rr * 0.707, hy2 = Y(hp2[1]) - rr * 0.707, ex = xt - 16;
+    dl += ln(hx2, hy2, ex, yt - 5) + ln(ex, yt - 5, xt - 3, yt - 5);
+    da += arrow(hx2, hy2, (hx2 - ex) / Math.hypot(hx2 - ex, hy2 - yt + 5), (hy2 - yt + 5) / Math.hypot(hx2 - ex, hy2 - yt + 5));
+    D += tx(xt, yt, h.pts.length + '×Ø' + nf(p.d) + ' <tspan class="lb2">' + thru + '</tspan>', 'dt');
+    F += fcf(xt + cw + 8, yt - 17, [{ w: posW[0], sym: 'pos' }, { w: posW[1], t: 'Ø' + g.pos }, { w: 22, t: 'A' }, { w: 22, t: 'B' }, { w: 22, t: 'C' }], 22);
+  }
+
+  // 四角標註（右下角）
+  if (k > 0.2) {
+    var q0 = c.t === 'C' ? k / 2 : k * 0.293, sx0 = X1 - q0, sy0 = Y1 - q0, ex2 = X1 + 20, ey2 = Y1 + 20;
+    dl += ln(sx0, sy0, ex2, ey2) + ln(ex2, ey2, ex2 + 10, ey2);
+    da += arrow(sx0, sy0, -0.7071, -0.7071);
+    D += tx(ex2 + 13, ey2 + fs * 0.34, '4×' + c.t + nf(c.v), 'dt');
+  }
+
+  // 平面度（剖面上表面）＋基準 A（剖面下表面）
+  var fw2 = 24 + tw(g.flat, fl) + 14, fx = X0 + Math.min(Ls * 0.42, Ls - fw2 - 30), fy = ST - (boxed ? 34 : 32);
+  if (fx < X0 + 4) fx = X0 + 4;
+  F += fcf(fx, fy, [{ w: 24, sym: 'flat' }, { w: fw2 - 24, t: g.flat }], 22);
+  dl += ln(fx + 12, fy + 22, fx + 12, ST - 9);
+  da += arrow(fx + 12, ST, 0, 1);
+  F += datum(X1 - 16, SB, 0, 1, 'A');
+  // 基準 B：L 尺寸左延伸線上；基準 C：W 尺寸下延伸線上
+  if (boxed) { F += datum(X0, Y0 - 25, -1, 0, 'B'); F += datum(X0 - 46, Y1, 0, 1, 'C'); }
+  else { F += datum(X0, Y1 + 47, -1, 0, 'B'); F += datum(X0 - 26, Y1, 0, 1, 'C'); }
+
+  // 表面粗糙度符號
+  var rx = lay.rv ? RV0 + Math.min(16, Ws * 0.2) : X0 + 10, ry = lay.rv ? ST : SB;
+  if (lay.rv) F += '<path class="fs" d="' + ln(rx - 6, ry - 10, rx, ry - 0.5) + ln(rx, ry - 0.5, rx + 12, ry - 21) + ln(rx + 12, ry - 21, rx + 52, ry - 21) + '"/>' + tx(rx + 15, ry - 25, 'Ra 3.2', 'ft');
+
+  // 等角圖（寬版才有）：挑上視圖右上或右視圖右側較大的空白區塊放
+  if (lay.rv) {
+    var cs30 = 0.8660254, iw = (p.L + p.W) * cs30, ih = (p.L + p.W) * 0.5 + p.T;
+    var regs = [[X1 + 262, 18, lay.vw - 22, ST - 34], [X1 + 86, Y0 + 46, lay.vw - 22, ST - 30], [RV0 + Ws + 150, ST - 60, lay.vw - 22, lay.vh - 34]];
+    var best = null, ki;
+    for (i = 0; i < regs.length; i++) {
+      var rw = regs[i][2] - regs[i][0], rh = regs[i][3] - regs[i][1];
+      if (rw < 90 || rh < 70) continue;
+      ki = Math.min(rw / iw, rh / ih, s * 0.9);
+      if (!best || ki > best.k) best = { k: ki, r: regs[i] };
+    }
+    if (best && best.k * iw > 100) {
+      var K = best.k, ox = best.r[0] + (best.r[2] - best.r[0] - iw * K) / 2 + p.W * cs30 * K, oy = best.r[1] + (best.r[3] - best.r[1] - ih * K) / 2 + ih * K;
+      var P = function (x, y, z) { return [ox + (x - y) * cs30 * K, oy - ((x + y) * 0.5 + z) * K]; };
+      // 外形取樣（逆時針：右下→右上→左上→左下）；每角＝[角點 x, y, 圓心 x, y, 起始角]
+      var pts = [], cv = c.v > 0.2 ? Math.min(c.v, p.L / 3, p.W / 3) : 0;
+      var CN = [[p.L, 0, p.L - cv, cv, -90], [p.L, p.W, p.L - cv, p.W - cv, 0], [0, p.W, cv, p.W - cv, 90], [0, 0, cv, cv, 180]];
+      for (i = 0; i < 4; i++) {
+        var cq = CN[i], a0r = cq[4] * Math.PI / 180, nS = c.t === 'C' ? 1 : 6;
+        if (!cv) { pts.push([cq[0], cq[1]]); continue; }
+        for (j = 0; j <= nS; j++) { var an = a0r + (j / nS) * Math.PI / 2; pts.push([cq[2] + cv * Math.cos(an), cq[3] + cv * Math.sin(an)]); }
+      }
+      var poly = function (z) { return pts.map(function (q, ii) { var v = P(q[0], q[1], z); return (ii ? 'L' : 'M') + R(v[0]) + ' ' + R(v[1]); }).join('') + 'Z'; };
+      var sideF = '', sideR = '', edgeB = '', vert = '';
+      for (i = 0; i < pts.length; i++) {
+        var a = pts[i], b = pts[(i + 1) % pts.length], ddx = b[0] - a[0], ddy = b[1] - a[1], vis = ddx - ddy > 1e-6;
+        var pv = pts[(i - 1 + pts.length) % pts.length], visPrev = (a[0] - pv[0]) - (a[1] - pv[1]) > 1e-6;
+        if (vis) {
+          var a1 = P(a[0], a[1], p.T), b1 = P(b[0], b[1], p.T), a0p = P(a[0], a[1], 0), b0p = P(b[0], b[1], 0);
+          var quad = 'M' + R(a1[0]) + ' ' + R(a1[1]) + 'L' + R(b1[0]) + ' ' + R(b1[1]) + 'L' + R(b0p[0]) + ' ' + R(b0p[1]) + 'L' + R(a0p[0]) + ' ' + R(a0p[1]) + 'Z';
+          if (Math.abs(ddy) >= Math.abs(ddx)) sideR += quad; else sideF += quad;
+          edgeB += 'M' + R(a0p[0]) + ' ' + R(a0p[1]) + 'L' + R(b0p[0]) + ' ' + R(b0p[1]);
+        }
+        if (vis !== visPrev) { var t1 = P(a[0], a[1], p.T), t0 = P(a[0], a[1], 0); vert += ln(t1[0], t1[1], t0[0], t0[1]); }
+      }
+      var ell = function (cx0, cy0, r0, z) { var s2 = ''; for (var q = 0; q < 28; q++) { var an2 = q / 28 * Math.PI * 2, v = P(cx0 + r0 * Math.cos(an2), cy0 + r0 * Math.sin(an2), z); s2 += (q ? 'L' : 'M') + R(v[0]) + ' ' + R(v[1]); } return s2 + 'Z'; };
+      var topH = '', botH = '';
+      for (i = 0; i < h.pts.length; i++) { topH += ell(h.pts[i][0], h.pts[i][1], p.d / 2, p.T); botH += ell(h.pts[i][0], h.pts[i][1], p.d / 2, 0); }
+      var icid = lay.id + '-ic';
+      O += '<g class="iso"><path class="is-r" d="' + sideR + '"/><path class="is-f" d="' + sideF + '"/><path class="is-t" d="' + poly(p.T) + '"/>' +
+        (topH ? '<clipPath id="' + icid + '"><path d="' + topH + '"/></clipPath><path class="is-w" d="' + topH + '"/><path class="hf" clip-path="url(#' + icid + ')" d="' + botH + '"/><path class="is-h" d="' + topH + '"/>' : '') +
+        '<path class="is-e" d="' + edgeB + vert + '"/></g>';
+      D += tx(best.r[0], best.r[1] + 12, w.iso, 'lb');
+    }
+  }
+
+  // 視圖名
+  if (boxed) {
+    D += tx(X0 - 118, Y0 - 58, w.plan, 'lb');
+    D += tx(X0 - 16, ST + Ts / 2 + fl * 0.36, w.sec + ' A–A', 'lb', 'end');
+    if (lay.rv) D += tx(RV0, SB + 27, w.rv, 'lb');
+  } else {
+    D += tx(4, Y0 - 10, w.plan, 'lb');
+    D += tx(X0 - 12, ST + Ts / 2 + fl * 0.36, w.sec + ' A–A', 'lb', 'end');
+  }
+
+  D = '<path class="dm" d="' + dl + '"/><path class="ah" d="' + da + '"/>' + D;
+  o.O = O; o.H = H; o.S = S; o.D = D; o.F = F;
+  return o;
+}
+function tpl(id,v){var f=d.getElementById(id).content.cloneNode(true);$$('[data-k]',f).forEach(function(s){var x=v&&v[s.dataset.k];if(x!=null&&x!=='')s.textContent=x;});return f;}
+function tplText(id,v){var w=d.createElement('div');w.appendChild(tpl(id,v));return w.textContent.replace(/\s+/g,' ').trim();}
+var WD={thru:tplText('tp-w-thru'),plan:tplText('tp-w-plan'),sec:tplText('tp-w-sec'),rv:tplText('tp-w-rv'),iso:tplText('tp-w-iso')};
+var MI={},GI={};D.M.forEach(function(m){MI[m.id]=m;});D.G.forEach(function(g){GI[g.id]=g;});
+var cfg=d.getElementById('cfg'),canvas=d.getElementById('canvas'),live=d.getElementById('live'),msgEl=d.getElementById('msg');
+var svgW=d.getElementById('dw-w'),svgT=d.getElementById('dw-t');
+function layers(s){return {o:$('.Lo',s),s:$('.Ls',s),h:$('.Lh',s),d:$('.Ld',s),f:$('.Lf',s)};}
+var LY={w:layers(svgW),t:layers(svgT)},LAY={w:D.WIDE,t:D.TALL};
+var dins={L:$('.din-L'),W:$('.din-W'),T:$('.din-T'),H:$('.din-H')};
+var outs={};$$('[data-o]').forEach(function(el){(outs[el.dataset.o]=outs[el.dataset.o]||[]).push(el);});
+function out(k,v){(outs[k]||[]).forEach(function(el){el.textContent=v;});}
+function el(id){return d.getElementById(id);}
+function labelOf(id){var l=$('label[for="'+id+'"]');if(!l)return '';var z=$('.dl-zh',l),k=$('.dl-k',l);return z?(z.textContent+(k?' '+k.textContent:'')):l.textContent.trim();}
+function matName(id){var l=$('input[name="m"][value="'+id+'"]',cfg).parentNode;return $('.op-c',l).textContent+' '+$('.op-n',l).textContent;}
+
+/* ---------- 讀值與限制 ---------- */
+function num(id){var v=parseFloat(el(id).value);return isFinite(v)?v:NaN;}
+function radio(n){var r=$('input[name="'+n+'"]:checked',cfg);return r?r.value:null;}
+function read(){return {m:radio('m'),g:radio('g'),c:radio('c'),L:num('p-L'),W:num('p-W'),T:num('p-T'),n:+el('p-n').value,d:num('p-d'),q:num('p-q')};}
+var FIELD={L:'p-L',W:'p-W',T:'p-T',d:'p-d',q:'p-q'};
+function clampP(p,msgs){
+  var k,lim,v,o={m:MI[p.m]?p.m:D.def.m,g:GI[p.g]?p.g:D.def.g,c:D.C.indexOf(p.c)>=0?p.c:D.def.c,n:D.N.indexOf(p.n)>=0?p.n:D.def.n};
+  ['L','W','T','d','q'].forEach(function(k){lim=D.LIM[k];v=p[k];if(!isFinite(v))v=D.def[k];
+    var r=k==='q'?Math.round(v):Math.round(v*2)/2,c=Math.min(lim[1],Math.max(lim[0],r));
+    if(msgs&&c!==r&&isFinite(p[k])){var ue=el(FIELD[k]).parentNode.querySelector('.u');msgs.push(['tp-clamp',{what:labelOf(FIELD[k]),lo:String(lim[0]),hi:String(lim[1]),v:nf(c),u:ue?ue.textContent:''}]);}
+    o[k]=c;});
+  if(o.n&&!holesOk(o)){var mx=maxDia(o);if(msgs)msgs.push(['tp-dia',{v:nf(mx)}]);o.d=mx;}
+  if(MI[o.m].maxG<4&&o.g==='t4'){o.g='t3';if(msgs)msgs.push(['tp-pom',{}]);}
+  return o;
+}
+function inRange(p){var ok=true;['L','W','T','d','q'].forEach(function(k){if(!(p[k]>=D.LIM[k][0]&&p[k]<=D.LIM[k][1]))ok=false;});return ok&&(!p.n||holesOk(p));}
+function setControls(p){
+  ['m','g','c'].forEach(function(n){var r=$('input[name="'+n+'"][value="'+p[n]+'"]',cfg);if(r)r.checked=true;});
+  el('p-L').value=nf(p.L);el('p-W').value=nf(p.W);el('p-T').value=nf(p.T);el('p-n').value=String(p.n);el('p-d').value=nf(p.d);el('p-q').value=String(p.q);
+}
+function lockGrades(p){var t4=$('input[name="g"][value="t4"]',cfg);if(t4)t4.disabled=MI[p.m].maxG<4;}
+
+/* ---------- 圖面：逐層內插重畫 ---------- */
+function full(p,lay){var f={L:p.L,W:p.W,T:p.T,n:p.n,d:p.d,c:p.c,g:GI[p.g],m:p.m};f.s=fitScale(f,lay);return f;}
+function lerp(a,b,k){return a+(b-a)*k;}
+function mix(a,b,k){
+  if(k>=1)return b;if(k<=0)return a;
+  var o={L:lerp(a.L,b.L,k),W:lerp(a.W,b.W,k),T:lerp(a.T,b.T,k),d:lerp(a.d,b.d,k),s:lerp(a.s,b.s,k),g:k<.5?a.g:b.g,c:b.c,n:b.n,m:k<.5?a.m:b.m};
+  if(a.n!==b.n){if(k<.5){o.n=a.n;o.d=Math.max(.05,a.d*(1-2*k));}else{o.d=Math.max(.05,b.d*(2*k-1));}}
+  var ca=cornerOf(a.c),cb=cornerOf(b.c);
+  if(ca.t!==cb.t)o.c=k<.5?ca.t+(ca.v*(1-2*k)):cb.t+(cb.v*(2*k-1));else o.c=ca.t+lerp(ca.v,cb.v,k);
+  return o;
+}
+function paint(id,pp){
+  var lay=LAY[id],L=LY[id],memo=[],get=function(p){for(var i=0;i<memo.length;i++)if(memo[i][0]===p)return memo[i][1];var r=drawPart(p,lay,WD);memo.push([p,r]);return r;};
+  var od=get(pp.d);L.o.innerHTML=get(pp.o).O;L.h.innerHTML=get(pp.h).H;L.s.innerHTML=get(pp.s).S;L.d.innerHTML=od.D;L.f.innerHTML=get(pp.f).F;
+  if(id==='w')for(var k in dins){var b=od.box[k];if(b&&dins[k]){dins[k].style.setProperty('--x',(b[0]/lay.vw*100).toFixed(3)+'%');dins[k].style.setProperty('--y',(b[1]/lay.vh*100).toFixed(3)+'%');}}
+}
+function same(p){return {o:p,h:p,s:p,d:p,f:p};}
+var cur={},shown={},raf=0;
+var LAG={o:[0,420],h:[140,420],s:[220,420],d:[320,480],f:[640,240]};
+function ease(k){return k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;}
+function wideOn(){return getComputedStyle(svgW.parentNode).display!=='none';}
+function vbT(h){svgT.setAttribute('viewBox','0 0 '+LAY.t.vw+' '+h);}
+function redraw(p,instant,from0){
+  var tw=full(p,LAY.w),tt=full(p,LAY.t),vis=wideOn()?'w':'t',hid=vis==='w'?'t':'w',to=vis==='w'?tw:tt;
+  cancelAnimationFrame(raf);
+  cur.w=tw;cur.t=tt;paint(hid,same(cur[hid]));
+  var from=from0||shown[vis];
+  if(vis!=='t'||instant||rm.matches||!from)vbT(fitH(tt,LAY.t));else vbT(Math.max(fitH(tt,LAY.t),fitH(from,LAY.t)));
+  if(instant||rm.matches||!from){shown[vis]=to;paint(vis,same(to));return;}
+  var t0=performance.now();
+  var step=function(now){var e=now-t0,pp={},key,done=true;
+    for(key in LAG){var k=Math.min(1,Math.max(0,(e-LAG[key][0])/LAG[key][1]));if(k<1)done=false;pp[key]=mix(from,to,ease(k));}
+    shown[vis]=pp.o;paint(vis,pp);
+    if(!done)raf=requestAnimationFrame(step);else{shown[vis]=to;if(vis==='t')vbT(fitH(to,LAY.t));}};
+  raf=requestAnimationFrame(step);
+}
+addEventListener('resize',function(){var v=wideOn()?'w':'t';if(cur[v]&&shown[v]!==cur[v]){cancelAnimationFrame(raf);shown[v]=cur[v];paint(v,same(cur[v]));}if(cur.t)vbT(fitH(cur.t,LAY.t));});
+
+/* ---------- 數字 ---------- */
+var envPart=el('env-part'),envLab=el('env-lab'),days=el('days');
+function update(p){
+  var m=MI[p.m],g=GI[p.g],r=calc(p,m,g);
+  out('mat',matName(p.m));out('tol',g.tol);out('g',g.code);out('pos',g.pos);out('flat',g.flat);
+  out('st',r.st.map(nf).join(' × '));out('kgS',r.kgS.toFixed(2));out('kgP',r.kgP.toFixed(2));
+  out('t',r.t.toFixed(1));out('lead',String(r.lead.total));
+  out('lo',fmt(r.lo));out('hi',fmt(r.hi));out('slo',fmt(r.lo*p.q));out('shi',fmt(r.hi*p.q));
+  out('unit',fmt(r.unit));out('pm',fmt(r.pm));out('mp',String(m.price));out('pt',fmt(r.pt));out('psq',fmt(r.ps/p.q));out('q',String(p.q));
+  ['tFix','tFace','tCont','tDrill','tEdge'].forEach(function(k,i){out(k,r.parts[i].toFixed(1));});
+  out('mk',m.k.toFixed(1));out('gk',g.k.toFixed(2));out('prepN',m.code);
+  ['sch','prep','mach','insp','ship'].forEach(function(k){out('d-'+k,String(r.lead[k]));var s=$('.sg[data-dk="'+k+'"]',days);if(s)s.style.setProperty('--v',r.lead[k]);});
+  if(days)days.style.setProperty('--tot',r.lead.total);
+  var pv={pm:r.pm,pt:r.pt,psq:r.ps/p.q};$$('.sg[data-sk]').forEach(function(s){s.style.setProperty('--v',pv[s.dataset.sk].toFixed(1));});
+  out('lw',nf(p.L)+' × '+nf(p.W));
+  $$('.gm').forEach(function(x){x.classList.toggle('on',x.dataset.g===p.g);});
+  $$('.mt-t tbody tr').forEach(function(x){x.classList.toggle('on',x.dataset.m===p.m);});
+  if(envPart){var t=thumb(p,1,60,500-p.W);envPart.innerHTML='<path class="ept" d="'+t.plate+'"/><path class="eph" d="'+t.holes+'"/>';envLab.style.setProperty('--y',((500-p.W)/570*100).toFixed(3)+'%');}
+  return r;
+}
+var annT=0;
+function say(node,t){node.textContent='';node.classList.add('on');setTimeout(function(){node.textContent=t;},60);}
+function announce(p,r,msgs){clearTimeout(annT);annT=setTimeout(function(){
+  var s=(msgs||[]).map(function(x){return tplText(x[0],x[1]);}).join(' ');
+  s+=(s?' ':'')+tplText('tp-live',{dim:nf(p.L)+' × '+nf(p.W)+' × '+nf(p.T),holes:p.n?tplText('tp-lh',{n:String(p.n),d:nf(p.d)}):tplText('tp-lh0'),p:fmt(r.lo)+'–'+fmt(r.hi),lead:String(r.lead.total)});
+  say(live,s);},msgs&&msgs.length?60:500);}
+
+/* ---------- hash ---------- */
+function enc(p){return [p.m,nf(p.L),nf(p.W),nf(p.T),p.n,nf(p.d),p.g,p.c,p.q].join('_');}
+function dec(s){var a=String(s).split('_');if(a.length!==9)return null;var p={m:a[0],L:+a[1],W:+a[2],T:+a[3],n:+a[4],d:+a[5],g:a[6],c:a[7],q:+a[8]};
+  if(!MI[p.m]||!GI[p.g]||D.C.indexOf(p.c)<0||D.N.indexOf(p.n)<0)return null;if([p.L,p.W,p.T,p.d,p.q].some(function(v){return !isFinite(v);}))return null;return clampP(p);}
+function readHash(){var m=/^#c=([^&]+)(?:&q=(.*))?$/.exec(location.hash);if(!m)return null;var p=dec(m[1]);if(!p)return null;
+  var L=null;if(m[2]!=null){L=[];if(m[2])m[2].split('~').slice(0,30).forEach(function(s){var x=dec(s);if(x)L.push(x);});}return {p:p,list:L};}
+function writeHash(){var h='#c='+enc(state)+'&q='+list.map(enc).join('~');if(location.hash!==h&&history.replaceState)history.replaceState(null,'',h);}
+
+/* ---------- 詢價單 ---------- */
+var list=[],itemsEl=el('items'),emptyEl=el('empty'),hd=el('doc-hd'),cntTh=el('cnt-th');
+function thumbEl(p){var t=thumb(p,D.TH_S,1.5,1.5),w=(p.L*D.TH_S+3).toFixed(1),h=(p.W*D.TH_S+3).toFixed(1),s=d.createElementNS(NS,'svg');
+  s.setAttribute('class','th');s.setAttribute('viewBox','0 0 '+w+' '+h);s.setAttribute('width',w);s.setAttribute('height',h);s.setAttribute('aria-hidden','true');s.setAttribute('focusable','false');
+  s.innerHTML='<path class="th-p" d="'+t.plate+'"/><path class="th-h" d="'+t.holes+'"/>';return s;}
+function itemFrag(p,i){var m=MI[p.m],g=GI[p.g],r=calc(p,m,g);
+  return tpl('tp-item',{i:String(i+1),mat:matName(p.m),dim:nf(p.L)+' × '+nf(p.W)+' × '+nf(p.T),holes:p.n?tplText('tp-rh',{n:String(p.n),d:nf(p.d)}):tplText('tp-rh0'),cor:p.c,g:g.code,tol:g.tol,pos:g.pos,q:String(p.q),lo:fmt(r.lo),hi:fmt(r.hi),lead:String(r.lead.total)});}
+function renderList(){
+  itemsEl.textContent='';
+  list.forEach(function(p,i){
+    var row=d.createElement('div'),gut=d.createElement('div'),pre=d.createElement('pre'),bf=tpl('tp-rm',{i:String(i+1)});
+    row.className='row r-it';gut.className='gut';pre.className='txt';
+    gut.appendChild(thumbEl(p));bf.querySelector('button').dataset.i=String(i);gut.appendChild(bf);pre.appendChild(itemFrag(p,i));
+    row.appendChild(gut);row.appendChild(pre);itemsEl.appendChild(row);});
+  emptyEl.hidden=list.length>0;out('nq',String(list.length));
+}
+function pad2(n){return (n<10?'0':'')+n;}
+function renderHead(){var t=new Date(),v={date:t.getFullYear()+'-'+pad2(t.getMonth()+1)+'-'+pad2(t.getDate())};
+  ['co','who','tel','due','note'].forEach(function(k){var e=el('b-'+k);if(e&&e.value.trim())v[k]=e.value.trim();});
+  hd.textContent='';hd.appendChild(tpl('tp-head',v));}
+function setCnt(p,anim){cntTh.textContent='';if(!p)return;var t=thumbEl(p);cntTh.appendChild(t);if(anim&&!rm.matches){t.style.transform='translateX(-22px)';t.style.clipPath='inset(0 100% 0 0)';void t.getBoundingClientRect();t.style.transition='transform .24s ease-out,clip-path .24s ease-out';t.style.transform='none';t.style.clipPath='inset(0 0 0 0)';}}
+function docText(){return $$('.txt',el('doc')).map(function(x){return x.textContent;}).join('\n\n')+'\n';}
+
+/* ---------- 套用 ---------- */
+var state=null,typT=0;
+function apply(strict,quiet){
+  var raw=read(),msgs=[];
+  if(!strict&&!inRange(raw))return;
+  var p=clampP(raw,strict?msgs:null);
+  if(strict)setControls(p);
+  lockGrades(p);
+  var changed=!state||enc(p)!==enc(state);
+  state=p;
+  if(changed)redraw(p);
+  var r=update(p);writeHash();
+  if(!quiet&&(changed||msgs.length))announce(p,r,msgs);
+}
+cfg.addEventListener('change',function(e){if(e.target&&e.target.name)apply(true);});
+cfg.addEventListener('input',function(e){if(e.target&&e.target.type==='number'){clearTimeout(typT);typT=setTimeout(function(){apply(false);},320);}});
+cfg.addEventListener('submit',function(e){e.preventDefault();clearTimeout(typT);apply(true);});
+$$('.st',cfg).forEach(function(b){b.addEventListener('click',function(){var q=el('p-q');q.value=String(Math.min(999,Math.max(1,(parseInt(q.value,10)||1)+(+b.dataset.st))));apply(true);});});
+el('add').addEventListener('click',function(){
+  if(list.length>=30){say(live,tplText('tp-full'));return;}
+  clearTimeout(typT);apply(true,true);
+  list.push(Object.assign({},state));renderList();setCnt(state,true);writeHash();
+  say(live,tplText('tp-added',{i:String(list.length),n:String(list.length)}));
+});
+itemsEl.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.rm');if(!b)return;
+  var i=+b.dataset.i;list.splice(i,1);renderList();setCnt(list[list.length-1],false);writeHash();say(msgEl,tplText('tp-removed',{n:String(list.length)}));
+  var nx=$$('.rm',itemsEl)[Math.min(i,list.length-1)];(nx||el('add')).focus();});
+el('rfq-clear').addEventListener('click',function(){list=[];renderList();setCnt(null,false);writeHash();say(msgEl,tplText('tp-cleared'));});
+el('rfq-print').addEventListener('click',function(){window.print();});
+el('rfq-copy').addEventListener('click',function(){
+  var t=docText(),n=t.replace(/\n+$/,'').split('\n').length;
+  var fail=function(){var s=getSelection(),r=d.createRange();r.selectNodeContents(el('doc'));s.removeAllRanges();s.addRange(r);say(msgEl,tplText('tp-copyfail'));};
+  if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(t).then(function(){say(msgEl,tplText('tp-copied',{n:String(n)}));},fail);else fail();
+});
+el('buyer').addEventListener('input',renderHead);
+el('buyer').addEventListener('submit',function(e){e.preventDefault();});
+
+/* 頁內連結：捲動但不改 hash（hash 用來存狀態） */
+d.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var id=a.getAttribute('href').slice(1),t=id&&el(id);if(!t)return;
+  e.preventDefault();t.scrollIntoView({behavior:rm.matches?'auto':'smooth',block:'start'});if(!t.hasAttribute('tabindex'))t.setAttribute('tabindex','-1');t.focus({preventScroll:true});});
+addEventListener('hashchange',function(){var h=readHash();if(!h)return;setControls(h.p);if(h.list){list=h.list;renderList();setCnt(list[list.length-1],false);}apply(true,false);});
+
+/* ---------- 啟動 ---------- */
+var h0=readHash();
+list=h0&&h0.list?h0.list:D.list.map(function(x){return Object.assign({},x);});
+var p0=h0?h0.p:Object.assign({},D.def);
+setControls(p0);
+renderHead();renderList();setCnt(list[list.length-1],false);
+state=null;
+var intro=!rm.matches&&!h0;
+if(intro){
+  var pi=clampP(p0),vis=wideOn()?'w':'t',f0=full(pi,LAY[vis]);
+  var seedFrom={L:f0.L*.55,W:f0.W*.55,T:f0.T*.55,d:f0.d*.6,n:f0.n,c:f0.c,g:f0.g,s:f0.s,m:f0.m};
+  state=pi;lockGrades(pi);update(pi);redraw(pi,false,seedFrom);
+}else apply(true,true);
+})();
+</script>
+</body>
+</html>

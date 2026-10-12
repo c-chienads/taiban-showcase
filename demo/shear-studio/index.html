@@ -1,0 +1,1035 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F26" data-slug="shear-studio">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>剪影髮廊｜「稍微修一下」是幾公分，先對好再剪</title>
+<meta name="description" content="高雄新興區的美髮沙龍。選你現在的長度、想做的（剪、染、燙、護）和髮質，馬上看到做完的後腦勺剪影、要坐多久、大概多少錢，再直接排時間。">
+
+<meta name="generator" content="套版網站平台 F26">
+<link rel="icon" href="assets/mark.svg">
+<link rel="preload" href="fonts/01-noto-sans-tc.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/02-noto-serif-tc.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"Noto Sans TC";src:url("fonts/01-noto-sans-tc.woff2") format("woff2");font-weight:450 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Serif TC";src:url("fonts/02-noto-serif-tc.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url("fonts/03-bodoni-moda.woff2") format("woff2");font-weight:500 700;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root{
+  --mag:oklch(0.57 0.21 355);
+  --mag-d:oklch(0.43 0.165 355);
+  --mag-dd:oklch(0.33 0.125 355);
+  --mag-l:oklch(0.86 0.075 355);
+  --ink:oklch(0.16 0.01 355);
+  --ink-2:oklch(0.24 0.015 355);
+  --paper:oklch(0.985 0.004 355);
+  --focus-ring:3px dashed currentColor;
+  --focus-offset:3px;
+  --selection-bg:var(--ink);
+  --selection-fg:var(--paper);
+  --lv0:oklch(0.92 0.045 355);
+  --lv1:oklch(0.81 0.1 355);
+  --lv2:oklch(0.70 0.15 355);
+  --lv3:oklch(0.46 0.17 355);
+  --lv4:oklch(0.31 0.115 355);
+  --f-zh:"Noto Sans TC",sans-serif;
+  --f-disp:"Noto Serif TC","Noto Sans TC",serif;
+  --f-num:"Bodoni Moda","Noto Serif TC",serif;
+  --gut:clamp(16px,3vw,44px);
+  color-scheme:light;
+}
+html{background:var(--mag)}
+body{background:var(--mag);color:var(--paper);font-family:var(--f-zh);font-size:1.0625rem;line-height:1.8;font-weight:450}
+h1,h2,h3{margin:0;color:var(--ink);font-family:var(--f-disp);font-weight:900;letter-spacing:0;font-feature-settings:"palt"}
+.q{text-indent:-.5em}
+:lang(zh) em{text-emphasis:none}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:2px}
+p{max-width:40em}
+.num{font-family:var(--f-num);font-variant-numeric:lining-nums;font-optical-sizing:auto}
+.vh{position:absolute;inset:0;margin:0;appearance:none;-webkit-appearance:none;border:0;background:transparent;cursor:pointer;color:var(--ink)}
+.skip{background:var(--ink);color:var(--paper)}
+/* 剪口標題：粗黑字被一道底色的線橫切 */
+.slit{position:relative;--sy:.7em;--lh:1.08em}
+.slit::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(var(--sd,to bottom),transparent 0 var(--sy),var(--slit,var(--mag)) var(--sy) calc(var(--sy) + .07em),transparent calc(var(--sy) + .07em) var(--lh))}
+
+/* ===== 頂列 ===== */
+.top{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px 28px;padding:12px var(--gut);border-bottom:2px solid var(--ink)}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand svg{width:30px;height:30px;flex:none}
+.mk-cut{stroke:var(--paper)}
+.brand b{font-family:var(--f-disp);font-size:1.65rem;font-weight:900;line-height:1;letter-spacing:.04em}
+.brand span{font-size:.95rem;font-weight:700;color:var(--paper);letter-spacing:.2em}
+.nav{display:flex;gap:4px 22px;flex-wrap:wrap}
+.nav a{font-size:.95rem;font-weight:700;text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-bottom-color:var(--ink)}
+.tel{font-family:var(--f-num);font-weight:600;font-size:1.0625rem;letter-spacing:.02em;text-decoration:none;white-space:nowrap}
+.tel:hover{text-decoration:underline}
+
+/* ===== 組合器 ===== */
+.cmp{display:grid;grid-template-columns:minmax(300px,370px) minmax(0,1fr) minmax(320px,370px);grid-template-areas:"intro stage out" "ctl stage out";grid-template-rows:auto 1fr;column-gap:clamp(20px,2.4vw,40px);padding:0 0 0 var(--gut);border-bottom:2px solid var(--ink)}
+.intro{grid-area:intro;padding-top:clamp(22px,3vw,40px)}
+.intro h1{font-size:clamp(2.6rem,3.9vw,3.5rem);line-height:1.16}
+.intro .lead{margin-top:18px;font-size:1.0625rem;line-height:1.8;font-weight:500}
+.ctl{grid-area:ctl;display:flex;flex-direction:column;gap:20px;padding:22px 0 30px}
+.grp{position:relative}
+.grp>legend,.grp-l{display:flex;align-items:baseline;gap:10px;margin:0 0 10px;padding:0;font-size:.95rem;font-weight:700;color:var(--paper)}
+.grp-l small,.grp>legend small{font-weight:500;font-size:.875rem;color:var(--paper)}
+.meth{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.mt{position:relative;display:grid;justify-items:start;align-content:space-between;min-height:118px;padding:10px 12px 12px;isolation:isolate}
+.mt{border:2.5px solid var(--ink);transition:background-color .16s}
+.mt .vh{z-index:-1}
+.mt:has(.vh:checked){background:var(--ink)}
+.mt-ch{font-family:var(--f-disp);font-size:3.4rem;font-weight:900;line-height:1;color:var(--ink);pointer-events:none}
+.mt-s{font-size:.875rem;font-weight:700;line-height:1.35;color:var(--paper);pointer-events:none}
+.mt:has(.vh:checked) .mt-ch{color:var(--paper)}
+.mt:has(.vh:checked) .mt-s{color:var(--mag-l)}
+.mt:hover:not(:has(.vh:checked)){background:var(--mag-d)}
+.mt:hover .mt-ch{color:var(--paper)}
+.tex{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+.tx{position:relative;display:grid;gap:2px;padding:10px 12px 12px;isolation:isolate;min-height:96px;align-content:start}
+.tx{border:2.5px solid var(--ink);margin-left:-2.5px}
+.tx:first-of-type{margin-left:0}
+.tx .vh{z-index:-1}
+.tx:has(.vh:checked){background:var(--paper)}
+.tx svg{width:38px;height:16px;color:var(--ink);pointer-events:none}
+.tx-n{font-family:var(--f-disp);font-size:1.2rem;font-weight:900;color:var(--ink);line-height:1.3;pointer-events:none}
+.tx-s{font-size:.8125rem;font-weight:600;line-height:1.45;color:var(--paper);pointer-events:none}
+.tx:has(.vh:checked) .tx-s{color:var(--ink)}
+.thumb{display:none}
+.nojs{font-size:.9375rem;font-weight:600;border-left:4px solid var(--ink);padding:4px 0 4px 12px}
+html.js .nojs{display:none}
+
+/* 舞台：刻度尺＋剪影 */
+.stage{grid-area:stage;display:grid;grid-template-columns:clamp(64px,6.4vw,96px) minmax(0,1fr);align-self:start;margin:0;padding-top:clamp(18px,2.4vw,32px);min-width:0}
+.ruler{position:relative;margin:0;padding:0;border:0;border-right:2.5px solid var(--ink)}
+.tick{position:absolute;right:0;top:var(--y);translate:0 -50%;display:flex;align-items:center;justify-content:flex-end;gap:8px;min-height:30px;padding:2px 14px 2px 8px;isolation:isolate;--on:0}
+.tick{background:color-mix(in oklch,var(--ink) calc(var(--on) * 100%),transparent)}
+.tick .vh{z-index:-1}
+.tick::after{content:"";position:absolute;right:-2.5px;top:50%;width:10px;border-top:2.5px solid var(--ink)}
+.tk-n{font-family:var(--f-disp);font-size:1.2rem;font-weight:900;line-height:1.2;color:var(--ink);pointer-events:none;white-space:nowrap}
+.tk-cm{display:block;font-size:.75rem;font-weight:600;color:var(--paper);pointer-events:none;white-space:nowrap}
+.tick:has(.vh:checked) .tk-n,.tick:has(.vh:checked) .tk-cm{color:var(--paper)}
+.tick:hover .tk-n{color:var(--paper)}
+.tk-t{display:grid;justify-items:end}
+.figbox{position:relative;aspect-ratio:340/456;width:100%;max-height:calc(100svh - 170px);justify-self:center;margin:0}
+.figbox svg{display:block;width:100%;height:100%;overflow:hidden}
+.fig .bust{fill:var(--mag-d)}
+.fig .collar{fill:var(--paper)}
+.fig .hair{fill:var(--ink)}
+.fig .dye{fill:var(--paper)}
+.fig .strands path{fill:none;stroke:var(--mag);stroke-width:1.4;stroke-opacity:.6;stroke-linecap:round}
+.fig .strands path:nth-child(3n){stroke-opacity:.35}
+.fig .sheen path{fill:none;stroke:var(--paper);stroke-width:3.2;stroke-linecap:round}
+.fig .guide{stroke:var(--paper);stroke-width:2;stroke-dasharray:7 6}
+.fig .fall{display:none}
+.fig .cutl{fill:none;stroke:var(--paper);stroke-width:2.6;display:none}
+.fig .scis{display:none;fill:var(--paper);stroke:var(--paper)}
+.fig .sc-pin{fill:var(--ink)}
+.grab{display:none}
+html.js .grab{display:flex;position:absolute;right:-4px;top:var(--hy,50%);translate:0 -50%;align-items:center;justify-content:center;width:44px;height:44px;background:var(--paper);color:var(--ink);cursor:ns-resize;touch-action:none;border:2.5px solid var(--ink)}
+.grab svg{width:22px;height:22px}
+.tip{display:none}
+html.js .tip{display:block;position:absolute;right:-4px;top:var(--hy,50%);translate:0 31px;padding:3px 8px;background:var(--ink);color:var(--paper);font-size:.8125rem;font-weight:700;line-height:1.4;white-space:nowrap;pointer-events:none}
+html.js .tip::after{content:"";position:absolute;right:16px;bottom:100%;border:6px solid transparent;border-bottom-color:var(--ink)}
+html.js .figbox.lo .tip{translate:0 calc(-100% - 31px)}
+html.js .figbox.lo .tip::after{bottom:auto;top:100%;border-bottom-color:transparent;border-top-color:var(--ink)}
+.grab:active{background:var(--ink);color:var(--paper)}
+.figcap{grid-column:2;margin:8px 0 12px;font-size:.875rem;font-weight:600;line-height:1.6;text-align:center}
+
+/* 結果欄 */
+.out{grid-area:out;background:var(--ink);color:var(--paper);padding:26px clamp(20px,2vw,30px) 26px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.out dl{margin:0}
+.out-num{display:grid;gap:14px}
+.o-row{display:grid;gap:2px;min-width:0}
+.o-row dt{display:flex;align-items:baseline;gap:10px;font-size:.875rem;font-weight:700;color:var(--mag-l)}
+.o-row dt small{font-size:.8125rem;font-weight:500}
+.o-row dd{margin:0}
+.big{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:.1em;font-family:var(--f-num);font-weight:600;font-size:clamp(2.5rem,3.2vw,3.25rem);line-height:1.05;letter-spacing:-.01em;font-variant-numeric:lining-nums}
+.big b{font-weight:600}
+.dash{font-family:var(--f-zh);font-weight:500}
+.big .dash{margin:0 .14em 0 .06em;color:var(--mag-l)}
+.o-row:nth-child(2) .big{flex-wrap:nowrap;white-space:nowrap}
+.big small{font-family:var(--f-zh);font-size:.9375rem;font-weight:700;letter-spacing:0;margin:0 .32em 0 .18em;color:var(--mag-l)}
+.dg{display:inline-flex;align-items:baseline;white-space:nowrap}
+.dur:not([data-dur~="same"]){font-size:clamp(2.2rem,2.8vw,2.8rem)}
+.dur[data-dur~="same"] .du-m0,.dur[data-dur~="same"] .dg-h1,.dur[data-dur~="h0z"] .dg-h0,.dur[data-dur~="m0z"] .dg-m0,.dur[data-dur~="m1z"] .dg-m1{display:none}
+.unit{display:block;margin-top:6px;font-size:.8125rem;font-weight:500;color:var(--mag-l)}
+.rng{position:relative;display:block;height:8px;margin-top:12px;background:var(--ink-2)}
+.rng i{position:absolute;inset:0;background:var(--paper);transform-origin:0 50%;transform:translateX(calc(var(--a) * 100%)) scaleX(max(.012,calc(var(--b) - var(--a))));transition:transform .24s cubic-bezier(.3,.7,.2,1)}
+.rng-s{display:flex;justify-content:space-between;margin-top:4px;font-size:.8125rem;color:var(--mag-l);font-family:var(--f-num)}
+.say{border-top:2px solid var(--ink-2);padding-top:16px}
+.say-h{font-size:.875rem;font-weight:700;color:var(--mag-l);margin:0 0 6px}
+.v{display:none;position:relative;margin:8px 0 0;padding-left:20px;font-size:1rem;line-height:1.75;font-weight:500}
+.v::before{content:"";position:absolute;left:0;top:.42em;width:11px;height:11px;background:var(--mag);clip-path:polygon(0 0,100% 0,50% 100%)}
+.v-len{font-weight:700}
+.v-empty{display:none}
+.cmp:not(:has(.meth .vh:checked)) .v-empty{display:block}
+.cmp:not(:has(.meth .vh:checked)) .out-num,.cmp:not(:has(.meth .vh:checked)) .out-who,.cmp:not(:has(.meth .vh:checked)) .hint,.cmp:not(:has(.meth .vh:checked)) .go{display:none}
+.out-who{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;align-items:baseline;border-top:2px solid var(--ink-2);padding-top:16px}
+.out-who dt{font-size:.875rem;font-weight:700;color:var(--mag-l)}
+.out-who dd{margin:0;display:flex;flex-wrap:wrap;gap:6px 8px}
+.who{display:inline-block;padding:2px 10px;border:2px solid var(--paper);font-weight:700;font-size:.9375rem}
+.soon{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.soon button,.soon span.sl{display:inline-flex;gap:6px;align-items:baseline;min-height:34px;padding:3px 10px;border:2px dashed var(--mag-l);background:none;color:var(--paper);font-weight:700;font-size:.875rem;cursor:pointer}
+.soon button:hover{background:var(--ink-2);border-style:solid}
+.soon .t{font-family:var(--f-num);font-weight:600;font-size:1rem}
+.soon-none{font-size:.875rem;color:var(--mag-l)}
+.hint{display:none;margin:0;font-size:.9375rem;font-weight:600;color:var(--paper);padding-left:20px;position:relative}
+.hint.on{display:block}
+.hint::before{content:"";position:absolute;left:0;top:.72em;width:12px;height:3px;background:var(--mag-l)}
+.go{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;min-height:56px;padding:0 18px;background:var(--paper);color:var(--ink);font-weight:700;font-size:1.0625rem;text-decoration:none;border:2.5px solid var(--paper)}
+.go svg{width:20px;height:20px;flex:none}
+.go:hover{background:var(--mag-l);border-color:var(--mag-l)}
+.go:focus-visible{outline-color:var(--paper)}
+
+/* 收合的操作說明（R15：不放首屏正文） */
+
+/* ===== 段落共用 ===== */
+.sec{padding:clamp(56px,7vw,104px) var(--gut)}
+.sec h2{font-size:clamp(2.3rem,4.6vw,4.1rem);line-height:1.08}
+.sec-lead{margin-top:16px;font-size:1.0625rem;font-weight:500}
+
+/* ===== 排時間 ===== */
+.bk{padding-bottom:clamp(32px,3vw,44px);display:grid;grid-template-columns:minmax(210px,250px) minmax(0,1fr) minmax(280px,330px);grid-template-areas:"top top top" "who wk form";gap:36px clamp(20px,2.6vw,40px);align-items:start;border-bottom:2px solid var(--ink)}
+.bk-top{grid-area:top;display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px 40px}
+.bk-who{grid-area:who}.wk-wrap{grid-area:wk}
+.bk-form{grid-area:form;position:sticky;top:16px}
+.bk-who{margin:0;padding:0;display:grid;gap:8px}
+.bk-who legend{font-size:.95rem;font-weight:700;margin-bottom:8px;padding:0}
+.dz{position:relative;display:grid;gap:0;padding:10px 14px 12px;isolation:isolate}
+.dz{border:2.5px solid var(--ink)}
+.dz .vh{z-index:-1}
+.dz:has(.vh:checked){background:var(--ink)}
+.dz:has(.vh:disabled){border-style:dashed}
+.dz .vh:disabled{cursor:not-allowed}
+.dz-n{font-family:var(--f-disp);font-size:1.4rem;font-weight:900;color:var(--ink);line-height:1.3;pointer-events:none}
+.dz-r{font-size:.875rem;font-weight:700;pointer-events:none}
+.dz-x{display:none;margin-right:6px;font-size:.8125rem;font-weight:700;color:var(--paper);pointer-events:none}
+.dz:has(.vh:checked) .dz-n,.dz:has(.vh:checked) .dz-x{color:var(--paper)}
+.dz:has(.vh:checked) .dz-r{color:var(--mag-l)}
+.wk-wrap{min-width:0}
+.wk{position:relative;display:grid;grid-template-columns:52px repeat(6,minmax(0,1fr));border-top:2.5px solid var(--ink);border-left:2.5px solid var(--ink)}
+.wk-r{display:contents}
+.wk-h>*{display:flex;align-items:center;justify-content:center;gap:6px;min-height:40px;font-weight:700;font-size:1rem;background:var(--ink);color:var(--paper);border-right:2.5px solid var(--mag-d);border-bottom:2.5px solid var(--ink)}
+.off{display:none;padding:0 5px;font-size:.75rem;font-weight:700;background:var(--paper);color:var(--ink);line-height:1.5}
+.wk-t{display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-family:var(--f-num);font-size:.8125rem;font-weight:600;color:var(--paper);border-right:2.5px solid var(--ink);height:30px}
+.c{position:relative;height:30px;border-right:2.5px solid var(--ink);border-bottom:1px solid var(--mag-d);background:transparent}
+.wk-r:nth-child(2n+1) .c{border-bottom:2.5px solid var(--ink)}
+.c.busy{background:repeating-linear-gradient(135deg,var(--mag-d) 0 2px,transparent 2px 7px)}
+.c.off-d{background:var(--mag-d)}
+.c.fit{background:var(--paper);cursor:pointer}
+.c.fit:hover{background:var(--mag-l)}
+.c.pk{background:var(--ink)}
+.c:focus-visible{outline:var(--focus-ring);outline-offset:-4px;color:var(--ink);z-index:2}
+.c.pk:focus-visible{color:var(--paper)}
+.pkb{position:absolute;z-index:3;pointer-events:none;background:var(--ink);color:var(--paper);display:none;padding:4px 8px;font-family:var(--f-num);font-size:.875rem;font-weight:600;line-height:1.35;white-space:pre;overflow:hidden}
+.pkb.grow{animation:f26-pull .22s cubic-bezier(.3,.7,.2,1) both}
+@keyframes f26-pull{from{clip-path:inset(0 0 calc(100% - var(--c0,26px)) 0)}to{clip-path:inset(0 0 0 0)}}
+.wk:has(.c.pk:focus-visible) .pkb{outline:3px dashed var(--paper);outline-offset:-6px}
+.pkb.on{display:block}
+.wk-key{display:flex;flex-wrap:wrap;gap:8px 20px;margin:14px 0 10px;padding:0;list-style:none;font-size:.875rem;font-weight:600}
+.wk-key li{display:flex;align-items:center;gap:8px}
+.wk-key i{display:inline-block;width:22px;height:14px;border:2px solid var(--ink)}
+.k-fit{background:var(--paper)}.k-busy{background:repeating-linear-gradient(135deg,var(--mag-d) 0 2px,transparent 2px 7px)}.k-free{background:transparent}.k-pk{background:var(--ink)}.k-off{background:var(--mag-d)}
+.wk-key i.k-kb{background:var(--paper);border-bottom-width:5px;border-radius:2px}
+.bk-form{display:grid;gap:14px;padding:22px 22px 24px;background:var(--ink);color:var(--paper)}
+.bk-form h3{color:var(--paper);font-size:1.5rem;line-height:1.25}
+.ps{margin:0;padding:10px 12px;border:2px dashed var(--mag-l);font-weight:700;font-size:.9375rem;line-height:1.6}
+.ps-on{font-family:var(--f-zh)}
+.ps.has .ps-empty{display:none}
+.fld{display:grid;gap:4px}
+.fld label{font-size:.875rem;font-weight:700;color:var(--mag-l)}
+.fld input,.fld textarea{width:100%;min-height:44px;padding:8px 10px;background:var(--paper);color:var(--ink);border:2px solid var(--paper);border-radius:0;font-weight:500}
+.fld textarea{min-height:60px;resize:vertical}
+.fld input::placeholder,.fld textarea::placeholder{color:oklch(0.45 0.02 355)}
+.fld input:focus-visible,.fld textarea:focus-visible{outline:3px dashed var(--mag-l);outline-offset:2px}
+.err{display:none;margin:0;font-size:.8125rem;font-weight:700;color:var(--mag-l)}
+.tried .fld:has(:invalid) .err{display:block}
+.tried .fld:has(:invalid) input{border-color:var(--mag)}
+.send{min-height:52px;background:var(--paper);color:var(--ink);border:2.5px solid var(--paper);font-weight:700;font-size:1rem;cursor:pointer}
+.send:hover{background:var(--mag-l);border-color:var(--mag-l)}
+.send:focus-visible{outline-color:var(--paper)}
+.bk-note{margin:0;font-size:.8125rem;line-height:1.65;color:var(--mag-l)}
+.done{margin:0;padding:12px 14px;background:var(--paper);color:var(--ink);font-weight:700;font-size:.9375rem}
+
+/* ===== 價目：色階卡 ===== */
+.pr{border-bottom:2px solid var(--ink);padding-top:clamp(36px,3.4vw,48px);padding-bottom:clamp(44px,4.4vw,64px)}
+.pr-top{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px 40px}
+.pr-top .sec-lead{margin:0 0 .4em}
+.lv{display:grid;grid-template-columns:minmax(240px,1.25fr) repeat(4,minmax(0,1fr));margin-top:32px;padding:0 0 14px;background:var(--paper);color:var(--ink)}
+.lv-h,.lv-r{display:contents}
+.lv-h>*{display:flex;align-items:baseline;gap:10px;padding:16px 18px 12px;--pick:0;background:color-mix(in oklch,var(--ink) calc(var(--pick) * 100%),var(--paper));color:color-mix(in oklch,var(--paper) calc(var(--pick) * 100%),var(--ink))}
+.lv-h0{font-size:.875rem;font-weight:700;align-self:end}
+.lv-mh b{font-family:var(--f-disp);font-size:2.2rem;font-weight:900;line-height:1}
+.lv-mh span{font-size:.875rem;font-weight:700}
+.lv-r{--sel:0}
+.lv-r>*{position:relative;display:flex;align-items:center;min-height:78px;padding:10px 18px;background:var(--bg);color:var(--fg)}
+.lv-0{--bg:var(--lv0);--fg:var(--ink)}.lv-1{--bg:var(--lv1);--fg:var(--ink)}.lv-2{--bg:var(--lv2);--fg:var(--ink)}.lv-3{--bg:var(--lv3);--fg:var(--paper)}.lv-4{--bg:var(--lv4);--fg:var(--paper)}
+.lv-r>:first-child{margin-left:14px}.lv-r>:last-child{margin-right:14px}
+.lv-rh{display:grid!important;grid-template-columns:auto 1fr;align-items:center;column-gap:14px}
+.lv-n{display:grid;line-height:1.2}
+.lv-n b{font-family:var(--f-disp);font-size:1.6rem;font-weight:900}
+.lv-n small{font-size:.8125rem;font-weight:600}
+.lock{display:block;width:100%;max-width:210px;height:auto;overflow:visible}
+.lk-h{fill:var(--ink)}
+.lk-s{fill:none;stroke:var(--bg);stroke-width:1.1;stroke-opacity:.8}
+.lk-c{fill:var(--paper);stroke:var(--ink);stroke-width:1.6}
+.lv-3 .lk-h,.lv-4 .lk-h{fill:oklch(0.12 0.01 355)}
+.lv-you{display:none;position:absolute;right:12px;top:8px;padding:1px 8px;font-size:.75rem;font-weight:700;background:var(--ink);color:var(--paper);line-height:1.6}
+.lv-3 .lv-you,.lv-4 .lv-you{background:var(--paper);color:var(--ink)}
+.lv-p{font-size:1.5rem;--pick:0}
+.lv-p .num{font-weight:calc(500 + var(--pick) * 200);white-space:nowrap;letter-spacing:-.005em}
+.lv-p .dash{margin:0 .12em}
+.lv-pl{display:none}
+/* 你選的長度：上下兩道虛線剪口 */
+.lv-r>*::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:var(--sel);background:linear-gradient(90deg,var(--fg) 58%,transparent 0) 0 4px/12px 2.5px repeat-x,linear-gradient(90deg,var(--fg) 58%,transparent 0) 0 calc(100% - 4px)/12px 2.5px repeat-x}
+.pr-notes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px clamp(20px,3vw,44px);margin:36px 0 0}
+.pr-notes dt{font-family:var(--f-disp);font-size:1.4rem;font-weight:900;color:var(--ink);line-height:1.3}
+.pr-notes dd{margin:4px 0 0;font-size:.9375rem;font-weight:500}
+
+/* ===== 設計師：三個形狀 ===== */
+.tm{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.95fr) minmax(0,1.05fr);column-gap:clamp(20px,3vw,48px);align-items:start}
+.tm>h2,.tm>.sec-lead{grid-column:1/-1}
+.tm>.sec-lead{margin-bottom:48px}
+/* 卡內隱含欄必須是 minmax(0,1fr)：週格 .days（7×30px＋6×4px＝234px）是 auto 欄的 min-content，768px 時三欄各約 204–247px，auto 欄會被它撐到 234px，整張卡的字與週格溢出欄寬 */
+.tm-p{display:grid;grid-template-columns:minmax(0,1fr);gap:6px}
+.tm-fig{margin:0 0 10px;border-bottom:2.5px solid var(--ink)}
+.tm-fig svg{display:block;width:100%;height:auto}
+.tm-fig .bust{fill:none;stroke:var(--mag-d);stroke-width:2.5}
+.tm-fig .collar{fill:none;stroke:var(--paper);stroke-width:2}
+.tm-p h3{font-size:clamp(2rem,3vw,2.8rem);line-height:1.1;display:flex;align-items:baseline;gap:12px}
+.tm-p h3 small{font-size:.95rem;font-weight:700;color:var(--paper);letter-spacing:.1em}
+.tm-does{margin:0;font-weight:700}
+.tm-q{margin:6px 0 0;font-size:1.2rem;line-height:1.65;font-weight:700;color:var(--ink)}
+.tm-sig,.tm-no{margin:0;font-size:.9375rem;font-weight:500}
+.days{display:flex;gap:4px;margin:10px 0 4px;padding:0;list-style:none}
+.days li{display:grid;place-items:center;width:30px;height:auto;aspect-ratio:1;min-width:0;font-size:.8125rem;font-weight:700;border:2px solid var(--ink);color:var(--paper)}
+.days li.on{background:var(--ink);color:var(--paper)}
+.tm-acts{display:flex;flex-wrap:wrap;gap:6px 22px;margin:8px 0 0}
+.tm-go{font-weight:700;text-decoration:none;border-bottom:3px solid var(--ink);padding:4px 0}
+.tm-try{border-bottom-style:dashed}
+.tm-go:hover{border-bottom-color:var(--paper)}
+
+/* ===== 來之前：run-in ===== */
+.bf{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:clamp(28px,5vw,88px);background:var(--ink);color:var(--paper);--slit:var(--ink)}
+.bf h2{grid-row:1/span 2;align-self:start;color:var(--paper);writing-mode:vertical-rl;font-size:clamp(4rem,8vw,7.5rem);line-height:1;letter-spacing:.06em;--sd:to left;--lh:1em;--sy:.66em}
+.bf-list{display:grid;gap:clamp(22px,2.6vw,34px);align-content:start}
+.rl{margin:0;max-width:min(100%,38em);font-size:1.0625rem;line-height:1.65;font-weight:500;color:var(--mag-l)}
+.rl b{font-family:var(--f-disp);font-size:clamp(1.6rem,2.7vw,2.4rem);line-height:1.25;font-weight:900;color:var(--paper);margin-right:.35em}
+.rl:nth-child(6n+1){margin-left:0}.rl:nth-child(6n+2){margin-left:16%}.rl:nth-child(6n+3){margin-left:5%}.rl:nth-child(6n+4){margin-left:28%}.rl:nth-child(6n+5){margin-left:10%}.rl:nth-child(6n+6){margin-left:22%}
+/* 沿虛線剪掉的：剪線框＋一把剪刀停在線上 */
+.bf-x{grid-column:2;position:relative;justify-self:start;max-width:46em;margin-top:52px;padding:18px 22px 16px 22px;background:linear-gradient(90deg,var(--mag-l) 55%,transparent 0) 0 0/14px 2px repeat-x,linear-gradient(90deg,var(--mag-l) 55%,transparent 0) 0 100%/14px 2px repeat-x,linear-gradient(0deg,var(--mag-l) 55%,transparent 0) 0 0/2px 14px repeat-y,linear-gradient(0deg,var(--mag-l) 55%,transparent 0) 100% 0/2px 14px repeat-y}
+.bf-x p{margin:0;font-size:.9375rem;font-weight:500;color:var(--mag-l);max-width:none}
+.bf-x b{display:block;font-family:var(--f-disp);font-size:1.2rem;font-weight:900;color:var(--paper);margin-bottom:4px}
+.bf-sc{position:absolute;left:28px;top:0;width:66px;height:auto;translate:0 -50%;fill:var(--paper);stroke:var(--paper);background:var(--ink);padding:0 4px;overflow:visible}
+.bf-sc .sc-pin{fill:var(--ink)}
+
+/* ===== 頁尾 ===== */
+.foot{display:grid;grid-template-columns:auto 1fr;gap:18px 48px;align-items:end;padding:44px var(--gut) 40px}
+.foot .brand b{font-size:2.6rem}
+.foot address{font-style:normal;display:grid;gap:2px;font-weight:600;font-size:.9375rem}
+.foot address .num{font-size:1.5rem;font-weight:600}
+.foot p{grid-column:1/-1;margin:0;font-size:.8125rem;font-weight:500}
+
+/* ===== 404 ===== */
+.e404{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(40px,6vw,88px) var(--gut);min-height:calc(100svh - 160px)}
+.e404 h1{font-size:clamp(2.6rem,5.4vw,4.8rem);line-height:1.08}
+.e404 .lead{margin-top:18px;font-size:1.0625rem;font-weight:500}
+.e404-l{display:flex;flex-wrap:wrap;gap:10px 14px;margin:28px 0 0;padding:0;list-style:none}
+.e404-l a{display:inline-flex;align-items:center;min-height:48px;padding:0 18px;border:2.5px solid var(--ink);font-weight:700;font-size:1.2rem;text-decoration:none;color:var(--ink)}
+.e404-l li:first-child a{background:var(--ink);color:var(--paper)}
+.e404-l a:hover{background:var(--mag-d);color:var(--paper)}
+.e404-f{margin:0;max-width:440px;justify-self:center;width:100%}
+.e404-f figcaption{margin-top:10px;font-size:.9375rem;font-weight:700}
+@media (max-width:760px){.e404{grid-template-columns:minmax(0,1fr)}}
+
+.cmp:has(#l-0:checked):not(:has(#m-perm:checked)) .vl-0-0,.cmp:has(#l-0:checked):has(#m-perm:checked) .vl-0-1{display:block}
+.cmp:has(#l-0:checked) .tick-0{--on:1}
+main:has(#l-0:checked) .lv-0{--sel:1}
+main:has(#l-0:checked) .lv-0 .lv-you{display:block}
+.cmp:has(#l-1:checked):not(:has(#m-perm:checked)) .vl-1-0,.cmp:has(#l-1:checked):has(#m-perm:checked) .vl-1-1{display:block}
+.cmp:has(#l-1:checked) .tick-1{--on:1}
+main:has(#l-1:checked) .lv-1{--sel:1}
+main:has(#l-1:checked) .lv-1 .lv-you{display:block}
+.cmp:has(#l-2:checked):not(:has(#m-perm:checked)) .vl-2-0,.cmp:has(#l-2:checked):has(#m-perm:checked) .vl-2-1{display:block}
+.cmp:has(#l-2:checked) .tick-2{--on:1}
+main:has(#l-2:checked) .lv-2{--sel:1}
+main:has(#l-2:checked) .lv-2 .lv-you{display:block}
+.cmp:has(#l-3:checked):not(:has(#m-perm:checked)) .vl-3-0,.cmp:has(#l-3:checked):has(#m-perm:checked) .vl-3-1{display:block}
+.cmp:has(#l-3:checked) .tick-3{--on:1}
+main:has(#l-3:checked) .lv-3{--sel:1}
+main:has(#l-3:checked) .lv-3 .lv-you{display:block}
+.cmp:has(#l-4:checked):not(:has(#m-perm:checked)) .vl-4-0,.cmp:has(#l-4:checked):has(#m-perm:checked) .vl-4-1{display:block}
+.cmp:has(#l-4:checked) .tick-4{--on:1}
+main:has(#l-4:checked) .lv-4{--sel:1}
+main:has(#l-4:checked) .lv-4 .lv-you{display:block}
+.cmp:has(#t-0:checked):has(#m-cut:checked) .vt-0-cut{display:block}
+.cmp:has(#t-0:checked):has(#m-dye:checked) .vt-0-dye{display:block}
+.cmp:has(#t-0:checked):has(#m-perm:checked) .vt-0-perm{display:block}
+.cmp:has(#t-0:checked):has(#m-care:checked) .vt-0-care{display:block}
+.cmp:has(#t-1:checked):has(#m-cut:checked) .vt-1-cut{display:block}
+.cmp:has(#t-1:checked):has(#m-dye:checked) .vt-1-dye{display:block}
+.cmp:has(#t-1:checked):has(#m-perm:checked) .vt-1-perm{display:block}
+.cmp:has(#t-1:checked):has(#m-care:checked) .vt-1-care{display:block}
+.cmp:has(#t-2:checked):has(#m-cut:checked) .vt-2-cut{display:block}
+.cmp:has(#t-2:checked):has(#m-dye:checked) .vt-2-dye{display:block}
+.cmp:has(#t-2:checked):has(#m-perm:checked) .vt-2-perm{display:block}
+.cmp:has(#t-2:checked):has(#m-care:checked) .vt-2-care{display:block}
+main:has(#m-cut:checked) .mh-cut,main:has(#m-cut:checked) .lv .p-cut{--pick:1}
+main:has(#m-dye:checked) .mh-dye,main:has(#m-dye:checked) .lv .p-dye{--pick:1}
+main:has(#m-perm:checked) .mh-perm,main:has(#m-perm:checked) .lv .p-perm{--pick:1}
+main:has(#m-care:checked) .mh-care,main:has(#m-care:checked) .lv .p-care{--pick:1}
+.cmp:has(#m-dye:checked):has(#m-perm:checked) .vc-dyePerm{display:block}
+.cmp:has(#m-perm:checked):not(:has(#m-cut:checked)) .vc-permNoCut{display:block}
+.cmp:has(#m-dye:checked) .who-cheng{display:none}
+main:has(#m-dye:checked) .dz-cheng .x-dye{display:inline}
+.cmp:has(#m-care:checked) .who-cheng{display:none}
+main:has(#m-care:checked) .dz-cheng .x-care{display:inline}
+.cmp:has(#m-cut:checked) .who-mai{display:none}
+main:has(#m-cut:checked) .dz-mai .x-cut{display:inline}
+.cmp:has(#m-perm:checked) .who-mai{display:none}
+main:has(#m-perm:checked) .dz-mai .x-perm{display:inline}
+.bk:has(#d-cheng:checked) .off-cheng{display:inline-block}
+.bk:has(#d-mai:checked) .off-mai{display:inline-block}
+.bk:has(#d-yu:checked) .off-yu{display:inline-block}
+.tick-0{--y:38.60%}.tick-1{--y:47.37%}.tick-2{--y:60.09%}.tick-3{--y:75.88%}.tick-4{--y:92.54%}
+
+/* ===== 平板 ===== */
+@media (max-width:1180px){
+  .cmp{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"intro stage" "ctl stage" "out out";grid-template-rows:auto 1fr auto;padding-right:var(--gut)}
+  .out{display:grid;grid-template-columns:1fr 1fr;column-gap:32px;margin:0 calc(var(--gut) * -1) 0 calc(var(--gut) * -1)}
+  .out .say,.out .go{grid-column:1/-1}
+  .bk{grid-template-columns:minmax(0,1fr) minmax(260px,320px);grid-template-areas:"top top" "who who" "wk form"}
+  .bk-who{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pr-notes{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lv{grid-template-columns:minmax(170px,1fr) repeat(4,minmax(0,1fr))}
+  .lv-p{font-size:1.2rem}
+  .lv-r>*{padding:10px 12px}
+}
+/* ===== 手機 ===== */
+@media (max-width:760px){
+  body{font-size:1rem}
+  .top{grid-template-columns:1fr auto;padding-block:10px}
+  .nav{grid-column:1/-1;grid-row:2;flex-wrap:nowrap;overflow-x:auto;gap:18px;padding-bottom:2px;scrollbar-width:none}
+  .nav a{flex:none}
+  .cmp{grid-template-columns:minmax(0,1fr);grid-template-areas:"intro" "stage" "ctl" "out";grid-template-rows:none;padding:22px var(--gut) 0}
+  .figcap{display:none}
+  .intro h1{font-size:2.45rem}
+  .q{text-indent:-.2em}
+  .intro .lead{font-size:1rem;margin-top:12px}
+  .stage{margin-top:14px;grid-template-columns:62px minmax(0,1fr)}
+  .figbox{max-height:none}
+  .tick{padding:2px 10px 2px 4px;min-height:30px}
+  .tk-cm{display:none}
+  .ctl{display:grid;grid-template-columns:minmax(0,1fr) 76px;column-gap:12px;row-gap:14px;align-items:start;padding:14px 0 24px}
+  .ctl>.grp,.ctl>.nojs{grid-column:1}
+  .thumb{display:block;grid-column:2;grid-row:1/span 2;width:76px;height:auto;aspect-ratio:340/456;border:2.5px solid var(--ink);background:var(--mag);overflow:hidden}
+  .meth{gap:6px}
+  .mt{min-height:76px;padding:6px 7px 8px}
+  .mt-ch{font-size:2.2rem}
+  .mt-s{font-size:.8125rem}
+  .tx{min-height:0;padding:8px 8px 10px}
+  .tx-s{font-size:.8125rem}
+  .out{grid-template-columns:minmax(0,1fr);margin:0 calc(var(--gut) * -1);gap:12px;padding-block:22px}
+  .v{font-size:.9375rem;line-height:1.7}
+  .say{padding-top:12px}
+  .out-who{padding-top:12px}
+  .sec h2{font-size:2.05rem;line-height:1.2}
+  .sec{padding-block:40px}
+  .bk{padding-bottom:36px}
+  .bk-form{gap:10px;padding:18px 16px 20px}
+  .fld label{min-height:0}
+  .wk-key{gap:4px 14px;font-size:.8125rem}
+  .bk-who{gap:6px}
+  .bk-top .sec-lead{margin-top:10px}
+  .pr{padding-top:36px}
+  .bk{grid-template-columns:minmax(0,1fr);grid-template-areas:"top" "who" "wk" "form";row-gap:24px}
+  .bk-form{position:static}
+  .bk-who{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .dz{padding:8px 8px 10px}
+  .dz-n{font-size:1.2rem}
+  .dz-r{font-size:.75rem}
+  .wk{grid-template-columns:44px repeat(6,minmax(0,1fr))}
+  .wk-h>*{font-size:.875rem;min-height:40px;flex-direction:column;gap:0}
+  .c,.wk-t{height:25px}
+  .pkb{padding:3px 4px;font-family:var(--f-zh);font-size:.75rem;font-weight:700}
+  .wk-t{padding-right:5px;font-size:.6875rem}
+  .lv{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:20px;padding:10px 0}
+  .lv-h{display:none}
+  .lv-r>*{min-height:0;padding:3px 14px 9px}
+  .lv-r>:first-child{margin-left:0}.lv-r>:last-child{margin-right:0}
+  .lv-rh{grid-column:1/-1;padding:8px 14px 2px!important;margin-top:8px!important}
+  .lv-0 .lv-rh{margin-top:0!important}
+  .lv-p:nth-child(2n){margin-left:10px}.lv-p:nth-child(2n+1){margin-right:10px}
+  .lv-rh{margin-inline:10px!important}
+  .lock{max-width:170px}
+  .lv-n b{font-size:1.4rem}
+  .lv-p{font-size:1.1875rem;gap:8px;line-height:1.3}
+  .lv-r>.lv-p{padding:5px 14px 7px}
+  .lv-pl{display:inline;font-family:var(--f-disp);font-size:1.0625rem;font-weight:900;min-width:1.1em}
+  .lv-you{top:10px;right:10px}
+  .pr-notes{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px;margin-top:26px}
+  .pr-notes dt{font-size:1.2rem}
+  .pr-notes dd{font-size:.875rem}
+  .tm{grid-template-columns:minmax(0,1fr);row-gap:26px}
+  .tm>.sec-lead{margin-bottom:0}
+  .tm-p{grid-template-columns:40% minmax(0,1fr);column-gap:14px;row-gap:3px;align-items:end}
+  .tm-fig{grid-column:1;grid-row:1/6;margin:0;align-self:end}
+  .tm-p h3,.tm-does,.tm-p .days,.tm-sig,.tm-no{grid-column:2}
+  .tm-p h3{grid-row:1}.tm-does{grid-row:2}.tm-p .days{grid-row:3}.tm-sig{grid-row:4}.tm-no{grid-row:5}.tm-q{grid-row:6}.tm-acts{grid-row:7}
+  .tm-p h3{font-size:2rem;flex-wrap:wrap;column-gap:8px}
+  .tm-p .days{gap:3px;margin:4px 0 0;flex-wrap:wrap}
+  .days li{width:26px;height:26px;font-size:.75rem}
+  .tm-q,.tm-acts{grid-column:1/-1}
+  .tm-q{font-size:1.1875rem;line-height:1.55;margin-top:10px}
+  .tm-sig,.tm-no{font-size:.875rem;line-height:1.6}
+  .bf{grid-template-columns:minmax(0,1fr)}
+  .bf h2{grid-row:auto;writing-mode:horizontal-tb;font-size:2.6rem;line-height:1.08;letter-spacing:0;margin-bottom:22px;--sd:to bottom;--lh:1.08em;--sy:.7em}
+  .bf-x{grid-column:1}
+  .rl:nth-child(n){margin-left:0}
+  .bf-list{gap:15px}
+  .rl{font-size:.9375rem;line-height:1.6}
+  .rl b{font-size:1.45rem}
+  .bf-x{margin-top:36px;padding:16px 16px 14px}
+  .foot{padding:28px var(--gut) 26px;gap:10px}
+  .foot{grid-template-columns:minmax(0,1fr)}
+}
+/* ===== 窄於 390px：價目格的標籤與價格上下排（兩欄格約 134–150px，放不下「標籤＋1,600–2,000」；
+   320px 價格被切、360px 仍有 5–7px 超出格子，375px 剛好貼邊）。列頭與格子的左右內縮／內距一起改成同值，邊緣與字首才對得齊 ===== */
+@media (max-width:389px){
+  .lv-r>.lv-p{flex-direction:column;align-items:flex-start;gap:0;padding-inline:10px}
+  .lv-p{font-size:1.0625rem}
+  .lv-p:nth-child(2n){margin-left:6px}.lv-p:nth-child(2n+1){margin-right:6px}
+  .lv-rh{margin-inline:6px!important;padding-inline:10px!important}
+}
+@media (pointer:coarse){
+  .tick{min-block-size:30px}
+  .tm-go,.nav a{min-block-size:44px;display:inline-flex;align-items:center}
+  /* 看起來不變，可點區往外長到 ≥44px（::after；導覽項與「最早」小條之間的空隙夠放） */
+  .nav a,.soon button{position:relative}
+  .nav a::after{content:"";position:absolute;inset:0 -7px}
+  .soon button::after{content:"";position:absolute;inset:-5px}
+}
+
+/* ===== 降級動效：只換狀態，不位移 ===== */
+@media (prefers-reduced-motion:reduce){
+  .rng i,.mt{transition:none}
+  .pkb.grow{animation:none}
+}
+
+/* ===== 列印 ===== */
+@media print{
+  html,body,.out,.bf,.bk-form{background:#fff !important;color:#000 !important}
+  h1,h2,h3,.tk-n,.mt-ch,.dz-n,.pm-rh,.rl b,.rl,.out *,.bk-form *{color:#000 !important}
+  .slit::after{display:none}
+  .grab,.go,.nav,.figbox,.ruler,.bk-who,.wk-key,.send{display:none !important}
+  .cmp,.bk,.tm,.bf{display:block}
+  .bf h2{writing-mode:horizontal-tb}
+  .bk-form{position:static}
+  .fig .bust{fill:#ddd}
+  a{text-decoration:underline}
+  .sec{padding:24px 0}
+  .c.busy{background:#ccc}
+}
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="top">
+      <a class="brand" href="#main"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 4.5c6.4 0 10 4.6 10 10.6V24H6v-8.9C6 9.1 9.6 4.5 16 4.5Z" fill="currentColor"/><path class="mk-cut" d="M2.5 25.5h27" fill="none" stroke-width="2.4" stroke-dasharray="3.4 2.2"/></svg><b>剪影</b><span>髮廊</span></a>
+      <nav class="nav" aria-label="主選單"><a href="#composer">組合器</a><a href="#book">排時間</a><a href="#price">價目</a><a href="#team">設計師</a><a href="#before">來之前</a></nav>
+      <a class="tel" href="tel:+88670000226">07-0000-0226</a>
+    </header>
+    <main id="main">
+      <section class="cmp" id="composer" aria-labelledby="h1">
+      <div class="intro">
+        <h1 id="h1" class="slit q">「幫我稍微<br>修一下就好。」</h1>
+        <p class="lead">「稍微」是幾公分？每個人想的都不一樣。先在這裡對好：做完是哪個形狀、要坐多久、花多少，還有我動刀前會先講的話。</p>
+      </div>
+      <div class="stage">
+        <fieldset class="ruler"><legend class="sr-only">長度：你的頭髮現在到哪裡。上下鍵一格一格換。</legend><label class="tick tick-0"><input class="vh" type="radio" name="l" value="0" id="l-0"><span class="tk-t"><span class="tk-n">耳上</span><span class="tk-cm">約 8 公分</span></span></label><label class="tick tick-1"><input class="vh" type="radio" name="l" value="1" id="l-1"><span class="tk-t"><span class="tk-n">下巴</span><span class="tk-cm">約 18 公分</span></span></label><label class="tick tick-2"><input class="vh" type="radio" name="l" value="2" id="l-2"><span class="tk-t"><span class="tk-n">肩上</span><span class="tk-cm">約 28 公分</span></span></label><label class="tick tick-3"><input class="vh" type="radio" name="l" value="3" id="l-3" checked><span class="tk-t"><span class="tk-n">鎖骨</span><span class="tk-cm">約 38 公分</span></span></label><label class="tick tick-4"><input class="vh" type="radio" name="l" value="4" id="l-4"><span class="tk-t"><span class="tk-n">胸下</span><span class="tk-cm">約 50 公分</span></span></label></fieldset>
+        <div class="figbox" id="figbox" style="--hy:75.88%">
+      <svg id="fig" class="fig" viewBox="30 64 340 456" aria-hidden="true" focusable="false">
+        <defs><clipPath id="hc"><use href="#hair"/></clipPath><clipPath id="fc"><rect id="fc-r" x="-60" y="900" width="520" height="500"/></clipPath><clipPath id="fhc"><use href="#fall-h"/></clipPath></defs>
+        <g id="figall"><path class="bust" d="M200 88C241 88 274 128 274 178C274 216 258 247 236 262C236 296 238 326 246 346C286 356 344 372 368 398C382 414 388 450 390 520L10 520C12 450 18 414 32 398C56 372 114 356 154 346C162 326 164 296 164 262C142 247 126 216 126 178C126 128 159 88 200 88Z"/><path class="bust" d="M128 168C116 166 112 182 116 198C119 212 126 220 133 218ZM272 168C284 166 288 182 284 198C281 212 274 220 267 218Z"/><path class="collar" d="M156 344C180 352 220 352 244 344L248 356C222 366 178 366 152 356Z"/>
+        <path id="hair" class="hair" d="M200 72.4C205.3 72.4 210.6 72.9 215.8 74C221 75 226.2 76.6 231.1 78.7C236.1 80.8 240.9 83.5 245.5 86.5C250.1 89.6 254.5 93.1 258.5 97.1C262.5 101 266.3 105.4 269.7 110.1C273.1 114.8 276.2 119.9 278.8 125.2C281.4 130.5 283.7 136.1 285.5 141.9C287.3 147.6 288.7 153.6 289.6 159.7C290.5 165.7 290.8 172.4 291 178C291.2 183.6 290.8 188.3 290.7 193.5C290.6 198.6 290.5 203.8 290.3 208.9C290.2 214.1 290 219.2 289.9 224.4C289.7 229.6 289.5 234.7 289.4 239.9C289.2 245 289 250.2 288.8 255.3C288.6 260.5 288.4 265.6 288.2 270.8C288 276 287.8 281.1 287.6 286.3C287.4 291.4 287.2 296.6 287 301.7C286.8 306.9 286.5 312 286.3 317.2C286.1 322.4 285.9 327.5 285.6 332.7C285.4 337.8 285.2 343 284.9 348.1C284.7 353.3 284.4 358.4 284.2 363.6C283.9 368.8 283.7 373.9 283.4 379.1C283.2 384.2 282.9 389.4 282.7 394.5C282.4 399.7 283 407.1 281.9 410C280.8 412.9 277.9 411.3 276.2 411.9C274.4 412.5 273 412.9 271.4 413.4C269.8 413.8 268.2 414.3 266.6 414.7C265.1 415.2 263.5 415.6 261.9 416C260.3 416.4 258.7 416.8 257.1 417.2C255.5 417.6 254 417.9 252.4 418.3C250.8 418.6 249.2 419 247.6 419.3C246 419.6 244.4 419.9 242.8 420.2C241.3 420.5 239.7 420.7 238.1 421C236.5 421.2 234.9 421.5 233.3 421.7C231.7 421.9 230.1 422.1 228.6 422.3C227 422.5 225.4 422.7 223.8 422.8C222.2 423 220.6 423.1 219 423.2C217.5 423.4 215.9 423.5 214.3 423.6C212.7 423.7 211.1 423.7 209.5 423.8C207.9 423.9 206.3 423.9 204.8 424C203.2 424 201.6 424 200 424C198.4 424 196.8 424 195.2 424C193.7 423.9 192.1 423.9 190.5 423.8C188.9 423.7 187.3 423.7 185.7 423.6C184.1 423.5 182.5 423.4 181 423.2C179.4 423.1 177.8 423 176.2 422.8C174.6 422.7 173 422.5 171.4 422.3C169.9 422.1 168.3 421.9 166.7 421.7C165.1 421.5 163.5 421.2 161.9 421C160.3 420.7 158.7 420.5 157.2 420.2C155.6 419.9 154 419.6 152.4 419.3C150.8 419 149.2 418.6 147.6 418.3C146 417.9 144.5 417.6 142.9 417.2C141.3 416.8 139.7 416.4 138.1 416C136.5 415.6 134.9 415.2 133.4 414.7C131.8 414.3 130.2 413.8 128.6 413.4C127 412.9 125.6 412.5 123.8 411.9C122 411.3 119 412.9 117.9 410C116.7 407.1 117.3 399.7 117.1 394.5C116.8 389.4 116.6 384.2 116.3 379.1C116.1 373.9 115.8 368.8 115.6 363.6C115.3 358.4 115.1 353.3 114.8 348.1C114.6 343 114.3 337.8 114.1 332.7C113.9 327.5 113.7 322.4 113.4 317.2C113.2 312 113 306.9 112.8 301.7C112.5 296.6 112.3 291.4 112.1 286.3C111.9 281.1 111.7 276 111.5 270.8C111.3 265.6 111.1 260.5 110.9 255.3C110.7 250.2 110.5 245 110.4 239.9C110.2 234.7 110 229.6 109.9 224.4C109.7 219.2 109.5 214.1 109.4 208.9C109.2 203.8 109.1 198.6 109 193.5C108.9 188.3 108.5 183.6 108.7 178C109 172.4 109.4 165.7 110.4 159.7C111.3 153.6 112.7 147.6 114.5 141.9C116.3 136.1 118.6 130.5 121.2 125.2C123.8 119.9 126.9 114.8 130.3 110.1C133.7 105.4 137.5 101 141.5 97.1C145.5 93.1 149.9 89.6 154.5 86.5C159.1 83.5 163.9 80.8 168.9 78.7C173.8 76.6 179 75 184.2 74C189.4 72.9 194.7 72.4 200 72.4Z"/>
+        <g clip-path="url(#hc)"><g id="dyeg" style="opacity:1"><path id="dye" class="dye" d="M0 297L25 310.4L50 295.5L75 311.8L100 298.8L125 314.1L150 297L175 310.5L200 299.2L225 312.5L250 299.8L275 310.5L300 299.6L325 312L350 299.9L375 315.3L400 296.7L400 540L0 540Z"/></g><g id="strands" class="strands"><path d="M209.4 105.7C207.3 110.3 202 124.1 197.2 133.3C192.4 142.5 185.9 151.7 180.6 160.9C175.2 170.1 169.9 179.3 165.2 188.5C160.5 197.7 156.1 206.9 152.5 216.1C148.8 225.3 145.5 234.5 143.1 243.7C140.6 252.9 138.8 262.1 137.9 271.3C137 280.5 137.6 289.7 137.7 298.9C137.8 308.1 138.2 317.3 138.5 326.5C138.8 335.7 139.1 344.9 139.4 354.1C139.7 363.3 140.1 372.5 140.4 381.7C140.7 390.9 141.2 404.7 141.4 409.3"/><path d="M209.4 105.7C207.6 110.3 203.1 124.3 199 133.5C194.9 142.8 189.5 152.1 185 161.4C180.4 170.7 175.9 180 171.9 189.3C168 198.6 164.3 207.9 161.2 217.2C158.1 226.5 155.3 235.8 153.2 245.1C151.2 254.4 149.6 263.7 148.9 273C148.1 282.3 148.6 291.6 148.6 300.9C148.7 310.2 149.1 319.5 149.4 328.7C149.6 338 149.9 347.3 150.1 356.6C150.4 365.9 150.6 375.2 150.9 384.5C151.2 393.8 151.5 407.8 151.7 412.4"/><path d="M209.4 105.7C207.8 110.3 203.7 124.3 200 133.7C196.3 143 191.4 152.3 187.3 161.7C183.2 171 179.1 180.4 175.5 189.7C172 199 168.6 208.4 165.8 217.7C163 227.1 160.5 236.4 158.6 245.7C156.8 255.1 155.4 264.4 154.7 273.7C154 283.1 154.4 292.4 154.5 301.8C154.5 311.1 154.9 320.4 155.1 329.8C155.3 339.1 155.6 348.4 155.8 357.8C156 367.1 156.3 376.5 156.5 385.8C156.7 395.1 157 409.1 157.1 413.8"/><path d="M209.4 105.7C208.2 110.4 205 124.5 202.3 133.9C199.5 143.3 195.8 152.7 192.7 162.2C189.7 171.6 186.6 181 183.9 190.4C181.2 199.8 178.7 209.2 176.6 218.7C174.4 228.1 172.5 237.5 171.1 246.9C169.7 256.3 168.7 265.8 168.2 275.2C167.6 284.6 167.9 294 168 303.4C168 312.8 168.3 322.3 168.4 331.7C168.6 341.1 168.7 350.5 168.9 359.9C169.1 369.3 169.3 378.8 169.4 388.2C169.6 397.6 169.8 411.7 169.8 416.4"/><path d="M209.4 105.7C208.5 110.4 206.2 124.6 204.2 134.1C202.3 143.5 199.7 153 197.5 162.4C195.3 171.9 193.1 181.4 191.2 190.8C189.3 200.3 187.5 209.8 186 219.2C184.4 228.7 183.1 238.2 182.1 247.6C181 257.1 180.3 266.5 179.9 276C179.5 285.5 179.7 294.9 179.7 304.4C179.8 313.9 179.9 323.3 180 332.8C180.1 342.3 180.2 351.7 180.3 361.2C180.4 370.6 180.6 380.1 180.6 389.6C180.7 399 180.8 413.2 180.9 418"/><path d="M209.4 105.7C208.7 110.4 207.1 124.6 205.7 134.1C204.3 143.6 202.5 153.1 201 162.6C199.5 172.1 198 181.5 196.6 191C195.3 200.5 194 210 192.9 219.5C191.9 229 190.9 238.5 190.2 247.9C189.5 257.4 188.9 266.9 188.6 276.4C188.4 285.9 188.5 295.4 188.5 304.8C188.5 314.3 188.6 323.8 188.7 333.3C188.7 342.8 188.8 352.3 188.8 361.8C188.9 371.2 189 380.7 189 390.2C189.1 399.7 189.1 413.9 189.1 418.7"/><path d="M209.4 105.7C209.2 110.4 208.7 124.6 208.3 134.1C208 143.6 207.6 153.1 207.2 162.6C206.8 172.1 206.4 181.6 206.1 191.1C205.7 200.6 205.4 210.1 205.1 219.6C204.8 229.1 204.5 238.6 204.3 248.1C204.1 257.6 203.9 267.1 203.8 276.6C203.7 286 203.7 295.5 203.7 305C203.7 314.5 203.7 324 203.6 333.5C203.6 343 203.6 352.5 203.6 362C203.6 371.5 203.5 381 203.5 390.5C203.5 400 203.5 414.2 203.5 419"/><path d="M209.4 105.7C209.4 110.4 209.4 124.6 209.5 134.1C209.6 143.6 209.8 153.1 210 162.6C210.1 172.1 210.3 181.6 210.4 191C210.5 200.5 210.6 210 210.6 219.5C210.7 229 210.7 238.5 210.7 248C210.8 257.4 210.8 266.9 210.7 276.4C210.7 285.9 210.7 295.4 210.6 304.9C210.6 314.4 210.5 323.9 210.5 333.3C210.4 342.8 210.4 352.3 210.3 361.8C210.2 371.3 210.2 380.8 210.1 390.3C210.1 399.7 210 414 210 418.7"/><path d="M209.4 105.7C209.7 110.4 210.5 124.6 211.4 134C212.3 143.5 213.5 153 214.5 162.4C215.5 171.9 216.5 181.3 217.4 190.8C218.2 200.2 219 209.7 219.6 219.2C220.2 228.6 220.8 238.1 221.2 247.5C221.6 257 221.8 266.5 221.9 275.9C222.1 285.4 221.9 294.8 221.8 304.3C221.8 313.8 221.6 323.2 221.5 332.7C221.4 342.1 221.3 351.6 221.2 361.1C221.1 370.5 221 380 220.9 389.4C220.7 398.9 220.6 413.1 220.6 417.8"/><path d="M209.4 105.7C209.9 110.4 211.4 124.5 212.8 133.9C214.2 143.4 216.3 152.8 217.9 162.2C219.5 171.6 221.2 181.1 222.5 190.5C223.9 199.9 225.2 209.3 226.3 218.8C227.3 228.2 228.3 237.6 228.9 247C229.6 256.5 230.1 265.9 230.3 275.3C230.5 284.8 230.3 294.2 230.2 303.6C230.1 313 229.9 322.5 229.8 331.9C229.6 341.3 229.5 350.7 229.3 360.2C229.2 369.6 229 379 228.8 388.4C228.7 397.9 228.5 412 228.5 416.7"/><path d="M209.4 105.7C210.3 110.3 212.7 124.4 215 133.7C217.3 143.1 220.5 152.4 223.1 161.8C225.7 171.1 228.3 180.5 230.6 189.8C232.8 199.2 234.9 208.6 236.6 217.9C238.3 227.3 239.9 236.6 241 246C242.1 255.3 242.9 264.7 243.2 274C243.6 283.4 243.3 292.7 243.2 302.1C243.1 311.4 242.8 320.8 242.6 330.2C242.4 339.5 242.1 348.9 241.9 358.2C241.7 367.6 241.5 376.9 241.2 386.3C241 395.6 240.8 409.7 240.7 414.3"/><path d="M209.4 105.7C210.6 110.3 213.7 124.2 216.6 133.5C219.6 142.8 223.8 152.1 227.1 161.4C230.4 170.6 233.8 179.9 236.7 189.2C239.6 198.5 242.2 207.8 244.4 217C246.7 226.3 248.6 235.6 250.1 244.9C251.5 254.2 252.6 263.5 253.1 272.7C253.5 282 253.1 291.3 253 300.6C252.9 309.9 252.5 319.2 252.3 328.4C252 337.7 251.8 347 251.5 356.3C251.2 365.6 250.9 374.8 250.7 384.1C250.4 393.4 250 407.3 249.9 412"/><path d="M209.4 105.7C210.9 110.3 214.7 124 218.4 133.2C222 142.4 227.1 151.6 231.2 160.8C235.3 170 239.5 179.2 243 188.4C246.6 197.6 249.9 206.8 252.6 216C255.4 225.2 257.9 234.3 259.6 243.5C261.4 252.7 262.7 261.9 263.4 271.1C264 280.3 263.5 289.5 263.3 298.7C263.2 307.9 262.8 317.1 262.5 326.3C262.2 335.5 261.9 344.6 261.6 353.8C261.2 363 260.9 372.2 260.6 381.4C260.3 390.6 259.8 404.4 259.6 409"/></g><g id="sheen" class="sheen" style="opacity:0"><path d="M221.2 92.1A77 89.4 0 0 1 271.4 144.5"/><path d="M222.9 104.9A67 77.8 0 0 1 259.7 142.7"/><path d="M223.2 117.6A57 66.2 0 0 1 248.3 142.9"/></g></g></g>
+        <line id="guide" class="guide" x1="0" x2="400" y1="410" y2="410"/>
+        <g id="fall" class="fall" clip-path="url(#fc)"><path id="fall-h" class="hair" d=""/><g clip-path="url(#fhc)"><path id="fall-d" class="dye" d=""/><g id="fall-s" class="strands"><path d=""/><path d=""/><path d=""/><path d=""/><path d=""/><path d=""/><path d=""/><path d=""/><path d=""/><path d=""/><path d=""/><path d=""/><path d=""/></g></g></g>
+        <line id="cutl" class="cutl" x1="0" x2="0" y1="0" y2="0"/>
+        <g id="scis" class="scis"><g transform="scale(1.6)"><g class="sc-a"><path d="M0 0L38 -4.2L40 -2.4L2 2.6Z"/><circle cx="-13" cy="-7" r="6.4" fill="none" stroke-width="3"/><path d="M-7.5 -4.4L0 0" stroke-width="3"/></g><g class="sc-b"><path d="M0 0L38 4.2L40 2.4L2 -2.6Z"/><circle cx="-13" cy="7" r="6.4" fill="none" stroke-width="3"/><path d="M-7.5 4.4L0 0" stroke-width="3"/></g><circle r="1.8" class="sc-pin"/></g></g>
+      </svg>
+      <span class="grab" id="grab" aria-hidden="true"><svg viewBox="0 0 22 22" aria-hidden="true" focusable="false"><path d="M11 2v18M5.5 7.5 11 2l5.5 5.5M5.5 14.5 11 20l5.5-5.5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg></span>
+      <span class="tip" aria-hidden="true">拉這裡，改長度</span>
+    </div>
+        <p class="figcap">從椅子後面看過去的你。組合記在網址裡，可以轉給朋友看。</p>
+      </div>
+      <div class="ctl">
+        <svg class="fig thumb" viewBox="30 64 340 456" aria-hidden="true" focusable="false"><use href="#figall"/></svg>
+        <fieldset class="grp"><legend>做法<small>可複選</small></legend><div class="meth"><label class="mt"><input class="vh" type="checkbox" name="m" value="cut" id="m-cut" data-bit="1" checked><span class="mt-ch">剪</span><span class="mt-s">剪髮</span></label><label class="mt"><input class="vh" type="checkbox" name="m" value="dye" id="m-dye" data-bit="2" checked><span class="mt-ch">染</span><span class="mt-s">染髮</span></label><label class="mt"><input class="vh" type="checkbox" name="m" value="perm" id="m-perm" data-bit="4"><span class="mt-ch">燙</span><span class="mt-s">燙髮</span></label><label class="mt"><input class="vh" type="checkbox" name="m" value="care" id="m-care" data-bit="8"><span class="mt-ch">護</span><span class="mt-s">護髮</span></label></div></fieldset>
+        <fieldset class="grp"><legend>髮質<small>抓一把就知道</small></legend><div class="tex"><label class="tx"><input class="vh" type="radio" name="t" value="0" id="t-0"><svg viewBox="0 0 38 16" aria-hidden="true" focusable="false"><path d="M2 14C6 9 3 6 8 2" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><path d="M14 14C18 9 15 6 20 2" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><path d="M26 14C30 9 27 6 32 2" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg><span class="tx-n">細軟</span><span class="tx-s">細，容易塌</span></label><label class="tx"><input class="vh" type="radio" name="t" value="1" id="t-1" checked><svg viewBox="0 0 38 16" aria-hidden="true" focusable="false"><path d="M2 14C6 9 3 6 8 2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M14 14C18 9 15 6 20 2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M26 14C30 9 27 6 32 2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span class="tx-n">一般</span><span class="tx-s">不塌也不硬</span></label><label class="tx"><input class="vh" type="radio" name="t" value="2" id="t-2"><svg viewBox="0 0 38 16" aria-hidden="true" focusable="false"><path d="M2 14C6 9 3 6 8 2" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/><path d="M14 14C18 9 15 6 20 2" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/><path d="M26 14C30 9 27 6 32 2" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/></svg><span class="tx-n">粗硬</span><span class="tx-s">根根分明</span></label></div></fieldset>
+        <p class="nojs">鏡子裡的剪影沒有動起來（這台瀏覽器關掉了網頁的互動功能）：剪影、時間和價格停在預設的組合，「我先講」和「誰做」還是會跟著你選的換。完整價目在下面。</p>
+      </div>
+      <div class="out" aria-label="算出來的結果">
+        <dl class="out-num">
+          <div class="o-row"><dt>要坐<small>含洗頭、吹整</small></dt><dd><span class="big dur" id="dur" data-dur="same"><span class="dg dg-h0"><b data-o="h0">3</b><small>小時</small></span><span class="dg dg-m0"><b data-o="m0">15</b><small class="du-m0">分</small></span><span class="dg dg-b"><b class="dash">–</b><span class="dg dg-h1"><b data-o="h1">3</b><small>小時</small></span><span class="dg dg-m1"><b data-o="m1">35</b><small>分</small></span></span></span></dd></div>
+          <div class="o-row"><dt>要花<small>新臺幣</small></dt><dd><span class="big"><b data-o="p0">3,500</b><b class="dash">–</b><b data-o="p1">4,400</b></span><span class="rng" id="rng" style="--a:0.2692;--b:0.3385"><i></i></span><span class="rng-s" aria-hidden="true"><span>0</span><span>13,000</span></span><span class="unit">怎麼算出來的，看下面的價目。</span></dd></div>
+        </dl>
+        <div class="say"><p class="say-h">我先講</p><p class="v v-len vl-0-0">耳上最吃剪功，也最吃你後腦勺的形狀。後腦扁的，我會在頂上多留一點量，不然從側面看是平的。</p><p class="v v-len vl-0-1">耳上燙下去，會變成一顆花椰菜。真的想捲，留到下巴再來。</p><p class="v v-len vl-1-0">下巴這個長度最好看，也最難剪：差一公分就是另一個髮型。動刀前我會先問你平常塞不塞耳後。</p><p class="v v-len vl-1-1">下巴燙大捲可以，但捲度會吃掉三、四公分，燙完大概只到耳垂。</p><p class="v v-len vl-2-0">肩上這個長度，碰到肩膀就往外翹。這不是你的錯，是肩膀的錯。要嘛再短一點，要嘛留過肩。</p><p class="v v-len vl-2-1">肩上燙，外翹的問題直接變成造型。這是燙最划算的長度之一。</p><p class="v v-len vl-3-0">鎖骨長最好整理，綁得起來也放得下來。硬要說缺點，就是很多人都留這個長度。</p><p class="v v-len vl-3-1">鎖骨長燙完會縮到肩上。捲度撐最久的就是這個長度，三個月後還看得出來。</p><p class="v v-len vl-4-0">胸下的長髮，重量會把頭頂壓扁。剪的時候我在裡面打一點層次，外面看不出來。</p><p class="v v-len vl-4-1">胸下燙，藥水錢比工錢貴，報價高別嚇到。燙完頭髮會重，第一週捲度比較鬆。</p><p class="v vt-0-cut">細軟髮不要打太薄。打薄了不是輕盈，是更少。</p><p class="v vt-1-cut">一般髮質最好處理，你要的形狀八成剪得出來。剩下兩成，髮旋說了算。</p><p class="v vt-2-cut">粗硬髮會打薄，但不會打到毛躁。打太薄，過兩週你會回來罵我。</p><p class="v vt-0-dye">細軟髮吃色快，淺色第一次就到得了；褪色也快，一個月後會淡一階。</p><p class="v vt-1-dye">一般髮質染深一次到位；想比現在淺三階以上就要先漂，價錢走區間的高點。</p><p class="v vt-2-dye">粗硬髮要漂兩次才淺得下來。一次做不到的，我不會說可以。</p><p class="v vt-0-perm">細軟髮燙，捲度第三週開始鬆。要嘛接受，要嘛三個月回來補一次。</p><p class="v vt-1-perm">一般髮質燙完，捲度大概撐三到四個月。怎麼吹，我會在你走之前教一次。</p><p class="v vt-2-perm">粗硬髮藥水要多停二十分鐘，帶本書。怕燙完變三角形，我會先把下半部打薄。</p><p class="v vt-0-care">護髮會讓細軟髮變塌。要護，只護髮尾。</p><p class="v vt-1-care">護髮不會把壞掉的頭髮修好，只會讓它摸起來沒那麼壞。</p><p class="v vt-2-care">粗硬髮護完最有感，摸起來會軟一階；大概撐到第三次洗頭。</p><p class="v vc-dyePerm">染跟燙同一天做得到，但我會建議分兩次。同一天做，頭髮一次吃兩種藥水，你也要坐上半天。</p><p class="v vc-permNoCut">不剪直接燙，分岔的髮尾捲不起來，會一根根亂翹。至少讓我修一公分。</p><p class="v v-empty">什麼都不做？那是來聊天的。至少點一個做法，我才算得出時間。</p></div>
+        <dl class="out-who">
+          <dt>誰做</dt><dd><span class="who who-cheng">阿澄</span><span class="who who-mai">小麥</span><span class="who who-yu">宥恩</span></dd>
+          <dt>最早</dt><dd><ul class="soon" id="soon" role="list"><li><span class="sl"><span>週六</span><span class="t">15:00</span><span>宥恩</span></span></li></ul><span class="soon-none" id="soon-none" hidden>下週排不進這麼長的時段，打電話問問。</span></dd>
+        </dl>
+        <p class="hint" data-max="90">一個半小時內做完，午休溜出來剛好。</p><p class="hint" data-max="180">平日下午最好排；週末下午要早點約。</p><p class="hint on" data-max="999">超過三小時：請在 16:30 以前開始，不然吹完店都要關了。</p>
+        <a class="go" href="#book">就這樣，去排時間<svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 3v13M4 10.5l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6"/></svg></a>
+      </div>
+      <p class="sr-only" id="live" aria-live="polite"></p>
+    </section>
+      <section class="sec bk" id="book" aria-labelledby="bk-h">
+      <div class="bk-top"><h2 id="bk-h" class="slit q">「這禮拜排得進去嗎？」</h2><p class="sec-lead">白格子，是坐得完你剛剛那一套的開始時間。下禮拜以後的，打電話問。</p></div>
+        <fieldset class="bk-who"><legend>找誰</legend><label class="dz dz-cheng"><input class="vh" type="radio" name="d" value="0" id="d-cheng" disabled><span class="dz-n">阿澄</span><span class="dz-r">剪、燙</span><span class="dz-xs"><span class="dz-x x-dye">不碰染</span><span class="dz-x x-care">不碰護</span></span></label><label class="dz dz-mai"><input class="vh" type="radio" name="d" value="1" id="d-mai" disabled><span class="dz-n">小麥</span><span class="dz-r">染、護</span><span class="dz-xs"><span class="dz-x x-cut">不碰剪</span><span class="dz-x x-perm">不碰燙</span></span></label><label class="dz dz-yu"><input class="vh" type="radio" name="d" value="2" id="d-yu" checked><span class="dz-n">宥恩</span><span class="dz-r">剪、染、燙、護</span><span class="dz-xs"></span></label></fieldset>
+        <div class="wk-wrap">
+          <div class="wk" id="wk" role="grid" aria-labelledby="bk-h" aria-describedby="wk-key"><div class="wk-r wk-h" role="row"><span role="columnheader"><span class="sr-only">時間</span></span><span role="columnheader" class="wk-dh" data-d="0"><span class="dn">週二</span><span class="off off-mai">休</span></span><span role="columnheader" class="wk-dh" data-d="1"><span class="dn">週三</span><span class="off off-yu">休</span></span><span role="columnheader" class="wk-dh" data-d="2"><span class="dn">週四</span><span class="off off-cheng">休</span></span><span role="columnheader" class="wk-dh" data-d="3"><span class="dn">週五</span><span class="off off-yu">休</span></span><span role="columnheader" class="wk-dh" data-d="4"><span class="dn">週六</span></span><span role="columnheader" class="wk-dh" data-d="5"><span class="dn">週日</span></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t">11:00</span><span role="gridcell" class="c" data-d="0" data-s="0" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="0" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="2" data-s="0" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="0" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="4" data-s="0" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="5" data-s="0" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t"><span class="sr-only">11:30</span></span><span role="gridcell" class="c" data-d="0" data-s="1" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="1" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="2" data-s="1" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="1" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="4" data-s="1" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="5" data-s="1" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t">12:00</span><span role="gridcell" class="c busy" data-d="0" data-s="2" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="2" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="2" data-s="2" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="2" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="4" data-s="2" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="5" data-s="2" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t"><span class="sr-only">12:30</span></span><span role="gridcell" class="c busy" data-d="0" data-s="3" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="3" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="2" data-s="3" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="3" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="4" data-s="3" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="5" data-s="3" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t">13:00</span><span role="gridcell" class="c" data-d="0" data-s="4" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="4" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="2" data-s="4" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="4" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="4" data-s="4" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="5" data-s="4" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t"><span class="sr-only">13:30</span></span><span role="gridcell" class="c" data-d="0" data-s="5" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="5" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="2" data-s="5" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="5" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="4" data-s="5" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="5" data-s="5" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t">14:00</span><span role="gridcell" class="c" data-d="0" data-s="6" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="6" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="2" data-s="6" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="6" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="4" data-s="6" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="5" data-s="6" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t"><span class="sr-only">14:30</span></span><span role="gridcell" class="c" data-d="0" data-s="7" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="7" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="2" data-s="7" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="7" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="4" data-s="7" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="5" data-s="7" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t">15:00</span><span role="gridcell" class="c busy" data-d="0" data-s="8" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="8" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="2" data-s="8" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="8" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c fit" data-d="4" data-s="8" aria-disabled="false" tabindex="-1"></span><span role="gridcell" class="c" data-d="5" data-s="8" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t"><span class="sr-only">15:30</span></span><span role="gridcell" class="c busy" data-d="0" data-s="9" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="9" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="2" data-s="9" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="9" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c fit" data-d="4" data-s="9" aria-disabled="false" tabindex="-1"></span><span role="gridcell" class="c" data-d="5" data-s="9" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t">16:00</span><span role="gridcell" class="c busy" data-d="0" data-s="10" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="10" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="2" data-s="10" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="10" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c fit" data-d="4" data-s="10" aria-disabled="false" tabindex="-1"></span><span role="gridcell" class="c" data-d="5" data-s="10" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t"><span class="sr-only">16:30</span></span><span role="gridcell" class="c busy" data-d="0" data-s="11" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="11" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="2" data-s="11" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="11" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="4" data-s="11" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="5" data-s="11" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t">17:00</span><span role="gridcell" class="c" data-d="0" data-s="12" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="12" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="2" data-s="12" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="12" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="4" data-s="12" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="5" data-s="12" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t"><span class="sr-only">17:30</span></span><span role="gridcell" class="c" data-d="0" data-s="13" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="13" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="2" data-s="13" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="13" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="4" data-s="13" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="5" data-s="13" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t">18:00</span><span role="gridcell" class="c" data-d="0" data-s="14" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="14" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="2" data-s="14" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="14" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="4" data-s="14" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="5" data-s="14" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t"><span class="sr-only">18:30</span></span><span role="gridcell" class="c" data-d="0" data-s="15" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="15" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="2" data-s="15" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="15" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="4" data-s="15" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="5" data-s="15" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t">19:00</span><span role="gridcell" class="c" data-d="0" data-s="16" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="16" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy" data-d="2" data-s="16" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="16" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="4" data-s="16" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="5" data-s="16" aria-disabled="true" tabindex="-1"></span></div><div class="wk-r" role="row"><span role="rowheader" class="wk-t"><span class="sr-only">19:30</span></span><span role="gridcell" class="c" data-d="0" data-s="17" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="1" data-s="17" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="2" data-s="17" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c busy off-d" data-d="3" data-s="17" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="4" data-s="17" aria-disabled="true" tabindex="-1"></span><span role="gridcell" class="c" data-d="5" data-s="17" aria-disabled="true" tabindex="-1"></span></div><span class="pkb" id="pkb" aria-hidden="true"></span></div>
+          <ul class="wk-key" id="wk-key" role="list"><li><i class="k-fit" aria-hidden="true"></i>白：從這格開始排得下</li><li><i class="k-busy" aria-hidden="true"></i>斜線：已經有人</li><li><i class="k-free" aria-hidden="true"></i>空著但時間不夠</li><li><i class="k-off" aria-hidden="true"></i>那天休</li><li><i class="k-pk" aria-hidden="true"></i>你選的</li><li><i class="k-kb" aria-hidden="true"></i>鍵盤：方向鍵移動，Enter 選定</li></ul>
+        </div>
+        <form class="bk-form" id="bkf" action="#book" method="get">
+          <h3>預約需求</h3>
+          <p class="ps" id="ps"><span class="ps-empty">還沒選時段。點週格裡白色的格子，或從上面「最早」挑一個。</span><span class="ps-on" id="ps-on"></span></p>
+          <div class="fld"><label for="f-name">稱呼</label><input id="f-name" name="name" autocomplete="name" required maxlength="40"><p class="err">稱呼要填，叫你的時候才不會叫錯。</p></div>
+          <div class="fld"><label for="f-tel">手機</label><input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" required pattern="[0-9+\-\s]{9,}" placeholder="09xx-xxx-xxx"><p class="err">號碼短了一截，補齊才撥得通。</p></div>
+          <div class="fld"><label for="f-slot">想約的時段</label><input id="f-slot" name="slot" required maxlength="60" placeholder="點週格會自動帶入"><p class="err">先在週格點一個白格子，或直接寫你方便的時間。</p></div>
+          <div class="fld"><label for="f-note">想先說的</label><textarea id="f-note" name="note" rows="2" maxlength="300" placeholder="例：上次染過深咖啡、後腦有一撮翹毛"></textarea></div>
+          <button class="send" type="submit">送出預約需求</button>
+          <p class="bk-note">送出的是需求，不是確定的時段；店裡會打電話跟你確認。急的話直接打 07-0000-0226。</p>
+          <p class="done" id="done" role="status" hidden>收到了。這是展示用的網站，需求不會真的送出去；要約，請打 07-0000-0226。</p>
+        </form>
+    </section>
+      <section class="sec pr" id="price" aria-labelledby="pr-h">
+      <div class="pr-top"><h2 id="pr-h" class="slit q">「到底要多少錢？」</h2>
+      <p class="sec-lead">單位新臺幣。每一格都寫到高點，沒有「起」。</p></div>
+      <div class="lv" role="table" aria-labelledby="pr-h">
+      <div class="lv-h" role="row"><span role="columnheader" class="lv-h0">長度</span><span role="columnheader" class="lv-mh mh-cut"><b aria-hidden="true">剪</b><span>剪髮</span></span><span role="columnheader" class="lv-mh mh-dye"><b aria-hidden="true">染</b><span>染髮</span></span><span role="columnheader" class="lv-mh mh-perm"><b aria-hidden="true">燙</b><span>燙髮</span></span><span role="columnheader" class="lv-mh mh-care"><b aria-hidden="true">護</b><span>護髮</span></span></div>
+      <div class="lv-r lv-0" role="row"><span role="rowheader" class="lv-rh"><span class="lv-n"><b>耳上</b><small>約 8 公分</small></span><svg class="lock" viewBox="0 0 210 40" aria-hidden="true" focusable="false"><path class="lk-h" d="M9.0 9.0L11.0 9.5L13.1 9.9L15.1 10.1L17.2 10.2L19.2 10.1L21.3 9.9L23.3 9.7L25.4 9.4L27.4 9.2L29.5 9.1L31.5 9.2L33.5 9.5L35.6 9.9L37.6 10.6L39.7 11.4L41.7 12.3L43.8 13.2L45.8 14.0L47.9 14.7L49.9 15.3L52.0 15.7L54.0 16.0L54.0 29.0L52.0 28.6L49.9 28.2L47.9 27.9L45.8 27.7L43.8 27.6L41.7 27.7L39.7 27.9L37.6 28.1L35.6 28.3L33.5 28.4L31.5 28.5L29.5 28.6L27.4 28.6L25.4 28.6L23.3 28.6L21.3 28.7L19.2 28.8L17.2 29.1L15.1 29.4L13.1 29.9L11.0 30.4L9.0 31.0Z"/><path class="lk-s" d="M9.0 13.5L11.0 13.6L13.1 13.6L15.1 13.6L17.2 13.6L19.2 13.6L21.3 13.5L23.3 13.5L25.4 13.4L27.4 13.5L29.5 13.5L31.5 13.7L33.5 13.9L35.6 14.1L37.6 14.5L39.7 14.9L41.7 15.4L43.8 15.9L45.8 16.5L47.9 17.0L49.9 17.6L52.0 18.1L54.0 18.6"/><path class="lk-s" d="M9.0 17.0L11.0 17.0L13.1 16.9L15.1 16.9L17.2 16.8L19.2 16.7L21.3 16.6L23.3 16.5L25.4 16.5L27.4 16.5L29.5 16.6L31.5 16.8L33.5 17.0L35.6 17.3L37.6 17.7L39.7 18.1L41.7 18.5L43.8 19.0L45.8 19.5L47.9 19.9L49.9 20.3L52.0 20.7L54.0 20.9"/><path class="lk-s" d="M9.0 20.4L11.0 20.3L13.1 20.2L15.1 20.0L17.2 19.9L19.2 19.7L21.3 19.6L23.3 19.6L25.4 19.6L27.4 19.6L29.5 19.8L31.5 19.9L33.5 20.2L35.6 20.5L37.6 20.8L39.7 21.2L41.7 21.6L43.8 21.9L45.8 22.3L47.9 22.5L49.9 22.7L52.0 22.9L54.0 22.9"/><path class="lk-s" d="M9.0 23.6L11.0 23.4L13.1 23.2L15.1 23.0L17.2 22.9L19.2 22.7L21.3 22.6L23.3 22.6L25.4 22.6L27.4 22.7L29.5 22.8L31.5 23.0L33.5 23.2L35.6 23.5L37.6 23.8L39.7 24.0L41.7 24.3L43.8 24.5L45.8 24.7L47.9 24.7L49.9 24.7L52.0 24.6L54.0 24.4"/><path class="lk-s" d="M9.0 26.8L11.0 26.6L13.1 26.3L15.1 26.1L17.2 25.9L19.2 25.8L21.3 25.7L23.3 25.6L25.4 25.7L27.4 25.7L29.5 25.8L31.5 26.0L33.5 26.2L35.6 26.4L37.6 26.5L39.7 26.7L41.7 26.8L43.8 26.8L45.8 26.8L47.9 26.6L49.9 26.4L52.0 26.0L54.0 25.6"/><rect class="lk-c" x="3" y="6" width="10" height="28"/></svg><span class="lv-you">你選的長度</span></span><span role="cell" class="lv-p p-cut"><span class="lv-pl" aria-hidden="true">剪</span><span class="num">600<span class="dash">–</span>700</span></span><span role="cell" class="lv-p p-dye"><span class="lv-pl" aria-hidden="true">染</span><span class="num">1,600<span class="dash">–</span>2,000</span></span><span role="cell" class="lv-p p-perm"><span class="lv-pl" aria-hidden="true">燙</span><span class="num">1,800<span class="dash">–</span>2,200</span></span><span role="cell" class="lv-p p-care"><span class="lv-pl" aria-hidden="true">護</span><span class="num">800<span class="dash">–</span>900</span></span></div><div class="lv-r lv-1" role="row"><span role="rowheader" class="lv-rh"><span class="lv-n"><b>下巴</b><small>約 18 公分</small></span><svg class="lock" viewBox="0 0 210 40" aria-hidden="true" focusable="false"><path class="lk-h" d="M9.0 8.9L12.6 9.4L16.3 9.8L19.9 10.1L23.5 10.2L27.2 10.1L30.8 9.8L34.5 9.4L38.1 9.0L41.7 8.5L45.4 8.2L49.0 7.9L52.6 7.9L56.3 8.1L59.9 8.4L63.5 9.0L67.2 9.8L70.8 10.6L74.5 11.5L78.1 12.4L81.7 13.3L85.4 14.1L89.0 14.9L89.0 27.6L85.4 26.7L81.7 26.1L78.1 25.6L74.5 25.4L70.8 25.4L67.2 25.5L63.5 25.8L59.9 26.2L56.3 26.5L52.6 26.9L49.0 27.2L45.4 27.4L41.7 27.6L38.1 27.8L34.5 28.0L30.8 28.3L27.2 28.6L23.5 29.0L19.9 29.5L16.3 30.1L12.6 30.6L9.0 31.1Z"/><path class="lk-s" d="M9.0 13.5L12.6 13.6L16.3 13.7L19.9 13.7L23.5 13.6L27.2 13.4L30.8 13.3L34.5 13.1L38.1 12.9L41.7 12.7L45.4 12.5L49.0 12.4L52.6 12.3L56.3 12.3L59.9 12.5L63.5 12.7L67.2 13.0L70.8 13.5L74.5 14.1L78.1 14.8L81.7 15.5L85.4 16.4L89.0 17.3"/><path class="lk-s" d="M9.0 17.0L12.6 17.0L16.3 16.9L19.9 16.8L23.5 16.6L27.2 16.4L30.8 16.1L34.5 15.9L38.1 15.7L41.7 15.5L45.4 15.4L49.0 15.3L52.6 15.4L56.3 15.5L59.9 15.8L63.5 16.1L67.2 16.6L70.8 17.1L74.5 17.8L78.1 18.5L81.7 19.3L85.4 20.1L89.0 21.0"/><path class="lk-s" d="M9.0 20.4L12.6 20.3L16.3 20.1L19.9 19.8L23.5 19.6L27.2 19.3L30.8 19.0L34.5 18.8L38.1 18.6L41.7 18.5L45.4 18.5L49.0 18.5L52.6 18.6L56.3 18.9L59.9 19.2L63.5 19.7L67.2 20.2L70.8 20.8L74.5 21.5L78.1 22.2L81.7 22.9L85.4 23.6L89.0 24.2"/><path class="lk-s" d="M9.0 23.6L12.6 23.3L16.3 23.1L19.9 22.8L23.5 22.5L27.2 22.2L30.8 21.9L34.5 21.7L38.1 21.6L41.7 21.6L45.4 21.6L49.0 21.7L52.6 22.0L56.3 22.3L59.9 22.7L63.5 23.2L67.2 23.7L70.8 24.3L74.5 24.8L78.1 25.4L81.7 26.0L85.4 26.5L89.0 26.9"/><path class="lk-s" d="M9.0 26.8L12.6 26.5L16.3 26.1L19.9 25.8L23.5 25.5L27.2 25.2L30.8 25.0L34.5 24.8L38.1 24.8L41.7 24.8L45.4 24.9L49.0 25.1L52.6 25.4L56.3 25.7L59.9 26.1L63.5 26.6L67.2 27.0L70.8 27.5L74.5 27.9L78.1 28.3L81.7 28.6L85.4 28.8L89.0 28.9"/><rect class="lk-c" x="3" y="6" width="10" height="28"/></svg><span class="lv-you">你選的長度</span></span><span role="cell" class="lv-p p-cut"><span class="lv-pl" aria-hidden="true">剪</span><span class="num">700<span class="dash">–</span>800</span></span><span role="cell" class="lv-p p-dye"><span class="lv-pl" aria-hidden="true">染</span><span class="num">1,800<span class="dash">–</span>2,400</span></span><span role="cell" class="lv-p p-perm"><span class="lv-pl" aria-hidden="true">燙</span><span class="num">2,200<span class="dash">–</span>2,800</span></span><span role="cell" class="lv-p p-care"><span class="lv-pl" aria-hidden="true">護</span><span class="num">800<span class="dash">–</span>1,000</span></span></div><div class="lv-r lv-2" role="row"><span role="rowheader" class="lv-rh"><span class="lv-n"><b>肩上</b><small>約 28 公分</small></span><svg class="lock" viewBox="0 0 210 40" aria-hidden="true" focusable="false"><path class="lk-h" d="M9.0 8.2L14.3 8.5L19.5 9.0L24.8 9.5L30.1 10.1L35.4 10.6L40.6 11.1L45.9 11.5L51.2 11.6L56.5 11.6L61.7 11.4L67.0 11.1L72.3 10.7L77.5 10.3L82.8 9.9L88.1 9.6L93.4 9.5L98.6 9.5L103.9 9.7L109.2 10.1L114.5 10.6L119.7 11.1L125.0 11.7L125.0 24.0L119.7 24.3L114.5 24.7L109.2 25.3L103.9 25.9L98.6 26.4L93.4 27.0L88.1 27.4L82.8 27.7L77.5 27.9L72.3 28.1L67.0 28.3L61.7 28.4L56.5 28.7L51.2 29.0L45.9 29.4L40.6 29.8L35.4 30.3L30.1 30.8L24.8 31.2L19.5 31.5L14.3 31.7L9.0 31.8Z"/><path class="lk-s" d="M9.0 13.5L14.3 13.7L19.5 14.0L24.8 14.2L30.1 14.4L35.4 14.6L40.6 14.7L45.9 14.7L51.2 14.7L56.5 14.7L61.7 14.6L67.0 14.5L72.3 14.3L77.5 14.1L82.8 14.0L88.1 13.8L93.4 13.6L98.6 13.5L103.9 13.4L109.2 13.4L114.5 13.5L119.7 13.7L125.0 14.0"/><path class="lk-s" d="M9.0 17.0L14.3 17.2L19.5 17.3L24.8 17.4L30.1 17.5L35.4 17.6L40.6 17.6L45.9 17.5L51.2 17.4L56.5 17.2L61.7 17.1L67.0 16.9L72.3 16.6L77.5 16.4L82.8 16.2L88.1 16.0L93.4 15.9L98.6 15.9L103.9 15.9L109.2 16.0L114.5 16.1L119.7 16.4L125.0 16.8"/><path class="lk-s" d="M9.0 20.4L14.3 20.5L19.5 20.5L24.8 20.6L30.1 20.5L35.4 20.5L40.6 20.3L45.9 20.2L51.2 20.0L56.5 19.7L61.7 19.5L67.0 19.2L72.3 19.0L77.5 18.8L82.8 18.6L88.1 18.5L93.4 18.4L98.6 18.4L103.9 18.5L109.2 18.7L114.5 18.9L119.7 19.3L125.0 19.7"/><path class="lk-s" d="M9.0 23.6L14.3 23.6L19.5 23.6L24.8 23.5L30.1 23.3L35.4 23.2L40.6 22.9L45.9 22.7L51.2 22.4L56.5 22.1L61.7 21.9L67.0 21.6L72.3 21.4L77.5 21.2L82.8 21.0L88.1 21.0L93.4 21.0L98.6 21.0L103.9 21.2L109.2 21.4L114.5 21.7L119.7 22.1L125.0 22.5"/><path class="lk-s" d="M9.0 26.8L14.3 26.7L19.5 26.6L24.8 26.4L30.1 26.1L35.4 25.9L40.6 25.6L45.9 25.3L51.2 24.9L56.5 24.6L61.7 24.3L67.0 24.1L72.3 23.9L77.5 23.7L82.8 23.7L88.1 23.7L93.4 23.7L98.6 23.9L103.9 24.1L109.2 24.3L114.5 24.6L119.7 25.0L125.0 25.3"/><rect class="lk-c" x="3" y="6" width="10" height="28"/></svg><span class="lv-you">你選的長度</span></span><span role="cell" class="lv-p p-cut"><span class="lv-pl" aria-hidden="true">剪</span><span class="num">800<span class="dash">–</span>900</span></span><span role="cell" class="lv-p p-dye"><span class="lv-pl" aria-hidden="true">染</span><span class="num">2,200<span class="dash">–</span>2,800</span></span><span role="cell" class="lv-p p-perm"><span class="lv-pl" aria-hidden="true">燙</span><span class="num">2,600<span class="dash">–</span>3,200</span></span><span role="cell" class="lv-p p-care"><span class="lv-pl" aria-hidden="true">護</span><span class="num">900<span class="dash">–</span>1,100</span></span></div><div class="lv-r lv-3" role="row"><span role="rowheader" class="lv-rh"><span class="lv-n"><b>鎖骨</b><small>約 38 公分</small></span><svg class="lock" viewBox="0 0 210 40" aria-hidden="true" focusable="false"><path class="lk-h" d="M9.0 9.2L15.9 9.1L22.7 9.0L29.6 9.1L36.5 9.4L43.3 9.9L50.2 10.5L57.0 11.3L63.9 12.1L70.8 12.9L77.6 13.7L84.5 14.2L91.4 14.6L98.2 14.6L105.1 14.5L112.0 14.1L118.8 13.4L125.7 12.7L132.5 11.9L139.4 11.1L146.3 10.4L153.1 9.8L160.0 9.3L160.0 23.9L153.1 25.2L146.3 26.4L139.4 27.4L132.5 28.2L125.7 28.8L118.8 29.3L112.0 29.7L105.1 29.9L98.2 30.2L91.4 30.4L84.5 30.6L77.6 30.9L70.8 31.1L63.9 31.3L57.0 31.5L50.2 31.5L43.3 31.5L36.5 31.4L29.6 31.3L22.7 31.1L15.9 30.9L9.0 30.8Z"/><path class="lk-s" d="M9.0 13.5L15.9 13.6L22.7 13.8L29.6 14.0L36.5 14.4L43.3 14.8L50.2 15.2L57.0 15.7L63.9 16.2L70.8 16.6L77.6 16.9L84.5 17.2L91.4 17.4L98.2 17.4L105.1 17.4L112.0 17.1L118.8 16.8L125.7 16.3L132.5 15.7L139.4 15.0L146.3 14.2L153.1 13.5L160.0 12.7"/><path class="lk-s" d="M9.0 17.0L15.9 17.1L22.7 17.3L29.6 17.6L36.5 17.9L43.3 18.2L50.2 18.6L57.0 18.9L63.9 19.2L70.8 19.5L77.6 19.6L84.5 19.7L91.4 19.6L98.2 19.4L105.1 19.1L112.0 18.6L118.8 18.0L125.7 17.4L132.5 16.6L139.4 15.9L146.3 15.1L153.1 14.4L160.0 13.8"/><path class="lk-s" d="M9.0 20.4L15.9 20.5L22.7 20.7L29.6 20.9L36.5 21.2L43.3 21.5L50.2 21.7L57.0 21.9L63.9 22.0L70.8 22.1L77.6 22.0L84.5 21.8L91.4 21.5L98.2 21.1L105.1 20.5L112.0 19.9L118.8 19.2L125.7 18.4L132.5 17.7L139.4 17.0L146.3 16.3L153.1 15.7L160.0 15.3"/><path class="lk-s" d="M9.0 23.6L15.9 23.7L22.7 23.9L29.6 24.1L36.5 24.2L43.3 24.4L50.2 24.5L57.0 24.5L63.9 24.4L70.8 24.3L77.6 24.0L84.5 23.6L91.4 23.1L98.2 22.5L105.1 21.8L112.0 21.1L118.8 20.3L125.7 19.6L132.5 18.9L139.4 18.3L146.3 17.8L153.1 17.5L160.0 17.3"/><path class="lk-s" d="M9.0 26.8L15.9 26.9L22.7 27.0L29.6 27.1L36.5 27.2L43.3 27.2L50.2 27.1L57.0 26.9L63.9 26.7L70.8 26.3L77.6 25.9L84.5 25.3L91.4 24.6L98.2 23.9L105.1 23.2L112.0 22.5L118.8 21.8L125.7 21.1L132.5 20.6L139.4 20.2L146.3 19.9L153.1 19.8L160.0 19.9"/><rect class="lk-c" x="3" y="6" width="10" height="28"/></svg><span class="lv-you">你選的長度</span></span><span role="cell" class="lv-p p-cut"><span class="lv-pl" aria-hidden="true">剪</span><span class="num">900<span class="dash">–</span>1,000</span></span><span role="cell" class="lv-p p-dye"><span class="lv-pl" aria-hidden="true">染</span><span class="num">2,600<span class="dash">–</span>3,400</span></span><span role="cell" class="lv-p p-perm"><span class="lv-pl" aria-hidden="true">燙</span><span class="num">3,000<span class="dash">–</span>3,800</span></span><span role="cell" class="lv-p p-care"><span class="lv-pl" aria-hidden="true">護</span><span class="num">1,000<span class="dash">–</span>1,300</span></span></div><div class="lv-r lv-4" role="row"><span role="rowheader" class="lv-rh"><span class="lv-n"><b>胸下</b><small>約 50 公分</small></span><svg class="lock" viewBox="0 0 210 40" aria-hidden="true" focusable="false"><path class="lk-h" d="M9.0 9.4L17.8 9.3L26.5 9.1L35.3 9.0L44.1 9.1L52.9 9.3L61.6 9.8L70.4 10.4L79.2 11.1L88.0 11.9L96.7 12.8L105.5 13.6L114.3 14.2L123.0 14.7L131.8 15.0L140.6 15.2L149.4 15.1L158.1 14.9L166.9 14.7L175.7 14.4L184.5 14.0L193.2 13.8L202.0 13.5L202.0 28.5L193.2 29.3L184.5 30.0L175.7 30.4L166.9 30.5L158.1 30.6L149.4 30.5L140.6 30.4L131.8 30.2L123.0 30.2L114.3 30.2L105.5 30.2L96.7 30.4L88.0 30.6L79.2 30.8L70.4 30.9L61.6 31.0L52.9 31.0L44.1 31.0L35.3 30.8L26.5 30.7L17.8 30.6L9.0 30.6Z"/><path class="lk-s" d="M9.0 13.5L17.8 13.5L26.5 13.6L35.3 13.8L44.1 14.0L52.9 14.3L61.6 14.6L70.4 15.0L79.2 15.4L88.0 15.8L96.7 16.3L105.5 16.7L114.3 17.1L123.0 17.5L131.8 17.8L140.6 18.0L149.4 18.2L158.1 18.3L166.9 18.2L175.7 18.1L184.5 17.9L193.2 17.5L202.0 17.1"/><path class="lk-s" d="M9.0 17.0L17.8 17.0L26.5 17.1L35.3 17.3L44.1 17.5L52.9 17.8L61.6 18.1L70.4 18.4L79.2 18.7L88.0 19.1L96.7 19.4L105.5 19.7L114.3 19.9L123.0 20.1L131.8 20.2L140.6 20.2L149.4 20.1L158.1 20.0L166.9 19.7L175.7 19.3L184.5 18.9L193.2 18.3L202.0 17.7"/><path class="lk-s" d="M9.0 20.4L17.8 20.4L26.5 20.5L35.3 20.7L44.1 20.9L52.9 21.1L61.6 21.3L70.4 21.6L79.2 21.8L88.0 22.0L96.7 22.2L105.5 22.3L114.3 22.4L123.0 22.3L131.8 22.2L140.6 22.0L149.4 21.7L158.1 21.3L166.9 20.9L175.7 20.3L184.5 19.7L193.2 19.1L202.0 18.4"/><path class="lk-s" d="M9.0 23.6L17.8 23.6L26.5 23.7L35.3 23.9L44.1 24.0L52.9 24.2L61.6 24.3L70.4 24.5L79.2 24.6L88.0 24.6L96.7 24.6L105.5 24.6L114.3 24.4L123.0 24.2L131.8 23.9L140.6 23.5L149.4 23.0L158.1 22.4L166.9 21.8L175.7 21.2L184.5 20.5L193.2 19.8L202.0 19.1"/><path class="lk-s" d="M9.0 26.8L17.8 26.8L26.5 26.9L35.3 27.0L44.1 27.1L52.9 27.1L61.6 27.2L70.4 27.2L79.2 27.1L88.0 27.0L96.7 26.8L105.5 26.6L114.3 26.3L123.0 25.8L131.8 25.4L140.6 24.8L149.4 24.2L158.1 23.5L166.9 22.9L175.7 22.2L184.5 21.5L193.2 20.9L202.0 20.3"/><rect class="lk-c" x="3" y="6" width="10" height="28"/></svg><span class="lv-you">你選的長度</span></span><span role="cell" class="lv-p p-cut"><span class="lv-pl" aria-hidden="true">剪</span><span class="num">1,000<span class="dash">–</span>1,200</span></span><span role="cell" class="lv-p p-dye"><span class="lv-pl" aria-hidden="true">染</span><span class="num">3,000<span class="dash">–</span>4,200</span></span><span role="cell" class="lv-p p-perm"><span class="lv-pl" aria-hidden="true">燙</span><span class="num">3,400<span class="dash">–</span>4,600</span></span><span role="cell" class="lv-p p-care"><span class="lv-pl" aria-hidden="true">護</span><span class="num">1,200<span class="dash">–</span>1,600</span></span></div>
+    </div>
+      <dl class="pr-notes"><div><dt>低點</dt><dd>髮量普通、上次沒染過、做的顏色跟現在差不多。</dd></div><div><dt>高點</dt><dd>髮量多、上次染過深色、想比現在淺三階以上。粗硬髮染燙，藥水多用一成。</dd></div><div><dt>包含</dt><dd>洗、吹、基本造型。漂髮另計，看過頭髮當場報價。</dd></div><div><dt>報價</dt><dd>開工前報一次。中途要加任何東西，先問你，你點頭才做。</dd></div></dl>
+    </section>
+      <section class="sec tm" id="team" aria-labelledby="tm-h">
+      <h2 id="tm-h" class="slit q">「誰剪比較好？」</h2>
+      <p class="sec-lead">看形狀挑。三個人都不放大頭照——臉不重要，你的頭比較重要。</p>
+      <article class="tm-p tm-cheng" aria-labelledby="tm-cheng-h">
+        <div class="tm-fig"><svg viewBox="30 64 340 312" aria-hidden="true" focusable="false" class="fig"><defs><clipPath id="tm-cheng-c"><path d="M200 72.4C205.3 72.4 210.6 72.9 215.8 74C221 75 226.2 76.6 231.1 78.7C236.1 80.8 240.9 83.5 245.5 86.5C250 89.6 254.4 93.1 258.5 97.1C262.5 101 266.3 105.4 269.7 110.1C273.1 114.8 276.1 119.9 278.8 125.2C281.4 130.5 283.7 136.1 285.5 141.9C287.3 147.6 288.7 153.6 289.6 159.7C290.5 165.7 290.8 173.8 291 178C291.1 182.2 290.8 182.5 290.7 184.8C290.6 187.1 290.4 189.3 290.3 191.6C290.1 193.9 290 196.1 289.8 198.4C289.7 200.7 289.5 202.9 289.3 205.2C289.1 207.5 288.9 209.7 288.7 212C288.5 214.3 288.3 216.5 288.1 218.8C287.9 221.1 287.7 223.3 287.5 225.6C287.2 227.9 287 230.1 286.8 232.4C286.5 234.7 286.3 236.9 286 239.2C285.8 241.5 285.6 243.7 285.3 246C285 248.3 285 250.5 284.4 252.8C283.8 255.1 282.8 257.3 281.7 259.6C280.5 261.9 278.7 264.1 277.4 266.4C276 268.7 274.4 270.9 273.4 273.2C272.4 275.5 272.4 278.8 271.2 280C270 281.2 267.7 280.5 266.2 280.7C264.7 280.9 263.5 281 262.1 281.2C260.7 281.4 259.3 281.5 257.9 281.7C256.6 281.8 255.2 282 253.8 282.1C252.4 282.3 251 282.4 249.7 282.6C248.3 282.7 246.9 282.8 245.5 283C244.2 283.1 242.8 283.2 241.4 283.3C240 283.4 238.6 283.5 237.3 283.6C235.9 283.7 234.5 283.8 233.1 283.9C231.7 284 230.4 284.1 229 284.2C227.6 284.3 226.2 284.3 224.8 284.4C223.5 284.5 222.1 284.5 220.7 284.6C219.3 284.6 217.9 284.7 216.6 284.7C215.2 284.8 213.8 284.8 212.4 284.8C211 284.9 209.7 284.9 208.3 284.9C206.9 285 205.5 285 204.1 285C202.8 285 201.4 285 200 285C198.6 285 197.2 285 195.9 285C194.5 285 193.1 285 191.7 284.9C190.3 284.9 189 284.9 187.6 284.8C186.2 284.8 184.8 284.8 183.4 284.7C182.1 284.7 180.7 284.6 179.3 284.6C177.9 284.5 176.5 284.5 175.2 284.4C173.8 284.3 172.4 284.3 171 284.2C169.6 284.1 168.3 284 166.9 283.9C165.5 283.8 164.1 283.7 162.7 283.6C161.4 283.5 160 283.4 158.6 283.3C157.2 283.2 155.8 283.1 154.5 283C153.1 282.8 151.7 282.7 150.3 282.6C149 282.4 147.6 282.3 146.2 282.1C144.8 282 143.4 281.8 142.1 281.7C140.7 281.5 139.3 281.4 137.9 281.2C136.5 281 135.3 280.9 133.8 280.7C132.2 280.5 129.8 281.2 128.6 280C127.3 278.8 127.4 275.5 126.4 273.2C125.4 270.9 123.8 268.7 122.4 266.4C121 264.1 119.3 261.9 118.1 259.6C116.9 257.3 115.9 255.1 115.3 252.8C114.7 250.5 114.7 248.3 114.5 246C114.2 243.7 113.9 241.5 113.7 239.2C113.4 236.9 113.2 234.7 113 232.4C112.7 230.1 112.5 227.9 112.3 225.6C112.1 223.3 111.8 221.1 111.6 218.8C111.4 216.5 111.2 214.3 111 212C110.8 209.7 110.6 207.5 110.4 205.2C110.3 202.9 110.1 200.7 109.9 198.4C109.7 196.1 109.6 193.9 109.4 191.6C109.3 189.3 109.2 187.1 109 184.8C108.9 182.5 108.5 182.2 108.8 178C109 173.8 109.5 165.7 110.4 159.7C111.4 153.6 112.7 147.6 114.5 141.9C116.3 136.1 118.6 130.5 121.2 125.2C123.9 119.9 126.9 114.8 130.3 110.1C133.7 105.4 137.5 101 141.5 97.1C145.6 93.1 150 89.6 154.5 86.5C159.1 83.5 163.9 80.8 168.9 78.7C173.8 76.6 179 75 184.2 74C189.4 72.9 194.7 72.4 200 72.4Z"/></clipPath></defs>
+<path class="bust" d="M200 88C241 88 274 128 274 178C274 216 258 247 236 262C236 296 238 326 246 346C286 356 344 372 368 398C382 414 388 450 390 520L10 520C12 450 18 414 32 398C56 372 114 356 154 346C162 326 164 296 164 262C142 247 126 216 126 178C126 128 159 88 200 88Z"/><path class="bust" d="M128 168C116 166 112 182 116 198C119 212 126 220 133 218ZM272 168C284 166 288 182 284 198C281 212 274 220 267 218Z"/><path class="collar" d="M156 344C180 352 220 352 244 344L248 356C222 366 178 366 152 356Z"/>
+<path class="hair" d="M200 72.4C205.3 72.4 210.6 72.9 215.8 74C221 75 226.2 76.6 231.1 78.7C236.1 80.8 240.9 83.5 245.5 86.5C250 89.6 254.4 93.1 258.5 97.1C262.5 101 266.3 105.4 269.7 110.1C273.1 114.8 276.1 119.9 278.8 125.2C281.4 130.5 283.7 136.1 285.5 141.9C287.3 147.6 288.7 153.6 289.6 159.7C290.5 165.7 290.8 173.8 291 178C291.1 182.2 290.8 182.5 290.7 184.8C290.6 187.1 290.4 189.3 290.3 191.6C290.1 193.9 290 196.1 289.8 198.4C289.7 200.7 289.5 202.9 289.3 205.2C289.1 207.5 288.9 209.7 288.7 212C288.5 214.3 288.3 216.5 288.1 218.8C287.9 221.1 287.7 223.3 287.5 225.6C287.2 227.9 287 230.1 286.8 232.4C286.5 234.7 286.3 236.9 286 239.2C285.8 241.5 285.6 243.7 285.3 246C285 248.3 285 250.5 284.4 252.8C283.8 255.1 282.8 257.3 281.7 259.6C280.5 261.9 278.7 264.1 277.4 266.4C276 268.7 274.4 270.9 273.4 273.2C272.4 275.5 272.4 278.8 271.2 280C270 281.2 267.7 280.5 266.2 280.7C264.7 280.9 263.5 281 262.1 281.2C260.7 281.4 259.3 281.5 257.9 281.7C256.6 281.8 255.2 282 253.8 282.1C252.4 282.3 251 282.4 249.7 282.6C248.3 282.7 246.9 282.8 245.5 283C244.2 283.1 242.8 283.2 241.4 283.3C240 283.4 238.6 283.5 237.3 283.6C235.9 283.7 234.5 283.8 233.1 283.9C231.7 284 230.4 284.1 229 284.2C227.6 284.3 226.2 284.3 224.8 284.4C223.5 284.5 222.1 284.5 220.7 284.6C219.3 284.6 217.9 284.7 216.6 284.7C215.2 284.8 213.8 284.8 212.4 284.8C211 284.9 209.7 284.9 208.3 284.9C206.9 285 205.5 285 204.1 285C202.8 285 201.4 285 200 285C198.6 285 197.2 285 195.9 285C194.5 285 193.1 285 191.7 284.9C190.3 284.9 189 284.9 187.6 284.8C186.2 284.8 184.8 284.8 183.4 284.7C182.1 284.7 180.7 284.6 179.3 284.6C177.9 284.5 176.5 284.5 175.2 284.4C173.8 284.3 172.4 284.3 171 284.2C169.6 284.1 168.3 284 166.9 283.9C165.5 283.8 164.1 283.7 162.7 283.6C161.4 283.5 160 283.4 158.6 283.3C157.2 283.2 155.8 283.1 154.5 283C153.1 282.8 151.7 282.7 150.3 282.6C149 282.4 147.6 282.3 146.2 282.1C144.8 282 143.4 281.8 142.1 281.7C140.7 281.5 139.3 281.4 137.9 281.2C136.5 281 135.3 280.9 133.8 280.7C132.2 280.5 129.8 281.2 128.6 280C127.3 278.8 127.4 275.5 126.4 273.2C125.4 270.9 123.8 268.7 122.4 266.4C121 264.1 119.3 261.9 118.1 259.6C116.9 257.3 115.9 255.1 115.3 252.8C114.7 250.5 114.7 248.3 114.5 246C114.2 243.7 113.9 241.5 113.7 239.2C113.4 236.9 113.2 234.7 113 232.4C112.7 230.1 112.5 227.9 112.3 225.6C112.1 223.3 111.8 221.1 111.6 218.8C111.4 216.5 111.2 214.3 111 212C110.8 209.7 110.6 207.5 110.4 205.2C110.3 202.9 110.1 200.7 109.9 198.4C109.7 196.1 109.6 193.9 109.4 191.6C109.3 189.3 109.2 187.1 109 184.8C108.9 182.5 108.5 182.2 108.8 178C109 173.8 109.5 165.7 110.4 159.7C111.4 153.6 112.7 147.6 114.5 141.9C116.3 136.1 118.6 130.5 121.2 125.2C123.9 119.9 126.9 114.8 130.3 110.1C133.7 105.4 137.5 101 141.5 97.1C145.6 93.1 150 89.6 154.5 86.5C159.1 83.5 163.9 80.8 168.9 78.7C173.8 76.6 179 75 184.2 74C189.4 72.9 194.7 72.4 200 72.4Z"/><g clip-path="url(#tm-cheng-c)"><g class="strands"><path d="M209.4 105.7C207.4 108.2 202.4 116 197.9 121.2C193.4 126.4 187.5 131.6 182.3 136.7C177 141.9 171.3 147.1 166.3 152.3C161.3 157.4 156.3 162.6 152.2 167.8C148.2 173 144.6 178.2 142.1 183.3C139.5 188.5 137.7 193.7 136.8 198.9C135.9 204 136.5 209.2 136.7 214.4C136.8 219.6 137.4 224.8 137.7 229.9C138.1 235.1 138.2 240.3 138.9 245.5C139.7 250.6 140.6 255.8 142.1 261C143.7 266.2 147.4 273.9 148.5 276.5"/><path d="M209.4 105.7C207.7 108.3 203.4 116.1 199.6 121.3C195.8 126.5 190.8 131.7 186.4 136.9C181.9 142.1 177.1 147.4 172.8 152.6C168.6 157.8 164.4 163 161 168.2C157.6 173.4 154.6 178.6 152.4 183.8C150.2 189 148.7 194.3 147.9 199.5C147.2 204.7 147.7 209.9 147.8 215.1C147.9 220.3 148.4 225.5 148.7 230.7C149 236 149 241.2 149.7 246.4C150.3 251.6 151.3 256.8 152.6 262C154 267.2 156.9 275 157.7 277.6"/><path d="M209.4 105.7C207.9 108.3 204 116.1 200.5 121.3C197.1 126.6 192.6 131.8 188.5 137C184.5 142.2 180.1 147.5 176.3 152.7C172.5 157.9 168.7 163.2 165.6 168.4C162.5 173.6 159.8 178.8 157.9 184.1C155.9 189.3 154.5 194.5 153.9 199.7C153.2 205 153.6 210.2 153.7 215.4C153.8 220.7 154.2 225.9 154.5 231.1C154.8 236.3 154.8 241.6 155.4 246.8C156 252 157 257.2 158.1 262.5C159.3 267.7 161.8 275.5 162.6 278.1"/><path d="M209.4 105.7C208.2 108.3 205.3 116.2 202.6 121.4C200 126.7 196.6 131.9 193.6 137.2C190.6 142.4 187.3 147.7 184.4 153C181.6 158.2 178.7 163.5 176.4 168.7C174.1 174 172.1 179.2 170.6 184.5C169.1 189.7 168.1 195 167.6 200.3C167 205.5 167.4 210.8 167.4 216C167.5 221.3 167.8 226.5 168 231.8C168.2 237 168.2 242.3 168.6 247.6C169.1 252.8 169.9 258.1 170.7 263.3C171.6 268.6 173.2 276.5 173.7 279.1"/><path d="M209.4 105.7C208.5 108.3 206.4 116.2 204.5 121.5C202.6 126.7 200.2 132 198 137.3C195.9 142.6 193.6 147.8 191.5 153.1C189.5 158.4 187.5 163.7 185.9 168.9C184.2 174.2 182.8 179.5 181.7 184.7C180.7 190 179.9 195.3 179.5 200.6C179.1 205.8 179.3 211.1 179.4 216.4C179.4 221.6 179.6 226.9 179.7 232.2C179.9 237.5 179.9 242.7 180.2 248C180.5 253.3 181 258.5 181.5 263.8C182.1 269.1 183.1 277 183.4 279.6"/><path d="M209.4 105.7C208.8 108.3 207.2 116.2 205.9 121.5C204.5 126.8 202.9 132.1 201.3 137.3C199.8 142.6 198.2 147.9 196.8 153.2C195.4 158.5 194 163.7 192.9 169C191.7 174.3 190.7 179.6 190 184.9C189.3 190.1 188.7 195.4 188.4 200.7C188.1 206 188.3 211.2 188.3 216.5C188.3 221.8 188.4 227.1 188.5 232.4C188.6 237.6 188.6 242.9 188.7 248.2C188.9 253.5 189.2 258.8 189.5 264C189.8 269.3 190.4 277.2 190.6 279.9"/><path d="M209.4 105.7C209.2 108.3 208.6 116.2 208.3 121.5C207.9 126.8 207.5 132.1 207.1 137.4C206.7 142.6 206.4 147.9 206 153.2C205.7 158.5 205.4 163.8 205.1 169.1C204.8 174.3 204.6 179.6 204.4 184.9C204.2 190.2 204 195.5 203.9 200.7C203.8 206 203.8 211.3 203.8 216.6C203.7 221.9 203.7 227.2 203.7 232.4C203.7 237.7 203.7 243 203.6 248.3C203.6 253.6 203.5 258.9 203.4 264.1C203.3 269.4 203.1 277.3 203 280"/><path d="M209.4 105.7C209.4 108.3 209.3 116.2 209.4 121.5C209.4 126.8 209.6 132.1 209.7 137.3C209.9 142.6 210.1 147.9 210.2 153.2C210.4 158.5 210.6 163.7 210.7 169C210.8 174.3 210.9 179.6 210.9 184.9C211 190.1 211 195.4 210.9 200.7C210.9 206 210.9 211.3 210.8 216.5C210.7 221.8 210.7 227.1 210.6 232.4C210.5 237.7 210.6 242.9 210.4 248.2C210.2 253.5 209.9 258.8 209.6 264.1C209.4 269.3 208.9 277.3 208.7 279.9"/><path d="M209.4 105.7C209.6 108.3 210.4 116.2 211.1 121.5C211.9 126.7 213 132 213.9 137.3C214.9 142.6 216 147.8 217 153.1C218 158.4 218.9 163.6 219.7 168.9C220.5 174.2 221.1 179.4 221.5 184.7C222 190 222.2 195.3 222.3 200.5C222.5 205.8 222.3 211.1 222.2 216.3C222.1 221.6 222 226.9 221.8 232.1C221.7 237.4 221.7 242.7 221.4 248C221.1 253.2 220.5 258.5 219.9 263.8C219.3 269 218.2 276.9 217.9 279.6"/><path d="M209.4 105.7C209.9 108.3 211.1 116.2 212.4 121.4C213.7 126.7 215.5 132 217.1 137.2C218.7 142.5 220.5 147.7 222 153C223.6 158.2 225.2 163.5 226.4 168.8C227.6 174 228.7 179.3 229.4 184.5C230.2 189.8 230.6 195.1 230.8 200.3C231.1 205.6 230.8 210.8 230.7 216.1C230.6 221.3 230.4 226.6 230.2 231.9C230 237.1 230 242.4 229.6 247.6C229.1 252.9 228.4 258.2 227.6 263.4C226.8 268.7 225.2 276.6 224.8 279.2"/><path d="M209.4 105.7C210.2 108.3 212.4 116.1 214.5 121.4C216.6 126.6 219.4 131.8 222 137.1C224.5 142.3 227.4 147.5 229.8 152.8C232.3 158 234.8 163.2 236.8 168.5C238.8 173.7 240.5 178.9 241.7 184.1C242.9 189.4 243.6 194.6 244 199.8C244.4 205.1 244 210.3 243.9 215.5C243.7 220.8 243.4 226 243.1 231.2C242.9 236.5 242.9 241.7 242.3 246.9C241.7 252.2 240.8 257.4 239.6 262.6C238.5 267.9 236.2 275.7 235.5 278.3"/><path d="M209.4 105.7C210.5 108.3 213.3 116.1 216 121.3C218.7 126.5 222.4 131.7 225.6 136.9C228.9 142.1 232.6 147.3 235.7 152.5C238.9 157.7 242.1 162.9 244.6 168.1C247.2 173.4 249.4 178.6 250.9 183.8C252.5 189 253.5 194.2 254 199.4C254.5 204.6 254.1 209.8 253.9 215C253.7 220.2 253.3 225.4 253 230.6C252.6 235.8 252.6 241 251.9 246.2C251.3 251.5 250.3 256.7 248.9 261.9C247.6 267.1 244.6 274.9 243.7 277.5"/><path d="M209.4 105.7C210.7 108.2 214.3 116 217.6 121.2C221 126.4 225.4 131.5 229.5 136.7C233.5 141.9 238 147.1 241.9 152.2C245.8 157.4 249.7 162.6 252.9 167.8C256 172.9 258.7 178.1 260.6 183.3C262.6 188.5 263.9 193.6 264.5 198.8C265.1 204 264.6 209.2 264.4 214.3C264.2 219.5 263.7 224.7 263.3 229.9C262.9 235 262.8 240.2 262.1 245.4C261.3 250.6 260.4 255.7 258.8 260.9C257.2 266.1 253.5 273.8 252.4 276.4"/></g></g></svg></div>
+        <h3 id="tm-cheng-h">阿澄<small>店長</small></h3>
+        <p class="tm-does">剪髮、燙髮</p>
+        <ul class="days" role="list" aria-label="阿澄的上班日"><li class="">一<span class="sr-only">不在</span></li><li class="on">二<span class="sr-only">在</span></li><li class="on">三<span class="sr-only">在</span></li><li class="">四<span class="sr-only">不在</span></li><li class="on">五<span class="sr-only">在</span></li><li class="on">六<span class="sr-only">在</span></li><li class="on">日<span class="sr-only">在</span></li></ul>
+        <p class="tm-q">「我只剪跟燙。染髮找小麥，她調色比我準。」</p>
+        <p class="tm-sig">最常剪：下巴長、一刀平的鮑伯。</p>
+        <p class="tm-no">染、護，轉給小麥。</p>
+        <p class="tm-acts"><a class="tm-go" href="#book" data-pick-d="cheng">排阿澄的時間</a><a class="tm-go tm-try" href="#l1-m1-t1">把這個形狀放進組合器</a></p>
+      </article><article class="tm-p tm-mai" aria-labelledby="tm-mai-h">
+        <div class="tm-fig"><svg viewBox="30 64 340 396" aria-hidden="true" focusable="false" class="fig"><defs><clipPath id="tm-mai-c"><path d="M200 72.4C205.3 72.4 210.6 72.9 215.8 74C221 75 226.2 76.6 231.1 78.7C236.1 80.8 240.9 83.5 245.5 86.5C250.1 89.6 254.5 93.1 258.5 97.1C262.5 101 266.3 105.4 269.7 110.1C273.1 114.8 276.2 119.9 278.8 125.2C281.4 130.5 283.7 136.1 285.5 141.9C287.3 147.6 288.7 153.6 289.6 159.7C290.5 165.7 290.8 172.4 291 178C291.2 183.6 290.8 188.3 290.7 193.5C290.6 198.6 290.5 203.8 290.3 208.9C290.2 214.1 290 219.2 289.9 224.4C289.7 229.6 289.5 234.7 289.4 239.9C289.2 245 289 250.2 288.8 255.3C288.6 260.5 288.4 265.6 288.2 270.8C288 276 287.8 281.1 287.6 286.3C287.4 291.4 287.2 296.6 287 301.7C286.8 306.9 286.5 312 286.3 317.2C286.1 322.4 285.9 327.5 285.6 332.7C285.4 337.8 285.2 343 284.9 348.1C284.7 353.3 284.4 358.4 284.2 363.6C283.9 368.8 283.7 373.9 283.4 379.1C283.2 384.2 282.9 389.4 282.7 394.5C282.4 399.7 282.9 404.8 281.9 410C280.9 415.2 278.6 424.8 276.8 425.8C275 426.8 272.6 414.6 271.2 415.9C269.7 417.1 269.7 432.9 268.1 433.4C266.6 433.8 263.6 417.9 261.8 418.5C259.9 419.1 258.8 436.7 257.1 437.1C255.4 437.5 252.9 421.1 251.3 420.8C249.7 420.5 248.9 434.9 247.3 435.2C245.8 435.6 243.8 422.9 242.1 422.7C240.4 422.5 238.5 433.8 237 434C235.6 434.3 234.9 424.8 233.3 424.2C231.7 423.6 228.9 430.1 227.3 430.3C225.6 430.4 224.7 425 223.5 425.3C222.3 425.7 221.5 432 219.8 432.1C218.2 432.3 215.5 425.3 213.6 426.1C211.8 426.9 210.3 437 208.6 437.1C206.9 437.1 204.9 426.4 203.4 426.5C201.9 426.6 201.1 437.7 199.8 437.7C198.5 437.7 196.9 425.7 195.5 426.5C194.1 427.2 193.1 442.2 191.4 442.1C189.6 442 187 426.8 185.1 426.1C183.2 425.4 181.5 438.1 180.1 437.9C178.7 437.8 178.1 425 176.7 425.3C175.3 425.7 173.1 440.4 171.6 440.2C170 440 169.2 425.4 167.5 424.2C165.7 423 162.6 433.2 161 432.9C159.4 432.7 159.3 423.7 157.8 422.7C156.4 421.7 153.8 427.1 152.3 426.7C150.7 426.4 149.8 420.8 148.4 420.8C147.1 420.8 146.2 427.1 144.4 426.7C142.5 426.4 139 418.3 137.3 418.5C135.6 418.7 135.7 428.5 134.1 428.1C132.5 427.6 129.4 415.6 127.6 415.9C125.8 416.2 124.9 430.8 123.3 429.8C121.7 428.8 118.9 415.9 117.9 410C116.8 404.1 117.3 399.7 117.1 394.5C116.8 389.4 116.6 384.2 116.3 379.1C116.1 373.9 115.8 368.8 115.6 363.6C115.3 358.4 115.1 353.3 114.8 348.1C114.6 343 114.3 337.8 114.1 332.7C113.9 327.5 113.7 322.4 113.4 317.2C113.2 312 113 306.9 112.8 301.7C112.5 296.6 112.3 291.4 112.1 286.3C111.9 281.1 111.7 276 111.5 270.8C111.3 265.6 111.1 260.5 110.9 255.3C110.7 250.2 110.5 245 110.4 239.9C110.2 234.7 110 229.6 109.9 224.4C109.7 219.2 109.5 214.1 109.4 208.9C109.2 203.8 109.1 198.6 109 193.5C108.9 188.3 108.5 183.6 108.7 178C109 172.4 109.4 165.7 110.4 159.7C111.3 153.6 112.7 147.6 114.5 141.9C116.3 136.1 118.6 130.5 121.2 125.2C123.8 119.9 126.9 114.8 130.3 110.1C133.7 105.4 137.5 101 141.5 97.1C145.5 93.1 149.9 89.6 154.5 86.5C159.1 83.5 163.9 80.8 168.9 78.7C173.8 76.6 179 75 184.2 74C189.4 72.9 194.7 72.4 200 72.4Z"/></clipPath></defs>
+<path class="bust" d="M200 88C241 88 274 128 274 178C274 216 258 247 236 262C236 296 238 326 246 346C286 356 344 372 368 398C382 414 388 450 390 520L10 520C12 450 18 414 32 398C56 372 114 356 154 346C162 326 164 296 164 262C142 247 126 216 126 178C126 128 159 88 200 88Z"/><path class="bust" d="M128 168C116 166 112 182 116 198C119 212 126 220 133 218ZM272 168C284 166 288 182 284 198C281 212 274 220 267 218Z"/><path class="collar" d="M156 344C180 352 220 352 244 344L248 356C222 366 178 366 152 356Z"/>
+<path class="hair" d="M200 72.4C205.3 72.4 210.6 72.9 215.8 74C221 75 226.2 76.6 231.1 78.7C236.1 80.8 240.9 83.5 245.5 86.5C250.1 89.6 254.5 93.1 258.5 97.1C262.5 101 266.3 105.4 269.7 110.1C273.1 114.8 276.2 119.9 278.8 125.2C281.4 130.5 283.7 136.1 285.5 141.9C287.3 147.6 288.7 153.6 289.6 159.7C290.5 165.7 290.8 172.4 291 178C291.2 183.6 290.8 188.3 290.7 193.5C290.6 198.6 290.5 203.8 290.3 208.9C290.2 214.1 290 219.2 289.9 224.4C289.7 229.6 289.5 234.7 289.4 239.9C289.2 245 289 250.2 288.8 255.3C288.6 260.5 288.4 265.6 288.2 270.8C288 276 287.8 281.1 287.6 286.3C287.4 291.4 287.2 296.6 287 301.7C286.8 306.9 286.5 312 286.3 317.2C286.1 322.4 285.9 327.5 285.6 332.7C285.4 337.8 285.2 343 284.9 348.1C284.7 353.3 284.4 358.4 284.2 363.6C283.9 368.8 283.7 373.9 283.4 379.1C283.2 384.2 282.9 389.4 282.7 394.5C282.4 399.7 282.9 404.8 281.9 410C280.9 415.2 278.6 424.8 276.8 425.8C275 426.8 272.6 414.6 271.2 415.9C269.7 417.1 269.7 432.9 268.1 433.4C266.6 433.8 263.6 417.9 261.8 418.5C259.9 419.1 258.8 436.7 257.1 437.1C255.4 437.5 252.9 421.1 251.3 420.8C249.7 420.5 248.9 434.9 247.3 435.2C245.8 435.6 243.8 422.9 242.1 422.7C240.4 422.5 238.5 433.8 237 434C235.6 434.3 234.9 424.8 233.3 424.2C231.7 423.6 228.9 430.1 227.3 430.3C225.6 430.4 224.7 425 223.5 425.3C222.3 425.7 221.5 432 219.8 432.1C218.2 432.3 215.5 425.3 213.6 426.1C211.8 426.9 210.3 437 208.6 437.1C206.9 437.1 204.9 426.4 203.4 426.5C201.9 426.6 201.1 437.7 199.8 437.7C198.5 437.7 196.9 425.7 195.5 426.5C194.1 427.2 193.1 442.2 191.4 442.1C189.6 442 187 426.8 185.1 426.1C183.2 425.4 181.5 438.1 180.1 437.9C178.7 437.8 178.1 425 176.7 425.3C175.3 425.7 173.1 440.4 171.6 440.2C170 440 169.2 425.4 167.5 424.2C165.7 423 162.6 433.2 161 432.9C159.4 432.7 159.3 423.7 157.8 422.7C156.4 421.7 153.8 427.1 152.3 426.7C150.7 426.4 149.8 420.8 148.4 420.8C147.1 420.8 146.2 427.1 144.4 426.7C142.5 426.4 139 418.3 137.3 418.5C135.6 418.7 135.7 428.5 134.1 428.1C132.5 427.6 129.4 415.6 127.6 415.9C125.8 416.2 124.9 430.8 123.3 429.8C121.7 428.8 118.9 415.9 117.9 410C116.8 404.1 117.3 399.7 117.1 394.5C116.8 389.4 116.6 384.2 116.3 379.1C116.1 373.9 115.8 368.8 115.6 363.6C115.3 358.4 115.1 353.3 114.8 348.1C114.6 343 114.3 337.8 114.1 332.7C113.9 327.5 113.7 322.4 113.4 317.2C113.2 312 113 306.9 112.8 301.7C112.5 296.6 112.3 291.4 112.1 286.3C111.9 281.1 111.7 276 111.5 270.8C111.3 265.6 111.1 260.5 110.9 255.3C110.7 250.2 110.5 245 110.4 239.9C110.2 234.7 110 229.6 109.9 224.4C109.7 219.2 109.5 214.1 109.4 208.9C109.2 203.8 109.1 198.6 109 193.5C108.9 188.3 108.5 183.6 108.7 178C109 172.4 109.4 165.7 110.4 159.7C111.3 153.6 112.7 147.6 114.5 141.9C116.3 136.1 118.6 130.5 121.2 125.2C123.8 119.9 126.9 114.8 130.3 110.1C133.7 105.4 137.5 101 141.5 97.1C145.5 93.1 149.9 89.6 154.5 86.5C159.1 83.5 163.9 80.8 168.9 78.7C173.8 76.6 179 75 184.2 74C189.4 72.9 194.7 72.4 200 72.4Z"/><g clip-path="url(#tm-mai-c)"><path class="dye" d="M0 297L25 310.4L50 295.5L75 311.8L100 298.8L125 314.1L150 297L175 310.5L200 299.2L225 312.5L250 299.8L275 310.5L300 299.6L325 312L350 299.9L375 315.3L400 296.7L400 540L0 540Z"/><g class="strands"><path d="M209.4 105.7C207.3 110.4 201.9 124.6 197.1 134.1C192.3 143.5 185.8 153 180.5 162.5C175.2 172 169.9 181.4 165.2 190.9C160.5 200.4 156.2 209.8 152.5 219.3C148.8 228.8 145.6 238.3 143.2 247.7C140.7 257.2 138.9 266.7 138.1 276.1C137.2 285.6 137.7 295.1 137.8 304.6C138 314 138.4 323.5 138.7 333C139 342.4 139.4 351.9 139.7 361.4C140 370.9 140.4 380.3 140.7 389.8C141 399.3 141.3 413.5 141.4 418.2"/><path d="M209.4 105.7C207.6 110.3 203.1 124.3 199 133.6C194.9 142.9 189.5 152.3 185 161.6C180.4 170.9 175.9 180.2 171.9 189.5C168 198.9 164.3 208.2 161.2 217.5C158.1 226.8 155.3 236.1 153.2 245.5C151.2 254.8 149.6 264.1 148.9 273.4C148.1 282.7 148.6 292.1 148.7 301.4C148.7 310.7 149.1 320 149.4 329.3C149.6 338.7 149.9 348 150.1 357.3C150.4 366.6 150.7 375.9 150.9 385.3C151.2 394.6 151.5 408.6 151.7 413.2"/><path d="M209.4 105.7C207.8 110.3 203.7 124.3 200 133.7C196.3 143 191.4 152.4 187.3 161.7C183.2 171.1 179.1 180.4 175.5 189.8C172 199.1 168.6 208.4 165.8 217.8C163 227.1 160.5 236.5 158.6 245.8C156.8 255.2 155.4 264.5 154.7 273.8C154 283.2 154.4 292.5 154.5 301.9C154.5 311.2 154.9 320.6 155.1 329.9C155.3 339.2 155.6 348.6 155.8 357.9C156 367.3 156.3 376.6 156.5 386C156.7 395.3 157 409.3 157.1 414"/><path d="M209.4 105.7C208.2 110.5 205 124.9 202.2 134.5C199.5 144.1 195.8 153.7 192.7 163.3C189.7 173 186.6 182.6 183.9 192.2C181.2 201.8 178.7 211.4 176.6 221C174.5 230.6 172.6 240.3 171.2 249.9C169.8 259.5 168.7 269.1 168.2 278.7C167.7 288.3 168 297.9 168 307.5C168.1 317.2 168.3 326.8 168.5 336.4C168.7 346 168.8 355.6 169 365.2C169.2 374.8 169.4 384.5 169.5 394.1C169.7 403.7 169.8 418.1 169.8 422.9"/><path d="M209.4 105.7C208.5 110.4 206.2 124.7 204.2 134.2C202.3 143.7 199.7 153.2 197.5 162.8C195.3 172.3 193.1 181.8 191.2 191.3C189.3 200.8 187.5 210.3 186 219.8C184.4 229.4 183.1 238.9 182.1 248.4C181.1 257.9 180.3 267.4 179.9 276.9C179.5 286.5 179.7 296 179.7 305.5C179.8 315 179.9 324.5 180 334C180.1 343.6 180.2 353.1 180.3 362.6C180.4 372.1 180.6 381.6 180.7 391.1C180.8 400.6 180.9 414.9 180.9 419.7"/><path d="M209.4 105.7C208.7 110.5 207.1 124.9 205.7 134.5C204.3 144.1 202.5 153.8 201 163.4C199.5 173 198 182.6 196.6 192.3C195.3 201.9 194 211.5 193 221.1C191.9 230.7 190.9 240.4 190.2 250C189.5 259.6 188.9 269.2 188.6 278.8C188.4 288.5 188.5 298.1 188.5 307.7C188.5 317.3 188.6 327 188.7 336.6C188.7 346.2 188.8 355.8 188.8 365.4C188.9 375.1 189 384.7 189 394.3C189.1 403.9 189.1 418.4 189.1 423.2"/><path d="M209.4 105.7C209.2 110.5 208.7 125 208.3 134.7C208 144.4 207.6 154.1 207.2 163.8C206.8 173.4 206.4 183.1 206.1 192.8C205.7 202.5 205.4 212.2 205.1 221.8C204.8 231.5 204.5 241.2 204.3 250.9C204.1 260.6 203.9 270.3 203.8 279.9C203.7 289.6 203.7 299.3 203.7 309C203.7 318.7 203.7 328.4 203.6 338C203.6 347.7 203.6 357.4 203.6 367.1C203.6 376.8 203.5 386.4 203.5 396.1C203.5 405.8 203.5 420.3 203.5 425.2"/><path d="M209.4 105.7C209.4 110.4 209.4 124.6 209.5 134.1C209.6 143.6 209.8 153.1 210 162.6C210.1 172.1 210.3 181.6 210.4 191.1C210.5 200.6 210.6 210.1 210.6 219.6C210.7 229.1 210.7 238.5 210.7 248C210.8 257.5 210.8 267 210.7 276.5C210.7 286 210.7 295.5 210.6 305C210.6 314.5 210.5 324 210.5 333.5C210.4 343 210.4 352.5 210.3 361.9C210.2 371.4 210.2 380.9 210.1 390.4C210.1 399.9 210 414.2 210 418.9"/><path d="M209.4 105.7C209.7 110.5 210.5 125.1 211.4 134.7C212.3 144.4 213.6 154.1 214.6 163.8C215.5 173.5 216.5 183.2 217.4 192.9C218.2 202.6 218.9 212.3 219.6 222C220.2 231.7 220.7 241.4 221.1 251.1C221.5 260.8 221.8 270.5 221.9 280.2C222 289.9 221.9 299.6 221.8 309.3C221.7 319 221.6 328.7 221.5 338.4C221.4 348.1 221.2 357.8 221.1 367.5C221 377.2 220.8 386.8 220.8 396.5C220.7 406.2 220.6 420.8 220.6 425.6"/><path d="M209.4 105.7C209.9 110.4 211.4 124.6 212.8 134.1C214.2 143.6 216.3 153.1 217.9 162.6C219.5 172 221.2 181.5 222.5 191C223.9 200.5 225.2 210 226.2 219.5C227.3 228.9 228.2 238.4 228.9 247.9C229.6 257.4 230.1 266.9 230.3 276.4C230.5 285.8 230.3 295.3 230.2 304.8C230.1 314.3 229.9 323.8 229.7 333.3C229.6 342.7 229.4 352.2 229.3 361.7C229.1 371.2 228.9 380.7 228.8 390.2C228.7 399.6 228.5 413.9 228.5 418.6"/><path d="M209.4 105.7C210.3 110.4 212.7 124.7 215 134.2C217.3 143.7 220.6 153.2 223.2 162.7C225.8 172.1 228.3 181.6 230.6 191.1C232.8 200.6 234.9 210.1 236.6 219.6C238.3 229.1 239.8 238.6 240.9 248.1C242 257.6 242.8 267.1 243.2 276.6C243.5 286.1 243.2 295.6 243.1 305.1C243 314.6 242.7 324.1 242.5 333.6C242.3 343.1 242 352.6 241.8 362.1C241.6 371.6 241.3 381.1 241.1 390.6C240.9 400.1 240.7 414.4 240.7 419.1"/><path d="M209.4 105.7C210.6 110.4 213.7 124.5 216.7 133.9C219.6 143.3 223.8 152.7 227.1 162.1C230.5 171.5 233.8 180.9 236.7 190.3C239.5 199.7 242.2 209.1 244.4 218.5C246.6 227.9 248.6 237.3 250.1 246.7C251.5 256.1 252.5 265.5 253 274.9C253.5 284.3 253.1 293.7 253 303.1C252.8 312.5 252.5 321.9 252.2 331.2C251.9 340.6 251.7 350 251.4 359.4C251.1 368.8 250.8 378.2 250.6 387.6C250.3 397 250 411.1 249.9 415.8"/><path d="M209.4 105.7C210.9 110.3 214.7 124.4 218.4 133.7C222 143.1 227.1 152.5 231.3 161.8C235.4 171.2 239.5 180.5 243 189.9C246.6 199.3 249.9 208.6 252.6 218C255.4 227.4 257.8 236.7 259.6 246.1C261.4 255.4 262.7 264.8 263.3 274.2C263.9 283.5 263.4 292.9 263.2 302.2C263.1 311.6 262.6 321 262.3 330.3C262 339.7 261.7 349 261.4 358.4C261.1 367.8 260.7 377.1 260.4 386.5C260.1 395.8 259.7 409.9 259.6 414.6"/></g><g class="sheen"><path d="M221.2 92.1A77 89.4 0 0 1 271.4 144.5"/><path d="M222.9 104.9A67 77.8 0 0 1 259.7 142.7"/><path d="M223.2 117.6A57 66.2 0 0 1 248.3 142.9"/></g></g></svg></div>
+        <h3 id="tm-mai-h">小麥<small>染髮</small></h3>
+        <p class="tm-does">染髮、護髮</p>
+        <ul class="days" role="list" aria-label="小麥的上班日"><li class="">一<span class="sr-only">不在</span></li><li class="">二<span class="sr-only">不在</span></li><li class="on">三<span class="sr-only">在</span></li><li class="on">四<span class="sr-only">在</span></li><li class="on">五<span class="sr-only">在</span></li><li class="on">六<span class="sr-only">在</span></li><li class="on">日<span class="sr-only">在</span></li></ul>
+        <p class="tm-q">「我不剪。剪刀拿在我手上，你會緊張，我也會。」</p>
+        <p class="tm-sig">最常做：鎖骨長、髮尾染亮。</p>
+        <p class="tm-no">剪、燙，轉給阿澄或宥恩。</p>
+        <p class="tm-acts"><a class="tm-go" href="#book" data-pick-d="mai">排小麥的時間</a><a class="tm-go tm-try" href="#l3-m10-t1">把這個形狀放進組合器</a></p>
+      </article><article class="tm-p tm-yu" aria-labelledby="tm-yu-h">
+        <div class="tm-fig"><svg viewBox="30 64 340 312" aria-hidden="true" focusable="false" class="fig"><defs><clipPath id="tm-yu-c"><path d="M200 59.7C207 59.6 214.3 56.9 221 58.2C227.6 59.5 233.9 64 240 67.3C246 70.7 251.2 74.9 257.3 78C263.3 81.2 270.7 82.4 276.5 86.1C282.3 89.8 288.1 94.6 292 100.2C295.9 105.8 297.2 113.5 299.9 119.9C302.6 126.2 305.4 132 308.5 138.2C311.5 144.4 316.9 150.3 318.4 157C319.8 163.6 316.8 172.9 317.2 178C317.6 183.1 319.6 184.4 320.7 187.5C321.8 190.7 323.3 193.9 323.8 197.1C324.4 200.2 324.1 203.4 324 206.6C323.8 209.8 322.6 213 322.9 216.1C323.1 219.3 323.6 222.5 325.4 225.7C327.1 228.8 330.6 232 333.5 235.2C336.4 238.4 340.6 241.6 342.7 244.7C344.7 247.9 346 251.1 346 254.3C346 257.4 343.5 260.6 342.4 263.8C341.3 267 338.8 270.2 339.2 273.3C339.6 276.5 341.6 279.7 344.8 282.9C348 286 354.3 289.2 358.5 292.4C362.7 295.6 368.2 298.8 370.1 301.9C372.1 305.1 371.7 308.3 370.3 311.5C368.9 314.6 364.3 318.7 361.8 321C359.3 323.3 358.1 324.8 355.4 325.5C352.7 326.2 348.9 324.5 345.7 325.3C342.5 326 339.2 329.3 336 330.2C332.7 331.1 329.5 331.2 326.3 330.7C323 330.1 319.8 327 316.6 326.9C313.3 326.7 310.1 328.6 306.8 329.7C303.6 330.7 300.4 332.9 297.1 333.2C293.9 333.6 290.7 333 287.4 332C284.2 331.1 280.9 327.2 277.7 327.3C274.5 327.5 271.2 331.7 268 333C264.8 334.2 261.5 335.1 258.3 335C255 334.8 251.8 332.9 248.6 332.2C245.3 331.4 242.1 329.9 238.9 330.4C235.6 330.9 232.4 334.2 229.1 335C225.9 335.9 222.7 336 219.4 335.4C216.2 334.7 213 331.7 209.7 331.2C206.5 330.7 203.2 331.7 200 332.5C196.8 333.3 193.5 335.5 190.3 335.8C187 336.2 183.8 335.6 180.6 334.5C177.3 333.4 174.1 329.4 170.9 329.2C167.6 329.1 164.4 332.5 161.1 333.5C157.9 334.5 154.7 335.5 151.4 335.3C148.2 335.1 145 333.4 141.7 332.3C138.5 331.3 135.2 328.8 132 329C128.8 329.2 125.5 332.6 122.3 333.3C119.1 334.1 115.8 334.2 112.6 333.5C109.3 332.7 106.1 329.8 102.9 329C99.6 328.2 96.4 328.3 93.2 328.8C89.9 329.2 86.7 331.6 83.4 331.9C80.2 332.1 77 331.5 73.7 330.3C70.5 329.1 67.3 325.2 64 324.7C60.8 324.2 57.5 326.7 54.3 327.5C51.1 328.2 47 330.2 44.6 329.1C42.2 328 39.6 323.9 40.1 321C40.7 318.1 47.3 314.6 47.9 311.5C48.5 308.3 45.3 305.1 43.5 301.9C41.6 298.8 37.6 295.6 36.8 292.4C36.1 289.2 36.7 286 38.9 282.9C41.2 279.7 46.5 276.5 50.4 273.3C54.2 270.2 59.5 267 62.1 263.8C64.7 260.6 65.9 257.4 66.1 254.3C66.3 251.1 64.1 247.9 63.3 244.7C62.5 241.6 61 238.4 61.4 235.2C61.7 232 63.5 228.8 65.4 225.7C67.4 222.5 71 219.3 73.3 216.1C75.6 213 78.1 209.8 79.3 206.6C80.6 203.4 80.7 200.2 80.8 197.1C81 193.9 80.3 190.7 80.3 187.5C80.2 184.4 80.3 183.1 80.7 178C81.1 172.9 81.7 164.1 82.9 157.2C84 150.3 84.5 142.9 87.5 136.7C90.4 130.6 96.9 126 100.7 120.2C104.5 114.4 106.7 108 110.3 102.1C113.9 96.2 117.2 89.1 122.5 84.9C127.7 80.7 135.7 79.5 142.1 76.8C148.4 74.1 154.3 71.7 160.5 68.6C166.7 65.6 172.5 59.9 179.1 58.4C185.7 56.9 193 59.7 200 59.7Z"/></clipPath></defs>
+<path class="bust" d="M200 88C241 88 274 128 274 178C274 216 258 247 236 262C236 296 238 326 246 346C286 356 344 372 368 398C382 414 388 450 390 520L10 520C12 450 18 414 32 398C56 372 114 356 154 346C162 326 164 296 164 262C142 247 126 216 126 178C126 128 159 88 200 88Z"/><path class="bust" d="M128 168C116 166 112 182 116 198C119 212 126 220 133 218ZM272 168C284 166 288 182 284 198C281 212 274 220 267 218Z"/><path class="collar" d="M156 344C180 352 220 352 244 344L248 356C222 366 178 366 152 356Z"/>
+<path class="hair" d="M200 59.7C207 59.6 214.3 56.9 221 58.2C227.6 59.5 233.9 64 240 67.3C246 70.7 251.2 74.9 257.3 78C263.3 81.2 270.7 82.4 276.5 86.1C282.3 89.8 288.1 94.6 292 100.2C295.9 105.8 297.2 113.5 299.9 119.9C302.6 126.2 305.4 132 308.5 138.2C311.5 144.4 316.9 150.3 318.4 157C319.8 163.6 316.8 172.9 317.2 178C317.6 183.1 319.6 184.4 320.7 187.5C321.8 190.7 323.3 193.9 323.8 197.1C324.4 200.2 324.1 203.4 324 206.6C323.8 209.8 322.6 213 322.9 216.1C323.1 219.3 323.6 222.5 325.4 225.7C327.1 228.8 330.6 232 333.5 235.2C336.4 238.4 340.6 241.6 342.7 244.7C344.7 247.9 346 251.1 346 254.3C346 257.4 343.5 260.6 342.4 263.8C341.3 267 338.8 270.2 339.2 273.3C339.6 276.5 341.6 279.7 344.8 282.9C348 286 354.3 289.2 358.5 292.4C362.7 295.6 368.2 298.8 370.1 301.9C372.1 305.1 371.7 308.3 370.3 311.5C368.9 314.6 364.3 318.7 361.8 321C359.3 323.3 358.1 324.8 355.4 325.5C352.7 326.2 348.9 324.5 345.7 325.3C342.5 326 339.2 329.3 336 330.2C332.7 331.1 329.5 331.2 326.3 330.7C323 330.1 319.8 327 316.6 326.9C313.3 326.7 310.1 328.6 306.8 329.7C303.6 330.7 300.4 332.9 297.1 333.2C293.9 333.6 290.7 333 287.4 332C284.2 331.1 280.9 327.2 277.7 327.3C274.5 327.5 271.2 331.7 268 333C264.8 334.2 261.5 335.1 258.3 335C255 334.8 251.8 332.9 248.6 332.2C245.3 331.4 242.1 329.9 238.9 330.4C235.6 330.9 232.4 334.2 229.1 335C225.9 335.9 222.7 336 219.4 335.4C216.2 334.7 213 331.7 209.7 331.2C206.5 330.7 203.2 331.7 200 332.5C196.8 333.3 193.5 335.5 190.3 335.8C187 336.2 183.8 335.6 180.6 334.5C177.3 333.4 174.1 329.4 170.9 329.2C167.6 329.1 164.4 332.5 161.1 333.5C157.9 334.5 154.7 335.5 151.4 335.3C148.2 335.1 145 333.4 141.7 332.3C138.5 331.3 135.2 328.8 132 329C128.8 329.2 125.5 332.6 122.3 333.3C119.1 334.1 115.8 334.2 112.6 333.5C109.3 332.7 106.1 329.8 102.9 329C99.6 328.2 96.4 328.3 93.2 328.8C89.9 329.2 86.7 331.6 83.4 331.9C80.2 332.1 77 331.5 73.7 330.3C70.5 329.1 67.3 325.2 64 324.7C60.8 324.2 57.5 326.7 54.3 327.5C51.1 328.2 47 330.2 44.6 329.1C42.2 328 39.6 323.9 40.1 321C40.7 318.1 47.3 314.6 47.9 311.5C48.5 308.3 45.3 305.1 43.5 301.9C41.6 298.8 37.6 295.6 36.8 292.4C36.1 289.2 36.7 286 38.9 282.9C41.2 279.7 46.5 276.5 50.4 273.3C54.2 270.2 59.5 267 62.1 263.8C64.7 260.6 65.9 257.4 66.1 254.3C66.3 251.1 64.1 247.9 63.3 244.7C62.5 241.6 61 238.4 61.4 235.2C61.7 232 63.5 228.8 65.4 225.7C67.4 222.5 71 219.3 73.3 216.1C75.6 213 78.1 209.8 79.3 206.6C80.6 203.4 80.7 200.2 80.8 197.1C81 193.9 80.3 190.7 80.3 187.5C80.2 184.4 80.3 183.1 80.7 178C81.1 172.9 81.7 164.1 82.9 157.2C84 150.3 84.5 142.9 87.5 136.7C90.4 130.6 96.9 126 100.7 120.2C104.5 114.4 106.7 108 110.3 102.1C113.9 96.2 117.2 89.1 122.5 84.9C127.7 80.7 135.7 79.5 142.1 76.8C148.4 74.1 154.3 71.7 160.5 68.6C166.7 65.6 172.5 59.9 179.1 58.4C185.7 56.9 193 59.7 200 59.7Z"/><g clip-path="url(#tm-yu-c)"><g class="strands"><path d="M209.4 105.4C206.8 108.6 200.2 118.3 194.3 124.8C188.4 131.2 180.9 137.7 174.2 144.1C167.5 150.6 160.6 157 154.2 163.5C147.8 170 141 176.4 136 182.9C131 189.3 129.1 195.8 124.3 202.2C119.5 208.7 111.3 215.2 107.5 221.6C103.6 228.1 101.8 234.5 101.3 241C100.8 247.4 106.8 253.9 104.3 260.3C101.8 266.8 89.4 273.3 86.4 279.7C83.5 286.2 86.1 292.6 86.6 299.1C87.2 305.5 89.1 315.2 89.5 318.5"/><path d="M209.4 105.4C207.2 108.6 201.6 118.4 196.6 124.9C191.7 131.4 185.3 137.9 179.7 144.4C174.1 151 168.2 157.5 162.9 164C157.5 170.5 151.8 177 147.6 183.5C143.4 190 141.7 196.5 137.6 203C133.6 209.6 126.3 216.1 123.2 222.6C120 229.1 119.3 235.6 118.8 242.1C118.4 248.6 122.8 255.1 120.6 261.6C118.3 268.1 107.5 274.7 105.3 281.2C103.1 287.7 107.1 294.2 107.5 300.7C107.8 307.2 107.4 317 107.4 320.2"/><path d="M209.4 105.4C207.4 108.6 202.3 118.5 197.9 125C193.4 131.5 187.7 138.1 182.6 144.6C177.6 151.1 172.3 157.7 167.5 164.2C162.7 170.7 157.6 177.3 153.8 183.8C150 190.3 148.4 196.9 144.8 203.4C141.1 209.9 134.5 216.5 131.7 223C128.9 229.5 128.5 236.1 128.1 242.6C127.7 249.2 131.4 255.7 129.3 262.2C127.2 268.8 117.5 275.3 115.7 281.8C113.8 288.4 118.1 294.9 118.3 301.4C118.6 308 117.4 317.8 117.2 321"/><path d="M209.4 105.4C207.9 108.7 204.1 118.5 200.8 125.1C197.5 131.7 193.2 138.3 189.4 144.9C185.7 151.4 181.8 158 178.2 164.6C174.7 171.2 170.9 177.8 168.1 184.3C165.3 190.9 164.1 197.5 161.3 204.1C158.6 210.7 153.6 217.2 151.7 223.8C149.7 230.4 149.9 237 149.6 243.6C149.3 250.1 151.5 256.7 149.9 263.3C148.3 269.9 141.4 276.5 140.2 283C139.1 289.6 142.8 296.2 143 302.8C143.3 309.4 141.9 319.2 141.7 322.5"/><path d="M209.4 105.4C208.3 108.7 205.6 118.6 203.3 125.2C201 131.8 198 138.4 195.4 145C192.8 151.6 190.1 158.2 187.6 164.8C185.1 171.5 182.5 178.1 180.6 184.7C178.6 191.3 177.7 197.9 175.8 204.5C173.9 211.1 170.6 217.7 169.4 224.3C168.1 230.9 168.3 237.5 168.1 244.1C167.9 250.7 169.2 257.3 168.1 263.9C167.1 270.6 162.7 277.2 162 283.8C161.3 290.4 163.9 297 164.1 303.6C164.3 310.2 163.3 320.1 163.1 323.4"/><path d="M209.4 105.4C208.7 108.7 206.8 118.6 205.2 125.2C203.6 131.9 201.6 138.5 199.8 145.1C198.1 151.7 196.2 158.3 194.6 165C192.9 171.6 191.2 178.2 189.9 184.8C188.6 191.4 187.8 198 186.6 204.7C185.4 211.3 183.4 217.9 182.6 224.5C181.8 231.1 182 237.8 181.9 244.4C181.8 251 182.4 257.6 181.9 264.2C181.3 270.9 178.7 277.5 178.4 284.1C178 290.7 179.5 297.3 179.6 304C179.8 310.6 179.1 320.5 179 323.8"/><path d="M209.4 105.4C209.2 108.7 208.8 118.6 208.5 125.3C208.2 131.9 207.9 138.5 207.6 145.1C207.3 151.8 207 158.4 206.7 165C206.5 171.6 206.3 178.2 206.1 184.9C205.9 191.5 205.8 198.1 205.7 204.7C205.6 211.4 205.3 218 205.3 224.6C205.4 231.2 206 237.9 206.1 244.5C206.2 251.1 206 257.7 206 264.4C206.1 271 206 277.6 206.2 284.2C206.4 290.9 207.3 297.5 207.4 304.1C207.5 310.7 206.9 320.7 206.9 324"/><path d="M209.4 105.4C209.5 108.7 209.7 118.6 210 125.2C210.3 131.9 210.7 138.5 211.1 145.1C211.5 151.7 211.9 158.3 212.3 165C212.7 171.6 213.1 178.2 213.5 184.8C213.9 191.4 214.4 198.1 214.7 204.7C214.9 211.3 214.6 217.9 215.1 224.5C215.5 231.2 217.1 237.8 217.5 244.4C217.9 251 217.3 257.6 217.3 264.3C217.4 270.9 217.1 277.5 217.8 284.1C218.4 290.7 220.8 297.4 221.2 304C221.5 310.6 219.9 320.5 219.7 323.8"/><path d="M209.4 105.4C209.9 108.7 211.2 118.6 212.4 125.2C213.6 131.8 215.3 138.4 216.8 145C218.3 151.6 219.8 158.2 221.2 164.8C222.7 171.4 224.1 178 225.4 184.6C226.7 191.2 228.3 197.8 229.2 204.4C230.1 211 229.7 217.7 230.8 224.3C231.9 230.9 235.1 237.5 236 244.1C236.8 250.7 235.7 257.3 235.7 263.9C235.8 270.5 235.1 277.1 236.4 283.7C237.7 290.3 242.8 296.9 243.5 303.5C244.1 310.1 241 320 240.5 323.3"/><path d="M209.4 105.4C210.2 108.7 212.2 118.6 214.2 125.1C216.1 131.7 218.7 138.3 221 144.9C223.3 151.5 225.7 158.1 227.9 164.6C230.1 171.2 232.2 177.8 234.2 184.4C236.3 191 238.7 197.6 240.1 204.2C241.4 210.7 240.9 217.3 242.5 223.9C244 230.5 248.4 237.1 249.6 243.7C250.8 250.3 249.4 256.8 249.5 263.4C249.6 270 248.3 276.6 250.1 283.2C251.8 289.8 259 296.4 260 302.9C260.9 309.5 256.6 319.4 255.9 322.7"/><path d="M209.4 105.4C210.6 108.7 213.9 118.5 217 125C220 131.6 224 138.1 227.6 144.6C231.1 151.2 234.8 157.7 238.2 164.3C241.6 170.8 244.8 177.4 247.9 183.9C251 190.5 254.8 197 256.9 203.5C259 210.1 258.2 216.6 260.4 223.2C262.7 229.7 268.7 236.3 270.4 242.8C272.2 249.4 271 255.9 271 262.4C271.1 269 268.5 275.5 270.8 282.1C273.2 288.6 283.7 295.2 285.2 301.7C286.8 308.2 280.8 318.1 279.9 321.3"/><path d="M209.4 105.4C211 108.6 215.2 118.4 219.1 124.9C222.9 131.4 228 137.9 232.5 144.4C237 150.9 241.8 157.4 246 163.9C250.3 170.4 254.2 176.9 258.2 183.4C262.1 189.9 267.1 196.4 269.7 202.9C272.3 209.4 271.3 215.9 274 222.4C276.7 228.9 283.7 235.4 285.9 241.9C288.2 248.5 287.5 255 287.6 261.5C287.6 268 283.5 274.5 286.2 281C289 287.5 301.9 294 304 300.5C306 307 299.6 316.7 298.8 320"/><path d="M209.4 105.4C211.3 108.6 216.6 118.3 221.3 124.7C226 131.2 232.2 137.6 237.7 144.1C243.2 150.5 249 157 254.2 163.4C259.4 169.9 264 176.3 268.8 182.8C273.7 189.3 279.9 195.7 283.1 202.2C286.3 208.6 284.9 215.1 288 221.5C291.2 228 298.9 234.4 301.8 240.9C304.6 247.3 305 253.8 305.1 260.2C305.1 266.7 299 273.1 302 279.6C305 286 320 292.5 322.9 298.9C325.8 305.4 320 315.1 319.4 318.3"/></g></g></svg></div>
+        <h3 id="tm-yu-h">宥恩<small>設計師</small></h3>
+        <p class="tm-does">剪髮、染髮、燙髮、護髮</p>
+        <ul class="days" role="list" aria-label="宥恩的上班日"><li class="">一<span class="sr-only">不在</span></li><li class="on">二<span class="sr-only">在</span></li><li class="">三<span class="sr-only">不在</span></li><li class="on">四<span class="sr-only">在</span></li><li class="">五<span class="sr-only">不在</span></li><li class="on">六<span class="sr-only">在</span></li><li class="on">日<span class="sr-only">在</span></li></ul>
+        <p class="tm-q">「四樣都做。我講話比較慢，但會先問完才動手。」</p>
+        <p class="tm-sig">最常做：肩上、粗硬髮的大捲。</p>
+        <p class="tm-no">四樣都接；週三、週五不在。</p>
+        <p class="tm-acts"><a class="tm-go" href="#book" data-pick-d="yu">排宥恩的時間</a><a class="tm-go tm-try" href="#l2-m5-t2">把這個形狀放進組合器</a></p>
+      </article>
+    </section>
+      <section class="sec bf" id="before" aria-labelledby="bf-h">
+      <h2 id="bf-h" class="slit">來之前</h2>
+      <div class="bf-list"><p class="rl"><b>頭髮不用先洗。</b>洗頭是服務的一部分。你在家洗完再來，我只是再洗一次。</p><p class="rl"><b>帶三張照片。</b>喜歡的、討厭的、你現在的。只帶喜歡的那張，我只知道一半。</p><p class="rl"><b>遲到十五分鐘內照做。</b>超過的話，燙染改天；剪髮看當天後面有沒有空。</p><p class="rl"><b>改期前一天說。</b>當天取消不收錢，但我會記得。</p><p class="rl"><b>漂髮刺痛要講。</b>那不是忍耐比賽。痛就停，我換方法。</p><p class="rl"><b>結帳不推銷。</b>櫃檯沒擺洗髮精，也沒有儲值卡和會員點數。想知道我用什麼，問了就寫給你。</p></div>
+      <div class="bf-x"><svg class="bf-sc" viewBox="-22 -15 64 30" aria-hidden="true" focusable="false"><g class="sc-a"><path d="M0 0L38 -4.2L40 -2.4L2 2.6Z"/><circle cx="-13" cy="-7" r="6.4" fill="none" stroke-width="3"/><path d="M-7.5 -4.4L0 0" stroke-width="3"/></g><g class="sc-b"><path d="M0 0L38 4.2L40 2.4L2 -2.6Z"/><circle cx="-13" cy="7" r="6.4" fill="none" stroke-width="3"/><path d="M-7.5 4.4L0 0" stroke-width="3"/></g><circle r="1.8" class="sc-pin"/></svg><p><b>沿虛線剪掉的</b>頭皮檢測儀、髮質「診斷」、套票、坐上椅子才說要加價。</p></div>
+    </section>
+    </main>
+    <footer class="foot">
+      <a class="brand" href="#main"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 4.5c6.4 0 10 4.6 10 10.6V24H6v-8.9C6 9.1 9.6 4.5 16 4.5Z" fill="currentColor"/><path class="mk-cut" d="M2.5 25.5h27" fill="none" stroke-width="2.4" stroke-dasharray="3.4 2.2"/></svg><b>剪影</b><span>髮廊</span></a>
+      <address><span>高雄市新興區民生一路 112 巷 9 號 1 樓</span><a class="num" href="tel:+88670000226">07-0000-0226</a><span>週二至週日 11:00–20:00（週一公休）</span></address>
+      <p>價目為一般情況的區間，實際價格看過頭髮、開工前報價。字型：Noto Sans TC、Noto Serif TC、Bodoni Moda（SIL Open Font License）。© 剪影髮廊</p>
+    </footer>
+    <template id="tp-live"><span data-k="len"></span>・<span data-k="m"></span>・<span data-k="tex"></span>髮質：約 <span data-k="t"></span>，新臺幣 <span data-k="p"></span> 元。</template>
+    <template id="tp-live-empty">還沒選做法。</template>
+    <template id="tp-sep">、</template>
+    <template id="tp-soon"><span data-k="day"></span><span class="t" data-k="t"></span><span data-k="who"></span></template>
+    <template id="tp-pick"><span data-k="day"></span> <span data-k="t0"></span>–<span data-k="t1"></span>・<span data-k="who"></span></template>
+    <template id="tp-picked">已選：<span data-k="v"></span>。</template>
+    <script type="application/json" id="f26-data">{"M":[{"id":"cut","bit":1,"t":[40,45,50,55,60],"tex":[-5,0,10],"p":[[600,700],[700,800],[800,900],[900,1000],[1000,1200]],"hiK":[1,1,1]},{"id":"dye","bit":2,"t":[80,90,100,120,140],"tex":[-10,0,20],"p":[[1600,2000],[1800,2400],[2200,2800],[2600,3400],[3000,4200]],"hiK":[1,1,1.1]},{"id":"perm","bit":4,"t":[90,110,120,140,160],"tex":[-10,0,20],"p":[[1800,2200],[2200,2800],[2600,3200],[3000,3800],[3400,4600]],"hiK":[1,1,1.1]},{"id":"care","bit":8,"t":[30,30,35,40,45],"tex":[0,0,10],"p":[[800,900],[800,1000],[900,1100],[1000,1300],[1200,1600]],"hiK":[1,1,1]}],"wash":20,"V":[0.86,1,1.16],"J":[0.25,-0.99,0.05,0.96,0.94,-0.44,0.23,0.44,-0.15,0.99,-0.09,-0.02,-0.72,-0.19,-0.5,-0.69,-0.02,-0.87,-0.21,0.53,-0.43,-0.62,-0.91,-0.15,0.18,0.6,-0.41,-0.59,0.32,0.09,0.52,-0.61,0.44,-0.09,0.54,0.99,-0.52,0.51,-0.69,-0.35,-0.17,-0.5,-0.7,0.45,0.15,-0.75,-0.47,-0.9],"B":[["000111111111111000","110000000000111111","xxxxxxxxxxxxxxxxxx","001111100000001110","001111110000000000","000000000011111000"],["xxxxxxxxxxxxxxxxxx","001110011111001110","001101100000000000","011111011110111111","111111000000111110","000000000000011100"],["001100001111000000","xxxxxxxxxxxxxxxxxx","000011111101111110","xxxxxxxxxxxxxxxxxx","000111110000000000","001111110000011000"]],"D":[{"id":"cheng","does":["cut","perm"]},{"id":"mai","does":["dye","care"]},{"id":"yu","does":["cut","dye","perm","care"]}],"open":660,"VB":{"x":30,"y":64,"w":340,"h":456},"PMAX":13000}</script>
+<script>
+(function(){
+'use strict';
+var d=document,dataEl=d.getElementById('f26-data');if(!dataEl)return;
+var D=JSON.parse(dataEl.textContent);
+var $=function(s,r){return (r||d).querySelector(s);},$$=function(s,r){return Array.prototype.slice.call((r||d).querySelectorAll(s));};
+var rm=matchMedia('(prefers-reduced-motion: reduce)');
+function hairGeo(p) {
+  var J = p.J || [], l = p.l, c = p.c, v = p.v, b = p.b;
+  var CX = 200, CY = 178, RX = 74, RY = 90;
+  var HEM = [240, 280, 338, 410, 486];
+  function r1(n) { return Math.round(n * 10) / 10; }
+  function lerp(a, z, t) { return a + (z - a) * t; }
+  function cl(x, a, z) { return x < a ? a : x > z ? z : x; }
+  function sm(e0, e1, x) { var t = cl((x - e0) / (e1 - e0), 0, 1); return t * t * (3 - 2 * t); }
+  function at(arr, x) { var i = cl(Math.floor(x), 0, arr.length - 2); return lerp(arr[i], arr[i + 1], cl(x - i, 0, 1)); }
+  function j(i) { return J.length ? J[i % J.length] : 0; }
+  function cr(P, close) {
+    var n = P.length, d = 'M' + r1(P[0][0]) + ' ' + r1(P[0][1]), last = close ? n : n - 1;
+    for (var i = 0; i < last; i++) {
+      var p0 = P[close ? (i - 1 + n) % n : Math.max(0, i - 1)], p1 = P[i], p2 = P[close ? (i + 1) % n : i + 1], p3 = P[close ? (i + 2) % n : Math.min(n - 1, i + 2)];
+      d += 'C' + r1(p1[0] + (p2[0] - p0[0]) / 6) + ' ' + r1(p1[1] + (p2[1] - p0[1]) / 6) + ' ' + r1(p2[0] - (p3[0] - p1[0]) / 6) + ' ' + r1(p2[1] - (p3[1] - p1[1]) / 6) + ' ' + r1(p2[0]) + ' ' + r1(p2[1]);
+    }
+    return d + (close ? 'Z' : '');
+  }
+  var ln = l / 4;
+  // 燙會吃掉長度（越長吃越多）；耳上幾乎不吃
+  var hem = at(HEM, l) - c * (4 + 26 * ln) * sm(0.2, 1.2, l);
+  var th = 5 + 12 * v + 12 * c;                       // 頭頂的髮厚
+  var volK = 1 + (v - 1) * 0.75;                      // 髮質決定往外撐多少
+  var sag = at([18, 5, 8, 14, 22], l);                // 髮尾中間比兩側長多少（後腦視角）
+  var flick = sm(1.3, 2, l) * (1 - sm(2, 2.8, l)) * (1 - c);   // 肩上：碰肩外翹
+  var tuck = sm(0.5, 1, l) * (1 - sm(1, 1.8, l)) * (1 - c);    // 下巴：鮑伯內彎
+  var hug = 1 - sm(0.35, 1.05, l);                    // 短髮貼著頭型收
+  var capRy = RY + th * 0.92;
+  function headHalf(y) { var q = (y - CY) / RY; return q >= 1 ? 0 : RX * Math.sqrt(1 - q * q); }
+  function half(y) {
+    var t = cl((y - CY) / Math.max(1, hem - CY), 0, 1);
+    var fall = (RX + th) * volK * (1 - 0.1 * Math.pow(t, 1.3)) * (1 + c * 0.5 * v * Math.pow(t, 1.35)) + flick * 20 * sm(0.68, 1, t) - tuck * 10 * sm(0.72, 1, t);
+    var hg = headHalf(Math.min(y, CY + RY - 1)) + th * 0.8;
+    return lerp(fall, Math.min(fall, hg), hug);
+  }
+  var capRx = half(CY);
+  function halfAll(y) { if (y >= CY) return half(y); var q = (y - CY) / capRy; return q <= -1 ? 0 : capRx * Math.sqrt(1 - q * q); }
+  var phR = 0.6 + j(1) * 0.8, phL = 2.2 + j(5) * 0.8;
+  function wave(t, ph) { return c * (1.5 + 11 * t) * Math.sin(t * Math.PI * (2.4 + 1.4 * l) + ph); }
+  var P = [], S = 16, NH = 33, i, k, y, t, x;
+  // 右上頭頂：髮旋到最寬處
+  for (k = 0; k < 9; k++) {
+    var th1 = (-90 + 90 * k / 9) * Math.PI / 180;
+    var bump = c * 3.2 * Math.sin(k * 1.7 + j(11) * 2);
+    P.push([CX + (capRx + bump) * Math.cos(th1), CY + (capRy + bump) * Math.sin(th1)]);
+  }
+  // 右側：往下到髮尾
+  for (k = 0; k < S; k++) { y = lerp(CY, hem, k / (S - 1)); t = k / (S - 1); P.push([CX + half(y) + wave(t, phR), y]); }
+  // 髮尾：右到左；剪＝一刀平，沒剪＝長短不齊的髮尾
+  var hH = half(hem), spikes = [];
+  for (i = 0; i < NH; i++) {
+    var xn = lerp(0.93, -0.93, i / (NH - 1));
+    var sp = (1 - b) * (i % 2 ? 0.12 : 0.3 + 0.7 * Math.abs(Math.sin(i * 1.37 + j(13) * 5)) * (0.55 + 0.45 * Math.abs(j(i + 13)))) * (9 + 16 * ln);
+    var sc = c * 7 * Math.abs(Math.sin(i * 0.85 + j(40) * 3));
+    spikes.push(sp);
+    P.push([CX + xn * hH + (1 - b) * j(i + 7) * 1.5, hem + sag * (1 - xn * xn) + sp + sc]);
+  }
+  // 左側：往上
+  for (k = S - 1; k >= 0; k--) { y = lerp(CY, hem, k / (S - 1)); t = k / (S - 1); P.push([CX - half(y) * (1 + j(44) * 0.02) - wave(t, phL), y]); }
+  // 左上頭頂
+  for (k = 1; k < 9; k++) {
+    var th2 = (180 + 90 * k / 9) * Math.PI / 180;
+    var bump2 = c * 3.2 * Math.sin(k * 1.9 + j(12) * 2);
+    P.push([CX + (capRx + bump2) * Math.cos(th2), CY + (capRy + bump2) * Math.sin(th2)]);
+  }
+  var hair = cr(P, true);
+  // 髮流線：從髮旋放射往下，跟著兩側的波浪
+  var wx = CX + 9 + j(2) * 7, wy = CY - capRy + th * 0.9 + 18, strands = [], K = 13;
+  for (k = 0; k < K; k++) {
+    var u = lerp(-0.88, 0.88, k / (K - 1)) + j(k + 3) * 0.05;
+    var endY = hem + sag * (1 - u * u) - 5 + (1 - b) * 9 * Math.abs(j(k + 9));
+    var Q = [];
+    for (i = 0; i <= 11; i++) {
+      var tau = i / 11; y = lerp(wy, endY, tau);
+      var spread = Math.pow(sm(0, 0.6, tau), 0.62);
+      var tt = cl((y - CY) / Math.max(1, hem - CY), 0, 1);
+      x = lerp(wx, CX + u * halfAll(y) * 0.86, spread) + (y > CY ? (u >= 0 ? wave(tt, phR) : -wave(tt, phL)) * Math.abs(u) : 0);
+      Q.push([x, y]);
+    }
+    strands.push(cr(Q, false));
+  }
+  // 染：髮尾那一截（錫箔分區的鋸齒邊）
+  var yd = hem - Math.max(26, (hem - CY) * 0.46), D = [];
+  for (i = 0; i <= 16; i++) D.push(r1(i * 25) + ' ' + r1(yd + (i % 2 ? 9 : -5) + j(i + 20) * 3));
+  var dye = 'M' + D.join('L') + 'L400 540L0 540Z';
+  // 護：頭頂右上的光澤
+  var sheen = [];
+  for (k = 0; k < 3; k++) {
+    var R = capRx - 14 - 10 * k, Ry = R * capRy / capRx, a0 = (-74 + k * 4) * Math.PI / 180, a1 = (-22 - k * 5) * Math.PI / 180;
+    sheen.push('M' + r1(CX + R * Math.cos(a0)) + ' ' + r1(CY + Ry * Math.sin(a0)) + 'A' + r1(R) + ' ' + r1(Ry) + ' 0 0 1 ' + r1(CX + R * Math.cos(a1)) + ' ' + r1(CY + Ry * Math.sin(a1)));
+  }
+  return { hair: hair, strands: strands, dye: dye, sheen: sheen, hem: r1(hem), mid: r1(hem + sag), left: r1(CX - hH), right: r1(CX + hH) };
+}
+function calc(st, M, wash) {
+  var n = 0, t = wash, lo = 0, hi = 0;
+  for (var i = 0; i < M.length; i++) {
+    var m = M[i];
+    if (st.m & m.bit) { n++; t += m.t[st.l] + m.tex[st.t]; lo += m.p[st.l][0]; hi += Math.round(m.p[st.l][1] * m.hiK[st.t] / 100) * 100; }
+  }
+  var t1 = t + 10 * n + ((st.m & 6) === 6 ? 30 : 0);
+  return { n: n, t0: t, t1: t1, lo: lo, hi: hi, slots: Math.ceil(t1 / 30) };
+}
+function fitsAt(row, s, k) {
+  if (s + k > row.length) return false;
+  for (var i = s; i < s + k; i++) if (row.charAt(i) !== '0') return false;
+  return true;
+}
+function suitable(m, D, M) {
+  var out = [];
+  for (var i = 0; i < D.length; i++) {
+    var ok = true;
+    for (var j = 0; j < M.length; j++) if ((m & M[j].bit) && D[i].does.indexOf(M[j].id) < 0) ok = false;
+    if (ok) out.push(i);
+  }
+  return out;
+}
+function soonest(B, who, k, max) {
+  var out = [];
+  for (var dd = 0; dd < B[0].length && out.length < max; dd++) {
+    var best = null;
+    for (var w = 0; w < who.length; w++) {
+      var row = B[who[w]][dd];
+      for (var s = 0; s < row.length; s++) if (fitsAt(row, s, k)) { if (!best || s < best[2]) best = [who[w], dd, s]; break; }
+    }
+    if (best) out.push(best);
+  }
+  return out;
+}
+function hhmm(min) { var h = Math.floor(min / 60), m = min % 60; return h + ':' + (m < 10 ? '0' : '') + m; }
+function money(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+function durParts(t0, t1) {
+  var h0 = Math.floor(t0 / 60), m0 = t0 % 60, h1 = Math.floor(t1 / 60), m1 = t1 % 60, f = [];
+  if (h0 === h1 && m0 > 0 && m1 > 0) f.push('same');
+  if (h0 === 0) f.push('h0z');
+  if (m0 === 0) f.push('m0z');
+  if (m1 === 0) f.push('m1z');
+  return [h0, m0, h1, m1, f.join(' ')];
+}
+function tpl(id,vals){var f=d.getElementById(id).content.cloneNode(true);$$('[data-k]',f).forEach(function(s){var v=vals[s.dataset.k];if(v!=null)s.textContent=v;});return f;}
+function tplText(id,vals){var w=d.createElement('div');w.appendChild(tpl(id,vals||{}));return w.textContent.replace(/\s+/g,' ').trim();}
+function txt(el){return el?el.textContent.trim():'';}
+
+/* ---------- 狀態 ---------- */
+var cmp=d.getElementById('composer'),st={l:2,m:1,t:1};
+function read(){var a=$('input[name="l"]:checked'),b=$('input[name="t"]:checked');st.l=a?+a.value:2;st.t=b?+b.value:1;st.m=0;$$('input[name="m"]').forEach(function(i){if(i.checked)st.m|=+i.dataset.bit;});}
+function params(){return {l:st.l,c:st.m&4?1:0,v:D.V[st.t],b:st.m&1?1:0,dye:st.m&2?1:0,care:st.m&8?1:0};}
+function readHash(){var m=/^#l([0-4])-m([0-9]{1,2})-t([0-2])$/.exec(location.hash);if(!m)return false;var l=d.getElementById('l-'+m[1]),t=d.getElementById('t-'+m[3]),mm=+m[2];if(l)l.checked=true;if(t)t.checked=true;$$('input[name="m"]').forEach(function(i){i.checked=!!(mm&+i.dataset.bit);});return true;}
+function writeHash(){var h='#l'+st.l+'-m'+st.m+'-t'+st.t;if(location.hash!==h&&history.replaceState)history.replaceState(null,'',h);}
+
+/* ---------- 剪影 ---------- */
+var svg=d.getElementById('fig'),hairEl=d.getElementById('hair'),dyeEl=d.getElementById('dye'),dyeG=d.getElementById('dyeg'),sheenG=d.getElementById('sheen'),guide=d.getElementById('guide'),figbox=d.getElementById('figbox');
+var strands=$$('#strands path'),sheens=$$('#sheen path');
+var cur=null,raf=0;
+function geo(p){return hairGeo({l:p.l,c:p.c,v:p.v,b:p.b,J:D.J});}
+function draw(p){var g=geo(p),i;hairEl.setAttribute('d',g.hair);dyeEl.setAttribute('d',g.dye);for(i=0;i<strands.length;i++)strands[i].setAttribute('d',g.strands[i]);for(i=0;i<sheens.length;i++)sheens[i].setAttribute('d',g.sheen[i]);dyeG.style.opacity=p.dye;sheenG.style.opacity=p.care;guide.setAttribute('y1',g.hem);guide.setAttribute('y2',g.hem);var hy=(g.hem-D.VB.y)/D.VB.h*100;figbox.style.setProperty('--hy',hy.toFixed(2)+'%');figbox.classList.toggle('lo',hy>80);return g;}
+function ease(k){return k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;}
+function tween(to,dur){cancelAnimationFrame(raf);if(rm.matches||dur<=0||!cur){cur=to;draw(cur);return;}var from=cur,t0=performance.now();var step=function(now){var k=Math.min(1,(now-t0)/dur),e=ease(k),p={},key;for(key in to)p[key]=from[key]+(to[key]-from[key])*e;cur=p;draw(p);if(k<1)raf=requestAnimationFrame(step);};step(t0);}
+
+/* 招牌：剪短——剪刀沿新長度剪過去，剪下的那截落下 */
+var fall=d.getElementById('fall'),fallH=d.getElementById('fall-h'),fallD=d.getElementById('fall-d'),fcR=d.getElementById('fc-r'),cutl=d.getElementById('cutl'),scis=d.getElementById('scis'),scA=$('.sc-a',scis),scB=$('.sc-b',scis),fallS=$$('#fall-s path'),cutRaf=0;
+function cut(to){
+  cancelAnimationFrame(cutRaf);
+  var from=cur,gO=geo(from),gN=geo(to),y=gN.hem+Math.min(5,(gN.mid-gN.hem)*.4),x0=gO.left-40,x1=gO.right+30,len=x1-x0,cx=(gO.left+gO.right)/2,T=380,F=760,t0=performance.now(),jumped=false;
+  fallH.setAttribute('d',gO.hair);fallD.setAttribute('d',gO.dye);fallD.style.opacity=from.dye;fallS.forEach(function(el,i){el.setAttribute('d',gO.strands[i]||'');});fcR.setAttribute('y',y);fall.setAttribute('transform','');fall.style.opacity=1;
+  cutl.setAttribute('x1',x0);cutl.setAttribute('x2',x1);cutl.setAttribute('y1',y);cutl.setAttribute('y2',y);cutl.setAttribute('stroke-dasharray',len+' '+len);cutl.setAttribute('stroke-dashoffset',len);cutl.style.opacity=1;
+  fall.style.display='block';cutl.style.display='block';scis.style.display='block';
+  var frame=function(now){
+    var e=now-t0;
+    if(e<T){var k=e/T,a=-15*Math.abs(Math.sin(k*Math.PI*2.5));scis.setAttribute('transform','translate('+(x0+len*k).toFixed(1)+' '+y.toFixed(1)+')');scA.setAttribute('transform','rotate('+a.toFixed(1)+')');scB.setAttribute('transform','rotate('+(-a).toFixed(1)+')');cutl.setAttribute('stroke-dashoffset',(len*(1-k)).toFixed(1));}
+    else{
+      if(!jumped){jumped=true;scis.style.display='none';cutl.setAttribute('stroke-dashoffset',0);cur=Object.assign({},from,{l:to.l});tween(to,300);}
+      var f=Math.min(1,(e-T)/F),g=f*f;
+      fall.setAttribute('transform','translate('+(16*f).toFixed(1)+' '+(150*g).toFixed(1)+') rotate('+(8*f).toFixed(2)+' '+cx.toFixed(1)+' '+y.toFixed(1)+')');
+      fall.style.opacity=String(1-Math.max(0,(f-.3)/.7));cutl.style.opacity=String(Math.max(0,1-(e-T)/240));
+      if(f>=1){fall.style.display='none';cutl.style.display='none';return;}
+    }
+    cutRaf=requestAnimationFrame(frame);
+  };
+  cutRaf=requestAnimationFrame(frame);
+}
+
+/* 拖髮尾（鍵盤與點選替代：刻度上的五個選項） */
+var grab=d.getElementById('grab'),dragging=false;
+function lFromY(y){var lo=0,hi=4,i,mid;for(i=0;i<14;i++){mid=(lo+hi)/2;if(geo({l:mid,c:cur.c,v:cur.v,b:cur.b}).hem<y)lo=mid;else hi=mid;}return (lo+hi)/2;}
+if(grab){
+  grab.addEventListener('pointerdown',function(e){e.preventDefault();try{grab.setPointerCapture(e.pointerId);}catch(_){}dragging=true;cancelAnimationFrame(raf);});
+  grab.addEventListener('pointermove',function(e){if(!dragging)return;var r=svg.getBoundingClientRect(),y=D.VB.y+(e.clientY-r.top)/r.height*D.VB.h;cur=Object.assign({},cur,{l:Math.max(0,Math.min(4,lFromY(y)))});draw(cur);});
+  var endDrag=function(){if(!dragging)return;dragging=false;var inp=d.getElementById('l-'+Math.round(cur.l));if(inp)inp.checked=true;read();tween(params(),260);update();writeHash();announce();};
+  grab.addEventListener('pointerup',endDrag);grab.addEventListener('pointercancel',endDrag);
+}
+
+/* ---------- 數字 ---------- */
+var outs={};$$('[data-o]').forEach(function(el){outs[el.dataset.o]=el;});
+var durEl=d.getElementById('dur'),rngBar=d.getElementById('rng'),hints=$$('.hint'),soonUl=d.getElementById('soon'),soonNone=d.getElementById('soon-none'),live=d.getElementById('live'),R=null;
+function dayName(i){return txt($('.wk-dh[data-d="'+i+'"] .dn'));}
+function desName(i){return txt($('#d-'+D.D[i].id+' ~ .dz-n'));}
+function update(){
+  R=calc(st,D.M,D.wash);
+  var dp=durParts(R.t0,R.t1);outs.h0.textContent=dp[0];outs.m0.textContent=dp[1];outs.h1.textContent=dp[2];outs.m1.textContent=dp[3];durEl.setAttribute('data-dur',dp[4]);outs.p0.textContent=money(R.lo);outs.p1.textContent=money(R.hi);
+  rngBar.style.setProperty('--a',(R.lo/D.PMAX).toFixed(4));rngBar.style.setProperty('--b',(R.hi/D.PMAX).toFixed(4));
+  var shown=false;hints.forEach(function(h){var on=!shown&&R.t1<=+h.dataset.max;h.classList.toggle('on',on);if(on)shown=true;});
+  var suit=suitable(st.m,D.D,D.M);
+  $$('input[name="d"]').forEach(function(r){r.disabled=suit.indexOf(+r.value)<0;});
+  if(suit.indexOf(curD)<0&&suit.length){curD=suit[0];var dr=d.getElementById('d-'+D.D[curD].id);if(dr)dr.checked=true;}
+  slots=R.slots;refreshGrid();
+  soonUl.textContent='';
+  var list=soonest(D.B,suit,slots,3);
+  list.forEach(function(it){var b=d.createElement('button');b.type='button';b.dataset.w=it[0];b.dataset.dd=it[1];b.dataset.s=it[2];b.appendChild(tpl('tp-soon',{day:dayName(it[1]),t:hhmm(D.open+it[2]*30),who:desName(it[0])}));var li=d.createElement('li');li.appendChild(b);soonUl.appendChild(li);});
+  soonNone.hidden=list.length>0;
+}
+var annT=0;
+function say(t){live.textContent='';setTimeout(function(){live.textContent=t;},60);}
+function announce(){clearTimeout(annT);annT=setTimeout(function(){
+  if(!R||!R.n){say(tplText('tp-live-empty'));return;}
+  var names=$$('input[name="m"]').filter(function(i){return i.checked;}).map(function(i){return txt($('.mt-ch',i.parentNode));});
+  say(tplText('tp-live',{len:txt($('.tick-'+st.l+' .tk-n')),m:names.join(txt(d.getElementById('tp-sep').content)),tex:txt($('.tx-n',d.getElementById('t-'+st.t).parentNode)),t:(durEl.innerText||'').replace(/\s+/g,''),p:money(R.lo)+'–'+money(R.hi)}));
+},450);}
+
+function apply(){read();var to=params();if(!rm.matches&&cur&&to.l<cur.l-.5)cut(to);else tween(to,440);update();}
+cmp.addEventListener('change',function(e){
+  if(!e.target||!/^(l|m|t)$/.test(e.target.name))return;
+  apply();writeHash();announce();
+});
+/* 設計師區的「套用這個形狀」＝改網址 hash；組合器跟著換 */
+addEventListener('hashchange',function(){if(readHash()){cmp.scrollIntoView({behavior:rm.matches?'auto':'smooth',block:'start'});setTimeout(function(){apply();announce();},rm.matches?0:520);}});
+
+/* ---------- 週格 ---------- */
+var wk=d.getElementById('wk'),cells=$$('#wk .c'),pkb=d.getElementById('pkb'),ps=d.getElementById('ps'),psOn=d.getElementById('ps-on'),slotIn=d.getElementById('f-slot'),pick=null,slots=1,ND=D.B[0].length,NS=D.B[0][0].length;
+var curD=+(($('input[name="d"]:checked')||{value:0}).value);
+function cellAt(dd,s){return (dd<0||dd>=ND||s<0||s>=NS)?null:cells[s*ND+dd];}
+function refreshGrid(){
+  var B=D.B[curD];
+  cells.forEach(function(c){var dd=+c.dataset.d,s=+c.dataset.s,ch=B[dd].charAt(s),busy=ch!=='0',fit=!busy&&fitsAt(B[dd],s,slots);c.className='c'+(ch==='x'?' busy off-d':busy?' busy':fit?' fit':'');c.setAttribute('aria-disabled',fit?'false':'true');c.removeAttribute('aria-selected');});
+  if(pick&&!(pick.w===curD&&fitsAt(B[pick.dd],pick.s,slots)))clearPick();else markPick();
+  roving();
+}
+function roving(target){var t=target||(pick&&cellAt(pick.dd,pick.s))||$('#wk .c.fit')||cells[0];cells.forEach(function(c){c.tabIndex=c===t?0:-1;});return t;}
+function clearPick(){pick=null;pkb.classList.remove('on','grow');ps.classList.remove('has');psOn.textContent='';}
+function markPick(){
+  cells.forEach(function(c){c.classList.remove('pk');});
+  if(!pick){pkb.classList.remove('on');return;}
+  var c0=cellAt(pick.dd,pick.s),cl=cellAt(pick.dd,pick.s+slots-1)||c0,i,c,a=D.open+pick.s*30;
+  for(i=0;i<slots;i++){c=cellAt(pick.dd,pick.s+i);if(c)c.classList.add('pk');}
+  c0.setAttribute('aria-selected','true');
+  var H=cl.offsetTop+cl.offsetHeight-c0.offsetTop;
+  pkb.style.left=c0.offsetLeft+'px';pkb.style.top=c0.offsetTop+'px';pkb.style.width=c0.offsetWidth+'px';
+  pkb.textContent=hhmm(a)+'\n–'+hhmm(a+R.t1);
+  pkb.style.height=H+'px';pkb.style.setProperty('--c0',c0.offsetHeight+'px');pkb.classList.add('on');
+  var t=tplText('tp-pick',{day:dayName(pick.dd),t0:hhmm(a),t1:hhmm(a+R.t1),who:desName(curD)});
+  ps.classList.add('has');psOn.textContent=t;if(slotIn)slotIn.value=t;
+  return t;
+}
+function doPick(c,tell){if(!c||!c.classList.contains('fit'))return false;pick={w:curD,dd:+c.dataset.d,s:+c.dataset.s};var t=markPick();pkb.classList.remove('grow');void pkb.offsetWidth;pkb.classList.add('grow');roving(c);if(tell)say(tplText('tp-picked',{v:t}));return true;}
+wk.addEventListener('click',function(e){var c=e.target.closest('.c');if(c){c.focus();doPick(c,true);}});
+wk.addEventListener('keydown',function(e){
+  var c=e.target.closest('.c');if(!c)return;var dd=+c.dataset.d,s=+c.dataset.s,k=e.key;
+  if(k==='Enter'||k===' '){e.preventDefault();doPick(c,true);return;}
+  if(k==='ArrowRight')dd++;else if(k==='ArrowLeft')dd--;else if(k==='ArrowDown')s++;else if(k==='ArrowUp')s--;else if(k==='Home')dd=0;else if(k==='End')dd=ND-1;else if(k==='PageUp')s=0;else if(k==='PageDown')s=NS-1;else return;
+  e.preventDefault();var n=cellAt(Math.max(0,Math.min(ND-1,dd)),Math.max(0,Math.min(NS-1,s)));if(n){roving(n);n.focus();}
+});
+d.addEventListener('change',function(e){if(e.target&&e.target.name==='d'){curD=+e.target.value;refreshGrid();}});
+soonUl.addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;var w=+b.dataset.w,r=d.getElementById('d-'+D.D[w].id);
+  if(r){r.checked=true;curD=w;refreshGrid();}
+  var c=cellAt(+b.dataset.dd,+b.dataset.s);doPick(c,true);
+  d.getElementById('book').scrollIntoView({behavior:rm.matches?'auto':'smooth',block:'start'});
+  if(c)setTimeout(function(){c.focus({preventScroll:true});},rm.matches?0:450);
+});
+$$('[data-pick-d]').forEach(function(a){a.addEventListener('click',function(){var r=d.getElementById('d-'+a.dataset.pickD);if(r&&!r.disabled){r.checked=true;curD=+r.value;refreshGrid();}});});
+addEventListener('resize',function(){if(pick)markPick();});
+
+/* ---------- 預約單 ---------- */
+var f=d.getElementById('bkf');
+if(f){f.noValidate=true;f.addEventListener('submit',function(ev){ev.preventDefault();if(!f.checkValidity()){f.classList.add('tried');var bad=$(':invalid',f);if(bad)bad.focus();return;}f.classList.remove('tried');$$('input,textarea,button',f).forEach(function(x){x.disabled=true;});var done=d.getElementById('done');done.hidden=false;done.setAttribute('tabindex','-1');done.focus();});}
+
+/* ---------- 起始 ---------- */
+var fromHash=readHash();read();cur=params();
+if(fromHash)draw(cur);
+update();
+})();
+</script>
+</body>
+</html>

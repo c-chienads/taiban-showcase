@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F10" data-slug="mist-tea-scroll">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>山霧茶行｜石碇山茶，溪畔炭焙</title>
+<meta name="description" content="山霧茶行，石碇青霧坪的四季茶：春霧包種、夏蟬白毫、秋焙鐵觀音、霜前冬片。由右而左，展讀一卷茶單。">
+
+<meta name="generator" content="套版網站平台 F10">
+<link rel="icon" href="data:,">
+<link rel="preload" href="fonts/01-lxgw-wenkai-tc.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/02-lxgw-wenkai-tc.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"LXGW WenKai TC";src:url("fonts/01-lxgw-wenkai-tc.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"LXGW WenKai TC";src:url("fonts/02-lxgw-wenkai-tc.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root {
+  --paper: oklch(0.957 0.007 205); --paper-lead: oklch(0.94 0.02 168); --paper-tail: oklch(0.93 0.011 215);
+  --silk: oklch(0.85 0.03 185); --silk-line: oklch(0.62 0.035 190);
+  --ink: oklch(0.235 0.016 245); --ink-2: oklch(0.4 0.018 240);
+  --tea: oklch(0.43 0.075 152); --tea-deep: oklch(0.36 0.06 158);
+  --seal: oklch(0.555 0.175 29);
+  --slip: oklch(0.935 0.022 168); --rule: oklch(0.8 0.022 190);
+  --wood: oklch(0.34 0.035 62); --wood-hi: oklch(0.52 0.04 70); --jade: oklch(0.79 0.05 168);
+  --axis-h: 52px;
+  --kai: "LXGW WenKai TC", "Kaiti TC", "BiauKai", "STKaiti", serif;
+  --focus-ring: 3px double var(--tea-deep);
+  --focus-offset: 3px;
+  --selection-bg: oklch(0.86 0.06 150);
+  --selection-fg: var(--ink);
+}
+html { background: var(--paper) url("assets/paper.svg"); color: var(--ink); font-family: var(--kai); }
+body { font-size: 1.0625rem; line-height: 1.8; letter-spacing: .02em; }
+a { color: var(--tea-deep); text-decoration-thickness: 1px; text-underline-offset: .22em; }
+a:not(.skip):hover { color: var(--ink); }
+.skip { background: var(--ink); color: var(--paper); padding: .5em 1.1em; letter-spacing: .2em; text-decoration: none; z-index: 30; writing-mode: horizontal-tb; }
+.skip:focus { outline: var(--focus-ring); outline-offset: -6px; }
+@font-face { font-family: "LXGW WenKai TC Em"; src: url("fonts/01-lxgw-wenkai-tc.woff2") format("woff2"); font-weight: 400; font-display: swap; ascent-override: 62%; descent-override: 10%; }
+:lang(zh) em { text-emphasis: dot var(--tea); font-style: normal; font-family: "LXGW WenKai TC Em", var(--kai); }
+.tcy { text-combine-upright: all; font-variant-numeric: tabular-nums; }
+.seal { display: block; height: auto; mix-blend-mode: multiply; transform: rotate(var(--rot, 0deg)); }
+.baoshou { height: 26px; background: linear-gradient(to top, var(--wood) 4px, transparent 4px), url("assets/brocade.svg") var(--tea-deep); }
+.tiqian { display: inline-flex; gap: .6em; margin: 14px 16px 0; padding: .1em .9em; background: var(--paper); border: 1px solid var(--silk-line); font-size: .875rem; letter-spacing: .2em; color: var(--ink-2); }
+.geshui { height: 16px; background: var(--silk); border-top: 1px solid var(--silk-line); border-bottom: 1px solid var(--silk-line); box-shadow: inset 0 3px 0 oklch(0.9 0.025 185); }
+.head { background: var(--paper-lead) url("assets/paper.svg"); }
+.yinshou { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "info title" "motto title"; gap: 12px 18px; padding: 28px 16px 32px; }
+.title { grid-area: title; display: flex; flex-direction: row-reverse; align-items: flex-start; gap: 8px; }
+.title h1 { writing-mode: vertical-rl; font-weight: 700; font-size: clamp(3.4rem, 19vw, 5.4rem); line-height: 1.04; letter-spacing: .06em; }
+.seal-lead { width: 26px; margin-top: 4px; }
+.seal-brand { width: 54px; align-self: flex-end; }
+.motto { grid-area: motto; writing-mode: vertical-rl; justify-self: end; font-size: 1.3rem; letter-spacing: .18em; color: var(--ink-2); }
+.info { grid-area: info; align-self: start; font-size: .9375rem; }
+.cred { display: flex; flex-wrap: wrap; gap: 0 1em; letter-spacing: .14em; color: var(--tea-deep); }
+.hint { position: relative; margin-top: 1.2em; color: var(--ink-2); letter-spacing: .06em; white-space: nowrap; }
+.hint svg { display: inline-block; width: 28px; height: 10px; margin-inline-start: .5em; vertical-align: middle; transform: rotate(-90deg); }
+.h-x { display: none; }
+.axis { padding: 0 16px 20px; }
+.axis ol { display: flex; flex-wrap: wrap; gap: 6px 4px; list-style: none; padding: 0; margin: 0; }
+.axis a { display: inline-block; padding: .3em .7em; text-decoration: none; color: var(--ink-2); border: 1px solid var(--rule); font-size: .9375rem; letter-spacing: .1em; }
+.axis a[aria-current] { color: var(--paper); background: var(--ink); border-color: var(--ink); }
+.axis a { position: relative; }
+.axis a::after { content: ""; position: absolute; inset: 0 -3px; }
+.axis-track { display: none; }
+.scroll-spacer { display: none; }
+html.js .scroll-spacer { display: block; }
+.sec { position: relative; isolation: isolate; padding: 36px 16px 0; }
+.tag { display: flex; align-items: center; gap: .6em; color: var(--tea-deep); font-size: .9375rem; letter-spacing: .14em; }
+.tag-k { display: inline-grid; place-items: center; width: 2.2em; height: 2.2em; font-size: 1.35rem; letter-spacing: 0; color: var(--ink); border: 3px double var(--tea); }
+.name { font-weight: 700; letter-spacing: .08em; }
+.garden .name { font-size: 2.6rem; margin: .3em 0 .4em; }
+.prose p + p { margin-top: .9em; }
+.facts { margin: 1.6em 0 0; writing-mode: vertical-rl; inline-size: 15em; border-inline: 3px double var(--silk-line); }
+.facts div { padding: .4em .45em; border-block-start: 1px solid var(--rule); line-height: 1.6; }
+.facts div:first-child { border-block-start: 0; }
+.facts dt, .facts dd { display: inline; margin: 0; }
+.facts dt::after { content: "　"; }
+.facts dt, .spec th, .visit dt { color: var(--tea-deep); font-weight: 400; font-size: .875rem; letter-spacing: .2em; }
+.ch { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 18px; align-items: start; }
+.ch > * { grid-column: 1; }
+.ch .title { grid-column: 2; grid-row: 1 / span 4; flex-direction: column; align-items: center; }
+.ch .name { writing-mode: vertical-rl; font-size: clamp(2.8rem, 15vw, 4rem); line-height: 1.05; }
+.ch .seal { width: 44px; }
+.story { margin-top: 1em; }
+.story, .note, .prose p, .brew-intro, .ba-text, .visit dd, .jars figcaption { max-width: 34em; }
+.note { margin-top: .9em; color: var(--tea-deep); }
+.note-k { display: inline-block; margin-inline-end: .5em; padding: 0 .3em; border: 1px solid var(--tea); font-size: .875rem; letter-spacing: 0; }
+.spec { justify-self: start; margin-top: 1.2em; writing-mode: vertical-rl; border-inline: 3px double var(--silk-line); font-size: .9375rem; }
+.spec th, .spec td { padding: .55em .5em; border-block: 1px solid var(--rule); text-align: start; line-height: 1.5; }
+.spec th { border-inline-end: 1px dotted var(--rule); }
+.spec td { letter-spacing: .1em; }
+.land { position: relative; grid-column: 1 / -1; margin: 10px -16px 0; aspect-ratio: 1.9; overflow: hidden; }
+.land img, .land svg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 100%; }
+.rtl { unicode-bidi: bidi-override; direction: rtl; }
+.ch-plaque { grid-template-columns: minmax(0, 1fr); }
+.ch-plaque .title { writing-mode: horizontal-tb; grid-column: 1; grid-row: auto; flex-direction: row; direction: rtl; justify-content: flex-start; align-items: center; gap: 14px; margin-top: 18px; padding: .25em .1em; border-block: 4px double var(--ink-2); }
+.ch-plaque .name { writing-mode: horizontal-tb; font-size: clamp(2.3rem, 11vw, 3.4rem); letter-spacing: .22em; line-height: 1.2; white-space: nowrap; }
+.ch-plaque .seal { width: 40px; }
+.ruler { writing-mode: horizontal-tb; position: relative; width: 19em; height: 23em; margin: 1.4em 0 0; font-size: 1rem; }
+.ruler-cap { position: absolute; top: 0; right: 0; writing-mode: vertical-rl; font-size: .875em; letter-spacing: .3em; color: var(--tea-deep); }
+.ruler-rod { position: absolute; top: 4.2em; bottom: 1.6em; right: 2.4em; width: 1em; background: oklch(0.9 0.02 185); border: 1px solid var(--ink-2); }
+.ruler-rod i { position: absolute; left: 0; top: calc(var(--j) * 5%); height: 1px; width: 35%; background: var(--ink-2); font-style: normal; }
+.ruler-rod i.md { width: 60%; }
+.ruler-rod i.mj { width: 100%; background: var(--ink); }
+.ruler-rod b { position: absolute; font-weight: 400; font-size: .75em; line-height: 1.2; color: var(--ink-2); }
+.ruler-rod .num { left: calc(100% + .6em); top: calc(var(--j) * 5% - .62em); }
+.ruler-rod .end { left: 50%; top: auto; transform: translateX(-50%); font-size: .8em; color: var(--tea-deep); }
+.ruler-rod .end.top { bottom: calc(100% + .3em); } .ruler-rod .end.bottom { top: calc(100% + .3em); }
+.ruler-marks { position: absolute; top: 4.2em; bottom: 1.6em; right: 3.5em; width: 8em; margin: 0; }
+.ruler-marks div { position: absolute; right: 0; top: calc(var(--at) * 100%); display: flex; flex-direction: row-reverse; align-items: flex-start; }
+.ruler-marks div.up { align-items: flex-end; transform: translateY(-100%); }
+.ruler-marks div::before { content: ""; flex: none; width: var(--lead, 1.8em); border-top: 1.5px solid var(--ink); }
+.ruler-marks div.up::before { align-self: flex-end; }
+.ruler-marks div::after { content: ""; position: absolute; top: 0; right: -.39em; width: .42em; height: .42em; border-radius: 50%; background: var(--ink); transform: translateY(-50%); }
+.ruler-marks div.up::after { top: auto; bottom: 0; transform: translateY(50%); background: var(--seal); }
+.ruler-marks dt, .ruler-marks dd, .ruler-notes dt, .ruler-notes dd { writing-mode: vertical-rl; margin: 0; line-height: 1.5; }
+.ruler-marks dt { font-size: .8em; color: var(--tea-deep); letter-spacing: .2em; padding-inline: .2em; }
+.ruler-marks dd { letter-spacing: .1em; }
+.ruler-notes { position: absolute; left: 0; top: 4.2em; bottom: 1.6em; margin: 0; display: flex; flex-direction: row-reverse; gap: .5em; }
+.ruler-notes div { display: flex; flex-direction: column; }
+.ruler-notes dt { font-size: .8em; color: var(--tea-deep); letter-spacing: .2em; margin-block-end: .4em; }
+.ruler-notes div { writing-mode: vertical-rl; flex-direction: row; }
+.ch-ruler .title { grid-row: 1 / span 3; }
+.ch-ruler .ruler { grid-column: 1 / -1; justify-self: center; }
+@media (max-width: 600px) {
+  .ruler { width: 100%; height: auto; padding-top: 9.4em; font-size: 1rem; }
+  .ruler-cap { writing-mode: horizontal-tb; left: 0; right: auto; }
+  .ruler-rod { top: 5.2em; bottom: auto; left: 1.4em; right: 1.4em; width: auto; height: .9em; }
+  .ruler-rod i { top: 0; left: calc(var(--j) * 5%); width: 1px; height: 35%; }
+  .ruler-rod i.md { width: 1px; height: 60%; }
+  .ruler-rod i.mj { width: 1px; height: 100%; }
+  .ruler-rod .num { top: calc(100% + .3em); left: calc(var(--j) * 5%); transform: translateX(-50%); }
+  .ruler-rod .end { top: auto; bottom: calc(100% + .35em); transform: translateX(-50%); }
+  .ruler-rod .end.top, .ruler-rod .end.bottom { top: auto; bottom: calc(100% + .35em); }
+  .ruler-rod .end.top { left: 0; right: auto; } .ruler-rod .end.bottom { left: 100%; right: auto; }
+  .ruler-marks { top: 1.6em; bottom: auto; left: 1.4em; right: 1.4em; width: auto; height: 3.6em; }
+  .ruler-marks div, .ruler-marks div.up { top: auto; bottom: 0; right: auto; left: calc(var(--at) * 100%); transform: none; flex-direction: column-reverse; align-items: flex-start; }
+  .ruler-marks div.up { transform: translateX(-100%); align-items: flex-end; }
+  .ruler-marks div::before, .ruler-marks div.up::before { width: 0; height: calc(var(--lead, 1.6em) * .45 + .4em); border-top: 0; border-left: 1.5px solid var(--ink); align-self: flex-start; }
+  .ruler-marks div.up::before { align-self: flex-end; }
+  .ruler-marks div::after, .ruler-marks div.up::after { top: auto; right: auto; left: 0; bottom: calc(-1 * .45em - .21em); transform: translateX(-50%); }
+  .ruler-marks div.up::after { left: auto; right: 0; transform: translateX(50%); }
+  .ruler-marks dt, .ruler-marks dd { writing-mode: horizontal-tb; display: inline; }
+  .ruler-marks div > dt, .ruler-marks div > dd { white-space: nowrap; }
+  .ruler-notes { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: .6em 1.2em; margin: 0; padding-top: .8em; border-top: 1px solid var(--rule); }
+  .ruler-notes div, .ruler-notes dt, .ruler-notes dd { writing-mode: horizontal-tb; }
+  .ruler-notes div { display: flex; flex-direction: row; align-items: baseline; gap: .6em; }
+  .ruler-notes dt { margin: 0; }
+}
+.ch-void { padding-top: 88px; }
+.spec-line .nb { white-space: nowrap; }
+.spec-line { margin-top: 1.4em; color: var(--tea-deep); font-size: .9375rem; letter-spacing: .04em; }
+.ch-void .land { aspect-ratio: 1.35; }
+.ink .nib { fill: none; stroke: #fff; stroke-dasharray: 1px 1px; stroke-dashoffset: calc((1 - var(--k, 1)) * 1px); }
+.ink .lead1 { stroke-dashoffset: calc((1 - min(1, var(--k, 1) + .045)) * 1px); }
+.ink .lead2 { stroke-dashoffset: calc((1 - min(1, var(--k, 1) + .1)) * 1px); }
+.ink .lead1 { stroke-opacity: .5; } .ink .lead2 { stroke-opacity: .22; }
+.ink stop { stop-color: var(--ink); }
+.ink .white { fill: none; stroke: var(--paper); stroke-linecap: round; stroke-opacity: .85; }
+.ink .dry { fill: none; stroke: var(--ink); stroke-linecap: round; stroke-opacity: .66; }
+.ink .dots { fill: var(--ink); fill-opacity: .85; }
+.ink-body { opacity: var(--o, .42); }
+.land { mask-image: linear-gradient(to bottom, transparent, #000 22%); }
+.trail-zone { background: var(--paper-tail) url("assets/paper.svg"); }
+.brew .name, .shop .name, .ba { font-size: 2rem; margin-bottom: .4em; }
+.lotpot { margin: 18px 0 0 auto; width: 96px; }
+.lotpot img { width: 100%; height: auto; }
+.lots { list-style: none; margin: -40px -16px 0; padding: 6px 16px 14px; display: flex; direction: rtl; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: thin; scrollbar-color: var(--silk-line) transparent; }
+.lot { direction: ltr; flex: none; scroll-snap-align: start; writing-mode: vertical-rl; display: flex; flex-direction: column; inline-size: 21rem; transform: rotate(calc(var(--tilt, 0deg) * .5)); transform-origin: 50% 100%; position: relative; padding: 14px 10px; background: var(--slip); border: 3px double var(--tea); outline: 1px solid oklch(0.84 0.03 168); outline-offset: -9px; }
+.lot-head { display: flex; justify-content: space-between; font-size: .875rem; letter-spacing: .2em; color: var(--tea-deep); padding-inline: 4px; margin-block-end: 6px; border-block-end: 1px solid oklch(0.8 0.03 168); }
+.lot-rank { color: var(--ink); }
+.lot-title { font-size: 1.35rem; letter-spacing: .3em; margin-block-end: 8px; padding-inline-start: .6em; }
+.lot-poem { font-size: 1.1875rem; line-height: 2.1; }
+.lot-poem span { display: block; letter-spacing: .42em; padding-inline: .5em; border-block-end: 1px solid oklch(0.85 0.03 168); }
+.lot-gloss { font-size: .875rem; line-height: 1.75; color: var(--ink-2); margin-block-start: 8px; padding-block-start: 6px; border-block-start: 1px dashed oklch(0.76 0.03 168); padding-inline: 4px; }
+.lot-gloss b { font-weight: 400; color: var(--tea-deep); margin-inline-end: .4em; }
+.visit { margin: 1em 0 0; }
+.visit div { margin-bottom: .9em; }
+.visit dd { margin: 0; }
+.jars { margin: 1.4em 0 0; display: flex; flex-direction: column; gap: .4em; }
+.jars img { width: min(300px, 82%); height: auto; }
+.jars figcaption { color: var(--ink-2); font-size: .9375rem; }
+.trail { padding: 36px 16px 0; }
+.sign { margin-top: 1.2em; letter-spacing: .2em; color: var(--ink-2); }
+.seal-name { width: 54px; margin: 12px 0; }
+.copy { font-size: .875rem; color: var(--ink-2); letter-spacing: .1em; }
+.back { margin-top: 1em; }
+.back a { letter-spacing: .2em; }
+.rod { position: relative; block-size: 26px; margin: 28px -16px 0; background: linear-gradient(to bottom, var(--wood), var(--wood-hi) 40%, var(--wood)); }
+.rod::before, .rod::after { content: ""; position: absolute; inset-block: -5px; inline-size: 18px; background: linear-gradient(to bottom, oklch(0.6 0.05 168), var(--jade) 45%, oklch(0.6 0.05 168)); }
+.rod::before { inset-inline-start: 0; } .rod::after { inset-inline-end: 0; }
+.lost-head { padding: 18px 20px; }
+.lost-brand { font-weight: 700; letter-spacing: .3em; text-decoration: none; color: var(--ink); font-size: 1.125rem; }
+.lost { position: relative; display: grid; place-items: center; min-height: 78dvh; padding: 12px 16px 56px; }
+.lost-lot { inline-size: min(27rem, 70dvh); }
+.lost-lot h1 { font-size: 1.75rem; font-weight: 700; }
+.lost-back { margin-block-start: 10px; padding-block-start: 8px; border-block-start: 1px solid oklch(0.8 0.03 168); letter-spacing: .3em; }
+.lost-seal { width: 64px; position: absolute; inset: auto calc(50% - 150px) 40px auto; }
+.lost-land { position: absolute; inset: auto 0 0 0; width: 100%; height: 46%; object-fit: cover; object-position: 50% 100%; z-index: -1; opacity: .8; mask-image: linear-gradient(to bottom, transparent, #000 40%); }
+.lost { isolation: isolate; }
+html.js .stamp:not(.is-stamped) { opacity: 0; }
+html.js .stamp.is-stamped { animation: stamp .62s cubic-bezier(.22, .9, .3, 1) both; }
+@keyframes stamp {
+  0% { opacity: 0; transform: scale(1.38) rotate(calc(var(--rot, 0deg) - 5deg)); filter: saturate(1.5) blur(.8px); }
+  48% { opacity: 1; transform: scale(.95) rotate(var(--rot, 0deg)); filter: saturate(1.25) blur(0); }
+  100% { opacity: 1; transform: scale(1) rotate(var(--rot, 0deg)); filter: none; }
+}
+@media screen and (min-width: 960px) and (min-height: 560px) {
+  :root { --u: calc((100dvh - var(--axis-h)) / 100); }
+  html:has(.scroll), html:has(.scroll) body { height: 100%; overflow: hidden; }
+  html.js:has(.scroll) { height: auto; overflow: hidden auto; scrollbar-width: none; }
+  html.js:has(.scroll) body { height: auto; overflow: visible; }
+  html.js .scroll { position: sticky; top: 0; }
+  .scroll { writing-mode: vertical-rl; width: 100%; height: calc(100dvh - var(--axis-h)); overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: var(--silk-line) transparent; font-size: clamp(15px, calc(var(--u) * 2.1), 20px); line-height: 2; letter-spacing: .04em; }
+  body:has(.scroll)::before { content: ""; position: fixed; inset: 0 0 var(--axis-h) 0; pointer-events: none; z-index: 5; border-top: 9px solid var(--silk); border-bottom: 9px solid var(--silk); box-shadow: inset 0 1px 0 var(--silk-line), inset 0 -1px 0 var(--silk-line); }
+  .h-x { display: inline; } .h-y { display: none; }
+  .head { position: relative; display: flex; flex-direction: column; }
+  .baoshou { height: auto; width: calc(var(--u) * 9); flex: none; border: 0; background: linear-gradient(to left, var(--wood) 10px, oklch(0.25 0.03 60) 10px 11px, transparent 11px), url("assets/brocade.svg") var(--tea-deep); }
+  .tiqian { position: absolute; top: calc(var(--u) * 9); right: calc(var(--u) * 2.1); margin: 0; padding: 1.3em .3em; flex-direction: row; gap: 1.4em; font-size: clamp(13px, calc(var(--u) * 1.75), 16px); letter-spacing: .34em; box-shadow: 2px 0 0 oklch(0.2 0.02 200 / .25); }
+  .geshui { height: auto; width: calc(var(--u) * 3.2); flex: none; border: 0; border-left: 1px solid var(--silk-line); border-right: 1px solid var(--silk-line); box-shadow: inset -3px 0 0 oklch(0.9 0.025 185); }
+  .yinshou { display: block; padding: calc(var(--u) * 9) calc(var(--u) * 11) calc(var(--u) * 6); }
+  .title { display: block; }
+  .seal-lead { width: calc(var(--u) * 3.4); margin: 0; margin-inline-start: calc(var(--u) * .5); margin-block-end: calc(var(--u) * 1.2); }
+  .title h1 { font-size: clamp(64px, calc(var(--u) * 13.6), 150px); letter-spacing: .1em; line-height: 1.02; margin-inline-start: calc(var(--u) * 3); }
+  .seal-brand { width: calc(var(--u) * 8); margin: 0; margin-inline-start: calc(var(--u) * 55); margin-block-start: calc(var(--u) * 1.2); }
+  .motto { margin-inline-start: calc(var(--u) * 21); margin-block-start: calc(var(--u) * 5); font-size: clamp(20px, calc(var(--u) * 2.9), 30px); letter-spacing: .26em; }
+  .info { inline-size: fit-content; margin-inline-start: auto; margin-block-start: calc(var(--u) * 3.4); font-size: clamp(13px, calc(var(--u) * 1.75), 16px); }
+  .cred { display: block; letter-spacing: .38em; }
+  .cred span { display: block; }
+  .cred span + span { margin-block-start: .3em; }
+  .hint { margin: 0; margin-block-start: 1.4em; letter-spacing: .3em; }
+  .hint svg { position: absolute; left: -46px; bottom: 2px; width: 40px; height: 14px; margin: 0; transform: none; }
+  .axis { writing-mode: horizontal-tb; position: fixed; inset: auto 0 0 0; height: var(--axis-h); z-index: 10; padding: 0 30px; background: oklch(0.29 0.03 205); }
+  .axis ol { position: relative; display: block; height: 100%; direction: rtl; }
+  .axis li { position: absolute; top: 6px; inset-inline-start: calc(var(--at, 0) * 100%); }
+  html:not(.js) .axis li { position: static; display: inline-block; margin: 11px 0 0 1.6em; }
+  .axis a { border: 0; padding: .05em .3em; font-size: 16px; letter-spacing: .14em; color: oklch(0.95 0.01 200); white-space: nowrap; transform: translateX(50%); }
+  .axis li::after { content: ""; position: absolute; right: 0; top: 33px; width: 1px; height: 8px; background: oklch(0.7 0.03 200); }
+  .axis a:hover { color: #fff; background: none; }
+  .axis a[aria-current] { background: none; color: #fff; font-weight: 700; text-decoration: underline 3px var(--seal); text-underline-offset: .36em; }
+  .axis-track { display: block; position: absolute; inset: auto 30px 8px 30px; height: 3px; background: oklch(0.45 0.03 205); }
+  html.js .axis-track::after { content: ""; position: absolute; top: -2px; bottom: -2px; right: calc(var(--p, 0) * (1 - var(--win, .15)) * 100%); width: calc(var(--win, .15) * 100%); background: oklch(0.8 0.035 185); }
+  .axis :focus-visible { outline: 3px double oklch(0.9 0.05 150); }
+  .sec { padding: calc(var(--u) * 8) calc(var(--u) * 7) calc(var(--u) * 6); min-width: calc(var(--u) * 150); }
+  .sec > :not(.land) { position: relative; }
+  .tag { inline-size: fit-content; font-size: clamp(13px, calc(var(--u) * 1.75), 16px); letter-spacing: .3em; margin-inline-start: calc(var(--u) * 1); margin-block-end: calc(var(--u) * 3); }
+  .tag-k { width: 1.75em; height: 1.75em; line-height: 1; font-size: calc(var(--u) * 3.1); }
+  .garden .name { font-size: clamp(48px, calc(var(--u) * 8.6), 92px); margin: 0; margin-inline-start: calc(var(--u) * 8); margin-block-end: calc(var(--u) * 4.5); letter-spacing: .16em; }
+  .prose { margin-inline-start: calc(var(--u) * 13); max-inline-size: calc(var(--u) * 41); margin-block-end: calc(var(--u) * 4.5); }
+  .prose p + p { margin: 0; margin-block-start: 1.3em; }
+  .facts { margin: 0; margin-inline-start: calc(var(--u) * 9); inline-size: auto; max-inline-size: calc(var(--u) * 50); }
+  .facts div { line-height: 1.7; }
+  .ch { display: block; }
+  .ch .title { display: block; inline-size: fit-content; margin-inline-start: calc(var(--u) * var(--tn)); margin-block-end: calc(var(--u) * 6); }
+  .ch .name { font-size: clamp(56px, calc(var(--u) * 11), 118px); line-height: 1.04; letter-spacing: .12em; }
+  .ch .seal { position: absolute; left: calc(var(--u) * -6.4); bottom: calc(var(--u) * -.6); width: calc(var(--u) * 5.6); }
+  .story { margin: 0; margin-inline-start: calc(var(--u) * var(--ts)); max-inline-size: calc(var(--u) * 40); margin-block-end: calc(var(--u) * 4); }
+  .note { margin: 0; margin-inline-start: calc(var(--u) * var(--tq)); max-inline-size: calc(var(--u) * 27); margin-block-end: calc(var(--u) * 4); font-size: .94em; }
+  .note-k { margin: 0 0 .7em; padding: .25em 0; }
+  .spec { margin: 0; margin-inline-start: calc(var(--u) * var(--tt)); margin-block-end: calc(var(--u) * 3.4); font-size: .86em; }
+  .land { position: absolute; inset: auto calc(var(--u) * -6) 0; height: 60%; margin: 0; aspect-ratio: auto; z-index: -1; mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent), linear-gradient(to bottom, transparent, #000 12%); mask-composite: intersect; }
+  .garden .land { height: 64%; }
+  .ch-plaque .title { position: absolute; top: calc(var(--u) * 8.4); right: calc(var(--u) * 15); margin: 0; display: flex; padding: calc(var(--u) * .9) calc(var(--u) * 2.4); gap: calc(var(--u) * 2.6); }
+  .ch-plaque .name { font-size: clamp(52px, calc(var(--u) * 10.4), 112px); letter-spacing: .3em; line-height: 1.15; }
+  .ch-plaque .seal { position: static; width: calc(var(--u) * 6); }
+  .ch-plaque .story { max-inline-size: calc(var(--u) * 31); }
+  .ch-plaque .note { max-inline-size: calc(var(--u) * 26); }
+  .ch-plaque .land { height: 80%; }
+  .ruler { margin: 0; margin-top: calc(var(--u) * var(--tt)); margin-left: calc(var(--u) * 3); font-size: .94em; height: calc(var(--u) * 56); }
+  .ch-void { min-width: calc(var(--u) * 176); }
+  .ch-void .title { position: absolute; left: calc(var(--u) * var(--vx)); top: calc(var(--u) * var(--vy)); margin: 0; }
+  .ch-void .name { font-size: clamp(44px, calc(var(--u) * 8), 86px); }
+  .ch-void .seal { width: calc(var(--u) * 4.6); left: calc(var(--u) * -5.4); }
+  .ch-void .story { max-inline-size: calc(var(--u) * 30); }
+  .ch-void .note { max-inline-size: calc(var(--u) * 22); }
+  .ch-void .spec-line { position: absolute; left: calc(var(--u) * (var(--vx) + 13)); top: calc(var(--u) * (var(--vy) + 4)); margin: 0; max-inline-size: calc(var(--u) * 40); font-size: .8em; letter-spacing: .04em; line-height: 1.9; }
+  .ch-void .land { height: 52%; aspect-ratio: auto; }
+  .trail-zone { padding: calc(var(--u) * 8) calc(var(--u) * 9) calc(var(--u) * 6); }
+  .brew, .shop { padding: 0; min-width: 0; margin-block-end: calc(var(--u) * 10); }
+  .brew .name, .shop .name, .ba { font-size: clamp(36px, calc(var(--u) * 6), 64px); margin: 0; margin-inline-start: calc(var(--u) * 4); margin-block-end: calc(var(--u) * 3.4); letter-spacing: .2em; inline-size: fit-content; }
+  .brew-intro { margin-inline-start: calc(var(--u) * 6); max-inline-size: calc(var(--u) * 38); margin-block-end: calc(var(--u) * 5); }
+  .lots { display: block; margin: 0; padding: 0; overflow: visible; direction: ltr; }
+  .lotpot { width: calc(var(--u) * 21); margin: 0; margin-top: calc(var(--u) * 38); margin-left: calc(var(--u) * 1); }
+  .lot { inline-size: calc(var(--u) * var(--len, 60) * .74); margin-inline-start: calc(var(--u) * (4 + var(--off))); margin-block-end: calc(var(--u) * var(--ov, 1)); padding: 1.3em .7em; transform: rotate(var(--tilt, 0deg)); transform-origin: 50% 100%; }
+  .lots { margin-block-start: calc(var(--u) * -3); }
+  .lot-poem { font-size: clamp(18px, calc(var(--u) * 2.7), 26px); line-height: 2.1; }
+  .lot-poem span { padding-inline: .6em; }
+  .lot-head, .lot-gloss { font-size: clamp(13px, calc(var(--u) * 1.75), 16px); }
+  .lot-title { font-size: clamp(18px, calc(var(--u) * 2.8), 26px); }
+  .visit { margin: 0; margin-inline-start: calc(var(--u) * 9); }
+  .visit div { margin: 0; margin-block-end: calc(var(--u) * 1.6); max-inline-size: calc(var(--u) * 44); }
+  .visit dt { margin-block-end: .1em; }
+  .jars { margin: 0; margin-inline-start: auto; inline-size: fit-content; flex-direction: column; align-items: flex-end; gap: calc(var(--u) * 1.6); }
+  .jars img { width: calc(var(--u) * 30); }
+  .jars figcaption { max-inline-size: calc(var(--u) * 26); font-size: .9em; }
+  .trail { display: flex; flex-direction: column; padding-left: 0; }
+  .ba-text { margin-inline-start: calc(var(--u) * 7); max-inline-size: calc(var(--u) * 40); margin-block-end: calc(var(--u) * 3); }
+  .sign { margin: 0; margin-inline-start: calc(var(--u) * 28); }
+  .seal-name { width: calc(var(--u) * 6.2); margin: 0; margin-inline-start: calc(var(--u) * 64); margin-block: calc(var(--u) * .4) calc(var(--u) * 6); }
+  .copy { margin-inline-start: auto; margin-block-end: calc(var(--u) * 2); }
+  .back { margin: 0; margin-inline-start: auto; margin-block-end: calc(var(--u) * 7); }
+  .rod { margin: calc(var(--u) * -8) 0 calc(var(--u) * -6); align-self: stretch; background: linear-gradient(to right, var(--wood), var(--wood-hi) 42%, var(--wood)); }
+  .rod::before, .rod::after { inline-size: calc(var(--u) * 5); background: linear-gradient(to right, oklch(0.6 0.05 168), var(--jade) 45%, oklch(0.6 0.05 168)); }
+}
+@media (min-width: 960px) {
+  .lost-lot { inline-size: min(34rem, 72dvh); }
+  .lost .lot-poem { font-size: 1.45rem; }
+  .lost .lot-gloss, .lost-back { font-size: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html, .scroll { scroll-behavior: auto; }
+  html.js .stamp, html.js .stamp.is-stamped { opacity: 1; animation: none; }
+  .ink .nib { stroke-dashoffset: 0; }
+  .ink-body { opacity: .42; }
+}
+@media print {
+  html { background: #fff; color: #000; }
+  html, body, .scroll { height: auto !important; overflow: visible !important; writing-mode: horizontal-tb !important; }
+  body { font-size: .95rem; padding: 0; }
+  body::before, .axis, .baoshou, .geshui, .rod, .hint, .ink { display: none !important; }
+  .head, .trail-zone, .lot { background: none; }
+  a { color: #000; text-decoration: underline; }
+  .land { break-inside: avoid; opacity: .7; }
+  .sec, .trail { break-inside: avoid-page; }
+  .seal { mix-blend-mode: normal; }
+}
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<div class="scroll">
+<header id="top" class="head" data-axis>
+<div class="baoshou" aria-hidden="true"></div>
+<p class="tiqian"><span>山霧茶行</span><span>四季茶卷</span></p>
+<div class="geshui" aria-hidden="true"></div>
+<div class="yinshou">
+<div class="title"><img class="seal seal-lead" src="assets/seal-lead.svg" alt="" width="58" height="100" style="--rot:-0.5deg"><h1>山霧茶行</h1><img class="seal seal-brand" src="assets/seal-brand.svg" alt="" width="100" height="100" style="--rot:-0.6deg"></div>
+<p class="motto">一年起霧兩百天的茶山</p>
+<div class="info"><p class="cred"><span>石碇山茶</span><span>溪畔炭焙</span><span>民國四十八年創</span></p><p class="hint"><span class="h-x">由右而左</span><span class="h-y">由上而下</span>，徐徐展讀<svg viewBox="0 0 40 14" aria-hidden="true" focusable="false"><path d="M38 7.4C28 6.2 16 7.8 3 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M9.6 2.2L2.6 7L10 11.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></p></div>
+</div>
+<nav class="axis" aria-label="卷次"><ol><li><a href="#top">引首</a></li><li><a href="#garden">茶園</a></li><li><a href="#spring">春</a></li><li><a href="#summer">夏</a></li><li><a href="#autumn">秋</a></li><li><a href="#winter">冬</a></li><li><a href="#brew">五籤</a></li><li><a href="#shop">茶行</a></li><li><a href="#colophon">跋</a></li></ol><div class="axis-track" aria-hidden="true"></div></nav>
+</header>
+<div class="geshui" aria-hidden="true"></div>
+<main id="main">
+<section id="garden" class="sec garden" aria-labelledby="h-garden" data-axis>
+<p class="tag"><span class="tag-k">園</span><span class="tag-t">茶園</span></p>
+<h2 id="h-garden" class="name">青霧坪</h2>
+<div class="prose"><p>石碇的山不高，霧卻很深。我們的茶園在青霧坪，海拔四百五十公尺，一年有兩百多天，早上九點以前看不見對面的稜線。霧替茶樹擋掉烈日，葉子長得慢、長得厚，香氣也就收得住。</p><p>茶園由簡家三代輪流照顧，不噴除草劑，畦間留著野草和蕨類，讓小綠葉蟬與蜘蛛各有位置。春夏秋冬各出一款茶；哪一季做壞了，茶單上那一格就<em>空著不賣</em>。</p></div>
+<dl class="facts"><div><dt>海拔</dt><dd>四百五十公尺</dd></div><div><dt>霧日</dt><dd>一年約二百一十天</dd></div><div><dt>茶株</dt><dd>四千二百叢</dd></div><div><dt>品種</dt><dd>青心烏龍・青心大冇・鐵觀音・四季春</dd></div></dl>
+<div class="land" aria-hidden="true"><img src="assets/land-garden.svg" alt="" width="2400" height="1000" decoding="async"><svg class="ink" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false"><defs><path id="c-garden" d="M2370 914L2358 908L2346 900L2334 892L2322 883L2310 872L2298 863L2286 856L2274 850L2262 843L2250 838L2238 834L2226 831L2214 829L2202 827L2190 825L2178 822L2166 819L2154 816L2142 812L2130 805L2118 795L2106 787L2094 777L2082 768L2070 759L2058 750L2046 740L2034 730L2022 731L2010 736L1998 739L1986 743L1974 750L1962 756L1950 761L1938 770L1926 776L1914 782L1902 790L1890 799L1878 809L1866 819L1854 828L1842 835L1830 840L1818 844L1806 847L1794 850L1782 854L1770 859L1758 863L1746 869L1734 876L1722 885L1710 894L1698 905L1686 909L1674 913L1662 919L1650 925L1638 928L1626 931L1614 933L1602 933L1590 935L1578 937L1566 939L1554 940L1542 939L1530 941L1518 941L1506 941L1494 942L1482 941L1470 939L1458 938L1446 938L1434 940L1422 941L1410 941L1398 940L1386 938L1374 935L1362 938L1350 937L1338 935L1326 935L1314 933L1302 929L1290 927L1278 926L1266 928L1254 928L1242 930L1230 934L1218 936L1206 937L1194 937L1182 938L1170 939L1158 939L1146 942L1134 945L1122 944L1110 944L1098 944L1086 944L1074 944L1062 943L1050 941L1038 940L1026 944L1014 944L1002 943L990 942L978 941L966 941L954 941L942 941L930 939L918 938L906 939L894 940L882 939L870 937L858 936L846 934L834 930L822 922L810 915L798 906L786 889L774 872L762 857L750 853L738 856L726 863L714 870L702 875L690 873L678 872L666 868L654 862L642 857L630 854L618 849L606 843L594 836L582 828L570 825L558 827L546 830L534 835L522 844L510 846L498 850L486 856L474 860L462 864L450 868L438 873L426 879L414 881L402 884L390 890L378 898L366 906L354 909L342 916L330 922L318 926L306 929L294 932L282 935L270 936L258 936L246 935L234 935L222 936L210 938L198 940L186 941L174 940L162 941L150 940L138 938L126 936L114 934L102 931L90 929L78 930L66 929L54 929L42 932L30 934" pathLength="1"/><radialGradient id="b-garden"><stop offset="0" stop-opacity=".16"/><stop offset=".6" stop-opacity=".07"/><stop offset="1" stop-opacity="0"/></radialGradient><linearGradient id="g-garden" gradientUnits="userSpaceOnUse" x1="2400" y1="0" x2="0" y2="0"><stop offset="0" stop-opacity="1"/><stop offset="0.12" stop-opacity="0.8490000000000001"/><stop offset="0.35" stop-opacity="0.759"/><stop offset="0.6" stop-opacity="0.884"/><stop offset="0.82" stop-opacity="0.706"/><stop offset="1" stop-opacity="0.9"/></linearGradient><mask id="m-garden" maskUnits="userSpaceOnUse" x="0" y="0" width="2400" height="1000"><use href="#c-garden" class="nib lead2" stroke-width="102"/><use href="#c-garden" class="nib lead1" stroke-width="102"/><use href="#c-garden" class="nib" stroke-width="102"/></mask></defs><g class="ink-body" mask="url(#m-garden)"><g fill="url(#b-garden)"><ellipse cx="2349" cy="901" rx="46" ry="30"/><ellipse cx="802" cy="906" rx="43" ry="31"/></g><path class="core" d="M2373 908L2363 899L2356 885L2344 879L2334 869L2321 859L2305 853L2292 845L2280 838L2268 831L2254 827L2243 819L2229 820L2216 819L2204 814L2193 811L2181 811L2169 807L2157 804L2146 804L2136 797L2125 786L2114 776L2104 765L2091 756L2077 749L2064 742L2051 733L2037 723L2020 722L2006 724L1995 729L1982 734L1969 741L1956 744L1946 754L1931 758L1919 762L1907 770L1895 780L1884 792L1873 802L1860 811L1847 818L1837 827L1829 836L1816 838L1804 841L1792 844L1780 849L1769 855L1757 860L1745 866L1733 875L1721 884L1709 894L1698 904L1686 909L1674 913L1674 913L1686 909L1698 905L1711 895L1723 886L1735 878L1747 871L1759 865L1771 863L1783 857L1795 855L1807 852L1819 849L1832 847L1845 841L1860 836L1873 827L1883 815L1895 806L1908 798L1920 792L1931 786L1944 780L1956 771L1967 765L1980 761L1991 755L2002 750L2013 746L2025 744L2029 744L2038 749L2052 757L2064 766L2073 780L2086 788L2098 797L2109 807L2121 818L2138 823L2151 827L2163 831L2175 835L2187 839L2200 840L2211 842L2223 845L2235 844L2245 851L2255 857L2267 863L2278 870L2289 876L2303 880L2311 896L2323 907L2335 917L2351 921L2366 921ZM826 916L818 904L808 896L792 885L781 867L770 847L750 846L735 848L721 854L709 860L701 863L692 859L681 859L670 858L657 854L644 850L634 843L623 838L612 831L602 824L590 811L570 815L555 814L542 817L528 824L518 836L508 837L494 840L482 847L471 853L459 854L448 862L436 869L424 873L413 876L400 880L388 887L377 897L366 905L354 909L342 916L342 916L354 910L366 907L379 900L392 893L404 890L415 887L428 886L442 882L453 877L464 871L478 872L489 863L501 857L514 860L527 855L542 849L550 842L560 838L569 841L575 843L589 844L601 851L613 859L626 865L639 866L649 874L661 880L675 885L689 883L703 885L721 882L732 873L741 865L750 862L755 866L764 879L776 896L785 918L804 924L819 928Z" fill="url(#g-garden)"/><path class="white" d="M2054 754L2042 744L2032 736L2023 737L2012 741L2000 744L1988 748L1977 755L1964 761L1953 766L1941 775L1929 781M1869 823L1857 831L1844 839L1831 844L1819 847L1807 850L1795 853M1960 752L1948 757L1936 766M557 822L544 825L532 831L520 840L509 842L497 847L485 852L473 857L461 861L449 865L437 870L425 876L414 879L401 883L389 889M545 827L532 832L521 841L509 843L497 848L485 853L473 858L461 862L449 866L437 871" stroke-width="1.6"/><path class="white" d="M2072 756L2060 746L2048 737L2035 727L2021 727L2009 732L1997 735M1997 736L1985 740L1972 747L1961 753L1948 759L1936 767L1924 773L1912 779L1900 787M557 821L544 825L531 831L520 840L509 842L497 846L485 852M449 864L437 870M497 847L485 853L473 858L461 861M390 889L378 898" stroke-width="2.6"/><path class="dry" d="M1879 810L1868 821L1857 830L1844 838L1832 843L1818 848L1807 851L1795 853L1783 858L1772 863L1760 867M1858 834L1845 842L1832 848L1820 851L1808 856L1796 859L1784 863L1773 867L1761 872L1750 878L1740 885L1729 893L1716 903L1704 915L1690 921M1914 782L1902 789L1889 798L1878 808L1866 819L1853 828L1841 835L1830 839L1818 843L1806 847L1794 850L1782 853L1770 858L1758 862L1746 867L1733 875L1721 884L1709 894" stroke-width="2"/><path class="dry" d="M1900 787L1888 796L1875 805L1863 815L1851 823M1936 767L1924 772L1912 779L1900 786L1888 796L1874 805L1862 816L1850 823L1840 831M1695 899L1684 902M1879 810L1867 821L1856 830L1843 839L1832 844L1819 847L1807 850L1795 853L1783 857M500 853L488 859L476 864L463 869L452 872M394 897L382 905L370 913" stroke-width="3.2"/><g class="dots"><ellipse cx="1997.8" cy="719.5" rx="4.5" ry="2.5" transform="rotate(-15 1997.8 719.5)"/><ellipse cx="2033.9" cy="720.5" rx="3.8" ry="3.1" transform="rotate(-18 2033.9 720.5)"/><ellipse cx="2201.1" cy="805.7" rx="6.6" ry="3.1" transform="rotate(-3 2201.1 805.7)"/><ellipse cx="605.9" cy="804.7" rx="6.2" ry="3.3" transform="rotate(0 605.9 804.7)"/><ellipse cx="521.9" cy="822.5" rx="5.2" ry="2.3" transform="rotate(1 521.9 822.5)"/><ellipse cx="578.2" cy="805.7" rx="3.9" ry="2.8" transform="rotate(12 578.2 805.7)"/><ellipse cx="603" cy="809.2" rx="4.1" ry="2.6" transform="rotate(4 603 809.2)"/><ellipse cx="548.2" cy="804.9" rx="6.2" ry="2.3" transform="rotate(-8 548.2 804.9)"/><ellipse cx="664.3" cy="852.6" rx="5.2" ry="2.8" transform="rotate(-18 664.3 852.6)"/></g></g></svg></div>
+</section>
+<section id="spring" class="sec ch ch-classic" aria-labelledby="h-spring" data-axis style="--tn:18.3;--ts:13.6;--tq:32.6;--tt:8.5">
+<p class="tag"><span class="tag-n">其一</span><span class="tag-k">春</span><span class="tag-t">穀雨前後</span></p><div class="title"><h2 id="h-spring" class="name">春霧包種</h2><img class="seal stamp" src="assets/seal-spring.svg" alt="" width="100" height="100" style="--rot:2.5deg"></div><p class="story">穀雨前後，青心烏龍抽出一心二葉。我們趁霧還沒散就採，日光萎凋只曬到葉面微軟，再浪菁五回，讓花香一點一點醒過來。</p><p class="note"><span class="note-k">品</span>蘭花、梔子、雨後的竹林。湯色蜜綠，入口清甜，喉韻要到<em>第三泡</em>才出來。</p><table class="spec"><caption class="sr-only">春霧包種茶單</caption><tbody><tr><th scope="row">品種</th><td>青心烏龍</td></tr><tr><th scope="row">發酵</th><td>輕・約一成五</td></tr><tr><th scope="row">焙火</th><td>不焙</td></tr><tr><th scope="row">水溫</th><td><span class="tcy">85</span>度</td></tr><tr><th scope="row">浸泡</th><td>首泡<span class="tcy">50</span>秒</td></tr><tr><th scope="row">每兩</th><td>四二〇元</td></tr></tbody></table>
+<div class="land" aria-hidden="true"><img src="assets/land-spring.svg" alt="" width="2400" height="1000" decoding="async"><svg class="ink" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false"><defs><path id="c-spring" d="M2370 919L2358 914L2346 908L2334 904L2322 900L2310 897L2298 890L2286 882L2274 878L2262 870L2250 864L2238 859L2226 854L2214 847L2202 841L2190 833L2178 825L2166 814L2154 802L2142 789L2130 776L2118 763L2106 752L2094 749L2082 750L2070 751L2058 754L2046 758L2034 758L2022 760L2010 763L1998 766L1986 769L1974 771L1962 775L1950 779L1938 776L1926 775L1914 774L1902 774L1890 777L1878 780L1866 780L1854 783L1842 787L1830 790L1818 793L1806 799L1794 807L1782 814L1770 820L1758 825L1746 831L1734 837L1722 843L1710 848L1698 851L1686 857L1674 864L1662 871L1650 877L1638 882L1626 888L1614 892L1602 892L1590 891L1578 884L1566 874L1554 861L1542 850L1530 839L1518 841L1506 844L1494 847L1482 849L1470 850L1458 846L1446 839L1434 835L1422 836L1410 840L1398 846L1386 854L1374 864L1362 872L1350 880L1338 888L1326 898L1314 906L1302 912L1290 919L1278 926L1266 933L1254 935L1242 938L1230 941L1218 940L1206 939L1194 942L1182 939L1170 937L1158 936L1146 935L1134 935L1122 935L1110 935L1098 937L1086 935L1074 932L1062 929L1050 926L1038 925L1026 927L1014 929L1002 931L990 933L978 936L966 938L954 936L942 935L930 937L918 938L906 939L894 940L882 940L870 939L858 937L846 934L834 931L822 930L810 930L798 930L786 928L774 928L762 929L750 928L738 927L726 925L714 922L702 918L690 911L678 909L666 902L654 892L642 877L630 859L618 840L606 821L594 817L582 819L570 821L558 823L546 824L534 825L522 824L510 816L498 811L486 810L474 812L462 815L450 819L438 826L426 835L414 842L402 848L390 852L378 857L366 863L354 869L342 873L330 879L318 886L306 892L294 897L282 903L270 911L258 919L246 922L234 926L222 928L210 929L198 931L186 936L174 932L162 931L150 932L138 932L126 932L114 932L102 934L90 936L78 935L66 934L54 934L42 934L30 932" pathLength="1"/><radialGradient id="b-spring"><stop offset="0" stop-opacity=".16"/><stop offset=".6" stop-opacity=".07"/><stop offset="1" stop-opacity="0"/></radialGradient><linearGradient id="g-spring" gradientUnits="userSpaceOnUse" x1="2400" y1="0" x2="0" y2="0"><stop offset="0" stop-opacity="1"/><stop offset="0.12" stop-opacity="0.8809999999999999"/><stop offset="0.35" stop-opacity="0.847"/><stop offset="0.6" stop-opacity="0.9159999999999999"/><stop offset="0.82" stop-opacity="0.752"/><stop offset="1" stop-opacity="0.9"/></linearGradient><mask id="m-spring" maskUnits="userSpaceOnUse" x="0" y="0" width="2400" height="1000"><use href="#c-spring" class="nib lead2" stroke-width="95"/><use href="#c-spring" class="nib lead1" stroke-width="95"/><use href="#c-spring" class="nib" stroke-width="95"/></mask></defs><g class="ink-body" mask="url(#m-spring)"><g fill="url(#b-spring)"><ellipse cx="2344" cy="910" rx="47" ry="26"/><ellipse cx="1926" cy="775" rx="34" ry="26"/><ellipse cx="675" cy="912" rx="50" ry="32"/><ellipse cx="546" cy="824" rx="35" ry="20"/></g><path class="core" d="M2373 911L2362 905L2350 898L2338 891L2326 888L2316 883L2307 876L2293 869L2279 868L2268 860L2256 852L2241 852L2230 847L2218 840L2206 834L2195 827L2184 817L2173 807L2161 796L2151 781L2136 770L2127 754L2113 740L2095 735L2081 737L2068 738L2056 746L2044 748L2033 745L2020 750L2008 755L1996 759L1984 758L1971 757L1958 762L1949 769L1940 765L1928 761L1914 760L1900 764L1887 767L1877 771L1865 770L1850 771L1839 777L1827 780L1814 782L1799 787L1787 795L1777 806L1766 812L1753 814L1741 820L1728 825L1715 826L1705 834L1694 842L1681 849L1668 855L1656 860L1646 867L1632 869L1622 879L1612 882L1603 881L1593 880L1584 876L1574 865L1563 853L1548 843L1532 833L1516 833L1504 836L1492 838L1481 840L1471 843L1461 840L1449 833L1435 830L1421 832L1409 837L1396 843L1384 852L1373 863L1361 872L1349 879L1337 887L1326 898L1314 906L1302 911L1290 919L1290 919L1302 912L1314 906L1326 899L1339 889L1351 881L1363 874L1375 866L1388 857L1399 848L1412 844L1423 841L1433 839L1444 843L1456 850L1469 855L1483 854L1495 852L1508 851L1520 849L1526 850L1536 856L1546 869L1558 882L1573 891L1588 899L1601 904L1616 902L1630 896L1643 893L1654 885L1668 884L1681 876L1692 869L1705 868L1715 863L1729 857L1742 853L1753 845L1764 838L1776 834L1789 826L1802 820L1814 814L1824 810L1833 803L1846 799L1858 795L1867 793L1879 794L1893 790L1905 790L1914 789L1924 790L1936 791L1951 793L1966 788L1977 784L1988 781L2001 777L2012 771L2025 774L2035 770L2048 771L2062 769L2072 764L2083 764L2093 762L2099 764L2108 773L2123 782L2133 797L2146 810L2159 822L2172 833L2186 839L2198 849L2209 855L2221 864L2234 870L2245 875L2257 879L2268 889L2281 892L2292 901L2304 911L2319 912L2329 918L2341 920L2355 921L2367 926ZM705 913L695 898L682 897L673 892L665 882L653 869L637 855L625 835L612 815L595 807L581 811L568 809L556 813L545 816L534 815L526 814L514 808L501 800L486 797L472 800L459 806L445 809L431 816L418 823L407 829L396 835L385 840L372 843L360 850L350 861L338 864L326 871L315 880L304 888L293 895L281 901L269 910L258 918L246 922L246 922L258 919L271 912L283 904L296 900L308 896L321 891L333 885L346 884L359 881L372 874L382 868L394 862L407 859L419 851L431 842L443 834L456 831L467 830L476 823L486 822L495 823L507 822L520 830L534 837L547 834L559 830L572 831L583 827L593 828L599 828L608 846L616 868L630 886L644 902L656 916L672 925L685 924L698 925Z" fill="url(#g-spring)"/><path class="white" d="M1866 778L1853 781L1841 785L1829 788L1817 791L1805 797L1793 804L1781 812L1769 818L1757 823L1745 829L1733 835L1721 840L1709 845L1697 849L1685 855L1673 862M1602 890L1591 889L1579 883L1567 872L1555 860L1543 848L1531 837L1518 839L1506 843L1494 845L1482 847L1470 848M1962 775L1950 779L1938 777L1926 775L1914 774L1902 775M1878 781L1866 780L1854 783L1842 788L1830 790L1818 794L1806 800M1710 848L1698 852L1686 858L1674 865L1662 872L1650 877L1638 882L1626 888L1614 893L1602 892M1470 850L1458 846L1446 840L1434 835L1422 836L1410 840L1398 846L1386 854M391 856L380 861L368 866L355 873L343 876L331 881L319 887M486 804L473 805L460 808L447 812L434 820L422 828L410 835L399 840L387 845L375 850L362 856L351 863L340 868L328 874L316 882L305 889L293 895L281 901M523 822L511 814L499 809L486 808M449 816L437 824L424 832L413 840L401 845L389 850L377 855L365 860L353 867L341 871L329 877L317 884L306 891L294 896" stroke-width="1.6"/><path class="white" d="M1866 776L1853 779M1768 817L1756 821L1744 827L1732 833L1720 839L1709 844L1696 847L1684 854L1672 861M1818 792L1805 798L1793 806L1781 813L1769 819L1757 824L1745 830L1733 836L1721 842L1710 847L1698 850L1685 856L1673 863L1662 870L1650 876L1638 881L1626 887L1614 891L1602 891L1590 890L1579 884L1567 873L1555 861M1482 848L1470 849L1458 846L1446 839M451 820L439 827L427 836L415 843L403 849L391 854M342 874L330 880L318 886M307 895L295 899M452 823L440 830L429 838L416 846L404 852L392 857L380 862L368 867L356 873L343 877L331 882" stroke-width="2.6"/><path class="dry" d="M1590 891L1578 885L1567 873L1554 862L1542 849M1458 847L1447 839L1434 835L1422 835L1409 840L1398 847L1386 854L1374 864L1362 872L1350 879L1337 887L1326 898L1313 906M1575 890L1561 878L1549 867L1538 855L1528 845L1520 848L1508 852L1495 854L1484 856L1469 857L1455 854L1443 847M1414 848L1403 854L1391 862L1380 872L1368 880L1356 888M1614 890L1602 889L1590 888L1579 883L1568 872L1556 860L1544 847L1530 836L1517 839M1471 848L1459 844L1448 837L1435 831L1421 833L1409 837L1397 844L1384 852L1372 862L1361 870L1348 876L1335 885L1323 896M366 862L354 868L342 872L329 877M366 865L355 870L343 876L331 881" stroke-width="2"/><path class="dry" d="M1614 896L1602 894L1590 894L1576 887L1563 876L1552 864L1539 853L1528 841L1518 844L1507 848L1495 850L1482 853L1470 854L1456 851L1444 843L1433 839L1422 841L1412 844M1545 845L1532 833L1517 834L1504 838L1493 839M329 878L318 884L304 889L293 895L280 901M402 846L390 850L377 855M293 895L282 900L269 909L258 916" stroke-width="3.2"/><g class="dots"><ellipse cx="1824.1" cy="768.8" rx="5" ry="2" transform="rotate(16 1824.1 768.8)"/><ellipse cx="2178.2" cy="810.4" rx="6.4" ry="3.2" transform="rotate(-1 2178.2 810.4)"/><ellipse cx="2086.6" cy="729.5" rx="5.9" ry="3.4" transform="rotate(-4 2086.6 729.5)"/><ellipse cx="1852.6" cy="769.5" rx="5.1" ry="2.6" transform="rotate(15 1852.6 769.5)"/><ellipse cx="2161" cy="796.1" rx="3.8" ry="3" transform="rotate(-21 2161 796.1)"/><ellipse cx="472.4" cy="784.4" rx="5.5" ry="2.3" transform="rotate(-25 472.4 784.4)"/><ellipse cx="415.8" cy="822.4" rx="3.9" ry="3.3" transform="rotate(-5 415.8 822.4)"/><ellipse cx="577.5" cy="790.1" rx="6.5" ry="2.8" transform="rotate(-23 577.5 790.1)"/><ellipse cx="589.2" cy="793.4" rx="3.9" ry="2.1" transform="rotate(-22 589.2 793.4)"/><ellipse cx="571.3" cy="800.9" rx="4.7" ry="3.4" transform="rotate(-20 571.3 800.9)"/><ellipse cx="492.8" cy="783.7" rx="4.8" ry="3.4" transform="rotate(-20 492.8 783.7)"/></g></g></svg></div>
+</section><section id="summer" class="sec ch ch-plaque" aria-labelledby="h-summer" data-axis style="--ts:27.6;--tq:30.4;--tt:26.6">
+<p class="tag"><span class="tag-n">其二</span><span class="tag-k">夏</span><span class="tag-t">芒種至大暑</span></p><div class="title"><h2 id="h-summer" class="name"><span class="rtl">夏蟬白毫</span><span class="sr-only">（匾額式右起橫書）</span></h2><img class="seal stamp" src="assets/seal-summer.svg" alt="" width="100" height="100" style="--rot:0.7deg"></div><p class="story">芒種一過，小綠葉蟬就上山了。被蟲咬過的嫩芽捲曲、轉黃，茶樹為了自救，生出一股蜜與熟果的氣味。這款茶是蟲和人一起做的：蟲咬得深，蜜香就濃。</p><p class="note"><span class="note-k">品</span>熟蜜、荔枝乾，尾端一絲肉桂。湯色琥珀，<em>放涼了更甜</em>。</p><table class="spec"><caption class="sr-only">夏蟬白毫茶單</caption><tbody><tr><th scope="row">品種</th><td>青心大冇</td></tr><tr><th scope="row">發酵</th><td>重・約六成</td></tr><tr><th scope="row">焙火</th><td>不焙</td></tr><tr><th scope="row">水溫</th><td><span class="tcy">85</span>度</td></tr><tr><th scope="row">浸泡</th><td>首泡<span class="tcy">40</span>秒</td></tr><tr><th scope="row">每兩</th><td>六八〇元</td></tr></tbody></table>
+<div class="land" aria-hidden="true"><img src="assets/land-summer.svg" alt="" width="2400" height="1000" decoding="async"><svg class="ink" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false"><defs><path id="c-summer" d="M2370 961L2358 961L2346 960L2334 960L2322 958L2310 955L2298 951L2286 946L2274 938L2262 934L2250 928L2238 922L2226 916L2214 913L2202 907L2190 900L2178 893L2166 888L2154 881L2142 872L2130 863L2118 853L2106 844L2094 836L2082 829L2070 823L2058 819L2046 818L2034 811L2022 809L2010 807L1998 807L1986 810L1974 816L1962 823L1950 829L1938 835L1926 844L1914 853L1902 862L1890 872L1878 885L1866 894L1854 902L1842 911L1830 918L1818 928L1806 939L1794 947L1782 953L1770 962L1758 965L1746 967L1734 969L1722 970L1710 972L1698 970L1686 969L1674 968L1662 967L1650 967L1638 968L1626 967L1614 966L1602 963L1590 964L1578 965L1566 967L1554 967L1542 967L1530 970L1518 970L1506 969L1494 969L1482 969L1470 969L1458 968L1446 967L1434 967L1422 968L1410 967L1398 963L1386 960L1374 959L1362 961L1350 960L1338 958L1326 959L1314 959L1302 958L1290 958L1278 958L1266 958L1254 960L1242 965L1230 969L1218 971L1206 971L1194 972L1182 972L1170 970L1158 968L1146 967L1134 966L1122 966L1110 966L1098 967L1086 967L1074 966L1062 965L1050 965L1038 966L1026 965L1014 964L1002 964L990 963L978 963L966 963L954 964L942 966L930 967L918 969L906 971L894 972L882 972L870 970L858 968L846 963L834 960L822 956L810 951L798 944L786 939L774 933L762 927L750 920L738 914L726 909L714 903L702 896L690 889L678 884L666 878L654 872L642 868L630 865L618 860L606 856L594 852L582 849L570 848L558 851L546 858L534 865L522 871L510 880L498 887L486 893L474 900L462 908L450 914L438 918L426 922L414 929L402 936L390 941L378 947L366 952L354 957L342 961L330 963L318 964L306 966L294 967L282 967L270 969L258 972L246 971L234 972L222 973L210 973L198 972L186 972L174 972L162 970L150 967L138 966L126 966L114 968L102 965L90 963L78 965L66 965L54 963L42 961L30 959" pathLength="1"/><radialGradient id="b-summer"><stop offset="0" stop-opacity=".16"/><stop offset=".6" stop-opacity=".07"/><stop offset="1" stop-opacity="0"/></radialGradient><linearGradient id="g-summer" gradientUnits="userSpaceOnUse" x1="2400" y1="0" x2="0" y2="0"><stop offset="0" stop-opacity="1"/><stop offset="0.12" stop-opacity="0.835"/><stop offset="0.35" stop-opacity="0.821"/><stop offset="0.6" stop-opacity="0.945"/><stop offset="0.82" stop-opacity="0.7979999999999999"/><stop offset="1" stop-opacity="0.9"/></linearGradient><mask id="m-summer" maskUnits="userSpaceOnUse" x="0" y="0" width="2400" height="1000"><use href="#c-summer" class="nib lead2" stroke-width="102"/><use href="#c-summer" class="nib lead1" stroke-width="102"/><use href="#c-summer" class="nib" stroke-width="102"/></mask></defs><g class="ink-body" mask="url(#m-summer)"><g fill="url(#b-summer)"><ellipse cx="2282" cy="945" rx="46" ry="32"/><ellipse cx="799" cy="945" rx="52" ry="29"/><ellipse cx="606" cy="856" rx="48" ry="27"/></g><path class="core" d="M2313 947L2304 936L2295 929L2281 924L2267 921L2256 916L2243 911L2231 902L2219 900L2209 894L2196 890L2182 885L2171 879L2159 873L2147 866L2137 854L2123 846L2112 836L2099 828L2087 821L2073 815L2060 810L2049 808L2039 799L2025 794L2011 792L1996 791L1980 795L1967 802L1955 809L1947 823L1934 828L1921 838L1910 847L1897 856L1887 869L1875 882L1863 890L1852 899L1841 909L1828 916L1817 927L1805 938L1794 946L1782 953L1770 962L1770 962L1782 954L1794 948L1807 940L1819 930L1831 920L1843 913L1856 905L1869 897L1882 890L1894 877L1908 870L1920 860L1932 852L1945 846L1957 843L1969 836L1980 827L1991 821L1999 818L2009 818L2019 822L2030 821L2044 825L2056 827L2067 830L2076 839L2089 845L2099 854L2110 864L2123 872L2134 882L2149 888L2162 894L2174 901L2182 915L2197 916L2208 928L2221 932L2232 933L2244 940L2258 943L2268 949L2279 960L2292 966L2308 961ZM825 949L818 936L806 927L792 925L782 918L768 916L758 904L744 900L732 898L720 892L709 883L696 877L683 874L672 866L660 857L645 857L634 853L623 846L611 843L597 842L584 839L569 837L552 837L538 844L527 852L514 857L505 873L493 879L482 887L471 894L458 901L448 910L437 915L425 920L413 928L401 935L390 941L378 946L366 952L366 952L378 947L390 942L403 937L415 931L427 924L439 921L451 917L465 912L479 908L490 901L503 896L519 893L527 878L543 882L553 868L563 863L571 866L580 861L589 869L601 871L612 875L624 882L639 878L649 885L660 890L673 894L685 899L696 905L709 911L720 923L732 927L744 931L756 937L767 948L781 950L792 956L801 969L818 965Z" fill="url(#g-summer)"/><path class="white" d="M2010 809L1998 809L1987 812L1975 818L1963 825M1989 818L1978 824L1966 830L1954 836L1942 841L1930 849L1918 858L1905 866L1893 876L1881 888M631 861L619 856L607 852M520 868L508 877L497 885L485 891L473 898L461 906L449 913L438 917M632 858L621 853L608 849L596 845L583 842L569 840L555 844M544 854L532 862L520 867L508 877" stroke-width="1.6"/><path class="white" d="M2085 824L2072 817L2059 813L2048 812L2036 805L2023 802L2011 800L1997 799L1983 803L1970 810L1959 816L1947 823L1935 829L1922 839L1911 849L1899 859M642 869L629 866L617 862L605 857M627 873L615 868L603 864L592 860L581 857L571 856L561 858L550 865L538 872L526 877L514 886L501 892L488 898L476 904L464 911L451 917L439 920" stroke-width="2.6"/><path class="dry" d="M1963 825L1951 831L1939 837L1927 846L1916 855L1903 864L1892 874L1879 887L1868 895L1855 904L1844 914L1832 921M1988 815L1977 822L1964 829L1953 835L1942 841M1847 918L1835 926M1985 809L1973 815M1938 834L1925 844L1914 853L1901 861L1889 871L1877 884L1865 893L1854 902M437 912L424 917L410 923L398 929L387 934L375 940M507 876L495 883L484 888M509 878L496 885L484 891L472 898" stroke-width="2"/><path class="dry" d="M1937 833L1924 842L1911 851L1900 859L1887 870L1875 881L1864 890L1852 898L1839 906L1828 914L1815 924L1803 935L1792 943L1779 949M1976 821L1964 826L1953 834L1941 839L1930 848M1900 859L1887 870L1875 882L1863 890L1851 899L1839 907L1828 914L1814 924L1803 935L1791 942M429 926L417 934L405 942L392 948" stroke-width="3.2"/><g class="dots"><ellipse cx="2138.6" cy="844.8" rx="6.1" ry="2.5" transform="rotate(-1 2138.6 844.8)"/><ellipse cx="2174.1" cy="870.8" rx="5.9" ry="2.4" transform="rotate(16 2174.1 870.8)"/><ellipse cx="2071.8" cy="801.9" rx="5.9" ry="2.7" transform="rotate(-8 2071.8 801.9)"/><ellipse cx="2230.5" cy="888.5" rx="6.8" ry="2.7" transform="rotate(-22 2230.5 888.5)"/><ellipse cx="568.6" cy="826.9" rx="3.6" ry="2.9" transform="rotate(2 568.6 826.9)"/><ellipse cx="611.6" cy="828.5" rx="6.9" ry="3.2" transform="rotate(-3 611.6 828.5)"/><ellipse cx="518.2" cy="851.8" rx="6.4" ry="2.9" transform="rotate(11 518.2 851.8)"/></g></g></svg></div>
+</section><section id="autumn" class="sec ch ch-ruler" aria-labelledby="h-autumn" data-axis style="--tn:10.2;--ts:14.4;--tq:26.4;--tt:11.1">
+<p class="tag"><span class="tag-n">其三</span><span class="tag-k">秋</span><span class="tag-t">白露至霜降</span></p><div class="title"><h2 id="h-autumn" class="name">秋焙鐵觀音</h2><img class="seal stamp" src="assets/seal-autumn.svg" alt="" width="100" height="100" style="--rot:-1.9deg"></div><p class="story">白露之後葉片厚實，適合焙火。我們用龍眼木炭焙三回，每回相隔二十天，等火氣退盡，留下熟果和炒米的溫潤。焙茶的人得守在炭爐邊過夜，這是茶行<em>最安靜</em>的季節。</p><p class="note"><span class="note-k">品</span>炭香、烏梅、炒米，回甘帶一點「觀音韻」特有的微酸。</p><figure class="ruler" aria-labelledby="cap-autumn">
+<figcaption id="cap-autumn" class="ruler-cap">焙火尺<span class="sr-only">（刻度由生到熟，共十成）</span></figcaption>
+<div class="ruler-rod" aria-hidden="true"><b class="end top">生</b><i class="mj" style="--j:0"></i><i class="mn" style="--j:1"></i><i class="md" style="--j:2"></i><i class="mn" style="--j:3"></i><i class="mj" style="--j:4"></i><i class="mn" style="--j:5"></i><i class="md" style="--j:6"></i><i class="mn" style="--j:7"></i><i class="mj" style="--j:8"></i><i class="mn" style="--j:9"></i><i class="md" style="--j:10"></i><i class="mn" style="--j:11"></i><i class="mj" style="--j:12"></i><i class="mn" style="--j:13"></i><i class="md" style="--j:14"></i><i class="mn" style="--j:15"></i><i class="mj" style="--j:16"></i><i class="mn" style="--j:17"></i><i class="md" style="--j:18"></i><i class="mn" style="--j:19"></i><i class="mj" style="--j:20"></i><b class="num" style="--j:0">〇</b><b class="num" style="--j:4">二</b><b class="num" style="--j:8">四</b><b class="num" style="--j:12">六</b><b class="num" style="--j:16">八</b><b class="num" style="--j:20">十</b><b class="end bottom">熟</b></div>
+<dl class="ruler-marks"><div class="" style="--at:0.35;--lead:1.6em"><dt>發酵</dt><dd>約三成五</dd></div><div class="up" style="--at:0.8;--lead:5em"><dt>焙火</dt><dd>重・炭焙三回</dd></div></dl>
+<dl class="ruler-notes"><div><dt>品種</dt><dd>鐵觀音</dd></div><div><dt>水溫</dt><dd><span class="tcy">95</span>度</dd></div><div><dt>浸泡</dt><dd>首泡<span class="tcy">60</span>秒</dd></div><div><dt>每兩</dt><dd>五六〇元</dd></div></dl>
+</figure>
+<div class="land" aria-hidden="true"><img src="assets/land-autumn.svg" alt="" width="2400" height="1000" decoding="async"><svg class="ink" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false"><defs><path id="c-autumn" d="M2370 906L2358 893L2346 876L2334 861L2322 843L2310 823L2298 801L2286 778L2274 756L2262 734L2250 714L2238 701L2226 697L2214 696L2202 694L2190 696L2178 699L2166 701L2154 701L2142 699L2130 698L2118 695L2106 690L2094 688L2082 691L2070 698L2058 705L2046 710L2034 716L2022 724L2010 733L1998 743L1986 753L1974 766L1962 779L1950 793L1938 804L1926 813L1914 824L1902 835L1890 845L1878 853L1866 863L1854 871L1842 878L1830 888L1818 898L1806 906L1794 914L1782 922L1770 931L1758 935L1746 937L1734 937L1722 935L1710 933L1698 932L1686 929L1674 928L1662 930L1650 932L1638 934L1626 937L1614 939L1602 938L1590 936L1578 935L1566 935L1554 933L1542 926L1530 923L1518 918L1506 909L1494 899L1482 888L1470 877L1458 863L1446 851L1434 843L1422 841L1410 840L1398 840L1386 843L1374 847L1362 848L1350 846L1338 844L1326 845L1314 848L1302 849L1290 853L1278 858L1266 863L1254 866L1242 870L1230 876L1218 883L1206 891L1194 896L1182 900L1170 905L1158 911L1146 917L1134 920L1122 924L1110 927L1098 930L1086 934L1074 937L1062 939L1050 940L1038 941L1026 942L1014 941L1002 941L990 941L978 939L966 938L954 939L942 939L930 938L918 936L906 935L894 935L882 935L870 935L858 938L846 937L834 935L822 933L810 931L798 932L786 935L774 938L762 940L750 939L738 940L726 942L714 943L702 944L690 942L678 938L666 933L654 928L642 923L630 917L618 908L606 895L594 880L582 864L570 847L558 830L546 812L534 795L522 782L510 774L498 769L486 766L474 765L462 767L450 769L438 771L426 770L414 765L402 763L390 766L378 775L366 784L354 794L342 800L330 809L318 819L306 828L294 836L282 844L270 852L258 862L246 871L234 879L222 886L210 895L198 903L186 907L174 913L162 920L150 925L138 927L126 927L114 928L102 928L90 929L78 929L66 930L54 932L42 933L30 935" pathLength="1"/><radialGradient id="b-autumn"><stop offset="0" stop-opacity=".16"/><stop offset=".6" stop-opacity=".07"/><stop offset="1" stop-opacity="0"/></radialGradient><linearGradient id="g-autumn" gradientUnits="userSpaceOnUse" x1="2400" y1="0" x2="0" y2="0"><stop offset="0" stop-opacity="1"/><stop offset="0.12" stop-opacity="0.878"/><stop offset="0.35" stop-opacity="0.727"/><stop offset="0.6" stop-opacity="0.904"/><stop offset="0.82" stop-opacity="0.767"/><stop offset="1" stop-opacity="0.9"/></linearGradient><mask id="m-autumn" maskUnits="userSpaceOnUse" x="0" y="0" width="2400" height="1000"><use href="#c-autumn" class="nib lead2" stroke-width="105"/><use href="#c-autumn" class="nib lead1" stroke-width="105"/><use href="#c-autumn" class="nib" stroke-width="105"/></mask></defs><g class="ink-body" mask="url(#m-autumn)"><g fill="url(#b-autumn)"><ellipse cx="2344" cy="875" rx="43" ry="34"/><ellipse cx="2214" cy="696" rx="38" ry="26"/><ellipse cx="1496" cy="900" rx="47" ry="37"/><ellipse cx="622" cy="909" rx="53" ry="35"/><ellipse cx="522" cy="782" rx="49" ry="22"/></g><path class="core" d="M2376 900L2371 882L2362 864L2348 850L2333 837L2318 819L2306 796L2296 772L2283 751L2270 729L2263 704L2245 691L2229 683L2216 681L2202 679L2187 682L2176 690L2165 692L2155 689L2144 685L2133 683L2121 686L2108 682L2093 675L2076 677L2065 691L2053 695L2042 701L2029 708L2015 714L2001 721L1991 735L1977 744L1965 757L1954 772L1941 784L1931 796L1922 808L1910 820L1898 830L1886 840L1875 849L1864 861L1853 869L1841 876L1829 887L1818 897L1806 905L1794 914L1794 914L1806 906L1818 898L1831 889L1843 880L1856 873L1868 866L1881 857L1892 847L1905 839L1919 830L1932 821L1944 811L1956 799L1968 784L1983 774L1996 763L2006 752L2019 744L2030 735L2041 729L2051 721L2063 715L2074 706L2087 702L2095 701L2102 703L2115 704L2128 710L2141 709L2153 712L2167 713L2181 711L2193 709L2202 703L2213 707L2224 708L2232 710L2239 721L2248 742L2262 763L2276 783L2287 807L2298 830L2314 848L2322 869L2331 888L2346 903L2363 912ZM1522 912L1521 891L1506 886L1495 874L1483 864L1471 851L1456 839L1438 832L1424 828L1410 827L1397 830L1383 830L1370 830L1362 833L1352 835L1338 833L1324 835L1312 836L1298 833L1284 835L1272 844L1261 848L1249 849L1236 856L1225 867L1213 876L1204 888L1193 894L1182 899L1170 905L1170 905L1182 901L1195 898L1208 895L1222 889L1236 886L1246 881L1257 878L1270 876L1284 871L1296 869L1305 864L1316 860L1328 856L1338 853L1348 857L1362 865L1378 863L1390 858L1400 858L1410 859L1420 860L1427 859L1434 864L1450 871L1459 887L1471 900L1484 910L1491 928L1513 926ZM647 913L637 906L628 897L618 885L607 870L591 857L579 841L570 822L558 803L544 786L532 771L516 763L501 759L488 753L473 749L460 751L447 752L438 757L429 756L418 752L402 752L385 757L372 767L360 776L346 782L336 791L322 799L311 810L299 818L286 824L275 834L265 846L252 854L242 865L231 874L220 884L209 894L198 902L186 907L174 913L174 913L186 907L198 904L211 897L224 889L237 883L250 876L262 867L274 858L287 852L300 846L313 839L325 828L337 818L348 809L359 801L374 794L385 784L394 773L402 770L410 777L423 783L438 785L452 784L464 779L474 778L484 778L494 781L504 785L517 788L522 804L534 820L547 838L560 855L570 872L584 888L597 903L606 921L622 929L639 929Z" fill="url(#g-autumn)"/><path class="white" d="M2121 687L2108 682L2093 680L2079 684L2066 691L2054 698L2042 703L2030 709L2017 717L2005 726L1993 736L1980 747L1968 760L1956 773L1945 788L1934 799M2143 693L2131 691L2120 688L2108 683L2094 681M2066 692L2055 699L2043 704L2030 710L2018 718M2141 706L2129 704L2116 701L2104 696L2094 695L2085 698L2074 705L2061 712L2049 717L2038 723L2026 730M1991 759L1979 770L1967 783M1351 842L1338 840M1313 844L1301 845L1288 848L1276 853L1264 858L1252 860L1240 866L1228 873L1217 881L1205 890M1314 847L1302 849M1266 863L1254 866L1242 870M451 778L438 779L424 778M335 816L323 826L311 835L298 843M426 770L414 766L402 763L390 767L378 775L366 784L354 794L342 800L330 809L318 819L306 828M379 777L368 786M235 879L222 887L210 896" stroke-width="1.6"/><path class="white" d="M2166 698L2154 698L2142 697M1984 751L1972 763L1960 777L1948 791L1936 802L1925 812L1913 823M2177 695L2166 697L2154 697L2143 695L2131 694L2119 691L2107 686L2094 684M2044 706L2032 713L2020 720L2007 729L1995 739L1983 750L1971 763L1959 776L1947 790L1936 801L1924 811M1231 877L1219 884L1206 892M1351 838L1338 836L1325 838L1313 840L1300 841L1286 843M1288 849L1276 853L1264 858L1253 861L1240 866L1229 873M402 755L387 759L373 769M266 848L255 858L244 868M402 755L387 759M350 787L338 793L325 803L313 813L301 821L290 830L278 838L266 848L255 858" stroke-width="2.6"/><path class="dry" d="M1971 763L1959 776L1947 791L1936 800L1923 810L1912 821L1900 831L1887 841L1875 850L1864 860L1851 866L1839 873L1827 885L1815 894M1872 845L1860 854L1848 861L1835 869L1822 880L1811 889M1949 793L1937 803M1842 877L1830 888M1265 861L1253 863L1240 868L1228 872L1217 880L1203 888M1266 863L1254 866L1241 869L1229 875M314 815L302 823L291 831L277 838L266 846L253 856L242 865L229 872L218 879L204 889L194 894L182 897M345 806L335 814L322 825L311 834L299 844L287 850L276 859L265 870L252 880L240 887L228 895M285 848L273 855L262 866L249 876L237 883L226 891L213 901" stroke-width="2"/><path class="dry" d="M1945 788L1933 799L1920 807L1909 817L1896 828L1885 838L1872 845L1859 854L1848 861M1987 755L1975 767L1964 780L1952 794L1940 805L1927 815L1915 826L1904 837L1892 846L1879 855L1868 864L1855 873L1844 881L1831 890L1820 900L1807 908M1963 780L1951 794L1939 804M1266 862L1254 865L1241 869L1229 874L1217 882L1206 891L1194 895L1181 899M1281 865L1269 871L1256 875L1246 880M298 841L286 848L274 857" stroke-width="3.2"/><g class="dots"><ellipse cx="2096.7" cy="656.7" rx="6.7" ry="2.8" transform="rotate(17 2096.7 656.7)"/><ellipse cx="2153" cy="681.9" rx="6" ry="2.7" transform="rotate(-11 2153 681.9)"/><ellipse cx="2252.4" cy="711" rx="5.9" ry="2.6" transform="rotate(-20 2252.4 711)"/><ellipse cx="2087.4" cy="657.3" rx="4" ry="3.4" transform="rotate(-18 2087.4 657.3)"/><ellipse cx="2074.1" cy="668" rx="5" ry="2.6" transform="rotate(0 2074.1 668)"/><ellipse cx="2025.7" cy="695.8" rx="5.3" ry="2.6" transform="rotate(-4 2025.7 695.8)"/><ellipse cx="1437.5" cy="830" rx="5.6" ry="2.2" transform="rotate(-7 1437.5 830)"/><ellipse cx="1373.1" cy="820.3" rx="3.9" ry="2.8" transform="rotate(-10 1373.1 820.3)"/><ellipse cx="1444.3" cy="818.4" rx="5.3" ry="2.1" transform="rotate(17 1444.3 818.4)"/><ellipse cx="1397.7" cy="812.9" rx="5.1" ry="3.3" transform="rotate(8 1397.7 812.9)"/><ellipse cx="524.7" cy="758.4" rx="5.5" ry="3.4" transform="rotate(13 524.7 758.4)"/><ellipse cx="473.4" cy="739.3" rx="5.6" ry="3.5" transform="rotate(1 473.4 739.3)"/><ellipse cx="427.6" cy="748.3" rx="4.7" ry="2.3" transform="rotate(20 427.6 748.3)"/><ellipse cx="520.9" cy="754" rx="6.4" ry="2.1" transform="rotate(-2 520.9 754)"/></g></g></svg></div>
+</section><section id="winter" class="sec ch ch-void" aria-labelledby="h-winter" data-axis style="--ts:12.7;--tq:13.7;--vx:18.9;--vy:34.9">
+<p class="tag"><span class="tag-n">其四</span><span class="tag-k">冬</span><span class="tag-t">立冬以後</span></p><div class="title"><h2 id="h-winter" class="name">霜前冬片</h2><img class="seal stamp" src="assets/seal-winter.svg" alt="" width="100" height="100" style="--rot:1.4deg"></div><p class="story">立冬以後，若遇上幾天回暖，茶樹會以為春天又來了，再抽一次芽。這一批叫「冬片」，產量只有春茶的一成，香氣高、身骨輕，像山上第一場冷霧。</p><p class="note"><span class="note-k">品</span>清花香、雪梨、冷杉林。湯色淡金，適合<em>冷天早晨</em>的第一杯。</p><p class="spec-line"><span class="sr-only">霜前冬片茶單：</span><span class="nb">四季春</span>　<span class="nb">輕發酵約二成</span>　<span class="nb">微焙</span>　<span class="nb">水溫<span class="tcy">90</span>度</span>　<span class="nb">首泡<span class="tcy">45</span>秒</span>　<span class="nb">每兩五二〇元</span>　<span class="nb">限量一二〇兩</span></p>
+<div class="land" aria-hidden="true"><img src="assets/land-winter.svg" alt="" width="2400" height="1000" decoding="async"><svg class="ink" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false"><defs><path id="c-winter" d="M2370 961L2358 959L2346 957L2334 956L2322 954L2310 953L2298 951L2286 951L2274 950L2262 948L2250 945L2238 941L2226 938L2214 935L2202 929L2190 926L2178 924L2166 920L2154 917L2142 915L2130 914L2118 911L2106 911L2094 910L2082 910L2070 908L2058 905L2046 903L2034 901L2022 899L2010 897L1998 896L1986 894L1974 894L1962 895L1950 896L1938 896L1926 897L1914 898L1902 900L1890 902L1878 905L1866 909L1854 913L1842 918L1830 922L1818 925L1806 929L1794 932L1782 935L1770 938L1758 941L1746 946L1734 950L1722 952L1710 954L1698 955L1686 958L1674 960L1662 962L1650 963L1638 965L1626 966L1614 969L1602 969L1590 968L1578 967L1566 966L1554 966L1542 966L1530 966L1518 966L1506 966L1494 966L1482 967L1470 967L1458 966L1446 966L1434 966L1422 966L1410 966L1398 967L1386 967L1374 968L1362 968L1350 967L1338 967L1326 968L1314 969L1302 969L1290 969L1278 967L1266 967L1254 968L1242 969L1230 970L1218 970L1206 970L1194 970L1182 970L1170 970L1158 970L1146 970L1134 971L1122 971L1110 971L1098 969L1086 969L1074 969L1062 970L1050 971L1038 971L1026 970L1014 971L1002 970L990 970L978 970L966 970L954 969L942 968L930 968L918 968L906 968L894 967L882 966L870 966L858 967L846 969L834 970L822 970L810 971L798 971L786 970L774 968L762 967L750 966L738 964L726 962L714 961L702 959L690 957L678 954L666 951L654 947L642 944L630 942L618 939L606 937L594 932L582 929L570 927L558 924L546 921L534 918L522 916L510 916L498 915L486 914L474 913L462 912L450 911L438 912L426 914L414 916L402 918L390 920L378 921L366 922L354 922L342 926L330 927L318 929L306 931L294 933L282 935L270 936L258 938L246 941L234 944L222 948L210 952L198 955L186 958L174 959L162 961L150 962L138 964L126 966L114 969L102 971L90 971L78 971L66 969L54 968L42 968L30 966" pathLength="1"/><radialGradient id="b-winter"><stop offset="0" stop-opacity=".16"/><stop offset=".6" stop-opacity=".07"/><stop offset="1" stop-opacity="0"/></radialGradient><linearGradient id="g-winter" gradientUnits="userSpaceOnUse" x1="2400" y1="0" x2="0" y2="0"><stop offset="0" stop-opacity="1"/><stop offset="0.12" stop-opacity="0.865"/><stop offset="0.35" stop-opacity="0.835"/><stop offset="0.6" stop-opacity="0.855"/><stop offset="0.82" stop-opacity="0.6920000000000001"/><stop offset="1" stop-opacity="0.9"/></linearGradient><mask id="m-winter" maskUnits="userSpaceOnUse" x="0" y="0" width="2400" height="1000"><use href="#c-winter" class="nib lead2" stroke-width="75"/><use href="#c-winter" class="nib lead1" stroke-width="75"/><use href="#c-winter" class="nib" stroke-width="75"/></mask></defs><g class="ink-body" mask="url(#m-winter)"><g fill="url(#b-winter)"><ellipse cx="2348" cy="959" rx="30" ry="24"/><ellipse cx="2022" cy="899" rx="29" ry="20"/><ellipse cx="693" cy="955" rx="34" ry="26"/><ellipse cx="462" cy="912" rx="32" ry="17"/></g><path class="core" d="M2371 955L2360 948L2348 943L2335 944L2323 947L2311 944L2299 943L2286 944L2275 941L2265 936L2254 933L2241 930L2228 930L2217 927L2205 921L2192 919L2180 917L2168 913L2155 910L2143 910L2131 905L2119 902L2106 902L2094 901L2083 902L2072 898L2060 896L2048 893L2036 891L2023 889L2011 887L1999 887L1986 887L1974 888L1962 890L1950 891L1938 890L1925 890L1913 890L1901 893L1888 894L1875 895L1863 899L1850 903L1838 908L1827 913L1816 918L1804 922L1792 926L1781 932L1769 935L1757 939L1745 944L1734 948L1722 950L1710 953L1698 955L1686 958L1674 960L1662 962L1662 962L1674 961L1686 958L1698 956L1710 955L1722 953L1734 951L1747 948L1759 944L1771 941L1783 938L1795 935L1807 932L1819 929L1832 929L1845 927L1858 924L1869 918L1880 914L1892 913L1904 909L1915 905L1926 903L1938 902L1950 903L1962 901L1974 900L1986 901L1997 902L2009 905L2021 907L2033 909L2044 911L2056 912L2068 917L2081 916L2094 918L2106 920L2117 921L2129 920L2141 922L2153 924L2164 928L2176 932L2188 933L2199 936L2211 943L2224 947L2235 950L2247 955L2260 957L2273 957L2285 959L2297 960L2309 961L2321 965L2333 966L2345 966L2357 965L2369 965ZM715 957L703 951L692 948L680 945L669 940L655 943L643 938L631 937L619 933L608 930L597 923L584 918L572 917L560 915L549 911L536 909L523 907L510 908L499 906L487 900L475 901L463 898L450 898L437 901L425 906L412 906L401 910L389 911L377 911L365 911L352 912L340 918L329 921L317 922L305 923L293 929L281 929L269 932L257 935L245 938L234 943L221 946L210 951L198 954L186 957L174 959L162 961L162 961L174 959L186 958L198 956L210 953L223 950L235 946L247 944L259 941L271 940L283 941L295 938L307 935L319 934L331 933L343 932L356 931L366 927L379 930L391 930L404 928L416 926L428 923L439 919L450 920L462 921L473 921L485 922L497 926L510 928L521 927L532 929L544 929L556 933L568 935L581 936L591 942L604 944L617 945L629 947L641 950L652 955L663 962L676 963L688 967L700 969L713 965Z" fill="url(#g-winter)"/><path class="white" d="M2047 898L2035 896L2023 894L2011 893L1999 891L1986 890M1914 893L1901 895L1889 897L1877 900M1770 936L1758 940L1746 945L1734 948M2010 900L1998 898L1986 897L1974 897L1962 898L1950 898L1938 899L1926 900L1914 901L1903 903L1891 905L1879 908L1867 912M1998 898L1986 897L1974 897L1962 897L1950 898L1938 899L1926 900L1914 901L1902 902L1891 905L1879 908L1867 912L1855 916L1843 921L1831 924L1819 927L1806 930M402 919L390 921L378 922M474 909L462 908L450 908L438 909L426 911L414 913L402 915L390 917L378 918L366 919L354 920L341 923L330 925L318 926L306 929L294 931" stroke-width="1.6"/><path class="white" d="M1914 899L1902 901L1890 903L1878 906L1866 910M1818 926L1806 929M1782 936L1770 939L1758 942L1746 946L1734 950M2009 902L1997 901L1986 899L1974 899M1844 924L1831 927L1819 929L1807 932L1795 935L1783 938M1998 897L1986 896L1974 896L1962 896L1950 897L1938 898L1926 899L1914 900L1902 901L1890 904L1878 907L1867 910L1855 915L1842 920L1830 923L1818 926L1806 929L1794 932M438 916L427 918L415 920L403 922L390 923M307 934L294 936M270 938L258 940L246 942L234 945M462 905L450 905L437 905L425 908L413 910L401 912L389 914L378 915L366 916L353 917L341 920L329 922L317 924L305 926L293 929L282 931L270 933L258 936L246 939" stroke-width="2.6"/><path class="dry" d="M1757 939L1746 944L1733 948M1877 902L1864 906L1852 910L1841 915L1829 917L1816 921L1804 924L1792 927L1781 930L1769 933L1756 937L1745 941L1733 945L1721 947L1709 948L1697 950L1685 953L1673 955M330 928L319 930L306 932L295 935L283 936M293 933L282 934L269 935L258 936L246 939M340 922L329 924L318 924L305 926L294 929L281 929M245 935L232 939" stroke-width="2"/><path class="dry" d="M1890 900L1877 902L1865 906L1853 910L1841 916L1829 918L1818 922L1805 925L1793 929L1781 932L1769 935L1757 938L1745 942L1733 945L1722 947M1818 924L1805 928M294 933L282 934L269 936L257 938L246 940L234 944L221 948M354 922L342 926L330 928L318 929L306 930L294 933L281 934L270 937L258 939L246 942L235 944L222 949L209 951M306 929L293 931" stroke-width="3.2"/><g class="dots"><ellipse cx="2003.2" cy="879.6" rx="5.6" ry="2.8" transform="rotate(-12 2003.2 879.6)"/><ellipse cx="2103" cy="889.9" rx="3.9" ry="3.2" transform="rotate(-18 2103 889.9)"/><ellipse cx="2170.8" cy="906" rx="4.5" ry="2.7" transform="rotate(14 2170.8 906)"/><ellipse cx="2152.5" cy="905.9" rx="6.1" ry="3.3" transform="rotate(-9 2152.5 905.9)"/><ellipse cx="2253.7" cy="933.6" rx="5" ry="3.5" transform="rotate(-19 2253.7 933.6)"/><ellipse cx="2146.5" cy="897.7" rx="4.1" ry="2.1" transform="rotate(7 2146.5 897.7)"/><ellipse cx="507.5" cy="904.2" rx="6.2" ry="2.4" transform="rotate(-17 507.5 904.2)"/><ellipse cx="499.4" cy="899.9" rx="3.9" ry="2.7" transform="rotate(-4 499.4 899.9)"/><ellipse cx="322" cy="915.7" rx="5.7" ry="3.5" transform="rotate(-12 322 915.7)"/><ellipse cx="564.8" cy="915.7" rx="3.8" ry="3.5" transform="rotate(-6 564.8 915.7)"/><ellipse cx="363.8" cy="905.9" rx="3.9" ry="2.3" transform="rotate(-24 363.8 905.9)"/><ellipse cx="367.3" cy="908.8" rx="6.3" ry="2.1" transform="rotate(4 367.3 908.8)"/></g></g></svg></div>
+</section>
+<div class="geshui" aria-hidden="true"></div>
+<div class="trail-zone">
+<section id="brew" class="sec brew" aria-labelledby="h-brew" data-axis>
+<h2 id="h-brew" class="name">沖泡五籤</h2>
+<p class="brew-intro">茶行櫃檯擺著一只竹籤筒。客人問怎麼泡，我們就請他抽一支——其實五支都要照做，只是抽到哪一支，那一步就多留心一點。</p>
+<figure class="lotpot"><img src="assets/lotpot.svg" alt="櫃檯上的竹籤筒，筒裡還插著十幾支竹籤" width="260" height="430" decoding="async"></figure>
+<ol class="lots" tabindex="0" aria-label="五支沖泡籤，依序由右至左"><li class="lot" style="--off:19.5;--tilt:-1deg;--len:63.1;--ov:2.6;z-index:1"><p class="lot-head"><span class="lot-no">第一籤</span><span class="lot-rank">上上</span></p><h3 class="lot-title">溫器</h3><p class="lot-poem"><span>沸水先澆壺與杯</span><span>壺溫杯熱氣方回</span><span>茶香最怕冷器擾</span><span>頭道清水莫嫌費</span></p><p class="lot-gloss"><b>解曰</b>水滾後先燙壺、燙杯，倒掉不喝。器溫，香才聚得住。</p></li><li class="lot" style="--off:16.4;--tilt:-2deg;--len:59.2;--ov:1.4;z-index:2"><p class="lot-head"><span class="lot-no">第二籤</span><span class="lot-rank">上吉</span></p><h3 class="lot-title">置茶</h3><p class="lot-poem"><span>三克茶葉鋪壺底</span><span>捲球只鋪四分一</span><span>條索輕放莫壓實</span><span>葉有餘地味方齊</span></p><p class="lot-gloss"><b>解曰</b>一百五十毫升的壺，放三到四克。球狀茶會舒展成五倍大，別放太滿。</p></li><li class="lot" style="--off:3.6;--tilt:-3.2deg;--len:56.4;--ov:3.2;z-index:3"><p class="lot-head"><span class="lot-no">第三籤</span><span class="lot-rank">中吉</span></p><h3 class="lot-title">注水</h3><p class="lot-poem"><span>包種美人八十五</span><span>觀音要水九十五</span><span>冬片居中九十度</span><span>沿壺邊注莫沖心</span></p><p class="lot-gloss"><b>解曰</b>水溫依茶而定。沿著壺壁繞圈注水，不要直沖茶葉中心。</p></li><li class="lot" style="--off:5.1;--tilt:-4.3deg;--len:52.2;--ov:1.7;z-index:4"><p class="lot-head"><span class="lot-no">第四籤</span><span class="lot-rank">上上</span></p><h3 class="lot-title">出湯</h3><p class="lot-poem"><span>首泡五十秒為期</span><span>每回遞加十五秒</span><span>湯要倒盡莫留底</span><span>悶久苦澀便難回</span></p><p class="lot-gloss"><b>解曰</b>每一泡都把茶湯倒乾淨，留在壺裡的水會讓下一泡變苦。</p></li><li class="lot" style="--off:6.7;--tilt:-5.5deg;--len:62.6;--ov:1.5;z-index:5"><p class="lot-head"><span class="lot-no">第五籤</span><span class="lot-rank">大吉</span></p><h3 class="lot-title">回沖</h3><p class="lot-poem"><span>好茶能泡五六回</span><span>葉底舒展見真材</span><span>末泡留與自己飲</span><span>山霧散時客再來</span></p><p class="lot-gloss"><b>解曰</b>泡到第六回，葉片全開，茶湯轉淡而甘。最後一杯，留給泡茶的人。</p></li></ol>
+</section>
+<section id="shop" class="sec shop" aria-labelledby="h-shop" data-axis>
+<h2 id="h-shop" class="name">訪茶行</h2>
+<dl class="visit"><div><dt>地址</dt><dd>新北市石碇區　溪畔老街十二號（過石碇橋左轉）</dd></div><div><dt>營業</dt><dd>週二至週日　上午十時至晚上七時；週一公休</dd></div><div><dt>試茶</dt><dd>每日下午二時、四時各一席，每席四位，請先來電預約</dd></div><div><dt>電話</dt><dd>（〇二）〇〇〇〇・三一八七</dd></div><div><dt>郵購</dt><dd>全臺宅配，滿一斤免運費</dd></div></dl>
+<figure class="jars"><img src="assets/jars.svg" alt="水墨小品：茶行門口一大一小兩只老茶甕，甕身貼著寫有「茶」字的斗方紅紙" width="360" height="300" decoding="async"><figcaption>店門口那兩只半人高的茶甕，是民國四十八年開店時就在的。</figcaption></figure>
+</section>
+</div>
+</main>
+<footer id="colophon" class="trail trail-zone" data-axis>
+<h2 class="ba">跋</h2>
+<p class="ba-text">這卷茶單照四季的次序展開：春天趁霧採，夏天等蟲來，秋天守著火，冬天碰運氣。茶事年年相似，霧卻每天不同。歡迎上山走走，或到溪畔的茶行坐一會兒。</p>
+<p class="sign">歲次丙午　秋　簡山青　記於石碇溪畔</p>
+<img class="seal seal-name" src="assets/seal-name.svg" alt="" width="100" height="100" style="--rot:-0.7deg">
+<p class="copy">© 民國一一五年　山霧茶行</p>
+<p class="back"><a href="#top">捲回卷首</a></p>
+<div class="rod" aria-hidden="true"></div>
+</footer>
+</div>
+<div class="scroll-spacer" aria-hidden="true"></div>
+<script>
+
+(() => {
+  const d = document, root = d.documentElement, sc = d.querySelector('.scroll');
+  if (!sc) return;
+  const wide = matchMedia('screen and (min-width: 960px) and (min-height: 560px)');
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
+  const how = () => still.matches ? 'instant' : 'smooth';
+  const spacer = d.querySelector('.scroll-spacer');
+  const travel = () => Math.max(0, sc.scrollWidth - sc.clientWidth);
+  const fit = () => {
+    if (!wide.matches) { spacer.style.height = '0px'; return; }
+    spacer.style.height = Math.round(travel() + innerHeight - sc.offsetHeight) + 'px';
+    if (Math.abs(-sc.scrollLeft - scrollY) > 1) sc.scrollTo({ left: -scrollY, behavior: 'instant' });
+  };
+  addEventListener('scroll', () => {
+    if (wide.matches && Math.abs(-sc.scrollLeft - scrollY) > 1) sc.scrollTo({ left: -scrollY, behavior: 'instant' });
+    req();
+  }, { passive: true });
+  sc.addEventListener('scroll', () => {
+    if (wide.matches && Math.abs(-sc.scrollLeft - scrollY) > 1) scrollTo({ top: -sc.scrollLeft, behavior: 'instant' });
+    req();
+  }, { passive: true });
+  addEventListener('keydown', e => {
+    if (!wide.matches || e.altKey || e.ctrlKey || e.metaKey || sc.contains(e.target)) return;
+    const dx = e.key === 'ArrowLeft' ? 80 : e.key === 'ArrowRight' ? -80 : 0;
+    if (dx) { e.preventDefault(); scrollBy({ top: dx, behavior: still.matches ? 'instant' : 'smooth' }); }
+  });
+  const marks = [...d.querySelectorAll('[data-axis]')];
+  const links = [...d.querySelectorAll('.axis a')];
+  const place = () => {
+    if (!wide.matches) return;
+    const W = sc.scrollWidth, edge = sc.getBoundingClientRect().left + sc.clientWidth;
+    marks.forEach((m, i) => { const at = (edge - m.getBoundingClientRect().right - sc.scrollLeft) / W; links[i] && links[i].parentNode.style.setProperty('--at', Math.max(0, at).toFixed(4)); });
+  };
+  let raf = 0;
+  const tick = () => {
+    raf = 0;
+    const w = wide.matches;
+    const max = w ? sc.scrollWidth - sc.clientWidth : root.scrollHeight - innerHeight;
+    const pos = w ? -sc.scrollLeft : scrollY;
+    root.style.setProperty('--p', max > 0 ? Math.min(1, Math.max(0, pos / max)).toFixed(4) : 0);
+    root.style.setProperty('--win', (sc.clientWidth / sc.scrollWidth).toFixed(4));
+    let cur = 0;
+    let top = -1;
+    marks.forEach((m, i) => {
+      const r = m.getBoundingClientRect();
+      if (!w) { if (r.top < innerHeight * 0.4) cur = i; return; }
+      const share = Math.max(0, Math.min(r.right, innerWidth) - Math.max(r.left, 0));
+      if (share >= top - innerWidth * 0.06) cur = i;
+      if (share > top) top = share;
+    });
+    if (max > 0 && pos <= 2) cur = 0;
+    if (max > 0 && pos >= max - 2) cur = marks.length - 1;
+    links.forEach((a, i) => i === cur ? a.setAttribute('aria-current', 'location') : a.removeAttribute('aria-current'));
+  };
+  const lands = [...d.querySelectorAll('.land')];
+  const ink = () => {
+    if (still.matches) { lands.forEach(l => { l.style.removeProperty('--k'); l.style.removeProperty('--o'); }); return; }
+    const w = wide.matches, V = w ? sc.clientWidth : innerHeight;
+    lands.forEach(l => {
+      const r = l.getBoundingClientRect(), cl = x => Math.min(1, Math.max(0, x));
+      const k = w ? cl((r.right - 0.42 * V) / r.width) : cl((0.85 * V - r.top) / (0.5 * V));
+      const o = 0.95 - 0.65 * (w ? cl((r.left - 0.42 * V) / (0.5 * V)) : cl((0.35 * V - r.top) / (0.4 * V)));
+      const key = k.toFixed(3) + '/' + o.toFixed(2);
+      if (l._ink === key) return;
+      l._ink = key; l.style.setProperty('--k', k.toFixed(3)); l.style.setProperty('--o', o.toFixed(2));
+    });
+  };
+  function frame() { tick(); ink(); }
+  function req() { raf = raf || requestAnimationFrame(frame); }
+  addEventListener('resize', () => { fit(); place(); frame(); });
+  d.fonts && d.fonts.ready.then(() => { fit(); place(); frame(); });
+  fit(); place(); frame();
+  const seals = d.querySelectorAll('.stamp');
+  if ('IntersectionObserver' in window && !still.matches) {
+    const io = new IntersectionObserver(es => es.forEach(en => { if (en.intersectionRatio >= 0.9) { en.target.classList.add('is-stamped'); io.unobserve(en.target); } }), { rootMargin: wide.matches ? '0px -12% 0px -12%' : '-10% 0px -10% 0px', threshold: [0.9, 1] });
+    seals.forEach(s => io.observe(s));
+  } else seals.forEach(s => s.classList.add('is-stamped'));
+})();
+
+</script>
+</body>
+</html>

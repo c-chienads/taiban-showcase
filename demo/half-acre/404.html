@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F04" data-slug="half-acre">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>找不到頁面｜半畝建築事務所｜只蓋一百坪以內的房子</title>
+<meta name="description" content="找不到這個頁面。">
+<meta name="color-scheme" content="light dark">
+<meta name="generator" content="套版網站平台 F04">
+<link rel="icon" href="data:,">
+<link rel="preload" href="fonts/01-noto-sans-tc.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/02-cactus-classical-serif.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"Noto Sans TC";src:url("fonts/01-noto-sans-tc.woff2") format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Cactus Classical Serif";src:url("fonts/02-cactus-classical-serif.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Archivo";src:url("fonts/03-archivo.woff2") format("woff2");font-weight:400 700;font-stretch:75% 118%;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root{
+  /* 淺色：黃描圖紙（建築師畫草圖用的捲筒黃描，canary trace），鈷藍墨線＋紅筆 */
+  --paper: oklch(0.945 0.046 90);
+  --paper-2: oklch(0.918 0.05 88);
+  --paper-3: oklch(0.89 0.052 86);
+  --ink: oklch(0.25 0.035 262);
+  --ink-2: oklch(0.37 0.052 68);
+  --line: oklch(0.42 0.13 262);
+  --line-2: oklch(0.6 0.075 255);
+  --ghost: oklch(0.79 0.045 82);
+  --red: oklch(0.545 0.19 27);
+  --red-ink: oklch(0.5 0.185 27);
+  --mast-h: 64px;
+  --ruler-h: 64px;
+  --th: clamp(700px, calc(100svh - var(--mast-h) - var(--ruler-h)), 1060px);
+  --tb-w: 184px;
+  --tm: .8;   /* 描線時間倍率：桌機 .8，手機 .5（往下捲得快，圖要先畫好） */
+  --f-sans: "Noto Sans TC", sans-serif;
+  --f-tech: "Archivo", "Noto Sans TC", sans-serif;
+  --f-disp: "Cactus Classical Serif", "Noto Sans TC", serif;
+  --focus-ring: 2px dashed var(--red);
+  --focus-offset: 3px;
+  --selection-bg: oklch(0.86 0.07 30);
+  --selection-fg: var(--ink);
+}
+/* 深色：藍晒圖。不是反相——紙變成普魯士藍，線變成白，紅筆換成在藍底上看得見的珊瑚紅蠟筆 */
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper: oklch(0.305 0.085 254);
+    --paper-2: oklch(0.335 0.088 254);
+    --paper-3: oklch(0.37 0.09 254);
+    --ink: oklch(0.975 0.01 240);
+    --ink-2: oklch(0.87 0.035 240);
+    --line: oklch(0.95 0.025 236);
+    --line-2: oklch(0.74 0.06 242);
+    --ghost: oklch(0.52 0.07 250);
+    --red: oklch(0.78 0.13 40);
+    --red-ink: oklch(0.82 0.11 45);
+    --selection-bg: oklch(0.6 0.12 40);
+    --selection-fg: oklch(0.99 0 0);
+  }
+}
+:root{color-scheme:light dark}
+html{background:var(--paper)}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-size:16px;line-height:1.78;font-weight:400}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+a:hover{color:var(--red-ink)}
+.skip,.skip:hover{background:var(--ink);color:var(--paper);font-size:15px;text-decoration:none}
+td,th{text-wrap:pretty}
+.tech,.n{font-family:var(--f-tech);font-variation-settings:"wdth" 82}
+:lang(zh) em{text-emphasis:none;font-weight:inherit;text-decoration:underline 1.5px var(--red);text-underline-offset:.32em;text-decoration-skip-ink:none}
+.hand-lib{position:absolute;width:0;height:0;overflow:hidden}
+
+/* ---------- 刊頭 ---------- */
+.mast{height:var(--mast-h);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px;padding:0 28px;border-bottom:1px solid var(--ink)}
+.mast-brand{display:flex;align-items:center;gap:12px;min-height:40px;text-decoration:none;color:var(--ink)}
+.mast-brand svg{width:30px;height:30px;color:var(--line)}
+.mast-name{font-size:18px;font-weight:600;letter-spacing:.06em}
+.mast-en{font-family:var(--f-tech);font-variation-settings:"wdth" 112;font-size:12.5px;color:var(--ink-2);letter-spacing:.02em;padding-left:12px;border-left:1px solid var(--ghost)}
+.mast-nav{display:flex;gap:28px;justify-self:center}
+.mast-nav a{text-decoration:none;font-size:15px;padding:6px 0;border-bottom:1.5px solid transparent}
+.mast-nav a:hover{border-bottom-color:var(--red)}
+.mast-meta{display:flex;gap:18px;align-items:baseline;font-size:13px;color:var(--ink-2)}
+html:not(.js) .mast-count{display:none}
+.mast-count{font-family:var(--f-tech);font-variation-settings:"wdth" 90;font-size:13px;color:var(--ink)}
+.mast-count b{font-weight:700;color:var(--red-ink)}
+
+/* ---------- 圖冊：水平軌道 ---------- */
+.set{position:relative}
+.track{display:flex;height:var(--th);overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:var(--line-2) transparent;padding-inline:10px}
+.track:focus-visible{outline:var(--focus-ring);outline-offset:-8px}
+html.js .track{scrollbar-width:none}
+html.js .track::-webkit-scrollbar{display:none}
+.sheet{flex:none;height:100%;padding:16px 10px;scroll-snap-align:start;scroll-margin-top:var(--mast-h);position:relative}
+.sheet:focus{outline:none}
+.dots{display:none}
+.dots i{display:block;width:22px;height:4px;background:var(--line-2)}
+.dots i.on{background:var(--ink)}
+/* 裁切記號：圖框四角外側的十字短線 */
+.sheet::before,.sheet::after{content:"";position:absolute;inset:6px 0;pointer-events:none;
+  background:
+    linear-gradient(var(--ink-2),var(--ink-2)) left 10px top 0/1px 7px no-repeat,
+    linear-gradient(var(--ink-2),var(--ink-2)) right 10px top 0/1px 7px no-repeat,
+    linear-gradient(var(--ink-2),var(--ink-2)) left 10px bottom 0/1px 7px no-repeat,
+    linear-gradient(var(--ink-2),var(--ink-2)) right 10px bottom 0/1px 7px no-repeat}
+.sheet::after{inset:16px -0px;background:none}
+.frame{height:100%;display:grid;grid-template-columns:auto var(--tb-w);grid-template-rows:100%;border:2px solid var(--ink);box-shadow:inset 0 0 0 4px var(--paper),inset 0 0 0 4.8px var(--ink);background:var(--paper)}
+.body{display:grid;height:100%;min-width:0;padding:30px 36px 26px}
+
+/* ---------- 圖籤 ---------- */
+.tb{border-left:2px solid var(--ink);display:flex;flex-direction:column;min-height:0;overflow:hidden;font-size:12.5px;line-height:1.45;margin:4.8px 4.8px 4.8px 0;background:var(--paper)}
+.tb-firm{display:grid;grid-template-columns:30px 1fr;gap:2px 10px;align-items:center;padding:14px 14px 12px;border-bottom:1.5px solid var(--ink)}
+.tb-firm svg{width:30px;height:30px;color:var(--line);grid-row:span 2}
+.tb-firm b{font-size:13.5px;font-weight:600;letter-spacing:.04em}
+.tb-firm span{font-size:12px;color:var(--ink-2)}
+.tb dl{margin:0}
+.tb-rows{display:flex;flex-direction:column;flex:1;min-height:0}
+.tb .tb-r{padding:7px 14px 8px;border-bottom:1px solid var(--ghost)}
+.tb dt{font-size:12px;color:var(--ink-2);letter-spacing:.08em}
+.tb dd{margin:0;font-size:14px;font-weight:500}
+.tb .tb-2{display:grid;grid-template-columns:1fr 1fr;padding:0;border-bottom:1px solid var(--ghost)}
+.tb .tb-2>dl{padding:7px 14px 8px}
+.tb .tb-2>dl+dl{border-left:1px solid var(--ghost)}
+.tb .tb-rev{flex:none;display:flex;flex-direction:column}
+.tb .tb-rev dd{display:flex;flex-direction:column}
+
+.tb .tb-rev ol{list-style:none;margin:2px 0 0;padding:0;font-size:13px}
+.tb .tb-rev li{display:grid;grid-template-columns:18px 1fr;gap:8px;align-items:start;margin-top:4px}
+.tb .rv{display:flex;flex-direction:column;line-height:1.45}
+.tb .rv .tech{font-size:12px;color:var(--ink-2)}
+.tb .tri{position:relative;display:inline-grid;place-items:end center;width:17px;height:15px;margin-top:2px;font-family:var(--f-tech);font-size:11px;font-weight:700;color:var(--red-ink);line-height:1;padding-bottom:1px;isolation:isolate;align-self:center}
+.tb .tri::before,.tb .tri::after{content:"";position:absolute;clip-path:polygon(50% 0,100% 100%,0 100%);z-index:-1}
+.tb .tri::before{inset:0;background:var(--red-ink)}
+.tb .tri::after{inset:2.6px 2px 1.2px;background:var(--paper)}
+.tb .tb-none{font-size:12px;color:var(--ink-2)}
+.tb .tb-sign{display:grid;grid-template-columns:repeat(3,1fr);padding:0;border-bottom:0}
+.tb .tb-sign>dl{padding:7px 8px 9px;display:flex;flex-direction:column;gap:2px}
+.tb .tb-sign>dl+dl{border-left:1px solid var(--ghost)}
+.tb .tb-sign dt{font-size:12px;letter-spacing:.04em}
+.tb .tb-sign dd{font-size:13px;font-weight:400;white-space:nowrap}
+.tb-chk{display:block;width:30px;height:18px;margin-top:2px}
+/* 線型與附註：圖籤剩多少高就放多少（容器查詢；不夠高就整塊不出現，不會被截斷） */
+.tb-x{flex:1 1 0;min-height:0;container-type:size;display:flex;flex-direction:column;border-bottom:1px solid var(--ghost)}
+.tb-x>div{display:none;padding:6px 14px 7px}
+.tb-k{margin:0 0 3px;font-size:12px;color:var(--ink-2);letter-spacing:.08em;line-height:1.4}
+.tb-leg ul,.tb-notes ol{list-style:none;margin:0;padding:0}
+.tb-leg li{display:grid;grid-template-columns:38px 1fr;gap:8px;align-items:center;min-height:16px;font-size:12.5px;line-height:1.3}
+.tb-leg svg{width:36px;height:8px;fill:none;stroke:var(--ink)}
+.tb-leg .l3{stroke-width:2.6}.tb-leg .l2{stroke-width:1.5}.tb-leg .l1{stroke-width:.8}.tb-leg .lh{stroke-width:1.1;stroke-dasharray:5 3}
+.tb-notes li{display:none;grid-template-columns:15px 1fr;font-size:13px;line-height:1.4;margin-top:3px}
+.tb-notes .nn{font-family:var(--f-tech);color:var(--ink-2)}
+@container (min-height:98px){.tb-x>.tb-leg{display:flex;flex-direction:column;flex:1 1 auto}.tb-leg ul{flex:1;display:flex;flex-direction:column;justify-content:space-around}}
+@container (min-height:172px){.tb-x>.tb-notes{display:block;flex:1 1 auto;border-top:1px solid var(--ghost)}.tb-notes li:nth-child(1){display:grid}}
+@container (min-height:212px){.tb-notes li:nth-child(2){display:grid}}
+@container (min-height:250px){.tb-notes li:nth-child(3){display:grid}}
+.tb-no{border-top:2px solid var(--ink);padding:10px 14px 14px;display:grid;gap:2px}
+.tb-no span{font-size:12px;color:var(--ink-2)}
+.tb-no b{font-family:var(--f-tech);font-variation-settings:"wdth" 118;font-weight:700;font-size:34px;line-height:1.05;letter-spacing:-.01em;color:var(--ink)}
+.tb-no .tb-of{font-family:var(--f-tech);font-variation-settings:"wdth" 90;font-size:12.5px;color:var(--ink)}
+
+/* ---------- 共用：專案標題（標題上方帶一條尺寸線） ---------- */
+.ptitle{display:inline-grid;justify-items:stretch;margin:0}
+.pdim{display:flex;align-items:center;gap:8px;font-family:var(--f-tech);font-variation-settings:"wdth" 80;font-size:12.5px;color:var(--line);line-height:1;margin:0 0 6px;position:relative;padding:0 2px}
+.pdim::before,.pdim::after{content:"";flex:1;height:1px;background:currentColor}
+.pdim span{position:relative}
+.pdim i{position:absolute;top:50%;width:1px;height:12px;background:currentColor;transform:translateY(-50%) rotate(45deg)}
+.pdim i:first-child{left:0}.pdim i:last-child{right:0}
+.pdim b{position:absolute;top:-4px;bottom:-4px;width:1px;background:currentColor}
+.pdim b:nth-of-type(1){left:0}.pdim b:nth-of-type(2){right:0}
+.ptitle h2{font-family:var(--f-disp);font-size:62px;font-weight:400;font-synthesis:none;line-height:1.08;letter-spacing:.04em;margin:0}
+.pmeta{font-size:14px;color:var(--ink-2);margin:12px 0 0;letter-spacing:.04em}
+.pbody{font-size:16px;line-height:1.85;margin:22px 0 0;max-width:22em}
+.pdata{display:grid;grid-template-columns:auto 1fr;gap:0;margin:22px 0 0;border-top:1px solid var(--ink);font-size:14px}
+.pdata dt,.pdata dd{margin:0;padding:6px 0;border-bottom:1px solid var(--ghost)}
+.pdata dt{color:var(--ink-2);padding-right:18px;font-size:14px}
+.pdata dd{font-variant-numeric:tabular-nums}
+
+/* ---------- 圖面 ---------- */
+.fig{margin:0;display:flex;flex-direction:column;min-width:0}
+.fig svg.dwg{display:block;height:var(--fh);width:auto;max-width:none}
+.fig svg.mob{display:none}
+.fig figcaption{text-wrap:pretty;font-size:14px;color:var(--ink-2);margin-top:6px}
+.dwg{color:var(--line);overflow:visible}
+.dwg .c{fill:none;stroke:var(--line);stroke-linecap:round;stroke-linejoin:round}
+.dwg .f{stroke:none}
+.dwg .f.fillink,.dwg .fillink{fill:var(--line)}
+.dwg .cut{stroke-width:2.4}
+.dwg .mid{stroke-width:1.3}
+.dwg .thin{stroke-width:.75}
+.dwg .hair{stroke-width:.5}
+.dwg .tick{stroke-width:1.5;stroke-linecap:butt}
+.dwg .hid{stroke-width:.75;stroke-dasharray:5 3.5}
+.dwg .ghost{stroke:var(--ghost)}
+.dwg .keyc{fill:none;stroke:var(--line);stroke-width:.75}
+.dwg .dot{stroke-width:1.1;stroke-dasharray:.5 3.6}
+.dwg .w12{stroke-width:1.15}
+.dwg .redl.sun{stroke-width:1.25;stroke-dasharray:.012 .008}
+.dwg .chain{stroke-width:.9;stroke-dasharray:16 3 2 3 2 3}
+.dwg .bound{fill:none;stroke-width:2;stroke-dasharray:26 4 3 4 3 4}
+.dwg text.redt{fill:var(--red-ink)}
+.dwg .poche{fill:var(--line)}
+.dwg .axl{fill:none;stroke:var(--line-2);stroke-width:.6;stroke-dasharray:22 4 3 4}
+.dwg .cutl{fill:none;stroke:var(--line);stroke-width:.8;stroke-dasharray:22 4 3 4}
+.dwg .hz{fill:none;stroke:var(--line-2);stroke-width:.55}
+.dwg .hzf{fill:var(--line-2)}
+.dwg .hatchfill{stroke:none}
+.dwg text{fill:var(--ink);font-family:var(--f-sans);paint-order:stroke;stroke:var(--paper);stroke-width:3.2px;stroke-linejoin:round}
+.dwg text.n{font-family:var(--f-tech);font-variation-settings:"wdth" 78;letter-spacing:.01em}
+.dwg text.nb{font-weight:700}
+.dwg text.tbd{font-weight:600;letter-spacing:.08em}
+.dwg text.dim2{fill:var(--ink-2)}
+.dwg .redl{fill:none;stroke:var(--red);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.dwg .hand use{fill:var(--red-ink)}
+.dwg [data-k]{transition:stroke .15s,fill .15s}
+
+/* 招牌時刻：圖面依製圖順序被描出來（只在 html.js、且未要求降低動態時） */
+@media (prefers-reduced-motion: no-preference){
+  html.js .dwg .c{stroke-dasharray:1 1;stroke-dashoffset:1;transition:stroke-dashoffset calc(.75s * var(--tm)) cubic-bezier(.45,.05,.3,1) calc(var(--d,0) * var(--tm) * 1ms)}
+  html.js .dwg .L-cut .c{transition-duration:calc(.95s * var(--tm))}
+  html.js .dwg .L-dim .c{transition-duration:calc(.45s * var(--tm))}
+  html.js .dwg .L-red .c{transition-duration:calc(.8s * var(--tm));transition-timing-function:cubic-bezier(.6,0,.4,1)}
+  html.js .dwg .hid.c,html.js .dwg .L-proj .hid{stroke-dasharray:5 3.5;stroke-dashoffset:0;opacity:0;transition:opacity .5s calc(var(--d,0) * var(--tm) * 1ms)}
+  html.js .dwg .f{opacity:0;transition:opacity .6s calc(var(--d,0) * var(--tm) * 1ms)}
+  html.js .dwg .x{opacity:0;transition:opacity .5s calc(var(--d,0) * var(--tm) * 1ms)}
+  html.js .dwg .hand use{opacity:0;transition:opacity .18s calc(var(--d,0) * var(--tm) * 1ms)}
+  html.js .dwg .wipe{transition:clip-path calc(1.6s * var(--tm)) cubic-bezier(.5,0,.3,1) .1s}
+  html.js .dwg.sw-x .wipe{clip-path:inset(0 100% 0 0)}
+  html.js .dwg.sw-y .wipe{clip-path:inset(0 0 100% 0)}
+  html.js .dwg.sw-up .wipe{clip-path:inset(100% 0 0 0)}
+  html.js .dwg .L-hatch.wipe{transition-delay:calc(.7s * var(--tm));transition-duration:calc((var(--span,1s) + .4s) * var(--tm))}
+  html.js .is-drawn .dwg .c{stroke-dashoffset:0}
+  html.js .dwg .redl.sun{stroke-dasharray:.012 .008;stroke-dashoffset:0;opacity:0;transition:opacity .7s calc(var(--d,0) * var(--tm) * 1ms)}
+  html.js .is-drawn .dwg .sun,html.js .is-drawn .dwg .hid,html.js .is-drawn .dwg .f,html.js .is-drawn .dwg .x,html.js .is-drawn .dwg .hand use{opacity:1}
+  html.js .is-drawn .dwg .wipe{clip-path:inset(0 0 0 0)}
+}
+
+/* ---------- 封面 A-000 ---------- */
+.sheet--cover{width:calc(100vw - 20px);min-width:1180px}
+.body--cover{grid-template-columns:minmax(0,500px) minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:48px;align-content:start}
+.cover-head{grid-column:1;grid-row:1}
+.cover-h1{margin:0;display:flex;flex-wrap:wrap;align-items:flex-end;gap:4px 18px;line-height:1;font-family:var(--f-disp);font-weight:400;font-synthesis:none}
+.h1-big{font-size:min(calc(var(--th) * .175), 128px);white-space:nowrap;font-weight:400;letter-spacing:-.02em;line-height:.92}
+.h1-sub{font-size:26px;font-weight:400;letter-spacing:.3em;padding-bottom:.35em;writing-mode:horizontal-tb}
+.cover-dim{width:calc(var(--th) * .4);margin:14px 0 0}
+.lead{font-size:18px;line-height:1.9;margin:26px 0 0;max-width:30em;text-wrap:pretty}
+.cover-index{grid-column:1;grid-row:2;align-self:end}
+.cover-index h2{font-size:15px;font-weight:600;letter-spacing:.24em;margin:0 0 8px}
+.idx{width:100%;font-size:14px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.idx th{font-size:12px;font-weight:500;color:var(--ink-2);text-align:left;padding:8px 10px 8px 0;border-bottom:1px solid var(--ink);letter-spacing:.08em}
+.idx td{padding:9px 10px 9px 0;border-bottom:1px solid var(--ghost);vertical-align:baseline}
+.idx tr:last-child td{border-bottom:0}
+.idx td:first-child{font-family:var(--f-tech);font-variation-settings:"wdth" 100;font-weight:600;white-space:nowrap}
+.idx a{text-decoration:none}
+.idx a:hover{text-decoration:underline}
+.idx .yr{font-family:var(--f-tech);font-variation-settings:"wdth" 85;text-align:right;padding-right:0}
+.body--cover .fig.key{grid-column:2;grid-row:1/3;align-self:center;--fh:calc(var(--th) * .8)}
+
+/* ---------- A-101 平面（大圖面） ---------- */
+.body--plan{grid-template-columns:300px auto;column-gap:40px;align-items:start}
+.body--plan .fig{--fh:calc(var(--th) - 120px);align-self:center}
+
+.walk{margin:26px 0 0;font-size:14px;color:var(--ink-2);display:flex;gap:10px;align-items:center}
+.walk span{font-family:var(--f-tech);color:var(--line);font-size:16px}
+.fig.key svg.desk{width:100%;height:auto;max-height:var(--fh)}
+
+/* ---------- A-301 剖面＋材料表 ---------- */
+.body--section{grid-template-columns:auto 420px;column-gap:44px;align-items:center}
+.body--section .fig{--fh:calc(var(--th) - 96px)}
+.spec{width:100%;margin-top:22px;font-size:14px;line-height:1.6;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink)}
+.spec caption{text-align:left;font-size:13px;letter-spacing:.2em;color:var(--ink-2);padding-bottom:6px;caption-side:top}
+.spec th,.spec td{padding:6px 8px 6px 0;border-bottom:1px solid var(--ghost);text-align:left;vertical-align:top}
+.spec thead th{font-size:12px;font-weight:500;color:var(--ink-2);border-bottom:1px solid var(--ink)}
+.spec td:nth-child(2){white-space:nowrap;font-weight:600}
+.hex{display:inline-grid;place-items:center;min-width:34px;height:20px;font-family:var(--f-tech);font-variation-settings:"wdth" 90;font-weight:700;font-size:12px;color:var(--line);clip-path:polygon(18% 0,82% 0,100% 50%,82% 100%,18% 100%,0 50%);background:var(--paper-3)}
+.spec tbody tr:hover{background:var(--paper-2)}
+.spec tbody tr:hover .hex{background:var(--red);color:var(--paper)}
+.spec-hint{font-size:14px;color:var(--ink-2);margin:10px 0 0}
+@media (hover:none){.spec-hint{display:none}}
+.body--section:has(tr[data-k="W1"]:hover) .dwg [data-k="W1"],
+.body--section:has(tr[data-k="R1"]:hover) .dwg [data-k="R1"],
+.body--section:has(tr[data-k="F1"]:hover) .dwg [data-k="F1"],
+.body--section:has(tr[data-k="F2"]:hover) .dwg [data-k="F2"],
+.body--section:has(tr[data-k="L1"]:hover) .dwg [data-k="L1"],
+.body--section:has(tr[data-k="S1"]:hover) .dwg [data-k="S1"]{stroke:var(--red)!important;color:var(--red)}
+.body--section:has(tr[data-k="W1"]:hover) .dwg text[data-k="W1"],
+.body--section:has(tr[data-k="R1"]:hover) .dwg text[data-k="R1"],
+.body--section:has(tr[data-k="F1"]:hover) .dwg text[data-k="F1"],
+.body--section:has(tr[data-k="F2"]:hover) .dwg text[data-k="F2"],
+.body--section:has(tr[data-k="L1"]:hover) .dwg text[data-k="L1"],
+.body--section:has(tr[data-k="S1"]:hover) .dwg text[data-k="S1"]{fill:var(--red-ink)!important}
+
+/* ---------- N-001 一般說明（三段文字） ---------- */
+.body--notes{grid-template-columns:minmax(0,500px) 330px;column-gap:48px;align-items:start}
+.pull{margin:30px 0 0;padding:0}
+.pull p{font-family:var(--f-disp);font-size:30px;line-height:1.5;font-weight:400;font-synthesis:none;text-indent:-.5em;max-width:15em;text-wrap:balance}
+.gn-h{font-size:13px;font-weight:500;letter-spacing:.24em;color:var(--ink-2);margin:34px 0 0;padding-bottom:6px;border-bottom:2px solid var(--ink)}
+.gnotes{list-style:none;padding:0;margin:0;counter-reset:gn}
+.gnotes li{counter-increment:gn;display:grid;grid-template-columns:44px 84px 1fr;gap:0 8px;padding:12px 0;border-bottom:1px solid var(--ghost)}
+.gnotes li::before{content:counter(gn) ".";font-family:var(--f-tech);font-variation-settings:"wdth" 80;font-weight:700;font-size:15px;color:var(--line);line-height:1.6}
+.gnotes h4{font-size:15px;font-weight:700;margin:0;line-height:1.6}
+.gnotes p{font-size:15px;line-height:1.8;margin:0}
+.notes-side{display:flex;flex-direction:column;gap:22px;padding-top:6px}
+.fig.det svg.both{width:100%;height:auto;max-width:340px}
+.notes-side .pdata{margin-top:0}
+
+/* ---------- A-201 立面 ---------- */
+.body--elev{grid-template-rows:auto auto;row-gap:10px;align-content:space-between}
+.body--elev .fig{--fh:calc(var(--th) * .66 - 40px)}
+.elev-text{display:grid;grid-template-columns:max-content minmax(0,30em) 250px;justify-content:start;column-gap:64px;align-items:start;padding-top:12px;border-top:1px solid var(--ghost)}
+.elev-text .pbody{margin-top:4px}
+.elev-text .pdata{margin-top:6px}
+.elev-text .ptitle h2{font-size:48px}
+
+/* ---------- SK-01 草圖 ---------- */
+.body--sketch{grid-template-columns:300px auto;column-gap:40px;align-items:center}
+.body--sketch .fig{--fh:calc(var(--th) - 100px)}
+.cta{margin:28px 0 0;font-size:17px;font-weight:600}
+.cta a{text-decoration:none;border-bottom:2px solid var(--red);padding-bottom:3px}
+.cta a:hover{color:var(--red-ink)}
+.skip,.skip:hover{background:var(--ink);color:var(--paper);font-size:15px;text-decoration:none}
+
+/* ---------- 圖號比例尺 ---------- */
+.ruler{height:var(--ruler-h);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:20px;padding:0 28px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);position:relative;background:var(--paper)}
+.ru-lab,.ru-tip{font-size:12.5px;color:var(--ink-2);letter-spacing:.1em}
+.ru-tip{margin:0;display:grid;gap:2px;justify-items:end;letter-spacing:0;line-height:1.35}
+.ru-tip span:first-child{font-family:var(--f-tech);font-variation-settings:"wdth" 85}
+.ru-key{display:flex;gap:4px;align-items:center;letter-spacing:.04em}
+.ru-key kbd{font-family:var(--f-tech);font-size:11px;line-height:1.2;border:1px solid var(--ink-2);padding:0 4px;border-radius:2px;color:var(--ink)}
+.ru-track{position:relative;height:38px}
+.ru-bar{list-style:none;margin:0;padding:0;display:flex;position:relative;height:38px}
+.ru-seg{flex:1;position:relative;height:38px}
+.ru-seg::after{content:"";position:absolute;left:0;right:0;top:6px;height:7px;box-sizing:border-box;border:1px solid var(--ink);border-right:0}
+.ru-seg:last-child::after{border-right:1px solid var(--ink)}
+.ru-seg.odd::after{background:var(--ink)}
+.ru-seg a{position:absolute;left:-1px;top:20px;font-family:var(--f-tech);font-variation-settings:"wdth" 92;font-size:12.5px;font-weight:600;text-decoration:none;padding:2px 4px 2px 0;line-height:1.3;white-space:nowrap}
+.ru-seg a[aria-current]{color:var(--red-ink)}
+.ru-seg::before{content:"";position:absolute;left:0;top:0;width:1px;height:19px;background:var(--ink)}
+.ruler.on .ru-bar{display:block}
+.ruler.on .ru-seg{position:absolute;left:calc(var(--x) * 100%);width:calc(var(--w) * 100%);top:0}
+.ru-win{display:none}
+.ruler.on .ru-win{display:block;position:absolute;top:1px;height:22px;border:2px solid var(--red);border-top-width:3px;pointer-events:none;
+  left:calc(var(--x,0) * 100%);width:calc(var(--w,.2) * 100%)}
+
+/* ---------- 事務所（縱向收尾）：B-001 平面圖＋引出註記＋簽名欄 ---------- */
+.office,.contact{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:28px;padding:96px 56px 80px;max-width:1440px;margin:0 auto}
+.contact{border-top:1px solid var(--ink);padding-top:72px}
+.office h2,.contact h2{grid-column:1/7;font-family:var(--f-disp);font-size:48px;font-weight:400;font-synthesis:none;line-height:1.3;letter-spacing:.03em;margin:0}
+.off-text{grid-column:7/12;grid-row:1;align-self:end;font-size:16px}
+.off-fig{--tm:.55;grid-column:1/13;margin-top:40px;border:2px solid var(--ink);border-bottom:0;padding:18px 18px 10px;box-shadow:inset 0 0 0 4px var(--paper),inset 0 0 0 4.8px var(--ink)}
+.off-fig svg.desk{width:100%;height:auto;max-width:none}
+.off-fig figcaption{margin-top:2px}
+.keys{list-style:none;margin:0;padding:0}
+@media (min-width:761px) and (min-height:541px){.keys{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+.keys li{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:12px 0}
+.keys .key,.crew .seat{display:grid;place-items:center;width:30px;height:30px;border:1.5px solid var(--line);border-radius:50%;font-family:var(--f-tech);font-variation-settings:"wdth" 90;font-weight:700;font-size:14px;color:var(--line)}
+.keys p{margin:0;font-size:16px}
+.keys b{display:block;font-size:18px;font-weight:700}
+.crew{grid-column:1/13;margin:0;display:grid;grid-template-columns:150px repeat(4,1fr);border:2px solid var(--ink)}
+.crew>div{padding:12px 16px 14px;border-left:1px solid var(--ink)}
+.crew>div:first-child{border-left:0}
+.crew dt{font-size:12.5px;color:var(--ink-2);letter-spacing:.1em}
+.crew dd{margin:6px 0 0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.crew dd b{font-size:17px;font-weight:700;letter-spacing:.06em}
+.crew dd .tech{font-size:14px;color:var(--ink-2)}
+.crew .seat{width:26px;height:26px;font-family:var(--f-sans);font-size:13px;font-weight:600}
+.crew-no dd{font-size:26px;font-weight:700;font-variation-settings:"wdth" 118;color:var(--ink)}
+
+/* ---------- 委託：表單做成圖籤格線 ---------- */
+.ct-lead{grid-column:7/12;grid-row:1;align-self:end;margin:0;font-size:16px}
+.ask{grid-column:1/13;margin-top:44px;display:grid;grid-template-columns:1fr 1fr 300px;grid-template-areas:"name tel firm" "city size firm" "msg msg recv" "send send no";border:2px solid var(--ink);box-shadow:inset 0 0 0 4px var(--paper),inset 0 0 0 4.8px var(--ink);padding:4.8px}
+.tc{padding:14px 18px 10px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;flex-direction:column;gap:4px;min-width:0}
+.tc-name{grid-area:name}.tc-tel{grid-area:tel}.tc-city{grid-area:city}.tc-size{grid-area:size}.tc-msg{grid-area:msg}
+.tc-send{grid-area:send;flex-direction:row;align-items:center;gap:22px;border-bottom:0;padding:16px 18px}
+.tc-firm{grid-area:firm;border-right:0;border-left:1px solid var(--ink);font-style:normal;font-size:14px;line-height:1.7;gap:2px;justify-content:flex-start}
+.tc-recv{grid-area:recv;border-right:0;border-left:1px solid var(--ink)}
+.tc-no{grid-area:no;border-right:0;border-bottom:0;border-left:1px solid var(--ink);border-top:1px solid var(--ink);margin-top:-1px}
+.tc-tel,.tc-size{border-right:0}
+.tc-msg{border-right:0}
+.firm-h{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.firm-h svg{width:26px;height:26px;color:var(--line)}
+.firm-h b{font-size:15px;letter-spacing:.06em}
+.tc-firm small{font-size:14px;color:var(--ink-2);margin-top:4px}
+.tc .lab{font-size:12.5px;color:var(--ink-2);letter-spacing:.1em}
+.tc-recv span:last-child{font-size:14px;color:var(--ink-2);margin-top:6px}
+.tc-no b{font-size:30px;font-weight:700;font-variation-settings:"wdth" 118;line-height:1.1}
+.tc-no span:last-child{font-size:13px;color:var(--ink-2)}
+.fld label{font-size:13.5px;font-weight:600;letter-spacing:.08em;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.fld label span{font-weight:400;font-size:13.5px;color:var(--ink-2);letter-spacing:.02em}
+.fld input,.fld textarea{background:transparent;border:0;border-bottom:1px dashed var(--ghost);padding:6px 0 4px;font-size:18px;color:var(--ink);border-radius:0;width:100%}
+.fld textarea{resize:vertical;line-height:1.7;min-height:5.2em;border:1px dashed var(--ghost);padding:6px 8px}
+.fld input::placeholder{color:var(--ink-2);opacity:1}
+.fld input:focus-visible,.fld textarea:focus-visible{outline:none}
+.tc:focus-within{outline:var(--focus-ring);outline-offset:-5px}
+.unit{display:flex;align-items:baseline;gap:8px}
+.unit input{flex:1;min-width:0}
+.unit span{font-size:15px}
+.err{min-height:1.4em;margin:0;font-size:14px;color:var(--red-ink);font-weight:500}
+.fld[data-bad]{background:color-mix(in oklch,var(--red) 7%,transparent)}
+.ask button{font:inherit;font-size:16px;font-weight:700;letter-spacing:.12em;color:var(--paper);background:var(--ink);border:0;padding:12px 28px;border-radius:0;box-shadow:4px 4px 0 var(--line)}
+.ask button:hover{background:var(--line)}
+.ask button:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--line)}
+.ask-done{margin:0;font-size:15px;font-weight:600;color:var(--line)}
+
+/* ---------- 版權 ---------- */
+.colophon{border-top:2px solid var(--ink);padding:28px 56px 40px;display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:baseline;font-size:14px;color:var(--ink-2);max-width:1440px;margin:0 auto}
+.colophon p{margin:0}
+.col-brand{display:flex;gap:10px;align-items:center;color:var(--ink);font-weight:600;font-size:14px}
+.col-brand svg{width:22px;height:22px;color:var(--line)}
+
+/* ---------- 404 ---------- */
+.mast--404{grid-template-columns:auto}
+.e404{padding:24px 18px 40px;max-width:1180px;margin:0 auto}
+.sheet--404{height:auto;padding:0}
+.sheet--404 .frame{min-height:620px}
+.body--404{display:block;position:relative;padding:40px 48px}
+.body--404 h1{font-family:var(--f-disp);font-size:48px;font-weight:400;font-synthesis:none;letter-spacing:.03em;margin:0}
+.body--404 .pbody{max-width:26em}
+.void svg.dwg{width:min(520px,100%);height:auto;margin-top:12px}
+.stamp{position:absolute;right:40px;top:34px;margin:0;font-size:30px;font-weight:700;letter-spacing:.4em;padding:6px 6px 6px 18px;color:var(--red-ink);border:3px double var(--red-ink);transform:rotate(-8deg)}
+
+/* ---------- 響應：手機與矮螢幕 → 縱向堆疊 ---------- */
+@media (max-width: 760px), (max-height: 540px){
+  :root{--mast-h:auto;--tm:.5}
+  .mast{grid-template-columns:1fr auto;gap:8px 16px;padding:12px 16px;height:auto}
+  .mast-en,.mast-meta{display:none}
+  .mast-nav{justify-self:end;gap:16px}
+  .mast-nav a{font-size:14px;padding:10px 0;position:relative}
+  .mast-nav a::after{content:"";position:absolute;inset:0 -9px}
+  /* 手機：圖冊維持「一張一張翻」（和桌機同一個水平軌道）；每張寬度留 16px 讓下一張露邊，軌道高度由 JS 對齊目前這張 */
+  .track{align-items:flex-start;height:auto;padding:0 6px;scroll-padding-inline:6px}
+  .sheet{flex:0 0 min(calc(100vw - 28px),560px);height:auto;padding:12px 4px}
+  .frame{grid-template-columns:1fr;grid-template-rows:auto;height:auto}
+  .sheet--cover{width:auto;min-width:0}
+  .dots{display:flex;justify-content:center;gap:10px;padding:14px 0 0}
+  .idx th:last-child,.idx td:last-child{display:none}
+  .idx th,.idx td{padding-right:6px}
+  .body{padding:22px 18px 18px;height:auto;display:block}
+  /* 圖籤：六欄格，全部攤在同一層（.tb-rows、.tb-2、.tb-sign 用 display:contents）；一格標籤一格值，整塊約 210px，比任何一張圖都矮 */
+  .tb{border-left:0;border-top:2px solid var(--ink);margin:0 4.8px 4.8px;display:grid;grid-template-columns:repeat(6,1fr);font-size:14px;overflow:visible}
+  .tb-rows,.tb .tb-2,.tb .tb-sign{display:contents}
+  .tb-x{display:none}
+  .tb-firm{grid-column:1/4;grid-row:1;padding:8px 12px;border-bottom:1px solid var(--ghost);align-content:center}
+  .tb-no{grid-column:4/7;grid-row:1;border-top:0;border-left:1px solid var(--ghost);border-bottom:1px solid var(--ghost);padding:5px 12px 6px;grid-template-columns:1fr auto;grid-template-areas:"l o" "n n";align-items:baseline;gap:0 6px}
+  .tb-no span:first-child{grid-area:l}
+  .tb-no .tb-of{grid-area:o;justify-self:end}
+  .tb-no b{grid-area:n;font-size:30px;line-height:1.1;white-space:nowrap}
+  .tb .tb-r{padding:6px 12px 7px}
+  .tb .tb-proj{grid-column:1/4}
+  .tb .tb-name{grid-column:4/7;border-left:1px solid var(--ghost)}
+  .tb .tb-2>dl{padding:6px 12px 7px;border-bottom:1px solid var(--ghost)}
+  .tb .tb-2>dl:first-child{grid-column:span 2}
+  .tb .tb-2>dl+dl{grid-column:span 1;padding-inline:8px}
+  .tb .tb-2.tb-wide>dl+dl{grid-column:span 4;padding-inline:12px}
+  .tb .tb-date{grid-column:4/7;border-left:1px solid var(--ghost)}
+  .tb .tb-rev{grid-column:1/-1;display:grid;grid-template-columns:3.2em 1fr;align-items:baseline;gap:0 4px;padding:6px 12px 7px}
+  .tb .tb-rev ol{margin:0;font-size:14px}
+  .tb .tb-rev li{margin-top:2px;align-items:center}
+  .tb .tb-rev li:first-child{margin-top:0}
+  .tb .rv{flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:0 8px}
+  .tb .tb-sign>dl{grid-column:span 2;flex-direction:row;align-items:baseline;gap:8px;padding:6px 10px 7px}
+  .tb .tb-sign>dl:first-child{padding-left:12px}
+    .fig svg.desk{display:none}
+  .fig svg.mob{display:block}
+  .fig svg.dwg{width:100%;height:auto}
+  .ptitle h2{font-size:48px}
+  .cover-h1{flex-wrap:wrap;gap:4px 14px}
+  .h1-big{font-size:104px;white-space:nowrap;margin-bottom:.15em}
+  .h1-sub{font-size:22px;letter-spacing:.24em}
+  .cover-dim{width:192px}
+  .body>*+*{margin-top:28px}
+  .ruler{display:none}
+  .pull p{font-size:24px}
+  .elev-text{display:block;border:0;padding:0}
+  .gnotes li{grid-template-columns:30px 1fr}
+  .gnotes li p{grid-column:2}
+  .office,.contact{display:block;padding:56px 16px}
+  .office h2,.contact h2{font-size:36px}
+  .off-text,.ct-lead{margin-top:20px}
+  .off-fig{margin-top:28px;padding:12px 10px 8px}
+  .keys{margin-top:18px}
+  .crew{grid-template-columns:1fr 1fr}
+  .crew>div{border-left:0;border-top:1px solid var(--ink)}
+  .crew-no{grid-column:1/-1;border-top:0}
+  .crew>div:nth-child(odd):not(.crew-no){border-left:1px solid var(--ink)}
+  .ask{grid-template-columns:1fr;grid-template-areas:"name" "tel" "city" "size" "msg" "send" "firm" "recv" "no";margin-top:32px}
+  .tc{border-right:0}
+  .tc-send{border-bottom:1px solid var(--ink);flex-wrap:wrap}
+  .tc-firm,.tc-recv,.tc-no{border-left:0}
+  .tc-no{border-top:0;margin-top:0}
+  .colophon{grid-template-columns:1fr;gap:10px;padding:24px 20px 36px}
+  .stamp{position:static;display:inline-block;margin:0 0 18px;font-size:20px}
+  .body--404 h1{font-size:36px}
+}
+@media print{
+  :root{--line:#000;--line-2:#555;--ink:#000;--ink-2:#333;--red:#c00;--red-ink:#a00;--paper:#fff;--paper-2:#fff;--paper-3:#eee}
+  body,html{background:#fff}
+  .mast-nav,.mast-meta,.ruler,.ask,.spec-hint,.walk,.skip{display:none!important}
+  .track{display:block;height:auto;overflow:visible}
+  .sheet{height:auto;break-inside:avoid;page-break-after:always;padding:0}
+  .frame{height:auto;grid-template-columns:1fr 160px}
+  .tb-no b{font-size:22px}
+  .tb-x{display:none}
+  .fig svg.dwg.desk,.fig svg.dwg.both{width:100%;height:auto}
+  .fig svg.mob{display:none}
+  .dwg .c,.dwg .f,.dwg .x,.dwg .hand use{opacity:1!important;stroke-dashoffset:0!important;transition:none!important}
+  .dwg .wipe{clip-path:none!important}
+  a{color:#000;text-decoration:underline}
+  .office,.contact{display:block;padding:24px 0}
+}
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="mast mast--404">
+      <a class="mast-brand" href="./"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" stroke="currentColor">
+  
+  
+  <rect x="3" y="3" width="34" height="34" stroke-width="2"/>
+  <path d="M3 37 37 3" stroke-width="1.2"/>
+  <g stroke-width=".9">
+    <path d="M8 37 37 8M14 37 37 14M20 37 37 20M26 37 37 26M32 37 37 32"/>
+  </g>
+  <rect x="8" y="8" width="9" height="9" stroke-width="1.2"/>
+</svg>
+<span class="mast-name">半畝建築事務所</span><span class="mast-en">Half Acre Architects</span></a>
+    </header>
+    <main id="main" class="e404">
+      <div class="sheet sheet--404"><div class="frame">
+        <div class="body body--404">
+          <p class="stamp" aria-hidden="true">作廢</p>
+          <h1>這張圖不在圖冊裡。</h1>
+          <p class="pbody">可能是圖號抄錯了，也可能這張圖早就作廢，收進圖櫃最下層了。</p>
+          <figure class="fig void"><svg class="dwg sw-x " viewBox="0 0 560 360" role="img" aria-label="平面示意：一扇門，門後面沒有房間" style="--span:900ms;aspect-ratio:560/360"><defs><pattern id="vd-brick" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path class="hz" d="M0 0V5"/></pattern><pattern id="vd-h2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><path class="hz" d="M0 0V7"/></pattern><pattern id="vd-conc" width="48" height="48" patternUnits="userSpaceOnUse"><circle class="hzf" cx="42.7" cy="12.2" r="0.7"/><circle class="hzf" cx="19.9" cy="2.3" r="0.7"/><circle class="hzf" cx="42.9" cy="12.9" r="0.5"/><circle class="hzf" cx="18.5" cy="1.9" r="0.6"/><circle class="hzf" cx="24.1" cy="15.5" r="0.5"/><circle class="hzf" cx="18.1" cy="19.4" r="0.4"/><circle class="hzf" cx="29.1" cy="12.6" r="0.6"/><circle class="hzf" cx="45.2" cy="9.6" r="0.5"/><circle class="hzf" cx="18.1" cy="9.4" r="0.4"/><circle class="hzf" cx="31.9" cy="24.4" r="0.7"/><circle class="hzf" cx="33.4" cy="44.3" r="0.6"/><circle class="hzf" cx="26.8" cy="26" r="0.5"/><circle class="hzf" cx="25.1" cy="42" r="0.6"/><circle class="hzf" cx="27.3" cy="38.8" r="0.4"/><circle class="hzf" cx="43.1" cy="35.9" r="0.8"/><circle class="hzf" cx="12.1" cy="39.4" r="0.4"/><circle class="hzf" cx="44.6" cy="42" r="0.4"/><circle class="hzf" cx="35.9" cy="42.6" r="0.6"/><circle class="hzf" cx="3.4" cy="42.1" r="0.7"/><circle class="hzf" cx="41.3" cy="3" r="0.7"/><circle class="hzf" cx="5.2" cy="13.7" r="0.7"/><circle class="hzf" cx="25.2" cy="26" r="0.4"/><circle class="hzf" cx="5.2" cy="8" r="0.6"/><circle class="hzf" cx="20.5" cy="34.8" r="0.5"/><circle class="hzf" cx="12.6" cy="27.5" r="0.4"/><circle class="hzf" cx="14" cy="4.7" r="0.4"/><path class="hz" d="M19 23L22 21L22 25Z"/><path class="hz" d="M10 28L8 30L7 27Z"/><path class="hz" d="M33 33L37 33L35 37Z"/><path class="hz" d="M14 3L17 6L14 7Z"/><path class="hz" d="M27 24L29 28L25 28Z"/></pattern><pattern id="vd-earth" width="30" height="30" patternUnits="userSpaceOnUse"><path class="hz" d="M2 14L9 4"/><path class="hz" d="M5 14L12 4"/><path class="hz" d="M8 14L15 4"/><path class="hz" d="M18 26L25 16M21 26L28 16"/></pattern><pattern id="vd-peb" width="36" height="36" patternUnits="userSpaceOnUse"><ellipse class="hz" cx="30.8" cy="26.1" rx="1.3" ry="1.3"/><ellipse class="hz" cx="5.2" cy="9.3" rx="1.1" ry="1.1"/><ellipse class="hz" cx="22.1" cy="7.1" rx="2.1" ry="1.2"/><ellipse class="hz" cx="20.4" cy="33.4" rx="1.3" ry="1.6"/><ellipse class="hz" cx="31.3" cy="26.3" rx="1.7" ry="1.2"/><ellipse class="hz" cx="20.4" cy="16.5" rx="2.1" ry="1.3"/><ellipse class="hz" cx="28.2" cy="24.4" rx="1.2" ry="1.3"/><ellipse class="hz" cx="26.3" cy="26.5" rx="2.2" ry="1.4"/><ellipse class="hz" cx="17.9" cy="2.7" rx="2" ry="1.3"/><ellipse class="hz" cx="21.4" cy="22.4" rx="1.2" ry="1.4"/><ellipse class="hz" cx="17.9" cy="18.9" rx="1.3" ry="1"/><ellipse class="hz" cx="27" cy="32.5" rx="1.2" ry="1.2"/><ellipse class="hz" cx="12.7" cy="10.9" rx="1" ry="1.6"/><ellipse class="hz" cx="13.3" cy="28.1" rx="1.3" ry="0.8"/><ellipse class="hz" cx="8.9" cy="5" rx="1.7" ry="1.3"/><ellipse class="hz" cx="13.1" cy="17.3" rx="2.2" ry="1"/></pattern></defs><g class="L-hatch wipe"><path class="f hatchfill" d="M40 130L190 130L190 152L40 152Z" fill="url(#vd-brick)" style="--d:941"/><path class="f hatchfill" d="M280 130L430 130L430 152L280 152Z" fill="url(#vd-brick)" style="--d:1391"/></g><g class="L-proj"><path class="c hid" d="M40 30L430 30" pathLength="1" style="--d:500"/><path class="c hid" d="M150 166L320 166L320 290L150 290Z" pathLength="1" style="--d:706"/></g><g class="L-thin"><path class="c thin" d="M190 126L194 126L194 36L190 36Z" pathLength="1" style="--d:1081"/><path class="c hair" d="M190 40L198 40L206 41L213 43L221 45L228 48L235 52L242 56L248 61L254 66L259 72L264 78L268 85L272 92L275 99L277 107L279 114L280 122L280 130" pathLength="1" style="--d:1081"/></g><g class="L-cut"><path class="c cut" d="M40 130L190 130L190 152L40 152Z" pathLength="1" style="--d:150"/><path class="c cut" d="M280 130L430 130L430 152L280 152Z" pathLength="1" style="--d:600"/></g><g class="L-dim"><path class="c hair" d="M145 304L325 304" pathLength="1" style="--d:1247"/><path class="c hair" d="M150 294L150 309" pathLength="1" style="--d:1256"/><path class="c tick" d="M146 308L154 300" pathLength="1" style="--d:1250"/><path class="c hair" d="M320 294L320 309" pathLength="1" style="--d:1575"/><path class="c tick" d="M316 308L324 300" pathLength="1" style="--d:1568"/><text class="x n" x="235" y="300" font-size="13" text-anchor="middle" style="--d:1416">？</text><circle class="c mid" cx="56" cy="340" r="16" pathLength="1" style="--d:1080"/><path class="c hair" d="M40 340L72 340" pathLength="1" style="--d:1050"/><text class="x n nb" x="56" y="336" font-size="14" text-anchor="middle" style="--d:1080">X</text><text class="x n" x="56" y="353" font-size="12" text-anchor="middle" style="--d:1080">A-404</text><text class="x t tbd" x="84" y="334" font-size="15" style="--d:1133">不存在的房間</text><path class="c cut" d="M78 342L248 342" pathLength="1" style="--d:1121"/><path class="c hair" d="M78 347L248 347" pathLength="1" style="--d:1121"/></g><g class="L-txt"><text class="x t tbd" x="330" y="92" font-size="14" text-anchor="middle" style="--d:1794">走廊</text></g><g class="L-red"><path class="c redl" d="M156 172C182 191 288 265 314 284" pathLength="1" style="--d:1300"/><path class="c redl" d="M314 284L314 284L314 284" pathLength="1" style="--d:1800"/><path class="c redl" d="M314 172C288 191 182 265 156 284" pathLength="1" style="--d:1550"/><path class="c redl" d="M156 284L156 284L156 284" pathLength="1" style="--d:2050"/><g class="hand" transform="rotate(-3 342 214)"><use href="assets/hand.svg#hg-9019" transform="translate(342 214) rotate(0) scale(0.0953)" style="--d:1900"/><use href="assets/hand.svg#hg-6247" transform="translate(360 214) rotate(-2) scale(0.0934)" style="--d:1945"/><use href="assets/hand.svg#hg-9580" transform="translate(378 213) rotate(-1) scale(0.0941)" style="--d:1990"/><use href="assets/hand.svg#hg-5f8c" transform="translate(396 214) rotate(3) scale(0.0940)" style="--d:2035"/><use href="assets/hand.svg#hg-9762" transform="translate(413 214) rotate(1) scale(0.0917)" style="--d:2080"/></g><g class="hand" transform="rotate(-3 342 237)"><use href="assets/hand.svg#hg-6c92" transform="translate(342 237) rotate(2) scale(0.0905)" style="--d:2125"/><use href="assets/hand.svg#hg-6709" transform="translate(360 237) rotate(1) scale(0.0933)" style="--d:2170"/><use href="assets/hand.svg#hg-623f" transform="translate(378 237) rotate(1) scale(0.0965)" style="--d:2215"/><use href="assets/hand.svg#hg-9593" transform="translate(396 237) rotate(-1) scale(0.0986)" style="--d:2260"/></g></g></svg><figcaption class="sr-only">紅筆批註：這扇門後面沒有房間。</figcaption></figure>
+          <p class="cta"><a href="./#s0">回到圖紙目錄<span aria-hidden="true">　→</span></a></p>
+        </div>
+        <aside class="tb" aria-label="A-404 圖籤">
+          <div class="tb-firm"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" stroke="currentColor">
+  
+  
+  <rect x="3" y="3" width="34" height="34" stroke-width="2"/>
+  <path d="M3 37 37 3" stroke-width="1.2"/>
+  <g stroke-width=".9">
+    <path d="M8 37 37 8M14 37 37 14M20 37 37 20M26 37 37 26M32 37 37 32"/>
+  </g>
+  <rect x="8" y="8" width="9" height="9" stroke-width="1.2"/>
+</svg>
+<b>半畝建築事務所</b><span>臺南市中西區</span></div>
+          <div class="tb-rows">
+            <dl class="tb-r tb-proj"><dt>工程名稱</dt><dd>（查無此案）</dd></dl>
+            <dl class="tb-r tb-name"><dt>圖名</dt><dd>找不到的頁面</dd></dl>
+            <div class="tb-2 tb-wide"><dl><dt>比例</dt><dd class="tech">—</dd></dl><dl><dt>狀態</dt><dd>作廢</dd></dl></div>
+            <dl class="tb-r tb-rev"><dt>修正</dt><dd><span class="tb-none">本圖已作廢，不再修正</span></dd></dl>
+            <div class="tb-x">
+          <div class="tb-leg"><p class="tb-k">線型</p><ul>
+            <li><svg viewBox="0 0 36 8" aria-hidden="true"><path class="l3" d="M0 4h36"/></svg>剖切</li>
+            <li><svg viewBox="0 0 36 8" aria-hidden="true"><path class="l2" d="M0 4h36"/></svg>看線</li>
+            <li><svg viewBox="0 0 36 8" aria-hidden="true"><path class="l1" d="M0 4h36"/></svg>尺寸・家具</li>
+            <li><svg viewBox="0 0 36 8" aria-hidden="true"><path class="lh" d="M0 4h36"/></svg>投影・已拆</li>
+          </ul></div>
+          <div class="tb-notes"><p class="tb-k">附註</p><ol>
+            <li><span class="nn" aria-hidden="true">1.</span><span>尺寸單位公分，標高自 FL±0 起算。</span></li>
+            <li><span class="nn" aria-hidden="true">2.</span><span>施工前以現場實測為準。</span></li>
+            <li><span class="nn" aria-hidden="true">3.</span><span>紅筆是設計者的批註，不是施工說明。</span></li>
+          </ol></div>
+        </div>
+          </div>
+          <div class="tb-no"><span>圖號</span><b>A-404</b></div>
+        </aside>
+      </div></div>
+    </main>
+<script>
+(()=>{const f=document.querySelector('.void');if(f)requestAnimationFrame(()=>f.classList.add('is-drawn'))})();
+</script>
+</body>
+</html>

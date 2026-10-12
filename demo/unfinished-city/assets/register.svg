@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <!-- 套準十字：三刮刀印房的記號。黃、朱各自偏一點，綠是主版。手寫 SVG。 -->
+  <g fill="none" stroke-width="2.6" stroke-linecap="round" style="mix-blend-mode:multiply">
+    <g stroke="#f8cc2f" transform="translate(1.8 -1.2)"><circle cx="20" cy="20" r="10"/><path d="M20 3v34M3 20h34"/></g>
+    <g stroke="#e03a2d" transform="translate(-1.4 1.4)"><circle cx="20" cy="20" r="10"/><path d="M20 3v34M3 20h34"/></g>
+    <g stroke="#016a5d"><circle cx="20" cy="20" r="10"/><path d="M20 3v34M3 20h34"/></g>
+  </g>
+  <circle cx="20" cy="20" r="4.4" fill="#016a5d"/>
+</svg>

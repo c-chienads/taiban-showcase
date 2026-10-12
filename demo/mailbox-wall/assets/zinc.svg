@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220">
+<filter id="hi" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB">
+  <feTurbulence type="turbulence" baseFrequency="0.04 0.06" numOctaves="3" seed="108" stitchTiles="stitch" result="n"/>
+  <feColorMatrix in="n" type="luminanceToAlpha" result="l"/>
+  <feComponentTransfer in="l" result="a"><feFuncA type="discrete" tableValues="0 0 0 0 0.08 0.08 0.16 0.24"/></feComponentTransfer>
+  <feFlood flood-color="#ffffff" result="w"/><feComposite in="w" in2="a" operator="in"/>
+</filter>
+<filter id="lo" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB">
+  <feTurbulence type="turbulence" baseFrequency="0.04 0.06" numOctaves="3" seed="90" stitchTiles="stitch" result="n"/>
+  <feColorMatrix in="n" type="luminanceToAlpha" result="l"/>
+  <feComponentTransfer in="l" result="a"><feFuncA type="discrete" tableValues="0.11 0.05 0 0 0 0 0 0"/></feComponentTransfer>
+  <feFlood flood-color="#1d2733" result="k"/><feComposite in="k" in2="a" operator="in"/>
+</filter>
+<rect width="220" height="220" fill="#808a96" filter="url(#hi)"/>
+<rect width="220" height="220" fill="#808a96" filter="url(#lo)"/>
+</svg>

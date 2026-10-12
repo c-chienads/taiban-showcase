@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480">
+  <!-- 冷調宣紙：細顆粒（fractalNoise）＋雲紋（低頻）＋手置的長纖維。手寫 SVG，F10 山霧茶行自製。 -->
+  <filter id="grain" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="2" seed="11" stitchTiles="stitch"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.16  0 0 0 0 0.22  0 0 0 0 0.26  0 0 0 -2.4 1.32"/>
+  </filter>
+  <filter id="cloud" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.011 0.018" numOctaves="3" seed="4" stitchTiles="stitch"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.30  0 0 0 0 0.40  0 0 0 0 0.44  0 0 0 -1.5 0.82"/>
+  </filter>
+  <rect width="480" height="480" filter="url(#cloud)" opacity="0.09"/>
+  <rect width="480" height="480" filter="url(#grain)" opacity="0.07"/>
+  <g fill="none" stroke="#4f6168" stroke-linecap="round" stroke-opacity="0.11">
+    <path d="M18 42c34 6 61 -3 92 9s47 2 70 -4" stroke-width="0.7"/>
+    <path d="M300 30c18 14 30 12 52 30s24 30 51 34" stroke-width="0.5"/>
+    <path d="M402 160c-22 9 -40 30 -66 33s-38 -6 -60 2" stroke-width="0.6"/>
+    <path d="M60 210c10 20 30 28 33 52s-7 40 6 62" stroke-width="0.5"/>
+    <path d="M150 300c30 -8 52 4 80 -6s38 -24 66 -18" stroke-width="0.8"/>
+    <path d="M320 380c14 -12 34 -10 46 -26s30 -20 48 -14" stroke-width="0.5"/>
+    <path d="M40 430c26 4 44 -10 70 -6s34 16 58 12" stroke-width="0.6"/>
+    <path d="M222 118c4 18 -4 32 6 50s20 22 18 40" stroke-width="0.4"/>
+    <path d="M430 300c-6 20 -24 30 -26 52s12 36 4 58" stroke-width="0.5"/>
+    <path d="M110 120c22 -6 30 6 48 2" stroke-width="0.4"/>
+    <path d="M250 440c18 -10 40 -6 52 -18" stroke-width="0.4"/>
+    <path d="M362 238c10 8 26 6 34 16" stroke-width="0.4"/>
+  </g>
+  <g fill="#4f6168" fill-opacity="0.10">
+    <ellipse cx="96" cy="88" rx="1.6" ry="0.8" transform="rotate(20 96 88)"/>
+    <ellipse cx="380" cy="120" rx="1.2" ry="0.6"/>
+    <ellipse cx="200" cy="380" rx="1.8" ry="0.7" transform="rotate(-30 200 380)"/>
+    <ellipse cx="420" cy="420" rx="1.1" ry="0.6"/>
+    <ellipse cx="28" cy="300" rx="1.4" ry="0.7" transform="rotate(50 28 300)"/>
+    <ellipse cx="270" cy="210" rx="1" ry="0.5"/>
+  </g>
+</svg>

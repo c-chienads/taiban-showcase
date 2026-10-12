@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="currentColor">
+  <!-- 半畝事務所標誌：一塊方地（地界鏈線），對角線切一半，半邊是剖面斜線；右下角一個小方塘 -->
+  <title>半畝建築事務所</title>
+  <rect x="3" y="3" width="34" height="34" stroke-width="2"/>
+  <path d="M3 37 37 3" stroke-width="1.2"/>
+  <g stroke-width=".9">
+    <path d="M8 37 37 8M14 37 37 14M20 37 37 20M26 37 37 26M32 37 37 32"/>
+  </g>
+  <rect x="8" y="8" width="9" height="9" stroke-width="1.2"/>
+</svg>

@@ -1,0 +1,948 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F07" data-slug="diagonal-troupe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>斜槓劇團｜白天各有本業，晚上一起上台</title>
+<meta name="description" content="斜槓劇團是八個有正職的人組成的小劇團：木工、護理師、外送員、裁縫、運將……第十一季《日常的另一半》115 年 11 月在大稻埕開演；長斜排練室開放借用。">
+
+<meta name="generator" content="套版網站平台 F07">
+<link rel="icon" href="assets/mark.svg">
+<link rel="preload" href="fonts/01-noto-serif-tc.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"Noto Serif TC";src:url("fonts/01-noto-serif-tc.woff2") format("woff2");font-weight:500 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("fonts/02-bricolage-grotesque.woff2") format("woff2");font-weight:400 800;font-stretch:80% 100%;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root{
+  --paper:oklch(0.963 0.004 30); --paper-2:oklch(0.915 0.012 40); --paper-shadow:oklch(0.80 0.018 40); --page:oklch(0.99 0.002 30);
+  --ink:oklch(0.26 0.055 265); --ink-2:oklch(0.36 0.05 262);
+  --coral:oklch(0.70 0.15 34); --coral-text:oklch(0.50 0.15 32);
+  --peacock:oklch(0.49 0.085 222); --peacock-deep:oklch(0.37 0.07 228); --peacock-lite:oklch(0.83 0.05 210);
+  --mustard:oklch(0.82 0.14 86); --mustard-lite:oklch(0.92 0.07 92); --mustard-deep:oklch(0.66 0.12 80);
+  --f-serif:"Noto Serif TC",serif;
+  --f-grot:"Bricolage Grotesque","Noto Serif TC",sans-serif;
+  --slash:28deg;                       /* 斜槓的角度：全站唯一的斜度 */
+  --push:linear(0,0.065,0.22,0.413,0.606,0.777,0.913,1.01,1.07,1.1,1.107,1.098,1.081,1.06,1.04,1.022,1.008,0.998,0.992,0.989,0.989,0.99,0.992,0.994,0.996,0.998,0.999,1,1.001,1.001,1.001,1.001,1); --card:linear(0,0.077,0.259,0.485,0.706,0.894,1.032,1.118,1.157,1.161,1.14,1.106,1.069,1.035,1.007,0.988,0.977,0.974,0.975,0.979,0.985,0.991,0.996,1,1.003,1.004,1.004,1.004,1.003,1.002,1.001,1,1); --lift:linear(0,0.051,0.175,0.334,0.502,0.659,0.793,0.901,0.981,1.035,1.067,1.081,1.083,1.076,1.064,1.051,1.037,1.024,1.014,1.006,1,0.996,0.994,0.993,0.993,0.994,0.995,0.996,0.997,0.998,0.999,1,1);
+  --focus-ring:3px dashed var(--coral-text); --focus-offset:4px;
+  --selection-bg:var(--mustard); --selection-fg:var(--ink);
+  --wrap:min(100%, 1360px); --gut:clamp(16px,3.4vw,48px); --cut:72px;
+}
+html{background-color:var(--paper);color:var(--ink)}
+body{font-family:var(--f-serif);font-weight:500;font-size:17px;line-height:1.8;background-color:var(--paper);color:var(--ink)}
+a{color:inherit;text-decoration-thickness:1.5px;text-underline-offset:.22em}
+.num,time,.grot{font-family:var(--f-grot);font-variant-numeric:tabular-nums;font-optical-sizing:auto}
+.sl{color:var(--coral-text);font-family:var(--f-grot);font-weight:700;padding-inline:.06em}
+:focus-visible{border-radius:0}
+
+.hero,.cast{overflow-x:clip}
+/* ===== 刊頭 ===== */
+.bar{width:min(100% - 2*var(--gut),1360px);margin-inline:auto;display:flex;align-items:center;gap:28px;padding-block:18px;position:relative;z-index:4}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .mark{width:42px;height:42px;flex:none}
+.brand-zh{font-weight:900;font-size:22px;letter-spacing:.06em;line-height:1}
+.brand-en{font-family:var(--f-grot);font-weight:700;font-size:13px;font-variation-settings:"wdth" 80;letter-spacing:.02em;display:block;margin-top:5px;line-height:1}
+.bar nav{margin-inline-start:auto}
+.bar ul{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+.bar li+li::before{content:"／";color:var(--coral-text);font-family:var(--f-serif);font-weight:700;margin-inline-end:6px}
+.bar a.nav{text-decoration:none;font-weight:700;padding:6px 2px}
+.bar a.nav:hover{text-decoration:underline;text-decoration-color:var(--coral);text-decoration-thickness:3px}
+@media (hover:hover) and (pointer:fine){
+.brand:hover .brand-zh{text-decoration:underline;text-decoration-color:var(--coral);text-decoration-thickness:3px;text-underline-offset:.2em}
+.season-line a:hover,.foot a.num:hover{background-color:var(--mustard);color:var(--ink);box-shadow:0 0 0 3px var(--mustard)}
+.m-btn:hover .m-role{background-color:var(--mustard)}
+.m-btn:hover .m-name{text-decoration:underline;text-decoration-color:currentColor;text-decoration-thickness:3px;text-underline-offset:.12em}
+}
+.bar-season{font-family:var(--f-grot);font-size:14px;font-weight:600;border:2px solid var(--ink);padding:4px 12px 5px;line-height:1.4;box-shadow:4px 4px 0 var(--ink);background-color:var(--mustard)}
+
+/* ===== Hero：走位對角線 ===== */
+.hero{position:relative;z-index:3;background-color:var(--paper);overflow:clip;padding:12px 14px 80px;clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut)),0 100%)}
+.hero-box{position:relative;width:min(100%,1440px);margin-inline:auto;container-type:inline-size}
+.hero-stage{position:relative;width:100%;aspect-ratio:1440/860}
+.hero-text{display:contents}
+.hero-art{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.hero-art--tall{display:none}
+.hero-title{position:absolute;inset:0;margin:0;font-weight:900;font-size:13.4cqw;line-height:1;letter-spacing:0;pointer-events:none}
+.hero-title .ch{position:absolute;display:block;rotate:var(--r);color:var(--ink);text-shadow:0em 0.03em 0 var(--paper),0.03em 0em 0 var(--paper),0em -0.03em 0 var(--paper),-0.03em 0em 0 var(--paper),0.021em 0.021em 0 var(--paper),-0.021em 0.021em 0 var(--paper),0.021em -0.021em 0 var(--paper),-0.021em -0.021em 0 var(--paper),.04em .045em 0 var(--paper-shadow),0.04em 0.075em 0 var(--paper-shadow),0.07em 0.045em 0 var(--paper-shadow),0.04em 0.015em 0 var(--paper-shadow),0.01em 0.045em 0 var(--paper-shadow),0.061em 0.066em 0 var(--paper-shadow),0.019em 0.066em 0 var(--paper-shadow),0.061em 0.024em 0 var(--paper-shadow),0.019em 0.024em 0 var(--paper-shadow)}
+.ch1{left:3.5%;top:10%}.ch2{left:19%;top:30%}.ch3{left:52.5%;top:45%}.ch4{left:68%;top:64%}
+.spike{position:absolute;background-color:var(--paper);padding:1px 5px 2px;font-family:var(--f-grot);font-size:14.5px;font-weight:600;line-height:1.3;white-space:nowrap;translate:-50% 0}
+.spike b{font-weight:800;font-size:16px;color:var(--coral-text);margin-inline-end:4px}
+.sp1{left:10.1%;top:38.6%}.sp2{left:25.7%;top:58.6%}.sp3{left:59.2%;top:73.8%}.sp4{left:74.7%;top:94.6%}
+.wedge-a{position:absolute;left:52.2%;right:4.2%;top:8.1%;height:33.8%}
+.wedge-a .shape{float:left;width:24.6%;height:100%;shape-outside:polygon(0 0,100% 0,0 100%);shape-margin:6px}
+.tagline{font-weight:900;font-size:2.75cqw;line-height:1.36;letter-spacing:.02em;margin:0 0 14px;text-wrap:pretty}
+.season-line{font-size:15.5px;line-height:1.75;margin:0}
+.season-line a{font-weight:700}
+.wedge-b{position:absolute;left:3.5%;width:28.5%;top:61%;height:34%}
+.wedge-b .shape{float:right;width:38.9%;height:100%;shape-outside:polygon(100% 0,100% 100%,0 100%);shape-margin:8px}
+.intro{margin:0;font-size:17px;line-height:1.95;text-wrap:wrap}
+.tape-hl{font-weight:900;background:linear-gradient(transparent 58%,var(--mustard) 58%,var(--mustard) 92%,transparent 92%);padding-inline:.08em}
+.hero-note{position:absolute;left:83%;right:2.5%;top:63%;margin:0;font-size:14.5px;line-height:1.65;font-family:var(--f-grot);font-weight:500}
+.k-ink{fill:var(--ink)}.k-coral{fill:var(--coral)}.k-mustard{fill:var(--mustard)}.k-peacock{fill:var(--peacock)}.k-paper{fill:var(--paper)}.k-deep{fill:var(--peacock-deep)}.k-lite{fill:var(--mustard-lite)}
+.hero-art .strip{stroke:var(--coral);fill:none}.hero-art .strip-sh{stroke:var(--ink);fill:none}.hero-art .slit{stroke:var(--paper);fill:none}
+.hero-art .walk{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-dasharray:10 9;vector-effect:non-scaling-stroke}
+html.js .hero-art .strip,html.js .hero-art .strip-sh,html.js .hero-art .slit{stroke-dasharray:100 100;animation:cut 1s cubic-bezier(.3,.6,.1,1) .15s backwards}
+html.js .hero-art .strip-sh{animation-delay:.24s}
+@keyframes cut{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+
+/* ===== 成員：謝幕弧線 ===== */
+.cast{--focus-ring:3px dashed var(--mustard);position:relative;padding-inline:var(--gut);z-index:2;margin-top:calc(-1 * var(--cut-h));background-color:var(--peacock);color:var(--paper);--cut-h:var(--cut);padding-top:calc(var(--cut-h) + 56px);padding-bottom:0}
+.cast::before{content:"";position:absolute;inset:0 0 auto;height:calc(var(--cut-h) + 12px);background-color:var(--ink);clip-path:polygon(0 calc(100% - 12px),100% 0,100% 12px,0 100%)}
+.cast-head{width:var(--wrap);margin-inline:auto;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:12px 56px;align-items:end;position:relative}
+.cast-head h2{font-weight:900;font-size:clamp(38px,4.6vw,66px);line-height:1.15;letter-spacing:.01em;grid-row:span 2}
+.cast-head h2 .sl{color:var(--mustard)}
+.cast-head p{margin:0;max-width:34em}
+.cast-head .tape-hl{background:none;color:var(--paper);text-decoration:underline 4px var(--mustard);text-underline-offset:.28em;text-decoration-skip-ink:none}
+.hint{font-family:var(--f-grot);font-size:14.5px;font-weight:500;display:none}
+.hint kbd{font-family:var(--f-grot);font-weight:700;border:1.5px solid currentColor;padding:0 6px;margin-inline:2px}
+html.js .hint-touch{display:block}
+@media (min-width:1000px) and (hover:hover) and (pointer:fine){html.js .hint-touch{display:none}html.js .hint-mouse{display:block}}
+.stage{position:relative;width:var(--wrap);margin-inline:auto;margin-top:60px;padding-bottom:64px}
+.stage-set,.spot-wrap,.marks,.house-row{display:none}
+.cast-list{list-style:none;margin:0;padding:0;display:grid;gap:22px;position:relative}
+.m{--zz:0;--mw:min(100%,620px);position:relative;width:var(--mw);margin-inline-start:calc(var(--zz) * (100% - var(--mw)))}
+.m-btn{display:grid;grid-template-columns:132px 1fr;align-items:end;gap:6px 18px;width:100%;padding:0 12px 0 0;border:0;background:none;color:inherit;text-align:start;font:inherit;cursor:pointer;position:relative}
+.m-btn::before{content:"";position:absolute;inset:auto 0 0 0;height:34px;background-color:var(--mustard);clip-path:polygon(0 0,100% 0,calc(100% - 18px) 100%,0 100%);z-index:-1}
+.m-btn .fig{width:132px;height:180px;max-width:none;overflow:visible;margin-bottom:6px;translate:0 -4px;pointer-events:none}
+.m-tag{display:block;padding-bottom:4px;position:relative}
+.m-name{display:block;font-weight:900;font-size:26px;line-height:1.2;letter-spacing:.04em}
+.m-role{display:inline-block;margin-top:8px;font-size:14px;font-weight:700;line-height:1;background-color:var(--paper);color:var(--ink);padding:6px 10px 7px;font-family:var(--f-grot)}
+.m-role .sl{padding-inline:.12em}
+.m-bio{margin:12px 0 0 12px;padding:18px 22px 20px;background-color:var(--paper);color:var(--ink);box-shadow:7px 7px 0 var(--ink);max-width:36em}
+.m-bio .bio-name{font-weight:900;font-size:24px;line-height:1.25;margin:0}
+.m-bio .bio-since{font-family:var(--f-grot);font-size:13px;font-weight:600;margin:2px 0 10px;color:var(--ink-2)}
+.m-bio p{margin:0;font-size:16px;line-height:1.75}
+.m-bio .bio-now{margin-top:10px;padding-top:10px;border-top:2px solid var(--ink);font-size:14.5px;font-weight:600}
+.m-bio .bio-now b{font-family:var(--f-grot);font-weight:700;margin-inline-end:8px;background-color:var(--coral);padding:1px 7px 2px}
+html.js .m:not(.is-on) .m-bio{display:none}
+@media (min-width:1000px){html:not(.js) .cast-list{grid-template-columns:1fr 1fr;gap:28px 64px}html:not(.js) .m{--mw:100%}html:not(.js) .m:nth-child(even){translate:0 96px}html:not(.js) .stage{padding-bottom:150px}}
+html.js .m.is-on .m-btn::before{background-color:var(--coral)}
+@media (max-width:999px){
+  html.js .m.is-on .fig{animation:pop .5s var(--lift)}
+  html.js .m.is-on .m-bio{animation:slip .45s var(--card)}
+}
+@keyframes pop{from{scale:.86;translate:0 10px}}
+@keyframes slip{from{translate:-14px -10px;rotate:-1.5deg;clip-path:inset(0 0 60% 0)}}
+
+@media (min-width:1000px){
+  html.js .stage{height:690px;container-type:size;padding:0;--u:8.454545454545455;--cw:25.363636363636367;touch-action:pan-y}
+  html.js .stage-set,html.js .spot-wrap,html.js .marks,html.js .house-row{display:block}
+  .stage-set{position:absolute;inset:0;pointer-events:none}
+  .floor{position:absolute;inset:0;width:100%;height:100%}
+  .floor .fl{fill:var(--mustard)}.floor .lip{fill:var(--paper)}.floor .house{fill:var(--ink)}
+  .floor .board{fill:none;stroke:var(--mustard-deep);stroke-width:1.4;vector-effect:non-scaling-stroke}
+  .valance{position:absolute;z-index:4;inset:-36px -6px auto;height:100px;width:calc(100% + 12px);overflow:visible}
+  .valance .vc{fill:var(--coral)}.valance .vs{fill:var(--ink)}
+  .wing{position:absolute;z-index:4;top:-36px;bottom:24%;width:2.6%;background:repeating-linear-gradient(90deg,var(--coral) 0 14px,oklch(0.64 0.15 34) 14px 20px)}
+  .wing-l{left:-6px;clip-path:polygon(0 0,100% 0,62% 100%,0 100%)}.wing-r{right:-6px;clip-path:polygon(0 0,100% 0,100% 100%,38% 100%)}
+  .house-row{position:absolute;left:0;right:0;bottom:0;width:100%;height:84px;z-index:4}
+  .house-row .hr1{fill:var(--ink-2)}.house-row .hr2{fill:oklch(0.31 0.05 262)}
+  .footlight{position:absolute;width:18px;height:9px;background-color:var(--mustard-lite);border-radius:18px 18px 0 0;translate:-50% -100%}
+  .spot-wrap{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+  .spot{position:absolute;left:0;top:0;width:300px;height:calc(79% );translate:calc(var(--spot) * 1cqw - 50%) 0;background-color:var(--mustard-lite);clip-path:polygon(43% 0,57% 0,100% 100%,0 100%);transition:translate .75s var(--push);pointer-events:none}
+  .marks{position:absolute;inset:0;pointer-events:none}
+  .tape{position:absolute;translate:-50% 0;width:30px;height:16px}
+  .tape::before,.tape::after{content:"";position:absolute;background-color:var(--coral)}
+  .tape::before{left:0;right:0;top:0;height:5px}.tape::after{left:12px;width:6px;top:0;bottom:0}
+  html.js .cast-list{position:absolute;inset:0;display:block}
+  html.js .m{position:absolute;left:0;top:0;width:0;height:0;margin:0;translate:calc(var(--x) * 1cqw) calc(var(--y) * 1cqh);transition:translate .75s var(--push);z-index:1}
+  html.js .m.is-on{z-index:3}
+  html.js .m-btn{position:absolute;left:0;bottom:-62px;translate:-50% 0;width:calc(var(--u) * 1cqw);height:calc(62px + 300px);display:block;padding:0}
+  html.js .m-btn::before{display:none}
+  html.js .m-btn .fig{position:absolute;left:50%;bottom:62px;width:220px;height:300px;margin:0;translate:-50% 0;scale:calc(var(--s) * var(--fx,1)) var(--s);transform-origin:50% 100%;transition:scale .7s var(--lift)}
+  html.js .m-tag{position:absolute;left:50%;bottom:0;translate:-50% 0;text-align:center;white-space:nowrap;padding:0}
+  html.js .m-name{font-size:19px;display:inline-block;background-color:var(--ink);color:var(--paper);padding:2px 9px 3px;line-height:1.3}
+  html.js .m.is-on .m-name{background-color:var(--coral);color:var(--ink)}
+  html.js .m-role{display:block;margin:4px auto 0;font-size:13px;padding:4px 7px 5px;width:max-content}
+  html.js .m-bio{display:block;position:absolute;bottom:92px;width:calc(var(--cw) * 1cqw - 26px);margin:0;max-width:none;visibility:hidden;opacity:0;scale:.82;rotate:0deg;transition:scale .55s var(--card),opacity .2s,visibility 0s .2s,rotate .55s var(--card)}
+  html.js .m.is-on .m-bio{visibility:visible;opacity:1;scale:1;rotate:var(--tilt,0deg);transition:scale .55s var(--card) .08s,opacity .18s .08s,visibility 0s,rotate .55s var(--card)}
+  html.js .m[data-side=R] .m-bio{left:calc(var(--u) * .5cqw + 14px);transform-origin:0 100%}
+  html.js .m[data-side=L] .m-bio{right:calc(var(--u) * .5cqw + 14px);transform-origin:100% 100%}
+  html.js .m-bio .bio-name{font-size:28px}
+}
+
+/* ===== 本季：四道燈區 ===== */
+.season{position:relative;z-index:1;background-color:var(--paper);padding:120px var(--gut) 140px;clip-path:polygon(0 0,100% 0,100% 100%,0 calc(100% - 64px))}
+.season-head{width:var(--wrap);margin-inline:auto;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:20px 64px;align-items:start;margin-bottom:86px}
+.season-head h2{font-weight:900;font-size:clamp(40px,5.2vw,76px);line-height:1.1;rotate:-2deg;transform-origin:0 100%}
+.season-head h2 small{display:block;font-family:var(--f-grot);font-size:16px;font-weight:700;letter-spacing:.02em;margin-bottom:12px;rotate:2deg;transform-origin:0 0}
+.season-head p{margin:0;max-inline-size:38em}
+.plays{list-style:none;margin:0 auto;padding:0;width:var(--wrap);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0 24px;align-items:start}
+.play{position:relative;--sh:12px;padding:56px 5% 60px;isolation:isolate}
+.play::before,.play::after{content:"";position:absolute;inset:-14px -10px;z-index:-1;rotate:var(--tilt);-webkit-mask:var(--sheet-mask) 0 0/100% 100% no-repeat;mask:var(--sheet-mask) 0 0/100% 100% no-repeat;transition:rotate .7s var(--lift),translate .7s var(--lift)}
+.play::before{background-color:var(--ink);translate:var(--sh) var(--sh)}
+.play::after{background-color:var(--sheet)}
+.play:hover::after,.play:focus-within::after{rotate:calc(var(--tilt) * .35)}
+.play:hover::before,.play:focus-within::before{rotate:calc(var(--tilt) * .35);translate:calc(var(--sh) + 6px) calc(var(--sh) + 8px)}
+.play[data-tone=ink]{--sheet:var(--ink);color:var(--paper);--focus-ring:3px dashed var(--mustard)}
+.play[data-tone=ink]::before{background-color:var(--coral)}
+.play[data-tone=mustard]{--sheet:var(--mustard);color:var(--ink)}
+.play[data-tone=peacock]{--sheet:var(--peacock-deep);color:var(--paper);--focus-ring:3px dashed var(--mustard)}
+.play[data-tone=script]{--sheet:var(--page);color:var(--ink)}
+.poster{margin:0;box-shadow:8px 8px 0 var(--ink);outline:3px solid var(--paper);outline-offset:-1px}
+.poster{position:relative}
+.poster svg.poster-svg{width:100%;height:auto;display:block}
+.ptape{position:absolute;width:32%;height:auto;top:-2%;z-index:1;overflow:visible}
+.ptape path{fill:oklch(0.95 0.03 95 / .78)}
+.ptape-l{left:-11%}.ptape-r{right:-11%}
+.play-title{font-weight:900;font-size:clamp(30px,3.1vw,46px);line-height:1.18;margin:2px 0 14px;letter-spacing:.02em}
+.play-title .q:first-child{margin-inline-start:-.5em}
+.play-tag{display:inline-block;font-family:var(--f-grot);font-size:13.5px;font-weight:700;padding:3px 9px 4px;background-color:var(--paper);color:var(--ink);line-height:1.3}
+.play[data-tone=mustard] .play-tag,.play[data-tone=script] .play-tag{background-color:var(--ink);color:var(--paper)}
+.play-run{font-family:var(--f-grot);font-weight:700;font-size:19px;line-height:1.4;margin:0 0 4px;font-variant-numeric:tabular-nums}
+.play-run .to{margin-inline:.3em}
+.play-meta{font-size:14.5px;line-height:1.7;margin:0 0 12px}
+.play-meta .nw{white-space:nowrap}
+.play-syn{margin:0 0 14px;font-size:16.5px}
+.credits{display:flex;flex-wrap:wrap;gap:4px 16px;margin:0 0 12px;font-size:14.5px}
+.credits div{display:flex;gap:6px}.credits dt{font-family:var(--f-grot);font-weight:700}.credits dd{margin:0;font-weight:700}
+.credits dt::after{content:"／";font-family:var(--f-serif);margin-inline-start:4px;opacity:.9}
+.price{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0;padding-top:12px;border-top:2px solid currentColor;font-size:14.5px}
+.price span b{font-family:var(--f-grot);font-weight:800;font-size:18px;margin-inline-start:4px}
+.price-note{font-size:13.5px;margin:8px 0 0;line-height:1.6}
+
+/* 一、《夜班》海報破框：紙板只到文字欄，海報從右上角衝出去 */
+.p-night{grid-column:1/span 7;grid-row:1;padding:66px 39% 64px 6%}
+.p-night .play-in{display:block}
+.p-night .play-title{font-size:clamp(58px,6.2vw,96px);line-height:1;margin:10px 0 18px;rotate:-2deg;transform-origin:0 100%}
+.p-night .poster{position:absolute!important;right:-17%;top:-36px;width:42%;rotate:6deg;z-index:2;box-shadow:12px 12px 0 var(--coral)}
+/* 二、《搬家公司的莎士比亞》直式：劇名直排貼右緣，海報在上、資訊在下，像紙箱上的直式傳單 */
+.p-movers{grid-column:9/span 4;grid-row:1/span 2;margin-top:150px;padding:40px 30px 46px 34px}
+.p-movers::before,.p-movers::after{inset:-12px -2px}
+.p-movers .play-in{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"poster title" "text title";gap:24px 18px;align-items:start}
+.p-movers .play-title{grid-area:title;writing-mode:vertical-rl;font-size:clamp(38px,3.4vw,50px);line-height:1.1;margin:0;letter-spacing:.06em}
+.p-movers .poster{grid-area:poster;rotate:-2deg}
+.p-movers .play-text{grid-area:text}
+/* 三、《斜坡》文字沿 28° 斜排：直排劇名順著斜槓躺下，內文左緣貼著同一條斜線（shape-outside） */
+.p-slope{grid-column:1/span 8;grid-row:2;margin-top:110px;padding:52px 5% 56px 3%}
+.p-slope::before,.p-slope::after{rotate:0deg;inset:0 14% 0 0;transform:skewX(calc(var(--slash) * -1))}
+.p-slope:hover::after,.p-slope:focus-within::after,.p-slope:hover::before,.p-slope:focus-within::before{rotate:0deg}
+.p-slope .play-in{display:block}
+.p-slope .play-text{position:relative;padding-left:96px;display:flow-root}
+.slant{float:left;width:191px;height:360px;shape-outside:polygon(0 0,100% 0,0 100%);shape-margin:6px}
+.slant-r{float:right;width:191px;height:360px;shape-outside:polygon(100% 0,100% 100%,0 100%);shape-margin:6px}
+.p-slope .play-title{position:absolute;left:119px;top:180px;translate:-50% -50%;writing-mode:vertical-rl;font-size:94px;line-height:1;margin:0;rotate:var(--slash);letter-spacing:.02em;white-space:nowrap}
+.p-slope .play-title .q:first-child{margin-inline-start:0}
+.p-slope .credits,.p-slope .price{display:block}.p-slope .price{border-top:0;padding-top:2px}.p-slope .credits div,.p-slope .price span{display:inline-flex;margin-inline-end:16px}
+.p-slope .poster{position:absolute!important;right:0;bottom:-30px;width:178px;rotate:9deg}
+/* 四、讀劇會：攤開的劇本頁，對白體 */
+.p-reading{grid-column:2/span 10;grid-row:3;margin-top:110px;padding:46px 5% 50px 9%}
+.p-reading .play-in{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr) 132px;gap:20px 40px;align-items:start}
+.holes{position:absolute;left:3.2%;top:50%;translate:0 -50%;display:grid;gap:44px}
+.holes i{display:block;width:15px;height:15px;border-radius:50%;background-color:var(--paper-shadow)}
+.script-head .play-title{font-size:clamp(30px,2.7vw,40px)}
+.script-body{border-inline-start:0;padding-inline-start:0}
+.cue{display:grid;grid-template-columns:4.4em minmax(0,1fr);gap:0 16px;margin:0 0 10px;font-size:16.5px;line-height:1.75}
+.cue .who{font-weight:900;letter-spacing:.06em}
+.cue .sd{color:var(--ink-2);font-size:15px;margin-inline-end:4px}
+.p-reading .credits{margin-top:14px}
+.p-reading .poster{rotate:4deg;margin-top:6px}
+
+/* ===== 排練室 ===== */
+.studio{position:relative;z-index:0;margin-top:-64px;padding:150px var(--gut);background-color:var(--paper-2)}
+.studio::before{content:"";position:absolute;inset:0 0 auto;height:78px;background-color:var(--ink);clip-path:polygon(0 0,100% 64px,100% 78px,0 14px)}
+.studio-head{width:var(--wrap);margin-inline:auto;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:20px 64px;align-items:end;margin-bottom:48px}
+.studio-head h2{font-weight:900;font-size:clamp(38px,4.6vw,66px);line-height:1.12}
+.studio-head h2 small{display:block;font-family:var(--f-grot);font-size:16px;font-weight:700;margin-bottom:10px}
+.studio-head p{margin:0;max-width:36em}
+.studio-grid{width:var(--wrap);margin-inline:auto;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-areas:"plan facts" "ways facts" "more more" "form form";grid-template-rows:auto 1fr auto auto;gap:40px 56px;align-items:start}
+.plan{grid-area:plan;margin:0;position:relative}
+.studio-facts{grid-area:facts}
+.studio-ways{grid-area:ways;margin-top:-14px}
+.studio-more{grid-area:more;padding-top:34px;background:repeating-linear-gradient(90deg,var(--ink) 0 22px,transparent 22px 34px) 0 0/100% 4px no-repeat}
+.mini{font-weight:900;font-size:20px;margin:0 0 10px}
+.ways{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:0;font-size:15.5px}
+.ways dt{font-weight:900}.ways dd{margin:0}
+.plan-box{position:relative}
+.plan-svg{width:100%;height:auto;display:block}
+.plan .pl-board{stroke:var(--paper-2);stroke-width:3;fill:none}
+.plan .pl-path{fill:none;stroke:var(--coral-text);stroke-width:5;stroke-dasharray:22 14}
+.plan .pl-door{fill:none;stroke:var(--ink);stroke-width:4}
+.pl-label{position:absolute;font-family:var(--f-grot);font-size:13px;font-weight:600;line-height:1.3;background-color:var(--paper);padding:2px 6px;white-space:nowrap}
+.pl-label.on-ink{background-color:var(--ink);color:var(--paper)}
+.plan figcaption{font-size:14px;margin-top:14px;line-height:1.7}
+.specs{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0;font-size:15.5px}
+.specs dt{font-weight:900}.specs dd{margin:0}
+.rates{margin-top:30px}
+.clock{position:relative;height:30px;margin-top:6px;background:linear-gradient(var(--ink),var(--ink)) 0 100%/100% 3px no-repeat,repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px calc(100% / 13)) 0 100%/calc(100% + 2px) 9px no-repeat}
+.clock span{position:absolute;bottom:12px;white-space:nowrap;left:calc((var(--h) - 1) / 13 * 100%);translate:-50% 0;font-family:var(--f-grot);font-weight:700;font-size:13px;line-height:1}
+.tapes{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:12px 0}
+.stape{grid-column:1/-1;display:grid;grid-template-columns:repeat(13,minmax(0,1fr));align-items:center;gap:0;color:var(--ink)}
+.stape .stape-bar{grid-column:var(--a)/var(--b);grid-row:1;display:grid;padding:9px 16px 11px 22px;line-height:1.4;clip-path:polygon(18px 0,100% 0,calc(100% - 18px) 100%,0 100%)}
+.stape .stape-info{grid-row:1;grid-column:var(--b)/-1;display:flex;flex-wrap:wrap;gap:0 16px;padding-inline:16px}
+.stape.t2 .stape-info{grid-column:1/var(--a);justify-content:flex-end}
+.stape .stape-bar .tape-time{white-space:nowrap}
+.stape.t0 .stape-bar{background-color:var(--mustard);rotate:-1.2deg}.stape.t1 .stape-bar{background-color:var(--coral);rotate:.8deg}.stape.t2 .stape-bar{background-color:var(--peacock-lite);rotate:-.7deg}
+.tape-slot{font-weight:900;font-size:19px}
+.tape-time{font-size:13.5px;font-weight:600}
+.tape-p{font-size:14px;display:flex;gap:6px;align-items:baseline}.tape-p b{font-size:16.5px;font-weight:800}
+.rate-note{font-size:14px;margin:10px 0 0}
+.rules{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 32px}
+.studio-more .rules{grid-template-columns:repeat(4,minmax(0,1fr))}
+.rules li{position:relative;padding-inline-start:28px;font-size:15.5px}
+.rules li::before{content:"";position:absolute;left:2px;top:.55em;width:17px;height:5px;background-color:var(--coral)}
+.rules li::after{content:"";position:absolute;left:8px;top:.55em;width:5px;height:12px;background-color:var(--coral)}
+
+.book{grid-area:form;position:relative;padding:48px 9% 50px;isolation:isolate;--focus-ring:3px dashed var(--ink);margin-top:12px}
+.book::before,.book::after{content:"";position:absolute;inset:0;z-index:-1;clip-path:polygon(5.5% 0,100% 0,94.5% 100%,0 100%)}
+.book::before{background-color:var(--ink);translate:12px 12px}
+.book::after{background-color:var(--mustard)}
+.book-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 24px;margin-bottom:18px}
+.book-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0 22px;align-items:start}
+.f-name,.f-phone,.f-team,.f-date{grid-column:span 2}.f-people{grid-column:span 1}.f-use{grid-column:span 3}
+.f-slot,.f-note{grid-column:span 3}.f-agree{grid-column:span 4}.f-send{grid-column:span 2;justify-self:end;align-self:end}
+.book h3{font-weight:900;font-size:30px;line-height:1.2;margin:0}
+.book .lede{font-size:15px;margin:0;line-height:1.7}
+.f{display:grid;gap:4px;margin-bottom:14px}
+.f label,.f legend{font-weight:900;font-size:15.5px;padding:0}
+.f .req{font-family:var(--f-grot);font-size:13px;font-weight:700;margin-inline-start:6px;background-color:var(--ink);color:var(--mustard);padding:0 5px 1px}
+.f input[type=text],.f input[type=tel],.f input[type=date],.f input[type=number],.f select,.f textarea{width:100%;border:2px solid var(--ink);background-color:var(--paper);color:var(--ink);padding:9px 11px;font-size:16px;line-height:1.4;border-radius:0;font-family:var(--f-grot)}
+.f textarea{min-height:76px;resize:vertical;font-family:var(--f-serif)}
+.f input:focus-visible,.f select:focus-visible,.f textarea:focus-visible{outline:3px dashed var(--ink);outline-offset:3px;box-shadow:4px 4px 0 var(--coral)}
+.f .hint-s{font-size:13.5px;line-height:1.5}
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slots label{display:flex;align-items:center;gap:6px;font-weight:700;font-size:15px;border:2px solid var(--ink);background-color:var(--paper);padding:6px 11px 7px;cursor:pointer}
+.slots label:has(input:checked){background-color:var(--ink);color:var(--paper)}
+.slots input,.agree input{accent-color:var(--coral-text);width:18px;height:18px;margin:0}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:15px;font-weight:700;margin:0;line-height:1.6}
+.agree input{margin-top:4px;flex:none}
+.err{display:block;font-size:14px;font-weight:700;line-height:1.5;min-height:0;color:var(--ink)}
+.err:not(:empty){padding:3px 10px 4px 6px;background-color:var(--paper);margin-top:4px}
+.err:not(:empty)::before{content:"／";color:var(--coral-text);font-weight:900;margin-inline-end:4px}
+[aria-invalid=true]{box-shadow:5px 5px 0 var(--coral-text)!important}
+.send{font:inherit;font-weight:900;font-size:18px;letter-spacing:.06em;color:var(--paper);background-color:var(--ink);border:0;padding:12px 30px 13px;box-shadow:6px 6px 0 var(--coral);transition:translate .35s var(--lift),box-shadow .35s var(--lift)}
+.send:hover{translate:-2px -2px;box-shadow:9px 9px 0 var(--coral)}
+.send:active{translate:4px 4px;box-shadow:2px 2px 0 var(--coral)}
+.book-status{margin:16px 0 0;font-weight:700;font-size:15.5px;line-height:1.6}
+.book-status:not(:empty){background-color:var(--paper);padding:10px 14px;box-shadow:5px 5px 0 var(--ink)}
+
+/* ===== 頁尾 ===== */
+.foot{position:relative;background-color:var(--ink);color:var(--paper);margin-top:-56px;padding:120px var(--gut) 40px;clip-path:polygon(0 56px,100% 0,100% 100%,0 100%);--focus-ring:3px dashed var(--mustard);overflow:hidden}
+.foot::before{content:"";position:absolute;inset:0 0 auto;height:66px;background-color:var(--coral);clip-path:polygon(0 56px,100% 0,100% 10px,0 66px)}
+.foot-in{width:var(--wrap);margin-inline:auto;display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1.3fr) minmax(0,1.1fr);gap:40px 56px;position:relative}
+.foot h2{font-weight:900;font-size:30px;line-height:1.2;margin:0 0 4px}
+.foot h2 .grot{display:block;font-size:15px;font-weight:700;margin-top:6px;font-variation-settings:"wdth" 80}
+.foot p,.foot dd,.foot li{font-size:15.5px;line-height:1.75}
+.foot h3{font-weight:900;font-size:17px;margin:0 0 8px;color:var(--mustard)}
+.foot ul{list-style:none;padding:0;margin:0}
+.foot dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 14px}.foot dt{font-weight:900}.foot dd{margin:0}
+.big-slash{position:absolute;right:-2%;bottom:-18%;font-size:min(46vw,640px);line-height:1;font-weight:900;color:var(--peacock-deep);pointer-events:none;user-select:none;z-index:0}
+.colophon{width:var(--wrap);margin:56px auto 0;padding-top:18px;border-top:1.5px solid var(--paper);display:flex;flex-wrap:wrap;gap:6px 28px;font-size:13.5px;position:relative}
+
+/* ===== 平板 ===== */
+@media (max-width:1179px){
+  .p-slope .play-text{padding-left:40px}
+  .slant{width:132px;height:248px}
+  .slant-r{display:none}
+  .p-slope::before,.p-slope::after{transform:none;inset:-8px 0;clip-path:polygon(132px 0,100% 0,100% 100%,0 100%,0 248px)}
+  .p-slope .play-title{left:63px;top:124px;font-size:56px}
+  .p-slope .play-in{display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:24px;align-items:start}
+  .p-slope .poster{position:relative!important;right:auto;bottom:auto;width:100%;margin:8px 0 0;rotate:-3deg}
+  .hero{padding-bottom:96px}
+  .hero-art--wide{clip-path:polygon(-20% -20%,120% -20%,120% 100%,26.6% 100%,0 76.4%)}
+  .wedge-a,.wedge-b,.hero-note{position:static;width:auto;height:auto}
+  .wedge-a .shape,.wedge-b .shape{display:none}
+  .hero-text{position:static;width:min(100% - 2*var(--gut) + 2*clamp(8px,1.2vw,18px),1360px);margin:20px auto 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 48px}
+  .hero-note{grid-column:1/-1}
+  .tagline{font-size:clamp(26px,3.6vw,36px)}
+  .spike{font-size:13px}
+}
+
+/* ===== 手機 ===== */
+@media (max-width:759px){
+  body{font-size:16px}
+  .bar{flex-wrap:wrap;gap:10px 16px;padding-block:14px}
+  .bar nav{order:3;width:100%;margin:0}
+  .bar ul{gap:4px;flex-wrap:wrap}
+  .bar li+li::before{margin-inline-end:2px}
+  .bar a.nav{font-size:15px;position:relative}
+  .bar a.nav::after{content:"";position:absolute;inset:-6px}
+  .bar-season{margin-inline-start:auto;font-size:13px}
+  :root{--cut:44px}
+  .hero{padding:10px 8px 64px}
+  .hero-stage{aspect-ratio:390/600}
+  .hero-art--wide{display:none}.hero-art--tall{display:block}
+  .hero-title{font-size:27cqw}
+  .hero-title .ch{text-shadow:0 .024em 0 var(--paper),.024em 0 0 var(--paper),0 -.024em 0 var(--paper),-.024em 0 0 var(--paper),.017em .017em 0 var(--paper),-.017em .017em 0 var(--paper),.017em -.017em 0 var(--paper),-.017em -.017em 0 var(--paper),.05em .055em 0 var(--paper-shadow)}
+  .ch1{left:3%;top:2%}.ch2{left:28%;top:25%}.ch3{left:48%;top:49%}.ch4{left:72%;top:72%}
+  .sp1{left:16.4%;top:24.6%}.sp2{left:41.5%;top:47.6%}.sp3{left:61.5%;top:71.6%}.sp4{left:85.4%;top:94.6%}
+  .spike{font-size:13px}.spike span{display:none}
+  .hero-text{grid-template-columns:1fr;gap:14px}
+  .tagline{font-size:27px}
+  .intro{font-size:16px}
+  .cast{padding-top:calc(var(--cut-h) + 36px)}
+  .cast-head{grid-template-columns:1fr}
+  .cast-head h2{grid-row:auto}
+  .m{--mw:86%}
+  .m-btn{grid-template-columns:120px 1fr;gap:4px 10px}
+  .m-btn .fig{width:132px;height:180px;margin:-34px 0 6px -8px}
+  .cast-list{gap:6px}
+  .m-name{font-size:23px}
+  .m-bio{margin-left:0;padding:16px 16px 18px}
+  .season{padding:84px var(--gut) 110px}
+  .season-head,.studio-head{grid-template-columns:1fr}
+  .studio-grid{grid-template-columns:1fr;grid-template-areas:"plan" "facts" "more" "ways" "form";grid-template-rows:none}
+  .season-head{margin-bottom:48px}
+  .plays{grid-template-columns:1fr;gap:64px}
+  .play{grid-column:1!important;grid-row:auto!important;margin-top:0!important;padding:40px 22px 44px}
+  .play{--sh:7px}
+  .play::before,.play::after{inset:-8px 0;rotate:calc(var(--tilt) * .4)}
+  .p-night{padding:214px 22px 44px;margin-top:36px!important}
+  .p-night .poster{right:4%;top:-40px;width:52%;rotate:4deg}
+  .p-night .play-title{font-size:64px}
+  .p-movers .play-in{grid-template-areas:"poster title" "text text";gap:18px 14px}
+  .p-movers .play-title{font-size:30px}
+  .p-slope .play-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,38%);grid-template-areas:"title poster" "tag poster" "run poster" "meta meta" "syn syn" "credits credits" "price price";gap:0 14px;align-items:start}
+  .p-slope .play-text{display:contents}
+  .p-slope .play-title{grid-area:title}.p-slope .play-tag{grid-area:tag}.p-slope .play-run{grid-area:run}.p-slope .play-meta{grid-area:meta}.p-slope .play-syn{grid-area:syn}.p-slope .credits{grid-area:credits}.p-slope .price{grid-area:price}
+  .p-slope .poster{grid-area:poster;width:100%;justify-self:end;margin:6px 0 0;rotate:4deg}
+  .slant,.slant-r{display:none}
+  .play-meta .len{white-space:nowrap}
+  .p-slope::before,.p-slope::after{clip-path:polygon(84px 0,100% 0,100% 100%,0 100%,0 158px)}
+  .p-slope .play-tag{display:table;justify-self:start;margin:0 0 14px}
+  .p-slope .play-title{position:static;translate:none;rotate:none;writing-mode:horizontal-tb;font-size:46px;text-align:start;margin:22px 0 12px;padding-inline-start:34px;white-space:nowrap}
+  .p-slope .play-title .q:first-child{margin-inline-start:-.5em}
+  .p-slope .play-run{margin:0 0 6px;padding-inline-start:0}
+  .p-slope .play-meta{margin-top:8px}
+  .p-slope .play-meta{text-wrap:pretty}
+  .play-syn{text-wrap:balance}
+  .p-reading{padding:40px 22px 44px 44px}
+  .p-reading .play-in{grid-template-columns:1fr;gap:12px}
+  .p-reading .poster{width:120px}
+  .holes{left:12px}
+  .cue{grid-template-columns:3.6em minmax(0,1fr);gap:0 10px;font-size:16px}
+  .studio{padding:110px var(--gut) 120px}
+  .book{padding:34px 26px 38px 30px}
+  .book::before,.book::after{clip-path:polygon(4% 0,100% 0,96% 100%,0 100%)}
+  .book-grid{grid-template-columns:1fr}
+  .book-grid>.f{grid-column:1!important}
+  .f-send{justify-self:start!important}
+  .studio-more .rules,.rules{grid-template-columns:1fr}
+  .tapes{grid-template-columns:1fr}
+  .stape{grid-column:1;margin-inline-start:calc((var(--a) - 1) / 13 * 38%);display:block;padding:12px 26px 14px 30px;clip-path:polygon(34px 0,100% 0,calc(100% - 34px) 100%,0 100%)}
+  .stape.t0{background-color:var(--mustard);rotate:-1deg}.stape.t1{background-color:var(--coral);rotate:.8deg}.stape.t2{background-color:var(--peacock-lite);rotate:-.6deg}
+  .stape .stape-bar{display:flex;gap:10px;align-items:baseline;padding:0;background:none!important;rotate:none!important;clip-path:none}
+  .stape .stape-info{display:grid;gap:0;justify-content:start!important;padding-inline:0}
+  .pl-label{font-size:13px}
+  .foot-in{grid-template-columns:1fr}
+}
+@media (min-width:760px) and (max-width:1179px){
+  .plays{grid-template-columns:repeat(12,minmax(0,1fr))}
+  .play{grid-row:auto!important}
+  .play::before,.play::after{rotate:calc(var(--tilt) * .6)}
+  .p-night{grid-column:1/span 9}.p-movers{grid-column:4/span 8;margin-top:110px}.p-slope{grid-column:1/span 12}.p-reading{grid-column:1/span 12}
+  .p-movers .play-in{grid-template-columns:minmax(0,1fr) auto}
+  .p-movers .poster{max-width:300px}
+  .p-reading .play-in{grid-template-columns:minmax(0,1fr) minmax(0,1.8fr)}
+  .p-reading .poster{display:none}
+  .studio-grid{grid-template-columns:1fr;grid-template-areas:"plan" "facts" "more" "ways" "form";grid-template-rows:none}
+  .studio-more .rules{grid-template-columns:1fr 1fr}
+  .book-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .f-use,.f-slot,.f-note,.f-agree{grid-column:span 4}.f-send{grid-column:span 4;justify-self:start}
+}
+
+/* ===== 降級動效：自己的版本 ===== */
+@media (prefers-reduced-motion:reduce){
+  html.js .hero-art .strip,html.js .hero-art .strip-sh,html.js .hero-art .slit{animation:none}
+  html.js .m,html.js .spot,html.js .m-btn .fig,html.js .m-bio,html.js .m.is-on .m-bio{transition:none!important}
+  html.js .m.is-on .fig,html.js .m.is-on .m-bio{animation:none!important}
+  .play::before,.play::after{transition:none}
+  .play:hover::after,.play:focus-within::after,.play:hover::before,.play:focus-within::before{rotate:var(--tilt)}
+  .send{transition:none}
+}
+
+/* ===== 列印：去背景、去動效、黑字；成員與劇目全部攤開 ===== */
+@media print{
+  html:not(#_),html:not(#_) body:not(#_){background-color:#fff!important;color:#000!important}
+  html:not(#_) body *:not(#_),html:not(#_) body *:not(#_)::before,html:not(#_) body *:not(#_)::after{background-color:transparent!important;background-image:none!important;color:#000!important;box-shadow:none!important;text-shadow:none!important;clip-path:none!important}
+  .hint,.hero-art,.stage-set,.spot-wrap,.house-row,.marks,.big-slash,.bar-season,.book,.poster,.spike,.shape,.m-btn .fig,.valance,.wing{display:none!important}
+  .hero,.cast,.season,.studio,.foot{margin:0!important;padding:12pt 0!important;overflow:visible!important}
+  .hero-stage{aspect-ratio:auto!important}.hero-box{container-type:normal}
+  .hero-title{position:static!important;font-size:36pt!important}.hero-title .ch{position:static!important;display:inline!important;rotate:none!important}
+  .hero-text{position:static!important}.wedge-a,.wedge-b,.hero-note{position:static!important;width:auto!important;height:auto!important;margin-bottom:8pt}
+  html.js .stage{height:auto!important;container-type:normal}
+  html.js .cast-list,html.js .m,html.js .m-btn,html.js .m-tag,html.js .m-bio{position:static!important;translate:none!important;width:auto!important;height:auto!important;visibility:visible!important;opacity:1!important;scale:none!important;rotate:none!important;display:block!important}
+  .play::before,.play::after,.cast::before,.studio::before,.foot::before,.m-btn::before{display:none!important}
+  .m{margin:0 0 10pt!important;width:auto!important}
+  .play{rotate:none!important;padding:8pt 0!important;break-inside:avoid}.play-title{rotate:none!important;position:static!important;translate:none!important;writing-mode:horizontal-tb!important;font-size:20pt!important}.poster,.slant,.slant-r,.holes,.clock{display:none!important}.tapes{display:block!important}.stape{display:block!important;clip-path:none!important;rotate:none!important;margin:0 0 4pt!important}.stape .stape-bar,.stape .stape-info{display:inline!important;clip-path:none!important;rotate:none!important;margin-inline-end:8pt}
+  .plays,.season-head,.studio-head,.studio-grid,.foot-in,.cast-head,.studio-more,.rules,.play-in{display:block!important;width:auto!important}
+  a{text-decoration:underline}
+  a[href^="tel:"]::after{content:" (" attr(href) ")"}
+}
+
+.lost{position:relative;background-color:var(--peacock);color:var(--paper);--focus-ring:3px dashed var(--mustard);overflow:clip}
+.lost-stage{position:relative;min-height:max(640px,calc(100svh - 84px));display:grid;grid-template-rows:auto 1fr;padding:0 var(--gut)}
+.lost .valance{position:absolute;inset:-8px 0 auto;width:100%;height:100px}
+.lost .valance .vc{fill:var(--coral)}.lost .valance .vs{fill:var(--ink)}
+.lost-text{position:relative;z-index:2;width:min(100%,1360px);margin:110px auto 0;padding-right:46%}
+.lost-kicker{font-size:15px;font-weight:700;margin:0 0 8px;color:var(--mustard)}
+.lost h1{font-weight:900;font-size:clamp(34px,4.4vw,62px);line-height:1.2;margin-bottom:18px}
+.lost .nw{white-space:nowrap}
+.lost-text p{margin:0 0 14px;max-width:34em}
+.lost-links{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;margin-top:26px!important}
+.lost-links a:not(.send){font-weight:700}
+.lost-home{text-decoration:none;display:inline-block}
+.lost .send{color:var(--ink);background-color:var(--mustard);box-shadow:6px 6px 0 var(--ink)}
+.lost-art{position:absolute;left:0;right:0;bottom:0;width:100%;height:min(62%,560px);overflow:visible}
+.lost-art--tall{display:none}
+.lost-walk{fill:none;stroke:var(--ink);stroke-width:3;stroke-dasharray:12 10}
+.lost-board{fill:none;stroke:var(--mustard-deep);stroke-width:2}
+.lost-tag rect{fill:var(--ink)}.lost-tag text{fill:var(--paper);font-family:var(--f-grot);font-weight:800;font-size:19px;text-anchor:middle}
+@media (max-width:759px){
+  .lost-text{margin-top:84px;padding-right:0}
+  .lost-stage{min-height:calc(100svh - 114px);padding-bottom:190px}
+  .lost-art--wide{display:none}.lost-art--tall{display:block;height:180px}
+  .lost-tag text{font-size:26px}
+}
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="bar" id="top">
+  <a class="brand" href="#top"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path class="k-ink" d="M8 41h34v5H8z"/><path class="k-ink" d="M29 5h9L21 43h-9z" transform="translate(3 2)"/><path class="k-coral" d="M29 5h9L21 43h-9z"/><path class="k-paper" d="M31.5 9h2.6L22 37.5h-2.6z"/></svg><span><span class="brand-zh">斜槓劇團</span><span class="brand-en" lang="en">Slash Troupe</span></span></a>
+  <nav aria-label="主要導覽"><ul role="list">
+    <li><a class="nav" href="#cast">成員</a></li>
+    <li><a class="nav" href="#season">本季劇目</a></li>
+    <li><a class="nav" href="#studio">排練室</a></li>
+    <li><a class="nav" href="#contact">聯絡</a></li>
+  </ul></nav>
+  <p class="bar-season">第十一季<span class="num"> 115–116</span></p>
+</header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-box">
+    <div class="hero-stage">
+      <svg class="hero-art hero-art--wide" viewBox="0 0 1440 860" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+<polygon class="k-lite" points="1540,165 1236,820 868,820"/><path class="k-lite" d="M868 820 L1236 820 L1252 846 L852 846 Z"/><g transform="translate(1556 140) rotate(-26)"><path class="k-ink" d="M-20 -17h52v40h-52z" transform="translate(5 5)"/><path class="k-mustard" d="M-20 -17h52v40h-52z"/><path class="k-ink" d="M-30 -14h12v34h-12z"/><path class="k-paper" d="M-4 -10h3v26h-3zM6 -10h3v26h-3zM16 -10h3v26h-3z"/></g>
+<path class="strip-sh" pathLength="100" d="M1219.4511445975331 -677L30.548855402466756 1559" stroke-width="130"/>
+<path class="strip" pathLength="100" d="M1206.4511445975331 -688L17.548855402466756 1548" stroke-width="130"/>
+<path class="slit" pathLength="100" d="M1246.4511445975331 -688L57.54885540246676 1548" stroke-width="3"/>
+<path class="walk" d="M160 298C171.3 299.3 211 295.3 228 306C245 316.7 255.3 340.3 262 362C268.7 383.7 262 416.3 268 436C274 455.7 283 474.3 298 480C313 485.7 343.7 471.7 358 470C372.3 468.3 365.3 467.3 384 470C402.7 472.7 425.7 471.7 470 486C514.3 500.3 603.7 537 650 556C696.3 575 716.3 592.7 748 600C779.7 607.3 820.3 600 840 600C859.7 600 850 597.7 866 600C882 602.3 919.3 600.3 936 614C952.7 627.7 960 657.3 966 682C972 706.7 964.7 743.7 972 762C979.3 780.3 997.7 787.7 1010 792C1022.3 796.3 1040 788.7 1046 788"/>
+<g transform="translate(1046 788) rotate(-6.3) scale(1)"><path class="k-ink" d="M-22 -11L0 0L-22 11Z"/></g>
+<g transform="translate(146 300) rotate(-0.6) scale(1)"><path class="k-ink" d="M-19 3h40v8h-40z"/><path class="k-coral" d="M-22 0h40v8h-40zM-6 0h8v26h-8z"/></g><g transform="translate(370 472) rotate(-2.7) scale(1)"><path class="k-ink" d="M-19 3h40v8h-40z"/><path class="k-coral" d="M-22 0h40v8h-40zM-6 0h8v26h-8z"/></g><g transform="translate(852 603) rotate(-1.9) scale(1)"><path class="k-ink" d="M-19 3h40v8h-40z"/><path class="k-coral" d="M-22 0h40v8h-40zM-6 0h8v26h-8z"/></g><g transform="translate(1075 785) rotate(1.2) scale(1)"><path class="k-ink" d="M-19 3h40v8h-40z"/><path class="k-ink" d="M-22 0h40v8h-40zM-6 0h8v26h-8z"/></g>
+</svg>
+      <svg class="hero-art hero-art--tall" viewBox="0 0 390 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+<polygon class="k-lite" points="390,262 390,320 386,566 262,566"/><path class="k-lite" d="M262 566 L386 566 L390 584 L252 584 Z"/>
+<path class="strip-sh" pathLength="100" d="M357.464112448288 -34L26.740845954848197 588" stroke-width="50"/>
+<path class="strip" pathLength="100" d="M350.464112448288 -40L19.740845954848197 582" stroke-width="50"/>
+<path class="slit" pathLength="100" d="M368.464112448288 -40L37.7408459548482 582" stroke-width="2"/>
+<path class="walk" d="M74 128C76.7 131.7 86.3 134.3 90 150C93.7 165.7 93.3 202.7 96 222C98.7 241.3 96.7 259.3 106 266C115.3 272.7 141 262.7 152 262C163 261.3 167.2 258.3 172 262C176.8 265.7 179.7 269 181 284C182.3 299 179.5 330.7 180 352C180.5 373.3 175.3 402.7 184 412C192.7 421.3 221 409 232 408C243 407 244.3 403.3 250 406C255.7 408.7 262.7 408.3 266 424C269.3 439.7 267.7 478.7 270 500C272.3 521.3 272.3 543.7 280 552C287.7 560.3 310 550.3 316 550"/>
+<g transform="translate(316 550) rotate(-3.2) scale(0.7)"><path class="k-ink" d="M-22 -11L0 0L-22 11Z"/></g>
+<g transform="translate(64 126) rotate(-1.3) scale(0.6)"><path class="k-ink" d="M-19 3h40v8h-40z"/><path class="k-coral" d="M-22 0h40v8h-40zM-6 0h8v26h-8z"/></g><g transform="translate(162 264) rotate(1.4) scale(0.6)"><path class="k-ink" d="M-19 3h40v8h-40z"/><path class="k-coral" d="M-22 0h40v8h-40zM-6 0h8v26h-8z"/></g><g transform="translate(240 408) rotate(-3.4) scale(0.6)"><path class="k-ink" d="M-19 3h40v8h-40z"/><path class="k-coral" d="M-22 0h40v8h-40zM-6 0h8v26h-8z"/></g><g transform="translate(333 546) rotate(-1.7) scale(0.6)"><path class="k-ink" d="M-19 3h40v8h-40z"/><path class="k-ink" d="M-22 0h40v8h-40zM-6 0h8v26h-8z"/></g>
+</svg>
+      <h1 class="hero-title" id="hero-title"><span class="ch ch1" style="--r:0.9deg">斜</span><span class="ch ch2" style="--r:-3.5deg">槓</span><span class="ch ch3" style="--r:0.2deg">劇</span><span class="ch ch4" style="--r:3.4deg">團</span></h1>
+      <p class="spike sp1"><b>1</b><span>上舞台左</span></p><p class="spike sp2"><b>2</b><span>舞台左中</span></p><p class="spike sp3"><b>3</b><span>舞台右中</span></p><p class="spike sp4"><b>4</b><span>下舞台右</span></p>
+    </div>
+    <div class="hero-text">
+      <div class="wedge-a"><i class="shape" aria-hidden="true"></i>
+        <p class="tagline">白天各有本業，<br>晚上一起上台。</p>
+        <p class="season-line">第十一季《日常的另一半》，三齣戲與一場讀劇會，<time datetime="2026-11-12">115 年 11 月 12 日</time>在大稻埕開演。<a href="#season">看本季劇目</a></p>
+      </div>
+      <div class="wedge-b"><i class="shape" aria-hidden="true"></i>
+        <p class="intro">斜槓劇團是八個有正職的人：木工、護理師、外送員、裁縫、運將……下班以後，在大同區一間舊布行的樓上排戲。創團十一年、演過二十三齣戲，排練固定在<b class="tape-hl">晚上十點以後</b>。</p>
+      </div>
+      <p class="hero-note">走位圖 1→4：從上舞台左走到下舞台右，是舞台上最有力量的一條線。團名就放在這條線上。</p>
+    </div>
+  </div>
+</section>
+
+<section class="cast" id="cast" aria-labelledby="cast-title">
+  <div class="cast-head">
+    <h2 id="cast-title">八個人<span class="sl" aria-hidden="true">／</span><span class="sr-only">，</span>十六個身分</h2>
+    <p>每個名字後面都有一條<b class="tape-hl">斜線</b>：斜線前面，是晚上在這裡的位置；斜線後面，是白天養活自己的那份工作。</p>
+    <p class="hint hint-mouse">把游標沿著舞台前緣慢慢滑過去，站在那裡的人會被聚光，其他人往兩邊讓位。用鍵盤的話，先 Tab 到舞台，再按 <kbd>←</kbd><kbd>→</kbd>。</p>
+    <p class="hint hint-touch">點一下成員，看看他的另一半；鍵盤用 <kbd>←</kbd><kbd>→</kbd> 換人。</p>
+  </div>
+  <div class="stage" data-stage data-active="3" data-cfg='{&quot;W&quot;:4,&quot;X0&quot;:3.5,&quot;X1&quot;:96.5,&quot;A&quot;:64,&quot;B&quot;:12}' style="--spot:33.09">
+    <div class="stage-set" aria-hidden="true">
+      <svg class="floor" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+        <path class="fl" d="M0 46H100V74Q50 98 0 74Z"/>
+        <path class="board" d="M0 71 Q50 95 100 71"/><path class="board" d="M0 68 Q50 92 100 68"/><path class="board" d="M0 65.5 Q50 89.5 100 65.5"/>
+        <path class="lip" d="M0 74Q50 98 100 74V77.4Q50 101.4 0 77.4Z"/>
+        <path class="house" d="M0 77.4Q50 101.4 100 77.4V100H0Z"/>
+      </svg>
+      <i class="wing wing-l"></i><i class="wing wing-r"></i>
+      <svg class="valance" focusable="false"><defs><pattern id="scallop" width="64" height="100" patternUnits="userSpaceOnUse"><path class="vs" d="M6 36h64v6a32 32 0 0 1-64 0zM-58 36h64v6a32 32 0 0 1-64 0z"/><path class="vc" d="M0 0h64v30h-64zM0 29h64v4a32 32 0 0 1-64 0z"/></pattern></defs><rect width="100%" height="100" fill="url(#scallop)"/></svg>
+      <i class="footlight" style="left:4.00%;top:80.24%"></i><i class="footlight" style="left:10.57%;top:82.94%"></i><i class="footlight" style="left:17.14%;top:85.22%"></i><i class="footlight" style="left:23.71%;top:87.08%"></i><i class="footlight" style="left:30.29%;top:88.53%"></i><i class="footlight" style="left:36.86%;top:89.57%"></i><i class="footlight" style="left:43.43%;top:90.19%"></i><i class="footlight" style="left:50.00%;top:90.40%"></i><i class="footlight" style="left:56.57%;top:90.19%"></i><i class="footlight" style="left:63.14%;top:89.57%"></i><i class="footlight" style="left:69.71%;top:88.53%"></i><i class="footlight" style="left:76.29%;top:87.08%"></i><i class="footlight" style="left:82.86%;top:85.22%"></i><i class="footlight" style="left:89.43%;top:82.94%"></i><i class="footlight" style="left:96.00%;top:80.24%"></i>
+    </div>
+    <svg class="house-row" viewBox="0 0 1400 84" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false"><path class="hr2" d="M0 86C0 65 14 60 30 60S60 65 60 86ZM17 46a13 15 0 1 0 26 0a13 15 0 1 0 -26 0ZM63 87C63 66 77 61 93 61S123 66 123 87ZM80 47a13 14 0 1 0 26 0a13 14 0 1 0 -26 0ZM127 85C127 64 141 59 157 59S186 64 186 85ZM143 45a13 14 0 1 0 26 0a13 14 0 1 0 -26 0ZM165 38l9 12l-6 10ZM198 85C198 64 212 59 228 59S257 64 257 85ZM215 45a13 14 0 1 0 26 0a13 14 0 1 0 -26 0ZM258 89C258 67 272 62 288 62S318 67 318 89ZM275 48a13 15 0 1 0 27 0a13 15 0 1 0 -27 0ZM328 86C328 64 343 59 359 59S389 64 389 86ZM345 44a13 15 0 1 0 27 0a13 15 0 1 0 -27 0ZM342 39h34v4h-34ZM348 39a12 10 0 0 1 22 0ZM410 85C410 64 424 59 440 59S470 64 470 85ZM427 45a13 15 0 1 0 26 0a13 15 0 1 0 -26 0ZM423 40h33v4h-33ZM429 40a12 10 0 0 1 21 0ZM474 86C474 66 488 61 503 61S532 66 532 86ZM491 47a13 14 0 1 0 25 0a13 14 0 1 0 -25 0ZM512 40l9 12l-6 10ZM543 87C543 66 556 61 572 61S600 66 600 87ZM559 48a13 14 0 1 0 25 0a13 14 0 1 0 -25 0ZM621 88C621 66 635 61 651 61S682 66 682 88ZM638 46a14 15 0 1 0 27 0a14 15 0 1 0 -27 0ZM661 39l9 12l-6 10ZM704 84C704 64 717 59 732 59S760 64 760 84ZM719 46a12 14 0 1 0 25 0a12 14 0 1 0 -25 0ZM780 86C780 65 794 60 809 60S839 65 839 86ZM796 46a13 14 0 1 0 26 0a13 14 0 1 0 -26 0ZM793 41h33v4h-33ZM799 41a12 10 0 0 1 21 0ZM861 86C861 66 875 61 890 61S918 66 918 86ZM877 48a12 14 0 1 0 25 0a12 14 0 1 0 -25 0ZM936 84C936 64 949 59 964 59S993 64 993 84ZM952 46a13 14 0 1 0 25 0a13 14 0 1 0 -25 0ZM948 41h32v4h-32ZM954 41a12 10 0 0 1 20 0ZM997 86C997 65 1010 60 1026 60S1054 65 1054 86ZM1013 47a13 14 0 1 0 26 0a13 14 0 1 0 -26 0ZM1022 31a7 7 0 1 0 8 0ZM1073 84C1073 64 1087 59 1102 59S1130 64 1130 84ZM1089 45a13 14 0 1 0 25 0a13 14 0 1 0 -25 0ZM1135 89C1135 67 1150 62 1167 62S1198 67 1198 89ZM1153 47a14 15 0 1 0 28 0a14 15 0 1 0 -28 0ZM1204 90C1204 68 1218 62 1235 62S1266 68 1266 90ZM1221 48a14 15 0 1 0 28 0a14 15 0 1 0 -28 0ZM1276 90C1276 68 1291 62 1307 62S1338 68 1338 90ZM1293 48a14 15 0 1 0 27 0a14 15 0 1 0 -27 0ZM1316 40l9 12l-6 10ZM1336 85C1336 64 1350 58 1366 58S1397 64 1397 85ZM1353 44a13 15 0 1 0 27 0a13 15 0 1 0 -27 0Z"/><path class="hr1" d="M-32 117C-32 90 -14 83 6 83S44 90 44 117ZM-11 65a17 18 0 1 0 33 0a17 18 0 1 0 -33 0ZM-15 59h42v4h-42ZM-7 59a12 10 0 0 1 27 0ZM58 112C58 87 75 81 93 81S129 87 129 112ZM78 64a16 17 0 1 0 31 0a16 17 0 1 0 -31 0ZM89 44a7 7 0 1 0 8 0ZM121 114C121 88 139 81 159 81S197 88 197 114ZM142 63a17 18 0 1 0 33 0a17 18 0 1 0 -33 0ZM138 57h42v4h-42ZM146 57a12 10 0 0 1 27 0ZM202 111C202 87 218 81 236 81S270 87 270 111ZM221 65a15 17 0 1 0 30 0a15 17 0 1 0 -30 0ZM287 113C287 88 304 82 322 82S358 88 358 113ZM307 65a16 17 0 1 0 31 0a16 17 0 1 0 -31 0ZM361 109C361 85 377 79 395 79S429 85 429 109ZM380 63a15 17 0 1 0 30 0a15 17 0 1 0 -30 0ZM376 57h38v4h-38ZM383 57a12 10 0 0 1 24 0ZM426 110C426 86 443 79 461 79S496 86 496 110ZM446 63a15 17 0 1 0 31 0a15 17 0 1 0 -31 0ZM507 111C507 86 524 80 542 80S577 86 577 111ZM527 64a15 17 0 1 0 30 0a15 17 0 1 0 -30 0ZM577 114C577 89 594 82 613 82S650 89 650 114ZM597 65a16 18 0 1 0 32 0a16 18 0 1 0 -32 0ZM670 114C670 88 687 82 707 82S743 88 743 114ZM691 65a16 18 0 1 0 32 0a16 18 0 1 0 -32 0ZM752 113C752 88 769 82 787 82S821 88 821 113ZM772 66a15 17 0 1 0 30 0a15 17 0 1 0 -30 0ZM783 47a7 7 0 1 0 8 0ZM844 110C844 86 860 79 879 79S914 86 914 110ZM863 63a15 17 0 1 0 31 0a15 17 0 1 0 -31 0ZM859 57h39v4h-39ZM867 57a12 10 0 0 1 25 0ZM930 112C930 86 947 80 966 80S1001 86 1001 112ZM950 63a16 17 0 1 0 31 0a16 17 0 1 0 -31 0ZM1004 112C1004 88 1021 82 1039 82S1074 88 1074 112ZM1024 65a15 17 0 1 0 31 0a15 17 0 1 0 -31 0ZM1049 57l9 12l-6 10ZM1096 110C1096 86 1112 80 1130 80S1164 86 1164 110ZM1115 64a15 17 0 1 0 30 0a15 17 0 1 0 -30 0ZM1140 56l9 12l-6 10ZM1177 111C1177 86 1194 79 1213 79S1249 86 1249 111ZM1197 62a16 18 0 1 0 32 0a16 18 0 1 0 -32 0ZM1209 42a7 7 0 1 0 8 0ZM1268 116C1268 90 1286 83 1306 83S1344 90 1344 116ZM1289 65a17 18 0 1 0 33 0a17 18 0 1 0 -33 0ZM1352 115C1352 89 1369 83 1389 83S1425 89 1425 115ZM1373 66a16 18 0 1 0 32 0a16 18 0 1 0 -32 0Z"/></svg>
+    <div class="spot-wrap" aria-hidden="true"><i class="spot"></i></div>
+    <div class="marks" aria-hidden="true"><i class="tape" style="left:9.31%;top:68.65%"></i><i class="tape" style="left:20.94%;top:72.55%"></i><i class="tape" style="left:32.56%;top:75.14%"></i><i class="tape" style="left:44.19%;top:76.44%"></i><i class="tape" style="left:55.81%;top:76.44%"></i><i class="tape" style="left:67.44%;top:75.14%"></i><i class="tape" style="left:79.06%;top:72.55%"></i><i class="tape" style="left:90.69%;top:68.65%"></i></div>
+    <ul class="cast-list" role="list" aria-label="八位成員；用左右方向鍵切換">
+      <li class="m" data-side="R" data-f="1" style="--zz:0.695;--x:7.73;--y:67.42;--s:0.869;--fx:1">
+  <button class="m-btn" type="button" id="m-xiaolu" aria-expanded="true" aria-controls="bio-xiaolu" tabindex="-1">
+    <svg class="fig" viewBox="-110 -292 220 300" aria-hidden="true" focusable="false"><g class="k-ink" transform="translate(6 4)"><path d="M14.7 -95L0.7 -55L-11.3 -58.9L0.1 -99.4ZM0.4 -56.1L-2.4 -51.7L-6.3 -50.7L-10.4 -54.1L-11.3 -59.1L-6.9 -62.5L-2.1 -61ZM-2.2 -50.8L-40 -33.5L-43.4 -40L-8.1 -62.1ZM-46.1 -42.1L-37.8 -43.7L-27.8 -35.8L-28.4 -32.1L-45.7 -32ZM23.9 -100.2L48.8 -69.6L40.2 -62L13 -89.1ZM49.8 -66L48.3 -61.5L42.3 -59.7L38 -63.4L38.2 -67.9L42.8 -71.5L47.3 -70ZM48.9 -63.6L28.5 -26.7L21.5 -30.7L39.2 -68.6ZM20.6 -33.4L30.6 -34.6L39 -27.9L39.6 -24.5L21.4 -24.6ZM7.7 -150.1L37.7 -143.8L27.4 -114.4L24 -93.9L1.3 -98.8L6.6 -119.6ZM20.1 -152L22 -161.8L29.9 -160L28.5 -150.9ZM0.4 -98.1L24.9 -93.4L30.4 -65.7L-16.2 -65.3ZM42.4 -169.4L39.1 -162.6L32.4 -158.7L24 -158.9L18.1 -164.4L17.1 -171.8L19.6 -178.8L26.7 -183.2L34.7 -182.7L40.6 -177.1ZM39.6 -173.8L46.8 -168.3L41.1 -166ZM24.6 -181.5L23 -176.8L17 -175.6L12.3 -178.7L12.8 -184.3L16.3 -187.9L22.5 -187ZM47 -181.3L44.4 -177.3L39.3 -175.1L34.6 -179.4L34.3 -184.2L39.3 -188.1L44.8 -187.2ZM14 -142.7L-14.6 -129.8L-17.9 -138L8.8 -151.8ZM-11.1 -134.3L-13.3 -130.7L-17.2 -130.2L-19.5 -131.6L-20 -135.5L-17.3 -137.9L-13.1 -137.3ZM-13.1 -131.3L-29.7 -109.4L-35 -112.4L-19.9 -136.4ZM-26.7 -111.4L-29.6 -106.6L-33.4 -106.3L-36.4 -108.2L-37 -113.2L-32.9 -116.2L-29.2 -114.5ZM28.5 -142.9L36.1 -171.9L45.1 -170.7L38.6 -141.4ZM45 -171.9L43.2 -168.1L39.5 -166.8L36.2 -169.3L36.9 -173.3L39.6 -176.1L43.3 -174.4ZM36.2 -172.4L39.7 -200.3L45.8 -198.9L44.8 -171.6ZM47.7 -200.2L46 -195.2L41.8 -194.7L38.2 -197.3L38.7 -202.4L41.5 -204.9L46.3 -204.2Z"/><path d="M66.2 -223.4L59.2 -238.3L98.8 -229.9ZM63.5 -215.7L67.1 -223.2L98.8 -229.3ZM44.4 -203.5L47.2 -205.6L49 -204.8L45.6 -201.9ZM51.8 -209.1L54.5 -211.2L55.3 -210.2L52.9 -208ZM58.2 -215.7L61.3 -218L62.8 -216.7L60.4 -214.1ZM66.2 -221.3L68.5 -224.1L69.9 -222.3L66.4 -220.3Z"/></g><path class="k-mustard" d="M66.2 -223.4L59.2 -238.3L98.8 -229.9ZM63.5 -215.7L67.1 -223.2L98.8 -229.3ZM44.4 -203.5L47.2 -205.6L49 -204.8L45.6 -201.9ZM51.8 -209.1L54.5 -211.2L55.3 -210.2L52.9 -208ZM58.2 -215.7L61.3 -218L62.8 -216.7L60.4 -214.1ZM66.2 -221.3L68.5 -224.1L69.9 -222.3L66.4 -220.3Z"/><path class="k-coral" d="M14.7 -95L0.7 -55L-11.3 -58.9L0.1 -99.4ZM0.4 -56.1L-2.4 -51.7L-6.3 -50.7L-10.4 -54.1L-11.3 -59.1L-6.9 -62.5L-2.1 -61ZM-2.2 -50.8L-40 -33.5L-43.4 -40L-8.1 -62.1ZM-46.1 -42.1L-37.8 -43.7L-27.8 -35.8L-28.4 -32.1L-45.7 -32ZM23.9 -100.2L48.8 -69.6L40.2 -62L13 -89.1ZM49.8 -66L48.3 -61.5L42.3 -59.7L38 -63.4L38.2 -67.9L42.8 -71.5L47.3 -70ZM48.9 -63.6L28.5 -26.7L21.5 -30.7L39.2 -68.6ZM20.6 -33.4L30.6 -34.6L39 -27.9L39.6 -24.5L21.4 -24.6ZM7.7 -150.1L37.7 -143.8L27.4 -114.4L24 -93.9L1.3 -98.8L6.6 -119.6ZM20.1 -152L22 -161.8L29.9 -160L28.5 -150.9ZM0.4 -98.1L24.9 -93.4L30.4 -65.7L-16.2 -65.3ZM42.4 -169.4L39.1 -162.6L32.4 -158.7L24 -158.9L18.1 -164.4L17.1 -171.8L19.6 -178.8L26.7 -183.2L34.7 -182.7L40.6 -177.1ZM39.6 -173.8L46.8 -168.3L41.1 -166ZM24.6 -181.5L23 -176.8L17 -175.6L12.3 -178.7L12.8 -184.3L16.3 -187.9L22.5 -187ZM47 -181.3L44.4 -177.3L39.3 -175.1L34.6 -179.4L34.3 -184.2L39.3 -188.1L44.8 -187.2ZM14 -142.7L-14.6 -129.8L-17.9 -138L8.8 -151.8ZM-11.1 -134.3L-13.3 -130.7L-17.2 -130.2L-19.5 -131.6L-20 -135.5L-17.3 -137.9L-13.1 -137.3ZM-13.1 -131.3L-29.7 -109.4L-35 -112.4L-19.9 -136.4ZM-26.7 -111.4L-29.6 -106.6L-33.4 -106.3L-36.4 -108.2L-37 -113.2L-32.9 -116.2L-29.2 -114.5ZM28.5 -142.9L36.1 -171.9L45.1 -170.7L38.6 -141.4ZM45 -171.9L43.2 -168.1L39.5 -166.8L36.2 -169.3L36.9 -173.3L39.6 -176.1L43.3 -174.4ZM36.2 -172.4L39.7 -200.3L45.8 -198.9L44.8 -171.6ZM47.7 -200.2L46 -195.2L41.8 -194.7L38.2 -197.3L38.7 -202.4L41.5 -204.9L46.3 -204.2Z"/><path class="k-paper" d="M18.4 -141.3L25.2 -130L21.7 -127.6L15.2 -140.5Z"/></svg>
+    <span class="m-tag"><span class="m-name">王小鹿</span><span class="m-role">演員<span class="sl" aria-hidden="true">／</span><span class="sr-only">、</span>代課老師</span></span>
+  </button>
+  <div class="m-bio" id="bio-xiaolu" role="region" aria-labelledby="m-xiaolu">
+    <p class="bio-name">王小鹿</p>
+    <p class="bio-since">2023 年入團・晚上是演員，白天是代課老師</p>
+    <p>最年輕的團員，三年內代課過九所國小。劇團的兒童場由她帶，每場演完留二十分鐘，讓小朋友上台照著膠帶走一次位。</p>
+    <p class="bio-now"><b>本季</b>《斜坡》飾 孫女</p>
+  </div>
+</li><li class="m" data-side="R" data-f="1" style="--zz:1.000;--x:16.18;--y:70.51;--s:0.894;--fx:1">
+  <button class="m-btn" type="button" id="m-xiaoyu" aria-expanded="true" aria-controls="bio-xiaoyu" tabindex="-1">
+    <svg class="fig" viewBox="-110 -292 220 300" aria-hidden="true" focusable="false"><g class="k-deep" transform="translate(6 4)"><path d="M2.9 -94.7L3 -49.4L-10.2 -48.2L-13 -94.2ZM2.6 -48.2L0.3 -43.6L-5.4 -42.8L-9.6 -45.9L-8.9 -51.8L-5 -55.2L1.1 -53.4ZM3.3 -48.1L-3.7 -4L-12.1 -5.2L-9.5 -49.6ZM-11.7 -10L-3.9 -10.8L6.6 -3.5L7.2 0L-12.8 -0.6ZM13.4 -94.5L13 -48.7L0.9 -48.2L-1.7 -94.1ZM12.4 -49.3L11 -44.8L4.8 -42.5L0.9 -46.5L0.9 -52L5.5 -55.5L10.1 -54ZM12.3 -49.3L12 -4.9L4.3 -4.6L0.2 -48.8ZM3.7 -9.8L13.4 -11.5L23.4 -3.4L22.9 -0.5L3.8 -0.1ZM-15.5 -149L17 -149.6L10.6 -116.4L13.1 -94.9L-12 -94.9L-11 -117.3ZM-3.5 -153.6L-3.4 -164.3L4.4 -163.6L4.5 -153.6ZM16 -173.1L11.3 -166.2L5.1 -162.4L-3.7 -163.6L-10 -168.9L-11.2 -176.8L-7 -184.6L-0.8 -188.8L7.6 -187.9L14.4 -181.9ZM13.9 -178.2L20.3 -173.1L15.2 -170.1ZM-7.4 -173.2L-18 -163.9L-24.3 -171.8L-7.5 -182.1ZM-15.7 -144L-36.5 -168.5L-30.1 -173.6L-7.2 -151.4ZM-27.9 -171.1L-30.5 -167.5L-33.5 -166.1L-36.8 -169.2L-37.7 -172.4L-33.8 -175L-30.8 -173.9ZM-37.8 -170L-40.6 -200.1L-34.6 -200.8L-29.2 -171.3ZM-32.4 -200.8L-34.1 -196.5L-38.6 -195L-42 -198.3L-42.6 -202.1L-38.9 -205.2L-34.3 -203.9ZM17.7 -148.5L24.7 -116.7L16 -114.9L7.6 -146.3ZM24.7 -115.4L22.5 -111.9L18.6 -111.1L16.3 -114.6L15.4 -117.8L18.4 -120.2L23.1 -119.7ZM19.2 -111.3L-10.6 -116.9L-9.1 -124.4L20.6 -120.5ZM-4.4 -120.8L-5.9 -116.6L-10.4 -115.5L-14 -118.4L-14.8 -122.3L-11.1 -125.8L-5.7 -125.2Z"/><path d="M-15.7 -143.2L9.1 -139.6L5.3 -106L-21.4 -109.6Z"/></g><path class="k-coral" d="M-15.7 -143.2L9.1 -139.6L5.3 -106L-21.4 -109.6Z"/><path class="k-ink" d="M2.9 -94.7L3 -49.4L-10.2 -48.2L-13 -94.2ZM2.6 -48.2L0.3 -43.6L-5.4 -42.8L-9.6 -45.9L-8.9 -51.8L-5 -55.2L1.1 -53.4ZM3.3 -48.1L-3.7 -4L-12.1 -5.2L-9.5 -49.6ZM-11.7 -10L-3.9 -10.8L6.6 -3.5L7.2 0L-12.8 -0.6ZM13.4 -94.5L13 -48.7L0.9 -48.2L-1.7 -94.1ZM12.4 -49.3L11 -44.8L4.8 -42.5L0.9 -46.5L0.9 -52L5.5 -55.5L10.1 -54ZM12.3 -49.3L12 -4.9L4.3 -4.6L0.2 -48.8ZM3.7 -9.8L13.4 -11.5L23.4 -3.4L22.9 -0.5L3.8 -0.1ZM-15.5 -149L17 -149.6L10.6 -116.4L13.1 -94.9L-12 -94.9L-11 -117.3ZM-3.5 -153.6L-3.4 -164.3L4.4 -163.6L4.5 -153.6ZM16 -173.1L11.3 -166.2L5.1 -162.4L-3.7 -163.6L-10 -168.9L-11.2 -176.8L-7 -184.6L-0.8 -188.8L7.6 -187.9L14.4 -181.9ZM13.9 -178.2L20.3 -173.1L15.2 -170.1ZM-7.4 -173.2L-18 -163.9L-24.3 -171.8L-7.5 -182.1ZM-15.7 -144L-36.5 -168.5L-30.1 -173.6L-7.2 -151.4ZM-27.9 -171.1L-30.5 -167.5L-33.5 -166.1L-36.8 -169.2L-37.7 -172.4L-33.8 -175L-30.8 -173.9ZM-37.8 -170L-40.6 -200.1L-34.6 -200.8L-29.2 -171.3ZM-32.4 -200.8L-34.1 -196.5L-38.6 -195L-42 -198.3L-42.6 -202.1L-38.9 -205.2L-34.3 -203.9ZM17.7 -148.5L24.7 -116.7L16 -114.9L7.6 -146.3ZM24.7 -115.4L22.5 -111.9L18.6 -111.1L16.3 -114.6L15.4 -117.8L18.4 -120.2L23.1 -119.7ZM19.2 -111.3L-10.6 -116.9L-9.1 -124.4L20.6 -120.5ZM-4.4 -120.8L-5.9 -116.6L-10.4 -115.5L-14 -118.4L-14.8 -122.3L-11.1 -125.8L-5.7 -125.2Z"/><path class="k-paper" d="M-9.6 -142L1.8 -140.5L1 -135.8L-10.1 -137.8ZM-14.6 -131.1L1.4 -129.1L0.7 -127.1L-14.8 -128.5ZM-13.8 -123.3L1.9 -121.5L2.1 -120.1L-13.4 -121.9ZM-12.5 -116.1L3.7 -114.9L2.2 -112.9L-13.2 -114.7ZM-0.9 -143L4.7 -130.5L2.4 -128.7L-4.7 -140.9Z"/></svg>
+    <span class="m-tag"><span class="m-name">鄭小魚</span><span class="m-role">演員<span class="sl" aria-hidden="true">／</span><span class="sr-only">、</span>護理師</span></span>
+  </button>
+  <div class="m-bio" id="bio-xiaoyu" role="region" aria-labelledby="m-xiaoyu">
+    <p class="bio-name">鄭小魚</p>
+    <p class="bio-since">2018 年入團・晚上是演員，白天是護理師</p>
+    <p>急診室三班制，最懂換場。她能在四十秒內換好一套戲服，也能在凌晨兩點，把一句很難的台詞說得很平靜。</p>
+    <p class="bio-now"><b>本季</b>《夜班》飾 急診護理師</p>
+  </div>
+</li><li class="m" data-side="R" data-f="-1" style="--zz:0.714;--x:24.64;--y:72.91;--s:0.914;--fx:-1">
+  <button class="m-btn" type="button" id="m-meiling" aria-expanded="true" aria-controls="bio-meiling" tabindex="-1">
+    <svg class="fig" viewBox="-110 -292 220 300" aria-hidden="true" focusable="false"><g class="k-ink" transform="translate(6 4)"><path d="M13.8 -89.7L4.6 -45.3L-9 -47.4L-1.5 -91.8ZM4.4 -46.9L1.5 -42L-3.9 -40L-8 -44L-8.5 -49.9L-4.3 -52.8L1.3 -51.2ZM3.7 -47.1L2.6 -4.5L-6.7 -5.5L-9 -46.4ZM1.4 0.2L-16.5 -0.6L-16.2 -3.8L-7.1 -11L1.5 -9.4ZM2.3 -90.8L8.4 -48.3L-3 -46.1L-14.2 -87.6ZM9.1 -47.2L6.4 -42L1.6 -41L-3.2 -43.4L-2.6 -49.9L0.8 -53L6.3 -52.1ZM9.2 -46.1L5.5 -4.8L-2.4 -4.5L-4.2 -46.3ZM6.2 -0.4L-12.2 0.1L-12 -4L-2.9 -11.6L5.5 -10ZM-21.4 -140.8L11.5 -143.7L9.7 -112.5L13.1 -92L-12.4 -88.6L-13.2 -111ZM-9.8 -146.5L-9.9 -155.6L-1.5 -157.4L-0.6 -147.6ZM3.1 -161.1L-2.2 -155.4L-9.9 -154.5L-16.8 -157.7L-21.3 -164.8L-19.6 -172.6L-14.7 -178L-6.6 -180.4L0.5 -176.4L4.3 -169.7ZM-19.6 -161.7L-25.1 -164.9L-18.6 -169.9ZM8.7 -178.9L5.6 -173L-1.5 -171.9L-6.4 -176.3L-6 -181.9L-1.5 -186.5L4.9 -185.7ZM11.8 -144.5L31.8 -120.5L24.3 -115.3L4.7 -137.5ZM33.1 -117.7L31.1 -114.9L27.2 -113.2L24.5 -116.8L23.5 -120.5L27.7 -123.1L31.5 -122.1ZM30.2 -113.9L5.9 -100.2L1.6 -105.5L25.6 -121.6ZM9.6 -103.3L7.3 -99L2.4 -97.5L-1.2 -101.1L-0.8 -105.6L2.2 -108.4L7.8 -107.6ZM-14.5 -134.9L-40.1 -119.7L-45.5 -126.9L-19.4 -143.7ZM-37.7 -122.6L-39.5 -119.3L-44.1 -118.8L-46.8 -121.5L-46.9 -124.9L-43.6 -127.5L-39.3 -126.2ZM-47.4 -120.5L-58.7 -146.4L-53 -149.5L-38.9 -124.5ZM-51 -148.6L-53.2 -144.1L-57.8 -142.8L-60.3 -146.5L-61.4 -150.4L-57.2 -153L-52.5 -153.1Z"/><path d="M-76.5 -155.8L-19.6 -156.4L-19.1 -150.8L-76.6 -150.6ZM-75.4 -159.9L-73.4 -163.3L-69.2 -165.6L-64.4 -163.1L-62.7 -158.9L-64.3 -155.1L-68.8 -152.8L-72.8 -154.6ZM-60.9 -159.2L-58.8 -163.6L-55.4 -164.9L-50.1 -163.3L-49.2 -159.3L-51 -155.3L-54.7 -153.1L-59.9 -154.5ZM-46.7 -159.4L-45 -164.1L-41.4 -165.5L-36.6 -163.5L-35.1 -159L-36.1 -154.9L-40.5 -153.5L-45.1 -154.7ZM-33.8 -159.6L-30.9 -163.6L-26.9 -165.2L-22.6 -163.3L-20.4 -159.5L-22.9 -154.8L-27.3 -152.9L-31.1 -155.1Z"/></g><path class="k-mustard" d="M-76.5 -155.8L-19.6 -156.4L-19.1 -150.8L-76.6 -150.6ZM-75.4 -159.9L-73.4 -163.3L-69.2 -165.6L-64.4 -163.1L-62.7 -158.9L-64.3 -155.1L-68.8 -152.8L-72.8 -154.6ZM-60.9 -159.2L-58.8 -163.6L-55.4 -164.9L-50.1 -163.3L-49.2 -159.3L-51 -155.3L-54.7 -153.1L-59.9 -154.5ZM-46.7 -159.4L-45 -164.1L-41.4 -165.5L-36.6 -163.5L-35.1 -159L-36.1 -154.9L-40.5 -153.5L-45.1 -154.7ZM-33.8 -159.6L-30.9 -163.6L-26.9 -165.2L-22.6 -163.3L-20.4 -159.5L-22.9 -154.8L-27.3 -152.9L-31.1 -155.1Z"/><path class="k-coral" d="M13.8 -89.7L4.6 -45.3L-9 -47.4L-1.5 -91.8ZM4.4 -46.9L1.5 -42L-3.9 -40L-8 -44L-8.5 -49.9L-4.3 -52.8L1.3 -51.2ZM3.7 -47.1L2.6 -4.5L-6.7 -5.5L-9 -46.4ZM1.4 0.2L-16.5 -0.6L-16.2 -3.8L-7.1 -11L1.5 -9.4ZM2.3 -90.8L8.4 -48.3L-3 -46.1L-14.2 -87.6ZM9.1 -47.2L6.4 -42L1.6 -41L-3.2 -43.4L-2.6 -49.9L0.8 -53L6.3 -52.1ZM9.2 -46.1L5.5 -4.8L-2.4 -4.5L-4.2 -46.3ZM6.2 -0.4L-12.2 0.1L-12 -4L-2.9 -11.6L5.5 -10ZM-21.4 -140.8L11.5 -143.7L9.7 -112.5L13.1 -92L-12.4 -88.6L-13.2 -111ZM-9.8 -146.5L-9.9 -155.6L-1.5 -157.4L-0.6 -147.6ZM3.1 -161.1L-2.2 -155.4L-9.9 -154.5L-16.8 -157.7L-21.3 -164.8L-19.6 -172.6L-14.7 -178L-6.6 -180.4L0.5 -176.4L4.3 -169.7ZM-19.6 -161.7L-25.1 -164.9L-18.6 -169.9ZM8.7 -178.9L5.6 -173L-1.5 -171.9L-6.4 -176.3L-6 -181.9L-1.5 -186.5L4.9 -185.7ZM11.8 -144.5L31.8 -120.5L24.3 -115.3L4.7 -137.5ZM33.1 -117.7L31.1 -114.9L27.2 -113.2L24.5 -116.8L23.5 -120.5L27.7 -123.1L31.5 -122.1ZM30.2 -113.9L5.9 -100.2L1.6 -105.5L25.6 -121.6ZM9.6 -103.3L7.3 -99L2.4 -97.5L-1.2 -101.1L-0.8 -105.6L2.2 -108.4L7.8 -107.6ZM-14.5 -134.9L-40.1 -119.7L-45.5 -126.9L-19.4 -143.7ZM-37.7 -122.6L-39.5 -119.3L-44.1 -118.8L-46.8 -121.5L-46.9 -124.9L-43.6 -127.5L-39.3 -126.2ZM-47.4 -120.5L-58.7 -146.4L-53 -149.5L-38.9 -124.5ZM-51 -148.6L-53.2 -144.1L-57.8 -142.8L-60.3 -146.5L-61.4 -150.4L-57.2 -153L-52.5 -153.1Z"/><path class="k-paper" d="M-4.8 -136.7L1.9 -124.9L-1.8 -123.5L-8 -135.3ZM-9.9 -114.2L6.7 -113.4L9.9 -74L-9.2 -74.5Z"/></svg>
+    <span class="m-tag"><span class="m-name">蔡美玲</span><span class="m-role">演員<span class="sl" aria-hidden="true">／</span><span class="sr-only">、</span>雞蛋糕攤</span></span>
+  </button>
+  <div class="m-bio" id="bio-meiling" role="region" aria-labelledby="m-meiling">
+    <p class="bio-name">蔡美玲</p>
+    <p class="bio-since">2016 年入團・晚上是演員，白天是雞蛋糕攤</p>
+    <p>寧夏夜市第三排那攤雞蛋糕是她的。九點半收攤、十點進排練室，台詞都背在烤盤翻面的空檔。</p>
+    <p class="bio-now"><b>本季</b>《搬家公司的莎士比亞》飾 皇后與老闆娘</p>
+  </div>
+</li><li class="m is-on" data-side="R" data-f="1" style="--zz:0.175;--x:33.09;--y:74.63;--s:1.149;--fx:1">
+  <button class="m-btn" type="button" id="m-jiayue" aria-expanded="true" aria-controls="bio-jiayue" tabindex="0">
+    <svg class="fig" viewBox="-110 -292 220 300" aria-hidden="true" focusable="false"><g class="k-deep" transform="translate(6 4)"><path d="M6.9 -92.6L-1.4 -47.3L-16 -49.5L-10.7 -94.6ZM-1.3 -47.6L-4.8 -42.4L-10.5 -41L-15.2 -45.4L-14.8 -50.4L-9.9 -54.3L-4.4 -53.9ZM-2.5 -43.8L-29.8 -8L-37.3 -13.5L-15.2 -51.4ZM-37.6 -14.8L-29.1 -16.9L-18 -9.9L-18 -5.1L-37.8 -4.9ZM19.6 -95.6L29.4 -51.4L15.5 -48.1L1.5 -89.7ZM28.7 -49.3L27.1 -44.6L21.4 -43.4L16.5 -46.6L16.8 -52.7L21.2 -57L26.1 -55ZM28.9 -50.2L31.9 -5.3L23.4 -4.8L15.9 -48.7ZM23.7 -9.5L33.4 -10.5L43 -4.5L42.5 0.2L23.4 0.3ZM-10.2 -150.8L26 -148.3L17.6 -114.9L17.9 -92.7L-8.7 -93.9L-5.8 -116.9ZM4 -154.8L4.8 -164.5L12.9 -163.8L12.8 -153.6ZM-10 -94.1L19.1 -91.9L21.4 -81.1L-11.8 -80.6ZM24.2 -171.8L18.6 -164.7L11.3 -162.4L3 -165.4L-2.5 -172L-1.7 -179.8L2.6 -187.4L11.3 -189.3L19.3 -186.5L24.4 -179.8ZM23.1 -179.6L29.5 -174.4L24.1 -171.1ZM-1.7 -180.3L3.9 -189.6L19 -189.4L14.5 -185.4ZM-0.7 -148L-5.2 -114.8L-13.8 -116.3L-12.6 -149.1ZM-5 -115.3L-6.1 -111.7L-10.3 -111L-14.8 -113.7L-14.3 -117.7L-10.8 -119.9L-6.2 -119.7ZM-5.1 -115.7L-4.7 -85.2L-11.8 -85.2L-15 -115.2ZM-2.5 -84.5L-5.2 -80.4L-9.8 -79.5L-13.5 -82.3L-13.3 -87L-10.1 -90.7L-5.2 -89ZM18 -150.4L40.1 -173.9L47.1 -167L25.5 -142.5ZM49.1 -170.8L47 -166L43.1 -165.3L38.7 -168.4L38.9 -173.3L43.2 -175.2L47.5 -174.3ZM39.2 -169.8L33.7 -200.1L40.7 -201.4L48.2 -171.6ZM42.4 -200.8L40.2 -195.8L35.3 -195L31.8 -198.4L31.9 -203.1L35.9 -206.4L40.9 -205.4Z"/><path d="M-68.1 -177.4L95.1 -220.8L97 -211.4L-64.6 -167.9Z"/></g><path class="k-coral" d="M-68.1 -177.4L95.1 -220.8L97 -211.4L-64.6 -167.9Z"/><path class="k-ink" d="M6.9 -92.6L-1.4 -47.3L-16 -49.5L-10.7 -94.6ZM-1.3 -47.6L-4.8 -42.4L-10.5 -41L-15.2 -45.4L-14.8 -50.4L-9.9 -54.3L-4.4 -53.9ZM-2.5 -43.8L-29.8 -8L-37.3 -13.5L-15.2 -51.4ZM-37.6 -14.8L-29.1 -16.9L-18 -9.9L-18 -5.1L-37.8 -4.9ZM19.6 -95.6L29.4 -51.4L15.5 -48.1L1.5 -89.7ZM28.7 -49.3L27.1 -44.6L21.4 -43.4L16.5 -46.6L16.8 -52.7L21.2 -57L26.1 -55ZM28.9 -50.2L31.9 -5.3L23.4 -4.8L15.9 -48.7ZM23.7 -9.5L33.4 -10.5L43 -4.5L42.5 0.2L23.4 0.3ZM-10.2 -150.8L26 -148.3L17.6 -114.9L17.9 -92.7L-8.7 -93.9L-5.8 -116.9ZM4 -154.8L4.8 -164.5L12.9 -163.8L12.8 -153.6ZM-10 -94.1L19.1 -91.9L21.4 -81.1L-11.8 -80.6ZM24.2 -171.8L18.6 -164.7L11.3 -162.4L3 -165.4L-2.5 -172L-1.7 -179.8L2.6 -187.4L11.3 -189.3L19.3 -186.5L24.4 -179.8ZM23.1 -179.6L29.5 -174.4L24.1 -171.1ZM-1.7 -180.3L3.9 -189.6L19 -189.4L14.5 -185.4ZM-0.7 -148L-5.2 -114.8L-13.8 -116.3L-12.6 -149.1ZM-5 -115.3L-6.1 -111.7L-10.3 -111L-14.8 -113.7L-14.3 -117.7L-10.8 -119.9L-6.2 -119.7ZM-5.1 -115.7L-4.7 -85.2L-11.8 -85.2L-15 -115.2ZM-2.5 -84.5L-5.2 -80.4L-9.8 -79.5L-13.5 -82.3L-13.3 -87L-10.1 -90.7L-5.2 -89ZM18 -150.4L40.1 -173.9L47.1 -167L25.5 -142.5ZM49.1 -170.8L47 -166L43.1 -165.3L38.7 -168.4L38.9 -173.3L43.2 -175.2L47.5 -174.3ZM39.2 -169.8L33.7 -200.1L40.7 -201.4L48.2 -171.6ZM42.4 -200.8L40.2 -195.8L35.3 -195L31.8 -198.4L31.9 -203.1L35.9 -206.4L40.9 -205.4Z"/><path class="k-paper" d="M-47.7 -178.5L-39 -180.8L-38.9 -179.7L-47.3 -176.8ZM-28.6 -184L-20.1 -186.3L-19.7 -183.8L-27.5 -182.2ZM-9.6 -189.3L-0.4 -191.5L-0.6 -189.5L-8.4 -187.2ZM10.1 -193.8L19.5 -196.8L19.2 -195L10 -192ZM29.2 -199.7L38.1 -202.1L38.9 -199.7L30.3 -197.5ZM48.4 -204.1L56.8 -206.5L58.4 -205.2L48.7 -202.3ZM68.4 -209.4L76.9 -211.3L77.7 -210.3L68.8 -207.6ZM5.4 -143.5L12.3 -131.1L9.4 -128.3L2 -140.6ZM6.5 -109.8L15.1 -109.8L13.9 -103.7L6.4 -104Z"/></svg>
+    <span class="m-tag"><span class="m-name">林家岳</span><span class="m-role">導演<span class="sl" aria-hidden="true">／</span><span class="sr-only">、</span>木工</span></span>
+  </button>
+  <div class="m-bio" id="bio-jiayue" role="region" aria-labelledby="m-jiayue">
+    <p class="bio-name">林家岳</p>
+    <p class="bio-since">2015 年創團成員・晚上是導演，白天是木工</p>
+    <p>白天在三重的木工廠做櫃子，晚上把劇團的布景一塊一塊釘起來。他說好的走位跟好的榫接一樣：不用一根釘子，也站得穩。</p>
+    <p class="bio-now"><b>本季</b>團長；本季兩齣戲的導演</p>
+  </div>
+</li><li class="m" data-side="R" data-f="1" style="--zz:0.021;--x:66.91;--y:74.63;--s:0.929;--fx:-1">
+  <button class="m-btn" type="button" id="m-zhiming" aria-expanded="true" aria-controls="bio-zhiming" tabindex="-1">
+    <svg class="fig" viewBox="-110 -292 220 300" aria-hidden="true" focusable="false"><g class="k-ink" transform="translate(6 4)"><path d="M0.7 -93.7L-7.9 -47.9L-20.7 -49.8L-15.5 -95.6ZM-7.9 -49.3L-11.1 -43.7L-16.1 -43.1L-20.5 -46.8L-20.7 -52.1L-16.3 -55.4L-9.9 -54.4ZM-8.3 -49L-14.4 -4.1L-22.4 -4.8L-20.5 -49.7ZM-22.6 -9.8L-13.1 -11.4L-2.8 -3.5L-3.3 -0.5L-21.9 0.5ZM13.2 -95.4L20.3 -51L7.8 -47.9L-4.1 -92ZM20.8 -50L17.8 -45L12.5 -43.5L8.2 -47.4L7.5 -53.2L12.8 -55.6L17.5 -54.9ZM20.2 -51.4L24.9 -6.2L15.8 -5.9L7.4 -48.9ZM16.5 -11.1L25.6 -11.9L35.7 -5.1L34.8 -1.3L16.1 -0.7ZM-12.2 -151.6L22.2 -147.8L12.1 -115.1L12.2 -93L-13.9 -95.9L-9.5 -117.9ZM1 -154.4L3.3 -164.3L10.6 -163.9L10.1 -153.3ZM-15.4 -96L12.2 -91.8L15 -81.9L-17.3 -81.6ZM22.3 -170.2L15.5 -163.5L8 -162.4L-0.1 -166L-3.7 -172.7L-3.3 -180.6L3.1 -187.1L10.6 -189.5L18.4 -184.8L23.2 -178.5ZM20.8 -178.7L27.8 -173.6L22.5 -170.4ZM-3.6 -179L-2.1 -189.7L14.9 -190.8L23.1 -181.8L34.6 -181.9L33.9 -178.9L-2.9 -176ZM-5.7 -152.9L21.3 -133.9L15.9 -127.3L-11.2 -143.9ZM22.8 -130.6L21.2 -127.2L17.3 -126.3L14.2 -127.8L14.7 -132.6L18 -135.3L22.1 -134.3ZM15.9 -134.7L40.6 -151.1L45.2 -145.4L21.4 -127.1ZM49.1 -148.8L46.7 -143.6L41.6 -143.3L37.7 -146.2L37.6 -150.7L42.1 -153.5L46.1 -152.5ZM23.1 -148.8L36.9 -119.1L28.6 -115.2L12.9 -142.9ZM38.5 -117L35.8 -114L31.8 -112.3L29 -115.7L28.4 -119.9L31.7 -121.9L35.9 -120.7ZM32 -121.8L61.5 -128L63.6 -122.3L34.3 -112.5ZM68.1 -125.2L66.2 -120.8L60.6 -119.5L57.4 -123L57.4 -126.9L61.8 -130.6L65.5 -129.4Z"/><path d="M75.9 0.7L67.8 -265L71.8 -264.3L80.3 -0.7ZM75.4 -9.2L80.9 -9.5L94.3 -1.2L62.8 -1.1ZM38 -263.9L67.5 -279.7L78.5 -257.6L48.5 -242.4ZM54.5 -252.2L51.9 -243.7L46.7 -239.5L38.1 -239.3L32.7 -244.7L29.5 -252.3L32.8 -259.2L38.9 -263.9L46.9 -263.8L52.1 -258.6Z"/></g><path class="k-mustard" d="M75.9 0.7L67.8 -265L71.8 -264.3L80.3 -0.7ZM75.4 -9.2L80.9 -9.5L94.3 -1.2L62.8 -1.1ZM38 -263.9L67.5 -279.7L78.5 -257.6L48.5 -242.4ZM54.5 -252.2L51.9 -243.7L46.7 -239.5L38.1 -239.3L32.7 -244.7L29.5 -252.3L32.8 -259.2L38.9 -263.9L46.9 -263.8L52.1 -258.6Z"/><path class="k-coral" d="M0.7 -93.7L-7.9 -47.9L-20.7 -49.8L-15.5 -95.6ZM-7.9 -49.3L-11.1 -43.7L-16.1 -43.1L-20.5 -46.8L-20.7 -52.1L-16.3 -55.4L-9.9 -54.4ZM-8.3 -49L-14.4 -4.1L-22.4 -4.8L-20.5 -49.7ZM-22.6 -9.8L-13.1 -11.4L-2.8 -3.5L-3.3 -0.5L-21.9 0.5ZM13.2 -95.4L20.3 -51L7.8 -47.9L-4.1 -92ZM20.8 -50L17.8 -45L12.5 -43.5L8.2 -47.4L7.5 -53.2L12.8 -55.6L17.5 -54.9ZM20.2 -51.4L24.9 -6.2L15.8 -5.9L7.4 -48.9ZM16.5 -11.1L25.6 -11.9L35.7 -5.1L34.8 -1.3L16.1 -0.7ZM-12.2 -151.6L22.2 -147.8L12.1 -115.1L12.2 -93L-13.9 -95.9L-9.5 -117.9ZM1 -154.4L3.3 -164.3L10.6 -163.9L10.1 -153.3ZM-15.4 -96L12.2 -91.8L15 -81.9L-17.3 -81.6ZM22.3 -170.2L15.5 -163.5L8 -162.4L-0.1 -166L-3.7 -172.7L-3.3 -180.6L3.1 -187.1L10.6 -189.5L18.4 -184.8L23.2 -178.5ZM20.8 -178.7L27.8 -173.6L22.5 -170.4ZM-3.6 -179L-2.1 -189.7L14.9 -190.8L23.1 -181.8L34.6 -181.9L33.9 -178.9L-2.9 -176ZM-5.7 -152.9L21.3 -133.9L15.9 -127.3L-11.2 -143.9ZM22.8 -130.6L21.2 -127.2L17.3 -126.3L14.2 -127.8L14.7 -132.6L18 -135.3L22.1 -134.3ZM15.9 -134.7L40.6 -151.1L45.2 -145.4L21.4 -127.1ZM49.1 -148.8L46.7 -143.6L41.6 -143.3L37.7 -146.2L37.6 -150.7L42.1 -153.5L46.1 -152.5ZM23.1 -148.8L36.9 -119.1L28.6 -115.2L12.9 -142.9ZM38.5 -117L35.8 -114L31.8 -112.3L29 -115.7L28.4 -119.9L31.7 -121.9L35.9 -120.7ZM32 -121.8L61.5 -128L63.6 -122.3L34.3 -112.5ZM68.1 -125.2L66.2 -120.8L60.6 -119.5L57.4 -123L57.4 -126.9L61.8 -130.6L65.5 -129.4Z"/><path class="k-paper" d="M50 -252.2L48 -247.6L44.4 -244.7L39.9 -244.2L36.2 -247.7L35.2 -252.2L36.9 -256.5L39.6 -259.4L45 -259.1L48.9 -255.8ZM58.4 -268L60.3 -268.9L66.6 -258.3L64.9 -257.4ZM65.9 -265L67.8 -266.7L72.9 -255.6L70.9 -254.3ZM73.1 -263.1L74.2 -262.8L80.7 -253.4L78 -252.4ZM1.6 -142.4L7.8 -130.7L5.6 -128.8L-1 -140.8Z"/></svg>
+    <span class="m-tag"><span class="m-name">吳志明</span><span class="m-role">燈光<span class="sl" aria-hidden="true">／</span><span class="sr-only">、</span>外送員</span></span>
+  </button>
+  <div class="m-bio" id="bio-zhiming" role="region" aria-labelledby="m-zhiming">
+    <p class="bio-name">吳志明</p>
+    <p class="bio-since">2017 年入團・晚上是燈光，白天是外送員</p>
+    <p>騎了六年外送，記得每條巷子幾點會暗。他設計的燈，常常就是某個路口晚上十一點的顏色。</p>
+    <p class="bio-now"><b>本季</b>本季三齣戲的燈光設計</p>
+  </div>
+</li><li class="m" data-side="R" data-f="1" style="--zz:0.434;--x:75.36;--y:72.91;--s:0.914;--fx:-1">
+  <button class="m-btn" type="button" id="m-zhengxiong" aria-expanded="true" aria-controls="bio-zhengxiong" tabindex="-1">
+    <svg class="fig" viewBox="-110 -292 220 300" aria-hidden="true" focusable="false"><g class="k-deep" transform="translate(6 4)"><path d="M2.3 -93.3L-2.3 -48.2L-17.4 -48.8L-17 -95.5ZM-2.3 -48.3L-4.7 -43.6L-11.5 -41.7L-16.6 -45.1L-16.8 -51.4L-10.8 -55.6L-4.6 -54.9ZM-2 -47.8L-12.3 -4.8L-22.4 -6.4L-17 -50.5ZM-20.8 -10.6L-11.7 -10.6L-2.7 -4L-2.1 -0.3L-21.6 -0.5ZM15.4 -95.4L16.8 -48.8L2.4 -48.5L-3 -94.1ZM16.2 -49.2L14.1 -42.7L8 -41.5L2.5 -45.5L2.7 -51.7L7.4 -55.6L13.6 -54.6ZM15.9 -49.8L22.4 -5.8L12.8 -4.8L1.5 -47.2ZM13.9 -9.8L22.7 -11.7L33.2 -4.8L33.1 0.2L14.4 -0.3ZM-19.9 -150.5L19 -150.8L12.5 -117L13.9 -95L-14.8 -94.4L-12.9 -117.7ZM-6 -155.6L-5.4 -164.6L4.3 -165L3.9 -155ZM14 -174.9L11 -167L3 -163.4L-5.1 -164.2L-11.4 -170.3L-13 -178.9L-9.3 -186.7L-1.4 -190.9L7.4 -189.5L13.2 -183.1ZM13 -180.2L18.5 -174.9L13 -172.4ZM-13.5 -182.4L-7.8 -191.5L11.3 -192.3L22.9 -183.2L22 -180L-12.8 -179.5ZM-13.4 -141.6L-44.5 -134.1L-48.6 -143.2L-17.4 -154.4ZM-41.4 -137.9L-43.2 -134.8L-48 -133.4L-51.5 -135.9L-50.8 -140.5L-48 -143.3L-42.6 -142.3ZM-47.9 -133.4L-76.8 -139.5L-75.4 -146.6L-45.7 -143.3ZM-70.4 -143.3L-72.3 -138.4L-78.1 -137.5L-82 -140.4L-82.1 -145.9L-78.1 -148.6L-72.1 -147.6ZM16.1 -154L47.6 -146L44.7 -135L13.4 -142.8ZM50.8 -140.3L49.6 -135.8L44.6 -135.1L41.3 -138.1L40.7 -142.8L45.3 -146L49.5 -144.3ZM45.4 -145.5L75.8 -148.6L76.9 -139.5L47.1 -136ZM81.7 -143.7L79.5 -138.7L74.5 -138.1L70.8 -141.7L70 -146.2L74.3 -150.2L79.6 -148.6Z"/><path d="M-75.5 -162.1L-51.9 -163.2L-48.5 -117.5L-72.7 -116.1ZM51.6 -163.8L75.9 -161.6L71.9 -116L49.1 -118ZM-50.4 -162.5L-36.1 -159.1L-22.1 -162.5L-6.9 -158.1L6.5 -162.6L20.8 -158.4L35.1 -162L49.6 -158.5L49.7 -120.4L36.3 -116.6L21.5 -120.2L7.4 -116.8L-7.6 -120.8L-21.3 -117.1L-36.7 -120.1L-50.7 -116.9Z"/></g><path class="k-coral" d="M-75.5 -162.1L-51.9 -163.2L-48.5 -117.5L-72.7 -116.1ZM51.6 -163.8L75.9 -161.6L71.9 -116L49.1 -118ZM-50.4 -162.5L-36.1 -159.1L-22.1 -162.5L-6.9 -158.1L6.5 -162.6L20.8 -158.4L35.1 -162L49.6 -158.5L49.7 -120.4L36.3 -116.6L21.5 -120.2L7.4 -116.8L-7.6 -120.8L-21.3 -117.1L-36.7 -120.1L-50.7 -116.9Z"/><path class="k-ink" d="M2.3 -93.3L-2.3 -48.2L-17.4 -48.8L-17 -95.5ZM-2.3 -48.3L-4.7 -43.6L-11.5 -41.7L-16.6 -45.1L-16.8 -51.4L-10.8 -55.6L-4.6 -54.9ZM-2 -47.8L-12.3 -4.8L-22.4 -6.4L-17 -50.5ZM-20.8 -10.6L-11.7 -10.6L-2.7 -4L-2.1 -0.3L-21.6 -0.5ZM15.4 -95.4L16.8 -48.8L2.4 -48.5L-3 -94.1ZM16.2 -49.2L14.1 -42.7L8 -41.5L2.5 -45.5L2.7 -51.7L7.4 -55.6L13.6 -54.6ZM15.9 -49.8L22.4 -5.8L12.8 -4.8L1.5 -47.2ZM13.9 -9.8L22.7 -11.7L33.2 -4.8L33.1 0.2L14.4 -0.3ZM-19.9 -150.5L19 -150.8L12.5 -117L13.9 -95L-14.8 -94.4L-12.9 -117.7ZM-6 -155.6L-5.4 -164.6L4.3 -165L3.9 -155ZM14 -174.9L11 -167L3 -163.4L-5.1 -164.2L-11.4 -170.3L-13 -178.9L-9.3 -186.7L-1.4 -190.9L7.4 -189.5L13.2 -183.1ZM13 -180.2L18.5 -174.9L13 -172.4ZM-13.5 -182.4L-7.8 -191.5L11.3 -192.3L22.9 -183.2L22 -180L-12.8 -179.5ZM-13.4 -141.6L-44.5 -134.1L-48.6 -143.2L-17.4 -154.4ZM-41.4 -137.9L-43.2 -134.8L-48 -133.4L-51.5 -135.9L-50.8 -140.5L-48 -143.3L-42.6 -142.3ZM-47.9 -133.4L-76.8 -139.5L-75.4 -146.6L-45.7 -143.3ZM-70.4 -143.3L-72.3 -138.4L-78.1 -137.5L-82 -140.4L-82.1 -145.9L-78.1 -148.6L-72.1 -147.6ZM16.1 -154L47.6 -146L44.7 -135L13.4 -142.8ZM50.8 -140.3L49.6 -135.8L44.6 -135.1L41.3 -138.1L40.7 -142.8L45.3 -146L49.5 -144.3ZM45.4 -145.5L75.8 -148.6L76.9 -139.5L47.1 -136ZM81.7 -143.7L79.5 -138.7L74.5 -138.1L70.8 -141.7L70 -146.2L74.3 -150.2L79.6 -148.6Z"/><path class="k-paper" d="M-37.2 -157.1L-36 -158.2L-35.9 -121.7L-36.8 -121.1ZM-22.2 -157.1L-20.4 -157.8L-20.4 -121.3L-22.3 -121.2ZM-8 -157L-6.6 -157.4L-6.6 -121.9L-7.6 -121.2ZM6.8 -157.2L7.8 -157.7L7.4 -121.8L5.8 -121.4ZM21.2 -157.1L22.7 -157.4L21.7 -122.2L20.4 -121.8ZM35.1 -157.3L36 -157.1L37.1 -121.8L34.9 -121.9ZM-60.6 -152.2L-60.8 -151L-64.2 -150.7L-64.6 -152.5L-63.6 -155.3L-60.9 -154.3ZM64.4 -152.9L63.6 -150.1L60.3 -150.8L59.7 -152.6L61.3 -154.8L63.3 -155.2ZM-60.4 -139.4L-61.8 -137.6L-64.3 -138L-64.5 -139L-63.3 -141.5L-61.1 -141.8ZM64.9 -139.4L63.5 -137.6L61.3 -137.1L59.1 -139.2L61.2 -141.4L62.7 -141.3ZM-59.9 -126.5L-60.7 -125L-64 -124.7L-64.3 -126.7L-63.4 -128.1L-61.4 -129ZM64.3 -126.8L63.2 -124.2L61 -124.1L59.9 -126.7L60.6 -129.2L63 -129.3ZM-2.7 -144.4L4.4 -131.6L1.8 -129.4L-5 -142.5ZM0 -153.3L0.3 -103.7L-0.8 -104.1L-2.1 -152.8Z"/></svg>
+    <span class="m-tag"><span class="m-name">陳正雄</span><span class="m-role">配樂<span class="sl" aria-hidden="true">／</span><span class="sr-only">、</span>運將</span></span>
+  </button>
+  <div class="m-bio" id="bio-zhengxiong" role="region" aria-labelledby="m-zhengxiong">
+    <p class="bio-name">陳正雄</p>
+    <p class="bio-since">2015 年創團成員・晚上是配樂，白天是運將</p>
+    <p>大家叫他老鄭。計程車後車廂永遠放著一台手風琴，等客人的空檔就寫歌，所以劇團的配樂都差不多三分鐘長──剛好從大橋頭開到北門。</p>
+    <p class="bio-now"><b>本季</b>《搬家公司的莎士比亞》現場演奏</p>
+  </div>
+</li><li class="m" data-side="R" data-f="1" style="--zz:0.925;--x:83.82;--y:70.51;--s:0.894;--fx:-1">
+  <button class="m-btn" type="button" id="m-xinyi" aria-expanded="true" aria-controls="bio-xinyi" tabindex="-1">
+    <svg class="fig" viewBox="-110 -292 220 300" aria-hidden="true" focusable="false"><g class="k-ink" transform="translate(6 4)"><path d="M-29.8 -61.2L20 -54.2L18.8 -42.8L-32.2 -44.7ZM25.8 -48.8L23.6 -43.7L18.2 -42.2L14.1 -45.7L13.8 -51.4L18.5 -54.5L23.6 -53.5ZM26.5 -49L24.6 -5L17.2 -4.7L14 -48.3ZM16.3 -10.4L25.8 -11.6L35.7 -4.4L35 0.6L17.2 0.4ZM-20 -61.5L19.7 -60.5L20.1 -47.4L-19.1 -46.7ZM25.6 -54L24.3 -49L18.2 -48.3L14.4 -51.5L14.6 -56L19.1 -59.7L24.3 -58.2ZM25.5 -52.7L16.5 -11.1L9.7 -11.7L13.7 -55.1ZM8.9 -15.8L18.5 -17.7L27.7 -10.3L27.5 -6.3L8.5 -6.4ZM-45 -106.5L-13.5 -108.8L-15.9 -76.7L-12.9 -54.1L-37.5 -52.2L-37.4 -74.7ZM-33.5 -111.9L-34 -122.8L-26 -122.7L-26 -113.4ZM-15.8 -134.1L-19.3 -125.8L-25.9 -121.8L-33.7 -121.3L-41.2 -126.4L-43.5 -134.6L-40.4 -142L-34.2 -147.2L-25.6 -146.9L-18.6 -142.1ZM-18.4 -136.9L-11.9 -132.5L-17.5 -128.7ZM-43.7 -142.1L-23.6 -148.5L-31.8 -136.4L-35.2 -107.4L-45.8 -110ZM-36.1 -106.6L-24 -77.8L-31.3 -74.1L-45.8 -102.2ZM-22.8 -76.5L-25 -72.7L-29.4 -72.2L-32.3 -74.6L-31.7 -78.1L-28.1 -80.3L-25.4 -79.7ZM-27.9 -80.4L0.2 -85L1.4 -78.4L-26.7 -72.6ZM6.1 -82.1L3.9 -77.7L0.7 -75.9L-3.8 -79.9L-3.5 -83.7L0.8 -86.4L4.9 -84.8ZM-11.8 -107.5L-6.2 -76.9L-15 -74.3L-22.5 -104.8ZM-5.3 -75.5L-7.4 -72.4L-10.7 -71.7L-14.8 -73.4L-13.8 -78L-11.9 -80.3L-7.5 -79.9ZM-9.4 -80L19.6 -76.7L18.4 -69.2L-10.5 -71.8ZM24.5 -73.6L21.8 -68.9L18.6 -67.4L14.3 -70.7L14.7 -75.1L17.7 -77.8L23 -76.7Z"/><path d="M-55 -48L-3 -47.1L-3.2 -41.6L-55.2 -42.1ZM-48.8 -45.1L-50.2 -0.2L-56 0.5L-54.3 -44.1ZM-4.8 -45.2L-2.6 0.2L-8 0.8L-10 -44.7ZM-56.8 -44.1L-63.6 -109.9L-57.3 -110.7L-50.8 -45.1ZM-64.5 -112.9L-56.1 -113.3L-53.6 -88.5L-62.6 -87.5ZM-52.7 -17L-6 -17.3L-5.8 -13.9L-52.8 -14.8ZM-0.5 -88L27.9 -96.2L33.8 -75.2L5.1 -66.6Z"/></g><path class="k-mustard" d="M-55 -48L-3 -47.1L-3.2 -41.6L-55.2 -42.1ZM-48.8 -45.1L-50.2 -0.2L-56 0.5L-54.3 -44.1ZM-4.8 -45.2L-2.6 0.2L-8 0.8L-10 -44.7ZM-56.8 -44.1L-63.6 -109.9L-57.3 -110.7L-50.8 -45.1ZM-64.5 -112.9L-56.1 -113.3L-53.6 -88.5L-62.6 -87.5ZM-52.7 -17L-6 -17.3L-5.8 -13.9L-52.8 -14.8ZM-0.5 -88L27.9 -96.2L33.8 -75.2L5.1 -66.6Z"/><path class="k-coral" d="M-29.8 -61.2L20 -54.2L18.8 -42.8L-32.2 -44.7ZM25.8 -48.8L23.6 -43.7L18.2 -42.2L14.1 -45.7L13.8 -51.4L18.5 -54.5L23.6 -53.5ZM26.5 -49L24.6 -5L17.2 -4.7L14 -48.3ZM16.3 -10.4L25.8 -11.6L35.7 -4.4L35 0.6L17.2 0.4ZM-20 -61.5L19.7 -60.5L20.1 -47.4L-19.1 -46.7ZM25.6 -54L24.3 -49L18.2 -48.3L14.4 -51.5L14.6 -56L19.1 -59.7L24.3 -58.2ZM25.5 -52.7L16.5 -11.1L9.7 -11.7L13.7 -55.1ZM8.9 -15.8L18.5 -17.7L27.7 -10.3L27.5 -6.3L8.5 -6.4ZM-45 -106.5L-13.5 -108.8L-15.9 -76.7L-12.9 -54.1L-37.5 -52.2L-37.4 -74.7ZM-33.5 -111.9L-34 -122.8L-26 -122.7L-26 -113.4ZM-15.8 -134.1L-19.3 -125.8L-25.9 -121.8L-33.7 -121.3L-41.2 -126.4L-43.5 -134.6L-40.4 -142L-34.2 -147.2L-25.6 -146.9L-18.6 -142.1ZM-18.4 -136.9L-11.9 -132.5L-17.5 -128.7ZM-43.7 -142.1L-23.6 -148.5L-31.8 -136.4L-35.2 -107.4L-45.8 -110ZM-36.1 -106.6L-24 -77.8L-31.3 -74.1L-45.8 -102.2ZM-22.8 -76.5L-25 -72.7L-29.4 -72.2L-32.3 -74.6L-31.7 -78.1L-28.1 -80.3L-25.4 -79.7ZM-27.9 -80.4L0.2 -85L1.4 -78.4L-26.7 -72.6ZM6.1 -82.1L3.9 -77.7L0.7 -75.9L-3.8 -79.9L-3.5 -83.7L0.8 -86.4L4.9 -84.8ZM-11.8 -107.5L-6.2 -76.9L-15 -74.3L-22.5 -104.8ZM-5.3 -75.5L-7.4 -72.4L-10.7 -71.7L-14.8 -73.4L-13.8 -78L-11.9 -80.3L-7.5 -79.9ZM-9.4 -80L19.6 -76.7L18.4 -69.2L-10.5 -71.8ZM24.5 -73.6L21.8 -68.9L18.6 -67.4L14.3 -70.7L14.7 -75.1L17.7 -77.8L23 -76.7Z"/><path class="k-paper" d="M13.3 -91.2L14 -91.5L19.9 -71.2L18.5 -71.3ZM22.1 -95.7L36 -111.4L37.6 -110.4L22.9 -94.4ZM-30.3 -102.1L-23.9 -90.2L-26.4 -87.7L-32.8 -100.3Z"/></svg>
+    <span class="m-tag"><span class="m-name">許欣怡</span><span class="m-role">編劇<span class="sl" aria-hidden="true">／</span><span class="sr-only">、</span>會計</span></span>
+  </button>
+  <div class="m-bio" id="bio-xinyi" role="region" aria-labelledby="m-xinyi">
+    <p class="bio-name">許欣怡</p>
+    <p class="bio-since">2016 年入團・晚上是編劇，白天是會計</p>
+    <p>月底結帳，月初寫戲。劇本跟報表一樣準時：每月五號交稿，月底的讀劇會上第一次唸出來。</p>
+    <p class="bio-now"><b>本季</b>《夜班》《斜坡》編劇</p>
+  </div>
+</li><li class="m" data-side="R" data-f="-1" style="--zz:0.914;--x:92.27;--y:67.42;--s:0.869;--fx:1">
+  <button class="m-btn" type="button" id="m-afang" aria-expanded="true" aria-controls="bio-afang" tabindex="-1">
+    <svg class="fig" viewBox="-110 -292 220 300" aria-hidden="true" focusable="false"><g class="k-deep" transform="translate(6 4)"><path d="M6.9 -81.9L20.9 -41.7L9.7 -37.7L-8.2 -76.5ZM21.9 -39.7L20.1 -34.9L14.5 -33.8L9.6 -37.4L10.2 -42.6L14.2 -45.2L19.9 -44.5ZM19.9 -45.3L52.7 -17.8L47.9 -10.8L11.3 -35.1ZM54.3 -9.5L35.6 -9.8L35.9 -13.4L45.1 -20.9L53.5 -18.7ZM-6.6 -72.4L-34.7 -44.1L-44.6 -52.1L-18.3 -83.7ZM-32.6 -48.1L-35.1 -42.4L-41.2 -41.4L-44.6 -45.2L-44.9 -50.9L-40.8 -53.4L-35.6 -53.1ZM-33.9 -47.2L-36.8 -5.5L-45.3 -4.7L-45.5 -48ZM-36.7 0.2L-55.6 0.5L-55.8 -4.1L-46.2 -10.9L-36.3 -10.1ZM-29.4 -129.1L3.9 -132.7L1.3 -101.5L5.3 -79.4L-20 -76.6L-19.9 -99.1ZM-17.8 -136.3L-18.1 -145.3L-10.9 -146.1L-8.6 -136.6ZM-19.4 -77.5L6.1 -79.8L20.6 -47.9L-27.8 -48.7ZM-4.6 -153L-9.4 -146.1L-17.5 -144L-25.1 -146.5L-29.5 -153.8L-29.6 -161.8L-25 -168.4L-16.4 -169.8L-8.3 -167.3L-3.9 -160.7ZM-29 -151.9L-34.2 -154.8L-27.8 -160.2ZM-0.5 -146.2L-12.6 -143.8L-14.8 -161.7L-26.6 -169.1L-20.8 -173.4L-2 -161.6ZM4.2 -128.2L-9.3 -100.6L-17 -103.8L-4.6 -133.4ZM-8.5 -103L-10.5 -98.7L-13.7 -98.4L-17.5 -100.8L-17 -104.2L-14.3 -107.7L-10.3 -106.9ZM-14.7 -97.9L-42.6 -105L-40.5 -112.4L-11.9 -107.2ZM-36.8 -108.9L-38.7 -105.1L-43.4 -103.6L-46.7 -107L-46.7 -111.3L-43.2 -113.8L-38.7 -112.5ZM-19.3 -128.4L-18.3 -98L-26.2 -96.3L-30.3 -127.7ZM-17.9 -97.7L-19.3 -93.1L-22.9 -92.5L-26.2 -95.7L-26.9 -98.9L-22.9 -101.2L-20 -101.3ZM-21 -92.9L-50 -86.2L-51.9 -92.8L-23 -101.6ZM-44.7 -89.3L-47.7 -86L-52 -84.7L-55.5 -86.9L-54.8 -92.3L-51.9 -94.4L-47.5 -93Z"/><path d="M-69 -100.7L-117.5 -179L-60.5 -106.1ZM-63.2 -104.6L-52.6 -81.8L-57.4 -79.3L-68.8 -100.8ZM-45.1 -80.6L-47.5 -74.3L-53.5 -70.9L-59.8 -71.6L-64.6 -76.9L-64.4 -83.9L-60.5 -89.5L-53.8 -90.5L-47.3 -87ZM-68 -99.4L-149.3 -139.3L-63.8 -107.7ZM-64.6 -105.4L-42 -98.7L-43 -93.2L-66.9 -99.4ZM-32.7 -96.3L-35.6 -89.7L-40.8 -86L-47.1 -87L-52.2 -92.9L-52 -99.6L-47.7 -104.4L-41.7 -105.1L-35.6 -102.6Z"/></g><path class="k-coral" d="M-69 -100.7L-117.5 -179L-60.5 -106.1ZM-63.2 -104.6L-52.6 -81.8L-57.4 -79.3L-68.8 -100.8ZM-45.1 -80.6L-47.5 -74.3L-53.5 -70.9L-59.8 -71.6L-64.6 -76.9L-64.4 -83.9L-60.5 -89.5L-53.8 -90.5L-47.3 -87ZM-68 -99.4L-149.3 -139.3L-63.8 -107.7ZM-64.6 -105.4L-42 -98.7L-43 -93.2L-66.9 -99.4ZM-32.7 -96.3L-35.6 -89.7L-40.8 -86L-47.1 -87L-52.2 -92.9L-52 -99.6L-47.7 -104.4L-41.7 -105.1L-35.6 -102.6Z"/><path class="k-ink" d="M6.9 -81.9L20.9 -41.7L9.7 -37.7L-8.2 -76.5ZM21.9 -39.7L20.1 -34.9L14.5 -33.8L9.6 -37.4L10.2 -42.6L14.2 -45.2L19.9 -44.5ZM19.9 -45.3L52.7 -17.8L47.9 -10.8L11.3 -35.1ZM54.3 -9.5L35.6 -9.8L35.9 -13.4L45.1 -20.9L53.5 -18.7ZM-6.6 -72.4L-34.7 -44.1L-44.6 -52.1L-18.3 -83.7ZM-32.6 -48.1L-35.1 -42.4L-41.2 -41.4L-44.6 -45.2L-44.9 -50.9L-40.8 -53.4L-35.6 -53.1ZM-33.9 -47.2L-36.8 -5.5L-45.3 -4.7L-45.5 -48ZM-36.7 0.2L-55.6 0.5L-55.8 -4.1L-46.2 -10.9L-36.3 -10.1ZM-29.4 -129.1L3.9 -132.7L1.3 -101.5L5.3 -79.4L-20 -76.6L-19.9 -99.1ZM-17.8 -136.3L-18.1 -145.3L-10.9 -146.1L-8.6 -136.6ZM-19.4 -77.5L6.1 -79.8L20.6 -47.9L-27.8 -48.7ZM-4.6 -153L-9.4 -146.1L-17.5 -144L-25.1 -146.5L-29.5 -153.8L-29.6 -161.8L-25 -168.4L-16.4 -169.8L-8.3 -167.3L-3.9 -160.7ZM-29 -151.9L-34.2 -154.8L-27.8 -160.2ZM-0.5 -146.2L-12.6 -143.8L-14.8 -161.7L-26.6 -169.1L-20.8 -173.4L-2 -161.6ZM4.2 -128.2L-9.3 -100.6L-17 -103.8L-4.6 -133.4ZM-8.5 -103L-10.5 -98.7L-13.7 -98.4L-17.5 -100.8L-17 -104.2L-14.3 -107.7L-10.3 -106.9ZM-14.7 -97.9L-42.6 -105L-40.5 -112.4L-11.9 -107.2ZM-36.8 -108.9L-38.7 -105.1L-43.4 -103.6L-46.7 -107L-46.7 -111.3L-43.2 -113.8L-38.7 -112.5ZM-19.3 -128.4L-18.3 -98L-26.2 -96.3L-30.3 -127.7ZM-17.9 -97.7L-19.3 -93.1L-22.9 -92.5L-26.2 -95.7L-26.9 -98.9L-22.9 -101.2L-20 -101.3ZM-21 -92.9L-50 -86.2L-51.9 -92.8L-23 -101.6ZM-44.7 -89.3L-47.7 -86L-52 -84.7L-55.5 -86.9L-54.8 -92.3L-51.9 -94.4L-47.5 -93Z"/><path class="k-paper" d="M-50.2 -81.4L-51.3 -77.9L-54.7 -75.8L-57.9 -76.6L-59.9 -79.1L-60.2 -82.1L-57.5 -85.4L-54.5 -86.7L-50.6 -84.6ZM-37.2 -96.4L-38.7 -92.7L-41.4 -90L-45.6 -91L-47.5 -94L-48.2 -97.2L-45.6 -100.4L-42.4 -101.5L-39 -98.9ZM-63.9 -102.8L-65.2 -100.5L-67.2 -99.7L-67.9 -102.2L-67.1 -104.9L-64.5 -104.8ZM-13.3 -125.7L-6.8 -113.7L-9.6 -112.6L-16.6 -124Z"/></svg>
+    <span class="m-tag"><span class="m-name">黃阿芳</span><span class="m-role">服裝<span class="sl" aria-hidden="true">／</span><span class="sr-only">、</span>裁縫</span></span>
+  </button>
+  <div class="m-bio" id="bio-afang" role="region" aria-labelledby="m-afang">
+    <p class="bio-name">黃阿芳</p>
+    <p class="bio-since">2019 年入團・晚上是服裝，白天是裁縫</p>
+    <p>在永樂市場的布攤後面改衣服改了三十年。劇團的每一件戲服，都是她用客人不要的零碼布拼出來的。</p>
+    <p class="bio-now"><b>本季</b>《斜坡》服裝設計</p>
+  </div>
+</li>
+    </ul>
+  </div>
+</section>
+
+<section class="season" id="season" aria-labelledby="season-title">
+  <div class="season-head">
+    <h2 id="season-title"><small class="grot">第十一季・115 年 11 月－116 年 1 月</small>日常的另一半</h2>
+    <p>這一季的三齣戲，主角都是上夜班、做小生意、在路上跑的人──也就是團員自己。每一齣都在晚上排出來，每一齣也都站在不同角度的燈裡：洗衣店的日光燈、國道的路燈、基隆坡道上的傍晚。演出票券在演出前一個月開賣，電話訂位與現場購票都可以。</p>
+  </div>
+  <ol class="plays" role="list">
+    <li class="play p-night" data-tone="ink" style="--tilt:-2.5deg;--sheet-mask:url(&quot;data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 100 100&#39; preserveAspectRatio=&#39;none&#39;%3E%3Cfilter id=&#39;c&#39; filterUnits=&#39;userSpaceOnUse&#39; x=&#39;-2&#39; y=&#39;-2&#39; width=&#39;104&#39; height=&#39;104&#39;%3E%3CfeTurbulence type=&#39;fractalNoise&#39; baseFrequency=&#39;.22 .34&#39; numOctaves=&#39;3&#39; seed=&#39;22&#39;/%3E%3CfeDisplacementMap in=&#39;SourceGraphic&#39; scale=&#39;1&#39; xChannelSelector=&#39;R&#39; yChannelSelector=&#39;G&#39;/%3E%3C/filter%3E%3Cpolygon points=&#39;2.96,1.00 97.04,3.94 99.00,99.00 1.00,96.06&#39; filter=&#39;url(%23c)&#39;/%3E%3C/svg%3E&quot;)">
+  <article class="play-in" aria-labelledby="t-night">
+    <div class="play-text"><span class="play-tag">原創新作</span><h3 id="t-night" class="play-title"><span class="q">《</span>夜班<span class="q">》</span></h3><p class="play-run"><time datetime="2026-11-12">115.11.12（四）</time><span class="to" aria-label="至">—</span><time datetime="2026-11-22">11.22（日）</time></p><p class="play-meta"><span class="nw">週四至週六 19:30</span>・<span class="nw">週日 14:30</span><br>大稻埕・本團排練室（限 48 席）・<span class="len">95 分鐘，無中場休息</span></p><p class="play-syn">一間二十四小時自助洗衣店裡的四個夜班人：急診護理師、外送員、大樓保全，還有一個不想回家的高中生。台上九台滾筒是向三重的二手店借來的，演出時真的會轉。</p><dl class="credits"><div><dt>編劇</dt><dd>許欣怡</dd></div><div><dt>導演</dt><dd>林家岳</dd></div><div><dt>燈光</dt><dd>吳志明</dd></div></dl><p class="price"><span>全票<b>NT$600</b></span><span>學生<b>NT$450</b></span><span>夜班工作者<b>NT$300</b></span></p><p class="price-note">夜班票請在入場時出示工作證或班表</p></div><figure class="poster"><svg class="poster-svg" viewBox="0 0 300 400" aria-hidden="true" focusable="false"><path class="k-ink" d="M0.7 -0.4L300.2 0.4L299.9 400.8L-0.1 400Z"/><path class="k-coral" d="M-0.6 299.8L299.6 119.4L300 167.3L-0.2 348.4Z"/><path class="k-paper" d="M18.5 21.3L96.9 22.1L97.5 117.7L18.5 118.3Z"/><path class="k-ink" d="M86.1 80.4L82.7 92.5L75.4 102.3L65 106.9L52.2 106.7L40.3 101.8L32.4 91.6L30.4 80.1L32.2 67.5L39.8 58.3L52.4 52.3L65 53.1L75.3 57.8L83.5 68.6Z"/><path class="k-mustard" d="M80.7 80.3L78.5 90.1L72.4 96.6L62.2 102L52.8 102.1L44.3 97.9L38.5 89L36.3 80.7L37.6 71.2L43.7 62.6L52.5 58.4L62.6 58.8L71.7 62.9L77.1 70.9Z"/><path class="k-ink" d="M72 74.6L45.1 89.1L43.3 84.3L70.8 71.7Z"/><path class="k-ink" d="M64.4 88.4L60.5 90.1L51 71.3L55.2 68.6Z"/><path class="k-ink" d="M27 33.5L44.5 34L44.6 39.3L27.7 39.1Z"/><path class="k-coral" d="M86.6 36.5L85.4 40.4L83 40.7L81.5 37.8L80.5 36.1L83.7 34.2L85.7 33.7Z"/><path class="k-paper" d="M110.9 22.1L188.7 22.6L188.7 118.7L111.6 118.2Z"/><path class="k-ink" d="M178.3 79.6L175 91.8L167 101.5L156.9 108L143.2 107L131.9 101.1L125.2 92L121.6 79.4L125.3 67.5L133.2 58.2L143.7 53L156 52.3L167.5 58.5L175.7 67.1Z"/><path class="k-mustard" d="M171.5 80.2L170.1 88.8L163.4 97.1L155.5 101.7L144.9 101.2L136.4 96.4L130.9 89.6L128.1 80.2L129.6 69.8L136.8 62.2L145.4 58.2L155.1 58.2L163.8 63.5L169.1 69.8Z"/><path class="k-ink" d="M138.5 69.8L163.9 85.9L162.2 89.1L135.5 74.7Z"/><path class="k-ink" d="M154.8 68.8L158 71L145.8 90.6L142.6 88.2Z"/><path class="k-ink" d="M119.3 32.9L136.7 34.2L137.2 38.6L118.3 38Z"/><path class="k-coral" d="M179.6 36.6L177.6 39.9L175.4 39.5L172.2 37.7L172.8 35.8L175.5 34.2L178.4 34.6Z"/><path class="k-paper" d="M202.2 22.6L281.7 21.2L281.5 118.1L203.1 117.8Z"/><path class="k-ink" d="M269.4 79.3L267.5 91.9L258.7 101.9L248.3 107.6L236.3 107.3L225 101.2L216.6 92.5L213.5 80.6L217.2 67.2L224 58.4L235 53.2L249 52.4L260.1 58.7L267.4 67.8Z"/><path class="k-peacock" d="M264.2 79.9L261.3 89L256.4 97.4L246.2 101.6L237.3 100.9L227.7 97.9L221.8 88.8L220 79.7L222.9 70.7L228.3 62L237.3 57.8L247.4 59.3L255.2 63L262.4 70.6Z"/><path class="k-ink" d="M211.1 33.3L229.2 33.6L229.5 39.1L210.8 38.9Z"/><path class="k-ink" d="M271.7 36.6L269.6 40.3L267.1 41L264.9 38.7L264.8 34.9L267.7 33.9L270.6 33.7Z"/><path class="k-paper" d="M19.5 134.4L96.6 133.7L97.4 229.3L18.6 229.3Z"/><path class="k-ink" d="M85.7 192.7L82.9 204L75.7 213.3L64.5 219.8L52 219.3L39.9 213.7L33.4 204.1L30.7 192.8L32.9 179.4L40.8 170.3L51.9 165.4L64 165.4L74.7 170L82.8 179.1Z"/><path class="k-mustard" d="M80 191.9L78.3 201.2L72.2 209.9L62.8 212.9L53.2 213.5L44.1 209.9L38.4 201.6L36 191.3L38 182L44.4 174.1L53.2 170.3L63 170.1L71.1 174.4L77.5 182.1Z"/><path class="k-ink" d="M65.9 178.3L53.7 206L50.7 205.1L61.6 177.4Z"/><path class="k-ink" d="M68.1 193.9L67.1 198.3L47.9 189.3L48.9 185.9Z"/><path class="k-ink" d="M26.8 145.3L44.3 145.7L45.2 150.5L26.3 150.2Z"/><path class="k-coral" d="M86.7 149.2L86.9 152.3L83.2 152.8L80.9 149.7L80.6 148.2L82.5 145.4L86.7 146.9Z"/><path class="k-paper" d="M111.4 134.5L189.2 133.5L188.3 229.5L111.2 230Z"/><path class="k-ink" d="M178 191.9L175 204.4L167.9 214.4L155.6 219.9L143.8 219.1L133.1 213.9L124.5 203.9L122.5 192.1L125.3 179.4L133.2 170L144.2 164.1L155.9 164.4L167.8 169.9L175.2 179.8Z"/><path class="k-mustard" d="M171.7 192.3L170.1 202.3L163 210L154.6 212.8L144.9 213.7L136.1 209.2L130 201.9L128.7 192.4L129.5 182.2L135.9 174.3L145.2 169.8L154.2 170.3L163.6 174.5L170.1 182Z"/><path class="k-ink" d="M135.7 188.1L165.9 192.5L164.4 196L135 192.2Z"/><path class="k-ink" d="M148.8 181.1L153.3 181L150.9 203.8L146.3 203Z"/><path class="k-ink" d="M119.6 146.3L137.6 146L136.9 150.4L118.5 151.1Z"/><path class="k-coral" d="M179.8 148.3L177.7 152.2L175.4 152.7L172.1 150.7L173.1 146.8L174.8 145L178.5 145.7Z"/><path class="k-paper" d="M202.5 133.8L280.3 134.2L281.3 230.6L203.7 229.3Z"/><path class="k-ink" d="M270.7 192.2L267.4 203.9L258.7 214.4L247.7 219.6L236.4 219L224.4 214.6L217.4 203.5L214.4 191.3L216.9 179.6L224 169.5L235.3 164.6L248.3 164.1L260.2 169.8L266.5 179.8Z"/><path class="k-peacock" d="M263.5 191.8L261 201.8L256.5 210L246.5 213.9L237.2 213L228.9 208.5L221.5 200.8L219.8 192.5L222.4 182.1L228.1 174.7L236.9 170.7L246.9 170.9L256 175.1L261.1 182.4Z"/><path class="k-ink" d="M210.9 145.4L229.6 145.8L228.5 151.2L211.3 151.2Z"/><path class="k-ink" d="M270.9 149.8L269.4 151.6L266.7 152.5L264.2 150.7L264.3 146.9L267 145.6L269.8 146.5Z"/><path class="k-paper" d="M18.4 245.6L97.3 246.5L97 342L19.8 342.4Z"/><path class="k-ink" d="M85.3 304.7L82.6 315.7L75.5 326L64.4 330.7L51.5 331.6L40.8 325.6L32.8 316.5L30.7 304.2L33.4 292.3L40.9 281.8L52.4 277.2L64.2 276.4L75.9 282.8L83.9 291.2Z"/><path class="k-mustard" d="M80.5 304L77.7 313L71.6 321.1L62.5 325.5L53.9 325.5L43.5 322L38.2 313.8L35.2 304.4L38.7 294.9L45 287.4L53.4 281.8L63.2 282.5L72.5 286.9L78 293.9Z"/><path class="k-ink" d="M69.4 294.7L48.6 315.6L45.9 312.7L66.3 291.7Z"/><path class="k-ink" d="M66.6 310.5L63.9 312.8L48.7 298.3L51.6 295.6Z"/><path class="k-ink" d="M26.8 257.3L45 257.2L44.8 262.6L26.9 262.5Z"/><path class="k-coral" d="M86.8 260.6L86.2 262.9L82.7 263.9L81.1 262.2L80.2 260.2L82.5 257L86.7 257.8Z"/><path class="k-paper" d="M111.4 246.1L189.4 245.6L189.3 341.8L111.7 342.4Z"/><path class="k-ink" d="M177.6 303.6L175 315.8L167.7 325.1L155.8 332.1L143.7 331L132.8 326.3L124.5 316.5L122.8 304.3L124.1 292.1L132.2 282.1L143.6 277.5L156.2 276.6L168.2 281.4L175.1 292.3Z"/><path class="k-mustard" d="M172.7 303.3L170 313.2L164.4 320.6L154.2 325.6L144.5 325.7L136 320.4L129.9 313.3L128.4 304.4L130.3 294.8L137.1 286.4L145.8 282.4L155.1 282.2L164.2 286.7L170.2 294.6Z"/><path class="k-ink" d="M160.1 291.9L143.5 317.5L140.8 315.9L156 290.7Z"/><path class="k-ink" d="M160.7 307.3L158.6 312.3L139.9 299.7L141.2 296.9Z"/><path class="k-ink" d="M118.7 258L136.6 257.9L136.5 262.8L118.2 262.3Z"/><path class="k-coral" d="M179.1 260.8L178.4 263L175.2 264.3L172.5 262.8L172.5 260.3L174.7 258.3L178.4 258.8Z"/><path class="k-paper" d="M202.7 245.4L280.8 246.5L281.2 341.6L203.2 342.2Z"/><path class="k-ink" d="M269.8 304.8L267.1 316.6L260.1 326L248.5 331.5L236.3 331.9L225.2 326.5L217 316.1L213.5 303.5L217.3 291.3L224.1 282.2L235 277.4L248.6 277.3L259.6 281.8L267.9 291.4Z"/><path class="k-mustard" d="M264.3 303.4L262.2 313.9L255.3 321.5L247 326.1L236.7 325.1L228 321.6L222.4 313.8L219.2 304.6L222.7 294L228.4 286.3L236.6 282.3L246.2 282L255.9 286.4L261.7 294.7Z"/><path class="k-ink" d="M256.5 301.4L228.5 311L228 307.1L256.1 297Z"/><path class="k-ink" d="M247.5 312.9L243.7 315L236.1 294.4L240.3 293.7Z"/><path class="k-ink" d="M210.7 256.7L229.3 256.8L228.4 263.1L211.6 263Z"/><path class="k-coral" d="M271.7 261.8L269.3 264L266.5 263.8L264.9 262L265 260.1L267 258.4L269.5 257.6Z"/></svg><svg class="ptape ptape-l" viewBox="0 0 80 24" style="rotate:-41.1deg" aria-hidden="true" focusable="false"><path d="M1.6 0L80 1.6L76.8 6L80 12L77.1 18L80 24L1.4 24L4 18L2.0 12L5 6Z"/></svg><svg class="ptape ptape-r" viewBox="0 0 80 24" style="rotate:40.7deg" aria-hidden="true" focusable="false"><path d="M0.3 0L80 0.4L76.2 6L80 12L78.2 18L80 24L0.3 24L4 18L1.3 12L4.2 6Z"/></svg></figure>
+  </article>
+</li><li class="play p-movers" data-tone="mustard" style="--tilt:2.5deg;--sheet-mask:url(&quot;data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 100 100&#39; preserveAspectRatio=&#39;none&#39;%3E%3Cfilter id=&#39;c&#39; filterUnits=&#39;userSpaceOnUse&#39; x=&#39;-2&#39; y=&#39;-2&#39; width=&#39;104&#39; height=&#39;104&#39;%3E%3CfeTurbulence type=&#39;fractalNoise&#39; baseFrequency=&#39;.22 .34&#39; numOctaves=&#39;3&#39; seed=&#39;23&#39;/%3E%3CfeDisplacementMap in=&#39;SourceGraphic&#39; scale=&#39;1&#39; xChannelSelector=&#39;R&#39; yChannelSelector=&#39;G&#39;/%3E%3C/filter%3E%3Cpolygon points=&#39;1.00,2.47 99.00,1.00 96.06,99.00 3.94,97.53&#39; filter=&#39;url(%23c)&#39;/%3E%3C/svg%3E&quot;)">
+  <article class="play-in" aria-labelledby="t-movers">
+    <h3 id="t-movers" class="play-title"><span class="q">《</span>搬家公司的莎士比亞<span class="q">》</span></h3><figure class="poster"><svg class="poster-svg" viewBox="0 0 300 400" aria-hidden="true" focusable="false"><path class="k-mustard" d="M0.5 -0.5L300.5 -0.3L300 399.8L-0.2 400.7Z"/><path class="k-coral" d="M73 314.2L223.5 310.7L225.1 380L75.1 384.2Z"/><path class="k-paper" d="M73.9 343.6L222.9 341.4L224 350.3L74.3 353.1Z"/><path class="k-ink" d="M203.7 348.4L215.4 347.5L215.4 359.4L204 359.8Z"/><path class="k-coral" d="M83.3 251.6L207 245.3L210.4 306.4L86.8 313.4Z"/><path class="k-paper" d="M84.6 278L207.8 271.4L209.7 281.2L84.6 286.8Z"/><path class="k-ink" d="M188.3 279.2L199.8 278.8L200.6 290.5L188.6 290.7Z"/><path class="k-coral" d="M87.7 189.2L192.6 189.6L192.3 246.7L87.3 245.3Z"/><path class="k-paper" d="M88.7 212.6L192.4 213.4L192.4 222.4L88.1 222.2Z"/><path class="k-ink" d="M171.7 220.2L184.1 220.1L183.4 231.7L172.5 232.2Z"/><path class="k-coral" d="M104.4 137.3L189.9 143.7L186.3 190.4L100.5 185.3Z"/><path class="k-paper" d="M103.1 157.3L189.2 162.3L188 171.8L102.5 165.9Z"/><path class="k-ink" d="M169.8 168.1L181.6 169L180.6 179.7L169.1 180.2Z"/><path class="k-coral" d="M110.1 94.4L176.1 94.3L177.3 138.5L111.3 137.9Z"/><path class="k-paper" d="M110.6 112.1L177.7 111.8L176.5 120L110.1 119.8Z"/><path class="k-ink" d="M157.6 117.7L168.6 117.5L168.6 129.4L157.4 129.6Z"/><path class="k-ink" d="M112.3 100.7L111.7 72.4L125.3 86.1L144 64.7L161.6 86.2L175.3 72.6L175.8 99.3Z"/><path class="k-paper" d="M148.6 90.1L146.8 93.4L143.5 94.5L140.5 91.9L141 88.9L142.6 85.5L145.8 87.6Z"/><path class="k-ink" d="M17.9 45.2L60.9 29.5L62.5 34.8L19.8 50.5Z"/><path class="k-ink" d="M246.1 47.4L280.3 63.1L278.3 69.2L243.6 53.5Z"/></svg><svg class="ptape ptape-l" viewBox="0 0 80 24" style="rotate:-44.5deg" aria-hidden="true" focusable="false"><path d="M1.6 0L80 0.3L78.1 6L80 12L77.8 18L80 24L1.8 24L4 18L0.1 12L4.9 6Z"/></svg><svg class="ptape ptape-r" viewBox="0 0 80 24" style="rotate:36.4deg" aria-hidden="true" focusable="false"><path d="M0.4 0L80 1.2L77.5 6L80 12L77.7 18L80 24L1.8 24L4 18L1.5 12L3.8 6Z"/></svg></figure><div class="play-text"><span class="play-tag">重演・三城巡演</span><p class="play-run"><time datetime="2026-12-04">115.12.04（五）</time><span class="to" aria-label="至">—</span><time datetime="2026-12-19">12.19（六）</time></p><p class="play-meta"><span class="nw">臺北 12.04–05</span>・<span class="nw">臺中 12.12</span>・<span class="nw">高雄 12.19</span><br>各城市小劇場，詳見售票頁・<span class="len">110 分鐘，含中場 10 分鐘</span></p><p class="play-syn">三個搬家工人接到一張奇怪的訂單：把一整個劇團的布景從臺北搬到高雄，順便在國道上把《哈姆雷特》排完。</p><dl class="credits"><div><dt>導演</dt><dd>林家岳</dd></div><div><dt>現場演奏</dt><dd>陳正雄</dd></div></dl><p class="price"><span>全票<b>NT$500</b></span><span>學生<b>NT$400</b></span></p></div>
+  </article>
+</li><li class="play p-slope" data-tone="peacock" style="--tilt:0deg;--sheet-mask:url(&quot;data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 100 100&#39; preserveAspectRatio=&#39;none&#39;%3E%3Cfilter id=&#39;c&#39; filterUnits=&#39;userSpaceOnUse&#39; x=&#39;-2&#39; y=&#39;-2&#39; width=&#39;104&#39; height=&#39;104&#39;%3E%3CfeTurbulence type=&#39;fractalNoise&#39; baseFrequency=&#39;.22 .34&#39; numOctaves=&#39;3&#39; seed=&#39;22&#39;/%3E%3CfeDisplacementMap in=&#39;SourceGraphic&#39; scale=&#39;1&#39; xChannelSelector=&#39;R&#39; yChannelSelector=&#39;G&#39;/%3E%3C/filter%3E%3Cpolygon points=&#39;1.00,1.00 99.00,1.00 99.00,99.00 1.00,99.00&#39; filter=&#39;url(%23c)&#39;/%3E%3C/svg%3E&quot;)">
+  <article class="play-in" aria-labelledby="t-slope">
+    <div class="play-text"><i class="slant" aria-hidden="true"></i><i class="slant-r" aria-hidden="true"></i><h3 id="t-slope" class="play-title"><span class="q">《</span>斜坡<span class="q">》</span></h3><span class="play-tag">新作・小劇場</span><p class="play-run"><time datetime="2027-01-08">116.01.08（五）</time><span class="to" aria-label="至">—</span><time datetime="2027-01-17">01.17（日）</time></p><p class="play-meta"><span class="nw">週五、週六 19:30</span>・<span class="nw">週日 14:30</span><br>大稻埕・本團排練室（限 48 席）・<span class="len">80 分鐘，無中場休息</span></p><p class="play-syn">基隆一條四十五度的坡道上，住了一輩子的阿嬤決定學騎腳踏車，孫女負責扶。觀眾席沿著斜坡搭成兩側，每一排都比前一排高一階。</p><dl class="credits"><div><dt>編劇</dt><dd>許欣怡</dd></div><div><dt>服裝</dt><dd>黃阿芳</dd></div></dl><p class="price"><span>全票<b>NT$600</b></span><span>學生<b>NT$450</b></span></p></div><figure class="poster"><svg class="poster-svg" viewBox="0 0 300 400" aria-hidden="true" focusable="false"><path class="k-peacock" d="M-0.4 0L299.9 -0.4L300.1 399.3L-0.4 400.3Z"/><path class="k-coral" d="M269.7 91.6L266.3 109.4L257.8 123.2L242.4 133.6L225.8 136.5L209.4 132.3L194.3 122.7L184.8 108.8L181.1 92L184.9 74.6L194.1 61.4L209.7 50.8L226.7 47.6L242.9 51.7L257.2 61.2L267 75.3Z"/><path class="k-paper" d="M-0.4 400.2L0.7 209.4L300.2 399.6Z"/><path class="k-ink" d="M110.3 399.9L77.7 250.4L109.8 249.7L110.2 275.6L141.1 275.4L142.1 299.7L173.3 299.9L172.8 325.2L205 325.7L204.7 350.3L236.4 350.1L236 375.6L268.6 374.9L268.5 399.9L299.4 400.2L299.2 400.4Z"/><path class="k-mustard" d="M91.5 234.3L89.2 244.3L82.7 250.8L74.8 253L65.1 251L58.1 243.9L56.9 235.8L58.8 226.3L65.7 219.3L73.5 217.8L83.8 219.9L89.8 225.9Z"/><path class="k-mustard" d="M138.8 265L136.5 273.7L128.6 279.8L119.7 282.6L110.8 281.2L104.6 273.9L102.3 264.3L104.5 256.8L111 249.8L120 247.4L129.3 249.7L135.9 255.5Z"/><path class="k-peacock" d="M83.6 235.6L83.3 240.6L79.7 244.5L73.7 245L68.6 244.4L65.6 239.4L65 235.8L65.4 230.4L69.3 226.2L74.3 225.1L79.3 226.4L83.3 230.3Z"/><path class="k-peacock" d="M129.7 265.7L129.3 269.9L124.7 274.4L120.2 274.3L115.1 273.5L111.4 269.5L110.1 264.6L111.9 259.6L115 256.5L121 255.3L125.2 256.8L128.7 260.8Z"/><path class="k-mustard" d="M76.1 233L121.6 262.8L119.4 267.4L72.7 237.6Z"/></svg><svg class="ptape ptape-l" viewBox="0 0 80 24" style="rotate:-43.1deg" aria-hidden="true" focusable="false"><path d="M0.7 0L80 1.6L77.5 6L80 12L77.7 18L80 24L0.6 24L4 18L1.0 12L5.1 6Z"/></svg><svg class="ptape ptape-r" viewBox="0 0 80 24" style="rotate:34.8deg" aria-hidden="true" focusable="false"><path d="M2.4 0L80 2.0L76.5 6L80 12L78 18L80 24L1.1 24L4 18L1.5 12L5.1 6Z"/></svg></figure>
+  </article>
+</li><li class="play p-reading" data-tone="script" style="--tilt:-1deg;--sheet-mask:url(&quot;data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 100 100&#39; preserveAspectRatio=&#39;none&#39;%3E%3Cfilter id=&#39;c&#39; filterUnits=&#39;userSpaceOnUse&#39; x=&#39;-2&#39; y=&#39;-2&#39; width=&#39;104&#39; height=&#39;104&#39;%3E%3CfeTurbulence type=&#39;fractalNoise&#39; baseFrequency=&#39;.22 .34&#39; numOctaves=&#39;3&#39; seed=&#39;24&#39;/%3E%3CfeDisplacementMap in=&#39;SourceGraphic&#39; scale=&#39;1&#39; xChannelSelector=&#39;R&#39; yChannelSelector=&#39;G&#39;/%3E%3C/filter%3E%3Cpolygon points=&#39;1.00,1.00 99.00,2.96 98.51,99.00 1.49,97.04&#39; filter=&#39;url(%23c)&#39;/%3E%3C/svg%3E&quot;)">
+  <article class="play-in" aria-labelledby="t-reading">
+    <i class="holes" aria-hidden="true"><i></i><i></i></i><div class="script-head"><span class="play-tag">讀劇會・免費</span><h3 id="t-reading" class="play-title"><span class="q">《</span>週末限定<span class="q">》</span></h3><p class="play-run">每月最後一個週六 14:00</p><p class="play-meta">本團排練室・<span class="len">約 2 小時</span></p></div>
+      <div class="script-body"><p class="cue"><b class="who">許欣怡</b><span><span class="sd">（翻開還沒裝訂的新劇本）</span>每個月最後一個週六下午兩點，新寫的戲會在這裡第一次被大聲唸出來。</span></p><p class="cue"><b class="who">林家岳</b><span>誰都可以來聽？</span></p><p class="cue"><b class="who">許欣怡</b><span>誰都可以。先打電話報名，限二十位；帶著意見來，唸完有豆漿和雞蛋糕。</span></p><dl class="credits"><div><dt>主持</dt><dd>許欣怡</dd></div></dl><p class="price-note">免費入場，請先電話報名（限 20 位）</p></div><figure class="poster"><svg class="poster-svg" viewBox="0 0 300 400" aria-hidden="true" focusable="false"><path class="k-coral" d="M0 -0.4L300 0.3L299.9 400.3L0.5 399.7Z"/><path class="k-ink" d="M44.3 139.8L190 103.3L238.5 297.4L92.4 335Z"/><path class="k-paper" d="M39.3 134.9L184 98.8L232.9 292.5L87 329.3Z"/><path class="k-ink" d="M61.8 124.2L210.5 103.4L240.2 301.6L91.8 322.2Z"/><path class="k-paper" d="M56.8 119.7L206.3 98.2L234.2 295.9L86.7 316.9Z"/><path class="k-ink" d="M93.2 101.3L243.6 113.2L228.2 312.2L77.8 300.3Z"/><path class="k-paper" d="M88.3 96.7L238.9 107.3L223.9 306.8L73.1 295.8Z"/><path class="k-ink" d="M121 86.3L266.6 120.6L221.6 315.4L75.3 281.5Z"/><path class="k-paper" d="M116.2 81.3L262.1 116L216.6 311.2L70.5 276.4Z"/><path class="k-ink" d="M107.3 117.6L200 142.3L199.9 146.3L105.2 121.5Z"/><path class="k-ink" d="M107.9 134.3L215.8 161.3L213.9 164.6L106.4 137.2Z"/><path class="k-ink" d="M107.1 151.2L214.3 176.7L213.2 181.5L106.9 154Z"/><path class="k-ink" d="M106.4 169.6L201.9 193.2L200.6 196.5L106.4 172.6Z"/><path class="k-ink" d="M106 188.6L183.2 208.3L182.4 211.6L105.3 192.8Z"/><path class="k-ink" d="M106.5 206.6L174.1 223L172.7 227.3L105.4 210.7Z"/><path class="k-ink" d="M106.5 223.3L182.8 242L181.5 246.1L105.9 226.9Z"/><path class="k-ink" d="M107.4 239.3L186.6 259.5L184.6 262.5L105.9 242.6Z"/><path class="k-ink" d="M107.5 255.6L191.4 276.8L190.3 280.1L105.8 259.6Z"/><path class="k-mustard" d="M210.7 29.3L235.3 29.8L96.5 380.6L69.5 379.4Z"/></svg><svg class="ptape ptape-l" viewBox="0 0 80 24" style="rotate:-47.0deg" aria-hidden="true" focusable="false"><path d="M1.1 0L80 0.2L76.7 6L80 12L78.2 18L80 24L2.1 24L4 18L0.8 12L4.8 6Z"/></svg><svg class="ptape ptape-r" viewBox="0 0 80 24" style="rotate:35.4deg" aria-hidden="true" focusable="false"><path d="M1.3 0L80 0.0L77.1 6L80 12L77.8 18L80 24L0.4 24L4 18L0.5 12L4.8 6Z"/></svg></figure>
+  </article>
+</li>
+  </ol>
+</section>
+
+<section class="studio" id="studio" aria-labelledby="studio-title">
+  <div class="studio-head">
+    <h2 id="studio-title"><small class="grot">沒排戲的時候</small>長斜排練室</h2>
+    <p>舊布行樓上一整層打通的長條空間：屋頂從北往南斜斜地降下來，所以團員叫它「長斜」。地上的彩色膠帶是《夜班》的走位，那一條斜的，是我們每一齣戲都會用到的線。沒排戲的時段，開放給學生劇團、舞團與讀劇小組借用。</p>
+  </div>
+  <div class="studio-grid">
+    <figure class="plan">
+      <div class="plan-box"><svg class="plan-svg" viewBox="-10 -10 1470 710" aria-hidden="true" focusable="false"><path class="k-ink" d="M9.7 10.3L1450.1 10.2L1450.2 689.6L10.2 690.4Z"/><path class="k-paper" d="M0.4 0.1L1440 -0.2L1440 679.5L0.1 679.5Z"/><path class="pl-board" d="M0 30H174"/><path class="pl-board" d="M180 30H474"/><path class="pl-board" d="M480 30H734"/><path class="pl-board" d="M740 30H954"/><path class="pl-board" d="M960 30H1254"/><path class="pl-board" d="M1260 30H1434"/><path class="pl-board" d="M0 70H194"/><path class="pl-board" d="M200 70H494"/><path class="pl-board" d="M500 70H754"/><path class="pl-board" d="M760 70H974"/><path class="pl-board" d="M980 70H1234"/><path class="pl-board" d="M1240 70H1440"/><path class="pl-board" d="M0 110H254"/><path class="pl-board" d="M260 110H514"/><path class="pl-board" d="M520 110H694"/><path class="pl-board" d="M700 110H914"/><path class="pl-board" d="M920 110H1214"/><path class="pl-board" d="M1220 110H1440"/><path class="pl-board" d="M0 150H154"/><path class="pl-board" d="M160 150H374"/><path class="pl-board" d="M380 150H594"/><path class="pl-board" d="M600 150H814"/><path class="pl-board" d="M820 150H1034"/><path class="pl-board" d="M1040 150H1334"/><path class="pl-board" d="M1340 150H1440"/><path class="pl-board" d="M0 190H174"/><path class="pl-board" d="M180 190H434"/><path class="pl-board" d="M440 190H734"/><path class="pl-board" d="M740 190H914"/><path class="pl-board" d="M920 190H1094"/><path class="pl-board" d="M1100 190H1314"/><path class="pl-board" d="M1320 190H1440"/><path class="pl-board" d="M0 230H154"/><path class="pl-board" d="M160 230H454"/><path class="pl-board" d="M460 230H634"/><path class="pl-board" d="M640 230H934"/><path class="pl-board" d="M940 230H1114"/><path class="pl-board" d="M1120 230H1374"/><path class="pl-board" d="M1380 230H1440"/><path class="pl-board" d="M0 270H254"/><path class="pl-board" d="M260 270H434"/><path class="pl-board" d="M440 270H734"/><path class="pl-board" d="M740 270H1034"/><path class="pl-board" d="M1040 270H1334"/><path class="pl-board" d="M1340 270H1440"/><path class="pl-board" d="M0 310H194"/><path class="pl-board" d="M200 310H414"/><path class="pl-board" d="M420 310H594"/><path class="pl-board" d="M600 310H814"/><path class="pl-board" d="M820 310H1114"/><path class="pl-board" d="M1120 310H1294"/><path class="pl-board" d="M1300 310H1440"/><path class="pl-board" d="M0 350H174"/><path class="pl-board" d="M180 350H394"/><path class="pl-board" d="M400 350H694"/><path class="pl-board" d="M700 350H914"/><path class="pl-board" d="M920 350H1174"/><path class="pl-board" d="M1180 350H1434"/><path class="pl-board" d="M0 390H194"/><path class="pl-board" d="M200 390H454"/><path class="pl-board" d="M460 390H674"/><path class="pl-board" d="M680 390H934"/><path class="pl-board" d="M940 390H1154"/><path class="pl-board" d="M1160 390H1334"/><path class="pl-board" d="M1340 390H1440"/><path class="pl-board" d="M0 430H174"/><path class="pl-board" d="M180 430H394"/><path class="pl-board" d="M400 430H574"/><path class="pl-board" d="M580 430H834"/><path class="pl-board" d="M840 430H1134"/><path class="pl-board" d="M1140 430H1314"/><path class="pl-board" d="M1320 430H1440"/><path class="pl-board" d="M0 470H194"/><path class="pl-board" d="M200 470H494"/><path class="pl-board" d="M500 470H794"/><path class="pl-board" d="M800 470H1054"/><path class="pl-board" d="M1060 470H1314"/><path class="pl-board" d="M1320 470H1440"/><path class="pl-board" d="M0 510H254"/><path class="pl-board" d="M260 510H554"/><path class="pl-board" d="M560 510H814"/><path class="pl-board" d="M820 510H1114"/><path class="pl-board" d="M1120 510H1414"/><path class="pl-board" d="M1420 510H1440"/><path class="pl-board" d="M0 550H234"/><path class="pl-board" d="M240 550H414"/><path class="pl-board" d="M420 550H674"/><path class="pl-board" d="M680 550H934"/><path class="pl-board" d="M940 550H1194"/><path class="pl-board" d="M1200 550H1440"/><path class="pl-board" d="M0 590H254"/><path class="pl-board" d="M260 590H554"/><path class="pl-board" d="M560 590H734"/><path class="pl-board" d="M740 590H954"/><path class="pl-board" d="M960 590H1134"/><path class="pl-board" d="M1140 590H1354"/><path class="pl-board" d="M1360 590H1440"/><path class="pl-board" d="M0 630H154"/><path class="pl-board" d="M160 630H414"/><path class="pl-board" d="M420 630H594"/><path class="pl-board" d="M600 630H774"/><path class="pl-board" d="M780 630H994"/><path class="pl-board" d="M1000 630H1214"/><path class="pl-board" d="M1220 630H1434"/><path class="pl-board" d="M0 670H254"/><path class="pl-board" d="M260 670H514"/><path class="pl-board" d="M520 670H814"/><path class="pl-board" d="M820 670H994"/><path class="pl-board" d="M1000 670H1254"/><path class="pl-board" d="M1260 670H1434"/><path class="k-peacock" d="M30.3 6.5L1409.8 6L1409.5 22.1L29.7 21.5Z"/><path class="k-ink" d="M461.5 320.7L499.1 321.3L498.5 359.5L460.8 358.5Z"/><path class="k-ink" d="M940.8 320.6L979.3 320.5L979.2 359L940.8 359.3Z"/><path class="k-coral" d="M219.9 125L280 125.8L279.9 134.5L220.3 134Z"/><path class="k-coral" d="M215.7 129.7L224.5 129.9L224.2 189.8L215.8 190.1Z"/><path class="k-coral" d="M1159.9 125.4L1219.7 125.4L1220.3 134.3L1160.5 134.1Z"/><path class="k-coral" d="M1215.9 130.1L1224.2 129.5L1224.9 189.5L1215.6 190.2Z"/><path class="k-coral" d="M220.2 585.9L280.1 585.1L279.8 594.8L220.2 594.2Z"/><path class="k-coral" d="M215.2 529.6L224.3 529.8L224.3 589.9L215.5 589.7Z"/><path class="k-coral" d="M1159.8 585.7L1220.2 586L1220.1 594.5L1160 594.2Z"/><path class="k-coral" d="M1215.2 529.8L1224.1 530.1L1224.1 590.2L1215.8 589.6Z"/><path class="k-mustard" d="M197.2 125.8L243.1 125.1L243.2 134.3L196.7 134.4Z"/><path class="k-mustard" d="M215.8 128.8L224.7 128.9L224.3 158.7L215 159Z"/><path class="k-mustard" d="M396.8 217.1L443.4 217.6L443.4 226.3L397 226.7Z"/><path class="k-mustard" d="M415.7 220.5L424.5 221.2L424.9 250.7L415.8 250.6Z"/><path class="k-mustard" d="M597.2 309.1L642.8 309.7L643.1 318.5L597.3 318.9Z"/><path class="k-mustard" d="M615.3 313.3L624 312.9L625 342.7L615.2 342.7Z"/><path class="k-mustard" d="M796.9 401.7L843.3 401.1L842.8 410.8L797.4 410.5Z"/><path class="k-mustard" d="M815.9 405.2L824.8 404.7L824.9 434.5L815.8 435Z"/><path class="k-mustard" d="M996.7 493L1043.4 493.9L1043 502.2L997 502.6Z"/><path class="k-mustard" d="M1015.3 497.1L1024.6 497L1024.1 526.8L1015.4 526.6Z"/><path class="k-mustard" d="M1196.8 585.5L1242.7 585.6L1243.2 594.2L1196.7 594.8Z"/><path class="k-mustard" d="M1215.8 589.2L1224.6 588.8L1224 619.4L1215.9 618.8Z"/><path class="pl-path" d="M250 150L1190 570"/><path class="k-paper" d="M1348.2 668.9L1427.8 669.4L1428.4 691.4L1348 690.9Z"/><path class="pl-door" d="M1348 668A80 80 0 0 1 1428 588"/><path class="k-mustard" d="M180.5 672.3L299.9 671.7L299.6 680.4L180.3 679.9Z"/><path class="k-mustard" d="M540.2 672L659.8 672.2L659.7 679.8L540.4 680.4Z"/><path class="k-mustard" d="M940.5 672.2L1059.5 671.7L1059.7 679.7L940.5 679.6Z"/></svg>
+        <span class="pl-label on-ink" style="left:3%;top:-1%">北・鏡牆 14 m</span>
+        <span class="pl-label" style="left:11%;top:13%">上舞台左</span>
+        <span class="pl-label" style="left:68%;top:79%">下舞台右</span>
+        <span class="pl-label" style="right:1%;top:80%">入口</span>
+        <span class="pl-label" style="left:27%;top:52%">柱</span>
+        <span class="pl-label" style="left:61%;top:52%">柱</span>
+      </div>
+      <figcaption>長斜排練室平面圖（14.4 × 6.8 公尺）。黃色 T 字是走位記號，紅色虛線是從上舞台左走到下舞台右的那一條。</figcaption>
+    </figure>
+    <div class="studio-facts">
+      <dl class="specs"><dt>面積</dt><dd>14.4 × 6.8 公尺，約 29.6 坪</dd><dt>地板</dt><dd>浮動木地板，可赤腳</dd><dt>鏡牆</dt><dd>北側整面，14 公尺</dd><dt>設備</dt><dd>音響一組、基本燈 8 盞、摺疊椅 30 張</dd><dt>容納</dt><dd>排練 25 人／演出 48 席</dd></dl>
+      <div class="rates" role="group" aria-labelledby="rates-cap">
+        <p class="mini" id="rates-cap">借用費用（每小時，貼在排練室門口的那張時段表）</p>
+        <div class="clock" aria-hidden="true"><span style="--h:1">09</span><span style="--h:4">12</span><span style="--h:5">13</span><span style="--h:9">17</span><span style="--h:10">18</span><span style="--h:14">22</span></div>
+        <ol class="tapes" role="list"><li class="stape t0" style="--a:1;--b:4"><span class="stape-bar"><b class="tape-slot">上午</b><span class="tape-time num">09:00–12:00</span></span><span class="stape-info"><span class="tape-p">平日<b class="num">NT$300</b></span><span class="tape-p">假日<b class="num">NT$400</b></span></span></li><li class="stape t1" style="--a:5;--b:9"><span class="stape-bar"><b class="tape-slot">下午</b><span class="tape-time num">13:00–17:00</span></span><span class="stape-info"><span class="tape-p">平日<b class="num">NT$350</b></span><span class="tape-p">假日<b class="num">NT$450</b></span></span></li><li class="stape t2" style="--a:10;--b:14"><span class="stape-bar"><b class="tape-slot">晚上</b><span class="tape-time num">18:00–22:00</span></span><span class="stape-info"><span class="tape-p">平日<b class="num">NT$450</b></span><span class="tape-p">假日<b class="num">NT$500</b></span></span></li></ol>
+      </div>
+      <p class="rate-note">假日指週末與國定假日。12:00–13:00、17:00–18:00 是清場與通風時間，不出借。學生劇團憑學生證打八折；最少借 2 小時；週一公休。</p>
+    </div>
+    <div class="studio-ways"><h3 class="mini">怎麼來</h3><dl class="ways"><dt>捷運</dt><dd>大橋頭站 1 號出口，沿延平北路往南走約 6 分鐘。</dd><dt>機車</dt><dd>延平北路兩側有機車格，請不要停在布行騎樓。</dd><dt>開車</dt><dd>附近停車場很少，延平北路晚上常塞，建議搭捷運。</dd></dl></div>
+    <div class="studio-more"><h3 class="mini">場地守則</h3><ul class="rules" role="list"><li>請穿乾淨的室內鞋，或乾脆赤腳。</li><li>地上的彩色膠帶是《夜班》的走位，請不要撕。</li><li>22:00 準時清場，樓下布行清晨五點就要開門備貨。</li><li>押金 NT$1,000，離場檢查後當場退還。</li></ul></div>
+    <form class="book" id="book-form" action="#studio" method="get" aria-labelledby="book-title">
+      <div class="book-head"><h3 id="book-title">預約借用</h3><p class="lede">送出後不會馬上成立：團務許欣怡會在兩個工作天內打電話跟你確認時段。</p></div>
+      <div class="book-grid">
+        <div class="f f-name"><label for="f-name">聯絡人<span class="req">必填</span></label><input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="err-name"><span class="err" id="err-name"></span></div>
+        <div class="f f-phone"><label for="f-phone">手機<span class="req">必填</span></label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0912-345-678" pattern="09[0-9]{2}-?[0-9]{3}-?[0-9]{3}" required aria-describedby="err-phone"><span class="err" id="err-phone"></span></div>
+        <div class="f f-team"><label for="f-team">團體或單位名稱</label><input id="f-team" name="team" type="text" autocomplete="organization"></div>
+        <div class="f f-date"><label for="f-date">日期<span class="req">必填</span></label><input id="f-date" name="date" type="date" required aria-describedby="err-date"><span class="err" id="err-date"></span></div>
+        <div class="f f-people"><label for="f-people">人數<span class="req">必填</span></label><input id="f-people" name="people" type="number" min="1" max="25" step="1" inputmode="numeric" required aria-describedby="err-people"><span class="err" id="err-people"></span></div>
+        <div class="f f-use"><label for="f-use">用途</label><select id="f-use" name="use"><option>戲劇排練</option><option>舞蹈排練</option><option>讀劇・試演</option><option>拍攝</option><option>其他</option></select></div>
+        <fieldset class="f f-slot"><legend>時段（可複選）<span class="req">必填</span></legend>
+          <div class="slots"><label><input type="checkbox" name="slot" value="上午" aria-describedby="err-slot">上午 <span class="num">09:00–12:00</span></label><label><input type="checkbox" name="slot" value="下午" aria-describedby="err-slot">下午 <span class="num">13:00–17:00</span></label><label><input type="checkbox" name="slot" value="晚上" aria-describedby="err-slot">晚上 <span class="num">18:00–22:00</span></label></div>
+          <span class="err" id="err-slot"></span>
+        </fieldset>
+        <div class="f f-note"><label for="f-note">備註（器材、特殊需求）</label><textarea id="f-note" name="note" rows="2"></textarea></div>
+        <div class="f f-agree"><label class="agree"><input type="checkbox" name="agree" required aria-describedby="err-agree"><span>我已讀過場地守則，會赤腳或穿室內鞋，22:00 前離場。</span></label><span class="err" id="err-agree"></span></div>
+        <div class="f f-send"><button class="send" type="submit">送出預約申請</button></div>
+      </div>
+      <p class="book-status" id="book-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot" id="contact">
+  <span class="big-slash" aria-hidden="true">／</span>
+  <div class="foot-in">
+    <div>
+      <h2>斜槓劇團<span class="grot" lang="en">Slash Troupe・since 2015</span></h2>
+      <p>排練室在臺北市大同區延平北路二段旁的巷子裡，一間還在營業的舊布行樓上。門牌會在預約確認後用簡訊告訴你；請走側門的鐵梯上樓，別從布行的店面穿過去。</p>
+    </div>
+    <div>
+      <h3>電話與信箱</h3>
+      <dl><dt>電話</dt><dd><a href="tel:+886225530715" class="num">(02) 2553-0715</a></dd><dt>接聽</dt><dd>週二至週日 14:00–21:00</dd><dt>信箱</dt><dd>臺北郵局第 1186 號信箱</dd></dl>
+    </div>
+    <div>
+      <h3>季票會員</h3>
+      <p>一年三齣戲加上所有讀劇會，<span class="num">NT$1,500</span>。在演出現場或排練室都能辦。</p>
+    </div>
+  </div>
+  <div class="colophon">
+    <span>© 民國一一五年 斜槓劇團</span>
+    <span>字型：Noto Serif TC、Bricolage Grotesque（SIL Open Font License 1.1）</span>
+    <span>剪影與海報原稿：黃阿芳（服裝）。平面圖實測：林家岳。</span>
+  </div>
+</footer>
+<script>
+
+(function () {
+  var layout = function(k, n, c) {
+  var u = (c.X1 - c.X0) / (n - 1 + c.W), s = c.X0, pts = [], side = k >= n / 2 ? 'L' : 'R';
+  for (var i = 0; i < n; i++) {
+    var w = i === k ? c.W * u : u, x = s + u / 2;
+    if (i === k && side === 'L') x = s + w - u / 2;
+    var d = (x - 50) / 50;
+    pts.push({ x: x, y: c.A + c.B * (1 - d * d), s: (i === k ? 1.06 : 0.84) + 0.1 * (1 - d * d), fx: i < k ? 1 : i > k ? -1 : 0 });
+    s += w;
+  }
+  return { u: u, pts: pts, side: side };
+};
+  var st = document.querySelector('[data-stage]');
+  if (st) {
+    var cfg = JSON.parse(st.getAttribute('data-cfg')), list = st.querySelector('.cast-list');
+    var items = [].slice.call(list.children), n = items.length;
+    var btns = items.map(function (li) { return li.querySelector('.m-btn'); });
+    var wide = window.matchMedia('(min-width: 1000px)');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var k = +st.getAttribute('data-active') || 0;
+    var apply = function (focus) {
+      var L = layout(k, n, cfg), p = L.pts[k];
+      var d = (p.x - 50) / 50, slope = -2 * cfg.B * d / 50 * (st.clientHeight / Math.max(1, st.clientWidth));
+      var tilt = Math.max(-4, Math.min(4, Math.atan(slope) * 90 / Math.PI));
+      items.forEach(function (li, i) {
+        var q = L.pts[i];
+        var nat = +li.getAttribute('data-f') || 1;
+        li.style.setProperty('--x', q.x.toFixed(2)); li.style.setProperty('--y', q.y.toFixed(2)); li.style.setProperty('--s', q.s.toFixed(3));
+        li.style.setProperty('--fx', q.fx && q.fx !== nat ? -1 : 1);
+        li.classList.toggle('is-on', i === k);
+        li.setAttribute('data-side', L.side);
+        btns[i].setAttribute('aria-expanded', i === k ? 'true' : 'false');
+        btns[i].tabIndex = i === k ? 0 : -1;
+      });
+      st.style.setProperty('--spot', p.x.toFixed(2));
+      st.style.setProperty('--tilt', tilt.toFixed(2) + 'deg');
+      if (focus) btns[k].focus({ preventScroll: wide.matches });
+    };
+    var pick = function (nk, focus) { if (nk === k && !focus) return; k = nk; apply(focus); };
+    st.addEventListener('pointermove', function (e) {
+      if (!wide.matches) return;
+      var r = list.getBoundingClientRect();
+      var f = ((e.clientX - r.left) / r.width * 100 - cfg.X0) / (cfg.X1 - cfg.X0);
+      pick(Math.max(0, Math.min(n - 1, Math.floor(f * n))), false);
+    });
+    btns.forEach(function (b, i) {
+      b.addEventListener('click', function () {
+        pick(i, false);
+        if (!wide.matches) items[i].scrollIntoView({ block: 'nearest', behavior: reduce.matches ? 'auto' : 'smooth' });
+      });
+    });
+    list.addEventListener('keydown', function (e) {
+      var m = { ArrowRight: 1, ArrowLeft: -1 }[e.key], nk;
+      if (m) nk = (k + m + n) % n; else if (e.key === 'Home') nk = 0; else if (e.key === 'End') nk = n - 1; else return;
+      e.preventDefault(); pick(nk, true);
+    });
+    apply(false);
+  }
+
+  /* 排練室預約：台灣用語的錯誤訊息 */
+  var form = document.getElementById('book-form');
+  if (form) {
+    form.noValidate = true;
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    var iso = function (d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+    form.elements.date.min = iso(today);
+    var status = document.getElementById('book-status'), tried = false;
+    var rules = {
+      name: function (v) { return v.trim() ? '' : '請留下聯絡人的名字，我們才知道要找誰。'; },
+      phone: function (v) { var s = v.replace(/[\s-]/g, ''); return !s ? '請填手機號碼，確認時段要打給你。' : /^09\d{8}$/.test(s) ? '' : '手機號碼請填 09 開頭的 10 碼數字，例如 0912-345-678。'; },
+      date: function (v) {
+        if (!v) return '請選擇想借用的日期。';
+        var d = new Date(v + 'T00:00:00');
+        if (d < today) return '這一天已經過了，請選今天以後的日期。';
+        if (d.getDay() === 1) return '週一排練室公休，請改選其他日子。';
+        return '';
+      },
+      slot: function () { return form.querySelector('input[name=slot]:checked') ? '' : '請至少勾一個時段。'; },
+      people: function (v) { var x = +v; return !v ? '請填大概會來幾個人。' : (x < 1 || x > 25 || x % 1) ? '排練室最多容納 25 人，請填 1 到 25 之間的整數。' : ''; },
+      agree: function () { return form.elements.agree.checked ? '' : '請先勾選同意場地守則。'; }
+    };
+    var check = function (name) {
+      var el = form.elements[name], v = el && el.value !== undefined ? el.value : '', msg = rules[name](v || '');
+      var out = document.getElementById('err-' + name);
+      out.textContent = msg;
+      var target = name === 'slot' ? form.querySelector('.slots') : el;
+      if (name === 'slot') form.querySelectorAll('input[name=slot]').forEach(function (x) { x.setAttribute('aria-invalid', msg ? 'true' : 'false'); });
+      else el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+      return msg ? (name === 'slot' ? form.querySelector('input[name=slot]') : el) : null;
+    };
+    Object.keys(rules).forEach(function (name) {
+      var el = name === 'slot' ? form.querySelectorAll('input[name=slot]') : [form.elements[name]];
+      [].forEach.call(el, function (x) { x.addEventListener(x.type === 'checkbox' || x.type === 'date' ? 'change' : 'input', function () { if (tried) check(name); }); });
+    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); tried = true;
+      var bad = Object.keys(rules).map(check).filter(Boolean);
+      if (bad.length) { status.textContent = '還有 ' + bad.length + ' 個地方要補，紅色斜線標出來了。'; bad[0].focus(); return; }
+      var who = form.elements.name.value.trim();
+      status.textContent = who + '，收到了！我們會在兩個工作天內打電話跟你確認時段，確認後才算預約成功。';
+      form.reset(); tried = false;
+      form.querySelectorAll('[aria-invalid]').forEach(function (x) { x.setAttribute('aria-invalid', 'false'); });
+    });
+  }
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,841 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F18" data-slug="price-board">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>阿滿麵攤｜三重榕下市場後門・價目牌、點菜單、營業時間</title>
+<meta name="description" content="三重榕下市場後門的麵攤。乾麵、湯麵、切仔麵、麻醬麵，小碗四十五起；滷蛋、嘴邊肉、燙青菜。週二到週日早上六點半賣到下午兩點，週一公休。價目牌、點菜單、怎麼點、怎麼來，都在這一頁。">
+
+<meta name="generator" content="套版網站平台 F18">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preload" href="fonts/01-noto-sans-tc.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/02-anton.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"Noto Sans TC";src:url("fonts/01-noto-sans-tc.woff2") format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Anton";src:url("fonts/02-anton.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Iansui";src:url("fonts/03-iansui.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root{
+  --red:oklch(0.51 0.2 27);--red-d:oklch(0.42 0.165 27);--red-l:oklch(0.6 0.2 27);
+  --enamel:oklch(0.966 0.005 95);--paper:oklch(0.985 0.004 95);
+  --ink:oklch(0.19 0.012 40);--ink-2:oklch(0.38 0.012 40);
+  --iron:oklch(0.27 0.012 40);--iron-d:oklch(0.2 0.01 40);--iron-l:oklch(0.42 0.012 40);
+  --blue:oklch(0.45 0.13 255);--blue-ink:oklch(0.38 0.12 255);--blue-line:oklch(0.62 0.1 255);
+  --tile:oklch(0.93 0.006 220);--grout:oklch(0.8 0.01 220);
+  --sans:"Noto Sans TC",sans-serif;
+  --plate:"Anton","Noto Sans TC",sans-serif;
+  --hand:"Iansui","Noto Sans TC",sans-serif;
+  --wrap:min(1240px,100% - 40px);
+  --rivet:radial-gradient(circle at 38% 34%,oklch(0.86 0.01 60) 0 2.2px,oklch(0.56 0.012 60) 3.2px,oklch(0.3 0.012 40) 5.4px,oklch(0 0 0 / 0) 6px);
+  --focus-ring:3px solid var(--blue);--focus-offset:3px;
+  --selection-bg:var(--red);--selection-fg:var(--enamel);
+}
+html{background:var(--tile)}
+body{font:400 16px/1.8 var(--sans);color:var(--ink);background:url(assets/tiles.svg) 50% 0/608px 608px,var(--tile);text-autospace:normal}
+a{color:inherit;text-decoration-thickness:1.5px;text-underline-offset:.22em}
+a:hover{text-decoration-color:var(--red)}
+b,strong{font-weight:700}
+h1,h2,h3{text-wrap:balance}
+.tnum,time{font-variant-numeric:tabular-nums}
+button{font:inherit}
+.defs{position:absolute;width:0;height:0;overflow:hidden}
+
+/* ---------- 浪板屋簷 ---------- */
+.roof{height:34px;background:
+  repeating-linear-gradient(90deg,oklch(0.5 0.012 230) 0 6px,oklch(0.62 0.012 230) 6px 14px,oklch(0.42 0.012 230) 14px 22px,oklch(0.36 0.012 230) 22px 26px);
+  border-bottom:6px solid var(--iron-d);box-shadow:0 6px 0 oklch(0 0 0 / .18)}
+
+/* ---------- 招牌（紅烤漆鐵皮） ---------- */
+.sign{position:relative;width:var(--wrap);margin:14px auto 0;padding:26px 34px 30px;color:var(--enamel);
+  background:
+    var(--rivet) 11px 11px/14px 14px no-repeat,var(--rivet) calc(100% - 11px) 11px/14px 14px no-repeat,
+    var(--rivet) 11px calc(100% - 11px)/14px 14px no-repeat,var(--rivet) calc(100% - 11px) calc(100% - 11px)/14px 14px no-repeat,
+    var(--rivet) 50% 11px/14px 14px no-repeat,var(--rivet) 50% calc(100% - 11px)/14px 14px no-repeat,
+    linear-gradient(var(--line),var(--line)) 20px 20px/calc(100% - 40px) 2px no-repeat,linear-gradient(var(--line),var(--line)) 20px calc(100% - 20px)/calc(100% - 40px) 2px no-repeat,
+    linear-gradient(var(--line),var(--line)) 20px 20px/2px calc(100% - 40px) no-repeat,linear-gradient(var(--line),var(--line)) calc(100% - 20px) 20px/2px calc(100% - 40px) no-repeat,
+    url(assets/tin.svg) 50% 50%/cover,var(--red);
+  --line:oklch(0.966 0.005 95 / .55);
+  box-shadow:inset 0 0 0 2px oklch(0.3 0.08 27 / .5),0 10px 0 -4px var(--iron-d),0 14px 18px -10px oklch(0 0 0 / .55)}
+.sign::before{content:"";position:absolute;left:36px;right:36px;top:-14px;height:14px;background:
+  linear-gradient(var(--iron-d),var(--iron-d)) 18px 0/4px 100% no-repeat,linear-gradient(var(--iron-d),var(--iron-d)) calc(100% - 18px) 0/4px 100% no-repeat}
+.top{position:relative}
+.sign-grid{display:grid;grid-template-columns:minmax(0,1fr) auto auto;grid-template-rows:auto auto auto;gap:18px 36px;align-items:end}
+.est{grid-column:1;font:600 14.5px/1.5 var(--sans);letter-spacing:.14em;margin-bottom:6px}
+.brand{grid-column:1;position:relative;font:900 clamp(60px,9.4vw,138px)/1.08 var(--sans);letter-spacing:.03em;margin:0 0 4px -.02em;min-height:1.1em}
+.brand .brush{display:inline-block;color:var(--enamel);text-shadow:4px 5px 0 var(--iron-d);filter:url(#brush);padding-right:.06em}
+.drips{position:absolute;left:0;top:calc(100% - .16em);width:min(100%,8em);height:auto;pointer-events:none}
+.sub{grid-column:1;font:700 clamp(17px,1.6vw,22px)/1.5 var(--sans);letter-spacing:.22em;margin-top:10px}
+.bowl{grid-column:2;grid-row:1/span 3;align-self:center;width:clamp(150px,17vw,250px);height:auto;margin:0 10px -6px 0}
+.sign-grid::after{content:"";grid-column:3;grid-row:1/span 2;min-width:200px}
+.bw-sh{fill:var(--iron-d)}
+.bw-body,.bw-rim,.bw-foot{fill:var(--enamel)}
+.bw-rim{stroke:var(--iron-d);stroke-width:3}
+.bw-soup{fill:var(--red-d)}
+.bw-band{fill:none;stroke:var(--red-d);stroke-width:4;stroke-linecap:round}
+.bw-noodle{fill:none;stroke:var(--enamel);stroke-width:3;stroke-linecap:round}
+.bw-stick{fill:var(--iron-d);stroke:var(--enamel);stroke-width:1.5}
+.bw-steam{fill:none;stroke:var(--enamel);stroke-width:5;stroke-linecap:round;opacity:.9}
+.sub .x{font-weight:400;opacity:.85;margin:0 .1em}
+.hang{position:absolute;z-index:2;top:40px;right:calc((100% - var(--wrap)) / 2 + 22px)}
+.tags{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px;margin:0;padding:0;list-style:none}
+.tags li{position:relative;padding-top:30px}
+.tags li::before{content:"";position:absolute;left:50%;top:0;width:3px;height:30px;margin-left:-1.5px;background:repeating-linear-gradient(0deg,var(--iron-d) 0 5px,oklch(0.5 0.012 40) 5px 8px)}
+.tags a{position:relative;display:inline-grid;place-items:center;min-height:42px;padding:6px 14px 4px;background:var(--enamel);color:var(--ink);font:700 15px/1 var(--sans);letter-spacing:.14em;text-decoration:none;
+  box-shadow:0 3px 0 var(--iron-d),0 6px 8px -4px oklch(0 0 0 / .5);border-radius:2px}
+.tags a::before{content:"";position:absolute;left:50%;top:4px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--iron-d)}
+@media (hover:hover) and (pointer:fine){.tags a:hover{background:oklch(0.99 0.004 95);translate:0 1px;box-shadow:0 2px 0 var(--iron-d)}}
+.lamp{grid-column:3;grid-row:3;justify-self:end;margin-left:20px;display:grid;grid-auto-flow:column;align-items:center;gap:0 14px;min-height:50px;padding:0 16px 0 14px;background:var(--iron-d);border-radius:3px;box-shadow:inset 0 1px 0 oklch(1 0 0 / .1),0 3px 0 oklch(0 0 0 / .4)}
+.lamp .st{display:none;font:900 19px/1 var(--sans);letter-spacing:.2em;padding:8px 10px 7px;border-radius:2px}
+.lamp .st-open{background:var(--red);color:var(--enamel)}
+.lamp .st-closed{background:oklch(0.5 0.012 40);color:var(--enamel)}
+.lamp .st-off{background:var(--enamel);color:var(--ink)}
+html[data-open=open] .st-open,html[data-open=closed] .st-closed,html[data-open=off] .st-off{display:block}
+.lamp .lt{font:500 15px/1.45 var(--sans);color:oklch(0.88 0.008 60);letter-spacing:.04em}
+.lamp .lt b{display:block;font:700 16px/1.3 var(--sans);color:var(--enamel);letter-spacing:.08em}
+html:not([data-open]) .lamp .lt-today{display:none}
+html[data-open] .lamp .lt-week{display:none}
+
+/* ---------- 價目牌：鐵框＋鉚釘＋白烤漆面 ---------- */
+main{width:var(--wrap);margin:0 auto}
+.menu{margin-top:44px;scroll-margin-top:16px}
+.board{position:relative;padding:18px;background:
+  var(--rivet) 9px 9px/14px 14px no-repeat,var(--rivet) calc(100% - 9px) 9px/14px 14px no-repeat,
+  var(--rivet) 9px calc(100% - 9px)/14px 14px no-repeat,var(--rivet) calc(100% - 9px) calc(100% - 9px)/14px 14px no-repeat,
+  var(--rivet) 50% 9px/14px 14px no-repeat,var(--rivet) 50% calc(100% - 9px)/14px 14px no-repeat,
+  var(--rivet) 9px 50%/14px 14px no-repeat,var(--rivet) calc(100% - 9px) 50%/14px 14px no-repeat,
+  linear-gradient(oklch(0.33 0.012 40),var(--iron) 30%,var(--iron-d));
+  box-shadow:0 18px 24px -14px oklch(0 0 0 / .6),0 2px 0 oklch(1 0 0 / .08) inset}
+.face{position:relative;background:url(assets/enamel.svg) 50% 50%/cover,var(--enamel);box-shadow:inset 0 0 0 1px oklch(0 0 0 / .35),inset 0 2px 6px oklch(0 0 0 / .25)}
+.bh{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:14px 26px 15px;background:linear-gradient(var(--red) calc(100% - 3px),var(--red-d) 0);color:var(--enamel)}
+.bh h2{font:900 clamp(24px,2.4vw,32px)/1.2 var(--sans);letter-spacing:.3em;margin:0;text-shadow:2px 2px 0 var(--red-d)}
+.bh h2 small{font:600 15px/1.4 var(--sans);letter-spacing:.14em;margin-left:16px;text-shadow:none}
+.sz{display:flex;align-items:center;gap:4px;margin:0;padding:4px;background:var(--iron-d);border-radius:4px;box-shadow:inset 0 2px 3px oklch(0 0 0 / .6),0 1px 0 oklch(1 0 0 / .12)}
+.sz legend{float:left;padding:0 10px 0 8px;font:600 14px/1 var(--sans);letter-spacing:.12em;color:oklch(0.85 0.01 60)}
+.sz label{position:relative;display:grid;place-items:center;min-width:76px;min-height:38px;padding:0 14px;border-radius:3px;font:800 16px/1 var(--sans);letter-spacing:.14em;color:oklch(0.82 0.01 60);cursor:pointer;background:oklch(0.3 0.012 40);box-shadow:inset 0 -2px 0 oklch(0 0 0 / .4)}
+.sz label:hover{color:var(--enamel)}
+.sz input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;pointer-events:none}
+.sz label:has(:checked){background:var(--enamel);color:var(--red);box-shadow:0 2px 0 oklch(0 0 0 / .55),inset 0 1px 0 #fff;translate:0 -1px}
+.sz label:has(:focus-visible){outline:var(--focus-ring);outline-offset:2px}
+.cols{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:0 54px;padding:20px 30px 26px}
+.col+.col{position:relative}
+.col+.col::before{content:"";position:absolute;left:-28px;top:6px;bottom:6px;width:3px;border-radius:2px;background:var(--ink);opacity:.85}
+.grp{display:flex;align-items:baseline;gap:12px;margin:0 0 4px;font:800 17px/1.3 var(--sans);letter-spacing:.3em;color:var(--red)}
+.grp::after{content:"";flex:1;height:3px;border-radius:2px;background:var(--red);opacity:.8;translate:0 -.25em}
+.col .grp+.pt,.col .pt+.grp{margin-top:14px}
+.pt{width:100%;border-collapse:collapse}
+.pt caption{text-align:start;font:600 14px/1.4 var(--sans);color:var(--ink-2)}
+.pt th,.pt td{padding:0;text-align:start;vertical-align:middle;font-weight:inherit}
+.pt thead th{padding:0 0 6px;font:600 14px/1.4 var(--sans);letter-spacing:.1em;color:var(--ink-2)}
+.pt thead th.pr{text-align:end}
+.pt tbody th{padding:9px 0}
+.pt .nmw{display:flex;align-items:center;gap:12px}
+.pt .t{font:700 clamp(19px,1.6vw,23px)/1.3 var(--sans);letter-spacing:.06em;color:var(--ink);text-wrap:pretty}
+.pt .ld{flex:1 1 24px;min-width:24px;height:10px;align-self:center;margin-top:.1em;background:url(assets/leader.svg) 0 50%/480px 10px repeat-x;opacity:.75}
+.pt .desc{display:block;font:400 15px/1.5 var(--sans);color:var(--ink-2);letter-spacing:.02em;margin-top:1px}
+.pt .pr{width:1%;white-space:nowrap;text-align:end;padding-left:10px}
+.pt tr.off .t{text-decoration:line-through;text-decoration-thickness:3px;text-decoration-color:var(--red)}
+.sold{display:inline-block;rotate:-5deg;margin-left:8px;padding:2px 9px 0;background:var(--enamel);color:var(--red);font:400 16px/1.4 var(--hand);border:2px solid var(--red);box-shadow:2px 2px 0 oklch(0 0 0 / .25);vertical-align:middle;letter-spacing:.06em}
+.tag-lim{display:inline-block;margin-left:8px;padding:1px 7px 0;background:var(--ink);color:var(--enamel);font:700 13px/1.6 var(--sans);letter-spacing:.14em;border-radius:2px;vertical-align:.15em}
+.note{position:relative;margin:0 30px;padding:14px 0 24px;border-top:3px double oklch(0.5 0.01 40 / .55)}
+.memo-paper{position:relative;margin:28px 6px 0 0;padding:14px 20px 14px 22px;background:var(--paper);color:var(--blue-ink);font:400 18px/32px var(--hand);rotate:-1.2deg;
+  box-shadow:0 2px 0 oklch(0 0 0 / .18),0 10px 14px -10px oklch(0 0 0 / .4);
+  background-image:repeating-linear-gradient(0deg,oklch(0 0 0 / 0) 0 31px,oklch(0.62 0.1 255 / .32) 31px 32px);background-origin:content-box}
+.memo-paper::before{content:"";position:absolute;left:34px;top:-9px;width:62px;height:18px;background:oklch(0.95 0.02 90 / .72);rotate:-3deg;box-shadow:0 1px 1px oklch(0 0 0 / .15)}
+.memo-paper p{margin:0}
+.foot-note{margin:0;max-width:60em;font:400 15px/1.75 var(--sans);color:var(--ink-2)}
+
+/* 翻牌數字牌 */
+.flap{position:relative;display:inline-grid;place-items:center;min-width:2.35em;height:1.34em;padding:0 .22em;border-radius:3px;color:var(--enamel);font:400 clamp(26px,2.1vw,30px)/1 var(--plate);letter-spacing:.03em;vertical-align:middle;perspective:260px;
+  background:linear-gradient(oklch(0 0 0 / .7),oklch(0 0 0 / .7)) 0 50%/100% 1px no-repeat,linear-gradient(oklch(1 0 0 / .09),oklch(1 0 0 / .09)) 0 calc(50% + 1px)/100% 1px no-repeat,var(--iron-d);
+  box-shadow:inset 0 1px 0 oklch(1 0 0 / .14),inset 0 -1px 0 oklch(0 0 0 / .5),0 1px 0 oklch(0 0 0 / .45),0 0 0 1px oklch(0 0 0 / .25)}
+.flap .v{display:block;translate:0 .03em}
+.flap .v-l,.vi.v-l{display:none}
+.vi.v-s{display:inline}
+body:has(#sz-l:checked) .flap .v-l{display:block}body:has(#sz-l:checked) .flap .v-s{display:none}
+body:has(#sz-l:checked) .vi.v-l{display:inline}body:has(#sz-l:checked) .vi.v-s{display:none}
+.flap.sold-plate{background:var(--iron-l)}
+.unit{font:600 14px/1 var(--sans);letter-spacing:.08em;color:var(--ink-2);margin-left:6px}
+/* 翻牌：上半片（舊值）往下翻、下半片（新值）翻起；兩片都是 pseudo，字仍是一般文字節點 */
+html.js .flap.fl::before,html.js .flap.fl::after{content:attr(data-f);position:absolute;inset:0;display:grid;place-items:center;padding:0 .22em;border-radius:3px;background:inherit;color:inherit;font:inherit;letter-spacing:inherit;line-height:1;transform-origin:50% 50%;backface-visibility:hidden}
+html.js .flap.fl::before{clip-path:inset(0 0 50% 0);animation:flipTop 110ms steps(4,end) var(--d,0ms) both}
+html.js .flap.fl::after{clip-path:inset(50% 0 0 0)}
+html.js .flap.fl2::after{animation:flipBot 110ms steps(4,end) both}
+@keyframes flipTop{from{transform:rotateX(0)}to{transform:rotateX(-90deg)}}
+@keyframes flipBot{from{transform:rotateX(90deg)}to{transform:rotateX(0)}}
+
+/* ---------- 牌下：點菜單｜限量牌＋動線 ---------- */
+.under{display:grid;grid-template-columns:420px minmax(0,1fr);gap:40px 56px;align-items:start;margin-top:48px}
+.right{display:grid;gap:40px}
+
+/* 點菜單（藍格薄紙） */
+.slip{scroll-margin-top:16px}
+.paper{position:relative;padding:18px 20px 22px;background:var(--paper);color:var(--blue-ink);rotate:.6deg;box-shadow:0 1px 0 oklch(0 0 0 / .2),0 14px 18px -14px oklch(0 0 0 / .5);
+  background-image:repeating-linear-gradient(90deg,oklch(0.62 0.1 255 / .07) 0 1px,oklch(0 0 0 / 0) 1px 22px),repeating-linear-gradient(0deg,oklch(0.62 0.1 255 / .07) 0 1px,oklch(0 0 0 / 0) 1px 22px)}
+.paper::before{content:"";position:absolute;left:-6px;top:28px;bottom:18px;width:12px;background:repeating-linear-gradient(0deg,var(--tile) 0 5px,oklch(0 0 0 / 0) 5px 16px);opacity:.9}
+.slip-title{font:900 22px/1.3 var(--sans);letter-spacing:.2em;color:var(--blue-ink);margin:0;padding-bottom:8px;border-bottom:2px solid var(--blue)}
+.slip-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;padding:12px 0 10px;border-bottom:1px solid var(--blue-line);font:600 15px/1.4 var(--sans)}
+.slip-meta label{display:inline-flex;align-items:center;gap:8px}
+.tbl{width:3.4em;height:34px;padding:0 6px;border:0;border-bottom:2px solid var(--blue);background:oklch(0.62 0.1 255 / .08);color:var(--blue-ink);font:700 18px/1 var(--sans);text-align:center;border-radius:0}
+.eat{display:flex;gap:16px;margin:0;padding:0}
+.eat label{cursor:pointer}
+.eat input{width:20px;height:20px;margin:0;accent-color:var(--blue-ink)}
+.slip-t{width:100%;border-collapse:collapse;margin-top:6px}
+.slip-t th,.slip-t td{padding:5px 4px;border-bottom:1px solid var(--blue-line);text-align:start;vertical-align:middle}
+.slip-t thead th{font:600 13.5px/1.4 var(--sans);letter-spacing:.08em;color:var(--blue);text-align:center;padding-bottom:6px;border-bottom:2px solid var(--blue)}
+.slip-t thead th:first-child{text-align:start}
+.slip-t tbody th{font:500 15.5px/1.4 var(--sans);color:var(--ink);letter-spacing:.04em}
+.slip-t tbody th small{display:block;font:400 13px/1.4 var(--sans);color:var(--ink-2)}
+.slip-t td{text-align:center;width:4.4em}
+.slip-t td.amt{text-align:end;width:3.6em;font:600 15px/1.2 var(--sans);color:var(--blue-ink);font-variant-numeric:tabular-nums}
+.slip-t tr.sec th{padding-top:12px;font:700 14px/1.4 var(--sans);letter-spacing:.24em;color:var(--blue);border-bottom:1px dashed var(--blue-line)}
+.slip-t tr.sec th .sr-only{letter-spacing:0}
+.qc{display:inline-flex;align-items:center;gap:6px}
+.ql{display:none;font:800 15px/1 var(--sans);color:var(--blue-ink);letter-spacing:0}
+.qty{width:3.1em;height:40px;margin:0;padding:0;border:1.5px solid var(--blue-line);border-radius:0;background:var(--paper);color:var(--ink);font:700 18px/1 var(--sans);text-align:center;-moz-appearance:textfield}
+.qty::-webkit-inner-spin-button,.qty::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.qty:focus{border-color:var(--blue)}
+.qty:disabled{background:repeating-linear-gradient(-45deg,oklch(0 0 0 / 0) 0 4px,oklch(0.62 0.1 255 / .25) 4px 6px);border-style:dashed}
+.slip-t .x{color:var(--blue);font:400 14px/1 var(--sans)}
+.slip-t tfoot th{padding-top:12px;font:800 16px/1.4 var(--sans);letter-spacing:.3em;color:var(--blue-ink);border-bottom:0;text-align:end}
+.slip-t tfoot td{padding-top:12px;border-bottom:0;text-align:end;white-space:nowrap;width:auto}
+.sum{font:400 30px/1 var(--plate);color:var(--blue-ink);letter-spacing:.03em;margin-right:4px;font-variant-numeric:tabular-nums}
+.memo{display:block;margin-top:14px;font:600 14px/1.4 var(--sans);letter-spacing:.1em;color:var(--blue)}
+.memo textarea{display:block;width:100%;min-height:62px;margin-top:6px;padding:8px 10px;border:1.5px solid var(--blue-line);border-radius:0;background:var(--paper);color:var(--ink);font:400 15.5px/1.6 var(--sans);letter-spacing:0;resize:vertical}
+.memo textarea::placeholder{color:oklch(0.55 0.02 255)}
+.slip-act{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:16px}
+.hand-in{min-height:48px;padding:0 24px;border:0;border-radius:3px;background:var(--red);color:var(--enamel);font:900 17px/1 var(--sans);letter-spacing:.24em;box-shadow:0 4px 0 var(--red-d),0 6px 10px -6px oklch(0 0 0 / .5);cursor:pointer}
+.hand-in:hover{background:var(--red-d)}
+.hand-in:active{translate:0 3px;box-shadow:0 1px 0 var(--red-d)}
+html:not(.js) .hand-in{display:none}
+.nojs-hint{font:400 14px/1.6 var(--sans);color:var(--ink-2)}
+html.js .nojs-hint{display:none}
+/* 出單口：單子從縫隙吐出來 */
+.slot{position:relative;margin:4px 14px 0 10px}
+.slot-lip{height:16px;background:linear-gradient(oklch(0.34 0.012 40),var(--iron-d));border-radius:0 0 4px 4px;box-shadow:inset 0 -5px 4px -3px oklch(0 0 0 / .8),0 2px 0 oklch(1 0 0 / .08)}
+.ticket{margin:-2px 12px 0;padding:16px 18px 24px;background:var(--paper);color:var(--ink);font:500 15px/1.75 var(--sans);letter-spacing:.02em;white-space:pre-wrap;overflow-wrap:anywhere;font-variant-numeric:tabular-nums;
+  box-shadow:0 10px 12px -10px oklch(0 0 0 / .55);
+  -webkit-mask:linear-gradient(#000,#000) 0 0/100% calc(100% - 9px) no-repeat,radial-gradient(circle at 50% 100%,#0000 4.5px,#000 5px) 0 100%/14px 9px repeat-x;
+  mask:linear-gradient(#000,#000) 0 0/100% calc(100% - 9px) no-repeat,radial-gradient(circle at 50% 100%,#0000 4.5px,#000 5px) 0 100%/14px 9px repeat-x}
+html.js .ticket.out{animation:feed 560ms steps(14,end) both}
+@keyframes feed{from{clip-path:inset(0 0 100% 0);translate:0 -60%}to{clip-path:inset(0 0 -2% 0);translate:0 0}}
+.ticket-act{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:12px 12px 0}
+.ticket-act button{min-height:42px;padding:0 16px;border:2px solid var(--ink);border-radius:3px;background:var(--enamel);color:var(--ink);font:700 14px/1;letter-spacing:.16em;cursor:pointer}
+.ticket-act button:hover{background:var(--ink);color:var(--enamel)}
+.copied{font:600 14px/1.4 var(--sans);color:var(--blue-ink)}
+
+/* 今日限量牌（鐵框黑牌，翻牌數字） */
+.limit{scroll-margin-top:16px;padding:18px 22px 20px;background:var(--iron);color:var(--enamel);border-radius:3px;box-shadow:inset 0 0 0 2px oklch(0.4 0.012 40),0 12px 16px -12px oklch(0 0 0 / .6)}
+.limit h2{display:flex;align-items:baseline;gap:14px;font:900 22px/1.3 var(--sans);letter-spacing:.3em;margin:0 0 12px;color:var(--enamel)}
+.limit h2 small{font:500 14px/1.4 var(--sans);letter-spacing:.1em;color:oklch(0.86 0.01 60)}
+.lim-list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.lim{display:grid;grid-template-columns:auto auto minmax(0,1fr);align-items:center;gap:8px 16px;padding:10px 0;border-top:1px solid oklch(1 0 0 / .14)}
+.lim b{font:800 20px/1.3 var(--sans);letter-spacing:.12em}
+.lim .flap{font-size:34px;background-color:var(--ink);box-shadow:inset 0 1px 0 oklch(1 0 0 / .12),0 0 0 2px oklch(0.4 0.012 40)}
+.lim .cnt{display:inline-flex;align-items:baseline;gap:8px}
+.lim .cnt .unit{color:oklch(0.88 0.01 60);font-size:14px}
+.lim p{margin:0;font:400 15.5px/1.6 var(--sans);color:oklch(0.9 0.008 60)}
+
+/* 怎麼點：動線圖＋步驟 */
+.how{position:relative;scroll-margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr);gap:16px;padding:22px 24px 26px;background:var(--paper);box-shadow:inset 0 0 0 1px oklch(0 0 0 / .18),0 1px 0 oklch(1 0 0 / .7) inset,0 10px 14px -12px oklch(0 0 0 / .5)}
+.how::before,.how::after{content:"";position:absolute;top:-8px;width:64px;height:20px;background:oklch(0.95 0.02 90 / .72);box-shadow:0 1px 1px oklch(0 0 0 / .15)}
+.how::before{left:26px;rotate:-4deg}.how::after{right:30px;rotate:5deg}
+.how h2{font:900 24px/1.3 var(--sans);letter-spacing:.3em;margin:0;color:var(--ink);display:flex;align-items:baseline;gap:14px}
+.how h2 small{font:500 15px/1.4 var(--sans);letter-spacing:.1em;color:var(--ink-2)}
+.plan-wrap{padding:0}
+.plan{width:100%;height:auto;display:block}
+.pl-floor{fill:var(--paper);stroke:var(--ink);stroke-width:2}
+.pl-grid{stroke:oklch(0.62 0.1 255 / .25);stroke-width:1;fill:none}
+.pl-wall{stroke:var(--ink);stroke-width:5;fill:none}
+.pl-col{fill:var(--ink)}
+.pl-cart{fill:var(--enamel);stroke:var(--ink);stroke-width:2.2}
+.pl-pot{fill:var(--paper);stroke:var(--ink);stroke-width:2}
+.pl-pot-in{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-dasharray:3 3}
+.pl-basket{stroke:var(--ink);stroke-width:1.4;fill:none}
+.pl-top{fill:var(--paper);stroke:var(--ink);stroke-width:1.6}
+.pl-topln{stroke:var(--ink-2);stroke-width:1.2}
+.pl-red{fill:var(--red);stroke:var(--red-d);stroke-width:1.5}
+.pl-counter{fill:none;stroke:var(--ink);stroke-width:3}
+.pl-ladle{stroke:var(--ink);stroke-width:2;stroke-linecap:round}
+.pl-table{fill:var(--enamel);stroke:var(--ink);stroke-width:1.8}
+.pl-stool{fill:var(--red);stroke:var(--red-d);stroke-width:1.5}
+.pl-route{fill:none;stroke:var(--blue);stroke-width:2.5;stroke-dasharray:7 6;stroke-linecap:round}
+.pl-arrow{stroke:var(--blue);stroke-width:3;stroke-linecap:round}
+.pl-mark circle{fill:var(--blue-ink);stroke:var(--paper);stroke-width:3}
+.pl-mark text{font:700 19px/1 var(--sans);fill:var(--paper)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0;padding:0;list-style:none;font:500 14.5px/1.6 var(--sans);color:var(--ink-2)}
+.legend li{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:14px;height:10px;border:1.5px solid var(--ink);background:var(--enamel)}
+.legend i.red{width:11px;height:11px;border-radius:50%;background:var(--red);border-color:var(--red-d)}
+.legend i.blue{width:18px;height:0;border:0;border-top:2.5px dashed var(--blue)}
+.steps{margin:4px 0 0;padding:0;list-style:none;counter-reset:st;display:grid;gap:10px}
+.steps li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:0 12px;align-items:start;font:400 15.5px/1.75 var(--sans)}
+.steps li::before{counter-increment:st;content:counter(st);grid-row:1/span 2;display:grid;place-items:center;width:30px;height:30px;margin-top:2px;border-radius:50%;background:var(--blue-ink);color:var(--paper);font:700 16px/1 var(--sans)}
+.steps b{grid-column:2;display:block;font:800 17px/1.5 var(--sans);letter-spacing:.1em;color:var(--ink)}
+.steps .sb{grid-column:2;display:block}
+
+/* ---------- 下排：營業時間牌（白烤漆）＋怎麼來（黑鐵牌） ---------- */
+.lower{margin-top:48px}
+.plate{position:relative;padding:12px;box-shadow:0 14px 18px -12px oklch(0 0 0 / .6);scroll-margin-top:16px;
+  background:
+    var(--rivet) 7px 7px/14px 14px no-repeat,var(--rivet) calc(100% - 7px) 7px/14px 14px no-repeat,
+    var(--rivet) 7px calc(100% - 7px)/14px 14px no-repeat,var(--rivet) calc(100% - 7px) calc(100% - 7px)/14px 14px no-repeat,
+    linear-gradient(oklch(0.33 0.012 40),var(--iron) 30%,var(--iron-d))}
+.plate-in{padding:20px 26px 24px;background:url(assets/enamel.svg) 50% 50%/cover,var(--enamel);box-shadow:inset 0 0 0 1px oklch(0 0 0 / .35)}
+.plate h2{font:900 24px/1.3 var(--sans);letter-spacing:.3em;margin:0 0 12px;color:var(--red);text-shadow:1px 1px 0 oklch(1 0 0 / .6)}
+.hours-t{width:100%;border-collapse:collapse}
+.hours-t th,.hours-t td{padding:8px 0;text-align:start;vertical-align:baseline;border-bottom:1px dashed oklch(0.5 0.01 40 / .5)}
+.hours-t tbody tr:last-child th,.hours-t tbody tr:last-child td{border-bottom:0}
+.hours-t th{width:6.4em;white-space:nowrap;font:800 17px/1.5 var(--sans);letter-spacing:.14em;color:var(--ink)}
+.hours-t .h-time{width:9.2em;font:700 19px/1.5 var(--sans);font-variant-numeric:tabular-nums;color:var(--ink);letter-spacing:.02em}
+.hours-t .h-time.rest{color:var(--red);letter-spacing:.2em}
+.hours-t .h-note{font:400 15px/1.6 var(--sans);color:var(--ink-2)}
+.today-tag{display:none;margin-left:8px;padding:1px 7px 0;background:var(--red);color:var(--enamel);font:700 13px/1.6 var(--sans);letter-spacing:.14em;border-radius:2px;vertical-align:.15em}
+.hours-t tr.today .today-tag{display:inline-block}
+.hours-t tr.today th,.hours-t tr.today td{background:oklch(0.51 0.2 27 / .07)}
+.hours-foot{margin:14px 0 0;font:400 15px/1.75 var(--sans);color:var(--ink)}
+.hours-foot li{margin-top:2px}
+.where{scroll-margin-top:16px;padding:22px 26px 26px;background:var(--iron);color:var(--enamel);border-radius:3px;box-shadow:inset 0 0 0 2px oklch(0.4 0.012 40),0 12px 16px -12px oklch(0 0 0 / .6)}
+.where h2{font:900 24px/1.3 var(--sans);letter-spacing:.3em;margin:0 0 14px;color:var(--enamel)}
+.where dl{display:grid;grid-template-columns:auto minmax(0,1fr) auto minmax(0,1fr);gap:12px 18px;margin:0}
+.where dl div{display:contents}
+.where dt{font:800 15px/1.8 var(--sans);letter-spacing:.3em;color:var(--enamel);padding:2px 8px 0;background:var(--red);align-self:start;border-radius:2px;height:fit-content}
+.where dd{margin:0;font:400 15.5px/1.8 var(--sans);color:oklch(0.93 0.006 60)}
+.where dd a{color:var(--enamel);font-weight:700;font-variant-numeric:tabular-nums;text-decoration-color:oklch(1 0 0 / .5)}
+.where dd a:hover{text-decoration-color:var(--enamel)}
+
+/* ---------- 頁尾 ---------- */
+.foot{width:var(--wrap);margin:48px auto 0;padding:22px 4px 40px;border-top:3px solid var(--iron);font:400 14px/1.7 var(--sans);color:var(--ink-2);display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px}
+.foot p{margin:0}
+.foot b{color:var(--ink)}
+
+/* ---------- 手機：合計條（只在 JS 且有點東西時出現） ---------- */
+.tally{display:none}
+
+/* ---------- 404 ---------- */
+.nf{margin-top:44px;max-width:860px}
+.nf .face{padding:30px 30px 34px}
+.nf h2{font:900 clamp(26px,3vw,36px)/1.3 var(--sans);letter-spacing:.14em;margin:0 0 10px;color:var(--ink)}
+.nf p{max-width:36em;font:400 16.5px/1.85 var(--sans);margin:0}
+.nf .pt{margin-top:18px;max-width:560px}
+.nf .pt .t{font-size:21px}
+.nf-links{display:flex;flex-wrap:wrap;gap:12px 18px;margin:20px 0 0;padding:0;list-style:none}
+.nf-links a{display:inline-grid;place-items:center;min-height:44px;padding:0 18px;background:var(--ink);color:var(--enamel);font:700 15px/1 var(--sans);letter-spacing:.16em;text-decoration:none;border-radius:3px;box-shadow:0 3px 0 oklch(0 0 0 / .4)}
+.nf-links a:hover{background:var(--red)}
+.nf .sold{font-size:22px;padding:4px 14px 2px}
+
+/* ---------- 響應式 ---------- */
+@media (max-width:1099px){
+  .bh{position:sticky;top:0;z-index:3}
+  .under{grid-template-columns:minmax(0,1fr)}
+  .where dl{grid-template-columns:auto minmax(0,1fr)}
+  .cols{grid-template-columns:minmax(0,1fr);gap:18px 0;padding:18px 22px 22px}
+  .col+.col::before{display:none}
+  .col+.col{margin-top:10px}
+}
+@media (max-width:719px){
+  :root{--wrap:min(1240px,100% - 24px)}
+  body{background-size:380px 380px}
+  .roof{height:24px}
+  .sign{padding:22px 20px 22px;margin-top:10px;--line:oklch(0.966 0.005 95 / .4)}
+  .sign-grid{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:none;gap:12px 10px}
+  .sign-grid::after{display:none}
+  .est,.brand,.sub{grid-column:1/-1}
+  .bowl{grid-column:2;grid-row:4;align-self:end;width:112px;margin:0 2px -4px 0}
+  .hang{position:static;width:var(--wrap);margin:-6px auto 0}
+  .tags{justify-content:flex-start;gap:8px}
+  .tags li{padding-top:18px}
+  .tags li::before{height:18px}
+  .tags a{min-height:40px;padding:4px 11px 2px;font-size:14px;letter-spacing:.08em}
+  .tags a::after{content:"";position:absolute;inset:-10px -3px 0} /* 觸控目標：招牌壓住木牌下緣 4px，所以可點範圍只能往上長；畫面不變 */
+  .est{grid-row:1;font-size:13.5px;letter-spacing:.08em}
+  .brand{grid-row:2;font-size:clamp(54px,16vw,76px)}
+  .brand .brush{text-shadow:3px 3px 0 var(--iron-d)}
+  .sub{grid-row:3;font-size:16px;letter-spacing:.14em}
+  .lamp{grid-column:1;grid-row:4;justify-self:start;align-self:end;margin:12px 0 0;padding:8px 12px;grid-auto-flow:row;gap:8px;min-height:0}
+  .lamp .st{justify-self:start}
+  .menu{margin-top:30px}
+  .board{padding:12px;background-size:14px 14px,14px 14px,14px 14px,14px 14px,0 0,0 0,0 0,0 0,auto}
+  .bh{padding:12px 16px 10px;gap:10px 16px}
+  .bh h2 small{display:block;margin:4px 0 0}
+  .sz{width:100%}
+  .sz label{flex:1}
+  .cols{padding:16px 14px 18px}
+  .pt .t{font-size:19px;letter-spacing:.04em}
+  .pt .desc{font-size:14.5px}
+  .flap{font-size:26px}
+  .note{margin:0 14px;padding-bottom:18px}
+  .memo-paper{font-size:17px;margin:22px 4px 0 2px}
+  .under{margin-top:34px;gap:30px}
+  .paper{padding:14px 12px 18px;rotate:none}
+  .paper::before{display:none}
+  .slip-title{font-size:19px;letter-spacing:.14em}
+  .ql{display:inline}
+  .slip-t td{width:auto}
+  .slip-t td.amt{width:3em;padding-left:0}
+  .qty{width:2.7em}
+  .slip-t tbody th{font-size:15px}
+  .slot{margin:4px 0 0}
+  .ticket,.ticket-act{margin-inline:6px}
+  .lim{grid-template-columns:auto auto;gap:6px 12px}
+  .lim p{grid-column:1/-1}
+  .lower{margin-top:34px;gap:30px}
+  .plate-in{padding:16px 16px 18px}
+  .hours-t th{width:4.6em;font-size:15px;letter-spacing:.04em}
+  .hours-t .h-time{width:6.8em;font-size:16px}
+  .hours-t .h-note{font-size:14px;line-height:1.5}
+  .where{padding:18px 16px 20px}
+  .where dl{grid-template-columns:minmax(0,1fr);gap:4px 0}
+  .where dt{justify-self:start;margin-top:8px}
+  .foot{margin-top:34px;padding-bottom:88px}
+  html.js.has-order .tally{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;align-items:center;justify-content:space-between;gap:14px;padding:10px 16px;background:var(--iron-d);color:var(--enamel);box-shadow:0 -4px 12px oklch(0 0 0 / .35)}
+  .tally .sum{color:var(--enamel);font-size:28px}
+  .tally .tl{font:700 14px/1.3 var(--sans);letter-spacing:.2em}
+  .tally a{display:inline-grid;place-items:center;min-height:42px;padding:0 16px;background:var(--red);color:var(--enamel);font:800 15px/1 var(--sans);letter-spacing:.16em;text-decoration:none;border-radius:3px}
+}
+@media (max-width:379px){.brand{font-size:50px}.sz label{min-width:0;padding:0 8px}}
+
+/* ---------- 降級動效：翻牌直接換字、單子直接出現 ---------- */
+@media (prefers-reduced-motion:reduce){
+  html.js .flap.fl::before,html.js .flap.fl::after{content:none!important;animation:none!important}
+  html.js .ticket.out{animation:none!important}
+  .tags a,.hand-in{transition:none}
+}
+
+/* ---------- 列印：去鐵皮、去磁磚、黑字；按「列印」只印點菜單 ---------- */
+@media print{
+  html,body{background:none!important;color:#000}
+  .roof,.lamp,.tags,.tally,.ticket-act,.drips,.slot-lip,.flap::before,.flap::after{display:none!important}
+  .sign{background:none!important;color:#000;box-shadow:none;border:2pt solid #000;margin-top:0;padding:16pt}
+  .sign::before{display:none}
+  .brand .brush{filter:none;text-shadow:none;color:#000}
+  .board,.plate{background:none!important;box-shadow:none;border:1.5pt solid #000;padding:6pt}
+  .face,.plate-in{background:none!important;box-shadow:none}
+  .bh{background:none;color:#000;box-shadow:none;border-bottom:1.5pt solid #000}
+  .bh h2{text-shadow:none}
+  .sz,.sz label{background:none!important;color:#000!important;box-shadow:none!important;border:1pt solid #000}
+  .flap{background:none!important;color:#000;box-shadow:none;border:1pt solid #000;height:auto;padding:2px 8px;perspective:none}
+  .flap .v{translate:none;line-height:1.1}
+  .flap .v-l,.flap .v-s,.vi.v-l,.vi.v-s{display:block!important}
+  .flap:has(.v-l) .v-l{border-top:1px dotted #000;font-size:.72em;padding-top:2px}
+  .sz{display:none!important}
+  .grp{color:#000}.grp::after{background:#000}
+  .paper,.ticket{background:none!important;box-shadow:none;rotate:none;border:1pt solid #000;color:#000;-webkit-mask:none;mask:none}
+  .paper::before{display:none}
+  .grp,.plate h2,.limit h2,.where h2,.slip-title{color:#000}
+  .limit,.where{background:none!important;color:#000;box-shadow:none;border:1.5pt solid #000}
+  .limit p,.lim .cnt .unit,.where dd,.where dd a{color:#000}
+  .where dt{background:none;color:#000;border:1pt solid #000}
+  a{text-decoration:underline}
+  .pt tr,.slip-t tr,.hours-t tr,.lim{break-inside:avoid}
+  html.ps header,html.ps .board,html.ps .right,html.ps .lower,html.ps .foot,html.ps .slot{display:none!important}
+  html.ps main{width:auto}
+}
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+
+<svg class="defs" aria-hidden="true" focusable="false"><filter id="brush" x="-6%" y="-12%" width="112%" height="124%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency=".032 .07" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+<header class="top">
+  <div class="roof" aria-hidden="true"></div>
+  <nav class="hang" aria-label="頁內導覽">
+    <ul class="tags" role="list">
+      <li><a href="#menu">價目牌</a></li>
+      <li><a href="#order">點菜單</a></li>
+      <li><a href="#hours">營業時間</a></li>
+      <li><a href="#where">怎麼來</a></li>
+    </ul>
+  </nav>
+  <div class="sign">
+    <div class="sign-grid">
+      <p class="est">自民國七十三年・三重榕下市場後門</p>
+      <h1 class="brand"><span class="brush">阿滿麵攤</span><svg class="drips" viewBox="0 0 1000 80" preserveAspectRatio="xMinYMin meet" aria-hidden="true" focusable="false"><path d="M520.24 0v26.73" stroke="#f5f4f0" stroke-width="7.85" stroke-linecap="round" opacity=".92"/><circle cx="520.24" cy="29.08" r="5.49" fill="#f5f4f0" opacity=".92"/><path d="M282.38 0v50.49" stroke="#f5f4f0" stroke-width="7.35" stroke-linecap="round" opacity=".92"/><circle cx="282.38" cy="52.69" r="5.15" fill="#f5f4f0" opacity=".92"/></svg></h1>
+      <svg class="bowl" viewBox="0 0 300 250" aria-hidden="true" focusable="false"><path d="M101.75 88C89.79 68 113.72 50 94.58 32S107.74 40.72 102.69 16.72" class="bw-steam"/><path d="M153.17 88C135.9 68 170.44 50 142.81 32S161.8 49.96 155.39 25.96" class="bw-steam"/><path d="M191.02 88C202.51 68 179.52 50 197.92 32S185.27 46.61 193.65 22.61" class="bw-steam"/><g transform="translate(7 8)"><path d="M38 118C44 188 88 218 150 218C212 218 256 188 262 118Z" class="bw-sh"/><ellipse cx="150" cy="118" rx="114" ry="20" class="bw-sh"/><rect x="116" y="216" width="68" height="12" rx="3" class="bw-sh"/></g><rect x="116" y="216" width="68" height="12" rx="3" class="bw-foot"/><path d="M38 118C44 188 88 218 150 218C212 218 256 188 262 118Z" class="bw-body"/><path d="M54 150C90 162 210 162 246 150" class="bw-band"/><path d="M64 164C100 174 200 174 236 164" class="bw-band"/><ellipse cx="150" cy="118" rx="114" ry="20" class="bw-rim"/><ellipse cx="150" cy="118" rx="98" ry="13" class="bw-soup"/><path d="M75.11 110C115.11 109.17 180.83 111.2 220.83 110" class="bw-noodle"/><path d="M80.93 112.29C120.93 115.72 179.28 113.08 219.28 112.29" class="bw-noodle"/><path d="M74.34 114.57C114.34 110.82 180.36 113.88 220.36 114.57" class="bw-noodle"/><path d="M72.92 116.86C112.92 122.44 177.23 114.86 217.23 116.86" class="bw-noodle"/><path d="M72.28 119.14C112.28 120.48 177.67 123.74 217.67 119.14" class="bw-noodle"/><path d="M83.87 121.43C123.87 123.24 186.87 122.7 226.87 121.43" class="bw-noodle"/><path d="M72.19 123.71C112.19 123.48 187.72 122.96 227.72 123.71" class="bw-noodle"/><g transform="rotate(-33.24 180 114)"><rect x="174" y="-36" width="7" height="150" rx="3" class="bw-stick"/><rect x="186" y="-34" width="7" height="150" rx="3" class="bw-stick"/></g></svg>
+      <p class="sub">乾麵<span class="x">・</span>湯麵<span class="x">・</span>切仔麵<span class="x">・</span>小菜<span class="x">・</span>外帶外送</p>
+      <p class="lamp"><span class="st st-open">營業中</span><span class="st st-closed">休息中</span><span class="st st-off">今日公休</span><span class="lt lt-today"><b>今天</b><span class="lt-time">06:30–14:00</span></span><span class="lt lt-week"><b>週二到週日</b>06:30 起，賣完就收</span></p>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="menu" id="menu" aria-labelledby="h-menu">
+    <div class="board">
+      <div class="face">
+        <div class="bh">
+          <h2 id="h-menu">價目牌<small>一碗一碗現煮，賣完就收</small></h2>
+          <fieldset class="sz"><legend>份量</legend>
+            <label><input type="radio" name="sz" id="sz-s" value="s" checked>小碗</label>
+            <label><input type="radio" name="sz" id="sz-l" value="l">大碗</label>
+          </fieldset>
+        </div>
+        <div class="cols">
+          <div class="col">
+            <p class="grp">麵類</p>
+            <table class="pt">
+              <caption class="sr-only">麵類價目：品名與價格，價格依上方「小碗／大碗」切換</caption>
+              <thead><tr><th scope="col">品名</th><th scope="col" class="pr">價格<span class="v v-s vi">（小碗）</span><span class="v v-l vi">（大碗）</span></th></tr></thead>
+              <tbody><tr data-item="dry">
+      <th scope="row"><span class="nmw"><span class="t">乾麵</span><span class="ld" aria-hidden="true"></span></span><span class="desc">油蔥、肉燥、一點烏醋</span></th>
+      <td class="pr"><span class="flap" data-dual><b class="v v-s">45</b><b class="v v-l">55</b></span><span class="unit">元</span></td></tr><tr data-item="soup">
+      <th scope="row"><span class="nmw"><span class="t">湯麵</span><span class="ld" aria-hidden="true"></span></span><span class="desc">大骨湯底，韭菜、豆芽</span></th>
+      <td class="pr"><span class="flap" data-dual><b class="v v-s">45</b><b class="v v-l">55</b></span><span class="unit">元</span></td></tr><tr data-item="chie">
+      <th scope="row"><span class="nmw"><span class="t">切仔麵</span><span class="ld" aria-hidden="true"></span></span><span class="desc">油麵燙過，兩片瘦肉</span></th>
+      <td class="pr"><span class="flap" data-dual><b class="v v-s">50</b><b class="v v-l">60</b></span><span class="unit">元</span></td></tr><tr data-item="rice">
+      <th scope="row"><span class="nmw"><span class="t">米粉湯</span><span class="ld" aria-hidden="true"></span></span><span class="desc">粗米粉，湯給得多</span></th>
+      <td class="pr"><span class="flap" data-dual><b class="v v-s">45</b><b class="v v-l">55</b></span><span class="unit">元</span></td></tr><tr data-item="yi">
+      <th scope="row"><span class="nmw"><span class="t">意麵</span><span class="ld" aria-hidden="true"></span></span><span class="desc">乾的、湯的都可以，點的時候說</span></th>
+      <td class="pr"><span class="flap" data-dual><b class="v v-s">50</b><b class="v v-l">60</b></span><span class="unit">元</span></td></tr><tr data-item="sesame">
+      <th scope="row"><span class="nmw"><span class="t">麻醬麵</span><span class="ld" aria-hidden="true"></span></span><span class="desc">芝麻醬自己磨，偏濃</span></th>
+      <td class="pr"><span class="flap" data-dual><b class="v v-s">55</b><b class="v v-l">65</b></span><span class="unit">元</span></td></tr><tr data-item="wonton">
+      <th scope="row"><span class="nmw"><span class="t">餛飩麵</span><span class="ld" aria-hidden="true"></span></span><span class="desc">餛飩六顆，每天早上手包</span></th>
+      <td class="pr"><span class="flap" data-dual><b class="v v-s">65</b><b class="v v-l">75</b></span><span class="unit">元</span></td></tr><tr data-item="zhacai">
+      <th scope="row"><span class="nmw"><span class="t">榨菜肉絲麵</span><span class="ld" aria-hidden="true"></span></span><span class="desc">不辣，榨菜有先泡過水</span></th>
+      <td class="pr"><span class="flap" data-dual><b class="v v-s">60</b><b class="v v-l">70</b></span><span class="unit">元</span></td></tr></tbody>
+            </table>
+            <p class="grp">加料</p>
+            <table class="pt">
+              <caption class="sr-only">加料價目：品名與加價</caption>
+              <thead class="sr-only"><tr><th scope="col">品名</th><th scope="col">加價</th></tr></thead>
+              <tbody><tr data-item="xnoodle">
+      <th scope="row"><span class="nmw"><span class="t">加麵</span><span class="ld" aria-hidden="true"></span></span><span class="desc">多半份</span></th>
+      <td class="pr"><span class="flap single"><b class="v">+10</b></span><span class="unit">元</span></td></tr><tr data-item="xegg">
+      <th scope="row"><span class="nmw"><span class="t">加蛋</span><span class="ld" aria-hidden="true"></span></span><span class="desc">半熟荷包蛋</span></th>
+      <td class="pr"><span class="flap single"><b class="v">+10</b></span><span class="unit">元</span></td></tr><tr data-item="xmeat">
+      <th scope="row"><span class="nmw"><span class="t">加肉燥</span><span class="ld" aria-hidden="true"></span></span></th>
+      <td class="pr"><span class="flap single"><b class="v">+15</b></span><span class="unit">元</span></td></tr></tbody>
+            </table>
+          </div>
+          <div class="col">
+            <p class="grp">小菜</p>
+            <table class="pt">
+              <caption class="sr-only">小菜價目：品名與價格</caption>
+              <thead class="sr-only"><tr><th scope="col">品名</th><th scope="col">價格</th></tr></thead>
+              <tbody><tr data-item="egg">
+      <th scope="row"><span class="nmw"><span class="t">滷蛋</span><span class="ld" aria-hidden="true"></span></span></th>
+      <td class="pr"><span class="flap single"><b class="v">15</b></span><span class="unit">元</span></td></tr><tr data-item="tofu">
+      <th scope="row"><span class="nmw"><span class="t">油豆腐</span><span class="ld" aria-hidden="true"></span></span><span class="desc">兩塊</span></th>
+      <td class="pr"><span class="flap single"><b class="v">15</b></span><span class="unit">元</span></td></tr><tr data-item="kelp">
+      <th scope="row"><span class="nmw"><span class="t">海帶</span><span class="ld" aria-hidden="true"></span></span></th>
+      <td class="pr"><span class="flap single"><b class="v">20</b></span><span class="unit">元</span></td></tr><tr data-item="dougan">
+      <th scope="row"><span class="nmw"><span class="t">豆干</span><span class="ld" aria-hidden="true"></span></span></th>
+      <td class="pr"><span class="flap single"><b class="v">25</b></span><span class="unit">元</span></td></tr><tr data-item="cheek">
+      <th scope="row"><span class="nmw"><span class="t">嘴邊肉</span><span class="ld" aria-hidden="true"></span></span><span class="desc">切盤，淋醬油膏、薑絲</span></th>
+      <td class="pr"><span class="flap single"><b class="v">60</b></span><span class="unit">元</span></td></tr><tr data-item="pigskin" class="off">
+      <th scope="row"><span class="nmw"><span class="t">豬頭皮</span><span class="sold">今日售完</span><span class="ld" aria-hidden="true"></span></span></th>
+      <td class="pr"><span class="flap single sold-plate"><b class="v">50</b></span><span class="unit">元</span></td></tr><tr data-item="veg">
+      <th scope="row"><span class="nmw"><span class="t">燙青菜</span><span class="ld" aria-hidden="true"></span></span><span class="desc">看今天菜市場有什麼</span></th>
+      <td class="pr"><span class="flap single"><b class="v">35</b></span><span class="unit">元</span></td></tr><tr data-item="trotter">
+      <th scope="row"><span class="nmw"><span class="t">滷豬腳</span><span class="tag-lim">限量</span><span class="ld" aria-hidden="true"></span></span><span class="desc">一天二十份，賣完就沒了</span></th>
+      <td class="pr"><span class="flap single"><b class="v">90</b></span><span class="unit">元</span></td></tr></tbody>
+            </table><p class="grp">湯</p>
+            <table class="pt">
+              <caption class="sr-only">湯價目：品名與價格</caption>
+              <thead class="sr-only"><tr><th scope="col">品名</th><th scope="col">價格</th></tr></thead>
+              <tbody><tr data-item="wsoup">
+      <th scope="row"><span class="nmw"><span class="t">餛飩湯</span><span class="ld" aria-hidden="true"></span></span></th>
+      <td class="pr"><span class="flap single"><b class="v">50</b></span><span class="unit">元</span></td></tr><tr data-item="ball">
+      <th scope="row"><span class="nmw"><span class="t">貢丸湯</span><span class="ld" aria-hidden="true"></span></span><span class="desc">兩顆</span></th>
+      <td class="pr"><span class="flap single"><b class="v">35</b></span><span class="unit">元</span></td></tr><tr data-item="eggsoup">
+      <th scope="row"><span class="nmw"><span class="t">蛋包湯</span><span class="ld" aria-hidden="true"></span></span></th>
+      <td class="pr"><span class="flap single"><b class="v">30</b></span><span class="unit">元</span></td></tr></tbody>
+            </table>
+            <div class="memo-paper" style="rotate:-0.97deg"><p>清湯自己舀，不收錢。辣的自己加，桌上那罐。<br>湯麵換粗米粉不加價，跟阿滿說一聲。</p></div>
+          </div>
+        </div>
+        <div class="note">
+          <p class="foot-note">大碗比小碗多半份麵、湯一樣多。小菜每盤的量就是老人家吃一餐的量，兩個人點三盤差不多。價格含稅，不收服務費。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="under">
+      <aside class="slip" id="order" aria-labelledby="slip-h">
+        <div class="paper">
+          <h2 class="slip-title" id="slip-h">阿滿麵攤　點菜單</h2>
+          <div class="slip-meta">
+            <label><span class="tbl-l">桌號</span><input class="tbl" type="text" inputmode="numeric" maxlength="3" autocomplete="off"></label>
+            <fieldset class="eat"><legend class="sr-only">內用或外帶</legend>
+              <label><input type="radio" name="eat" value="in" checked>內用</label>
+              <label><input type="radio" name="eat" value="out">外帶</label>
+            </fieldset>
+          </div>
+          <table class="slip-t">
+            <caption class="sr-only">點菜單：每一項填幾碗或幾份，金額會自動算</caption>
+            <thead><tr><th scope="col">品名</th><th scope="col">小碗</th><th scope="col">大碗</th><th scope="col">金額</th></tr></thead>
+            <tbody>
+              <tr class="sec"><th scope="colgroup" colspan="4">麵類</th></tr>
+              <tr data-item="dry">
+      <th scope="row"><span class="t">乾麵</span></th>
+      <td><label class="qc"><span class="ql" aria-hidden="true">小</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="dry" data-size="s" aria-label="乾麵 小碗 幾碗"></label></td><td><label class="qc"><span class="ql" aria-hidden="true">大</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="dry" data-size="l" aria-label="乾麵 大碗 幾碗"></label></td>
+      <td class="amt"></td></tr><tr data-item="soup">
+      <th scope="row"><span class="t">湯麵</span></th>
+      <td><label class="qc"><span class="ql" aria-hidden="true">小</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="soup" data-size="s" aria-label="湯麵 小碗 幾碗"></label></td><td><label class="qc"><span class="ql" aria-hidden="true">大</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="soup" data-size="l" aria-label="湯麵 大碗 幾碗"></label></td>
+      <td class="amt"></td></tr><tr data-item="chie">
+      <th scope="row"><span class="t">切仔麵</span></th>
+      <td><label class="qc"><span class="ql" aria-hidden="true">小</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="chie" data-size="s" aria-label="切仔麵 小碗 幾碗"></label></td><td><label class="qc"><span class="ql" aria-hidden="true">大</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="chie" data-size="l" aria-label="切仔麵 大碗 幾碗"></label></td>
+      <td class="amt"></td></tr><tr data-item="rice">
+      <th scope="row"><span class="t">米粉湯</span></th>
+      <td><label class="qc"><span class="ql" aria-hidden="true">小</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="rice" data-size="s" aria-label="米粉湯 小碗 幾碗"></label></td><td><label class="qc"><span class="ql" aria-hidden="true">大</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="rice" data-size="l" aria-label="米粉湯 大碗 幾碗"></label></td>
+      <td class="amt"></td></tr><tr data-item="yi">
+      <th scope="row"><span class="t">意麵</span></th>
+      <td><label class="qc"><span class="ql" aria-hidden="true">小</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="yi" data-size="s" aria-label="意麵 小碗 幾碗"></label></td><td><label class="qc"><span class="ql" aria-hidden="true">大</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="yi" data-size="l" aria-label="意麵 大碗 幾碗"></label></td>
+      <td class="amt"></td></tr><tr data-item="sesame">
+      <th scope="row"><span class="t">麻醬麵</span></th>
+      <td><label class="qc"><span class="ql" aria-hidden="true">小</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="sesame" data-size="s" aria-label="麻醬麵 小碗 幾碗"></label></td><td><label class="qc"><span class="ql" aria-hidden="true">大</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="sesame" data-size="l" aria-label="麻醬麵 大碗 幾碗"></label></td>
+      <td class="amt"></td></tr><tr data-item="wonton">
+      <th scope="row"><span class="t">餛飩麵</span></th>
+      <td><label class="qc"><span class="ql" aria-hidden="true">小</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="wonton" data-size="s" aria-label="餛飩麵 小碗 幾碗"></label></td><td><label class="qc"><span class="ql" aria-hidden="true">大</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="wonton" data-size="l" aria-label="餛飩麵 大碗 幾碗"></label></td>
+      <td class="amt"></td></tr><tr data-item="zhacai">
+      <th scope="row"><span class="t">榨菜肉絲麵</span></th>
+      <td><label class="qc"><span class="ql" aria-hidden="true">小</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="zhacai" data-size="s" aria-label="榨菜肉絲麵 小碗 幾碗"></label></td><td><label class="qc"><span class="ql" aria-hidden="true">大</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="zhacai" data-size="l" aria-label="榨菜肉絲麵 大碗 幾碗"></label></td>
+      <td class="amt"></td></tr>
+              <tr class="sec"><th scope="colgroup" colspan="4">加料<span class="sr-only">（填幾份）</span></th></tr><tr data-item="xnoodle">
+      <th scope="row"><span class="t">加麵</span></th>
+      <td colspan="2"><label class="qc"><span class="ql" aria-hidden="true">份</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="xnoodle" aria-label="加麵 幾份"></label></td>
+      <td class="amt"></td></tr><tr data-item="xegg">
+      <th scope="row"><span class="t">加蛋</span></th>
+      <td colspan="2"><label class="qc"><span class="ql" aria-hidden="true">份</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="xegg" aria-label="加蛋 幾份"></label></td>
+      <td class="amt"></td></tr><tr data-item="xmeat">
+      <th scope="row"><span class="t">加肉燥</span></th>
+      <td colspan="2"><label class="qc"><span class="ql" aria-hidden="true">份</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="xmeat" aria-label="加肉燥 幾份"></label></td>
+      <td class="amt"></td></tr><tr class="sec"><th scope="colgroup" colspan="4">小菜<span class="sr-only">（填幾份）</span></th></tr><tr data-item="egg">
+      <th scope="row"><span class="t">滷蛋</span></th>
+      <td colspan="2"><label class="qc"><span class="ql" aria-hidden="true">份</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="egg" aria-label="滷蛋 幾份"></label></td>
+      <td class="amt"></td></tr><tr data-item="tofu">
+      <th scope="row"><span class="t">油豆腐</span></th>
+      <td colspan="2"><label class="qc"><span class="ql" aria-hidden="true">份</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="tofu" aria-label="油豆腐 幾份"></label></td>
+      <td class="amt"></td></tr><tr data-item="kelp">
+      <th scope="row"><span class="t">海帶</span></th>
+      <td colspan="2"><label class="qc"><span class="ql" aria-hidden="true">份</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="kelp" aria-label="海帶 幾份"></label></td>
+      <td class="amt"></td></tr><tr data-item="dougan">
+      <th scope="row"><span class="t">豆干</span></th>
+      <td colspan="2"><label class="qc"><span class="ql" aria-hidden="true">份</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="dougan" aria-label="豆干 幾份"></label></td>
+      <td class="amt"></td></tr><tr data-item="cheek">
+      <th scope="row"><span class="t">嘴邊肉</span></th>
+      <td colspan="2"><label class="qc"><span class="ql" aria-hidden="true">份</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="cheek" aria-label="嘴邊肉 幾份"></label></td>
+      <td class="amt"></td></tr><tr data-item="pigskin">
+      <th scope="row"><span class="t">豬頭皮</span><small>今日售完</small></th>
+      <td colspan="2"><label class="qc"><span class="ql" aria-hidden="true">份</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="pigskin" aria-label="豬頭皮 幾份" disabled></label></td>
+      <td class="amt"></td></tr><tr data-item="veg">
+      <th scope="row"><span class="t">燙青菜</span></th>
+      <td colspan="2"><label class="qc"><span class="ql" aria-hidden="true">份</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="veg" aria-label="燙青菜 幾份"></label></td>
+      <td class="amt"></td></tr><tr data-item="trotter">
+      <th scope="row"><span class="t">滷豬腳</span></th>
+      <td colspan="2"><label class="qc"><span class="ql" aria-hidden="true">份</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="trotter" aria-label="滷豬腳 幾份"></label></td>
+      <td class="amt"></td></tr><tr class="sec"><th scope="colgroup" colspan="4">湯<span class="sr-only">（填幾份）</span></th></tr><tr data-item="wsoup">
+      <th scope="row"><span class="t">餛飩湯</span></th>
+      <td colspan="2"><label class="qc"><span class="ql" aria-hidden="true">份</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="wsoup" aria-label="餛飩湯 幾份"></label></td>
+      <td class="amt"></td></tr><tr data-item="ball">
+      <th scope="row"><span class="t">貢丸湯</span></th>
+      <td colspan="2"><label class="qc"><span class="ql" aria-hidden="true">份</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="ball" aria-label="貢丸湯 幾份"></label></td>
+      <td class="amt"></td></tr><tr data-item="eggsoup">
+      <th scope="row"><span class="t">蛋包湯</span></th>
+      <td colspan="2"><label class="qc"><span class="ql" aria-hidden="true">份</span><input class="qty" type="number" inputmode="numeric" min="0" max="99" data-item="eggsoup" aria-label="蛋包湯 幾份"></label></td>
+      <td class="amt"></td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row" colspan="3">合計</th><td><output class="sum tnum" aria-live="polite">0</output><span class="unit">元</span></td></tr></tfoot>
+          </table>
+          <label class="memo"><span class="lbl">備註</span><textarea rows="2" placeholder="不要蔥、少油、麵硬一點……"></textarea></label>
+          <div class="slip-act">
+            <button type="button" class="hand-in">拿給阿滿</button>
+            <p class="nojs-hint">把這張單印出來手寫，或直接跟阿滿說也可以。</p>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-lip" aria-hidden="true"></div>
+          <pre class="ticket" hidden></pre>
+          <div class="ticket-act" aria-live="polite" hidden><button type="button" class="copy">複製這張單</button><button type="button" class="print">列印</button><span class="copied" hidden>已複製，拿手機給阿滿看就行。</span></div>
+        </div>
+      </aside>
+
+      <div class="right">
+        <section class="limit" id="limit" aria-labelledby="h-lim">
+          <h2 id="h-lim">今日限量<small>做多少賣多少，不補</small></h2>
+          <ul class="lim-list" role="list">
+            <li class="lim"><b>滷豬腳</b><span class="cnt"><span class="flap"><b class="v">20</b></span><span class="unit">份</span></span><p>前一晚滷到半夜，平常十一點前就賣完。想吃請早，或前一天電話留。</p></li>
+            <li class="lim"><b>手包餛飩</b><span class="cnt"><span class="flap"><b class="v">240</b></span><span class="unit">顆</span></span><p>每天早上四點半開始包，包完為止。餛飩麵、餛飩湯共用這一批。</p></li>
+          </ul>
+        </section>
+
+        <section class="how" id="how" aria-labelledby="h-how">
+          <h2 id="h-how">怎麼點<small>第一次來看這裡</small></h2>
+          <div class="plan-wrap"><svg class="plan" viewBox="0 0 560 400" role="img" aria-labelledby="plan-t"><title id="plan-t">攤位平面：騎樓下的攤車在左上，四張折疊桌在右邊，清湯桶在牆邊，動線 1 到 5</title><rect x="1" y="1" width="558" height="398" class="pl-floor"/><path d="M0 0V400M46.5 0V400M93 0V400M139.5 0V400M186 0V400M232.5 0V400M279 0V400M325.5 0V400M372 0V400M418.5 0V400M465 0V400M511.5 0V400M558 0V400M0 0H560M0 44.4H560M0 88.8H560M0 133.2H560M0 177.6H560M0 222H560M0 266.4H560M0 310.8H560M0 355.2H560M0 399.59999999999997H560" class="pl-grid"/><path d="M0 10H560" class="pl-wall"/><rect x="24" y="364" width="26" height="26" class="pl-col"/><rect x="510" y="364" width="26" height="26" class="pl-col"/><path d="M0 377H24M50 377H510M536 377H560" class="pl-wall" stroke-dasharray="8 6"/><rect x="40" y="40" width="200" height="96" rx="3" class="pl-cart"/><circle cx="76" cy="88" r="26" class="pl-pot"/><circle cx="76" cy="88" r="18" class="pl-pot-in"/><circle cx="138" cy="88" r="26" class="pl-pot"/><path d="M120 70v36M129 70v36M138 70v36M147 70v36M156 70v36" class="pl-basket"/><rect x="176" y="52" width="54" height="72" rx="2" class="pl-top"/><path d="M182 64h42M182 76h42M182 88h30" class="pl-topln"/><rect x="190" y="140" width="34" height="22" rx="3" class="pl-red"/><path d="M100 136v14h80" class="pl-counter"/><circle cx="506" cy="48" r="22" class="pl-pot"/><circle cx="506" cy="48" r="14" class="pl-pot-in"/><path d="M506 48l9 -6" class="pl-ladle"/><g transform="rotate(5.81 317.19 144.46)"><rect x="278.19" y="118.46" width="78" height="52" rx="3" class="pl-table"/><circle cx="297.88" cy="103.89" r="8.5" class="pl-stool"/><circle cx="339.82" cy="104.94" r="8.5" class="pl-stool"/><circle cx="298.27" cy="184.41" r="8.5" class="pl-stool"/><circle cx="340.47" cy="183.63" r="8.5" class="pl-stool"/></g><g transform="rotate(-6.69 456.34 143.59)"><rect x="417.34" y="117.59" width="78" height="52" rx="3" class="pl-table"/><circle cx="438.59" cy="104.11" r="8.5" class="pl-stool"/><circle cx="478.67" cy="104.27" r="8.5" class="pl-stool"/><circle cx="436.75" cy="184.57" r="8.5" class="pl-stool"/><circle cx="475.25" cy="182.44" r="8.5" class="pl-stool"/></g><g transform="rotate(-1.16 321.61 264.99)"><rect x="282.61" y="238.99" width="78" height="52" rx="3" class="pl-table"/><circle cx="300.12" cy="226.71" r="8.5" class="pl-stool"/><circle cx="341.07" cy="225.95" r="8.5" class="pl-stool"/><circle cx="300.36" cy="305.44" r="8.5" class="pl-stool"/><circle cx="343.44" cy="302.94" r="8.5" class="pl-stool"/></g><g transform="rotate(-6.41 450.55 273.16)"><rect x="411.55" y="247.16" width="78" height="52" rx="3" class="pl-table"/><circle cx="431.1" cy="234.53" r="8.5" class="pl-stool"/><circle cx="472.61" cy="234.26" r="8.5" class="pl-stool"/><circle cx="433.23" cy="313.22" r="8.5" class="pl-stool"/><circle cx="473.27" cy="313.2" r="8.5" class="pl-stool"/></g><path d="M300 377C298.33 370.83 283.33 349.5 290 340C296.67 330.5 334.67 331.33 340 320C345.33 308.67 328.67 289.5 322 272C315.33 254.5 311.67 234 300 215C288.33 196 269.33 164.17 252 158C234.67 151.83 213.67 175 196 178C178.33 181 161.33 175 146 176C130.67 177 117.33 184 104 184C90.67 184 72.33 177.33 66 176" class="pl-route"/><g class="pl-mark"><circle cx="300" cy="356" r="15"/><text x="300" y="356" dy=".36em" text-anchor="middle">1</text></g><g class="pl-mark"><circle cx="322" cy="272" r="15"/><text x="322" y="272" dy=".36em" text-anchor="middle">2</text></g><g class="pl-mark"><circle cx="252" cy="158" r="15"/><text x="252" y="158" dy=".36em" text-anchor="middle">3</text></g><g class="pl-mark"><circle cx="146" cy="176" r="15"/><text x="146" y="176" dy=".36em" text-anchor="middle">4</text></g><g class="pl-mark"><circle cx="66" cy="176" r="15"/><text x="66" y="176" dy=".36em" text-anchor="middle">5</text></g><path d="M300 396v-20" class="pl-arrow"/></svg></div>
+          <ul class="legend" role="list"><li><i aria-hidden="true"></i>攤車、桌子</li><li><i class="red" aria-hidden="true"></i>紅塑膠凳</li><li><i class="blue" aria-hidden="true"></i>動線</li></ul>
+          <ol class="steps">
+            <li><b>找位子</b><span class="sb">看到空位就坐，不用等人帶位。併桌很正常，點個頭就好。</span></li>
+            <li><b>寫單</b><span class="sb">桌上有點菜單和筆：寫桌號、勾品項、小碗或大碗、幾碗。用這一頁的點菜單寫好、拿手機給阿滿看也行。</span></li>
+            <li><b>拿給阿滿</b><span class="sb">攤車前面有一個紅色塑膠籃，單子放進去就好，不用喊。</span></li>
+            <li><b>等叫桌號</b><span class="sb">麵好了會叫桌號，到出餐口自己端。清湯在牆邊的湯桶，自己舀。</span></li>
+            <li><b>吃完再付</b><span class="sb">到攤車前跟阿滿結帳。現金或轉帳，不收卡。</span></li>
+          </ol>
+        </section>
+
+        <section class="plate" id="hours" aria-labelledby="h-hours">
+      <div class="plate-in">
+        <h2 id="h-hours">營業時間</h2>
+        <table class="hours-t">
+          <caption class="sr-only">每週營業時間</caption>
+          <thead class="sr-only"><tr><th scope="col">星期</th><th scope="col">時間</th><th scope="col">備註</th></tr></thead>
+          <tbody><tr data-day="1"><th scope="row">週一<span class="today-tag">今天</span></th><td class="h-time rest">公休</td><td class="h-note">阿滿去進貨、補眠</td></tr><tr data-day="2"><th scope="row">週二<span class="today-tag">今天</span></th><td class="h-time">06:30–14:00</td><td class="h-note"></td></tr><tr data-day="3"><th scope="row">週三<span class="today-tag">今天</span></th><td class="h-time">06:30–14:00</td><td class="h-note"></td></tr><tr data-day="4"><th scope="row">週四<span class="today-tag">今天</span></th><td class="h-time">06:30–14:00</td><td class="h-note"></td></tr><tr data-day="5"><th scope="row">週五<span class="today-tag">今天</span></th><td class="h-time">06:30–14:00</td><td class="h-note"></td></tr><tr data-day="6"><th scope="row">週六<span class="today-tag">今天</span></th><td class="h-time">06:30–14:30</td><td class="h-note">市場人多，麵也煮得慢一點</td></tr><tr data-day="0"><th scope="row">週日<span class="today-tag">今天</span></th><td class="h-time">06:30–14:30</td><td class="h-note"></td></tr></tbody>
+        </table>
+        <ul class="hours-foot">
+          <li>賣完就提早收，下午一點後想吃麵請先打電話問。</li>
+          <li>國定假日照常。除夕到初三休，清明、端午、中秋當天休。</li>
+          <li>颱風天：市場休，攤子就休。</li>
+        </ul>
+      </div>
+    </section>
+      </div>
+    </div>
+  </section>
+
+  <div class="lower">
+    <section class="where" id="where" aria-labelledby="h-where">
+      <h2 id="h-where">怎麼來・怎麼帶走</h2>
+      <dl>
+        <div><dt>地址</dt><dd>新北市三重區榕下街 7 號旁，榕下市場後門。走進市場問「阿滿」就有人指。</dd></div>
+        <div><dt>電話</dt><dd><a href="tel:+886200000180">(02) 0000-0180</a>　十一點到一點很忙，響很久沒接就是在煮麵，再打一次。</dd></div>
+        <div><dt>外帶</dt><dd>餐盒一個加 5 元；自己帶鍋子來不加。湯和麵分開裝，回家再合。</dd></div>
+        <div><dt>外送</dt><dd>市場周邊一公里內、滿 300 元，阿滿的兒子十一點到一點騎車送。沒有上外送平台，電話點。</dd></div>
+        <div><dt>付款</dt><dd>現金、轉帳。不收信用卡，不收票。</dd></div>
+        <div><dt>停車</dt><dd>騎樓前可停機車。汽車停市場停車場，走過來三分鐘。</dd></div>
+      </dl>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <p><b>阿滿麵攤</b>　新北市三重區榕下市場後門　(02) 0000-0180</p>
+  <p>字型：Noto Sans TC、Anton、芫荽，皆依 SIL Open Font License 授權使用。</p>
+</footer>
+<div class="tally"><span class="tl">合計 <output class="sum tnum">0</output> 元</span><a href="#order">看點菜單</a></div>
+<script>
+(function(){
+var d=document,h=d.documentElement,RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var num=function(s){var m=/-?\d+/.exec(s||'');return m?+m[0]:0;};
+var txt=function(el){return el?el.textContent.replace(/\s+/g,' ').trim():'';};
+/* 翻牌：seq=[舊值,…,新值]；上半片翻落（::before）→ 換字 → 下半片翻起（::after）；可串接多步 */
+function flip(fl,seq,delay){
+  if(RM||seq.length<2)return;var i=0,t;
+  if(fl._end)fl._end();
+  function arm(){clearTimeout(t);t=setTimeout(end,2500);}
+  function step(){fl.classList.remove('fl','fl2');void fl.offsetWidth;fl.setAttribute('data-f',seq[i]);fl.classList.add('fl');arm();}
+  function onEnd(e){if(e.target!==fl)return;if(e.pseudoElement==='::before'){fl.setAttribute('data-f',seq[i+1]);fl.classList.add('fl2');arm();}else if(e.pseudoElement==='::after'){i++;if(i<seq.length-1){fl.style.setProperty('--d','0ms');step();}else end();}}
+  function end(){clearTimeout(t);fl.removeEventListener('animationend',onEnd);fl.classList.remove('fl','fl2');fl.removeAttribute('data-f');fl.style.removeProperty('--d');fl._end=null;}
+  fl._end=end;fl.style.setProperty('--d',(delay||0)+'ms');fl.addEventListener('animationend',onEnd);step();
+}
+/* 小碗／大碗切換：整面牌由上而下翻 */
+var cur=d.querySelector('input[name="sz"]:checked'),size=cur?cur.value:'s';
+d.querySelectorAll('input[name="sz"]').forEach(function(inp){inp.addEventListener('change',function(){var nw=inp.value;if(nw===size)return;var n=0;d.querySelectorAll('.pt .flap[data-dual]').forEach(function(f){var o=txt(f.querySelector('.v-'+size)),v=txt(f.querySelector('.v-'+nw));if(o!==v)flip(f,[o,v],(n++)*26);});size=nw;});});
+/* 今日限量：進入視窗時從 0 翻到數字 */
+var lim=d.querySelectorAll('.limit .flap');
+if(lim.length&&!RM&&'IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);var f=e.target,v=txt(f.querySelector('.v')),n=num(v),L=v.length;var seq=[0,.3,.65,1].map(function(k){return String(Math.round(n*k)).padStart(L,'0');});seq[seq.length-1]=v;flip(f,seq,0);});},{threshold:.6});lim.forEach(function(f){io.observe(f);});}
+/* 營業中／休息中：讀營業時間牌上的字 */
+var now=new Date(),dow=now.getDay(),mins=now.getHours()*60+now.getMinutes(),row=d.querySelector('.hours-t tr[data-day="'+dow+'"]'),st='off';
+if(row){row.classList.add('today');var tm=txt(row.querySelector('.h-time')),m=/(\d{1,2}):(\d{2})\D+?(\d{1,2}):(\d{2})/.exec(tm);if(m){var o=+m[1]*60+ +m[2],c=+m[3]*60+ +m[4];st=(mins>=o&&mins<c)?'open':'closed';}else if(!/休/.test(tm))st='';var lt=d.querySelector('.lamp .lt-time');if(lt)lt.textContent=tm;}
+if(st)h.setAttribute('data-open',st);
+/* 點菜單：即時小計、拿給老闆、複製、列印 */
+var slip=d.getElementById('order');if(!slip)return;
+var price=function(id,sz){var r=d.querySelector('.pt tr[data-item="'+id+'"]');if(!r)return 0;var v=(sz&&r.querySelector('.v-'+sz))||r.querySelector('.v');return num(txt(v));};
+var sumEl=slip.querySelector('.sum'),tally=d.querySelector('.tally .sum'),total=0;
+function recalc(){total=0;slip.querySelectorAll('tr[data-item]').forEach(function(tr){var amt=0;tr.querySelectorAll('input.qty').forEach(function(inp){var q=Math.max(0,Math.min(99,num(inp.value)));if(q)amt+=q*price(inp.getAttribute('data-item'),inp.getAttribute('data-size'));});var o=tr.querySelector('.amt');if(o)o.textContent=amt?String(amt):'';total+=amt;});if(sumEl)sumEl.textContent=String(total);if(tally)tally.textContent=String(total);h.classList.toggle('has-order',total>0);}
+slip.querySelectorAll('input.qty').forEach(function(inp){inp.addEventListener('input',recalc);});
+recalc();
+var btn=slip.querySelector('.hand-in'),tk=slip.querySelector('.ticket'),acts=slip.querySelector('.ticket-act'),heads=slip.querySelectorAll('.slip-t thead th');
+if(btn&&tk)btn.addEventListener('click',function(){
+  recalc();var L=[txt(slip.querySelector('.slip-title'))],meta=[];
+  var tb=slip.querySelector('.tbl'),eat=slip.querySelector('input[name="eat"]:checked');
+  if(tb&&tb.value.trim())meta.push(txt(slip.querySelector('.tbl-l'))+' '+tb.value.trim());
+  if(eat)meta.push(txt(eat.closest('label')));
+  if(meta.length)L.push(meta.join('   '));
+  L.push('------------------------');
+  slip.querySelectorAll('tr[data-item]').forEach(function(tr){var name=txt(tr.querySelector('.t'));tr.querySelectorAll('input.qty').forEach(function(inp){var q=num(inp.value);if(q<=0)return;var sz=inp.getAttribute('data-size'),lab=sz?txt(heads[sz==='s'?1:2]):'';L.push(name+(lab?'（'+lab+'）':'')+' ×'+q+'　'+(price(inp.getAttribute('data-item'),sz)*q));});});
+  L.push('------------------------');
+  L.push(txt(slip.querySelector('.slip-t tfoot th'))+' '+total+' '+txt(slip.querySelector('.slip-t tfoot .unit')));
+  var memo=slip.querySelector('.memo textarea');if(memo&&memo.value.trim())L.push(txt(slip.querySelector('.memo .lbl'))+'：'+memo.value.trim());
+  tk.textContent=L.join('\n');tk.hidden=false;if(acts)acts.hidden=false;tk.classList.remove('out');void tk.offsetWidth;tk.classList.add('out');
+});
+var cp=slip.querySelector('.copy'),pr=slip.querySelector('.print'),cd=slip.querySelector('.copied');
+function sel(){var r=d.createRange();r.selectNodeContents(tk);var s=getSelection();s.removeAllRanges();s.addRange(r);}
+function ok(){if(!cd)return;cd.hidden=false;setTimeout(function(){cd.hidden=true;},2200);}
+if(cp)cp.addEventListener('click',function(){if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(tk.textContent).then(ok,sel);else sel();});
+if(pr)pr.addEventListener('click',function(){h.classList.add('ps');window.print();});
+addEventListener('afterprint',function(){h.classList.remove('ps');});
+})();
+</script>
+</body>
+</html>

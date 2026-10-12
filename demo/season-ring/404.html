@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F25" data-slug="season-ring">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>找不到頁面｜二十四節氣小農｜轉到哪個節氣，就收那一段的菜</title>
+<meta name="description" content="找不到這個頁面。">
+<meta name="color-scheme" content="dark">
+<meta name="generator" content="套版網站平台 F25">
+<link rel="icon" href="data:,">
+<link rel="preload" href="fonts/01-cactus-classical-serif.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/02-lxgw-wenkai-tc.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"Cactus Classical Serif";src:url("fonts/01-cactus-classical-serif.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"LXGW WenKai TC";src:url("fonts/02-lxgw-wenkai-tc.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root{
+  color-scheme:dark;
+  --night:oklch(0.26 0.075 330);
+  --night-2:oklch(0.295 0.07 332);
+  --night-3:oklch(0.34 0.064 335);
+  --night-4:oklch(0.385 0.058 338);
+  --deep:oklch(0.215 0.058 328);
+  --dim:oklch(0.52 0.05 338);
+  --husk:oklch(0.935 0.035 85);
+  --husk-2:oklch(0.84 0.03 345);
+  --celadon:oklch(0.81 0.06 168);
+  --persimmon:oklch(0.72 0.15 42);
+  --soil-1:oklch(0.305 0.05 345);
+  --soil-2:oklch(0.345 0.046 5);
+  --soil-3:oklch(0.385 0.043 25);
+  --soil-4:oklch(0.425 0.04 42);
+  --soil-5:oklch(0.465 0.038 55);
+  --focus-ring:2px dashed oklch(0.81 0.06 168);
+  --focus-offset:4px;
+  --selection-bg:oklch(0.81 0.06 168);
+  --selection-fg:oklch(0.26 0.075 330);
+  --kai:"LXGW WenKai TC","Cactus Classical Serif",serif;
+  --term:"Cactus Classical Serif","LXGW WenKai TC",serif;
+  --gut:clamp(1rem,4vw,3.5rem);
+  --ease:cubic-bezier(.25,.75,.2,1);
+  --bg:var(--night);
+}
+html{background:var(--night)}
+body{background:var(--night);color:var(--husk);font-family:var(--kai);font-size:17px;line-height:1.8;font-synthesis:none}
+:focus-visible{outline:var(--focus-ring);outline-offset:var(--focus-offset)}
+h1,h2,h3{font-family:var(--kai);font-weight:400;color:var(--husk)}
+.ph{display:inline-block}
+.nw{white-space:nowrap}
+.num{font-variant-numeric:tabular-nums}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.28em}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+section{position:relative}
+.edge{position:absolute;left:0;bottom:calc(100% - 2px);width:100%;height:44px;max-width:none;pointer-events:none;z-index:2}
+.edge__f{fill:var(--bg)}
+.edge__l{fill:none;stroke:var(--husk-2);stroke-opacity:.3;stroke-width:1.2;vector-effect:non-scaling-stroke;stroke-dasharray:16 7 3 7}
+
+/* 刊頭 */
+.mast{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:1rem 2rem;padding:1rem var(--gut);position:relative;z-index:4}
+.mast__nav{justify-content:flex-end}
+.mast__brand{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;font-size:1.35rem;color:var(--husk)}
+.mast__brand svg{width:2rem;height:2rem;color:var(--celadon)}
+.mast__nav{display:flex;flex-wrap:wrap;gap:.2rem 1.4rem;margin-inline-start:auto;font-size:1rem}
+.mast__nav a{text-decoration:none;color:var(--husk-2);padding-inline:8px;margin-inline:-8px}
+.mast__nav a:hover{color:var(--husk);text-decoration:underline}
+.mast__tel{font-size:1rem;color:var(--persimmon);text-decoration:none;font-variant-numeric:tabular-nums}
+
+/* 節氣輪（工具本體） */
+.season{--off:90deg;--D:min(800px,56vw,calc(100vh - 92px));--nm:calc(var(--D) * .25)}
+.tool{min-height:calc(var(--D) + 44px);overflow:clip}
+.tool__land{position:absolute;left:0;right:0;bottom:0;height:calc(var(--D) * .25);pointer-events:none}
+.tool__land svg{position:absolute;inset:0;width:100%;height:100%;max-width:none}
+.tr-0{fill:var(--soil-1)}.tr-1{fill:var(--soil-2)}.tr-2{fill:var(--soil-3)}.tr-3{fill:var(--soil-4)}.tr-4{fill:var(--soil-5)}
+.tr-f{fill:none;stroke:oklch(0.22 0.045 345 / .55);stroke-width:1.6;stroke-linecap:round}
+.tr-s{fill:none;stroke:var(--husk);stroke-opacity:.4;stroke-width:1.5;stroke-linecap:round}
+.tr-l{fill:none;stroke:oklch(0.56 0.045 55);stroke-width:2;stroke-linecap:round}
+.tr-p{fill:none;stroke:var(--celadon);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;opacity:.75}
+.tr-4~.tr-l:last-of-type{stroke:oklch(0.55 0.04 60)}
+.tool__copy{position:relative;z-index:2;margin-left:calc(var(--D) * .87 + 4.4rem);padding:2rem var(--gut) 0 0}
+.tool h1{font-size:clamp(1.8rem,2.55vw,2.4rem);line-height:1.42;letter-spacing:.01em;max-width:17em}
+.tool__lead{margin-top:.9rem;color:var(--husk-2);max-width:31em;font-size:1.02rem;text-wrap:pretty}
+.tool__tip{margin-top:.5rem;font-size:.95rem;color:var(--celadon);display:flex;align-items:center;gap:.6rem}
+.tool__tip::before{content:"";width:2.2rem;height:.7rem;border-bottom:1.5px solid currentColor;border-left:1.5px solid currentColor;border-radius:0 0 0 60%}
+html:not(.js) .tool__tip{display:none}
+.dial{position:absolute;left:calc(var(--D) * -.13);top:22px;width:var(--D);height:var(--D);z-index:1}
+.dial__disc{position:absolute;inset:0;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab}
+.dial__back,.dial__rot,.wheel,.dial__top{position:absolute;inset:0;width:100%;height:100%;max-width:none}
+.dial__back,.dial__top{rotate:var(--off)}
+.dial__top{pointer-events:none;overflow:visible}
+.dial__back .b-lane{fill:var(--deep)}
+.dial__back .b-win{fill:var(--night-4)}
+.t-line{fill:none;stroke:var(--persimmon);stroke-width:2;stroke-dasharray:5 7}
+.t-notch{fill:var(--persimmon)}
+.wheel{rotate:calc(var(--off) + var(--rot));transition:rotate .62s var(--ease)}
+.w-hub{fill:var(--deep)}
+.w-gring{fill:none;stroke:var(--night-2)}
+.w-track{fill:none;stroke:var(--night-4);stroke-width:1;stroke-dasharray:1.5 7}
+.w-sec{fill:var(--sec);transition:fill .3s}
+.w-s0{--sec:oklch(0.36 0.06 340)}.w-s1{--sec:oklch(0.405 0.054 346)}.w-s2{--sec:oklch(0.345 0.06 334)}.w-s3{--sec:oklch(0.31 0.064 328)}
+.w-gly{color:var(--husk-2)}
+.w-season{stroke:var(--husk-2);stroke-width:1.4}
+.w-date{fill:none;stroke:var(--deep)}
+.w-tick{stroke:var(--dim);stroke-width:1.4}
+.w-mtick{stroke:var(--husk-2);stroke-width:1.6}
+.w-mo{fill:var(--husk-2);font:400 19px var(--kai);text-anchor:middle;dominant-baseline:central}
+.w-arc{fill:var(--dim);transition:fill .35s}
+.w-node{fill:var(--husk);opacity:0;transform-box:fill-box;transform-origin:center;transition:opacity .2s,transform .28s}
+.season.is-harvest .w-node{transform:scale(1.9)}
+.w-today{display:none}
+.w-today.is-on{display:inline}
+.w-today path{fill:var(--persimmon)}
+.w-today .w-today__ln{fill:none;stroke:var(--persimmon);stroke-width:3}
+.labs ol{list-style:none;margin:0;padding:0}
+.lab{position:absolute;left:50%;top:50%;width:0;height:0;--r:-0.448;transform:rotate(calc(var(--a) + var(--rot) + var(--off))) translateY(calc(var(--D) * var(--r))) rotate(calc(-1 * (var(--a) + var(--rot) + var(--off))));transition:transform .62s var(--ease)}
+.lab a{position:absolute;translate:-50% -50%;display:flex;align-items:center;justify-content:center;padding:.22em .28em;text-decoration:none;font-family:var(--term);font-size:clamp(13px,calc(var(--D) * .0255),21px);line-height:1.04;color:var(--husk);border-radius:3px;transition:color .3s}
+.lab a span{writing-mode:vertical-rl;text-orientation:upright;letter-spacing:.06em}
+.lab a:hover{text-decoration:underline}
+.season.is-drag .wheel,.season.is-drag .lab{transition:none}
+.season.is-drag .dial__disc{cursor:grabbing}
+.hub{position:absolute;left:50%;top:50%;width:calc(var(--D) * .376);height:calc(var(--D) * .376);translate:-50% -50%;pointer-events:none;border-radius:50%}
+.hub svg{display:block;width:100%;height:100%;max-width:none}
+.sd-sky{fill:var(--deep)}
+.sd-soil{fill:var(--soil-4)}
+.sd-fur{fill:none;stroke:var(--celadon);stroke-width:2.2;stroke-linecap:round;opacity:.8}
+.sd-track{fill:none;stroke:var(--husk-2);stroke-width:1.2;stroke-dasharray:2 7;opacity:.55}
+.sd-ghost{fill:none;stroke:var(--husk-2);stroke-width:7;stroke-linecap:round;opacity:.5}
+.sd-ground{stroke:var(--husk-2);stroke-width:1.8}
+.sd-tick{stroke:var(--husk);stroke-width:1.6;opacity:.75}
+.sd-shadow{fill:var(--deep);transform-origin:150px 268px;transform:scaleX(var(--ss));transition:transform .62s var(--ease)}
+.sd-pole{stroke:var(--husk);stroke-width:4.5;stroke-linecap:round}
+.sd-node,.sd-cap{stroke:var(--husk);stroke-width:2.2;stroke-linecap:round}
+.sd-sun{transform-origin:150px 172px;transform:rotate(calc(var(--sa) * 1deg));transition:transform .62s var(--ease)}
+.sd-ray{stroke:var(--persimmon);stroke-width:1.6;stroke-dasharray:3 6}
+.sd-ray2{stroke:var(--husk-2);stroke-width:1.4;stroke-dasharray:3 6;transform-origin:150px 172px;transform:scaleX(var(--sr));transition:transform .62s var(--ease)}
+.sd-disc{fill:var(--persimmon)}
+.read{position:absolute;z-index:2;left:calc(var(--D) * .87 + 4.4rem);right:var(--gut);top:calc(22px + var(--D) / 2 - var(--nm) / 2);pointer-events:none}
+.read::before{content:"";position:absolute;top:calc(var(--nm) / 2 - 1px);right:calc(100% + 14px);width:calc(4.4rem - 36px);border-top:2px solid var(--persimmon)}
+.read__t{display:none}
+.read__nm{font-family:var(--term);font-size:var(--nm);line-height:1;letter-spacing:.02em;white-space:nowrap}
+.read__when{margin-top:1.1rem;font-size:1.05rem;color:var(--husk-2)}
+.read__sun{margin-top:.2rem;font-size:1.05rem;max-width:30em}
+.read__flag{margin-top:.5rem;color:var(--celadon);font-size:1rem}
+
+/* 此時節的箱子 */
+.box{--bg:var(--night-2);background:var(--bg);padding:1.6rem var(--gut) 3.4rem;z-index:3}
+.box__bar{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1.8rem}
+.box__bar h2{font-size:clamp(1.45rem,2vw,1.8rem)}
+.box__note{font-size:.95rem;color:var(--husk-2);max-width:36em}
+.box__step{margin-inline-start:auto;display:flex;gap:.6rem}
+.btn{font-family:var(--kai);font-size:1rem;background:none;color:var(--husk);border:1px solid var(--husk-2);padding:.38em 1.15em;line-height:1.5;border-radius:1.3em .9em 1.2em 1em / 1em 1.3em .9em 1.2em}
+.btn:hover{background:var(--night-4)}
+.btn--go{background:var(--celadon);color:var(--night);border-color:var(--celadon)}
+.btn--go:hover{background:var(--husk)}
+.term{display:none;grid-template-columns:auto minmax(0,1fr);column-gap:clamp(1.6rem,3.6vw,3.6rem);align-items:start;margin-top:2rem}
+.term__head{grid-row:1 / span 3;display:flex;flex-direction:column;align-items:center;gap:.9rem;padding-top:.3rem}
+.term__gly{width:3.6rem;height:3.6rem;color:var(--celadon)}
+.term h3{writing-mode:vertical-rl;text-orientation:upright;font-size:1.15rem;line-height:1;display:flex;align-items:center;gap:.5rem}
+.term__nm{font-family:var(--term);font-size:clamp(4rem,6.4vw,6.2rem);letter-spacing:.02em}
+.term__of{color:var(--husk-2);font-size:1.15rem;letter-spacing:.1em}
+.term__intro{display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem 2.4rem}
+.term__when{font-size:.95rem;color:var(--husk-2);line-height:1.6;order:2}
+.term__tell{font-size:1.2rem;line-height:1.85;max-width:34em}
+.crate,.term__sum{grid-column:2}
+.crate{display:grid;grid-template-columns:var(--cols);gap:1.6rem 1.3rem;margin:1.6rem 0 0;padding:0;list-style:none;align-items:start}
+.cell{display:flex;flex-direction:column;min-width:0}
+.cell__fig{position:relative;height:8.2rem;display:flex;align-items:flex-end;justify-content:center}
+.cell__bed{position:absolute;left:-7%;bottom:0;width:114%;height:3.1rem;max-width:none}
+.md-f{fill:var(--soil-3)}
+.md-l{fill:none;stroke:var(--soil-5);stroke-width:1.6;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.md-s{fill:none;stroke:var(--husk);stroke-opacity:.42;stroke-width:1.4;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.md-t{fill:none;stroke:var(--soil-5);stroke-width:1.4;vector-effect:non-scaling-stroke}
+.cell__ic{position:relative;width:calc(2.9rem + var(--w) * .3rem);height:auto;aspect-ratio:1;margin-bottom:1.15rem;color:var(--husk);overflow:visible;--ck-fo:.12;--ck-ho:.62}
+.cell__nm{margin-top:.6rem;font-size:1.35rem;line-height:1.3}
+.cell__tag{display:inline-block;font-size:.8rem;line-height:1.5;padding:0 .5em;border:1px solid currentColor;color:var(--persimmon);vertical-align:.25em;margin-inline-start:.4em;border-radius:1em .6em 1em .7em}
+.cell__q{font-size:.92rem;color:var(--husk-2);line-height:1.55;margin-top:.1rem}
+.cell__eat{font-size:.98rem;line-height:1.55;margin-top:.25rem}
+.cell__yr{margin-top:.6rem;font-size:.88rem;color:var(--husk-2);line-height:1.4}
+.yr{display:grid;grid-template-columns:repeat(24,minmax(0,1fr));height:.5rem;margin-bottom:.35rem;background:linear-gradient(var(--night-4),var(--night-4)) 0 50% / 100% 1px no-repeat}
+.yr i{grid-row:1;background:var(--celadon);border-radius:3px}
+.yr::after{content:"";grid-row:1;grid-column:var(--k) / span 1;margin-block:-3px;border-inline:2px solid var(--persimmon)}
+.term__sum{margin-top:1.4rem;color:var(--husk-2);font-size:1rem;max-width:56em}
+.term__sum b{color:var(--husk);font-weight:400}
+.box__keys{flex:1 0 100%;margin:.1rem 0 0;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.2rem 1.5rem;font-size:.85rem;line-height:1.7;color:var(--husk-2)}
+.box__keys kbd{font:inherit;font-size:.9em;padding:0 .42em;margin-inline-end:.2em;border:1px solid var(--dim);border-radius:.45em .25em .4em .3em;background:var(--night-3);color:var(--husk)}
+html:not(.js) .box__keys{display:none}
+@media (pointer:coarse){.box__keys{display:none}}
+
+/* 二十四支竹竿 */
+.sun{--bg:var(--night);background:var(--bg);padding:4.6rem var(--gut) 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem clamp(2rem,6vw,6rem);align-items:flex-start}
+.sun__tale{flex:0 1 34rem}
+.sun h2{font-size:clamp(1.9rem,2.8vw,2.5rem);line-height:1.4}
+.sun__tale p{margin-top:.9rem}
+.sun__tale .sun__open{font-size:1.4rem;line-height:1.6;margin-top:1.2rem}
+.sun__now{text-align:right;margin-top:.4rem}
+.sun__now b{display:block;font-weight:400;font-size:clamp(6rem,11vw,10.5rem);line-height:.9;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.sun__deg{color:var(--persimmon)}
+.sun__cap{display:block;margin:1rem 0 0 auto;font-size:.95rem;color:var(--husk-2);max-width:21em}
+.pband{--bg:var(--night);background:var(--bg);padding:2.6rem var(--gut) 3.2rem}
+.sun__fig{margin:0}
+.poles{display:grid;grid-template-columns:1fr 1fr;column-gap:2.6rem}
+.poles__row{position:relative}
+.poles__svg{display:block;width:100%;height:auto;max-width:none;overflow:visible}
+.pl-soil{fill:var(--soil-2)}
+.pl-fur{fill:none;stroke:var(--soil-4);stroke-width:1.6;stroke-linecap:round}
+.pl-sp{fill:none;stroke:var(--husk);stroke-opacity:.45;stroke-width:2.2;stroke-linecap:round}
+.pl-ground{stroke:var(--husk-2);stroke-width:1.4}
+.pl-grass{fill:none;stroke:var(--celadon);stroke-width:1.2;stroke-linecap:round;opacity:.8}
+.pl-sh{fill:var(--deep)}
+.pl-hatch{fill:none;stroke:var(--deep);stroke-width:1.3;stroke-linecap:round}
+.pl-pole{stroke:var(--husk);stroke-width:2.8;stroke-linecap:round}
+.pl-node{stroke:var(--husk);stroke-width:1.6;stroke-linecap:round}
+.pl-sun{fill:var(--husk-2)}
+.pl-sun--key{fill:var(--persimmon)}
+.poles__nm{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));list-style:none;margin:.55rem 0 0;padding:0;font-family:var(--term);font-size:15px;color:var(--husk-2)}
+.poles__nm li{writing-mode:vertical-rl;text-orientation:upright;margin-inline:auto;letter-spacing:.06em;line-height:1}
+.sun__note{position:absolute;font-size:.95rem;line-height:1.55;color:var(--husk);z-index:1}
+.sun__note--sum{left:calc(9.5 / 12 * 100%);top:0;translate:-50% 0;white-space:nowrap}
+.sun__note--win{right:calc(2.5 / 12 * 100% - 1rem);top:calc(64 / 214 * 100%);translate:0 -100%;text-align:right;max-width:15em}
+.sun__fig figcaption{margin-top:1.1rem;font-size:.9rem;color:var(--husk-2)}
+
+/* 訂法：說一句話就是訂單 */
+.plan{--bg:var(--deep);background:var(--bg);padding:4.4rem var(--gut) 0}
+.yband{--bg:var(--deep);background:var(--bg);padding:3rem var(--gut) 4rem}
+.plan h2{font-size:clamp(1.9rem,2.8vw,2.5rem)}
+.say{margin-top:1.5rem;font-size:clamp(1.3rem,2.2vw,1.95rem);line-height:2.35;max-width:62rem}
+.say__w{white-space:nowrap}
+.seg{display:inline-flex;flex-wrap:wrap;gap:.35rem;border:0;margin:0 .25rem;padding:0;vertical-align:baseline;min-inline-size:0}
+.seg__o{position:relative;display:inline-flex;align-items:baseline;gap:.4em;padding:0 .6em .05em;line-height:1.55;cursor:pointer;border:1px dashed var(--husk-2);border-radius:1.1em .7em 1em .8em / .9em 1em .7em 1.1em;color:var(--husk)}
+.seg__o input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.seg__o small{font-size:.55em}
+.seg__o:hover{border-style:solid}
+.seg__o:has(input:checked){background:var(--celadon);border:1px solid var(--celadon);color:var(--night)}
+.seg__o:has(input:focus-visible){outline:var(--focus-ring);outline-offset:4px}
+.say__sel{font:inherit;font-size:.92em;background:transparent;color:var(--husk);border:0;border-bottom:2px solid var(--celadon);padding:0 .15em;border-radius:0;max-width:100%}
+.say__sel:focus-visible{outline:var(--focus-ring);outline-offset:4px}
+.say__sel option{background:var(--deep);color:var(--husk);font-size:1rem}
+.say__fine{margin-top:.4rem;font-size:.95rem;color:var(--husk-2);display:flex;flex-wrap:wrap;gap:0 1em}
+.fine{display:none}
+.plan:has(input[name=step][value="1"]:checked) .fine[data-fs="1"],.plan:has(input[name=step][value="2"]:checked) .fine[data-fs="2"],.plan:has(input[name=step][value="6"]:checked) .fine[data-fs="6"],
+.plan:has(input[name=size][value="480"]:checked) .fine[data-fz="480"],.plan:has(input[name=size][value="760"]:checked) .fine[data-fz="760"]{display:inline}
+.slots{display:grid;grid-template-columns:repeat(24,minmax(0,1fr));gap:4px;list-style:none;margin:0;padding:0}
+.slot{position:relative;display:flex;flex-direction:column;align-items:center;gap:.4rem;padding:.7rem 0 .8rem;background:var(--night-2);border-radius:46% 46% 5px 5px / 16% 16% 5px 5px}
+.slot__g{width:1.6rem;height:1.6rem;color:var(--husk-2)}
+.slot__nm{font-family:var(--term);writing-mode:vertical-rl;text-orientation:upright;font-size:15px;letter-spacing:.06em;line-height:1;color:var(--husk-2)}
+.slot__bx{width:1.9rem;height:1.9rem;color:var(--husk);visibility:hidden}
+.slot.on{background:var(--soil-3)}
+.slot.on .slot__bx{visibility:visible}
+.slot.on .slot__nm,.slot.on .slot__g{color:var(--husk)}
+.slot__sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.slot:not(.on) .slot__sr{display:none}
+.slot__1{display:none;position:absolute;bottom:calc(100% + .3rem);font-size:.85rem;line-height:1.3;color:var(--persimmon);white-space:nowrap}
+.slot.first .slot__1{display:block}
+.slot.first{box-shadow:0 0 0 2px var(--persimmon)}
+.plan__sum{margin-top:2rem;font-size:1.2rem;line-height:2.1;max-width:54em}
+.plan__sum b{font-weight:400;font-size:1.9em;color:var(--celadon);line-height:1;font-variant-numeric:tabular-nums}
+
+/* 一年裡碰到的天 */
+.wx{--bg:var(--night-2);background:var(--bg);padding:4.4rem var(--gut) 0}
+.wx h2{font-size:clamp(1.9rem,2.8vw,2.5rem)}
+.wx__year{display:grid;grid-template-columns:repeat(24,minmax(0,1fr));margin-top:2.4rem}
+.wx__band{grid-column:1 / -1;grid-row:2;display:block;width:100%;height:auto;max-width:none}
+.wx__ev{display:contents}
+.ev{position:relative;grid-column:var(--gc);padding:0 .9rem;min-width:0}
+.ev--up{grid-row:1;align-self:end;padding-bottom:1.3rem}
+.ev--dn{grid-row:3;padding-top:1.3rem}
+.ev::after{content:"";position:absolute;left:var(--bl);width:var(--bw);height:10px;border:1px solid var(--husk-2)}
+.ev--up::after{bottom:0;border-top:0}
+.ev--dn::after{top:0;border-bottom:0}
+.ev__ic{display:none}
+.ev__nm{font-size:1.5rem;line-height:1.3}
+.ev__when{font-size:.92rem;color:var(--celadon)}
+.ev__txt{margin-top:.3rem;font-size:1rem;line-height:1.75;max-width:22em}
+.wx__axis{grid-column:1 / -1;grid-row:4;display:grid;grid-template-columns:repeat(4,1fr);margin-top:1.4rem;color:var(--husk-2);font-size:.95rem}
+.wx__axis span{border-left:1px dashed var(--dim);padding-left:.6rem}
+.wb-band{fill:var(--soil-3)}
+.wb-fur{fill:none;stroke:var(--soil-5);stroke-width:1.5;stroke-linecap:round}
+.wb-wx{fill:none;stroke:var(--husk-2);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.wb-rain{stroke:var(--celadon)}
+.wb-frost{stroke:var(--husk)}
+.wb-bx{color:var(--husk)}
+.wx__all{--bg:var(--night-2);background:var(--bg);padding:3.2rem var(--gut) 3.8rem;display:flex;gap:1rem 3rem;align-items:flex-start}
+.wx__allh{flex:0 0 12rem}
+.wx__all dl{flex:1 1 0}
+.wx__allh{font-size:1.45rem;line-height:1.4}
+.wx__all dl{margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.1rem 2.4rem}
+.wx__all dt{color:var(--celadon);font-size:1.05rem}
+.wx__all dd{margin:.1rem 0 0;line-height:1.75;color:var(--husk-2)}
+
+/* 五戶人家：海拔剖面 */
+.farms{--bg:var(--night);background:var(--bg);padding:5rem var(--gut) 0;display:grid;grid-template-columns:var(--cols);align-items:stretch}
+.farms__head{grid-row:1;grid-column:1 / 4;align-self:start;position:relative;z-index:2;max-width:40rem}
+.farms h2{font-size:clamp(1.9rem,2.8vw,2.5rem);max-width:16em}
+.farms__lead{max-width:38em;margin-top:.9rem;color:var(--husk-2)}
+.slope{display:contents}
+.farm{grid-row:1;grid-column:var(--c);position:relative;z-index:1;display:flex;flex-direction:column;padding:calc(210px - var(--h)) 1.1rem var(--h) 0}
+.farm__stem{flex:1 1 auto;min-height:28px;margin-top:.9rem;align-self:center;border-left:1px dashed var(--husk-2)}
+.farm::after{content:"";position:absolute;left:50%;bottom:calc(var(--h) - 5px);width:10px;height:10px;translate:-50% 0;background:var(--celadon);border-radius:50%}
+.farm h3{font-size:1.6rem;line-height:1.2}
+.farm__meta{font-size:.88rem;color:var(--husk-2);line-height:1.6;margin-top:.3rem}
+.farm__meta .num{color:var(--celadon)}
+.farm__tell{margin-top:.6rem;font-size:.98rem;line-height:1.8}
+.farm__crops{list-style:none;margin:.8rem 0 0;padding:0}
+.farm__crops li{display:grid;grid-template-columns:1.8rem auto;column-gap:.45rem;align-items:center;font-size:.95rem;line-height:1.5;padding:.15rem 0}
+.farm__crops svg{width:1.8rem;height:1.8rem;color:var(--husk);grid-row:1 / span 2;--ck-fo:.12;--ck-ho:.5}
+.farm__ss{grid-column:2;font-size:.82rem;color:var(--husk-2)}
+.ground{position:absolute;left:0;right:0;bottom:0;height:var(--G);pointer-events:none}
+.ground svg{position:absolute;inset:0;width:100%;height:100%;max-width:none}
+.g-1{fill:var(--soil-4)}.g-2{fill:var(--soil-3)}.g-3{fill:var(--soil-2)}
+.g-fur{fill:none;stroke:oklch(0.22 0.045 345 / .5);stroke-width:1.5;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.g-top{fill:none;stroke:var(--husk-2);stroke-width:1.4;vector-effect:non-scaling-stroke}
+.g-p{fill:none;stroke:var(--celadon);stroke-width:1.4;vector-effect:non-scaling-stroke;stroke-linecap:round;opacity:.75}
+.g-river{fill:none;stroke:var(--celadon);stroke-width:2;vector-effect:non-scaling-stroke}
+.ground span{position:absolute;font-size:.95rem;color:var(--husk);line-height:1}
+.ground__river{left:calc(var(--gut) + 4.4rem);bottom:1.6rem}
+.ground__hill{right:var(--gut);bottom:calc(var(--G) - 4px)}
+
+/* 怎麼訂 */
+.order{--bg:var(--deep);background:var(--bg);padding:5rem var(--gut) 5rem;display:flex;flex-wrap:wrap;align-items:flex-start;gap:2rem clamp(2rem,6vw,6rem)}
+.order h2{font-size:clamp(1.9rem,2.8vw,2.5rem);flex:1 0 100%}
+.ways{flex:0 1 24rem}
+.ord{flex:1 1 30rem;max-width:40rem}
+.ways{list-style:none;margin:0;padding:0}
+.ways li{padding:1rem 0 1.1rem;border-top:1px dashed var(--night-4)}
+.ways b{display:block;font-weight:400;font-size:1.3rem}
+.ways span{display:block;color:var(--husk-2);font-size:.96rem}
+.ways a{font-size:1.1rem;color:var(--persimmon);font-variant-numeric:tabular-nums}
+.ord{display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.2rem;align-content:start}
+.fld{display:flex;flex-direction:column;gap:.3rem}
+.fld--w{grid-column:1 / -1}
+.fld label{font-size:.95rem}
+.fld input{min-width:0;width:100%;font-family:var(--kai);font-size:1rem;background:var(--night-2);color:var(--husk);border:1px solid var(--husk-2);padding:.6rem .7rem;border-radius:.5rem .3rem .45rem .35rem}
+.fld input::placeholder{color:var(--husk-2);opacity:1}
+.fld input[aria-invalid="true"]{border-color:var(--persimmon);border-width:2px}
+.fld__err{font-size:.88rem;color:var(--persimmon);line-height:1.5}
+.ord__act{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+.ord__msg{grid-column:1 / -1;padding:.8rem 1rem;background:var(--night-2);border:1px solid var(--celadon);font-size:.98rem}
+
+/* 版權頁 */
+.foot{--bg:oklch(0.19 0.05 328);background:var(--bg);padding:3rem var(--gut) 2.2rem;display:grid;grid-template-columns:minmax(12rem,20rem) minmax(0,1fr) auto;column-gap:3rem;align-items:start;position:relative}
+.foot__brand{display:flex;align-items:center;gap:.6rem;font-size:1.25rem}
+.foot__brand svg{width:1.8rem;height:1.8rem;color:var(--celadon)}
+.foot dl{display:grid;grid-template-columns:auto 1fr;gap:.25rem 1.2rem;margin:0;font-size:.95rem;max-width:40rem}
+.foot dt{color:var(--husk-2)}
+.foot dd{margin:0}
+.foot__fine{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;margin-top:2rem;font-size:.85rem;color:var(--husk-2)}
+
+/* 404 */
+.lost{display:grid;grid-template-columns:minmax(0,26rem) minmax(0,30rem);gap:2rem 4rem;align-items:center;padding:3rem var(--gut) 5rem;min-height:calc(100dvh - 15rem)}
+.lost__ring{width:100%;height:auto}
+.lost__ring .l-sec{fill:var(--night-3)}
+.lost__ring .l-miss{fill:none;stroke:var(--persimmon);stroke-width:4;stroke-dasharray:10 9}
+.lost__ring use{color:var(--husk-2)}
+.lost h1{font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.2}
+.lost__code{color:var(--persimmon);font-size:1.4rem}
+.lost__txt p{margin-top:1rem;color:var(--husk-2)}
+.lost__act{display:flex;flex-wrap:wrap;gap:1.2rem;align-items:center}
+@media (max-width:760px){.lost{grid-template-columns:1fr}.lost__ring{max-width:18rem}}
+
+
+.season[data-k="lichun"]{--sa:49.86;--ss:0.8432;--sr:1.3080}
+.season[data-k="lichun"] .dial__rot{--rot:0deg}
+.season[data-k="lichun"] .read__t[data-term="lichun"]{display:block}
+.season[data-k="lichun"] .w-sec[data-term="lichun"]{fill:var(--celadon)}
+.season[data-k="lichun"] .w-gly[data-term="lichun"]{color:var(--husk)}
+.season[data-k="lichun"] .lab[data-term="lichun"] a{color:var(--night)}
+.season[data-k="lichun"] .w-arc[data-t~="lichun"]{fill:var(--celadon)}
+.season[data-k="lichun"] .w-node[data-term="lichun"]{opacity:1}
+.season[data-sel="lichun"] .term[data-term="lichun"]{display:grid}
+.season[data-k="yushui"]{--sa:54.73;--ss:0.7073;--sr:1.2249}
+.season[data-k="yushui"] .dial__rot{--rot:-15deg}
+.season[data-k="yushui"] .read__t[data-term="yushui"]{display:block}
+.season[data-k="yushui"] .w-sec[data-term="yushui"]{fill:var(--celadon)}
+.season[data-k="yushui"] .w-gly[data-term="yushui"]{color:var(--husk)}
+.season[data-k="yushui"] .lab[data-term="yushui"] a{color:var(--night)}
+.season[data-k="yushui"] .w-arc[data-t~="yushui"]{fill:var(--celadon)}
+.season[data-k="yushui"] .w-node[data-term="yushui"]{opacity:1}
+.season[data-sel="yushui"] .term[data-term="yushui"]{display:grid}
+.season[data-k="jingzhe"]{--sa:60.29;--ss:0.5706;--sr:1.1513}
+.season[data-k="jingzhe"] .dial__rot{--rot:-30deg}
+.season[data-k="jingzhe"] .read__t[data-term="jingzhe"]{display:block}
+.season[data-k="jingzhe"] .w-sec[data-term="jingzhe"]{fill:var(--celadon)}
+.season[data-k="jingzhe"] .w-gly[data-term="jingzhe"]{color:var(--husk)}
+.season[data-k="jingzhe"] .lab[data-term="jingzhe"] a{color:var(--night)}
+.season[data-k="jingzhe"] .w-arc[data-t~="jingzhe"]{fill:var(--celadon)}
+.season[data-k="jingzhe"] .w-node[data-term="jingzhe"]{opacity:1}
+.season[data-sel="jingzhe"] .term[data-term="jingzhe"]{display:grid}
+.season[data-k="chunfen"]{--sa:66.20;--ss:0.4411;--sr:1.0929}
+.season[data-k="chunfen"] .dial__rot{--rot:-45deg}
+.season[data-k="chunfen"] .read__t[data-term="chunfen"]{display:block}
+.season[data-k="chunfen"] .w-sec[data-term="chunfen"]{fill:var(--celadon)}
+.season[data-k="chunfen"] .w-gly[data-term="chunfen"]{color:var(--husk)}
+.season[data-k="chunfen"] .lab[data-term="chunfen"] a{color:var(--night)}
+.season[data-k="chunfen"] .w-arc[data-t~="chunfen"]{fill:var(--celadon)}
+.season[data-k="chunfen"] .w-node[data-term="chunfen"]{opacity:1}
+.season[data-sel="chunfen"] .term[data-term="chunfen"]{display:grid}
+.season[data-k="qingming"]{--sa:72.11;--ss:0.3228;--sr:1.0508}
+.season[data-k="qingming"] .dial__rot{--rot:-60deg}
+.season[data-k="qingming"] .read__t[data-term="qingming"]{display:block}
+.season[data-k="qingming"] .w-sec[data-term="qingming"]{fill:var(--celadon)}
+.season[data-k="qingming"] .w-gly[data-term="qingming"]{color:var(--husk)}
+.season[data-k="qingming"] .lab[data-term="qingming"] a{color:var(--night)}
+.season[data-k="qingming"] .w-arc[data-t~="qingming"]{fill:var(--celadon)}
+.season[data-k="qingming"] .w-node[data-term="qingming"]{opacity:1}
+.season[data-sel="qingming"] .term[data-term="qingming"]{display:grid}
+.season[data-k="guyu"]{--sa:77.67;--ss:0.2185;--sr:1.0236}
+.season[data-k="guyu"] .dial__rot{--rot:-75deg}
+.season[data-k="guyu"] .read__t[data-term="guyu"]{display:block}
+.season[data-k="guyu"] .w-sec[data-term="guyu"]{fill:var(--celadon)}
+.season[data-k="guyu"] .w-gly[data-term="guyu"]{color:var(--husk)}
+.season[data-k="guyu"] .lab[data-term="guyu"] a{color:var(--night)}
+.season[data-k="guyu"] .w-arc[data-t~="guyu"]{fill:var(--celadon)}
+.season[data-k="guyu"] .w-node[data-term="guyu"]{opacity:1}
+.season[data-sel="guyu"] .term[data-term="guyu"]{display:grid}
+.season[data-k="lixia"]{--sa:82.54;--ss:0.1310;--sr:1.0085}
+.season[data-k="lixia"] .dial__rot{--rot:-90deg}
+.season[data-k="lixia"] .read__t[data-term="lixia"]{display:block}
+.season[data-k="lixia"] .w-sec[data-term="lixia"]{fill:var(--celadon)}
+.season[data-k="lixia"] .w-gly[data-term="lixia"]{color:var(--husk)}
+.season[data-k="lixia"] .lab[data-term="lixia"] a{color:var(--night)}
+.season[data-k="lixia"] .w-arc[data-t~="lixia"]{fill:var(--celadon)}
+.season[data-k="lixia"] .w-node[data-term="lixia"]{opacity:1}
+.season[data-sel="lixia"] .term[data-term="lixia"]{display:grid}
+.season[data-k="xiaoman"]{--sa:86.35;--ss:0.0638;--sr:1.0020}
+.season[data-k="xiaoman"] .dial__rot{--rot:-105deg}
+.season[data-k="xiaoman"] .read__t[data-term="xiaoman"]{display:block}
+.season[data-k="xiaoman"] .w-sec[data-term="xiaoman"]{fill:var(--celadon)}
+.season[data-k="xiaoman"] .w-gly[data-term="xiaoman"]{color:var(--husk)}
+.season[data-k="xiaoman"] .lab[data-term="xiaoman"] a{color:var(--night)}
+.season[data-k="xiaoman"] .w-arc[data-t~="xiaoman"]{fill:var(--celadon)}
+.season[data-k="xiaoman"] .w-node[data-term="xiaoman"]{opacity:1}
+.season[data-sel="xiaoman"] .term[data-term="xiaoman"]{display:grid}
+.season[data-k="mangzhong"]{--sa:88.80;--ss:0.0210;--sr:1.0002}
+.season[data-k="mangzhong"] .dial__rot{--rot:-120deg}
+.season[data-k="mangzhong"] .read__t[data-term="mangzhong"]{display:block}
+.season[data-k="mangzhong"] .w-sec[data-term="mangzhong"]{fill:var(--celadon)}
+.season[data-k="mangzhong"] .w-gly[data-term="mangzhong"]{color:var(--husk)}
+.season[data-k="mangzhong"] .lab[data-term="mangzhong"] a{color:var(--night)}
+.season[data-k="mangzhong"] .w-arc[data-t~="mangzhong"]{fill:var(--celadon)}
+.season[data-k="mangzhong"] .w-node[data-term="mangzhong"]{opacity:1}
+.season[data-sel="mangzhong"] .term[data-term="mangzhong"]{display:grid}
+.season[data-k="xiazhi"]{--sa:89.64;--ss:0.0063;--sr:1.0000}
+.season[data-k="xiazhi"] .dial__rot{--rot:-135deg}
+.season[data-k="xiazhi"] .read__t[data-term="xiazhi"]{display:block}
+.season[data-k="xiazhi"] .w-sec[data-term="xiazhi"]{fill:var(--celadon)}
+.season[data-k="xiazhi"] .w-gly[data-term="xiazhi"]{color:var(--husk)}
+.season[data-k="xiazhi"] .lab[data-term="xiazhi"] a{color:var(--night)}
+.season[data-k="xiazhi"] .w-arc[data-t~="xiazhi"]{fill:var(--celadon)}
+.season[data-k="xiazhi"] .w-node[data-term="xiazhi"]{opacity:1}
+.season[data-sel="xiazhi"] .term[data-term="xiazhi"]{display:grid}
+.season[data-k="xiaoshu"]{--sa:88.80;--ss:0.0210;--sr:1.0002}
+.season[data-k="xiaoshu"] .dial__rot{--rot:-150deg}
+.season[data-k="xiaoshu"] .read__t[data-term="xiaoshu"]{display:block}
+.season[data-k="xiaoshu"] .w-sec[data-term="xiaoshu"]{fill:var(--celadon)}
+.season[data-k="xiaoshu"] .w-gly[data-term="xiaoshu"]{color:var(--husk)}
+.season[data-k="xiaoshu"] .lab[data-term="xiaoshu"] a{color:var(--night)}
+.season[data-k="xiaoshu"] .w-arc[data-t~="xiaoshu"]{fill:var(--celadon)}
+.season[data-k="xiaoshu"] .w-node[data-term="xiaoshu"]{opacity:1}
+.season[data-sel="xiaoshu"] .term[data-term="xiaoshu"]{display:grid}
+.season[data-k="dashu"]{--sa:86.35;--ss:0.0638;--sr:1.0020}
+.season[data-k="dashu"] .dial__rot{--rot:-165deg}
+.season[data-k="dashu"] .read__t[data-term="dashu"]{display:block}
+.season[data-k="dashu"] .w-sec[data-term="dashu"]{fill:var(--celadon)}
+.season[data-k="dashu"] .w-gly[data-term="dashu"]{color:var(--husk)}
+.season[data-k="dashu"] .lab[data-term="dashu"] a{color:var(--night)}
+.season[data-k="dashu"] .w-arc[data-t~="dashu"]{fill:var(--celadon)}
+.season[data-k="dashu"] .w-node[data-term="dashu"]{opacity:1}
+.season[data-sel="dashu"] .term[data-term="dashu"]{display:grid}
+.season[data-k="liqiu"]{--sa:82.54;--ss:0.1310;--sr:1.0085}
+.season[data-k="liqiu"] .dial__rot{--rot:-180deg}
+.season[data-k="liqiu"] .read__t[data-term="liqiu"]{display:block}
+.season[data-k="liqiu"] .w-sec[data-term="liqiu"]{fill:var(--celadon)}
+.season[data-k="liqiu"] .w-gly[data-term="liqiu"]{color:var(--husk)}
+.season[data-k="liqiu"] .lab[data-term="liqiu"] a{color:var(--night)}
+.season[data-k="liqiu"] .w-arc[data-t~="liqiu"]{fill:var(--celadon)}
+.season[data-k="liqiu"] .w-node[data-term="liqiu"]{opacity:1}
+.season[data-sel="liqiu"] .term[data-term="liqiu"]{display:grid}
+.season[data-k="chushu"]{--sa:77.67;--ss:0.2185;--sr:1.0236}
+.season[data-k="chushu"] .dial__rot{--rot:-195deg}
+.season[data-k="chushu"] .read__t[data-term="chushu"]{display:block}
+.season[data-k="chushu"] .w-sec[data-term="chushu"]{fill:var(--celadon)}
+.season[data-k="chushu"] .w-gly[data-term="chushu"]{color:var(--husk)}
+.season[data-k="chushu"] .lab[data-term="chushu"] a{color:var(--night)}
+.season[data-k="chushu"] .w-arc[data-t~="chushu"]{fill:var(--celadon)}
+.season[data-k="chushu"] .w-node[data-term="chushu"]{opacity:1}
+.season[data-sel="chushu"] .term[data-term="chushu"]{display:grid}
+.season[data-k="bailu"]{--sa:72.11;--ss:0.3228;--sr:1.0508}
+.season[data-k="bailu"] .dial__rot{--rot:-210deg}
+.season[data-k="bailu"] .read__t[data-term="bailu"]{display:block}
+.season[data-k="bailu"] .w-sec[data-term="bailu"]{fill:var(--celadon)}
+.season[data-k="bailu"] .w-gly[data-term="bailu"]{color:var(--husk)}
+.season[data-k="bailu"] .lab[data-term="bailu"] a{color:var(--night)}
+.season[data-k="bailu"] .w-arc[data-t~="bailu"]{fill:var(--celadon)}
+.season[data-k="bailu"] .w-node[data-term="bailu"]{opacity:1}
+.season[data-sel="bailu"] .term[data-term="bailu"]{display:grid}
+.season[data-k="qiufen"]{--sa:66.20;--ss:0.4411;--sr:1.0929}
+.season[data-k="qiufen"] .dial__rot{--rot:-225deg}
+.season[data-k="qiufen"] .read__t[data-term="qiufen"]{display:block}
+.season[data-k="qiufen"] .w-sec[data-term="qiufen"]{fill:var(--celadon)}
+.season[data-k="qiufen"] .w-gly[data-term="qiufen"]{color:var(--husk)}
+.season[data-k="qiufen"] .lab[data-term="qiufen"] a{color:var(--night)}
+.season[data-k="qiufen"] .w-arc[data-t~="qiufen"]{fill:var(--celadon)}
+.season[data-k="qiufen"] .w-node[data-term="qiufen"]{opacity:1}
+.season[data-sel="qiufen"] .term[data-term="qiufen"]{display:grid}
+.season[data-k="hanlu"]{--sa:60.29;--ss:0.5706;--sr:1.1513}
+.season[data-k="hanlu"] .dial__rot{--rot:-240deg}
+.season[data-k="hanlu"] .read__t[data-term="hanlu"]{display:block}
+.season[data-k="hanlu"] .w-sec[data-term="hanlu"]{fill:var(--celadon)}
+.season[data-k="hanlu"] .w-gly[data-term="hanlu"]{color:var(--husk)}
+.season[data-k="hanlu"] .lab[data-term="hanlu"] a{color:var(--night)}
+.season[data-k="hanlu"] .w-arc[data-t~="hanlu"]{fill:var(--celadon)}
+.season[data-k="hanlu"] .w-node[data-term="hanlu"]{opacity:1}
+.season[data-sel="hanlu"] .term[data-term="hanlu"]{display:grid}
+.season[data-k="shuangjiang"]{--sa:54.73;--ss:0.7073;--sr:1.2249}
+.season[data-k="shuangjiang"] .dial__rot{--rot:-255deg}
+.season[data-k="shuangjiang"] .read__t[data-term="shuangjiang"]{display:block}
+.season[data-k="shuangjiang"] .w-sec[data-term="shuangjiang"]{fill:var(--celadon)}
+.season[data-k="shuangjiang"] .w-gly[data-term="shuangjiang"]{color:var(--husk)}
+.season[data-k="shuangjiang"] .lab[data-term="shuangjiang"] a{color:var(--night)}
+.season[data-k="shuangjiang"] .w-arc[data-t~="shuangjiang"]{fill:var(--celadon)}
+.season[data-k="shuangjiang"] .w-node[data-term="shuangjiang"]{opacity:1}
+.season[data-sel="shuangjiang"] .term[data-term="shuangjiang"]{display:grid}
+.season[data-k="lidong"]{--sa:49.86;--ss:0.8432;--sr:1.3080}
+.season[data-k="lidong"] .dial__rot{--rot:-270deg}
+.season[data-k="lidong"] .read__t[data-term="lidong"]{display:block}
+.season[data-k="lidong"] .w-sec[data-term="lidong"]{fill:var(--celadon)}
+.season[data-k="lidong"] .w-gly[data-term="lidong"]{color:var(--husk)}
+.season[data-k="lidong"] .lab[data-term="lidong"] a{color:var(--night)}
+.season[data-k="lidong"] .w-arc[data-t~="lidong"]{fill:var(--celadon)}
+.season[data-k="lidong"] .w-node[data-term="lidong"]{opacity:1}
+.season[data-sel="lidong"] .term[data-term="lidong"]{display:grid}
+.season[data-k="xiaoxue"]{--sa:46.05;--ss:0.9640;--sr:1.3890}
+.season[data-k="xiaoxue"] .dial__rot{--rot:-285deg}
+.season[data-k="xiaoxue"] .read__t[data-term="xiaoxue"]{display:block}
+.season[data-k="xiaoxue"] .w-sec[data-term="xiaoxue"]{fill:var(--celadon)}
+.season[data-k="xiaoxue"] .w-gly[data-term="xiaoxue"]{color:var(--husk)}
+.season[data-k="xiaoxue"] .lab[data-term="xiaoxue"] a{color:var(--night)}
+.season[data-k="xiaoxue"] .w-arc[data-t~="xiaoxue"]{fill:var(--celadon)}
+.season[data-k="xiaoxue"] .w-node[data-term="xiaoxue"]{opacity:1}
+.season[data-sel="xiaoxue"] .term[data-term="xiaoxue"]{display:grid}
+.season[data-k="daxue"]{--sa:43.60;--ss:1.0500;--sr:1.4500}
+.season[data-k="daxue"] .dial__rot{--rot:-300deg}
+.season[data-k="daxue"] .read__t[data-term="daxue"]{display:block}
+.season[data-k="daxue"] .w-sec[data-term="daxue"]{fill:var(--celadon)}
+.season[data-k="daxue"] .w-gly[data-term="daxue"]{color:var(--husk)}
+.season[data-k="daxue"] .lab[data-term="daxue"] a{color:var(--night)}
+.season[data-k="daxue"] .w-arc[data-t~="daxue"]{fill:var(--celadon)}
+.season[data-k="daxue"] .w-node[data-term="daxue"]{opacity:1}
+.season[data-sel="daxue"] .term[data-term="daxue"]{display:grid}
+.season[data-k="dongzhi"]{--sa:42.76;--ss:1.0814;--sr:1.4729}
+.season[data-k="dongzhi"] .dial__rot{--rot:-315deg}
+.season[data-k="dongzhi"] .read__t[data-term="dongzhi"]{display:block}
+.season[data-k="dongzhi"] .w-sec[data-term="dongzhi"]{fill:var(--celadon)}
+.season[data-k="dongzhi"] .w-gly[data-term="dongzhi"]{color:var(--husk)}
+.season[data-k="dongzhi"] .lab[data-term="dongzhi"] a{color:var(--night)}
+.season[data-k="dongzhi"] .w-arc[data-t~="dongzhi"]{fill:var(--celadon)}
+.season[data-k="dongzhi"] .w-node[data-term="dongzhi"]{opacity:1}
+.season[data-sel="dongzhi"] .term[data-term="dongzhi"]{display:grid}
+.season[data-k="xiaohan"]{--sa:43.60;--ss:1.0500;--sr:1.4500}
+.season[data-k="xiaohan"] .dial__rot{--rot:-330deg}
+.season[data-k="xiaohan"] .read__t[data-term="xiaohan"]{display:block}
+.season[data-k="xiaohan"] .w-sec[data-term="xiaohan"]{fill:var(--celadon)}
+.season[data-k="xiaohan"] .w-gly[data-term="xiaohan"]{color:var(--husk)}
+.season[data-k="xiaohan"] .lab[data-term="xiaohan"] a{color:var(--night)}
+.season[data-k="xiaohan"] .w-arc[data-t~="xiaohan"]{fill:var(--celadon)}
+.season[data-k="xiaohan"] .w-node[data-term="xiaohan"]{opacity:1}
+.season[data-sel="xiaohan"] .term[data-term="xiaohan"]{display:grid}
+.season[data-k="dahan"]{--sa:46.05;--ss:0.9640;--sr:1.3890}
+.season[data-k="dahan"] .dial__rot{--rot:-345deg}
+.season[data-k="dahan"] .read__t[data-term="dahan"]{display:block}
+.season[data-k="dahan"] .w-sec[data-term="dahan"]{fill:var(--celadon)}
+.season[data-k="dahan"] .w-gly[data-term="dahan"]{color:var(--husk)}
+.season[data-k="dahan"] .lab[data-term="dahan"] a{color:var(--night)}
+.season[data-k="dahan"] .w-arc[data-t~="dahan"]{fill:var(--celadon)}
+.season[data-k="dahan"] .w-node[data-term="dahan"]{opacity:1}
+.season[data-sel="dahan"] .term[data-term="dahan"]{display:grid}
+html:not(.js) .season:has(.term:target) :is(.read__t[data-term="qiufen"], .term[data-term="qiufen"]){display:none}
+html:not(.js) .season:has(.term:target) .w-sec[data-term="qiufen"]{fill:var(--sec)}
+html:not(.js) .season:has(.term:target) .w-gly[data-term="qiufen"]{color:var(--husk-2)}
+html:not(.js) .season:has(.term:target) .lab[data-term="qiufen"] a{color:var(--husk)}
+html:not(.js) .season:has(.term:target) .w-arc[data-t~="qiufen"]{fill:var(--dim)}
+html:not(.js) .season:has(.term:target) .w-node[data-term="qiufen"]{opacity:0}
+html:not(.js) .season:has(#lichun:target){--sa:49.86;--ss:0.8432;--sr:1.3080}
+html:not(.js) .season:has(#lichun:target) .dial__rot{--rot:0deg}
+html:not(.js) .season:has(#lichun:target) :is(.read__t[data-term="lichun"]){display:block}
+html:not(.js) .season:has(#lichun:target) .term[data-term="lichun"]{display:grid}
+html:not(.js) .season:has(#lichun:target) .w-sec[data-term="lichun"]{fill:var(--celadon)}
+html:not(.js) .season:has(#lichun:target) .w-gly[data-term="lichun"]{color:var(--husk)}
+html:not(.js) .season:has(#lichun:target) .lab[data-term="lichun"] a{color:var(--night)}
+html:not(.js) .season:has(#lichun:target) .w-arc[data-t~="lichun"]{fill:var(--celadon)}
+html:not(.js) .season:has(#lichun:target) .w-node[data-term="lichun"]{opacity:1}
+html:not(.js) .season:has(#yushui:target){--sa:54.73;--ss:0.7073;--sr:1.2249}
+html:not(.js) .season:has(#yushui:target) .dial__rot{--rot:-15deg}
+html:not(.js) .season:has(#yushui:target) :is(.read__t[data-term="yushui"]){display:block}
+html:not(.js) .season:has(#yushui:target) .term[data-term="yushui"]{display:grid}
+html:not(.js) .season:has(#yushui:target) .w-sec[data-term="yushui"]{fill:var(--celadon)}
+html:not(.js) .season:has(#yushui:target) .w-gly[data-term="yushui"]{color:var(--husk)}
+html:not(.js) .season:has(#yushui:target) .lab[data-term="yushui"] a{color:var(--night)}
+html:not(.js) .season:has(#yushui:target) .w-arc[data-t~="yushui"]{fill:var(--celadon)}
+html:not(.js) .season:has(#yushui:target) .w-node[data-term="yushui"]{opacity:1}
+html:not(.js) .season:has(#jingzhe:target){--sa:60.29;--ss:0.5706;--sr:1.1513}
+html:not(.js) .season:has(#jingzhe:target) .dial__rot{--rot:-30deg}
+html:not(.js) .season:has(#jingzhe:target) :is(.read__t[data-term="jingzhe"]){display:block}
+html:not(.js) .season:has(#jingzhe:target) .term[data-term="jingzhe"]{display:grid}
+html:not(.js) .season:has(#jingzhe:target) .w-sec[data-term="jingzhe"]{fill:var(--celadon)}
+html:not(.js) .season:has(#jingzhe:target) .w-gly[data-term="jingzhe"]{color:var(--husk)}
+html:not(.js) .season:has(#jingzhe:target) .lab[data-term="jingzhe"] a{color:var(--night)}
+html:not(.js) .season:has(#jingzhe:target) .w-arc[data-t~="jingzhe"]{fill:var(--celadon)}
+html:not(.js) .season:has(#jingzhe:target) .w-node[data-term="jingzhe"]{opacity:1}
+html:not(.js) .season:has(#chunfen:target){--sa:66.20;--ss:0.4411;--sr:1.0929}
+html:not(.js) .season:has(#chunfen:target) .dial__rot{--rot:-45deg}
+html:not(.js) .season:has(#chunfen:target) :is(.read__t[data-term="chunfen"]){display:block}
+html:not(.js) .season:has(#chunfen:target) .term[data-term="chunfen"]{display:grid}
+html:not(.js) .season:has(#chunfen:target) .w-sec[data-term="chunfen"]{fill:var(--celadon)}
+html:not(.js) .season:has(#chunfen:target) .w-gly[data-term="chunfen"]{color:var(--husk)}
+html:not(.js) .season:has(#chunfen:target) .lab[data-term="chunfen"] a{color:var(--night)}
+html:not(.js) .season:has(#chunfen:target) .w-arc[data-t~="chunfen"]{fill:var(--celadon)}
+html:not(.js) .season:has(#chunfen:target) .w-node[data-term="chunfen"]{opacity:1}
+html:not(.js) .season:has(#qingming:target){--sa:72.11;--ss:0.3228;--sr:1.0508}
+html:not(.js) .season:has(#qingming:target) .dial__rot{--rot:-60deg}
+html:not(.js) .season:has(#qingming:target) :is(.read__t[data-term="qingming"]){display:block}
+html:not(.js) .season:has(#qingming:target) .term[data-term="qingming"]{display:grid}
+html:not(.js) .season:has(#qingming:target) .w-sec[data-term="qingming"]{fill:var(--celadon)}
+html:not(.js) .season:has(#qingming:target) .w-gly[data-term="qingming"]{color:var(--husk)}
+html:not(.js) .season:has(#qingming:target) .lab[data-term="qingming"] a{color:var(--night)}
+html:not(.js) .season:has(#qingming:target) .w-arc[data-t~="qingming"]{fill:var(--celadon)}
+html:not(.js) .season:has(#qingming:target) .w-node[data-term="qingming"]{opacity:1}
+html:not(.js) .season:has(#guyu:target){--sa:77.67;--ss:0.2185;--sr:1.0236}
+html:not(.js) .season:has(#guyu:target) .dial__rot{--rot:-75deg}
+html:not(.js) .season:has(#guyu:target) :is(.read__t[data-term="guyu"]){display:block}
+html:not(.js) .season:has(#guyu:target) .term[data-term="guyu"]{display:grid}
+html:not(.js) .season:has(#guyu:target) .w-sec[data-term="guyu"]{fill:var(--celadon)}
+html:not(.js) .season:has(#guyu:target) .w-gly[data-term="guyu"]{color:var(--husk)}
+html:not(.js) .season:has(#guyu:target) .lab[data-term="guyu"] a{color:var(--night)}
+html:not(.js) .season:has(#guyu:target) .w-arc[data-t~="guyu"]{fill:var(--celadon)}
+html:not(.js) .season:has(#guyu:target) .w-node[data-term="guyu"]{opacity:1}
+html:not(.js) .season:has(#lixia:target){--sa:82.54;--ss:0.1310;--sr:1.0085}
+html:not(.js) .season:has(#lixia:target) .dial__rot{--rot:-90deg}
+html:not(.js) .season:has(#lixia:target) :is(.read__t[data-term="lixia"]){display:block}
+html:not(.js) .season:has(#lixia:target) .term[data-term="lixia"]{display:grid}
+html:not(.js) .season:has(#lixia:target) .w-sec[data-term="lixia"]{fill:var(--celadon)}
+html:not(.js) .season:has(#lixia:target) .w-gly[data-term="lixia"]{color:var(--husk)}
+html:not(.js) .season:has(#lixia:target) .lab[data-term="lixia"] a{color:var(--night)}
+html:not(.js) .season:has(#lixia:target) .w-arc[data-t~="lixia"]{fill:var(--celadon)}
+html:not(.js) .season:has(#lixia:target) .w-node[data-term="lixia"]{opacity:1}
+html:not(.js) .season:has(#xiaoman:target){--sa:86.35;--ss:0.0638;--sr:1.0020}
+html:not(.js) .season:has(#xiaoman:target) .dial__rot{--rot:-105deg}
+html:not(.js) .season:has(#xiaoman:target) :is(.read__t[data-term="xiaoman"]){display:block}
+html:not(.js) .season:has(#xiaoman:target) .term[data-term="xiaoman"]{display:grid}
+html:not(.js) .season:has(#xiaoman:target) .w-sec[data-term="xiaoman"]{fill:var(--celadon)}
+html:not(.js) .season:has(#xiaoman:target) .w-gly[data-term="xiaoman"]{color:var(--husk)}
+html:not(.js) .season:has(#xiaoman:target) .lab[data-term="xiaoman"] a{color:var(--night)}
+html:not(.js) .season:has(#xiaoman:target) .w-arc[data-t~="xiaoman"]{fill:var(--celadon)}
+html:not(.js) .season:has(#xiaoman:target) .w-node[data-term="xiaoman"]{opacity:1}
+html:not(.js) .season:has(#mangzhong:target){--sa:88.80;--ss:0.0210;--sr:1.0002}
+html:not(.js) .season:has(#mangzhong:target) .dial__rot{--rot:-120deg}
+html:not(.js) .season:has(#mangzhong:target) :is(.read__t[data-term="mangzhong"]){display:block}
+html:not(.js) .season:has(#mangzhong:target) .term[data-term="mangzhong"]{display:grid}
+html:not(.js) .season:has(#mangzhong:target) .w-sec[data-term="mangzhong"]{fill:var(--celadon)}
+html:not(.js) .season:has(#mangzhong:target) .w-gly[data-term="mangzhong"]{color:var(--husk)}
+html:not(.js) .season:has(#mangzhong:target) .lab[data-term="mangzhong"] a{color:var(--night)}
+html:not(.js) .season:has(#mangzhong:target) .w-arc[data-t~="mangzhong"]{fill:var(--celadon)}
+html:not(.js) .season:has(#mangzhong:target) .w-node[data-term="mangzhong"]{opacity:1}
+html:not(.js) .season:has(#xiazhi:target){--sa:89.64;--ss:0.0063;--sr:1.0000}
+html:not(.js) .season:has(#xiazhi:target) .dial__rot{--rot:-135deg}
+html:not(.js) .season:has(#xiazhi:target) :is(.read__t[data-term="xiazhi"]){display:block}
+html:not(.js) .season:has(#xiazhi:target) .term[data-term="xiazhi"]{display:grid}
+html:not(.js) .season:has(#xiazhi:target) .w-sec[data-term="xiazhi"]{fill:var(--celadon)}
+html:not(.js) .season:has(#xiazhi:target) .w-gly[data-term="xiazhi"]{color:var(--husk)}
+html:not(.js) .season:has(#xiazhi:target) .lab[data-term="xiazhi"] a{color:var(--night)}
+html:not(.js) .season:has(#xiazhi:target) .w-arc[data-t~="xiazhi"]{fill:var(--celadon)}
+html:not(.js) .season:has(#xiazhi:target) .w-node[data-term="xiazhi"]{opacity:1}
+html:not(.js) .season:has(#xiaoshu:target){--sa:88.80;--ss:0.0210;--sr:1.0002}
+html:not(.js) .season:has(#xiaoshu:target) .dial__rot{--rot:-150deg}
+html:not(.js) .season:has(#xiaoshu:target) :is(.read__t[data-term="xiaoshu"]){display:block}
+html:not(.js) .season:has(#xiaoshu:target) .term[data-term="xiaoshu"]{display:grid}
+html:not(.js) .season:has(#xiaoshu:target) .w-sec[data-term="xiaoshu"]{fill:var(--celadon)}
+html:not(.js) .season:has(#xiaoshu:target) .w-gly[data-term="xiaoshu"]{color:var(--husk)}
+html:not(.js) .season:has(#xiaoshu:target) .lab[data-term="xiaoshu"] a{color:var(--night)}
+html:not(.js) .season:has(#xiaoshu:target) .w-arc[data-t~="xiaoshu"]{fill:var(--celadon)}
+html:not(.js) .season:has(#xiaoshu:target) .w-node[data-term="xiaoshu"]{opacity:1}
+html:not(.js) .season:has(#dashu:target){--sa:86.35;--ss:0.0638;--sr:1.0020}
+html:not(.js) .season:has(#dashu:target) .dial__rot{--rot:-165deg}
+html:not(.js) .season:has(#dashu:target) :is(.read__t[data-term="dashu"]){display:block}
+html:not(.js) .season:has(#dashu:target) .term[data-term="dashu"]{display:grid}
+html:not(.js) .season:has(#dashu:target) .w-sec[data-term="dashu"]{fill:var(--celadon)}
+html:not(.js) .season:has(#dashu:target) .w-gly[data-term="dashu"]{color:var(--husk)}
+html:not(.js) .season:has(#dashu:target) .lab[data-term="dashu"] a{color:var(--night)}
+html:not(.js) .season:has(#dashu:target) .w-arc[data-t~="dashu"]{fill:var(--celadon)}
+html:not(.js) .season:has(#dashu:target) .w-node[data-term="dashu"]{opacity:1}
+html:not(.js) .season:has(#liqiu:target){--sa:82.54;--ss:0.1310;--sr:1.0085}
+html:not(.js) .season:has(#liqiu:target) .dial__rot{--rot:-180deg}
+html:not(.js) .season:has(#liqiu:target) :is(.read__t[data-term="liqiu"]){display:block}
+html:not(.js) .season:has(#liqiu:target) .term[data-term="liqiu"]{display:grid}
+html:not(.js) .season:has(#liqiu:target) .w-sec[data-term="liqiu"]{fill:var(--celadon)}
+html:not(.js) .season:has(#liqiu:target) .w-gly[data-term="liqiu"]{color:var(--husk)}
+html:not(.js) .season:has(#liqiu:target) .lab[data-term="liqiu"] a{color:var(--night)}
+html:not(.js) .season:has(#liqiu:target) .w-arc[data-t~="liqiu"]{fill:var(--celadon)}
+html:not(.js) .season:has(#liqiu:target) .w-node[data-term="liqiu"]{opacity:1}
+html:not(.js) .season:has(#chushu:target){--sa:77.67;--ss:0.2185;--sr:1.0236}
+html:not(.js) .season:has(#chushu:target) .dial__rot{--rot:-195deg}
+html:not(.js) .season:has(#chushu:target) :is(.read__t[data-term="chushu"]){display:block}
+html:not(.js) .season:has(#chushu:target) .term[data-term="chushu"]{display:grid}
+html:not(.js) .season:has(#chushu:target) .w-sec[data-term="chushu"]{fill:var(--celadon)}
+html:not(.js) .season:has(#chushu:target) .w-gly[data-term="chushu"]{color:var(--husk)}
+html:not(.js) .season:has(#chushu:target) .lab[data-term="chushu"] a{color:var(--night)}
+html:not(.js) .season:has(#chushu:target) .w-arc[data-t~="chushu"]{fill:var(--celadon)}
+html:not(.js) .season:has(#chushu:target) .w-node[data-term="chushu"]{opacity:1}
+html:not(.js) .season:has(#bailu:target){--sa:72.11;--ss:0.3228;--sr:1.0508}
+html:not(.js) .season:has(#bailu:target) .dial__rot{--rot:-210deg}
+html:not(.js) .season:has(#bailu:target) :is(.read__t[data-term="bailu"]){display:block}
+html:not(.js) .season:has(#bailu:target) .term[data-term="bailu"]{display:grid}
+html:not(.js) .season:has(#bailu:target) .w-sec[data-term="bailu"]{fill:var(--celadon)}
+html:not(.js) .season:has(#bailu:target) .w-gly[data-term="bailu"]{color:var(--husk)}
+html:not(.js) .season:has(#bailu:target) .lab[data-term="bailu"] a{color:var(--night)}
+html:not(.js) .season:has(#bailu:target) .w-arc[data-t~="bailu"]{fill:var(--celadon)}
+html:not(.js) .season:has(#bailu:target) .w-node[data-term="bailu"]{opacity:1}
+html:not(.js) .season:has(#qiufen:target){--sa:66.20;--ss:0.4411;--sr:1.0929}
+html:not(.js) .season:has(#qiufen:target) .dial__rot{--rot:-225deg}
+html:not(.js) .season:has(#qiufen:target) :is(.read__t[data-term="qiufen"]){display:block}
+html:not(.js) .season:has(#qiufen:target) .term[data-term="qiufen"]{display:grid}
+html:not(.js) .season:has(#qiufen:target) .w-sec[data-term="qiufen"]{fill:var(--celadon)}
+html:not(.js) .season:has(#qiufen:target) .w-gly[data-term="qiufen"]{color:var(--husk)}
+html:not(.js) .season:has(#qiufen:target) .lab[data-term="qiufen"] a{color:var(--night)}
+html:not(.js) .season:has(#qiufen:target) .w-arc[data-t~="qiufen"]{fill:var(--celadon)}
+html:not(.js) .season:has(#qiufen:target) .w-node[data-term="qiufen"]{opacity:1}
+html:not(.js) .season:has(#hanlu:target){--sa:60.29;--ss:0.5706;--sr:1.1513}
+html:not(.js) .season:has(#hanlu:target) .dial__rot{--rot:-240deg}
+html:not(.js) .season:has(#hanlu:target) :is(.read__t[data-term="hanlu"]){display:block}
+html:not(.js) .season:has(#hanlu:target) .term[data-term="hanlu"]{display:grid}
+html:not(.js) .season:has(#hanlu:target) .w-sec[data-term="hanlu"]{fill:var(--celadon)}
+html:not(.js) .season:has(#hanlu:target) .w-gly[data-term="hanlu"]{color:var(--husk)}
+html:not(.js) .season:has(#hanlu:target) .lab[data-term="hanlu"] a{color:var(--night)}
+html:not(.js) .season:has(#hanlu:target) .w-arc[data-t~="hanlu"]{fill:var(--celadon)}
+html:not(.js) .season:has(#hanlu:target) .w-node[data-term="hanlu"]{opacity:1}
+html:not(.js) .season:has(#shuangjiang:target){--sa:54.73;--ss:0.7073;--sr:1.2249}
+html:not(.js) .season:has(#shuangjiang:target) .dial__rot{--rot:-255deg}
+html:not(.js) .season:has(#shuangjiang:target) :is(.read__t[data-term="shuangjiang"]){display:block}
+html:not(.js) .season:has(#shuangjiang:target) .term[data-term="shuangjiang"]{display:grid}
+html:not(.js) .season:has(#shuangjiang:target) .w-sec[data-term="shuangjiang"]{fill:var(--celadon)}
+html:not(.js) .season:has(#shuangjiang:target) .w-gly[data-term="shuangjiang"]{color:var(--husk)}
+html:not(.js) .season:has(#shuangjiang:target) .lab[data-term="shuangjiang"] a{color:var(--night)}
+html:not(.js) .season:has(#shuangjiang:target) .w-arc[data-t~="shuangjiang"]{fill:var(--celadon)}
+html:not(.js) .season:has(#shuangjiang:target) .w-node[data-term="shuangjiang"]{opacity:1}
+html:not(.js) .season:has(#lidong:target){--sa:49.86;--ss:0.8432;--sr:1.3080}
+html:not(.js) .season:has(#lidong:target) .dial__rot{--rot:-270deg}
+html:not(.js) .season:has(#lidong:target) :is(.read__t[data-term="lidong"]){display:block}
+html:not(.js) .season:has(#lidong:target) .term[data-term="lidong"]{display:grid}
+html:not(.js) .season:has(#lidong:target) .w-sec[data-term="lidong"]{fill:var(--celadon)}
+html:not(.js) .season:has(#lidong:target) .w-gly[data-term="lidong"]{color:var(--husk)}
+html:not(.js) .season:has(#lidong:target) .lab[data-term="lidong"] a{color:var(--night)}
+html:not(.js) .season:has(#lidong:target) .w-arc[data-t~="lidong"]{fill:var(--celadon)}
+html:not(.js) .season:has(#lidong:target) .w-node[data-term="lidong"]{opacity:1}
+html:not(.js) .season:has(#xiaoxue:target){--sa:46.05;--ss:0.9640;--sr:1.3890}
+html:not(.js) .season:has(#xiaoxue:target) .dial__rot{--rot:-285deg}
+html:not(.js) .season:has(#xiaoxue:target) :is(.read__t[data-term="xiaoxue"]){display:block}
+html:not(.js) .season:has(#xiaoxue:target) .term[data-term="xiaoxue"]{display:grid}
+html:not(.js) .season:has(#xiaoxue:target) .w-sec[data-term="xiaoxue"]{fill:var(--celadon)}
+html:not(.js) .season:has(#xiaoxue:target) .w-gly[data-term="xiaoxue"]{color:var(--husk)}
+html:not(.js) .season:has(#xiaoxue:target) .lab[data-term="xiaoxue"] a{color:var(--night)}
+html:not(.js) .season:has(#xiaoxue:target) .w-arc[data-t~="xiaoxue"]{fill:var(--celadon)}
+html:not(.js) .season:has(#xiaoxue:target) .w-node[data-term="xiaoxue"]{opacity:1}
+html:not(.js) .season:has(#daxue:target){--sa:43.60;--ss:1.0500;--sr:1.4500}
+html:not(.js) .season:has(#daxue:target) .dial__rot{--rot:-300deg}
+html:not(.js) .season:has(#daxue:target) :is(.read__t[data-term="daxue"]){display:block}
+html:not(.js) .season:has(#daxue:target) .term[data-term="daxue"]{display:grid}
+html:not(.js) .season:has(#daxue:target) .w-sec[data-term="daxue"]{fill:var(--celadon)}
+html:not(.js) .season:has(#daxue:target) .w-gly[data-term="daxue"]{color:var(--husk)}
+html:not(.js) .season:has(#daxue:target) .lab[data-term="daxue"] a{color:var(--night)}
+html:not(.js) .season:has(#daxue:target) .w-arc[data-t~="daxue"]{fill:var(--celadon)}
+html:not(.js) .season:has(#daxue:target) .w-node[data-term="daxue"]{opacity:1}
+html:not(.js) .season:has(#dongzhi:target){--sa:42.76;--ss:1.0814;--sr:1.4729}
+html:not(.js) .season:has(#dongzhi:target) .dial__rot{--rot:-315deg}
+html:not(.js) .season:has(#dongzhi:target) :is(.read__t[data-term="dongzhi"]){display:block}
+html:not(.js) .season:has(#dongzhi:target) .term[data-term="dongzhi"]{display:grid}
+html:not(.js) .season:has(#dongzhi:target) .w-sec[data-term="dongzhi"]{fill:var(--celadon)}
+html:not(.js) .season:has(#dongzhi:target) .w-gly[data-term="dongzhi"]{color:var(--husk)}
+html:not(.js) .season:has(#dongzhi:target) .lab[data-term="dongzhi"] a{color:var(--night)}
+html:not(.js) .season:has(#dongzhi:target) .w-arc[data-t~="dongzhi"]{fill:var(--celadon)}
+html:not(.js) .season:has(#dongzhi:target) .w-node[data-term="dongzhi"]{opacity:1}
+html:not(.js) .season:has(#xiaohan:target){--sa:43.60;--ss:1.0500;--sr:1.4500}
+html:not(.js) .season:has(#xiaohan:target) .dial__rot{--rot:-330deg}
+html:not(.js) .season:has(#xiaohan:target) :is(.read__t[data-term="xiaohan"]){display:block}
+html:not(.js) .season:has(#xiaohan:target) .term[data-term="xiaohan"]{display:grid}
+html:not(.js) .season:has(#xiaohan:target) .w-sec[data-term="xiaohan"]{fill:var(--celadon)}
+html:not(.js) .season:has(#xiaohan:target) .w-gly[data-term="xiaohan"]{color:var(--husk)}
+html:not(.js) .season:has(#xiaohan:target) .lab[data-term="xiaohan"] a{color:var(--night)}
+html:not(.js) .season:has(#xiaohan:target) .w-arc[data-t~="xiaohan"]{fill:var(--celadon)}
+html:not(.js) .season:has(#xiaohan:target) .w-node[data-term="xiaohan"]{opacity:1}
+html:not(.js) .season:has(#dahan:target){--sa:46.05;--ss:0.9640;--sr:1.3890}
+html:not(.js) .season:has(#dahan:target) .dial__rot{--rot:-345deg}
+html:not(.js) .season:has(#dahan:target) :is(.read__t[data-term="dahan"]){display:block}
+html:not(.js) .season:has(#dahan:target) .term[data-term="dahan"]{display:grid}
+html:not(.js) .season:has(#dahan:target) .w-sec[data-term="dahan"]{fill:var(--celadon)}
+html:not(.js) .season:has(#dahan:target) .w-gly[data-term="dahan"]{color:var(--husk)}
+html:not(.js) .season:has(#dahan:target) .lab[data-term="dahan"] a{color:var(--night)}
+html:not(.js) .season:has(#dahan:target) .w-arc[data-t~="dahan"]{fill:var(--celadon)}
+html:not(.js) .season:has(#dahan:target) .w-node[data-term="dahan"]{opacity:1}
+
+/* 平板以下 */
+@media (max-width:960px){
+  .season{--off:0deg;--D:min(92vw,560px);--nm:clamp(5rem,24vw,8rem)}
+  .tool{min-height:0;display:flex;flex-direction:column;padding-bottom:4.4rem}
+  .tool__copy{margin:0;padding:.3rem var(--gut) 0}
+  .dial{position:relative;left:auto;top:auto;margin:2.3rem auto 0;flex:none}
+  .dial__rot{overflow:clip}
+  .lab a::after{content:"";position:absolute;left:50%;top:50%;width:45px;height:52px;translate:-50% -50%;rotate:calc(var(--a) + var(--rot) + var(--off))}
+  .read{position:relative;left:auto;right:auto;top:auto;padding:1.4rem var(--gut) 0}
+  .read::before{display:none}
+  .tool__land{height:3.8rem}
+  .w-mo{display:none}
+  .term{grid-template-columns:1fr;row-gap:.8rem}
+  .term__head{grid-row:auto;flex-direction:row;align-items:center;gap:1rem;padding:0}
+  .term h3{writing-mode:horizontal-tb;display:block}
+  .term__nm{margin-inline-end:.2em}
+  .crate,.term__sum{grid-column:1}
+  .term__intro{display:block}
+  .crate{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sun{flex-direction:column;gap:0}
+  .sun__tale{flex:none}
+  .sun__now{text-align:left;margin-top:1.8rem}
+  .sun__cap{margin-inline-start:0}
+  .poles{grid-template-columns:1fr;row-gap:1.4rem}
+  .sun__note{position:static;translate:none;white-space:normal;text-align:left;max-width:none;margin-top:.5rem;color:var(--husk-2)}
+  .wx__year{display:block}
+  .wx__band,.wx__axis{display:none}
+  .ev{display:grid;grid-template-columns:3.4rem minmax(0,1fr);column-gap:.9rem;padding:1.1rem 0 0}
+  .ev::after{display:none}
+  .ev__ic{display:block;grid-row:1 / span 3;width:3.4rem;height:auto;fill:none;stroke:var(--husk-2);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .wx__all{flex-direction:column;gap:.8rem}
+  .wx__allh{flex:none}
+  .wx__all dl{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .order{flex-direction:column}
+  .ways,.ord{flex:none;width:100%}
+  .farms{grid-template-columns:minmax(0,1fr);padding-bottom:3.4rem}
+  .farms__head{grid-row:auto;grid-column:1;max-width:none}
+  .farm{grid-row:auto;grid-column:1;display:block;margin-top:1.8rem;padding:0 0 0 1.2rem;border-left:2px dashed var(--night-4)}
+  .farm::after,.farm__stem,.ground{display:none}
+  .farm__crops{display:flex;flex-wrap:wrap;gap:.1rem 1rem}
+  .farm__crops li{grid-template-columns:1.5rem auto}
+  .farm__crops svg{width:1.5rem;height:1.5rem}
+  .farm__ss{display:none}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .season{--D:min(100vw,560px)}
+  .mast{grid-template-columns:1fr auto;gap:.3rem 1rem;padding-block:.8rem}
+  .mast__nav{grid-column:1 / -1;grid-row:2;justify-content:flex-start;margin-inline-start:0;gap:.1rem 1rem;font-size:.95rem}
+  .tool h1{font-size:1.65rem;line-height:1.45}
+  .tool__lead{font-size:.98rem}
+  .read__when,.read__sun{font-size:.98rem}
+  .box__step{margin-inline-start:0;width:100%}
+  .box__step .btn{flex:1}
+  .term__nm{font-size:3rem}
+  .term__gly{width:3.2rem;height:3.2rem}
+  .crate{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem .7rem}
+  .cell__fig{height:5rem}
+  .cell__bed{height:2rem}
+  .cell__ic{width:calc(2rem + var(--w) * .16rem);margin-bottom:.7rem}
+  .cell__nm{font-size:1.1rem;margin-top:.35rem}
+  .cell__tag{margin-inline-start:0;font-size:.72rem}
+  .cell__farm{display:none}
+  .cell__eat{display:none}
+  .sun{padding-top:3.8rem}
+  .sun__tale .sun__open{font-size:1.25rem}
+  .poles__nm{font-size:12px}
+  .say{font-size:1.25rem;line-height:2.25}
+  .slots{grid-template-columns:repeat(12,minmax(0,1fr));gap:3px;row-gap:1.6rem}
+  .slot{padding:.5rem 0 .55rem;gap:.3rem}
+  .slot__g{width:1.15rem;height:1.15rem}
+  .slot__nm{font-size:13px}
+  .slot__bx{width:1.4rem;height:1.4rem}
+  .slot__1{font-size:.75rem}
+  .plan__sum{font-size:1.05rem}
+  .plan__sum b{font-size:1.5em}
+  body{line-height:1.72}
+  .mast__nav{gap:.1rem 1.1rem}
+  .sun,.plan,.wx,.farms,.order{padding-top:2.8rem}
+  .yband,.wx__all,.order{padding-bottom:2.6rem}
+  .pband{padding-bottom:2.6rem}
+  .ways b{display:inline;font-size:1.15rem;margin-inline-end:.5em}
+  .ways span{display:inline;font-size:.92rem}
+  .ways a{margin-inline-end:.5em}
+  .foot dl{display:none}
+  .sun__fig figcaption{display:none}
+  .sun h2,.plan h2,.wx h2,.farms h2,.order h2{font-size:1.6rem}
+  .box{padding-bottom:2.6rem}
+  .box__note{font-size:.9rem}
+  .term__tell{font-size:1.05rem;line-height:1.8}
+  .cell__q{font-size:.86rem}
+  .cell__yr{font-size:.82rem;margin-top:.4rem}
+  .term__sum{font-size:.92rem}
+  .sun__tale p{margin-top:.6rem}
+  .sun__now b{font-size:4.6rem}
+  .sun__now{margin-top:1.2rem}
+  .pband{padding-top:1.8rem}
+  .say{margin-top:1rem}
+  .yband{padding-top:2.4rem}
+  .plan__sum{margin-top:1.4rem;line-height:1.9}
+  .wx__year{margin-top:1rem}
+  .ev{padding-top:.9rem}
+  .ev__nm{font-size:1.3rem}
+  .ev__txt{font-size:.95rem;line-height:1.7}
+  .wx__all{padding-top:2rem}
+  .wx__all dl{grid-template-columns:1fr;gap:.7rem}
+  .wx__all dt{display:inline;margin-inline-end:.5em}
+  .wx__all dd{display:inline;margin:0;font-size:.95rem;line-height:1.7}
+  .farms__lead{font-size:.95rem}
+  .farm{margin-top:1.4rem}
+  .farm h3{font-size:1.4rem}
+  .farm__tell{font-size:.94rem;line-height:1.72;margin-top:.4rem}
+  .farm__crops{margin-top:.4rem;font-size:.9rem}
+  .farm__crops li{padding:0}
+  .order{gap:1.4rem}
+  .ways li{padding:.7rem 0 .8rem}
+  .ord{gap:.8rem 1rem}
+  .foot{padding-top:2.2rem;grid-template-columns:minmax(0,1fr)}
+  .foot__fine{margin-top:1rem}
+  .foot dl{margin-top:1.2rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .wheel,.lab,.w-sec,.w-arc,.w-node,.sd-sun,.sd-shadow,.sd-ray2{transition:none}
+  .season.is-harvest .w-node{transform:none}
+}
+@media print{
+  :root{--night:#fff;--night-2:#fff;--night-3:#f2f2f2;--night-4:#bbb;--deep:#fff;--dim:#999;--husk:#000;--husk-2:#333;--celadon:#000;--persimmon:#000;--soil-1:#eee;--soil-2:#e6e6e6;--soil-3:#ddd;--soil-4:#d4d4d4;--soil-5:#ccc;--bg:#fff;color-scheme:light}
+  html,body{background:#fff;color:#000}
+  .dial,.box__step,.plan__form,.slots,.ord,.mast__nav,.tool__land,.edge,.read__tip,.box__keys,.wx__band{display:none !important}
+  .tool{display:block;min-height:0}.tool__copy{margin:0}.read{position:static}.read::before{display:none}
+  .box,.plan,.yband,.wx,.wx__all,.pband,.foot,.sun,.order,.farms{background:#fff}
+  .slope{display:block}.farm{display:block;padding:0 0 1rem}.farm__stem,.farm::after,.ground{display:none}
+  .sun__note{position:static;translate:none}
+  a{text-decoration:underline}
+}
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<svg class="sprite" aria-hidden="true" focusable="false"><defs><symbol id="g-lichun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="14" cy="14.3" r="2.6" fill="currentColor"/><path d="M7 18.5V14.3M7 16.189999999999998q-2.6-.2-3.2-2.6q2.6-.1 3.2 2.6M7 15.35q2.6-.4 3.4-2.8q-2.7 0-3.4 2.8"/></g></symbol><symbol id="g-yushui" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="9" cy="13.1" r="2.6" fill="currentColor"/><path d="M14 5.5l-1 3.2M16.6 7.1l-1.6 3.2M19.2 5.5l-1.1 3.2"/></g></symbol><symbol id="g-jingzhe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="7" cy="11.8" r="2.6" fill="currentColor"/><path d="M17 3.5l-2.4 4.6h3.2l-2.6 5"/><ellipse cx="11" cy="16.6" rx="1.6" ry="1" fill="currentColor"/></g></symbol><symbol id="g-chunfen" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="12" cy="10.4" r="3"/><path d="M12 7.4a3 3 0 0 0 0 6z" fill="currentColor"/></g></symbol><symbol id="g-qingming" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="12" cy="8.9" r="2.6" fill="currentColor"/><path d="M12 4.3v-1.6M12 13.5v1.4M7.4 8.9h-1.6M16.6 8.9h1.6"/></g></symbol><symbol id="g-guyu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="8" cy="7.6" r="2.6" fill="currentColor"/><path d="M13.5 6l-1.4 3.2M16.1 7.6l-1.8 3.2M18.7 6l-1.2 3.2"/><ellipse cx="12" cy="21.4" rx="1.6" ry="1.1" fill="currentColor"/></g></symbol><symbol id="g-lixia" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="15" cy="6.4" r="2.6" fill="currentColor"/><path d="M7 18.5V11.5M7 14.649999999999999q-2.6-.2-3.2-2.6q2.6-.1 3.2 2.6M7 13.25q2.6-.4 3.4-2.8q-2.7 0-3.4 2.8M7 11.5q-2-.6-2.4-2.8q2.2.2 2.4 2.8"/></g></symbol><symbol id="g-xiaoman" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="9" cy="5.5" r="2.6" fill="currentColor"/><path d="M17 18.5V8.5"/><ellipse cx="15.4" cy="10.5" rx="1.3" ry="1.8" fill="currentColor"/><ellipse cx="18.6" cy="12.5" rx="1.3" ry="1.8" fill="currentColor"/><ellipse cx="15.4" cy="14.5" rx="1.3" ry="1.8"/></g></symbol><symbol id="g-mangzhong" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="8" cy="4.9" r="2.6" fill="currentColor"/><path d="M17 18.5V8.5M15 10l-2-3.4M19 12l2-3.4M15 14l-2.2-3"/><ellipse cx="15.4" cy="10.5" rx="1.3" ry="1.8" fill="currentColor"/><ellipse cx="18.6" cy="12.5" rx="1.3" ry="1.8" fill="currentColor"/><ellipse cx="15.4" cy="14.5" rx="1.3" ry="1.8" fill="currentColor"/></g></symbol><symbol id="g-xiazhi" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="12" cy="4.7" r="2.6" fill="currentColor"/><path d="M12 8.9V17.4" stroke-dasharray="1.2 1.8"/></g></symbol><symbol id="g-xiaoshu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="12" cy="4.9" r="2.6" fill="currentColor"/><path d="M5 12C5.3 11.8 6.2 10.9 6.8 10.8C7.3 10.7 7.9 11 8.5 11.3C9.1 11.6 9.7 12.4 10.3 12.5C10.8 12.5 11.4 12.1 12 11.9C12.6 11.6 13.2 10.8 13.8 10.7C14.3 10.7 14.9 11.1 15.5 11.4C16.1 11.7 16.7 12.4 17.3 12.5C17.8 12.5 18.7 11.9 19 11.8M4 15.6C4.3 15.6 5.3 15.8 6 15.6C6.7 15.4 7.3 14.5 8 14.3C8.7 14.1 9.3 14.2 10 14.4C10.7 14.6 11.3 15.5 12 15.7C12.7 15.9 13.3 15.8 14 15.5C14.7 15.3 15.3 14.4 16 14.3C16.7 14.1 17.3 14.3 18 14.5C18.7 14.7 19.7 15.6 20 15.8"/></g></symbol><symbol id="g-dashu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="12" cy="5.5" r="2.6" fill="currentColor"/><path d="M4 10.5C4.3 10.4 5.3 10.1 6 9.8C6.7 9.6 7.3 8.8 8 8.7C8.7 8.7 9.3 9.1 10 9.4C10.7 9.7 11.3 10.4 12 10.5C12.7 10.5 13.3 10 14 9.7C14.7 9.4 15.3 8.7 16 8.7C16.7 8.7 17.3 9.2 18 9.5C18.7 9.8 19.7 10.3 20 10.5M4 13.6C4.3 13.5 5.3 13.4 6 13.1C6.7 12.9 7.3 12.1 8 12C8.7 11.9 9.3 12.2 10 12.5C10.7 12.8 11.3 13.6 12 13.7C12.7 13.7 13.3 13.3 14 13C14.7 12.8 15.3 12 16 11.9C16.7 11.9 17.3 12.3 18 12.6C18.7 12.9 19.7 13.5 20 13.7M4 16.1C4.3 16.2 5.3 16.9 6 16.9C6.7 16.9 7.3 16.2 8 15.9C8.7 15.6 9.3 15.1 10 15.1C10.7 15.2 11.3 15.9 12 16.2C12.7 16.5 13.3 16.9 14 16.9C14.7 16.8 15.3 16.1 16 15.8C16.7 15.5 17.3 15.1 18 15.1C18.7 15.2 19.7 16.1 20 16.3" stroke-width="1.7"/></g></symbol><symbol id="g-liqiu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="9" cy="6.4" r="2.6" fill="currentColor"/><path d="M16.4 9.2q3.6.8 3.4 4.6q-3.6-.6-3.4-4.6zM16.6 9.4l3 4.2"/></g></symbol><symbol id="g-chushu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="9" cy="7.6" r="2.6" fill="currentColor"/><path d="M4 15.5C4.3 15.3 5 14.8 5.5 14.5C6 14.2 6.5 13.7 7 13.7C7.5 13.8 8 14.5 8.5 14.8C9 15.1 9.5 15.5 10 15.5C10.5 15.4 11 14.7 11.5 14.4C12 14.1 12.5 13.7 13 13.7C13.5 13.8 14 14.6 14.5 14.9C15 15.2 15.8 15.4 16 15.4M18.6 11.4v6"/></g></symbol><symbol id="g-bailu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="8" cy="8.9" r="2.6" fill="currentColor"/><path d="M15 18.5q.4-5 3.4-8.6"/><path d="M18.6 13.6q1.6 2 0 3.2q-1.6-1.2 0-3.2z" fill="currentColor"/></g></symbol><symbol id="g-qiufen" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="12" cy="10.4" r="3"/><path d="M12 7.4a3 3 0 0 1 0 6z" fill="currentColor"/></g></symbol><symbol id="g-hanlu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="8" cy="11.8" r="2.6" fill="currentColor"/><path d="M16.6 10q2.2 2.8 0 4.4q-2.2-1.6 0-4.4z" fill="currentColor"/><path d="M13.8 16.2h5.6"/></g></symbol><symbol id="g-shuangjiang" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="8" cy="13.1" r="2.6" fill="currentColor"/><path d="M14.3 14.1L18.7 16.7M16.5 12.8L16.5 18M18.8 14.1L14.2 16.7"/></g></symbol><symbol id="g-lidong" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="8" cy="14.3" r="2.6" fill="currentColor"/><path d="M17 18.5V11.5M17 14.4l-2.6-2.4M17 12.6l2.2-2.6"/></g></symbol><symbol id="g-xiaoxue" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="8" cy="15.2" r="2.6" fill="currentColor"/><path d="M14.2 7.7L18.8 9.3M16 6.1L17 10.9M18.3 6.9L14.7 10.1"/></g></symbol><symbol id="g-daxue" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="7" cy="15.8" r="2.6" fill="currentColor"/><path d="M11.7 6.2L16.3 7.8M13.5 4.6L14.5 9.4M15.8 5.4L12.2 8.6M17.1 9.7L20.9 11.3M18.7 8.4L19.3 12.6M20.7 9.2L17.3 11.8M13.2 12.8L16.8 14.4M14.8 11.6L15.2 15.6M16.6 12.4L13.4 14.8"/></g></symbol><symbol id="g-dongzhi" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="18" cy="16" r="2.6" fill="currentColor"/><path d="M15.6 20.6H3.4" stroke-width="2"/></g></symbol><symbol id="g-xiaohan" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="7" cy="15.8" r="2.6" fill="currentColor"/><path d="M12 10.5h6.4q2 0 1.6-1.6"/></g></symbol><symbol id="g-dahan" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 18.5H21.4"/><circle cx="6" cy="15.2" r="2.6" fill="currentColor"/><path d="M10.5 8h7.6q2 0 1.6-1.6M10.5 11.6h9q1.8 0 1.4 1.6M12 15h5.4"/></g></symbol></defs></svg>
+<header class="mast"><a class="mast__brand" href="./"><svg viewBox="0 0 28 28" aria-hidden="true" focusable="false"><path d="M14 4.8L14 0.6M16.7 3.8L17.5 1.1M19.3 4.8L20.7 2.4M21.5 6.5L23.5 4.5M23.2 8.7L25.6 7.3M24.2 11.3L26.9 10.5M23.2 14L27.4 14M24.2 16.7L26.9 17.5M23.2 19.3L25.6 20.7M21.5 21.5L23.5 23.5M19.3 23.2L20.7 25.6M16.7 24.2L17.5 26.9M14 23.2L14 27.4M11.3 24.2L10.5 26.9M8.7 23.2L7.3 25.6M6.5 21.5L4.5 23.5M4.8 19.3L2.4 20.7M3.8 16.7L1.1 17.5M4.8 14L0.6 14M3.8 11.3L1.1 10.5M4.8 8.7L2.4 7.3M6.5 6.5L4.5 4.5M8.7 4.8L7.3 2.4M11.3 3.8L10.5 1.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M14 19.5V12.2M14 15q-3.2 0-3.8-3.4q3.4 0 3.8 3.4M14 13.4q3-.4 3.8-3.6q-3.4 0-3.8 3.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>二十四節氣小農</span></a><nav class="mast__nav" aria-label="回到主頁"><a href="./#dial">轉輪盤</a><a href="./#plan">怎麼訂</a></nav></header>
+<main id="main" class="lost">
+<svg class="lost__ring" viewBox="0 0 1000 1000" role="img" aria-label="一圈二十五格的節氣輪，最後一格是空的"><path class="l-sec" d="M506.1 60A440 440 0 0 1 603.5 72.3L570.5 208.4A300 300 0 0 0 504.2 200Z"/><use href="#g-lichun" x="516.4" y="102.9" width="60" height="60" transform="rotate(7.2 546.4 132.9)"/><path class="l-sec" d="M615.4 75.4A440 440 0 0 1 706.6 111.5L640.8 235.1A300 300 0 0 0 578.7 210.5Z"/><use href="#g-yushui" x="606.2" y="126" width="60" height="60" transform="rotate(21.6 636.2 156)"/><path class="l-sec" d="M717.3 117.4A440 440 0 0 1 796.7 175.1L702.3 278.5A300 300 0 0 0 648.2 239.2Z"/><use href="#g-jingzhe" x="687.5" y="170.7" width="60" height="60" transform="rotate(36 717.5 200.7)"/><path class="l-sec" d="M805.6 183.5A440 440 0 0 1 868.2 259.1L751 335.7A300 300 0 0 0 708.4 284.2Z"/><use href="#g-chunfen" x="755.1" y="234.2" width="60" height="60" transform="rotate(50.4 785.1 264.2)"/><path class="l-sec" d="M874.8 269.4A440 440 0 0 1 916.5 358.2L784 403.3A300 300 0 0 0 755.5 342.8Z"/><use href="#g-qingming" x="804.8" y="312.5" width="60" height="60" transform="rotate(64.8 834.8 342.5)"/><path class="l-sec" d="M920.3 369.9A440 440 0 0 1 938.7 466.2L799.1 477A300 300 0 0 0 786.6 411.3Z"/><use href="#g-guyu" x="833.4" y="400.7" width="60" height="60" transform="rotate(79.2 863.4 430.7)"/><path class="l-sec" d="M939.5 478.5A440 440 0 0 1 933.3 576.4L795.4 552.1A300 300 0 0 0 799.6 485.3Z"/><use href="#g-lixia" x="839.3" y="493.2" width="60" height="60" transform="rotate(93.6 869.3 523.2)"/><path class="l-sec" d="M931 588.5A440 440 0 0 1 900.7 681.8L773.2 623.9A300 300 0 0 0 793.9 560.3Z"/><use href="#g-xiaoman" x="821.9" y="584.3" width="60" height="60" transform="rotate(108 851.9 614.3)"/><path class="l-sec" d="M895.5 692.9A440 440 0 0 1 842.9 775.7L733.8 688A300 300 0 0 0 769.6 631.5Z"/><use href="#g-mangzhong" x="782.4" y="668.3" width="60" height="60" transform="rotate(122.4 812.4 698.3)"/><path class="l-sec" d="M835.1 785.2A440 440 0 0 1 763.6 852.3L679.7 740.2A300 300 0 0 0 728.5 694.4Z"/><use href="#g-xiazhi" x="723.3" y="739.7" width="60" height="60" transform="rotate(136.8 753.3 769.7)"/><path class="l-sec" d="M753.6 859.5A440 440 0 0 1 667.7 906.8L614.3 777.4A300 300 0 0 0 672.9 745.1Z"/><use href="#g-xiaoshu" x="648.2" y="794.2" width="60" height="60" transform="rotate(151.2 678.2 824.2)"/><path class="l-sec" d="M656.2 911.3A440 440 0 0 1 561.2 935.7L541.8 797.1A300 300 0 0 0 606.5 780.4Z"/><use href="#g-dashu" x="562" y="828.4" width="60" height="60" transform="rotate(165.6 592 858.4)"/><path class="l-sec" d="M549 937.3A440 440 0 0 1 451 937.3L466.6 798.1A300 300 0 0 0 533.4 798.1Z"/><use href="#g-liqiu" x="470" y="840" width="60" height="60" transform="rotate(180 500 870)"/><path class="l-sec" d="M438.8 935.7A440 440 0 0 1 343.8 911.3L393.5 780.4A300 300 0 0 0 458.2 797.1Z"/><use href="#g-chushu" x="378" y="828.4" width="60" height="60" transform="rotate(194.4 408 858.4)"/><path class="l-sec" d="M332.3 906.8A440 440 0 0 1 246.4 859.5L327.1 745.1A300 300 0 0 0 385.7 777.4Z"/><use href="#g-bailu" x="291.8" y="794.2" width="60" height="60" transform="rotate(208.8 321.8 824.2)"/><path class="l-sec" d="M236.4 852.3A440 440 0 0 1 164.9 785.2L271.5 694.4A300 300 0 0 0 320.3 740.2Z"/><use href="#g-qiufen" x="216.7" y="739.7" width="60" height="60" transform="rotate(223.2 246.7 769.7)"/><path class="l-sec" d="M157.1 775.7A440 440 0 0 1 104.5 692.9L230.4 631.5A300 300 0 0 0 266.2 688Z"/><use href="#g-hanlu" x="157.6" y="668.3" width="60" height="60" transform="rotate(237.6 187.6 698.3)"/><path class="l-sec" d="M99.3 681.8A440 440 0 0 1 69 588.5L206.1 560.3A300 300 0 0 0 226.8 623.9Z"/><use href="#g-shuangjiang" x="118.1" y="584.3" width="60" height="60" transform="rotate(252 148.1 614.3)"/><path class="l-sec" d="M66.7 576.4A440 440 0 0 1 60.5 478.5L200.4 485.3A300 300 0 0 0 204.6 552.1Z"/><use href="#g-lidong" x="100.7" y="493.2" width="60" height="60" transform="rotate(266.4 130.7 523.2)"/><path class="l-sec" d="M61.3 466.2A440 440 0 0 1 79.7 369.9L213.4 411.3A300 300 0 0 0 200.9 477Z"/><use href="#g-xiaoxue" x="106.6" y="400.7" width="60" height="60" transform="rotate(280.8 136.6 430.7)"/><path class="l-sec" d="M83.5 358.2A440 440 0 0 1 125.2 269.4L244.5 342.8A300 300 0 0 0 216 403.3Z"/><use href="#g-daxue" x="135.2" y="312.5" width="60" height="60" transform="rotate(295.2 165.2 342.5)"/><path class="l-sec" d="M131.8 259.1A440 440 0 0 1 194.4 183.5L291.6 284.2A300 300 0 0 0 249 335.7Z"/><use href="#g-dongzhi" x="184.9" y="234.2" width="60" height="60" transform="rotate(309.6 214.9 264.2)"/><path class="l-sec" d="M203.3 175.1A440 440 0 0 1 282.7 117.4L351.8 239.2A300 300 0 0 0 297.7 278.5Z"/><use href="#g-xiaohan" x="252.5" y="170.7" width="60" height="60" transform="rotate(324 282.5 200.7)"/><path class="l-sec" d="M293.4 111.5A440 440 0 0 1 384.6 75.4L421.3 210.5A300 300 0 0 0 359.2 235.1Z"/><use href="#g-dahan" x="333.8" y="126" width="60" height="60" transform="rotate(338.4 363.8 156)"/><path class="l-miss" d="M396.5 72.3A440 440 0 0 1 493.9 60L495.8 200A300 300 0 0 0 429.5 208.4Z"/></svg>
+<div class="lost__txt">
+<p class="lost__code"><span class="num">404</span></p>
+<h1>第二十五個節氣，這一頁就落在那一格</h1>
+<p>一年只有二十四個節氣，從立春轉到大寒，剛好一圈。你要找的這一頁，大概落在第二十五格，那一格是空的。</p>
+<p class="lost__act"><a class="btn btn--go" href="./">回到輪盤</a><a href="./#plan">看怎麼訂</a></p>
+</div>
+</main>
+<footer class="foot"><p class="foot__fine"><span>二十四節氣小農合作社・彰化縣二水鄉</span><span>04-0000-0225</span></p></footer>
+
+
+</body>
+</html>

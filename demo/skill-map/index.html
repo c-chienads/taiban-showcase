@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F32" data-slug="skill-map">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>學徑｜設計入門線上課：挑一門想學會的課，看它的上游</title>
+<meta name="description" content="十二門設計入門線上課，畫成一張上下游的關係圖。挑一門你想學會的課，它上游要先上的課一起浮出來，算好總時數，再照你每週撥得出的時間排成週次；每門都附作業與逐點回饋。">
+
+<meta name="generator" content="套版網站平台 F32">
+<link rel="icon" href="assets/mark.svg">
+<link rel="preload" href="fonts/01-chocolate-classical-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/02-noto-sans-tc.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"Chocolate Classical Sans";src:url("fonts/01-chocolate-classical-sans.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans TC";src:url("fonts/02-noto-sans-tc.woff2") format("woff2");font-weight:400 500;font-style:normal;font-display:swap}
+@font-face{font-family:"Funnel Display";src:url("fonts/03-funnel-display.woff2") format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root{
+  --sal:oklch(0.80 0.095 25);
+  --sal-hi:oklch(0.89 0.045 35);
+  --sal-d:oklch(0.745 0.105 27);
+  --clay:oklch(0.66 0.115 28);
+  --clay-l:oklch(0.705 0.11 28);
+  --ox:oklch(0.29 0.07 28);
+  --ox-2:oklch(0.36 0.085 29);
+  --lag:oklch(0.40 0.075 205);
+  --lag-m:oklch(0.56 0.07 200);
+  --lag-l:oklch(0.72 0.06 195);
+  --lag-dd:oklch(0.31 0.058 212);
+  --shoal:oklch(0.87 0.032 190);
+  --shoal-2:oklch(0.83 0.042 192);
+  --shoal-3:oklch(0.785 0.052 195);
+  --iso:oklch(0.55 0.07 200);
+  --paper:oklch(0.97 0.012 40);
+  --focus-ring:3px dashed oklch(0.29 0.07 28);
+  --focus-offset:5px;
+  --selection-bg:oklch(0.40 0.075 205);
+  --selection-fg:oklch(0.97 0.012 40);
+  --f-d:"Chocolate Classical Sans","Noto Sans TC",sans-serif;
+  --f-b:"Noto Sans TC",sans-serif;
+  --f-n:"Funnel Display","Noto Sans TC",sans-serif;
+  --gx:48px;
+  --maxw:1440px;
+  color-scheme:light;
+}
+html{background:var(--sal)}
+body{background:var(--sal);color:var(--ox);font-family:var(--f-b);font-size:1rem;font-weight:400;overflow-x:clip}
+h1,h2,h3,.d{font-family:var(--f-d);font-weight:400;font-synthesis:none}
+.num{font-family:var(--f-n);font-variant-numeric:tabular-nums;font-weight:600}
+a{color:inherit;text-underline-offset:.24em;text-decoration-thickness:1.5px}
+a:hover{text-decoration-thickness:3px}
+h2{font-size:clamp(1.9rem,1.2rem + 1.7vw,2.85rem);line-height:1.25;letter-spacing:.01em;text-wrap:balance}
+h2 b{font-weight:400}
+.lead{font-size:1.0625rem;line-height:1.8;max-width:34em}
+main > section{padding-inline:var(--gx);max-width:var(--maxw);margin-inline:auto}
+.nojs{display:none}
+html:not(.js) .nojs{display:block;margin:10px 0 0;padding:10px 14px;background:var(--sal-hi);font-size:.9375rem;max-width:52em}
+.pb{overflow:visible}
+.pb path{vector-effect:non-scaling-stroke}
+
+/* ---------- 頂列 ---------- */
+.top{display:flex;align-items:center;gap:28px;padding:14px var(--gx) 6px;max-width:var(--maxw);margin-inline:auto}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ox)}
+.brand svg{width:30px;height:30px;flex:none}
+.brand b{font-family:var(--f-d);font-weight:400;font-size:1.5rem;letter-spacing:.08em}
+.brand span{font-size:.875rem;color:var(--ox-2)}
+.nav{display:flex;gap:26px;margin-left:auto;font-size:.9375rem;font-weight:500}
+.nav a{text-decoration:none;padding:8px 0;transition:color 140ms;
+  background:linear-gradient(currentColor,currentColor) 0 100%/0 2px no-repeat,repeating-linear-gradient(90deg,currentColor 0 1.5px,transparent 1.5px 9px) 0 calc(100% - 2px)/100% 0 no-repeat}
+@media (hover:hover) and (pointer:fine){.nav a:hover{color:var(--lag);background-size:100% 2px,100% 6px}}
+
+/* ---------- 上下游圖（首屏） ---------- */
+.map{display:grid;grid-template-columns:minmax(0,1fr) 846px;grid-template-rows:auto minmax(0,1fr);grid-template-areas:"say tool" "pool tool";column-gap:44px;padding-top:6px}
+.say{grid-area:say;padding-top:26px}
+.map h1{font-size:2.8rem;line-height:1.24;letter-spacing:.01em}
+.map h1 span{display:block}
+.map h1 .q1{text-indent:-.5em}
+.say .lead{margin-top:22px;font-size:1rem;line-height:1.85;max-width:27em}
+.lead2{display:block;margin-top:10px;color:var(--ox-2)}
+.tool{grid-area:tool;position:relative}
+.tool-top{display:flex;justify-content:space-between;align-items:center;gap:8px 24px;padding:2px 22px 0;flex-wrap:wrap;position:relative;z-index:2}
+.hint{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-d);font-size:1.0625rem;color:var(--ox)}
+.hint::before{content:"";width:13px;height:11px;background:var(--lag);clip-path:polygon(50% 0,100% 100%,0 100%);flex:none}
+.legend{display:flex;gap:16px;font-size:.875rem;font-weight:500}
+.lg{display:inline-flex;align-items:center;gap:7px}
+.lg .sw{width:26px;height:16px;flex:none;overflow:visible}
+.lg .sw path{stroke-linejoin:miter}
+.lg-tg .sw path{fill:var(--lag);stroke:var(--ox);stroke-width:2.4px}
+.lg-on .sw path{fill:var(--sal-hi);stroke:var(--ox);stroke-width:2px}
+.lg-off .sw path{fill:none;stroke:var(--clay);stroke-width:1.8px;stroke-dasharray:5 3 1.5 3}
+.cv-wrap{overflow:visible}
+.cv{position:relative;width:calc(var(--W) * 1px);height:calc(var(--H) * 1px);margin-inline:auto}
+.basin,.wires{position:absolute;left:0;top:0;overflow:visible}
+.s-n{display:none}
+
+/* 集水區等高線帶：同一組路徑由寬到窄疊三圈 */
+.bd use{fill:none;stroke-linejoin:round;stroke-linecap:round;opacity:0}
+.bd .pu{stroke-linejoin:round}
+.bd.l0 use{stroke:var(--iso);stroke-width:calc(var(--bw) + 3px)}.bd.l0 .pu{fill:var(--iso)}
+.bd.f0 use{stroke:var(--shoal);stroke-width:var(--bw)}.bd.f0 .pu{fill:var(--shoal)}
+.bd.l1 use{stroke:var(--iso);stroke-width:calc(var(--bw) + 2.4px)}.bd.l1 .pu{fill:var(--iso)}
+.bd.f1 use{stroke:var(--shoal-2);stroke-width:var(--bw)}.bd.f1 .pu{fill:var(--shoal-2)}
+.bd.l2 use{stroke:var(--iso);stroke-width:calc(var(--bw) + 2px)}.bd.l2 .pu{fill:var(--iso)}
+.bd.f2 use{stroke:var(--shoal-3);stroke-width:var(--bw)}.bd.f2 .pu{fill:var(--shoal-3)}
+.cv[data-set*="a"] .bd [data-k="a"],.cv[data-set*="b"] .bd [data-k="b"],.cv[data-set*="c"] .bd [data-k="c"],.cv[data-set*="d"] .bd [data-k="d"],.cv[data-set*="e"] .bd [data-k="e"],.cv[data-set*="f"] .bd [data-k="f"],.cv[data-set*="g"] .bd [data-k="g"],.cv[data-set*="h"] .bd [data-k="h"],.cv[data-set*="i"] .bd [data-k="i"],.cv[data-set*="j"] .bd [data-k="j"],.cv[data-set*="k"] .bd [data-k="k"],.cv[data-set*="l"] .bd [data-k="l"]{opacity:1}
+
+/* 河道：乾河床（點線）／濕痕／岸／水 */
+.w use{fill:none;stroke-linecap:round}
+.wd{stroke:var(--clay);stroke-width:1.8px;stroke-dasharray:.5 6}
+.wm{stroke:var(--lag-l);stroke-width:var(--ew);opacity:0}
+.wb{stroke:var(--sal-hi);stroke-width:calc(var(--ew) + 6px);clip-path:inset(0 0 100% 0)}
+.wv{stroke:var(--lag);stroke-width:var(--ew);clip-path:inset(0 0 100% 0)}
+.cv[data-set*="a"] .w[data-k="a"] :is(.wb,.wv),.cv[data-set*="b"] .w[data-k="b"] :is(.wb,.wv),.cv[data-set*="c"] .w[data-k="c"] :is(.wb,.wv),.cv[data-set*="d"] .w[data-k="d"] :is(.wb,.wv),.cv[data-set*="e"] .w[data-k="e"] :is(.wb,.wv),.cv[data-set*="f"] .w[data-k="f"] :is(.wb,.wv),.cv[data-set*="g"] .w[data-k="g"] :is(.wb,.wv),.cv[data-set*="h"] .w[data-k="h"] :is(.wb,.wv),.cv[data-set*="i"] .w[data-k="i"] :is(.wb,.wv),.cv[data-set*="j"] .w[data-k="j"] :is(.wb,.wv),.cv[data-set*="k"] .w[data-k="k"] :is(.wb,.wv),.cv[data-set*="l"] .w[data-k="l"] :is(.wb,.wv){clip-path:inset(-40px)}
+.w.was .wm{animation:damp 1800ms ease-out both}
+@keyframes damp{from{opacity:.9;stroke-width:calc(var(--ew) + 5px)}to{opacity:0;stroke-width:var(--ew)}}
+
+/* 地籍塊節點：直邊斜切角；虛線＝還沒劃進路線的地界（長短交替），實線＝已選，雙線＝已選的塊，選取與滑過時四角出現對位記號 */
+.nodes{position:absolute;inset:0;margin:0;padding:0;list-style:none}
+.nd{position:absolute;left:calc(var(--x) * 1px);top:calc(var(--y) * 1px);width:182px;height:72px}
+.node{position:absolute;inset:0;width:100%;height:100%;isolation:isolate;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:3px;padding:0 16px 0 24px;
+  background:none;border:0;border-radius:0;color:var(--ox);text-align:left;cursor:pointer;font-family:var(--f-b)}
+.node .pb{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.node .pb-n{display:none}
+.node .pp{fill:var(--sal);stroke:var(--clay);stroke-width:1.7px;stroke-dasharray:7 3 1.5 3;stroke-linejoin:miter}
+.node .pn{fill:none;stroke:var(--ox);stroke-width:1px;stroke-linejoin:miter;opacity:0}
+.node .br{fill:none;stroke:var(--ox);stroke-width:2px;opacity:0}
+.node.on .pp{fill:var(--sal-hi);stroke:var(--ox);stroke-width:2.2px;stroke-dasharray:none}
+.node.on .pn{opacity:.6}
+.node.tg .pp{fill:var(--lag);stroke:var(--ox);stroke-width:2.6px;stroke-dasharray:none}
+.node.tg .pn{stroke:var(--paper);opacity:.75}
+.node.tg .br{opacity:1}
+.node.tg{color:var(--paper)}
+@media (hover:hover) and (pointer:fine){
+  .node:hover .pp{stroke:var(--ox);stroke-dasharray:none}
+  .node:hover .br{opacity:1}
+  .node:hover .nm{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.22em}
+}
+.node .nm{font-family:var(--f-d);font-size:1.25rem;line-height:1.15;letter-spacing:.02em;white-space:nowrap}
+.node .hr{font-size:.8125rem;line-height:1.2;white-space:nowrap}
+.node .hr b{font-size:.9375rem}
+.node:focus-visible{outline:3px dashed var(--ox);outline-offset:6px}
+.pt{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--sal);border:2px solid var(--clay);left:calc(50% + var(--o) * 1px - 4.5px);z-index:1}
+.pi{top:-3px}.po{bottom:-3px}
+.node.on .pt,.node.tg .pt{background:var(--sal-hi);border-color:var(--ox)}
+.tgtag{position:absolute;left:calc(var(--x) * 1px - 4px);top:calc(var(--y) * 1px - 28px);height:24px;padding:0 20px 0 10px;background:var(--ox);color:var(--paper);
+  font-family:var(--f-d);font-size:.875rem;line-height:24px;letter-spacing:.12em;clip-path:polygon(0 0,100% 0,calc(100% - 9px) 50%,100% 100%,0 100%);pointer-events:none;white-space:nowrap;z-index:3}
+html.js .cv.anim .node .pb path{transition:fill 160ms ease-out,stroke 160ms ease-out,opacity 160ms ease-out}
+html.js .cv.anim .node{transition:color 160ms ease-out}
+html.js .cv.anim .node:is(.on,.tg) .pb path{transition:fill 260ms ease-out var(--nd),stroke 260ms ease-out var(--nd)}
+html.js .cv.anim .node:is(.on,.tg){transition:color 260ms ease-out var(--nd)}
+html.js .cv.anim .w .wb{transition:clip-path var(--dur) linear var(--del)}
+html.js .cv.anim .w .wv{transition:clip-path var(--dur) linear calc(var(--del) + 90ms)}
+html.js .cv.anim .bd use{transition:opacity 520ms ease-out var(--bd)}
+html.js .cv.anim .tgtag{transition:opacity 180ms ease-out var(--tgd,0ms)}
+html.js .cv.reset :is(.wb,.wv){clip-path:inset(0 0 100% 0)!important;transition:none!important}
+html.js .cv.reset .bd use{opacity:0!important;transition:none!important}
+html.js .cv.reset .tgtag{opacity:0}
+
+/* 河口池（結果） */
+.pool{grid-area:pool;align-self:end;display:flex;flex-direction:column;gap:16px;padding-bottom:18px}
+.pool-a{position:relative;width:100%;max-width:440px;aspect-ratio:440 / 270}
+.pool-g{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.pool-f{fill:var(--lag)}
+.pool-s{fill:var(--lag-m)}
+.pool-r{fill:none;stroke:var(--lag-m);stroke-width:1.2px}
+.pool-r.ix{stroke-width:2.2px}
+.tot{position:absolute;left:11%;top:12%;display:flex;align-items:baseline;gap:12px;color:var(--paper);line-height:.8}
+.tot b{font-weight:300;font-size:10rem;line-height:.82;letter-spacing:-.045em}
+.tot .u{font-family:var(--f-d);font-size:1.25rem}
+.who{position:absolute;left:11%;right:9%;bottom:15%;color:var(--sal-hi);font-size:.9375rem;line-height:1.5}
+.who b{font-weight:500;color:var(--paper)}
+.who > span{background:var(--lag);box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:1px 6px;margin-left:-6px}
+.pace{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;border:0;min-width:0}
+.pace legend{font-size:.875rem;font-weight:500;padding:0;margin-bottom:8px;color:var(--ox-2)}
+.pc-g{position:relative;display:flex;max-width:440px;padding-top:11px}
+.pc-g::before{content:"";position:absolute;left:0;right:0;top:0;height:7px;background:linear-gradient(var(--ox),var(--ox)) 0 100%/100% 1.5px no-repeat,repeating-linear-gradient(90deg,var(--ox) 0 1.5px,transparent 1.5px 11px) 0 0/100% 7px no-repeat}
+.pc{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:66px;padding:8px 6px;cursor:pointer;text-align:center;border:1.8px solid var(--ox);margin-left:-1.8px;background:transparent}
+.pc:first-child{margin-left:0}
+.pc input{position:absolute;width:1px;height:1px;opacity:.01;margin:0;left:50%;bottom:6px}
+@media (hover:hover) and (pointer:fine){.pc:hover{background:oklch(0.89 0.045 35 / .7)}}
+.pc-v{font-size:.9375rem;font-weight:500}
+.pc-v b{font-size:1.125rem}
+.pc-n{font-size:.75rem;line-height:1.35}
+.pc:has(input:checked){color:var(--sal-hi);background:var(--ox);z-index:1}
+.pc:has(input:focus-visible){outline:3px dashed var(--ox);outline-offset:3px;z-index:2}
+.pc input:focus-visible{outline:3px dashed var(--ox);outline-offset:2px}
+.dk-wk{font-size:1rem;line-height:1.6;max-width:440px}
+.dk-wk b{font-size:1.25rem;color:var(--lag)}
+.dk-go{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:.9375rem;font-weight:500}
+.dk-go a{display:inline-flex;align-items:center;gap:7px;min-height:32px}
+.dk-go svg{width:10px;height:16px}
+
+/* ---------- 河道（週次） ---------- */
+.wk{padding-top:118px}
+.wk-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,26rem);gap:12px 64px;align-items:end;padding-left:118px}
+.wk-head h2 b{font-family:var(--f-n);font-weight:300;font-size:1.35em;color:var(--lag);letter-spacing:-.02em}
+.wk-head .lead{font-size:1rem}
+.rvw{position:relative;height:calc(var(--rh) * 1px);margin-top:18px}
+.river{position:absolute;left:0;top:0;overflow:visible}
+.river.h{width:100%;height:calc(var(--rh) * 1px)}
+.river.v{display:none}
+.river path{fill:none}
+.rbk{stroke:var(--sal-hi);stroke-width:36px;stroke-linecap:round}
+.rbd{stroke:var(--sal-d);stroke-width:22px}
+.rs{stroke:var(--lag);stroke-width:22px}
+.rs.alt{stroke:var(--lag-m)}
+.rs.tg{stroke:var(--ox)}
+.rtk{stroke:var(--sal-hi);stroke-width:40px}
+.rrp{stroke:oklch(0.87 0.032 190 / .7);stroke-width:1.6px;stroke-dasharray:16 21 5 27 28 19;stroke-linecap:round}
+html.js .rvw.anim .rs{transition:stroke-dasharray 240ms ease-out}
+.r-src,.r-end{position:absolute;left:0;width:96px;text-align:right;font-family:var(--f-d);font-size:.9375rem;line-height:1.3;color:var(--ox-2)}
+.r-src{top:calc(var(--y1, 196) * 1px - 11px)}
+.r-end{top:calc(var(--y2, 336) * 1px - 11px)}
+.r-end::after,.r-src::after{content:"";position:absolute;right:-17px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--lag)}
+.r-end::after{background:var(--ox)}
+.wkn{position:absolute;inset:0;pointer-events:none}
+.wn{position:absolute;left:calc(var(--wx) * 1px);top:calc(var(--wy) * 1px);transform:translate(-50%,-50%) translate(calc(var(--nx) * -36px),calc(var(--ny) * -36px));
+  font-family:var(--f-n);font-weight:600;font-size:.8125rem;color:var(--ox-2);font-variant-numeric:tabular-nums}
+.wn.v{display:none}
+.plan{position:absolute;inset:0;margin:0;padding:0;list-style:none}
+.pl{position:absolute;left:calc(var(--px) * 1px);top:calc(var(--py) * 1px);width:max-content;max-width:214px;display:flex;flex-direction:column;gap:2px;--gap:30px;background:var(--sal);padding:2px 6px 3px;margin-left:-6px;z-index:2}
+.pl.t1{z-index:1}
+.pl.t1{--gap:110px}
+.pl.s0{transform:translate(-14px,calc(-100% - var(--gap)))}
+.pl.s2{transform:translate(-14px,var(--gap))}
+.pl.rt.s0{transform:translate(calc(-100% + 14px),calc(-100% - var(--gap)))}
+.pl.rt.s2{transform:translate(calc(-100% + 14px),var(--gap))}
+.pl::before{content:"";position:absolute;left:19px;width:2px;height:calc(var(--gap) - 18px);background:var(--ox)}
+.pl.rt::before{left:auto;right:7px}
+.pl.s0::before{top:calc(100% + 4px)}
+.pl.s2::before{bottom:calc(100% + 4px)}
+.pl-n{font-family:var(--f-d);font-weight:400;font-size:1.25rem;line-height:1.25}
+.pl.tg .pl-n{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:.28em;text-decoration-color:var(--lag)}
+.pl-m{font-size:.8125rem;color:var(--ox-2);white-space:nowrap}
+.pl-m b{font-size:.9375rem;color:var(--ox)}
+.pl-hw{font-size:.875rem;line-height:1.5}
+html.js .rvw.anim .pl{transition:left 240ms ease-out,top 240ms ease-out}
+.rest{margin:8px 0 0 118px;font-size:.9375rem;color:var(--ox-2)}
+.rest b{color:var(--ox)}
+
+/* ---------- 作業怎麼被看（沙洲帶） ---------- */
+.rv{position:relative;margin-top:96px;background:var(--shoal);max-width:none!important;padding:64px 0 76px!important}
+/* 測量框線：區塊交界的粗基線＋往上長的小刻度（小的每 12px 一格、大的每 60px 一格）；基線壓在交界上 */
+.nl{--nb:3px;position:absolute;left:0;width:100%;height:13px;pointer-events:none;color:var(--ox);
+  background:linear-gradient(currentColor,currentColor) 0 100%/100% var(--nb) no-repeat,
+    repeating-linear-gradient(90deg,currentColor 0 1.5px,transparent 1.5px 12px) 0 calc(100% - var(--nb))/100% 5px no-repeat,
+    repeating-linear-gradient(90deg,currentColor 0 2px,transparent 2px 60px) 0 calc(100% - var(--nb))/100% 10px no-repeat}
+.nl-band{--nb:2px}
+.nl-top,.nl-band{bottom:calc(100% - 1.5px)}
+.nl-bot{bottom:-1.5px}
+.rv-in{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gx)}
+.rv .lead{margin-top:14px}
+.board{position:relative;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));grid-template-rows:auto auto auto;gap:0 20px;margin-top:34px}
+.trail{position:absolute;left:0;right:0;top:50%;height:260px;transform:translateY(-50%);width:100%;pointer-events:none}
+.trail path{fill:none;stroke:var(--lag-m);stroke-width:2.2px;stroke-dasharray:1 9;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.spec{display:contents}
+.sp{grid-row:2;display:flex;flex-direction:column;align-items:center;gap:10px;padding:34px 0 28px;position:relative}
+.sp-0{grid-column:1 / 3}.sp-1{grid-column:3 / 5}.sp-2{grid-column:5 / 7}.sp-3{grid-column:7 / 9}
+.fb{display:inline-flex;align-items:center;justify-content:center;min-width:10.5rem;padding:13px 26px;font-size:1rem;font-weight:500;color:var(--paper);background:var(--lag);border-radius:7px;
+  box-shadow:0 3px 0 oklch(0.30 0.06 210)}
+.sp-1 .fb{background:oklch(0.355 0.075 207)}
+.sp-2 .fb{transform:translateY(2px);background:oklch(0.33 0.072 208);box-shadow:0 1px 0 oklch(0.30 0.06 210)}
+.sp-3 .fb{background:oklch(0.47 0.045 205);box-shadow:none}
+.sp .cur{position:absolute;width:20px;height:26px;left:calc(50% + 50px);top:56px}
+.sp-3 .cur{width:24px;height:24px}
+.sp-l{font-family:var(--f-d);font-size:.9375rem;color:var(--ox-2);letter-spacing:.08em}
+.notes{display:contents}
+.nt{position:relative;align-self:end;display:flex;flex-direction:column;gap:2px;padding:0 0 12px 16px;font-size:.9375rem;line-height:1.75;border-left:2px solid var(--lag)}
+.nt-s{font-family:var(--f-d);font-weight:400;font-size:1rem;color:var(--lag)}
+.nt-0{grid-row:1;grid-column:1 / 4}
+.nt-2{grid-row:1;grid-column:5 / 8}
+.nt-1{grid-row:3;grid-column:3 / 6;align-self:start;padding:12px 0 0 16px}
+.nt-3{grid-row:3;grid-column:6 / 9;align-self:start;padding:12px 0 0 16px}
+.rv-after{margin-top:26px;font-size:1rem;max-width:44em}
+
+/* ---------- 十二門課（地層帶） ---------- */
+.cs{padding-top:52px;max-width:none!important;padding-inline:0!important}
+.cs-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,24rem);gap:12px 64px;align-items:end;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gx)}
+.cs-head .lead{font-size:1rem}
+.bands{margin-top:40px}
+.band{position:relative;background:var(--bc);padding:26px 0 40px}
+.band > *{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gx)}
+.band > .nl{position:absolute;max-width:none;padding:0;margin:0}
+.b0{--bc:var(--sal-hi)}.b1{--bc:var(--sal)}.b2{--bc:var(--sal-d)}.b3{--bc:var(--clay-l)}
+.b4{--bc:var(--ox);color:var(--sal-hi)}
+.band-n{display:flex;align-items:baseline;gap:16px;margin-bottom:16px}
+.band-n b{font-family:var(--f-d);font-weight:400;font-size:1.625rem;letter-spacing:.06em}
+.band-n b::before{content:"";display:inline-block;width:.55em;height:.48em;margin-right:.4em;background:currentColor;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.band-n span{font-size:.9375rem;color:var(--ox-2)}
+.b4 .band-n span{color:var(--sal-hi)}
+.row-c{display:flex;gap:28px;--u:calc((100% - var(--gn) * 28px) / var(--hmax))}
+.band > .row-c{padding-inline:var(--gx)}
+.c{width:calc(var(--h) * var(--u));flex:none;min-width:0}
+/* 時數尺：尺長＝時數、一格＝一小時（background-size 取自塊寬除以 --h）；在路線上的那幾門，尺底填水色 */
+.c::before{content:"";display:block;height:11px;margin-bottom:12px;box-sizing:border-box;border-right:1.5px solid var(--tk,var(--ox-2));
+  background:linear-gradient(90deg,var(--tk,var(--ox-2)) 0 1.5px,transparent 1.5px) 0 100%/calc(100% / var(--h)) 8px repeat-x,linear-gradient(var(--tk,var(--ox-2)),var(--tk,var(--ox-2))) 0 100%/100% 1.5px no-repeat,linear-gradient(var(--fl,transparent),var(--fl,transparent)) 0 100%/100% 100% no-repeat}
+.c.on::before{--tk:var(--ox);--fl:var(--shoal-3)}
+.b2 .c.on::before,.b3 .c.on::before{--fl:var(--sal-hi)}
+.b4 .c::before{--tk:var(--sal-hi)}
+.b4 .c.on::before{--tk:var(--ox);--fl:var(--shoal)}
+.c details{padding-top:4px}
+.c summary{list-style:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;position:relative;padding-right:30px}
+.c summary::after{content:"";position:absolute;right:6px;top:12px;width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s}
+.c details[open] summary::after{transform:rotate(225deg);top:17px}
+.c summary:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.22em}
+.c-hs{font-size:.9375rem;line-height:1.6;margin-top:2px}
+.c summary::-webkit-details-marker{display:none}
+.c h3{font-size:1.5rem;line-height:1.25}
+.c-meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 14px;font-size:.8125rem;color:var(--ox-2)}
+.b2 .c-meta,.b3 .c-meta,.b2 .band-n span,.b3 .band-n span{color:var(--ox)}
+.b4 .c-meta{color:var(--sal-hi)}
+.c-hr b{font-size:1rem;color:var(--ox)}
+.b4 .c-hr b{color:var(--paper)}
+.c-on{display:none;align-items:center;gap:6px;color:var(--lag);font-weight:500}
+.c-on::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.c.on .c-on{display:inline-flex}
+.b2 .c-on,.b3 .c-on{color:var(--ox)}
+.b4 .c-on{color:var(--shoal)}
+.b4 .c-on::before{background:var(--shoal)}
+.c-body{display:flex;flex-direction:column;gap:8px;margin-top:12px;font-size:.9375rem;line-height:1.75}
+.c-hw b,.c-tip b{display:inline-block;margin-right:.6em;font-size:.8125rem;font-weight:500;padding:0 8px;line-height:1.6;border-radius:0}
+.c-hw b{background:var(--ox);color:var(--sal-hi)}
+.b4 .c-hw b{background:var(--sal-hi);color:var(--ox)}
+.c-tip b{box-shadow:inset 0 0 0 1.5px currentColor}
+.pick{align-self:flex-start;font-size:.875rem;font-weight:500;margin-top:2px}
+.row-aside{align-self:center;margin-left:40px;display:flex;flex-direction:column;gap:14px;max-width:36rem}
+.row-aside p{font-size:.9375rem}
+.chips{display:flex;flex-wrap:wrap;gap:0 26px;margin:0;padding:0;list-style:none}
+/* 路線標記：圓環站點＋點線底（和乾河床同一種點），不是膠囊 */
+.chip{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-family:var(--f-d);font-size:1.0625rem;color:var(--ox);text-decoration:none}
+a.chip::before{content:"";flex:none;width:12px;height:12px;box-sizing:border-box;border:2px solid currentColor;border-radius:50%;background:var(--sal-hi)}
+a.chip span{padding-bottom:2px;background:radial-gradient(circle,currentColor 0.8px,transparent 1.2px) 0 100%/6px 3px repeat-x}
+@media (hover:hover) and (pointer:fine){a.chip:hover{color:var(--lag)}a.chip:hover::before{background:currentColor}a.chip:hover span{background:linear-gradient(currentColor,currentColor) 0 100%/100% 2px no-repeat}}
+.steps{gap:4px 0}
+.steps .chip{color:var(--sal-hi)}
+.steps .chip::before{content:"";flex:none;width:12px;height:12px;box-sizing:border-box;border:2px solid currentColor;border-radius:50%}
+.steps li + li::before{content:"";display:inline-block;width:34px;height:0;border-top:2px dotted currentColor;margin:0 10px 0 6px}
+.steps li{display:inline-flex;align-items:center;color:var(--sal-hi)}
+html:not(.js) .pick,html:not(.js) .pace,html:not(.js) .share,html:not(.js) .kbd-tip{display:none}
+
+/* ---------- 學費（留白裡一個巨大的單價） ---------- */
+.fe{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);grid-template-areas:"h side" "big side";column-gap:72px;padding-block:150px 130px}
+.fe h2{grid-area:h;align-self:start}
+.fe-big{grid-area:big;position:relative;min-height:440px;margin-top:20px}
+/* 圖框：外框粗線、內框細線，兩框之間一圈刻度（地圖圖幅的邊） */
+.fe-fr{position:absolute;inset:0;border:2px solid var(--ox);
+  background:repeating-linear-gradient(90deg,var(--ox) 0 1px,transparent 1px 14px) 0 0/100% 6px no-repeat,repeating-linear-gradient(90deg,var(--ox) 0 1px,transparent 1px 14px) 0 100%/100% 6px no-repeat,
+    repeating-linear-gradient(0deg,var(--ox) 0 1px,transparent 1px 14px) 0 0/6px 100% no-repeat,repeating-linear-gradient(0deg,var(--ox) 0 1px,transparent 1px 14px) 100% 0/6px 100% no-repeat}
+.fe-fr::before{content:"";position:absolute;inset:6px;border:1px solid var(--ox)}
+.fe-n{position:absolute;left:11%;top:50%;transform:translateY(-54%);display:flex;align-items:baseline;gap:14px;white-space:nowrap}
+.fe-n b{font-weight:300;font-size:clamp(9rem,5rem + 10vw,17.5rem);line-height:.8;letter-spacing:-.05em;color:var(--lag)}
+.fe-n span{font-family:var(--f-d);font-size:1.125rem}
+.fe-side{grid-area:side;align-self:end;display:flex;flex-direction:column;gap:22px;padding-bottom:20px;max-width:30rem}
+.fe-rule{font-family:var(--f-d);font-size:1.5rem;line-height:1.5}
+.fe-mine{font-size:1.0625rem;line-height:1.7}
+.fe-mine b{font-size:1.375rem;color:var(--lag)}
+.fe-notes{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.9375rem;line-height:1.75}
+.fe-notes li{padding-left:22px;position:relative}
+.fe-notes li::before{content:"";position:absolute;left:2px;top:.6em;width:8px;height:8px;border:1.6px solid var(--ox);transform:rotate(45deg)}
+.fe-more{display:flex;flex-direction:column;gap:14px;margin:6px 0 0}
+.fe-more dt{font-family:var(--f-d);font-size:1.125rem}
+.fe-more dd{margin:2px 0 0;font-size:.9375rem;line-height:1.75}
+
+/* ---------- 常被問的（深水區） ---------- */
+.ask{position:relative;background:var(--lag);color:var(--sal-hi);max-width:none!important;padding:84px 0 70px!important;margin-top:40px;--focus-ring:3px dashed oklch(0.97 0.012 40)}
+.ask-in{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gx);display:grid;grid-template-columns:minmax(0,1fr) minmax(16rem,22rem);gap:0 80px;align-items:start}
+.ask h2{grid-column:1 / -1;color:var(--paper)}
+.qa{margin-top:26px}
+.qa details{border-bottom:1px solid oklch(0.56 0.07 200)}
+.qa summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:15px 0;font-family:var(--f-d);font-size:1.25rem;color:var(--paper)}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::before{content:"";flex:none;width:12px;height:13px;background:var(--shoal);clip-path:polygon(0 0,100% 50%,0 100%);transition:transform .2s}
+.qa details[open] summary::before{transform:rotate(90deg)}
+.qa p{padding:0 0 18px 30px;font-size:1rem;line-height:1.8;max-width:38em}
+.qa a{color:var(--paper)}
+.contact{margin-top:34px}
+.ct-lead{font-size:1.0625rem}
+.ct-line{display:flex;flex-direction:column;gap:6px;margin-top:14px;font-size:1.0625rem}
+.ct-line a{color:var(--paper);font-family:var(--f-d);font-size:1.375rem}
+.ct-line a.num{font-family:var(--f-n);font-weight:500}
+.ct-line span{font-size:.9375rem}
+
+/* ---------- 頁尾 ---------- */
+.foot{background:var(--lag-dd);color:var(--sal-hi);padding:40px var(--gx) 44px;display:flex;flex-wrap:wrap;align-items:flex-start;gap:16px 40px;--focus-ring:3px dashed oklch(0.97 0.012 40)}
+.foot .brand{color:var(--sal-hi)}
+.foot .brand span{color:var(--shoal)}
+.foot address{font-style:normal;display:flex;flex-direction:column;gap:2px;font-size:.9375rem}
+.foot .fine{flex-basis:100%;font-size:.8125rem;color:var(--shoal)}
+
+/* ---------- 404 ---------- */
+.e404{padding:40px var(--gx) 80px;max-width:var(--maxw);margin-inline:auto}
+.e404 h1{font-size:clamp(2rem,1.2rem + 2.4vw,3.2rem);line-height:1.25}
+.nf{margin:30px 0 20px;max-width:620px}
+.nf-g{width:100%;height:auto}
+.nf-w{fill:none;stroke:var(--lag);stroke-width:7;stroke-linecap:round}
+.nf-n{fill:var(--sal-hi);stroke:var(--ox);stroke-width:2;stroke-linejoin:miter}
+.nf-g text{fill:var(--ox);font-size:17px;font-family:var(--f-d)}
+.nf-x{fill:none;stroke:var(--clay);stroke-width:2.2;stroke-dasharray:7 4 2 4;stroke-linejoin:miter}
+.nf-g .nf-t{font-family:var(--f-n);font-size:34px;font-weight:300}
+.nf figcaption{margin-top:10px;font-size:.9375rem;color:var(--ox-2)}
+.nf-l{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:20px;font-weight:500}
+
+/* ---------- 中寬：首屏改單欄 ---------- */
+@media (max-width:1299px){
+  :root{--gx:32px}
+  .map{grid-template-columns:minmax(0,1fr);grid-template-areas:"say" "tool" "pool";row-gap:18px}
+  .say{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,26rem);gap:12px 48px;align-items:end;padding-top:16px}
+  .say .lead{margin-top:0}
+  .pool{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:16px 36px;align-items:center}
+  .pool-a{grid-row:1 / 4}
+  .wk-head,.rest{padding-left:0;margin-left:0}
+  .fe{grid-template-columns:1fr;grid-template-areas:"h" "big" "side"}
+  .ask-in{grid-template-columns:1fr}
+}
+
+/* ---------- 窄版（手機） ---------- */
+@media (max-width:899px){
+  :root{--gx:16px}
+  body{font-size:.9375rem}
+  .top{gap:10px;padding:12px var(--gx) 4px}
+  .brand span{display:none}
+  .nav{gap:16px;font-size:.875rem}
+  .nav a{min-height:44px;display:inline-flex;align-items:center}
+  .nav .nv-x{display:none}
+  .say{display:block;padding-top:14px}
+  .map h1{font-size:1.875rem;line-height:1.3}
+  .say .lead{margin-top:14px;font-size:.9375rem;line-height:1.8}
+  .lead2{margin-top:6px}
+  .tool-top{padding:6px 0 0;gap:6px 14px}
+  .hint{display:none}
+  .legend{gap:12px;font-size:.8125rem}
+  .cv-wrap{overflow-x:auto;overscroll-behavior-x:contain;margin:0 calc(-1 * var(--gx));padding-inline:var(--gx)}
+  .cv{width:calc(var(--mW) * 1px);height:calc(var(--mH) * 1px)}
+  .s-w{display:none}.s-n{display:block}
+  .nd{left:calc(var(--mx) * 1px);top:calc(var(--my) * 1px);width:80px;height:64px}
+  .node{align-items:center;text-align:center;padding:0 5px;gap:2px}
+  .node .pb-w{display:none}.node .pb-n{display:block}
+  .node .nm{font-size:.9375rem;line-height:1.15;white-space:normal;word-break:keep-all;overflow-wrap:normal;letter-spacing:0}
+  .node .hr{font-size:.75rem}
+  .node .hr b{font-size:.8125rem}
+  .node:focus-visible{outline-offset:4px}
+  .pt{left:calc(50% + var(--mo) * 1px - 4px);width:8px;height:8px}
+  .tgtag{left:calc(var(--mx) * 1px - 4px);top:calc(var(--my) * 1px - 26px);height:22px;line-height:22px;font-size:.8125rem;padding:0 16px 0 8px}
+  .pool{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px;padding-bottom:0}
+  .pool-a{grid-row:auto;max-width:none;aspect-ratio:440 / 215}
+  .tot b{font-size:6rem}
+  .tot .u{font-size:1.0625rem}
+  .who{font-size:.875rem;bottom:13%}
+  .pc-g{max-width:none}
+  .pc{min-height:58px;padding:6px 4px}
+  .dk-go a{min-height:44px}
+  .wk{padding-top:56px}
+  .wk-head{display:block}
+  .wk-head .lead{margin-top:10px;font-size:.9375rem}
+  .rvw{height:calc(var(--mrh) * 1px);margin-top:22px}
+  .river.h{display:none}
+  .river.v{display:block;width:64px;height:calc(var(--mrh) * 1px)}
+  .rbk{stroke-width:30px}
+  .rs,.rbd{stroke-width:18px}
+  .rtk{stroke-width:34px}
+  .r-src,.r-end{left:76px;width:auto;text-align:left;font-size:.8125rem}
+  .r-src{top:-22px}
+  .r-end{top:auto;bottom:-2px}
+  .r-src::after,.r-end::after{display:none}
+  .wn.h{display:none}
+  .wn.v{display:block;transform:translate(-50%,-50%) translateX(-30px);font-size:.75rem}
+  .pl,.pl.s0,.pl.s2,.pl.rt.s0,.pl.rt.s2{left:76px;top:calc(var(--mpy) * 1px);transform:none;max-width:calc(100% - 76px);width:auto;padding-top:2px}
+  .pl::before,.pl.rt::before{left:-26px;right:auto;top:12px;bottom:auto;width:20px;height:2px}
+  .pl{display:grid;grid-template-columns:auto 1fr;column-gap:10px;align-items:baseline;row-gap:0}
+  .pl-n{font-size:1.0625rem;line-height:1.35}
+  .pl-m{font-size:.75rem}
+  .pl-hw{grid-column:1 / -1;font-size:.8125rem;line-height:1.45}
+  .rest{margin-top:22px}
+  .rv{margin-top:60px;padding:36px 0 56px!important}
+  .board{display:grid;grid-template-columns:118px minmax(0,1fr);grid-template-rows:none;gap:18px 14px;margin-top:22px;align-items:start}
+  .trail{display:none}
+  .sp{grid-column:1!important;padding:4px 0 0;gap:6px;align-items:flex-start}
+  .sp-0{grid-row:1!important}.sp-1{grid-row:2!important}.sp-2{grid-row:3!important}.sp-3{grid-row:4!important}
+  .fb{min-width:0;padding:9px 12px;font-size:.8125rem}
+  .sp .cur{left:88px;top:22px;width:16px;height:21px}
+  .sp-3 .cur{width:20px;height:20px}
+  .sp-l{font-size:.8125rem}
+  .nt,.nt-0,.nt-1,.nt-2,.nt-3{grid-column:2!important;padding:0 0 0 12px;align-self:start}
+  .nt-0{grid-row:1!important}.nt-1{grid-row:2!important}.nt-2{grid-row:3!important}.nt-3{grid-row:4!important}
+  .nt{font-size:.875rem;line-height:1.7}
+  .nt-s{display:none}
+  .cs{padding-top:52px}
+  .cs-head{display:block}
+  .cs-head .lead{margin-top:8px;font-size:.9375rem}
+  .bands{margin-top:34px}
+  .band{padding:14px 0 18px}
+  .nl{--nb:2px;height:10px;background-size:100% var(--nb),100% 4px,100% 7px}
+  .band-n{flex-wrap:wrap;gap:2px 10px;margin-bottom:6px}
+  .band-n b{font-size:1.25rem}
+  .band-n span{font-size:.8125rem}
+  .row-c{flex-direction:column;gap:4px}
+  .c{width:auto!important}
+  .c::before{height:9px;margin:4px 0 2px;width:calc(var(--h) / 12 * 100%)}
+  .c summary{flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:0 12px;min-height:44px;padding:2px 26px 6px 0;position:relative}
+  .c summary::after{right:4px;top:18px}
+  .c details[open] summary::after{top:22px}
+  .c-hs{display:none}
+  .c h3{font-size:1.1875rem}
+  .c-meta{gap:2px 10px}
+  .c-body{margin-top:4px;padding-bottom:10px}
+  .row-aside{margin:10px 0 0;align-self:stretch}
+  .chip{min-height:44px;font-size:1rem}
+  .fe{padding-block:60px 44px;row-gap:0}
+  .fe-big{min-height:200px;margin:14px 0 18px}
+  .fe-n b{font-size:7.5rem}
+  .fe-n{left:9%}
+  .fe-n span{font-size:1rem}
+  .fe-rule{font-size:1.1875rem}
+  .fe-side{gap:12px;padding-bottom:0}
+  .fe-more{gap:8px}
+  .ask{padding:56px 0 48px!important}
+  .qa summary{font-size:1.0625rem;min-height:44px;padding:10px 0}
+  .qa p{padding-left:0}
+  .foot{padding:22px var(--gx) 26px;gap:8px}
+  .foot .brand svg{width:24px;height:24px}
+  .foot .brand b{font-size:1.25rem}
+  .foot address{font-size:.875rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .cv :is(.wb,.wv,.wm,.node,.pb path,.tgtag),.cv .bd use,.rvw :is(.rs,.pl),.qa summary::before,.nav a{transition-property:none!important}
+  html.js .cv.anim .node .pb path,html.js .cv.anim .node,html.js .cv.anim .w .wb,html.js .cv.anim .w .wv,html.js .cv.anim .bd use,html.js .cv.anim .tgtag,
+  html.js .rvw.anim .rs,html.js .rvw.anim .pl{transition:none!important}
+  .w.was .wm{animation:none!important;opacity:0!important}
+}
+
+@media print{
+  body,html{background:#fff!important;color:#000!important}
+  body *{color:#000!important;box-shadow:none!important}
+  .top .nav,.tool-top .hint,.pace,.dk-go,.pick,.nojs,.rv .board .trail,.nl,.basin,.pool-g,.fe-fr{display:none!important}
+  main > section,.rv,.ask,.cs{padding:12px 0!important;margin:0!important;background:#fff!important}
+  .map{display:block}
+  .cv{background:none!important}
+  .cv-wrap{overflow:visible}
+  .node .pp{fill:#fff!important;stroke:#000!important}
+  .node .pn,.node .br{display:none}
+  .node.on .pp{stroke-width:3px!important}
+  .wv{stroke:#000!important}.wb{stroke:#fff!important}.wd{stroke:#888!important}
+  .pool-a{aspect-ratio:auto}.tot,.who{position:static}
+  .band{background:#fff!important}
+  .rvw{height:auto!important}.river,.wkn{display:none}
+  .plan{position:static}.pl,.pl.s0,.pl.s2,.pl.rt.s0,.pl.rt.s2{position:static;transform:none;margin:4px 0;max-width:none;background:none!important;padding:0}
+  .r-src,.r-end{display:none!important}
+  .pl::before{display:none}
+  .fe-big{min-height:0}.fe-n{position:static;transform:none}
+  .c details > *{display:block}
+  a{color:#000!important;text-decoration:underline}
+  .foot{background:#fff!important}
+}
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="top">
+      <a class="brand" href="#main"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M8.5 9.5C8.5 17 16 15 16 22M23.5 9.5C23.5 17 16 15 16 22" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M3 3.5h9.5l2.5 2.5v4H3z" fill="currentColor"/><path d="M17 3.5h9.5l2.5 2.5v4H17z" fill="currentColor"/><path d="M9.5 21.2h13l2 2.4v5.2h-17v-5.2z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="miter"/></svg><b>學徑</b><span>設計入門線上課</span></a>
+      <nav class="nav" aria-label="主選單"><a href="#map">上下游圖</a><a href="#weeks">每週</a><a class="nv-x" href="#review">作業回饋</a><a href="#courses">十二門課</a><a href="#fees">學費</a></nav>
+    </header>
+    <main id="main">
+      <section class="map" id="map" aria-labelledby="h1">
+      <div class="say">
+        <h1 id="h1"><span class="q1">「我想學會的那一門，</span><span class="q2">上游有哪幾門？」</span></h1>
+        <p class="lead">十二門設計入門課，每一門都接在別的課下游。你想學會的那一門，它上游的每一門就是你要先上的；加起來幾小時、照你的步調要幾週、學費多少，選定的時候就算好了。<span class="lead2">每門交一份作業，有人逐點寫回饋。</span></p>
+      </div>
+      <div class="tool">
+        <div class="cv-wrap" id="cvw">
+      <div class="cv" id="cv" data-set="bacfegi" style="--W:846;--H:702;--mW:358;--mH:580">
+        <svg class="basin s-w" viewBox="0 0 846 702" width="846" height="702" aria-hidden="true" focusable="false">
+    <defs><path id="gwe0" d="M328 126C328 159 424.6 159 424.6 192"/><path id="gwe1" d="M310 126C310 159 225.6 159 225.6 192"/><path id="gwe2" d="M120 126C120 159 207.6 159 207.6 192"/><path id="gwe3" d="M518 126C518 159 534.6 159 534.6 192L534.6 264C534.6 297 459.5 297 459.5 330"/><path id="gwe4" d="M424.6 264C424.6 297 441.5 297 441.5 330"/><path id="gwe5" d="M536 126C536 159 635.6 159 635.6 192"/><path id="gwe6" d="M735 126C735 159 653.6 159 653.6 192"/><path id="gwe7" d="M216.6 264C216.6 297 315.5 297 315.5 330L315.5 402C315.5 435 389.8 435 389.8 468"/><path id="gwe8" d="M450.5 402C450.5 435 407.8 435 407.8 468"/><path id="gwe9" d="M102 126C102 159 106.6 159 106.6 192L106.6 264C106.6 297 149.5 297 149.5 330L149.5 402C149.5 435 181.8 435 181.8 468"/><path id="gwe10" d="M432.5 402C432.5 435 199.8 435 199.8 468"/><path id="gwe11" d="M468.5 402C468.5 435 597.8 435 597.8 468"/><path id="gwe12" d="M644.6 264C644.6 297 620.8 297 620.8 330L620.8 402C620.8 435 615.8 435 615.8 468"/><path id="gwe13" d="M398.8 540C398.8 573 402.9 573 402.9 606"/><path id="gwe14" d="M190.8 540C190.8 573 384.9 573 384.9 606"/><path id="gwe15" d="M606.8 540C606.8 573 420.9 573 420.9 606"/><path id="gwpb" d="M23 79.04L42.98 56L196.52 56L196.82 100.96L179.85 124L33.57 124L25.17 112.48Z"/><path id="gwpa" d="M231.23 73.28L252.17 56L387.73 56L407.18 79.04L406.94 112.48L396.89 124L233.72 124Z"/><path id="gwpc" d="M439.71 73.28L456.46 56L613.25 56L614.62 100.96L588.42 124L438.98 124Z"/><path id="gwpd" d="M647.44 73.28L667.8 56L822.58 56L821.59 124L671.83 124L646.05 100.96Z"/><path id="gwpf" d="M131.3 194L296.12 194L305.31 205.52L305.16 262L144.71 262L128.29 244.72Z"/><path id="gwpe" d="M338.03 194L502.75 194L511.5 205.52L512.06 238.96L484.04 262L354.77 262L338.45 244.72Z"/><path id="gwph" d="M555.87 194L719.79 194L733.48 205.52L731.99 244.72L714.21 262L575.25 262L558.31 244.72Z"/><path id="gwpg" d="M361.93 349.28L375.45 332L521.3 332L539.17 349.28L536.76 400L381.25 400L363 382.72Z"/><path id="gwpj" d="M102.54 470L257.49 470L276.99 493.04L279.67 514.96L250.88 538L115.91 538L105.01 526.48Z"/><path id="gwpi" d="M312.17 470L473.87 470L487.17 487.28L487.19 520.72L469.7 538L320.9 538L313.62 526.48Z"/><path id="gwpk" d="M521.34 493.04L543.32 470L693.44 470L693.46 520.72L675.2 538L532.04 538L519.42 526.48Z"/><path id="gwpl" d="M315.93 625.28L334.3 608L489.33 608L490.18 676L333.76 676L314.35 652.96Z"/><filter id="gwwob" x="-12%" y="-12%" width="124%" height="124%"><feTurbulence type="fractalNoise" baseFrequency="0.0089" numOctaves="2" seed="1"/><feDisplacementMap in="SourceGraphic" scale="12" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+    <g filter="url(#gwwob)"><g class="bd l0" style="--bw:104px"><use href="#gwe0" data-k="e" style="--bd:420ms"/><use href="#gwe1" data-k="f" style="--bd:420ms"/><use href="#gwe2" data-k="f" style="--bd:420ms"/><use href="#gwe3" data-k="g" style="--bd:720ms"/><use href="#gwe4" data-k="g" style="--bd:720ms"/><use href="#gwe5" data-k="h" style="--bd:420ms"/><use href="#gwe6" data-k="h" style="--bd:420ms"/><use href="#gwe7" data-k="i" style="--bd:1020ms"/><use href="#gwe8" data-k="i" style="--bd:1020ms"/><use href="#gwe9" data-k="j" style="--bd:1020ms"/><use href="#gwe10" data-k="j" style="--bd:1020ms"/><use href="#gwe11" data-k="k" style="--bd:1020ms"/><use href="#gwe12" data-k="k" style="--bd:1020ms"/><use href="#gwe13" data-k="l" style="--bd:1320ms"/><use href="#gwe14" data-k="l" style="--bd:1320ms"/><use href="#gwe15" data-k="l" style="--bd:1320ms"/><use href="#gwpb" class="pu" data-k="b" style="--bd:120ms"/><use href="#gwpa" class="pu" data-k="a" style="--bd:120ms"/><use href="#gwpc" class="pu" data-k="c" style="--bd:120ms"/><use href="#gwpd" class="pu" data-k="d" style="--bd:120ms"/><use href="#gwpf" class="pu" data-k="f" style="--bd:420ms"/><use href="#gwpe" class="pu" data-k="e" style="--bd:420ms"/><use href="#gwph" class="pu" data-k="h" style="--bd:420ms"/><use href="#gwpg" class="pu" data-k="g" style="--bd:720ms"/><use href="#gwpj" class="pu" data-k="j" style="--bd:1020ms"/><use href="#gwpi" class="pu" data-k="i" style="--bd:1020ms"/><use href="#gwpk" class="pu" data-k="k" style="--bd:1020ms"/><use href="#gwpl" class="pu" data-k="l" style="--bd:1320ms"/></g><g class="bd f0" style="--bw:104px"><use href="#gwe0" data-k="e" style="--bd:420ms"/><use href="#gwe1" data-k="f" style="--bd:420ms"/><use href="#gwe2" data-k="f" style="--bd:420ms"/><use href="#gwe3" data-k="g" style="--bd:720ms"/><use href="#gwe4" data-k="g" style="--bd:720ms"/><use href="#gwe5" data-k="h" style="--bd:420ms"/><use href="#gwe6" data-k="h" style="--bd:420ms"/><use href="#gwe7" data-k="i" style="--bd:1020ms"/><use href="#gwe8" data-k="i" style="--bd:1020ms"/><use href="#gwe9" data-k="j" style="--bd:1020ms"/><use href="#gwe10" data-k="j" style="--bd:1020ms"/><use href="#gwe11" data-k="k" style="--bd:1020ms"/><use href="#gwe12" data-k="k" style="--bd:1020ms"/><use href="#gwe13" data-k="l" style="--bd:1320ms"/><use href="#gwe14" data-k="l" style="--bd:1320ms"/><use href="#gwe15" data-k="l" style="--bd:1320ms"/><use href="#gwpb" class="pu" data-k="b" style="--bd:120ms"/><use href="#gwpa" class="pu" data-k="a" style="--bd:120ms"/><use href="#gwpc" class="pu" data-k="c" style="--bd:120ms"/><use href="#gwpd" class="pu" data-k="d" style="--bd:120ms"/><use href="#gwpf" class="pu" data-k="f" style="--bd:420ms"/><use href="#gwpe" class="pu" data-k="e" style="--bd:420ms"/><use href="#gwph" class="pu" data-k="h" style="--bd:420ms"/><use href="#gwpg" class="pu" data-k="g" style="--bd:720ms"/><use href="#gwpj" class="pu" data-k="j" style="--bd:1020ms"/><use href="#gwpi" class="pu" data-k="i" style="--bd:1020ms"/><use href="#gwpk" class="pu" data-k="k" style="--bd:1020ms"/><use href="#gwpl" class="pu" data-k="l" style="--bd:1320ms"/></g><g class="bd l1" style="--bw:72px"><use href="#gwe0" data-k="e" style="--bd:420ms"/><use href="#gwe1" data-k="f" style="--bd:420ms"/><use href="#gwe2" data-k="f" style="--bd:420ms"/><use href="#gwe3" data-k="g" style="--bd:720ms"/><use href="#gwe4" data-k="g" style="--bd:720ms"/><use href="#gwe5" data-k="h" style="--bd:420ms"/><use href="#gwe6" data-k="h" style="--bd:420ms"/><use href="#gwe7" data-k="i" style="--bd:1020ms"/><use href="#gwe8" data-k="i" style="--bd:1020ms"/><use href="#gwe9" data-k="j" style="--bd:1020ms"/><use href="#gwe10" data-k="j" style="--bd:1020ms"/><use href="#gwe11" data-k="k" style="--bd:1020ms"/><use href="#gwe12" data-k="k" style="--bd:1020ms"/><use href="#gwe13" data-k="l" style="--bd:1320ms"/><use href="#gwe14" data-k="l" style="--bd:1320ms"/><use href="#gwe15" data-k="l" style="--bd:1320ms"/><use href="#gwpb" class="pu" data-k="b" style="--bd:120ms"/><use href="#gwpa" class="pu" data-k="a" style="--bd:120ms"/><use href="#gwpc" class="pu" data-k="c" style="--bd:120ms"/><use href="#gwpd" class="pu" data-k="d" style="--bd:120ms"/><use href="#gwpf" class="pu" data-k="f" style="--bd:420ms"/><use href="#gwpe" class="pu" data-k="e" style="--bd:420ms"/><use href="#gwph" class="pu" data-k="h" style="--bd:420ms"/><use href="#gwpg" class="pu" data-k="g" style="--bd:720ms"/><use href="#gwpj" class="pu" data-k="j" style="--bd:1020ms"/><use href="#gwpi" class="pu" data-k="i" style="--bd:1020ms"/><use href="#gwpk" class="pu" data-k="k" style="--bd:1020ms"/><use href="#gwpl" class="pu" data-k="l" style="--bd:1320ms"/></g><g class="bd f1" style="--bw:72px"><use href="#gwe0" data-k="e" style="--bd:420ms"/><use href="#gwe1" data-k="f" style="--bd:420ms"/><use href="#gwe2" data-k="f" style="--bd:420ms"/><use href="#gwe3" data-k="g" style="--bd:720ms"/><use href="#gwe4" data-k="g" style="--bd:720ms"/><use href="#gwe5" data-k="h" style="--bd:420ms"/><use href="#gwe6" data-k="h" style="--bd:420ms"/><use href="#gwe7" data-k="i" style="--bd:1020ms"/><use href="#gwe8" data-k="i" style="--bd:1020ms"/><use href="#gwe9" data-k="j" style="--bd:1020ms"/><use href="#gwe10" data-k="j" style="--bd:1020ms"/><use href="#gwe11" data-k="k" style="--bd:1020ms"/><use href="#gwe12" data-k="k" style="--bd:1020ms"/><use href="#gwe13" data-k="l" style="--bd:1320ms"/><use href="#gwe14" data-k="l" style="--bd:1320ms"/><use href="#gwe15" data-k="l" style="--bd:1320ms"/><use href="#gwpb" class="pu" data-k="b" style="--bd:120ms"/><use href="#gwpa" class="pu" data-k="a" style="--bd:120ms"/><use href="#gwpc" class="pu" data-k="c" style="--bd:120ms"/><use href="#gwpd" class="pu" data-k="d" style="--bd:120ms"/><use href="#gwpf" class="pu" data-k="f" style="--bd:420ms"/><use href="#gwpe" class="pu" data-k="e" style="--bd:420ms"/><use href="#gwph" class="pu" data-k="h" style="--bd:420ms"/><use href="#gwpg" class="pu" data-k="g" style="--bd:720ms"/><use href="#gwpj" class="pu" data-k="j" style="--bd:1020ms"/><use href="#gwpi" class="pu" data-k="i" style="--bd:1020ms"/><use href="#gwpk" class="pu" data-k="k" style="--bd:1020ms"/><use href="#gwpl" class="pu" data-k="l" style="--bd:1320ms"/></g><g class="bd l2" style="--bw:42px"><use href="#gwe0" data-k="e" style="--bd:420ms"/><use href="#gwe1" data-k="f" style="--bd:420ms"/><use href="#gwe2" data-k="f" style="--bd:420ms"/><use href="#gwe3" data-k="g" style="--bd:720ms"/><use href="#gwe4" data-k="g" style="--bd:720ms"/><use href="#gwe5" data-k="h" style="--bd:420ms"/><use href="#gwe6" data-k="h" style="--bd:420ms"/><use href="#gwe7" data-k="i" style="--bd:1020ms"/><use href="#gwe8" data-k="i" style="--bd:1020ms"/><use href="#gwe9" data-k="j" style="--bd:1020ms"/><use href="#gwe10" data-k="j" style="--bd:1020ms"/><use href="#gwe11" data-k="k" style="--bd:1020ms"/><use href="#gwe12" data-k="k" style="--bd:1020ms"/><use href="#gwe13" data-k="l" style="--bd:1320ms"/><use href="#gwe14" data-k="l" style="--bd:1320ms"/><use href="#gwe15" data-k="l" style="--bd:1320ms"/><use href="#gwpb" class="pu" data-k="b" style="--bd:120ms"/><use href="#gwpa" class="pu" data-k="a" style="--bd:120ms"/><use href="#gwpc" class="pu" data-k="c" style="--bd:120ms"/><use href="#gwpd" class="pu" data-k="d" style="--bd:120ms"/><use href="#gwpf" class="pu" data-k="f" style="--bd:420ms"/><use href="#gwpe" class="pu" data-k="e" style="--bd:420ms"/><use href="#gwph" class="pu" data-k="h" style="--bd:420ms"/><use href="#gwpg" class="pu" data-k="g" style="--bd:720ms"/><use href="#gwpj" class="pu" data-k="j" style="--bd:1020ms"/><use href="#gwpi" class="pu" data-k="i" style="--bd:1020ms"/><use href="#gwpk" class="pu" data-k="k" style="--bd:1020ms"/><use href="#gwpl" class="pu" data-k="l" style="--bd:1320ms"/></g><g class="bd f2" style="--bw:42px"><use href="#gwe0" data-k="e" style="--bd:420ms"/><use href="#gwe1" data-k="f" style="--bd:420ms"/><use href="#gwe2" data-k="f" style="--bd:420ms"/><use href="#gwe3" data-k="g" style="--bd:720ms"/><use href="#gwe4" data-k="g" style="--bd:720ms"/><use href="#gwe5" data-k="h" style="--bd:420ms"/><use href="#gwe6" data-k="h" style="--bd:420ms"/><use href="#gwe7" data-k="i" style="--bd:1020ms"/><use href="#gwe8" data-k="i" style="--bd:1020ms"/><use href="#gwe9" data-k="j" style="--bd:1020ms"/><use href="#gwe10" data-k="j" style="--bd:1020ms"/><use href="#gwe11" data-k="k" style="--bd:1020ms"/><use href="#gwe12" data-k="k" style="--bd:1020ms"/><use href="#gwe13" data-k="l" style="--bd:1320ms"/><use href="#gwe14" data-k="l" style="--bd:1320ms"/><use href="#gwe15" data-k="l" style="--bd:1320ms"/><use href="#gwpb" class="pu" data-k="b" style="--bd:120ms"/><use href="#gwpa" class="pu" data-k="a" style="--bd:120ms"/><use href="#gwpc" class="pu" data-k="c" style="--bd:120ms"/><use href="#gwpd" class="pu" data-k="d" style="--bd:120ms"/><use href="#gwpf" class="pu" data-k="f" style="--bd:420ms"/><use href="#gwpe" class="pu" data-k="e" style="--bd:420ms"/><use href="#gwph" class="pu" data-k="h" style="--bd:420ms"/><use href="#gwpg" class="pu" data-k="g" style="--bd:720ms"/><use href="#gwpj" class="pu" data-k="j" style="--bd:1020ms"/><use href="#gwpi" class="pu" data-k="i" style="--bd:1020ms"/><use href="#gwpk" class="pu" data-k="k" style="--bd:1020ms"/><use href="#gwpl" class="pu" data-k="l" style="--bd:1320ms"/></g></g>
+  </svg><svg class="wires s-w" viewBox="0 0 846 702" width="846" height="702" aria-hidden="true" focusable="false"><g class="w" data-k="e" style="--del:0ms;--dur:300ms;--ew:5.3px"><use href="#gwe0" class="wd"/><use href="#gwe0" class="wm"/><use href="#gwe0" class="wb"/><use href="#gwe0" class="wv"/></g><g class="w" data-k="f" style="--del:0ms;--dur:300ms;--ew:5.3px"><use href="#gwe1" class="wd"/><use href="#gwe1" class="wm"/><use href="#gwe1" class="wb"/><use href="#gwe1" class="wv"/></g><g class="w" data-k="f" style="--del:0ms;--dur:300ms;--ew:5.7px"><use href="#gwe2" class="wd"/><use href="#gwe2" class="wm"/><use href="#gwe2" class="wb"/><use href="#gwe2" class="wv"/></g><g class="w" data-k="g" style="--del:0ms;--dur:600ms;--ew:4.9px"><use href="#gwe3" class="wd"/><use href="#gwe3" class="wm"/><use href="#gwe3" class="wb"/><use href="#gwe3" class="wv"/></g><g class="w" data-k="g" style="--del:300ms;--dur:300ms;--ew:6.3px"><use href="#gwe4" class="wd"/><use href="#gwe4" class="wm"/><use href="#gwe4" class="wb"/><use href="#gwe4" class="wv"/></g><g class="w" data-k="h" style="--del:0ms;--dur:300ms;--ew:4.9px"><use href="#gwe5" class="wd"/><use href="#gwe5" class="wm"/><use href="#gwe5" class="wb"/><use href="#gwe5" class="wv"/></g><g class="w" data-k="h" style="--del:0ms;--dur:300ms;--ew:5.1px"><use href="#gwe6" class="wd"/><use href="#gwe6" class="wm"/><use href="#gwe6" class="wb"/><use href="#gwe6" class="wv"/></g><g class="w" data-k="i" style="--del:300ms;--dur:600ms;--ew:7.4px"><use href="#gwe7" class="wd"/><use href="#gwe7" class="wm"/><use href="#gwe7" class="wb"/><use href="#gwe7" class="wv"/></g><g class="w" data-k="i" style="--del:600ms;--dur:300ms;--ew:7.4px"><use href="#gwe8" class="wd"/><use href="#gwe8" class="wm"/><use href="#gwe8" class="wb"/><use href="#gwe8" class="wv"/></g><g class="w" data-k="j" style="--del:0ms;--dur:900ms;--ew:5.7px"><use href="#gwe9" class="wd"/><use href="#gwe9" class="wm"/><use href="#gwe9" class="wb"/><use href="#gwe9" class="wv"/></g><g class="w" data-k="j" style="--del:600ms;--dur:300ms;--ew:7.4px"><use href="#gwe10" class="wd"/><use href="#gwe10" class="wm"/><use href="#gwe10" class="wb"/><use href="#gwe10" class="wv"/></g><g class="w" data-k="k" style="--del:600ms;--dur:300ms;--ew:7.4px"><use href="#gwe11" class="wd"/><use href="#gwe11" class="wm"/><use href="#gwe11" class="wb"/><use href="#gwe11" class="wv"/></g><g class="w" data-k="k" style="--del:300ms;--dur:600ms;--ew:6.5px"><use href="#gwe12" class="wd"/><use href="#gwe12" class="wm"/><use href="#gwe12" class="wb"/><use href="#gwe12" class="wv"/></g><g class="w" data-k="l" style="--del:900ms;--dur:300ms;--ew:9.4px"><use href="#gwe13" class="wd"/><use href="#gwe13" class="wm"/><use href="#gwe13" class="wb"/><use href="#gwe13" class="wv"/></g><g class="w" data-k="l" style="--del:900ms;--dur:300ms;--ew:8.8px"><use href="#gwe14" class="wd"/><use href="#gwe14" class="wm"/><use href="#gwe14" class="wb"/><use href="#gwe14" class="wv"/></g><g class="w" data-k="l" style="--del:900ms;--dur:300ms;--ew:8.8px"><use href="#gwe15" class="wd"/><use href="#gwe15" class="wm"/><use href="#gwe15" class="wb"/><use href="#gwe15" class="wv"/></g></svg><svg class="basin s-n" viewBox="0 0 358 580" width="358" height="580" aria-hidden="true" focusable="false">
+    <defs><path id="gne0" d="M139 98C139 124 178.8 124 178.8 150"/><path id="gne1" d="M129 98C129 124 93.8 124 93.8 150"/><path id="gne2" d="M49 98C49 124 83.8 124 83.8 150"/><path id="gne3" d="M219 98C219 124 227.8 124 227.8 150L227.8 214C227.8 240 195.6 240 195.6 266"/><path id="gne4" d="M178.8 214C178.8 240 185.6 240 185.6 266"/><path id="gne5" d="M229 98C229 124 271.8 124 271.8 150"/><path id="gne6" d="M314 98C314 124 281.8 124 281.8 150"/><path id="gne7" d="M88.8 214C88.8 240 131.7 240 131.7 266L131.7 330C131.7 356 163 356 163 382"/><path id="gne8" d="M190.6 330C190.6 356 173 356 173 382"/><path id="gne9" d="M39 98C39 124 39.8 124 39.8 150L39.8 214C39.8 240 59 240 59 266L59 330C59 356 73 356 73 382"/><path id="gne10" d="M180.6 330C180.6 356 83 356 83 382"/><path id="gne11" d="M200.6 330C200.6 356 253 356 253 382"/><path id="gne12" d="M276.8 214C276.8 240 265.2 240 265.2 266L265.2 330C265.2 356 263 356 263 382"/><path id="gne13" d="M168 446C168 472 169.8 472 169.8 498"/><path id="gne14" d="M78 446C78 472 159.8 472 159.8 498"/><path id="gne15" d="M258 446C258 472 179.8 472 179.8 498"/><path id="gnpb" d="M7 56.48L24.65 36L78.52 36L78.82 75.52L64.09 96L16.28 96L9.17 85.76Z"/><path id="gnpa" d="M97.23 51.36L115.71 36L153.98 36L171.18 56.48L170.94 85.76L162.12 96L99.72 96Z"/><path id="gnpc" d="M187.71 51.36L202.4 36L259.25 36L260.62 75.52L237.48 96L186.98 96Z"/><path id="gnpd" d="M277.44 51.36L295.38 36L350.58 36L349.59 96L298.96 96L276.05 75.52Z"/><path id="gnpf" d="M54.5 152L118.38 152L126.51 162.24L126.36 212L66 212L51.49 196.64Z"/><path id="gnpe" d="M143.23 152L207.15 152L214.7 162.24L215.26 191.52L190.53 212L157.84 212L143.65 196.64Z"/><path id="gnph" d="M239.07 152L302.52 152L314.68 162.24L313.19 196.64L297.56 212L256.27 212L241.51 196.64Z"/><path id="gnpg" d="M153.03 283.36L165 268L212.42 268L228.27 283.36L225.86 328L170.16 328L154.1 312.64Z"/><path id="gnpj" d="M40.74 384L96.17 384L113.19 404.48L115.87 423.52L90.29 444L52.54 444L43.21 433.76Z"/><path id="gnpi" d="M132.37 384L193.62 384L205.37 399.36L205.39 428.64L189.91 444L139.87 444L133.82 433.76Z"/><path id="gnpk" d="M223.54 404.48L242.68 384L293.64 384L293.66 428.64L277.69 444L232.66 444L221.62 433.76Z"/><path id="gnpl" d="M133.83 515.36L149.93 500L205.23 500L206.08 560L149.45 560L132.25 539.52Z"/><filter id="gnwob" x="-12%" y="-12%" width="124%" height="124%"><feTurbulence type="fractalNoise" baseFrequency="0.0089" numOctaves="2" seed="1"/><feDisplacementMap in="SourceGraphic" scale="5" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+    <g filter="url(#gnwob)"><g class="bd l0" style="--bw:40px"><use href="#gne0" data-k="e" style="--bd:420ms"/><use href="#gne1" data-k="f" style="--bd:420ms"/><use href="#gne2" data-k="f" style="--bd:420ms"/><use href="#gne3" data-k="g" style="--bd:720ms"/><use href="#gne4" data-k="g" style="--bd:720ms"/><use href="#gne5" data-k="h" style="--bd:420ms"/><use href="#gne6" data-k="h" style="--bd:420ms"/><use href="#gne7" data-k="i" style="--bd:1020ms"/><use href="#gne8" data-k="i" style="--bd:1020ms"/><use href="#gne9" data-k="j" style="--bd:1020ms"/><use href="#gne10" data-k="j" style="--bd:1020ms"/><use href="#gne11" data-k="k" style="--bd:1020ms"/><use href="#gne12" data-k="k" style="--bd:1020ms"/><use href="#gne13" data-k="l" style="--bd:1320ms"/><use href="#gne14" data-k="l" style="--bd:1320ms"/><use href="#gne15" data-k="l" style="--bd:1320ms"/><use href="#gnpb" class="pu" data-k="b" style="--bd:120ms"/><use href="#gnpa" class="pu" data-k="a" style="--bd:120ms"/><use href="#gnpc" class="pu" data-k="c" style="--bd:120ms"/><use href="#gnpd" class="pu" data-k="d" style="--bd:120ms"/><use href="#gnpf" class="pu" data-k="f" style="--bd:420ms"/><use href="#gnpe" class="pu" data-k="e" style="--bd:420ms"/><use href="#gnph" class="pu" data-k="h" style="--bd:420ms"/><use href="#gnpg" class="pu" data-k="g" style="--bd:720ms"/><use href="#gnpj" class="pu" data-k="j" style="--bd:1020ms"/><use href="#gnpi" class="pu" data-k="i" style="--bd:1020ms"/><use href="#gnpk" class="pu" data-k="k" style="--bd:1020ms"/><use href="#gnpl" class="pu" data-k="l" style="--bd:1320ms"/></g><g class="bd f0" style="--bw:40px"><use href="#gne0" data-k="e" style="--bd:420ms"/><use href="#gne1" data-k="f" style="--bd:420ms"/><use href="#gne2" data-k="f" style="--bd:420ms"/><use href="#gne3" data-k="g" style="--bd:720ms"/><use href="#gne4" data-k="g" style="--bd:720ms"/><use href="#gne5" data-k="h" style="--bd:420ms"/><use href="#gne6" data-k="h" style="--bd:420ms"/><use href="#gne7" data-k="i" style="--bd:1020ms"/><use href="#gne8" data-k="i" style="--bd:1020ms"/><use href="#gne9" data-k="j" style="--bd:1020ms"/><use href="#gne10" data-k="j" style="--bd:1020ms"/><use href="#gne11" data-k="k" style="--bd:1020ms"/><use href="#gne12" data-k="k" style="--bd:1020ms"/><use href="#gne13" data-k="l" style="--bd:1320ms"/><use href="#gne14" data-k="l" style="--bd:1320ms"/><use href="#gne15" data-k="l" style="--bd:1320ms"/><use href="#gnpb" class="pu" data-k="b" style="--bd:120ms"/><use href="#gnpa" class="pu" data-k="a" style="--bd:120ms"/><use href="#gnpc" class="pu" data-k="c" style="--bd:120ms"/><use href="#gnpd" class="pu" data-k="d" style="--bd:120ms"/><use href="#gnpf" class="pu" data-k="f" style="--bd:420ms"/><use href="#gnpe" class="pu" data-k="e" style="--bd:420ms"/><use href="#gnph" class="pu" data-k="h" style="--bd:420ms"/><use href="#gnpg" class="pu" data-k="g" style="--bd:720ms"/><use href="#gnpj" class="pu" data-k="j" style="--bd:1020ms"/><use href="#gnpi" class="pu" data-k="i" style="--bd:1020ms"/><use href="#gnpk" class="pu" data-k="k" style="--bd:1020ms"/><use href="#gnpl" class="pu" data-k="l" style="--bd:1320ms"/></g><g class="bd l1" style="--bw:26px"><use href="#gne0" data-k="e" style="--bd:420ms"/><use href="#gne1" data-k="f" style="--bd:420ms"/><use href="#gne2" data-k="f" style="--bd:420ms"/><use href="#gne3" data-k="g" style="--bd:720ms"/><use href="#gne4" data-k="g" style="--bd:720ms"/><use href="#gne5" data-k="h" style="--bd:420ms"/><use href="#gne6" data-k="h" style="--bd:420ms"/><use href="#gne7" data-k="i" style="--bd:1020ms"/><use href="#gne8" data-k="i" style="--bd:1020ms"/><use href="#gne9" data-k="j" style="--bd:1020ms"/><use href="#gne10" data-k="j" style="--bd:1020ms"/><use href="#gne11" data-k="k" style="--bd:1020ms"/><use href="#gne12" data-k="k" style="--bd:1020ms"/><use href="#gne13" data-k="l" style="--bd:1320ms"/><use href="#gne14" data-k="l" style="--bd:1320ms"/><use href="#gne15" data-k="l" style="--bd:1320ms"/><use href="#gnpb" class="pu" data-k="b" style="--bd:120ms"/><use href="#gnpa" class="pu" data-k="a" style="--bd:120ms"/><use href="#gnpc" class="pu" data-k="c" style="--bd:120ms"/><use href="#gnpd" class="pu" data-k="d" style="--bd:120ms"/><use href="#gnpf" class="pu" data-k="f" style="--bd:420ms"/><use href="#gnpe" class="pu" data-k="e" style="--bd:420ms"/><use href="#gnph" class="pu" data-k="h" style="--bd:420ms"/><use href="#gnpg" class="pu" data-k="g" style="--bd:720ms"/><use href="#gnpj" class="pu" data-k="j" style="--bd:1020ms"/><use href="#gnpi" class="pu" data-k="i" style="--bd:1020ms"/><use href="#gnpk" class="pu" data-k="k" style="--bd:1020ms"/><use href="#gnpl" class="pu" data-k="l" style="--bd:1320ms"/></g><g class="bd f1" style="--bw:26px"><use href="#gne0" data-k="e" style="--bd:420ms"/><use href="#gne1" data-k="f" style="--bd:420ms"/><use href="#gne2" data-k="f" style="--bd:420ms"/><use href="#gne3" data-k="g" style="--bd:720ms"/><use href="#gne4" data-k="g" style="--bd:720ms"/><use href="#gne5" data-k="h" style="--bd:420ms"/><use href="#gne6" data-k="h" style="--bd:420ms"/><use href="#gne7" data-k="i" style="--bd:1020ms"/><use href="#gne8" data-k="i" style="--bd:1020ms"/><use href="#gne9" data-k="j" style="--bd:1020ms"/><use href="#gne10" data-k="j" style="--bd:1020ms"/><use href="#gne11" data-k="k" style="--bd:1020ms"/><use href="#gne12" data-k="k" style="--bd:1020ms"/><use href="#gne13" data-k="l" style="--bd:1320ms"/><use href="#gne14" data-k="l" style="--bd:1320ms"/><use href="#gne15" data-k="l" style="--bd:1320ms"/><use href="#gnpb" class="pu" data-k="b" style="--bd:120ms"/><use href="#gnpa" class="pu" data-k="a" style="--bd:120ms"/><use href="#gnpc" class="pu" data-k="c" style="--bd:120ms"/><use href="#gnpd" class="pu" data-k="d" style="--bd:120ms"/><use href="#gnpf" class="pu" data-k="f" style="--bd:420ms"/><use href="#gnpe" class="pu" data-k="e" style="--bd:420ms"/><use href="#gnph" class="pu" data-k="h" style="--bd:420ms"/><use href="#gnpg" class="pu" data-k="g" style="--bd:720ms"/><use href="#gnpj" class="pu" data-k="j" style="--bd:1020ms"/><use href="#gnpi" class="pu" data-k="i" style="--bd:1020ms"/><use href="#gnpk" class="pu" data-k="k" style="--bd:1020ms"/><use href="#gnpl" class="pu" data-k="l" style="--bd:1320ms"/></g><g class="bd l2" style="--bw:14px"><use href="#gne0" data-k="e" style="--bd:420ms"/><use href="#gne1" data-k="f" style="--bd:420ms"/><use href="#gne2" data-k="f" style="--bd:420ms"/><use href="#gne3" data-k="g" style="--bd:720ms"/><use href="#gne4" data-k="g" style="--bd:720ms"/><use href="#gne5" data-k="h" style="--bd:420ms"/><use href="#gne6" data-k="h" style="--bd:420ms"/><use href="#gne7" data-k="i" style="--bd:1020ms"/><use href="#gne8" data-k="i" style="--bd:1020ms"/><use href="#gne9" data-k="j" style="--bd:1020ms"/><use href="#gne10" data-k="j" style="--bd:1020ms"/><use href="#gne11" data-k="k" style="--bd:1020ms"/><use href="#gne12" data-k="k" style="--bd:1020ms"/><use href="#gne13" data-k="l" style="--bd:1320ms"/><use href="#gne14" data-k="l" style="--bd:1320ms"/><use href="#gne15" data-k="l" style="--bd:1320ms"/><use href="#gnpb" class="pu" data-k="b" style="--bd:120ms"/><use href="#gnpa" class="pu" data-k="a" style="--bd:120ms"/><use href="#gnpc" class="pu" data-k="c" style="--bd:120ms"/><use href="#gnpd" class="pu" data-k="d" style="--bd:120ms"/><use href="#gnpf" class="pu" data-k="f" style="--bd:420ms"/><use href="#gnpe" class="pu" data-k="e" style="--bd:420ms"/><use href="#gnph" class="pu" data-k="h" style="--bd:420ms"/><use href="#gnpg" class="pu" data-k="g" style="--bd:720ms"/><use href="#gnpj" class="pu" data-k="j" style="--bd:1020ms"/><use href="#gnpi" class="pu" data-k="i" style="--bd:1020ms"/><use href="#gnpk" class="pu" data-k="k" style="--bd:1020ms"/><use href="#gnpl" class="pu" data-k="l" style="--bd:1320ms"/></g><g class="bd f2" style="--bw:14px"><use href="#gne0" data-k="e" style="--bd:420ms"/><use href="#gne1" data-k="f" style="--bd:420ms"/><use href="#gne2" data-k="f" style="--bd:420ms"/><use href="#gne3" data-k="g" style="--bd:720ms"/><use href="#gne4" data-k="g" style="--bd:720ms"/><use href="#gne5" data-k="h" style="--bd:420ms"/><use href="#gne6" data-k="h" style="--bd:420ms"/><use href="#gne7" data-k="i" style="--bd:1020ms"/><use href="#gne8" data-k="i" style="--bd:1020ms"/><use href="#gne9" data-k="j" style="--bd:1020ms"/><use href="#gne10" data-k="j" style="--bd:1020ms"/><use href="#gne11" data-k="k" style="--bd:1020ms"/><use href="#gne12" data-k="k" style="--bd:1020ms"/><use href="#gne13" data-k="l" style="--bd:1320ms"/><use href="#gne14" data-k="l" style="--bd:1320ms"/><use href="#gne15" data-k="l" style="--bd:1320ms"/><use href="#gnpb" class="pu" data-k="b" style="--bd:120ms"/><use href="#gnpa" class="pu" data-k="a" style="--bd:120ms"/><use href="#gnpc" class="pu" data-k="c" style="--bd:120ms"/><use href="#gnpd" class="pu" data-k="d" style="--bd:120ms"/><use href="#gnpf" class="pu" data-k="f" style="--bd:420ms"/><use href="#gnpe" class="pu" data-k="e" style="--bd:420ms"/><use href="#gnph" class="pu" data-k="h" style="--bd:420ms"/><use href="#gnpg" class="pu" data-k="g" style="--bd:720ms"/><use href="#gnpj" class="pu" data-k="j" style="--bd:1020ms"/><use href="#gnpi" class="pu" data-k="i" style="--bd:1020ms"/><use href="#gnpk" class="pu" data-k="k" style="--bd:1020ms"/><use href="#gnpl" class="pu" data-k="l" style="--bd:1320ms"/></g></g>
+  </svg><svg class="wires s-n" viewBox="0 0 358 580" width="358" height="580" aria-hidden="true" focusable="false"><g class="w" data-k="e" style="--del:0ms;--dur:300ms;--ew:3.4px"><use href="#gne0" class="wd"/><use href="#gne0" class="wm"/><use href="#gne0" class="wb"/><use href="#gne0" class="wv"/></g><g class="w" data-k="f" style="--del:0ms;--dur:300ms;--ew:3.4px"><use href="#gne1" class="wd"/><use href="#gne1" class="wm"/><use href="#gne1" class="wb"/><use href="#gne1" class="wv"/></g><g class="w" data-k="f" style="--del:0ms;--dur:300ms;--ew:3.6px"><use href="#gne2" class="wd"/><use href="#gne2" class="wm"/><use href="#gne2" class="wb"/><use href="#gne2" class="wv"/></g><g class="w" data-k="g" style="--del:0ms;--dur:600ms;--ew:3.2px"><use href="#gne3" class="wd"/><use href="#gne3" class="wm"/><use href="#gne3" class="wb"/><use href="#gne3" class="wv"/></g><g class="w" data-k="g" style="--del:300ms;--dur:300ms;--ew:4px"><use href="#gne4" class="wd"/><use href="#gne4" class="wm"/><use href="#gne4" class="wb"/><use href="#gne4" class="wv"/></g><g class="w" data-k="h" style="--del:0ms;--dur:300ms;--ew:3.2px"><use href="#gne5" class="wd"/><use href="#gne5" class="wm"/><use href="#gne5" class="wb"/><use href="#gne5" class="wv"/></g><g class="w" data-k="h" style="--del:0ms;--dur:300ms;--ew:3.3px"><use href="#gne6" class="wd"/><use href="#gne6" class="wm"/><use href="#gne6" class="wb"/><use href="#gne6" class="wv"/></g><g class="w" data-k="i" style="--del:300ms;--dur:600ms;--ew:4.6px"><use href="#gne7" class="wd"/><use href="#gne7" class="wm"/><use href="#gne7" class="wb"/><use href="#gne7" class="wv"/></g><g class="w" data-k="i" style="--del:600ms;--dur:300ms;--ew:4.6px"><use href="#gne8" class="wd"/><use href="#gne8" class="wm"/><use href="#gne8" class="wb"/><use href="#gne8" class="wv"/></g><g class="w" data-k="j" style="--del:0ms;--dur:900ms;--ew:3.6px"><use href="#gne9" class="wd"/><use href="#gne9" class="wm"/><use href="#gne9" class="wb"/><use href="#gne9" class="wv"/></g><g class="w" data-k="j" style="--del:600ms;--dur:300ms;--ew:4.6px"><use href="#gne10" class="wd"/><use href="#gne10" class="wm"/><use href="#gne10" class="wb"/><use href="#gne10" class="wv"/></g><g class="w" data-k="k" style="--del:600ms;--dur:300ms;--ew:4.6px"><use href="#gne11" class="wd"/><use href="#gne11" class="wm"/><use href="#gne11" class="wb"/><use href="#gne11" class="wv"/></g><g class="w" data-k="k" style="--del:300ms;--dur:600ms;--ew:4.1px"><use href="#gne12" class="wd"/><use href="#gne12" class="wm"/><use href="#gne12" class="wb"/><use href="#gne12" class="wv"/></g><g class="w" data-k="l" style="--del:900ms;--dur:300ms;--ew:5.6px"><use href="#gne13" class="wd"/><use href="#gne13" class="wm"/><use href="#gne13" class="wb"/><use href="#gne13" class="wv"/></g><g class="w" data-k="l" style="--del:900ms;--dur:300ms;--ew:5.3px"><use href="#gne14" class="wd"/><use href="#gne14" class="wm"/><use href="#gne14" class="wb"/><use href="#gne14" class="wv"/></g><g class="w" data-k="l" style="--del:900ms;--dur:300ms;--ew:5.3px"><use href="#gne15" class="wd"/><use href="#gne15" class="wm"/><use href="#gne15" class="wb"/><use href="#gne15" class="wv"/></g></svg>
+        <p class="sr-only kbd-tip" id="kbd-tip">圖上的課：上下鍵跨一層，左右鍵在同一層裡移動，Home、End 跳到第一門與最後一門。</p>
+        <ul class="nodes" role="list" aria-label="十二門課的上下游關係圖" aria-describedby="kbd-tip"><li class="nd" style="--x:20;--y:54;--mx:4;--my:34;--nd:0ms"><button type="button" class="node on" id="n-b" data-id="b" aria-pressed="false" aria-describedby="lg-on pre-b"><svg class="pb pb-w" viewBox="0 0 182 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M3 25.04L22.98 2L176.52 2L176.82 46.96L159.85 70L13.57 70L5.17 58.48Z"/><path class="pn" d="M7.45 26.49L26.42 6.5L172.2 6.5L172.48 45.51L156.37 65.5L17.49 65.5L9.51 55.5Z"/><path class="br" d="M-5 4V-5H4M178 -5H187V4M187 68V77H178M4 77H-5V68"/></svg><svg class="pb pb-n" viewBox="0 0 80 64" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M3 22.48L20.65 2L74.52 2L74.82 41.52L60.09 62L12.28 62L5.17 51.76Z"/><path class="pn" d="M7.38 23.91L22.94 6.5L70.43 6.5L70.7 40.09L57.71 57.5L15.56 57.5L9.29 48.8Z"/><path class="br" d="M-5 4V-5H4M76 -5H85V4M85 60V69H76M4 69H-5V60"/></svg><span class="nm">字體與​排版</span><span class="hr"><b class="num">8</b> 小時</span><span class="pt po" style="--o:-9;--mo:-5" aria-hidden="true"></span><span class="pt po" style="--o:9;--mo:5" aria-hidden="true"></span></button></li><li class="nd" style="--x:228;--y:54;--mx:94;--my:34;--nd:0ms"><button type="button" class="node on" id="n-a" data-id="a" aria-pressed="false" aria-describedby="lg-on pre-a"><svg class="pb pb-w" viewBox="0 0 182 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M3.23 19.28L24.17 2L159.73 2L179.18 25.04L178.94 58.48L168.89 70L5.72 70Z"/><path class="pn" d="M7.67 21.49L27.55 6.5L156.25 6.5L174.72 26.49L174.49 55.5L164.95 65.5L10.03 65.5Z"/><path class="br" d="M-5 4V-5H4M178 -5H187V4M187 68V77H178M4 77H-5V68"/></svg><svg class="pb pb-n" viewBox="0 0 80 64" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M3.23 17.36L21.71 2L59.98 2L77.18 22.48L76.94 51.76L68.12 62L5.72 62Z"/><path class="pn" d="M7.58 19.56L23.88 6.5L57.61 6.5L72.78 23.91L72.57 48.8L64.79 57.5L9.78 57.5Z"/><path class="br" d="M-5 4V-5H4M76 -5H85V4M85 60V69H76M4 69H-5V60"/></svg><span class="nm">視覺​層級</span><span class="hr"><b class="num">6</b> 小時</span><span class="pt po" style="--o:-9;--mo:-5" aria-hidden="true"></span><span class="pt po" style="--o:9;--mo:5" aria-hidden="true"></span></button></li><li class="nd" style="--x:436;--y:54;--mx:184;--my:34;--nd:0ms"><button type="button" class="node on" id="n-c" data-id="c" aria-pressed="false" aria-describedby="lg-on pre-c"><svg class="pb pb-w" viewBox="0 0 182 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M3.71 19.28L20.46 2L177.25 2L178.62 46.96L152.42 70L2.98 70Z"/><path class="pn" d="M8.12 21.49L24.03 6.5L172.89 6.5L174.19 45.51L149.31 65.5L7.43 65.5Z"/><path class="br" d="M-5 4V-5H4M178 -5H187V4M187 68V77H178M4 77H-5V68"/></svg><svg class="pb pb-n" viewBox="0 0 80 64" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M3.71 17.36L18.4 2L75.25 2L76.62 41.52L53.48 62L2.98 62Z"/><path class="pn" d="M8.01 19.56L20.96 6.5L71.08 6.5L72.28 40.09L51.88 57.5L7.36 57.5Z"/><path class="br" d="M-5 4V-5H4M76 -5H85V4M85 60V69H76M4 69H-5V60"/></svg><span class="nm">工具​起手式</span><span class="hr"><b class="num">4</b> 小時</span><span class="pt po" style="--o:-9;--mo:-5" aria-hidden="true"></span><span class="pt po" style="--o:9;--mo:5" aria-hidden="true"></span></button></li><li class="nd" style="--x:644;--y:54;--mx:274;--my:34;--nd:0ms"><button type="button" class="node off" id="n-d" data-id="d" aria-pressed="false" aria-describedby="lg-off pre-d"><svg class="pb pb-w" viewBox="0 0 182 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M3.44 19.28L23.8 2L178.58 2L177.59 70L27.83 70L2.05 46.96Z"/><path class="pn" d="M7.87 21.49L27.2 6.5L174.15 6.5L173.21 65.5L31.02 65.5L6.55 45.51Z"/><path class="br" d="M-5 4V-5H4M178 -5H187V4M187 68V77H178M4 77H-5V68"/></svg><svg class="pb pb-n" viewBox="0 0 80 64" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M3.44 17.36L21.38 2L76.58 2L75.59 62L24.96 62L2.05 41.52Z"/><path class="pn" d="M7.77 19.56L23.59 6.5L72.25 6.5L71.38 57.5L26.74 57.5L6.54 40.09Z"/><path class="br" d="M-5 4V-5H4M76 -5H85V4M85 60V69H76M4 69H-5V60"/></svg><span class="nm">需求​訪談</span><span class="hr"><b class="num">5</b> 小時</span><span class="pt po" style="--o:0;--mo:0" aria-hidden="true"></span></button></li><li class="nd" style="--x:125.6;--y:192;--mx:48.8;--my:150;--nd:300ms"><button type="button" class="node on" id="n-f" data-id="f" aria-pressed="false" aria-describedby="lg-on pre-f"><svg class="pb pb-w" viewBox="0 0 182 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M5.7 2L170.52 2L179.71 13.52L179.56 70L19.11 70L2.69 52.72Z"/><path class="pn" d="M10.01 6.5L166.5 6.5L175.22 16.5L175.08 65.5L22.74 65.5L7.16 50.51Z"/><path class="br" d="M-5 4V-5H4M178 -5H187V4M187 68V77H178M4 77H-5V68"/></svg><svg class="pb pb-n" viewBox="0 0 80 64" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M5.7 2L69.58 2L77.71 12.24L77.56 62L17.2 62L2.69 46.64Z"/><path class="pn" d="M9.76 6.5L66.08 6.5L73.24 15.2L73.11 57.5L19.9 57.5L7.11 44.44Z"/><path class="br" d="M-5 4V-5H4M76 -5H85V4M85 60V69H76M4 69H-5V60"/></svg><span class="nm">網格與​版面</span><span class="hr"><b class="num">8</b> 小時</span><span class="pt pi" style="--o:-9;--mo:-5" aria-hidden="true"></span><span class="pt pi" style="--o:9;--mo:5" aria-hidden="true"></span><span class="pt po" style="--o:0;--mo:0" aria-hidden="true"></span></button></li><li class="nd" style="--x:333.6;--y:192;--mx:138.8;--my:150;--nd:300ms"><button type="button" class="node on" id="n-e" data-id="e" aria-pressed="false" aria-describedby="lg-on pre-e"><svg class="pb pb-w" viewBox="0 0 182 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M4.43 2L169.15 2L177.9 13.52L178.46 46.96L150.44 70L21.17 70L4.85 52.72Z"/><path class="pn" d="M8.81 6.5L165.2 6.5L173.51 16.5L174.04 45.51L147.43 65.5L24.7 65.5L9.21 50.51Z"/><path class="br" d="M-5 4V-5H4M178 -5H187V4M187 68V77H178M4 77H-5V68"/></svg><svg class="pb pb-n" viewBox="0 0 80 64" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M4.43 2L68.35 2L75.9 12.24L76.46 41.52L51.73 62L19.04 62L4.85 46.64Z"/><path class="pn" d="M8.64 6.5L64.99 6.5L71.65 15.2L72.14 40.09L50.34 57.5L21.52 57.5L9.01 44.44Z"/><path class="br" d="M-5 4V-5H4M76 -5H85V4M85 60V69H76M4 69H-5V60"/></svg><span class="nm">色彩與​對比</span><span class="hr"><b class="num">6</b> 小時</span><span class="pt pi" style="--o:0;--mo:0" aria-hidden="true"></span><span class="pt po" style="--o:0;--mo:0" aria-hidden="true"></span></button></li><li class="nd" style="--x:553.6;--y:192;--mx:236.8;--my:150;--nd:300ms"><button type="button" class="node off" id="n-h" data-id="h" aria-pressed="false" aria-describedby="lg-off pre-h"><svg class="pb pb-w" viewBox="0 0 182 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M2.27 2L166.19 2L179.88 13.52L178.39 52.72L160.61 70L21.65 70L4.71 52.72Z"/><path class="pn" d="M6.76 6.5L162.39 6.5L175.39 16.5L173.97 50.51L157.09 65.5L25.16 65.5L9.07 50.51Z"/><path class="br" d="M-5 4V-5H4M178 -5H187V4M187 68V77H178M4 77H-5V68"/></svg><svg class="pb pb-n" viewBox="0 0 80 64" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M2.27 2L65.72 2L77.88 12.24L76.39 46.64L60.76 62L19.47 62L4.71 46.64Z"/><path class="pn" d="M6.74 6.5L62.67 6.5L73.39 15.2L72.08 44.44L58.3 57.5L21.9 57.5L8.89 44.44Z"/><path class="br" d="M-5 4V-5H4M76 -5H85V4M85 60V69H76M4 69H-5V60"/></svg><span class="nm">使用者​流程</span><span class="hr"><b class="num">5</b> 小時</span><span class="pt pi" style="--o:-9;--mo:-5" aria-hidden="true"></span><span class="pt pi" style="--o:9;--mo:5" aria-hidden="true"></span><span class="pt po" style="--o:0;--mo:0" aria-hidden="true"></span></button></li><li class="nd" style="--x:359.5;--y:330;--mx:150.6;--my:266;--nd:600ms"><button type="button" class="node on" id="n-g" data-id="g" aria-pressed="false" aria-describedby="lg-on pre-g"><svg class="pb pb-w" viewBox="0 0 182 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M2.43 19.28L15.95 2L161.8 2L179.67 19.28L177.26 70L21.75 70L3.5 52.72Z"/><path class="pn" d="M6.91 21.49L19.74 6.5L158.22 6.5L175.19 21.49L172.9 65.5L25.25 65.5L7.92 50.51Z"/><path class="br" d="M-5 4V-5H4M178 -5H187V4M187 68V77H178M4 77H-5V68"/></svg><svg class="pb pb-n" viewBox="0 0 80 64" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M2.43 17.36L14.4 2L61.82 2L77.67 17.36L75.26 62L19.56 62L3.5 46.64Z"/><path class="pn" d="M6.88 19.56L17.43 6.5L59.24 6.5L73.21 19.56L71.08 57.5L21.98 57.5L7.82 44.44Z"/><path class="br" d="M-5 4V-5H4M76 -5H85V4M85 60V69H76M4 69H-5V60"/></svg><span class="nm">元件與​狀態</span><span class="hr"><b class="num">6</b> 小時</span><span class="pt pi" style="--o:-9;--mo:-5" aria-hidden="true"></span><span class="pt pi" style="--o:9;--mo:5" aria-hidden="true"></span><span class="pt po" style="--o:-18;--mo:-10" aria-hidden="true"></span><span class="pt po" style="--o:0;--mo:0" aria-hidden="true"></span><span class="pt po" style="--o:18;--mo:10" aria-hidden="true"></span></button></li><li class="nd" style="--x:99.8;--y:468;--mx:38;--my:382;--nd:900ms"><button type="button" class="node off" id="n-j" data-id="j" aria-pressed="false" aria-describedby="lg-off pre-j"><svg class="pb pb-w" viewBox="0 0 182 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M2.74 2L157.69 2L177.19 25.04L179.87 46.96L151.08 70L16.11 70L5.21 58.48Z"/><path class="pn" d="M7.2 6.5L154.32 6.5L172.83 26.49L175.38 45.51L148.04 65.5L19.9 65.5L9.55 55.5Z"/><path class="br" d="M-5 4V-5H4M178 -5H187V4M187 68V77H178M4 77H-5V68"/></svg><svg class="pb pb-n" viewBox="0 0 80 64" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M2.74 2L58.17 2L75.19 22.48L77.87 41.52L52.29 62L14.54 62L5.21 51.76Z"/><path class="pn" d="M7.15 6.5L56.02 6.5L71.02 23.91L73.39 40.09L50.83 57.5L17.56 57.5L9.33 48.8Z"/><path class="br" d="M-5 4V-5H4M76 -5H85V4M85 60V69H76M4 69H-5V60"/></svg><span class="nm">設計​系統</span><span class="hr"><b class="num">8</b> 小時</span><span class="pt pi" style="--o:-9;--mo:-5" aria-hidden="true"></span><span class="pt pi" style="--o:9;--mo:5" aria-hidden="true"></span><span class="pt po" style="--o:0;--mo:0" aria-hidden="true"></span></button></li><li class="nd" style="--x:307.8;--y:468;--mx:128;--my:382;--nd:900ms"><button type="button" class="node tg" id="n-i" data-id="i" aria-pressed="true" aria-describedby="lg-tg pre-i"><svg class="pb pb-w" viewBox="0 0 182 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M4.37 2L166.07 2L179.37 19.28L179.39 52.72L161.9 70L13.1 70L5.82 58.48Z"/><path class="pn" d="M8.75 6.5L162.27 6.5L174.9 21.49L174.92 50.51L158.32 65.5L17.04 65.5L10.13 55.5Z"/><path class="br" d="M-5 4V-5H4M178 -5H187V4M187 68V77H178M4 77H-5V68"/></svg><svg class="pb pb-n" viewBox="0 0 80 64" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M4.37 2L65.62 2L77.37 17.36L77.39 46.64L61.91 62L11.87 62L5.82 51.76Z"/><path class="pn" d="M8.59 6.5L62.59 6.5L72.94 19.56L72.96 44.44L59.32 57.5L15.2 57.5L9.87 48.8Z"/><path class="br" d="M-5 4V-5H4M76 -5H85V4M85 60V69H76M4 69H-5V60"/></svg><span class="nm">表單與​列表</span><span class="hr"><b class="num">8</b> 小時</span><span class="pt pi" style="--o:-9;--mo:-5" aria-hidden="true"></span><span class="pt pi" style="--o:9;--mo:5" aria-hidden="true"></span><span class="pt po" style="--o:0;--mo:0" aria-hidden="true"></span></button></li><li class="nd" style="--x:515.8;--y:468;--mx:218;--my:382;--nd:900ms"><button type="button" class="node off" id="n-k" data-id="k" aria-pressed="false" aria-describedby="lg-off pre-k"><svg class="pb pb-w" viewBox="0 0 182 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M5.54 25.04L27.52 2L177.64 2L177.66 52.72L159.4 70L16.24 70L3.62 58.48Z"/><path class="pn" d="M9.86 26.49L30.73 6.5L173.26 6.5L173.28 50.51L155.94 65.5L20.02 65.5L8.04 55.5Z"/><path class="br" d="M-5 4V-5H4M178 -5H187V4M187 68V77H178M4 77H-5V68"/></svg><svg class="pb pb-n" viewBox="0 0 80 64" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M5.54 22.48L24.68 2L75.64 2L75.66 46.64L59.69 62L14.66 62L3.62 51.76Z"/><path class="pn" d="M9.62 23.91L26.49 6.5L71.42 6.5L71.44 44.44L57.36 57.5L17.66 57.5L7.93 48.8Z"/><path class="br" d="M-5 4V-5H4M76 -5H85V4M85 60V69H76M4 69H-5V60"/></svg><span class="nm">原型與​互動</span><span class="hr"><b class="num">6</b> 小時</span><span class="pt pi" style="--o:-9;--mo:-5" aria-hidden="true"></span><span class="pt pi" style="--o:9;--mo:5" aria-hidden="true"></span><span class="pt po" style="--o:0;--mo:0" aria-hidden="true"></span></button></li><li class="nd" style="--x:311.9;--y:606;--mx:129.8;--my:498;--nd:1200ms"><button type="button" class="node off" id="n-l" data-id="l" aria-pressed="false" aria-describedby="lg-off pre-l"><svg class="pb pb-w" viewBox="0 0 182 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M4.03 19.28L22.4 2L177.43 2L178.28 70L21.86 70L2.45 46.96Z"/><path class="pn" d="M8.43 21.49L25.87 6.5L173.06 6.5L173.87 65.5L25.36 65.5L6.93 45.51Z"/><path class="br" d="M-5 4V-5H4M178 -5H187V4M187 68V77H178M4 77H-5V68"/></svg><svg class="pb pb-n" viewBox="0 0 80 64" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="pp" d="M4.03 17.36L20.13 2L75.43 2L76.28 62L19.65 62L2.45 41.52Z"/><path class="pn" d="M8.29 19.56L22.48 6.5L71.23 6.5L71.98 57.5L22.06 57.5L6.9 40.09Z"/><path class="br" d="M-5 4V-5H4M76 -5H85V4M85 60V69H76M4 69H-5V60"/></svg><span class="nm">作品集​專題</span><span class="hr"><b class="num">12</b> 小時</span><span class="pt pi" style="--o:-18;--mo:-10" aria-hidden="true"></span><span class="pt pi" style="--o:0;--mo:0" aria-hidden="true"></span><span class="pt pi" style="--o:18;--mo:10" aria-hidden="true"></span></button></li></ul>
+        <span class="tgtag" id="tgtag" aria-hidden="true" style="--x:307.8;--y:468;--mx:128;--my:382">終點</span>
+      </div>
+    </div>
+        <div class="tool-top">
+          <p class="hint" id="hint">挑一門，看它的上游</p>
+          <ul class="legend" role="list"><li class="lg lg-tg" id="lg-tg"><svg class="sw" viewBox="0 0 26 16" aria-hidden="true" focusable="false"><path d="M7 1.5h17.5v8l-5 5H1.5v-7z"/></svg>終點</li><li class="lg lg-on" id="lg-on"><svg class="sw" viewBox="0 0 26 16" aria-hidden="true" focusable="false"><path d="M7 1.5h17.5v8l-5 5H1.5v-7z"/></svg>上游</li><li class="lg lg-off" id="lg-off"><svg class="sw" viewBox="0 0 26 16" aria-hidden="true" focusable="false"><path d="M7 1.5h17.5v8l-5 5H1.5v-7z"/></svg>這次用不到</li></ul>
+        </div>
+        <p class="nojs">地圖的互動沒有載入（瀏覽器未啟用腳本），圖停在預設的終點。每門課的上游，寫在下面「十二門課」裡。</p>
+      </div>
+      <div class="pool" id="dock">
+      <div class="pool-a">
+        <svg class="pool-g" viewBox="0 0 440 270" aria-hidden="true" focusable="false"><path class="pool-f" d="M426.7 135C428.35 143.73 429.69 154.07 430.46 161.83C431.23 169.59 431.46 175.25 431.34 181.54C431.21 187.83 430.67 193.7 429.71 199.56C428.75 205.43 427.57 211.17 425.6 216.72C423.62 222.27 421.35 227.84 417.85 232.88C414.35 237.92 410.12 242.86 404.61 246.96C399.1 251.07 392.37 254.73 384.79 257.52C377.2 260.32 368.28 262.3 359.11 263.73C349.93 265.16 339.83 265.69 329.73 266.1C319.64 266.51 309.3 266.29 298.54 266.18C287.79 266.07 278.3 265.77 265.21 265.44C252.12 265.12 234.85 264.85 220 264.21C205.15 263.58 188.25 262.9 176.11 261.64C163.96 260.39 155.77 258.75 147.14 256.69C138.52 254.63 131.22 251.96 124.36 249.26C117.5 246.57 111.79 243.39 105.97 240.52C100.16 237.65 95.1 234.69 89.49 232.03C83.89 229.37 78.34 227 72.33 224.56C66.33 222.12 59.82 220 53.45 217.39C47.08 214.78 40.19 212.2 34.12 208.88C28.06 205.56 21.99 201.89 17.04 197.49C12.1 193.08 7.81 188.14 4.45 182.47C1.09 176.8 -1.29 171.35 -3.11 163.44C-4.94 155.53 -5.92 144.55 -6.48 135C-7.03 125.45 -7.07 114.31 -6.46 106.13C-5.86 97.95 -4.81 92.13 -2.86 85.92C-0.91 79.71 1.74 74.07 5.26 68.89C8.79 63.71 13.31 59.05 18.29 54.83C23.28 50.61 29.24 46.99 35.18 43.57C41.12 40.14 47.61 37.25 53.92 34.27C60.23 31.3 66.57 28.57 73.06 25.75C79.55 22.92 85.86 20.03 92.86 17.34C99.86 14.66 106.94 11.84 115.06 9.63C123.18 7.41 131.8 5.35 141.6 4.05C151.4 2.75 160.78 2.01 173.84 1.82C186.91 1.64 204.86 2.22 220 2.92C235.14 3.63 252.19 4.93 264.68 6.08C277.17 7.23 285.47 8.55 294.95 9.81C304.44 11.07 313.08 12.21 321.58 13.64C330.08 15.08 338.38 16.44 345.97 18.43C353.57 20.42 360.9 22.68 367.15 25.59C373.4 28.5 378.92 32.01 383.45 35.87C387.98 39.73 391.37 44.24 394.36 48.75C397.34 53.25 399.24 58.14 401.37 62.91C403.5 67.68 405.09 72.48 407.11 77.39C409.13 82.31 411.26 87.05 413.49 92.39C415.73 97.73 418.32 102.33 420.52 109.44C422.72 116.54 425.04 126.27 426.7 135Z"/><path class="pool-r" d="M405.01 145C406.4 152.29 407.52 160.93 408.16 167.41C408.81 173.88 409 178.62 408.9 183.87C408.79 189.12 408.33 194.02 407.53 198.92C406.73 203.81 405.75 208.61 404.09 213.25C402.44 217.88 400.54 222.53 397.61 226.74C394.68 230.95 391.14 235.07 386.53 238.5C381.91 241.93 376.28 244.99 369.93 247.32C363.58 249.65 356.12 251.31 348.44 252.5C340.76 253.7 332.3 254.14 323.85 254.48C315.4 254.82 306.74 254.64 297.74 254.55C288.74 254.46 280.8 254.21 269.84 253.94C258.89 253.66 244.43 253.44 232 252.91C219.57 252.38 205.42 251.81 195.26 250.76C185.1 249.71 178.23 248.35 171.02 246.62C163.8 244.9 157.69 242.67 151.95 240.42C146.2 238.17 141.42 235.52 136.56 233.12C131.69 230.72 127.46 228.26 122.76 226.03C118.07 223.81 113.43 221.83 108.4 219.79C103.37 217.75 97.92 215.99 92.59 213.81C87.26 211.62 81.49 209.47 76.41 206.7C71.34 203.93 66.26 200.86 62.12 197.18C57.98 193.51 54.39 189.38 51.58 184.64C48.76 179.9 46.77 175.36 45.24 168.75C43.72 162.15 42.9 152.98 42.43 145C41.96 137.02 41.94 127.72 42.44 120.89C42.95 114.06 43.82 109.2 45.46 104.01C47.09 98.83 49.31 94.12 52.26 89.79C55.21 85.46 58.99 81.57 63.16 78.05C67.34 74.52 72.33 71.5 77.3 68.64C82.27 65.78 87.7 63.36 92.98 60.88C98.27 58.4 103.57 56.12 109.01 53.76C114.44 51.4 119.72 48.99 125.58 46.74C131.44 44.5 137.36 42.15 144.16 40.3C150.96 38.45 158.17 36.73 166.37 35.64C174.58 34.56 182.43 33.94 193.36 33.78C204.3 33.63 219.33 34.11 232 34.7C244.67 35.29 258.94 36.38 269.4 37.34C279.86 38.3 286.8 39.4 294.74 40.45C302.68 41.51 309.91 42.45 317.03 43.65C324.14 44.85 331.08 45.99 337.44 47.65C343.8 49.31 349.94 51.2 355.17 53.63C360.4 56.06 365.02 58.99 368.81 62.22C372.61 65.44 375.44 69.2 377.94 72.97C380.44 76.73 382.03 80.81 383.81 84.8C385.59 88.78 386.93 92.79 388.62 96.89C390.31 100.99 392.09 104.95 393.96 109.41C395.83 113.87 398 117.72 399.85 123.65C401.69 129.58 403.63 137.71 405.01 145Z"/><path class="pool-r ix" d="M383.12 155C384.2 160.67 385.07 167.39 385.58 172.43C386.08 177.47 386.24 181.15 386.15 185.23C386.07 189.32 385.71 193.13 385.09 196.94C384.46 200.75 383.69 204.48 382.4 208.09C381.11 211.69 379.62 215.31 377.34 218.58C375.05 221.86 372.28 225.07 368.68 227.73C365.08 230.4 360.68 232.78 355.72 234.59C350.76 236.41 344.93 237.7 338.94 238.62C332.94 239.55 326.33 239.9 319.73 240.16C313.13 240.43 306.37 240.29 299.34 240.22C292.31 240.15 286.11 239.95 277.55 239.74C269 239.53 257.71 239.35 248 238.94C238.29 238.53 227.24 238.08 219.31 237.27C211.37 236.45 206.01 235.39 200.37 234.05C194.73 232.71 189.96 230.98 185.48 229.23C180.99 227.48 177.26 225.41 173.46 223.55C169.66 221.68 166.35 219.76 162.69 218.04C159.02 216.31 155.4 214.76 151.47 213.18C147.54 211.59 143.29 210.22 139.13 208.52C134.96 206.83 130.46 205.15 126.49 202.99C122.53 200.84 118.56 198.45 115.33 195.59C112.09 192.73 109.29 189.52 107.09 185.84C104.9 182.15 103.34 178.62 102.15 173.48C100.96 168.34 100.32 161.21 99.95 155C99.59 148.79 99.57 141.56 99.96 136.25C100.35 130.93 101.04 127.15 102.32 123.12C103.59 119.09 105.32 115.42 107.63 112.05C109.93 108.69 112.88 105.66 116.14 102.92C119.4 100.18 123.3 97.83 127.18 95.6C131.06 93.38 135.3 91.5 139.43 89.57C143.56 87.64 147.7 85.86 151.94 84.03C156.19 82.19 160.31 80.31 164.89 78.57C169.46 76.82 174.09 75 179.4 73.56C184.71 72.12 190.34 70.78 196.75 69.93C203.15 69.09 209.28 68.61 217.83 68.49C226.37 68.36 238.1 68.74 248 69.2C257.9 69.66 269.04 70.51 277.21 71.25C285.38 72 290.8 72.86 297 73.68C303.2 74.49 308.85 75.23 314.4 76.16C319.96 77.1 325.38 77.98 330.35 79.27C335.31 80.57 340.11 82.04 344.19 83.93C348.28 85.81 351.88 88.1 354.85 90.6C357.81 93.11 360.02 96.04 361.98 98.97C363.93 101.9 365.17 105.07 366.56 108.17C367.95 111.27 368.99 114.39 370.31 117.58C371.64 120.77 373.03 123.85 374.49 127.32C375.95 130.79 377.64 133.78 379.08 138.39C380.52 143.01 382.04 149.33 383.12 155Z"/><path class="pool-r" d="M363.22 164C364 168.05 364.63 172.85 364.99 176.45C365.36 180.05 365.47 182.68 365.41 185.6C365.35 188.52 365.09 191.24 364.64 193.97C364.19 196.69 363.64 199.35 362.71 201.93C361.78 204.5 360.71 207.09 359.06 209.43C357.42 211.77 355.43 214.06 352.84 215.96C350.24 217.87 347.08 219.57 343.51 220.87C339.94 222.16 335.75 223.08 331.43 223.75C327.12 224.41 322.36 224.66 317.62 224.85C312.87 225.04 308 224.94 302.94 224.89C297.89 224.83 293.42 224.69 287.27 224.54C281.11 224.39 272.99 224.26 266 223.97C259.01 223.68 251.07 223.36 245.35 222.78C239.64 222.2 235.79 221.44 231.73 220.48C227.67 219.52 224.24 218.28 221.01 217.03C217.79 215.78 215.1 214.31 212.37 212.97C209.63 211.64 207.25 210.27 204.61 209.04C201.98 207.8 199.37 206.7 196.54 205.57C193.72 204.43 190.66 203.45 187.66 202.24C184.66 201.03 181.42 199.83 178.57 198.29C175.72 196.75 172.86 195.04 170.53 193C168.21 190.96 166.19 188.66 164.61 186.03C163.03 183.4 161.91 180.87 161.05 177.2C160.2 173.53 159.73 168.43 159.47 164C159.21 159.57 159.2 154.4 159.48 150.6C159.76 146.8 160.25 144.1 161.17 141.22C162.09 138.34 163.34 135.72 164.99 133.32C166.65 130.91 168.78 128.75 171.12 126.79C173.47 124.83 176.27 123.15 179.07 121.56C181.86 119.97 184.91 118.63 187.88 117.25C190.85 115.87 193.83 114.6 196.88 113.29C199.94 111.98 202.9 110.64 206.2 109.39C209.49 108.15 212.82 106.84 216.64 105.81C220.46 104.78 224.51 103.83 229.12 103.22C233.73 102.62 238.14 102.28 244.29 102.19C250.44 102.1 258.88 102.37 266 102.7C273.12 103.03 281.14 103.63 287.02 104.17C292.89 104.7 296.79 105.31 301.26 105.9C305.72 106.48 309.78 107.01 313.78 107.67C317.78 108.34 321.68 108.97 325.25 109.9C328.83 110.82 332.28 111.87 335.22 113.22C338.15 114.57 340.75 116.2 342.88 117.99C345.01 119.78 346.61 121.88 348.01 123.97C349.42 126.06 350.31 128.33 351.31 130.54C352.31 132.76 353.06 134.98 354.01 137.26C354.96 139.54 355.96 141.74 357.01 144.22C358.06 146.7 359.29 148.84 360.32 152.14C361.36 155.43 362.45 159.95 363.22 164Z"/><path class="pool-r ix" d="M347.44 171C347.93 173.52 348.32 176.51 348.55 178.75C348.78 180.99 348.85 182.63 348.81 184.45C348.78 186.26 348.61 187.96 348.33 189.65C348.05 191.35 347.7 193.01 347.11 194.61C346.52 196.22 345.85 197.82 344.81 199.28C343.77 200.74 342.51 202.16 340.87 203.35C339.23 204.54 337.23 205.59 334.98 206.4C332.72 207.21 330.07 207.78 327.35 208.19C324.62 208.61 321.62 208.76 318.62 208.88C315.61 209 312.54 208.93 309.34 208.9C306.15 208.87 303.33 208.78 299.44 208.69C295.55 208.59 290.41 208.52 286 208.33C281.59 208.15 276.56 207.95 272.95 207.59C269.34 207.23 266.91 206.76 264.35 206.16C261.78 205.56 259.61 204.79 257.57 204.01C255.53 203.24 253.84 202.32 252.11 201.49C250.38 200.66 248.88 199.8 247.21 199.04C245.54 198.27 243.9 197.58 242.11 196.88C240.32 196.17 238.39 195.56 236.5 194.81C234.61 194.05 232.56 193.31 230.75 192.35C228.95 191.39 227.15 190.33 225.68 189.05C224.21 187.78 222.93 186.35 221.93 184.72C220.93 183.08 220.23 181.5 219.69 179.22C219.14 176.93 218.85 173.76 218.69 171C218.52 168.24 218.51 165.02 218.69 162.66C218.87 160.3 219.18 158.61 219.76 156.82C220.34 155.03 221.13 153.4 222.18 151.9C223.22 150.4 224.57 149.05 226.05 147.84C227.53 146.62 229.3 145.57 231.07 144.58C232.83 143.59 234.76 142.76 236.64 141.9C238.51 141.04 240.4 140.25 242.33 139.43C244.25 138.62 246.13 137.78 248.21 137.01C250.29 136.23 252.4 135.42 254.81 134.78C257.22 134.14 259.79 133.54 262.7 133.16C265.61 132.79 268.4 132.58 272.28 132.52C276.16 132.47 281.5 132.63 286 132.84C290.5 133.04 295.57 133.42 299.28 133.75C302.99 134.08 305.46 134.47 308.28 134.83C311.1 135.19 313.66 135.52 316.19 135.94C318.72 136.35 321.18 136.74 323.44 137.32C325.7 137.89 327.88 138.55 329.74 139.39C331.59 140.23 333.23 141.24 334.58 142.36C335.93 143.47 336.93 144.78 337.82 146.08C338.71 147.38 339.28 148.79 339.91 150.17C340.54 151.55 341.01 152.94 341.61 154.36C342.21 155.78 342.85 157.15 343.51 158.69C344.17 160.23 344.95 161.56 345.6 163.61C346.25 165.67 346.94 168.48 347.44 171Z"/><path class="pool-s" d="M26.63 118.61a1.38 1.38 0 1 0 2.76 0a1.38 1.38 0 1 0 -2.76 0M150.36 15.47a1.3 1.3 0 1 0 2.6 0a1.3 1.3 0 1 0 -2.6 0M338.94 247.98a1.45 1.45 0 1 0 2.9 0a1.45 1.45 0 1 0 -2.9 0M23.37 176.06a1.7 1.7 0 1 0 3.4 0a1.7 1.7 0 1 0 -3.4 0M24.35 76.86a1.05 1.05 0 1 0 2.1 0a1.05 1.05 0 1 0 -2.1 0M257.58 250.39a1.25 1.25 0 1 0 2.5 0a1.25 1.25 0 1 0 -2.5 0M24.69 153.91a1.71 1.71 0 1 0 3.42 0a1.71 1.71 0 1 0 -3.42 0M377.46 244.89a2.01 2.01 0 1 0 4.02 0a2.01 2.01 0 1 0 -4.02 0M166.19 16.29a1.86 1.86 0 1 0 3.72 0a1.86 1.86 0 1 0 -3.72 0M19.59 164.54a1.56 1.56 0 1 0 3.12 0a1.56 1.56 0 1 0 -3.12 0M20.4 145.83a2.01 2.01 0 1 0 4.02 0a2.01 2.01 0 1 0 -4.02 0M27.32 126.82a1.72 1.72 0 1 0 3.44 0a1.72 1.72 0 1 0 -3.44 0M8.81 142.19a1.03 1.03 0 1 0 2.06 0a1.03 1.03 0 1 0 -2.06 0M410.63 202.11a1.19 1.19 0 1 0 2.38 0a1.19 1.19 0 1 0 -2.38 0M209.59 21.88a1.46 1.46 0 1 0 2.92 0a1.46 1.46 0 1 0 -2.92 0M295.38 253.2a1.63 1.63 0 1 0 3.26 0a1.63 1.63 0 1 0 -3.26 0M12.06 106.05a1.52 1.52 0 1 0 3.04 0a1.52 1.52 0 1 0 -3.04 0M115.65 24.61a1.52 1.52 0 1 0 3.04 0a1.52 1.52 0 1 0 -3.04 0M139.25 21.52a1.55 1.55 0 1 0 3.1 0a1.55 1.55 0 1 0 -3.1 0M273.08 23a1.97 1.97 0 1 0 3.94 0a1.97 1.97 0 1 0 -3.94 0M299.69 247.32a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0 -3 0M409.6 153.76a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M124.3 25.63a1.89 1.89 0 1 0 3.78 0a1.89 1.89 0 1 0 -3.78 0M22.87 86.64a1.91 1.91 0 1 0 3.82 0a1.91 1.91 0 1 0 -3.82 0M294.38 24.24a0.96 0.96 0 1 0 1.92 0a0.96 0.96 0 1 0 -1.92 0M305.13 250.79a1.73 1.73 0 1 0 3.46 0a1.73 1.73 0 1 0 -3.46 0M279.8 25.23a1.51 1.51 0 1 0 3.02 0a1.51 1.51 0 1 0 -3.02 0M287.41 249.57a1.05 1.05 0 1 0 2.1 0a1.05 1.05 0 1 0 -2.1 0M321.11 247.78a1.13 1.13 0 1 0 2.26 0a1.13 1.13 0 1 0 -2.26 0M16.43 116.38a1.18 1.18 0 1 0 2.36 0a1.18 1.18 0 1 0 -2.36 0M255.97 20.51a1.97 1.97 0 1 0 3.94 0a1.97 1.97 0 1 0 -3.94 0M229.22 247.95a1.4 1.4 0 1 0 2.8 0a1.4 1.4 0 1 0 -2.8 0M311.95 24.82a1.94 1.94 0 1 0 3.88 0a1.94 1.94 0 1 0 -3.88 0M186.84 16.01a1.86 1.86 0 1 0 3.72 0a1.86 1.86 0 1 0 -3.72 0M27.62 163.77a1.62 1.62 0 1 0 3.24 0a1.62 1.62 0 1 0 -3.24 0M128.27 18.83a1.22 1.22 0 1 0 2.44 0a1.22 1.22 0 1 0 -2.44 0M173.66 16.42a2.03 2.03 0 1 0 4.06 0a2.03 2.03 0 1 0 -4.06 0M20.78 100.38a1.07 1.07 0 1 0 2.14 0a1.07 1.07 0 1 0 -2.14 0M184.04 251.6a2.02 2.02 0 1 0 4.04 0a2.02 2.02 0 1 0 -4.04 0M180.76 24.96a1.07 1.07 0 1 0 2.14 0a1.07 1.07 0 1 0 -2.14 0M241.22 19.37a1.84 1.84 0 1 0 3.68 0a1.84 1.84 0 1 0 -3.68 0M409.23 122.15a1.13 1.13 0 1 0 2.26 0a1.13 1.13 0 1 0 -2.26 0M158.26 17.19a1.03 1.03 0 1 0 2.06 0a1.03 1.03 0 1 0 -2.06 0M22.59 94.53a1.88 1.88 0 1 0 3.76 0a1.88 1.88 0 1 0 -3.76 0M345.01 253.02a1.35 1.35 0 1 0 2.7 0a1.35 1.35 0 1 0 -2.7 0M195.42 17.03a1.34 1.34 0 1 0 2.68 0a1.34 1.34 0 1 0 -2.68 0M17.55 80.03a1.22 1.22 0 1 0 2.44 0a1.22 1.22 0 1 0 -2.44 0M193.21 247.64a1.17 1.17 0 1 0 2.34 0a1.17 1.17 0 1 0 -2.34 0M412.78 146.18a1.13 1.13 0 1 0 2.26 0a1.13 1.13 0 1 0 -2.26 0M369.27 245.54a1.79 1.79 0 1 0 3.58 0a1.79 1.79 0 1 0 -3.58 0M251.35 16.1a1.65 1.65 0 1 0 3.3 0a1.65 1.65 0 1 0 -3.3 0M280.47 247.77a0.92 0.92 0 1 0 1.84 0a0.92 0.92 0 1 0 -1.84 0M344.57 245.73a1.41 1.41 0 1 0 2.82 0a1.41 1.41 0 1 0 -2.82 0M28.22 190.12a1.47 1.47 0 1 0 2.94 0a1.47 1.47 0 1 0 -2.94 0M239.21 25.9a1.22 1.22 0 1 0 2.44 0a1.22 1.22 0 1 0 -2.44 0M329.18 250.52a1.43 1.43 0 1 0 2.86 0a1.43 1.43 0 1 0 -2.86 0M205.21 13.83a1.24 1.24 0 1 0 2.48 0a1.24 1.24 0 1 0 -2.48 0M224.94 24.54a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0M22.57 182.3a1.09 1.09 0 1 0 2.18 0a1.09 1.09 0 1 0 -2.18 0M359.65 247.03a1.21 1.21 0 1 0 2.42 0a1.21 1.21 0 1 0 -2.42 0M239.68 252.85a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M175.89 248.04a1.21 1.21 0 1 0 2.42 0a1.21 1.21 0 1 0 -2.42 0M352.92 250.44a1.77 1.77 0 1 0 3.54 0a1.77 1.77 0 1 0 -3.54 0M195.13 23.24a1.84 1.84 0 1 0 3.68 0a1.84 1.84 0 1 0 -3.68 0M269.6 251.06a0.94 0.94 0 1 0 1.88 0a0.94 0.94 0 1 0 -1.88 0M17.24 91.19a1.75 1.75 0 1 0 3.5 0a1.75 1.75 0 1 0 -3.5 0M414.71 165.16a1.96 1.96 0 1 0 3.92 0a1.96 1.96 0 1 0 -3.92 0M172.39 22.63a1.74 1.74 0 1 0 3.48 0a1.74 1.74 0 1 0 -3.48 0M411.57 178.52a1.7 1.7 0 1 0 3.4 0a1.7 1.7 0 1 0 -3.4 0M409.56 161.42a1.42 1.42 0 1 0 2.84 0a1.42 1.42 0 1 0 -2.84 0M19.55 108.96a1.44 1.44 0 1 0 2.88 0a1.44 1.44 0 1 0 -2.88 0M309.73 246.34a1.21 1.21 0 1 0 2.42 0a1.21 1.21 0 1 0 -2.42 0M148.01 25.97a1.17 1.17 0 1 0 2.34 0a1.17 1.17 0 1 0 -2.34 0M273.11 245.57a1.38 1.38 0 1 0 2.76 0a1.38 1.38 0 1 0 -2.76 0M411.12 172.2a1.46 1.46 0 1 0 2.92 0a1.46 1.46 0 1 0 -2.92 0M334.83 253.51a1.3 1.3 0 1 0 2.6 0a1.3 1.3 0 1 0 -2.6 0M202 244.75a1.53 1.53 0 1 0 3.06 0a1.53 1.53 0 1 0 -3.06 0M9.67 123.83a1.89 1.89 0 1 0 3.78 0a1.89 1.89 0 1 0 -3.78 0M251.33 24.71a0.92 0.92 0 1 0 1.84 0a0.92 0.92 0 1 0 -1.84 0M25.64 169.55a1.82 1.82 0 1 0 3.64 0a1.82 1.82 0 1 0 -3.64 0M249.12 246.95a1.42 1.42 0 1 0 2.84 0a1.42 1.42 0 1 0 -2.84 0M11.5 112.69a1.31 1.31 0 1 0 2.62 0a1.31 1.31 0 1 0 -2.62 0M22.97 139.31a1.74 1.74 0 1 0 3.48 0a1.74 1.74 0 1 0 -3.48 0M13.3 136.7a1.41 1.41 0 1 0 2.82 0a1.41 1.41 0 1 0 -2.82 0M27.75 99.94a1.78 1.78 0 1 0 3.56 0a1.78 1.78 0 1 0 -3.56 0M11.29 155.73a2.07 2.07 0 1 0 4.14 0a2.07 2.07 0 1 0 -4.14 0M154.3 23.85a1.42 1.42 0 1 0 2.84 0a1.42 1.42 0 1 0 -2.84 0M223.53 18.22a1.58 1.58 0 1 0 3.16 0a1.58 1.58 0 1 0 -3.16 0M165.13 247.79a1.21 1.21 0 1 0 2.42 0a1.21 1.21 0 1 0 -2.42 0M311.83 255.24a1.35 1.35 0 1 0 2.7 0a1.35 1.35 0 1 0 -2.7 0M26.38 69.82a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M16.09 175.41a1.38 1.38 0 1 0 2.76 0a1.38 1.38 0 1 0 -2.76 0M286.16 23.49a1.07 1.07 0 1 0 2.14 0a1.07 1.07 0 1 0 -2.14 0M409.25 129.2a1.84 1.84 0 1 0 3.68 0a1.84 1.84 0 1 0 -3.68 0M262.24 23.93a1.33 1.33 0 1 0 2.66 0a1.33 1.33 0 1 0 -2.66 0M11.57 163.6a1.67 1.67 0 1 0 3.34 0a1.67 1.67 0 1 0 -3.34 0M220.68 246.72a1.54 1.54 0 1 0 3.08 0a1.54 1.54 0 1 0 -3.08 0M11.11 91.94a1.87 1.87 0 1 0 3.74 0a1.87 1.87 0 1 0 -3.74 0M238.05 244.75a1.08 1.08 0 1 0 2.16 0a1.08 1.08 0 1 0 -2.16 0M202.75 252.77a1.32 1.32 0 1 0 2.64 0a1.32 1.32 0 1 0 -2.64 0M319.17 255.04a1.78 1.78 0 1 0 3.56 0a1.78 1.78 0 1 0 -3.56 0M413.65 187.75a1.39 1.39 0 1 0 2.78 0a1.39 1.39 0 1 0 -2.78 0M9.38 99.44a1.62 1.62 0 1 0 3.24 0a1.62 1.62 0 1 0 -3.24 0M27.53 107.82a1.43 1.43 0 1 0 2.86 0a1.43 1.43 0 1 0 -2.86 0M210.46 251.45a1.67 1.67 0 1 0 3.34 0a1.67 1.67 0 1 0 -3.34 0M278.18 254.45a1.53 1.53 0 1 0 3.06 0a1.53 1.53 0 1 0 -3.06 0M200.98 20.41a1.48 1.48 0 1 0 2.96 0a1.48 1.48 0 1 0 -2.96 0M122.26 20.15a1.14 1.14 0 1 0 2.28 0a1.14 1.14 0 1 0 -2.28 0M187.32 244.58a1.82 1.82 0 1 0 3.64 0a1.82 1.82 0 1 0 -3.64 0M251 253.02a1.04 1.04 0 1 0 2.08 0a1.04 1.04 0 1 0 -2.08 0M18.79 129.31a1.64 1.64 0 1 0 3.28 0a1.64 1.64 0 1 0 -3.28 0M187.23 24.58a1.99 1.99 0 1 0 3.98 0a1.99 1.99 0 1 0 -3.98 0M320.07 25.77a1.96 1.96 0 1 0 3.92 0a1.96 1.96 0 1 0 -3.92 0M16.2 122.86a1.46 1.46 0 1 0 2.92 0a1.46 1.46 0 1 0 -2.92 0M299.63 24.03a1.83 1.83 0 1 0 3.66 0a1.83 1.83 0 1 0 -3.66 0M408.41 193.24a2.04 2.04 0 1 0 4.08 0a2.04 2.04 0 1 0 -4.08 0M153.44 244.99a1.57 1.57 0 1 0 3.14 0a1.57 1.57 0 1 0 -3.14 0M18.82 158.04a1.67 1.67 0 1 0 3.34 0a1.67 1.67 0 1 0 -3.34 0M143.77 16.59a1.22 1.22 0 1 0 2.44 0a1.22 1.22 0 1 0 -2.44 0M145.23 244.1a1.49 1.49 0 1 0 2.98 0a1.49 1.49 0 1 0 -2.98 0M410.09 209.02a1.24 1.24 0 1 0 2.48 0a1.24 1.24 0 1 0 -2.48 0M108.55 25.03a0.96 0.96 0 1 0 1.92 0a0.96 0.96 0 1 0 -1.92 0M133.56 17.91a1.95 1.95 0 1 0 3.9 0a1.95 1.95 0 1 0 -3.9 0M14.72 150.21a1.95 1.95 0 1 0 3.9 0a1.95 1.95 0 1 0 -3.9 0M269.83 18.45a0.95 0.95 0 1 0 1.9 0a0.95 0.95 0 1 0 -1.9 0M229.4 15.82a1.88 1.88 0 1 0 3.76 0a1.88 1.88 0 1 0 -3.76 0M292.48 244.45a1.56 1.56 0 1 0 3.12 0a1.56 1.56 0 1 0 -3.12 0M263.38 244.45a1.53 1.53 0 1 0 3.06 0a1.53 1.53 0 1 0 -3.06 0M409.53 137.17a1.85 1.85 0 1 0 3.7 0a1.85 1.85 0 1 0 -3.7 0M209.97 244.09a2.04 2.04 0 1 0 4.08 0a2.04 2.04 0 1 0 -4.08 0M159.67 244.44a1.51 1.51 0 1 0 3.02 0a1.51 1.51 0 1 0 -3.02 0M215.84 23.47a1.99 1.99 0 1 0 3.98 0a1.99 1.99 0 1 0 -3.98 0M213.27 16.62a1 1 0 1 0 2 0a1 1 0 1 0 -2 0M14.52 143.48a1.19 1.19 0 1 0 2.38 0a1.19 1.19 0 1 0 -2.38 0"/></svg>
+        <p class="tot"><b class="num" data-o="hours">46</b><span class="u">小時</span></p>
+        <p class="who"><span class="say-pre">終點「<b data-o="tg">表單與列表</b>」，上游 <b class="num" data-o="npre">6</b> 門</span><span class="say-root" hidden>「<b data-o="tg">表單與列表</b>」沒有上游，直接開始</span></p>
+      </div>
+      <fieldset class="pace"><legend>每週撥得出</legend><div class="pc-g"><label class="pc"><input type="radio" name="pace" value="4"><span class="pc-v"><b class="num">4</b> 小時</span><span class="pc-n">下班後兩個晚上</span></label><label class="pc"><input type="radio" name="pace" value="6" checked><span class="pc-v"><b class="num">6</b> 小時</span><span class="pc-n">兩晚，加週末半天</span></label><label class="pc"><input type="radio" name="pace" value="10"><span class="pc-v"><b class="num">10</b> 小時</span><span class="pc-n">幾乎每天都碰一下</span></label></div></fieldset>
+      <p class="dk-wk">大約 <b class="num" data-o="weeks">8</b> 週走完，學費新臺幣 <b class="num" data-o="price">6,900</b> 元。</p>
+      <p class="dk-go"><a href="#weeks">看每週怎麼排<svg viewBox="0 0 12 20" aria-hidden="true" focusable="false"><path d="M6 1v16M1.5 12 6 17l4.5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg></a><a class="share" id="share" href="#to-i-p6">這條路線的網址</a></p>
+    </div>
+      <p class="sr-only" id="live" aria-live="polite"></p>
+    </section>
+      <section class="wk" id="weeks" aria-labelledby="wk-h">
+      <div class="wk-head">
+        <h2 id="wk-h">每週 <b class="num" data-o="pace">6</b> 小時的話，這條路要走 <b class="num" data-o="weeks">8</b> 週</h2>
+        <p class="lead">照上課順序，一門接一門往下游走，一次只開一門。卡住的時候，比較說得清楚卡在哪。</p>
+      </div>
+      <div class="rvw" id="rvw" style="--rh:504;--mrh:588">
+        <svg class="river h" id="rv-h" viewBox="0 0 1344 504" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="rbk" d="M118 196H1156.0A70 70 0 0 1 1156.0 336H118"/><path class="rbd" d="M118 196H1156.0A70 70 0 0 1 1156.0 336H118"/><g class="rsg"><path class="rs" data-id="b" d="M118 196H1156.0A70 70 0 0 1 1156.0 336H118" style="stroke-dasharray:0 0 399.3 99999"/><path class="rs alt" data-id="a" d="M118 196H1156.0A70 70 0 0 1 1156.0 336H118" style="stroke-dasharray:0 399.3 299.5 99999"/><path class="rs" data-id="c" d="M118 196H1156.0A70 70 0 0 1 1156.0 336H118" style="stroke-dasharray:0 698.8 199.6 99999"/><path class="rs alt" data-id="f" d="M118 196H1156.0A70 70 0 0 1 1156.0 336H118" style="stroke-dasharray:0 898.4 399.3 99999"/><path class="rs" data-id="e" d="M118 196H1156.0A70 70 0 0 1 1156.0 336H118" style="stroke-dasharray:0 1297.7 299.5 99999"/><path class="rs alt" data-id="g" d="M118 196H1156.0A70 70 0 0 1 1156.0 336H118" style="stroke-dasharray:0 1597.2 299.5 99999"/><path class="rs tg" data-id="i" d="M118 196H1156.0A70 70 0 0 1 1156.0 336H118" style="stroke-dasharray:0 1896.6 399.3 99999"/><path class="rs" d="M118 196H1156.0A70 70 0 0 1 1156.0 336H118" style="stroke-dasharray:0 99999"/><path class="rs" d="M118 196H1156.0A70 70 0 0 1 1156.0 336H118" style="stroke-dasharray:0 99999"/><path class="rs" d="M118 196H1156.0A70 70 0 0 1 1156.0 336H118" style="stroke-dasharray:0 99999"/><path class="rs" d="M118 196H1156.0A70 70 0 0 1 1156.0 336H118" style="stroke-dasharray:0 99999"/><path class="rs" d="M118 196H1156.0A70 70 0 0 1 1156.0 336H118" style="stroke-dasharray:0 99999"/></g><path class="rrp" d="M118 196H1156.0A70 70 0 0 1 1156.0 336H118" style="stroke-dashoffset:56"/><path class="rtk" d="M118 196H1156.0A70 70 0 0 1 1156.0 336H118" style="stroke-dasharray:2.5 284.5;stroke-dashoffset:144.7"/></svg><svg class="river v" id="rv-v" viewBox="0 0 60 588" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="rbk" d="M40 10V562"/><path class="rbd" d="M40 10V562"/><g class="rsg"><path class="rs" data-id="b" d="M40 10V562" style="stroke-dasharray:0 0 96 99999"/><path class="rs alt" data-id="a" d="M40 10V562" style="stroke-dasharray:0 96 72 99999"/><path class="rs" data-id="c" d="M40 10V562" style="stroke-dasharray:0 168 48 99999"/><path class="rs alt" data-id="f" d="M40 10V562" style="stroke-dasharray:0 216 96 99999"/><path class="rs" data-id="e" d="M40 10V562" style="stroke-dasharray:0 312 72 99999"/><path class="rs alt" data-id="g" d="M40 10V562" style="stroke-dasharray:0 384 72 99999"/><path class="rs tg" data-id="i" d="M40 10V562" style="stroke-dasharray:0 456 96 99999"/><path class="rs" d="M40 10V562" style="stroke-dasharray:0 99999"/><path class="rs" d="M40 10V562" style="stroke-dasharray:0 99999"/><path class="rs" d="M40 10V562" style="stroke-dasharray:0 99999"/><path class="rs" d="M40 10V562" style="stroke-dasharray:0 99999"/><path class="rs" d="M40 10V562" style="stroke-dasharray:0 99999"/></g><path class="rrp" d="M40 10V562" style="stroke-dashoffset:56"/><path class="rtk" d="M40 10V562" style="stroke-dasharray:2.5 66.5;stroke-dashoffset:35.8"/></svg>
+        <span class="r-src" aria-hidden="true">從這裡開始</span><span class="r-end" aria-hidden="true">終點</span>
+        <div class="wkn" id="wkn" aria-hidden="true"><span class="wn h" style="--wx:261.5;--wy:196;--ny:-1;--nx:0">1</span><span class="wn h" style="--wx:548.5;--wy:196;--ny:-1;--nx:0">2</span><span class="wn h" style="--wx:835.5;--wy:196;--ny:-1;--nx:0">3</span><span class="wn h" style="--wx:1122.5;--wy:196;--ny:-1;--nx:0">4</span><span class="wn h" style="--wx:1122.5;--wy:336;--ny:1;--nx:0">5</span><span class="wn h" style="--wx:835.5;--wy:336;--ny:1;--nx:0">6</span><span class="wn h" style="--wx:548.5;--wy:336;--ny:1;--nx:0">7</span><span class="wn h" style="--wx:261.5;--wy:336;--ny:1;--nx:0">8</span><span class="wn v" style="--wx:40;--wy:44.5;--ny:0;--nx:1">1</span><span class="wn v" style="--wx:40;--wy:113.5;--ny:0;--nx:1">2</span><span class="wn v" style="--wx:40;--wy:182.5;--ny:0;--nx:1">3</span><span class="wn v" style="--wx:40;--wy:251.5;--ny:0;--nx:1">4</span><span class="wn v" style="--wx:40;--wy:320.5;--ny:0;--nx:1">5</span><span class="wn v" style="--wx:40;--wy:389.5;--ny:0;--nx:1">6</span><span class="wn v" style="--wx:40;--wy:458.5;--ny:0;--nx:1">7</span><span class="wn v" style="--wx:40;--wy:527.5;--ny:0;--nx:1">8</span></div>
+        <ol class="plan" id="plan" aria-label="按週排課"><li class="pl s0 t0" data-id="b" style="--px:130;--py:196;--mpy:10">
+        <b class="pl-n">字體與排版</b>
+        <span class="pl-m"><b class="num">8</b> 小時・第 <b class="num" data-o="w0">1</b><span class="pl-to">–<b class="num" data-o="w1">2</b></span> 週</span>
+        <span class="pl-hw">交：同一段字排兩種字重</span>
+      </li><li class="pl s0 t0" data-id="a" style="--px:529.3;--py:196;--mpy:106">
+        <b class="pl-n">視覺層級</b>
+        <span class="pl-m"><b class="num">6</b> 小時・第 <b class="num" data-o="w0">2</b><span class="pl-to">–<b class="num" data-o="w1">3</b></span> 週</span>
+        <span class="pl-hw">交：只動大小和間距的傳單</span>
+      </li><li class="pl s0 t0" data-id="c" style="--px:828.8;--py:196;--mpy:178">
+        <b class="pl-n">工具起手式</b>
+        <span class="pl-m"><b class="num">4</b> 小時・第 <b class="num" data-o="w0">3</b><span class="pl-to" hidden>–<b class="num" data-o="w1">3</b></span> 週</span>
+        <span class="pl-hw">交：全用自動排列的設定頁</span>
+      </li><li class="pl" data-id="d" style="--px:0;--py:0;--mpy:0" hidden>
+        <b class="pl-n">需求訪談</b>
+        <span class="pl-m"><b class="num">5</b> 小時・第 <b class="num" data-o="w0">1</b><span class="pl-to" hidden>–<b class="num" data-o="w1">1</b></span> 週</span>
+        <span class="pl-hw">交：一頁只有問題的清單</span>
+      </li><li class="pl s0 t0" data-id="f" style="--px:1052.8;--py:196;--mpy:231">
+        <b class="pl-n">網格與版面</b>
+        <span class="pl-m"><b class="num">8</b> 小時・第 <b class="num" data-o="w0">4</b><span class="pl-to">–<b class="num" data-o="w1">5</b></span> 週</span>
+        <span class="pl-hw">交：十二欄縮成四欄的商品頁</span>
+      </li><li class="pl s2 t0" data-id="e" style="--px:828.8;--py:336;--mpy:322">
+        <b class="pl-n">色彩與對比</b>
+        <span class="pl-m"><b class="num">6</b> 小時・第 <b class="num" data-o="w0">5</b><span class="pl-to">–<b class="num" data-o="w1">6</b></span> 週</span>
+        <span class="pl-hw">交：同一畫面配三組色</span>
+      </li><li class="pl" data-id="h" style="--px:0;--py:0;--mpy:0" hidden>
+        <b class="pl-n">使用者流程</b>
+        <span class="pl-m"><b class="num">5</b> 小時・第 <b class="num" data-o="w0">1</b><span class="pl-to" hidden>–<b class="num" data-o="w1">1</b></span> 週</span>
+        <span class="pl-hw">交：忘記密碼的流程圖</span>
+      </li><li class="pl s2 t0" data-id="g" style="--px:529.3;--py:336;--mpy:394">
+        <b class="pl-n">元件與狀態</b>
+        <span class="pl-m"><b class="num">6</b> 小時・第 <b class="num" data-o="w0">6</b><span class="pl-to">–<b class="num" data-o="w1">7</b></span> 週</span>
+        <span class="pl-hw">交：一顆按鈕的四種狀態</span>
+      </li><li class="pl" data-id="j" style="--px:0;--py:0;--mpy:0" hidden>
+        <b class="pl-n">設計系統</b>
+        <span class="pl-m"><b class="num">8</b> 小時・第 <b class="num" data-o="w0">1</b><span class="pl-to" hidden>–<b class="num" data-o="w1">1</b></span> 週</span>
+        <span class="pl-hw">交：一頁用代號命名的元件表</span>
+      </li><li class="pl s2 t0 tg" data-id="i" style="--px:130;--py:336;--mpy:466">
+        <b class="pl-n">表單與列表</b>
+        <span class="pl-m"><b class="num">8</b> 小時・第 <b class="num" data-o="w0">7</b><span class="pl-to">–<b class="num" data-o="w1">8</b></span> 週</span>
+        <span class="pl-hw">交：錯誤訊息寫清楚的報名表</span>
+      </li><li class="pl" data-id="k" style="--px:0;--py:0;--mpy:0" hidden>
+        <b class="pl-n">原型與互動</b>
+        <span class="pl-m"><b class="num">6</b> 小時・第 <b class="num" data-o="w0">1</b><span class="pl-to" hidden>–<b class="num" data-o="w1">1</b></span> 週</span>
+        <span class="pl-hw">交：找一個人試點原型</span>
+      </li><li class="pl" data-id="l" style="--px:0;--py:0;--mpy:0" hidden>
+        <b class="pl-n">作品集專題</b>
+        <span class="pl-m"><b class="num">12</b> 小時・第 <b class="num" data-o="w0">1</b><span class="pl-to" hidden>–<b class="num" data-o="w1">1</b></span> 週</span>
+        <span class="pl-hw">交：三份作業重做成案例</span>
+      </li></ol>
+      </div>
+      <p class="rest" id="rest">最後一週還空 <b class="num" data-o="rest">2</b> 小時，剛好拿來把一份作業重交一次。</p>
+    </section>
+      <section class="rv" id="review" aria-labelledby="rv-h">
+      <span class="nl nl-top" aria-hidden="true"></span>
+      <div class="rv-in">
+        <h2 id="rv-h">交回來的作業長這樣</h2>
+        <p class="lead">拿「元件與狀態」的作業當例子：同一顆按鈕的四種狀態。下面是一份交上來的作業，和助教寫回去的四條意見。</p>
+        <div class="board">
+          <svg class="trail" viewBox="0 0 1300 260" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M60 150C69.86 146.74 99.12 135.61 119.18 130.41C139.23 125.21 160.35 122.78 180.34 118.79C200.34 114.8 219.09 108.44 239.15 106.47C259.2 104.5 280.07 105.7 300.67 106.95C321.27 108.2 342.85 113.14 362.74 113.98C382.63 114.83 403.06 113.6 420 112C436.94 110.4 449.03 105.06 464.36 104.36C479.68 103.65 496.22 106.13 511.93 107.77C527.65 109.41 542.48 109.57 558.64 114.19C574.79 118.81 593.29 130.41 608.88 135.47C624.47 140.53 636.99 139.15 652.18 144.57C667.36 149.99 683.83 168.32 700 168C716.17 167.68 732.31 149.37 749.2 142.64C766.1 135.92 783.8 131.35 801.36 127.67C818.93 123.99 837.38 123.28 854.58 120.56C871.78 117.83 886.86 110.93 904.55 111.31C922.24 111.69 943.16 121.36 960.74 122.81C978.31 124.26 995.11 120.79 1010 120C1024.89 119.21 1037.38 119.94 1050.05 118.09C1062.72 116.25 1073.09 108.8 1086.01 108.96C1098.93 109.11 1115.01 117.9 1127.57 119.03C1140.14 120.17 1149.22 113.72 1161.4 115.78C1173.59 117.83 1187.59 125.65 1200.69 131.36C1213.79 137.06 1233.45 146.89 1240 150"/></svg>
+          <div class="spec" aria-hidden="true"><div class="sp sp-0"><span class="fb">報名這門課</span><span class="sp-l">預設</span></div><div class="sp sp-1"><span class="fb">報名這門課</span><svg class="cur" viewBox="0 0 18 24" aria-hidden="true" focusable="false"><path d="M2 2v17l4.6-4.2 3 6.7 3.3-1.5-3-6.6H16Z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="sp-l">滑過</span></div><div class="sp sp-2"><span class="fb">報名這門課</span><svg class="cur" viewBox="0 0 18 24" aria-hidden="true" focusable="false"><path d="M2 2v17l4.6-4.2 3 6.7 3.3-1.5-3-6.6H16Z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="sp-l">按下</span></div><div class="sp sp-3"><span class="fb">報名這門課</span><svg class="cur" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="#fff" stroke="#9d2a1f" stroke-width="3"/><path d="M5.8 5.8 18.2 18.2" stroke="#9d2a1f" stroke-width="3"/></svg><span class="sp-l">停用</span></div></div>
+          <ol class="notes" role="list"><li class="nt nt-0"><b class="nt-s">預設</b><span>字和邊的距離左右 24、上下 12，舒服。換成英文長字會撐開，先定一個最小寬度。</span></li><li class="nt nt-1"><b class="nt-s">滑過</b><span>只深了一點點，我看了三次才看出來。再深一階，或加底線。手機沒有滑過，重要的事別只放在這一態。</span></li><li class="nt nt-2"><b class="nt-s">按下</b><span>往下 1px 這招很好。陰影要跟著收，不然像浮在半空被壓。</span></li><li class="nt nt-3"><b class="nt-s">停用</b><span>跟預設太像，一定會有人一直按。對比拉開、游標換掉，旁邊最好寫為什麼不能按。</span></li></ol>
+        </div>
+        <p class="rv-after">三個工作天內回。每門可以重交一次，第二次的回饋會對照第一次，寫哪裡變好、哪裡還沒。</p>
+      </div>
+      <span class="nl nl-bot" aria-hidden="true"></span>
+    </section>
+      <section class="cs" id="courses" aria-labelledby="cs-h">
+      <div class="cs-head">
+        <h2 id="cs-h">十二門課和它們的上游</h2>
+        <p class="lead">每一門都寫了要交的作業，和大多數人卡住的地方。</p>
+      </div>
+      <div class="bands" style="--hmax:23;--gn:3"><div class="band b0">
+      <span class="nl nl-band" aria-hidden="true"></span>
+      <p class="band-n"><b>源頭</b><span>不用先修，從哪一門開始都行。</span></p>
+      <div class="row-c"><article class="c on" id="c-b" style="--h:8" aria-labelledby="c-b-h"><details>
+          <summary><h3 id="c-b-h">字體與排版</h3><span class="c-meta"><span class="c-hr"><b class="num">8</b> 小時</span><span class="c-pre" id="pre-b">沒有上游，直接開始</span><span class="c-on">在這條路線上</span></span><span class="c-hs">交：同一段字排兩種字重</span></summary>
+          <div class="c-body"><p class="c-desc">字級、行高、字重、字距：先讓一段中文好讀，再談風格。</p><p class="c-hw"><b>作業</b>同一段三百字的介紹排兩版：一版只用一種字重，一版用三種。交的時候寫一句你比較喜歡哪版、為什麼。</p><p class="c-tip"><b>常卡在</b>行高最常被忽略。中文正文先從 1.7 倍開始試。</p><a class="pick" href="#to-b">設成終點<span class="sr-only">：字體與排版</span></a></div>
+        </details></article><article class="c on" id="c-a" style="--h:6" aria-labelledby="c-a-h"><details>
+          <summary><h3 id="c-a-h">視覺層級</h3><span class="c-meta"><span class="c-hr"><b class="num">6</b> 小時</span><span class="c-pre" id="pre-a">沒有上游，直接開始</span><span class="c-on">在這條路線上</span></span><span class="c-hs">交：只動大小和間距的傳單</span></summary>
+          <div class="c-body"><p class="c-desc">為什麼有些畫面一眼就懂：大小、粗細、間距、對齊，用這四樣排出先後。</p><p class="c-hw"><b>作業</b>一張擠滿資訊的活動傳單，只准動大小和間距、不准換顏色，改到三秒內看得出時間和地點。</p><p class="c-tip"><b>常卡在</b>第一次都會想加顏色。先忍住，顏色是後面那門的事。</p><a class="pick" href="#to-a">設成終點<span class="sr-only">：視覺層級</span></a></div>
+        </details></article><article class="c on" id="c-c" style="--h:4" aria-labelledby="c-c-h"><details>
+          <summary><h3 id="c-c-h">工具起手式</h3><span class="c-meta"><span class="c-hr"><b class="num">4</b> 小時</span><span class="c-pre" id="pre-c">沒有上游，直接開始</span><span class="c-on">在這條路線上</span></span><span class="c-hs">交：全用自動排列的設定頁</span></summary>
+          <div class="c-body"><p class="c-desc">圖層、框架、自動排列、元件：介面工具先會這四個功能，就能開工。</p><p class="c-hw"><b>作業</b>照著畫一頁手機的設定畫面，所有間距都用自動排列，一個都不准手動拖。</p><p class="c-tip"><b>常卡在</b>自動排列一開始很卡手，大概第二個小時會突然順。</p><a class="pick" href="#to-c">設成終點<span class="sr-only">：工具起手式</span></a></div>
+        </details></article><article class="c" id="c-d" style="--h:5" aria-labelledby="c-d-h"><details>
+          <summary><h3 id="c-d-h">需求訪談</h3><span class="c-meta"><span class="c-hr"><b class="num">5</b> 小時</span><span class="c-pre" id="pre-d">沒有上游，直接開始</span><span class="c-on">在這條路線上</span></span><span class="c-hs">交：一頁只有問題的清單</span></summary>
+          <div class="c-body"><p class="c-desc">怎麼問才不會問出客套話：開放式提問、追問，把聽到的整理成問題。</p><p class="c-hw"><b>作業</b>訪問兩個人「上次訂便當遇到什麼麻煩」，整理成一頁問題清單，只寫問題、不寫解法。</p><p class="c-tip"><b>常卡在</b>最難的是忍住不給建議。對方講完，先問一句「然後呢」。</p><a class="pick" href="#to-d">設成終點<span class="sr-only">：需求訪談</span></a></div>
+        </details></article></div>
+    </div><div class="band b1">
+      <span class="nl nl-band" aria-hidden="true"></span>
+      <p class="band-n"><b>第二層</b><span>各接在一到兩門下游。</span></p>
+      <div class="row-c"><article class="c on" id="c-f" style="--h:8" aria-labelledby="c-f-h"><details>
+          <summary><h3 id="c-f-h">網格與版面</h3><span class="c-meta"><span class="c-hr"><b class="num">8</b> 小時</span><span class="c-pre" id="pre-f">上游：視覺層級、字體與排版</span><span class="c-on">在這條路線上</span></span><span class="c-hs">交：十二欄縮成四欄的商品頁</span></summary>
+          <div class="c-body"><p class="c-desc">欄、溝、邊界：讓畫面換了寬度還站得住。</p><p class="c-hw"><b>作業</b>用十二欄排一個商品頁，再縮成手機的四欄，把換了位置的區塊一一標出來。</p><p class="c-tip"><b>常卡在</b>多數人卡在「溝要多寬」。先用 24，做完再調。</p><a class="pick" href="#to-f">設成終點<span class="sr-only">：網格與版面</span></a></div>
+        </details></article><article class="c on" id="c-e" style="--h:6" aria-labelledby="c-e-h"><details>
+          <summary><h3 id="c-e-h">色彩與對比</h3><span class="c-meta"><span class="c-hr"><b class="num">6</b> 小時</span><span class="c-pre" id="pre-e">上游：視覺層級</span><span class="c-on">在這條路線上</span></span><span class="c-hs">交：同一畫面配三組色</span></summary>
+          <div class="c-body"><p class="c-desc">色相、明度、彩度怎麼影響「看起來能不能按」，對比又要怎麼量。</p><p class="c-hw"><b>作業</b>同一個介面配三組色：只用灰階、加一個強調色、你自由配。三組都要過對比檢查。</p><p class="c-tip"><b>常卡在</b>灰階那組做得好，後面兩組就不會亂。</p><a class="pick" href="#to-e">設成終點<span class="sr-only">：色彩與對比</span></a></div>
+        </details></article><article class="c" id="c-h" style="--h:5" aria-labelledby="c-h-h"><details>
+          <summary><h3 id="c-h-h">使用者流程</h3><span class="c-meta"><span class="c-hr"><b class="num">5</b> 小時</span><span class="c-pre" id="pre-h">上游：工具起手式、需求訪談</span><span class="c-on">在這條路線上</span></span><span class="c-hs">交：忘記密碼的流程圖</span></summary>
+          <div class="c-body"><p class="c-desc">從使用者的第一步畫到最後一步，找出他要做決定的地方。</p><p class="c-hw"><b>作業</b>把「忘記密碼」從點連結畫到重設成功，至少標出一個會卡住的地方。</p><p class="c-tip"><b>常卡在</b>流程圖不用漂亮，箭頭方向一致就好。</p><a class="pick" href="#to-h">設成終點<span class="sr-only">：使用者流程</span></a></div>
+        </details></article></div>
+    </div><div class="band b2 solo">
+      <span class="nl nl-band" aria-hidden="true"></span>
+      <p class="band-n"><b>匯流點</b><span>往下三門都要先經過它。</span></p>
+      <div class="row-c"><article class="c on" id="c-g" style="--h:6" aria-labelledby="c-g-h"><details>
+          <summary><h3 id="c-g-h">元件與狀態</h3><span class="c-meta"><span class="c-hr"><b class="num">6</b> 小時</span><span class="c-pre" id="pre-g">上游：工具起手式、色彩與對比</span><span class="c-on">在這條路線上</span></span><span class="c-hs">交：一顆按鈕的四種狀態</span></summary>
+          <div class="c-body"><p class="c-desc">一顆按鈕不只一個樣子：狀態、尺寸、變體，怎麼收成一個元件。</p><p class="c-hw"><b>作業</b>把同一顆按鈕做出四種狀態：預設、滑過、按下、停用。做完你會發現，停用最難。</p><p class="c-tip"><b>常卡在</b>停用不是「變淡」就好。先想：使用者要怎麼知道為什麼不能按？</p><a class="pick" href="#to-g">設成終點<span class="sr-only">：元件與狀態</span></a></div>
+        </details></article><div class="row-aside"><p>上完「元件與狀態」，下游接著能上：</p><ul class="chips" role="list"><li><a class="chip" href="#c-i"><span>表單與列表</span></a></li><li><a class="chip" href="#c-j"><span>設計系統</span></a></li><li><a class="chip" href="#c-k"><span>原型與互動</span></a></li></ul></div></div>
+    </div><div class="band b3">
+      <span class="nl nl-band" aria-hidden="true"></span>
+      <p class="band-n"><b>第四層</b><span>三門都接在「元件與狀態」下游。</span></p>
+      <div class="row-c"><article class="c" id="c-j" style="--h:8" aria-labelledby="c-j-h"><details>
+          <summary><h3 id="c-j-h">設計系統</h3><span class="c-meta"><span class="c-hr"><b class="num">8</b> 小時</span><span class="c-pre" id="pre-j">上游：字體與排版、元件與狀態</span><span class="c-on">在這條路線上</span></span><span class="c-hs">交：一頁用代號命名的元件表</span></summary>
+          <div class="c-body"><p class="c-desc">把零散的樣式收成規則：顏色、字級、間距、元件，都有名字。</p><p class="c-hw"><b>作業</b>把做過的按鈕、輸入框、卡片整理成一頁元件表，顏色和間距全部改用代號命名。</p><p class="c-tip"><b>常卡在</b>命名會吵很久。先照「用途」取名，不要照「顏色」取名。</p><a class="pick" href="#to-j">設成終點<span class="sr-only">：設計系統</span></a></div>
+        </details></article><article class="c on tg" id="c-i" style="--h:8" aria-labelledby="c-i-h"><details>
+          <summary><h3 id="c-i-h">表單與列表</h3><span class="c-meta"><span class="c-hr"><b class="num">8</b> 小時</span><span class="c-pre" id="pre-i">上游：網格與版面、元件與狀態</span><span class="c-on">在這條路線上</span></span><span class="c-hs">交：錯誤訊息寫清楚的報名表</span></summary>
+          <div class="c-body"><p class="c-desc">最常見、也最容易做壞的兩種畫面：欄位、標籤、錯誤訊息、空狀態。</p><p class="c-hw"><b>作業</b>做一張報名表單，錯誤訊息要寫成「哪裡錯、怎麼改」，不能只寫「格式錯誤」。</p><p class="c-tip"><b>常卡在</b>空狀態最常被忘記。列表一筆都沒有的時候，畫面要說什麼？</p><a class="pick" href="#to-i">設成終點<span class="sr-only">：表單與列表</span></a></div>
+        </details></article><article class="c" id="c-k" style="--h:6" aria-labelledby="c-k-h"><details>
+          <summary><h3 id="c-k-h">原型與互動</h3><span class="c-meta"><span class="c-hr"><b class="num">6</b> 小時</span><span class="c-pre" id="pre-k">上游：元件與狀態、使用者流程</span><span class="c-on">在這條路線上</span></span><span class="c-hs">交：找一個人試點原型</span></summary>
+          <div class="c-body"><p class="c-desc">讓畫面可以點：連結、轉場，什麼時候該動、什麼時候不該。</p><p class="c-hw"><b>作業</b>把流程圖那份做成可以點的原型，找一個沒上過課的人試，記下他第一次停住的地方。</p><p class="c-tip"><b>常卡在</b>轉場先全部關掉，確定流程順了再加回來。</p><a class="pick" href="#to-k">設成終點<span class="sr-only">：原型與互動</span></a></div>
+        </details></article></div>
+    </div><div class="band b4 solo">
+      <span class="nl nl-band" aria-hidden="true"></span>
+      <p class="band-n"><b>河口</b><span>最後一門：把前面做過的收起來。</span></p>
+      <div class="row-c"><article class="c" id="c-l" style="--h:12" aria-labelledby="c-l-h"><details>
+          <summary><h3 id="c-l-h">作品集專題</h3><span class="c-meta"><span class="c-hr"><b class="num">12</b> 小時</span><span class="c-pre" id="pre-l">上游：表單與列表、設計系統、原型與互動</span><span class="c-on">在這條路線上</span></span><span class="c-hs">交：三份作業重做成案例</span></summary>
+          <div class="c-body"><p class="c-desc">沒有新觀念，只有收尾：把三份作業重做成三個完整的案例。</p><p class="c-hw"><b>作業</b>挑三份前面的作業重做一次，每份各寫一段：原本怎樣、為什麼改、改完怎樣。</p><p class="c-tip"><b>常卡在</b>挑「改得最多」的三份，不是「最好看」的三份。</p><a class="pick" href="#to-l">設成終點<span class="sr-only">：作品集專題</span></a></div>
+        </details></article><div class="row-aside"><p>河口這一門，後面沒有要接的課了。三份案例，每份都照這三段寫：</p><ol class="chips steps" role="list"><li><span class="chip">原本怎樣</span></li><li><span class="chip">為什麼改</span></li><li><span class="chip">改完怎樣</span></li></ol></div></div>
+    </div></div>
+    </section>
+      <section class="fe" id="fees" aria-labelledby="fe-h">
+      <h2 id="fe-h">學費只看時數</h2>
+      <div class="fe-big">
+        <span class="fe-fr" aria-hidden="true"></span>
+        <p class="fe-n"><b class="num">150</b><span>元／小時</span></p>
+      </div>
+      <div class="fe-side">
+        <p class="fe-rule">每門課同一個單價，不分難易，專題也一樣。</p>
+        <p class="fe-mine">你在圖上選的這條：<b class="num" data-o="hours">46</b> 小時，新臺幣 <b class="num" data-o="price">6,900</b> 元。</p>
+        <ul class="fe-notes" role="list"><li>已經會的課不用買：每門第一單元有一份十分鐘的自我檢查，做得出來就跳過。</li><li>整條買不打折，晚買也不會漲；也可以按門買，上到哪買到哪。</li></ul>
+        <dl class="fe-more"><div><dt>試讀</dt><dd>源頭那四門，各開放第一單元，不用綁信用卡。</dd></div><div><dt>退費</dt><dd>還沒開始看的課全額退；看到一半的那門，依沒看完的單元比例退。細節寫在結帳頁的條款裡，付款前看得到。</dd></div><div><dt>回饋期限</dt><dd>課買了一直能看；作業回饋從購買日起一年內有效。</dd></div></dl>
+      </div>
+    </section>
+      <section class="ask" id="ask" aria-labelledby="ask-h">
+      <span class="nl nl-top" aria-hidden="true"></span>
+      <div class="ask-in">
+        <h2 id="ask-h">開始之前常有人問</h2>
+        <div class="qa"><details><summary>完全沒碰過設計，能上嗎？</summary><p>能。源頭四門都不用先修，從「視覺層級」或「字體與排版」開始最順。需要的是一台能開瀏覽器的電腦，和每週固定的幾個小時。</p></details><details><summary>要另外買軟體嗎？</summary><p>不用。「工具起手式」用的介面設計工具有免費方案，整條課只用到免費方案裡有的功能。</p></details><details><summary>卡住了怎麼辦？</summary><p>每門課有一個提問區，助教週一到週五會回。卡在作業的話，先交半成品也可以，回饋會先處理你卡住的那一段。</p></details><details><summary>上完有證書嗎？</summary><p>沒有。每門上完，你手上會有一份自己做的作業，和一份逐點寫的回饋。</p></details><details><summary>上完能拿去找工作或接案嗎？</summary><p>最後一門專題會把三份作業重做成三個案例，每個都寫原本怎樣、為什麼改、改完怎樣，可以直接放進作品集。能不能轉職或接到案子，看你投的職缺和客戶，這邊沒辦法替你保證；做得到的是每份作業都有人看，三個工作天內回。</p></details><details><summary>只用鍵盤，能操作那張上下游的圖嗎？</summary><p>可以。按 Tab 移到圖上的課，上下鍵跨一層、左右鍵在同一層裡移動，Enter 或空白鍵選定。選好的終點和每週時數會寫進網址。</p></details></div>
+        <div class="contact">
+          <p class="ct-lead">還有別的想問，寫信或打電話都可以。</p>
+          <p class="ct-line"><a href="mailto:hi@xuejing.example">hi@xuejing.example</a><a class="num" href="tel:+886200000532">02-0000-0532</a><span>週一至週五 10:00–18:00</span></p>
+        </div>
+      </div>
+    </section>
+    </main>
+    <footer class="foot">
+      <a class="brand" href="#main"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M8.5 9.5C8.5 17 16 15 16 22M23.5 9.5C23.5 17 16 15 16 22" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M3 3.5h9.5l2.5 2.5v4H3z" fill="currentColor"/><path d="M17 3.5h9.5l2.5 2.5v4H17z" fill="currentColor"/><path d="M9.5 21.2h13l2 2.4v5.2h-17v-5.2z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="miter"/></svg><b>學徑</b><span>設計入門線上課</span></a>
+      <address><span>學徑設計學習・臺北市大安區拾階街 32 號 4 樓（辦公室，不開放現場上課）</span><a class="num" href="tel:+886200000532">02-0000-0532</a><a href="mailto:hi@xuejing.example">hi@xuejing.example</a></address>
+      <p class="fine">這頁的價格與條款若和結帳頁不同，以結帳頁為準。字型：Chocolate Classical Sans、Noto Sans TC、Funnel Display（SIL Open Font License）。© 學徑</p>
+    </footer>
+    <template id="tp-live">終點：<span data-k="tg"></span>。上游 <span data-k="npre"></span> 門，共 <span data-k="hours"></span> 小時；每週 <span data-k="pace"></span> 小時，大約 <span data-k="weeks"></span> 週。</template>
+    <template id="tp-live-root">終點：<span data-k="tg"></span>，沒有上游。共 <span data-k="hours"></span> 小時；每週 <span data-k="pace"></span> 小時，大約 <span data-k="weeks"></span> 週。</template>
+    <script type="application/json" id="f32-data">{"PRE":{"a":[],"b":[],"c":[],"d":[],"e":["a"],"f":["a","b"],"g":["c","e"],"h":["c","d"],"i":["f","g"],"j":["b","g"],"k":["g","h"],"l":["i","j","k"]},"H":{"a":6,"b":8,"c":4,"d":5,"e":6,"f":8,"g":6,"h":5,"i":8,"j":8,"k":6,"l":12},"ORDER":["b","a","c","d","f","e","h","g","j","i","k","l"],"RATE":150,"STEP":300,"PACES":[4,6,10],"DEF":{"to":"i","pace":6},"RIVER":{"h":{"mode":"h","R":70,"y1":196,"pad":118,"bot":168},"v":{"mode":"v","pad":40,"top":10,"bot":26,"ph":12},"lw":214,"lh":49},"LAYER":{"b":0,"a":0,"c":0,"d":0,"f":1,"e":1,"h":1,"g":2,"j":3,"i":3,"k":3,"l":4},"CX":{"b":111,"a":319,"c":527,"d":735,"f":216.6,"e":424.6,"h":644.6,"g":450.5,"j":190.8,"i":398.8,"k":606.8,"l":402.9}}</script>
+<script>
+(function(){
+'use strict';
+var d=document,dataEl=d.getElementById('f32-data');if(!dataEl)return;
+var D=JSON.parse(dataEl.textContent);
+var rm=matchMedia('(prefers-reduced-motion: reduce)'),narrow=matchMedia('(max-width: 899px)');
+var $=function(s,r){return (r||d).querySelector(s);},$$=function(s,r){return Array.prototype.slice.call((r||d).querySelectorAll(s));};
+function closureOf(id, PRE) {
+  var seen = {}, st = [id];
+  while (st.length) { var x = st.pop(); if (seen[x]) continue; seen[x] = true; var p = PRE[x] || []; for (var i = 0; i < p.length; i++) st.push(p[i]); }
+  return seen;
+}
+function planOf(set, ORDER, H, pace) {
+  var items = [], t = 0, i;
+  for (i = 0; i < ORDER.length; i++) { var id = ORDER[i]; if (!set[id]) continue; items.push({ id: id, s: t, e: t + H[id] }); t += H[id]; }
+  var weeks = Math.max(1, Math.ceil(t / pace));
+  for (i = 0; i < items.length; i++) { var it = items[i]; it.w0 = Math.floor(it.s / pace) + 1; it.w1 = Math.ceil(it.e / pace); }
+  return { items: items, total: t, weeks: weeks, rest: weeks * pace - t, pace: pace };
+}
+function riverGeo(w, total, o) {
+  if (o.mode === 'v') {
+    var L = Math.max(1, total) * o.ph;
+    return { mode: 'v', x0: o.pad, y0: o.top, L: L, d: 'M' + o.pad + ' ' + o.top + 'V' + (o.top + L), h: o.top + L + o.bot };
+  }
+  var x0 = o.pad, x1 = w - o.pad - o.R, run = x1 - x0, arc = Math.PI * o.R;
+  var y2 = o.y1 + 2 * o.R;
+  return { mode: 'h', x0: x0, x1: x1, y1: o.y1, y2: y2, R: o.R, run: run, arc: arc, L: 2 * run + arc, h: y2 + o.bot,
+    d: 'M' + x0 + ' ' + o.y1 + 'H' + x1.toFixed(1) + 'A' + o.R + ' ' + o.R + ' 0 0 1 ' + x1.toFixed(1) + ' ' + y2 + 'H' + x0 };
+}
+function riverAt(g, s) {
+  if (g.mode === 'v') return [g.x0, g.y0 + s, 1, 0, 0];
+  if (s <= g.run) return [g.x0 + s, g.y1, 0, -1, 0];
+  s -= g.run;
+  if (s <= g.arc) { var a = -Math.PI / 2 + s / g.R; return [g.x1 + g.R * Math.cos(a), g.y1 + g.R + g.R * Math.sin(a), Math.cos(a), Math.sin(a), 1]; }
+  s -= g.arc; return [g.x1 - s, g.y2, 0, 1, 2];
+}
+function riverLay(g, P, o) {
+  o = o || {};
+  var k = g.L / Math.max(1, P.total), segs = [], i, lw = o.lw || 210, lh = o.lh || 48, w = o.w || 1e9;
+  for (i = 0; i < P.items.length; i++) {
+    var it = P.items[i], s0 = it.s * k, s1 = it.e * k;
+    segs.push({ id: it.id, s0: s0, len: s1 - s0, s1: s1 });
+  }
+  if (g.mode === 'v') {
+    var bottom = -1e9;
+    for (i = 0; i < segs.length; i++) {
+      var sg = segs[i], y = Math.max(g.y0 + sg.s0, bottom + 4);
+      sg.x = g.x0; sg.y = y; sg.side = 0; sg.tier = 0; sg.rt = false; bottom = y + lh;
+    }
+  } else {
+    var lanes = { 0: [], 2: [] };
+    for (i = 0; i < segs.length; i++) {
+      var q = segs[i], a = q.s0, b = q.s1, mid = (a + b) / 2, side;
+      if (mid <= g.run) side = 0; else if (mid >= g.run + g.arc) side = 2; else side = mid - g.run < g.arc / 2 ? 0 : 2;
+      var lo, hi;
+      if (side === 0) { lo = g.x0 + Math.max(0, a); hi = g.x0 + Math.min(g.run, b); if (hi - lo < 16) { lo = g.x1 - 30; hi = g.x1; } }
+      else { var a2 = a - g.run - g.arc, b2 = b - g.run - g.arc; lo = g.x1 - Math.min(g.run, b2); hi = g.x1 - Math.max(0, a2); if (hi - lo < 16) { lo = g.x1 - 30; hi = g.x1; } }
+      q.side = side; q.lo = lo; q.hi = hi; lanes[side].push(q);
+    }
+    [0, 2].forEach(function (sd) {
+      var L = lanes[sd].sort(function (p1, p2) { return p1.lo - p2.lo; }), right = [-1e9, -1e9];
+      L.forEach(function (q) {
+        var best = null;
+        for (var t = 0; t < 2; t++) {
+          var x = Math.max(q.lo + 12, right[t] + 14 + 10), rt = false, over = 0;
+          if (x - 14 + lw > w) { rt = true; x = Math.min(q.hi - 12, Math.max(q.lo + 12, right[t] + lw - 14 + 10)); }
+          var left = rt ? x - lw + 14 : x - 14;
+          if (x > q.hi - 12) { over = x - (q.hi - 12); x = q.hi - 12; left = rt ? x - lw + 14 : x - 14; }
+          over += Math.max(0, right[t] + 10 - left);
+          var c = { t: t, x: x, rt: rt, over: over, right: left + lw };
+          if (!best || c.over < best.over - 0.5) best = c;
+          if (!over) break;
+        }
+        q.x = best.x; q.y = sd === 0 ? g.y1 : g.y2; q.tier = best.t; q.rt = best.rt; right[best.t] = best.right;
+      });
+    });
+  }
+  var wk = [], per = g.L / P.weeks;
+  for (i = 0; i < P.weeks; i++) { var p = riverAt(g, per * (i + 0.5)); wk.push({ x: p[0], y: p[1], nx: p[2], ny: p[3] }); }
+  var end = segs.length ? segs[segs.length - 1].y + lh : 0;
+  return { segs: segs, wk: wk, per: per, h: g.mode === 'v' ? Math.max(g.h, end + 10) : g.h };
+}
+var fmtMoney=function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); };
+
+var cv=d.getElementById('cv'),cvw=d.getElementById('cvw'),dock=d.getElementById('dock'),live=d.getElementById('live'),tag=d.getElementById('tgtag'),share=d.getElementById('share'),rest=d.getElementById('rest');
+var rvw=d.getElementById('rvw'),wkn=d.getElementById('wkn'),rvH=d.getElementById('rv-h'),rvV=d.getElementById('rv-v');
+var nodes={},lis={},pls={},cards={};
+$$('.node',cv).forEach(function(b){nodes[b.dataset.id]=b;lis[b.dataset.id]=b.parentNode;});
+$$('.pl',rvw).forEach(function(li){pls[li.dataset.id]=li;});
+$$('.cs .c').forEach(function(c){cards[c.id.slice(2)]=c;});
+var wires=$$('.w',cv);
+var maxLayer=0;D.ORDER.forEach(function(id){if(D.LAYER[id]>maxLayer)maxLayer=D.LAYER[id];});
+var cur={to:D.DEF.to,pace:D.DEF.pace},animT=0,lastP=null;
+
+function txt(el){return el?el.textContent.replace(/[\s\u200b]+/g,' ').replace(/\u200b/g,'').trim():'';}
+function nameOf(id){return txt($('.pl-n',pls[id]));}
+function setO(scope,k,v){$$('[data-o="'+k+'"]',scope).forEach(function(e){e.textContent=v;});}
+function tplText(id,vals){var t=d.getElementById(id);if(!t)return '';var f=t.content.cloneNode(true);$$('[data-k]',f).forEach(function(s){var v=vals[s.dataset.k];if(v!=null)s.textContent=v;});var w=d.createElement('div');w.appendChild(f);return txt(w);}
+function say(t){live.textContent='';setTimeout(function(){live.textContent=t;},60);}
+function r1(n){return Math.round(n*10)/10;}
+
+/* 河道：依目前寬度（寬版）或時數（窄版）重算幾何，搬動段落、標籤、週次刻度 */
+function drawRiver(P,anim){
+  if(!P)return;
+  var v=narrow.matches,mode=v?'v':'h',svg=v?rvV:rvH;
+  var w=v?64:Math.max(640,rvw.clientWidth);
+  var g=riverGeo(w,P.total,D.RIVER[mode]),lay=riverLay(g,P,{w:w,lw:D.RIVER.lw,lh:D.RIVER.lh});g.h=lay.h;
+  rvw.classList.toggle('anim',!!anim&&!rm.matches);
+  svg.setAttribute('viewBox','0 0 '+w+' '+g.h);
+  $$('path',svg).forEach(function(p){p.setAttribute('d',g.d);});
+  var segs=$$('.rs',svg),on={},i;
+  lay.segs.forEach(function(s){on[s.id]=s;});
+  /* 河道段：每門課一段（依路線順序重新指派） */
+  segs.forEach(function(p,k){var s=lay.segs[k];if(!s){p.style.strokeDasharray='0 99999';return;}
+    p.setAttribute('data-id',s.id);p.classList.toggle('tg',s.id===cur.to);p.classList.toggle('alt',k%2===1);
+    p.style.strokeDasharray='0 '+r1(s.s0)+' '+r1(s.len)+' 99999';});
+  var tk=$('.rtk',svg);tk.style.strokeDasharray='2.5 '+r1(lay.per-2.5);tk.style.strokeDashoffset=String(r1(lay.per/2+1.25));
+  if(v)rvw.style.setProperty('--mrh',Math.ceil(g.h));else rvw.style.setProperty('--rh',Math.ceil(g.h));
+  for(var id in pls){var li=pls[id],s=on[id];li.hidden=!s;if(!s)continue;
+    li.classList.remove('s0','s1','s2','t0','t1','rt');
+    if(v){li.style.setProperty('--mpy',r1(s.y));}
+    else{li.style.setProperty('--px',r1(s.x));li.style.setProperty('--py',r1(s.y));li.classList.add('s'+s.side,'t'+s.tier);if(s.rt)li.classList.add('rt');}
+  }
+  /* 週次數字（只是數字，由腳本產生） */
+  $$('.wn.'+mode,wkn).forEach(function(e){e.remove();});
+  lay.wk.forEach(function(q,k){var sp=d.createElement('span');sp.className='wn '+mode;sp.style.setProperty('--wx',r1(q.x));sp.style.setProperty('--wy',r1(q.y));sp.style.setProperty('--nx',q.nx);sp.style.setProperty('--ny',q.ny);sp.textContent=String(k+1);wkn.appendChild(sp);});
+}
+
+function apply(to,pace,o){
+  o=o||{};
+  if(!nodes[to])to=D.DEF.to;
+  if(D.PACES.indexOf(pace)<0)pace=D.DEF.pace;
+  var paceOnly=to===cur.to&&pace!==cur.pace;
+  cur.to=to;cur.pace=pace;
+  var set=closureOf(to,D.PRE),anim=!!o.anim&&!rm.matches&&!paceOnly,id;
+  var str=D.ORDER.filter(function(x){return set[x];}).join(''),prev=cv.getAttribute('data-set')||'';
+  clearTimeout(animT);
+  /* 畫布：先退水（不轉場）、強制重排，再帶延遲漲水 */
+  if(anim){cv.classList.remove('anim');cv.classList.add('reset');void cv.offsetWidth;cv.classList.remove('reset');cv.classList.add('anim');}
+  cv.setAttribute('data-set',str);
+  wires.forEach(function(w){var k=w.getAttribute('data-k');w.classList.remove('was');if(!o.anim||rm.matches)return;if(prev.indexOf(k)>-1&&!set[k]){void w.getBoundingClientRect();w.classList.add('was');}});
+  for(id in nodes){
+    var s=id===to?'tg':set[id]?'on':'off',b=nodes[id];
+    b.classList.remove('on','tg','off');b.classList.add(s);
+    b.setAttribute('aria-pressed',id===to?'true':'false');
+    b.setAttribute('aria-describedby','lg-'+s+' pre-'+id);
+  }
+  var li=lis[to];
+  ['--x','--y','--mx','--my'].forEach(function(k){tag.style.setProperty(k,li.style.getPropertyValue(k));});
+  tag.style.setProperty('--tgd',(D.LAYER[to]*D.STEP+160)+'ms');
+  if(anim)animT=setTimeout(function(){cv.classList.remove('anim');},(maxLayer+1)*D.STEP+900);
+
+  /* 河口池與步調 */
+  var P=planOf(set,D.ORDER,D.H,pace),npre=P.items.length-1;lastP=P;
+  $('.say-pre',dock).hidden=npre<1;$('.say-root',dock).hidden=npre>0;
+  setO(d,'tg',nameOf(to));setO(d,'npre',npre);setO(d,'hours',P.total);setO(d,'weeks',P.weeks);setO(d,'pace',pace);setO(d,'rest',P.rest);
+  setO(d,'price',fmtMoney(P.total*D.RATE));
+  $$('input[name="pace"]',dock).forEach(function(r){r.checked=+r.value===pace;});
+
+  /* 河道（週次） */
+  P.items.forEach(function(it){var e=pls[it.id];setO(e,'w0',it.w0);setO(e,'w1',it.w1);$('.pl-to',e).hidden=it.w1===it.w0;e.classList.toggle('tg',it.id===to);});
+  drawRiver(P,o.anim||o.rail);
+  rest.hidden=!P.rest;
+
+  /* 十二門課 */
+  for(id in cards){cards[id].classList.toggle('on',!!set[id]);cards[id].classList.toggle('tg',id===to);}
+
+  var h='#to-'+to+'-p'+pace;share.setAttribute('href',h);
+  if(o.hash&&history.replaceState&&location.hash!==h)history.replaceState(null,'',h);
+  if(o.say)say(tplText(npre>0?'tp-live':'tp-live-root',{tg:nameOf(to),npre:npre,hours:P.total,pace:pace,weeks:P.weeks}));
+}
+
+/* 讓（被橫向捲動裁到的）節點捲進視窗 */
+function reveal(b){
+  if(cvw.scrollWidth<=cvw.clientWidth+1)return;
+  var r=b.getBoundingClientRect(),w=cvw.getBoundingClientRect(),pad=14;
+  if(r.left<w.left+pad)cvw.scrollLeft-=Math.ceil(w.left+pad-r.left);
+  else if(r.right>w.right-pad)cvw.scrollLeft+=Math.ceil(r.right-(w.right-pad));
+}
+cvw.addEventListener('focusin',function(e){var b=e.target.closest&&e.target.closest('.node');if(b)reveal(b);});
+cv.addEventListener('click',function(e){var b=e.target.closest('.node');if(!b)return;apply(b.dataset.id,cur.pace,{anim:true,say:true,hash:true});reveal(b);});
+cv.addEventListener('keydown',function(e){
+  var b=e.target.closest('.node');if(!b)return;
+  var id=b.dataset.id,k=e.key,L=D.LAYER[id],x=D.CX[id],next=null,l;
+  if(k==='ArrowDown'||k==='ArrowUp'){
+    var dir=k==='ArrowDown'?1:-1;
+    for(l=L+dir;l>=0&&l<=maxLayer&&!next;l+=dir){var bd=1e9;D.ORDER.forEach(function(q){if(D.LAYER[q]!==l)return;var dd=Math.abs(D.CX[q]-x);if(dd<bd){bd=dd;next=q;}});}
+  }else if(k==='ArrowRight'||k==='ArrowLeft'){
+    var same=D.ORDER.filter(function(q){return D.LAYER[q]===L;});next=same[same.indexOf(id)+(k==='ArrowRight'?1:-1)]||null;
+  }else if(k==='Home')next=D.ORDER[0];else if(k==='End')next=D.ORDER[D.ORDER.length-1];
+  else return;
+  e.preventDefault();if(next)nodes[next].focus();
+});
+dock.addEventListener('change',function(e){if(e.target&&e.target.name==='pace')apply(cur.to,+e.target.value,{rail:true,say:true,hash:true});});
+
+/* 課程卡的連結：設成終點／打開那門課 */
+d.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a');if(!a)return;
+  var href=a.getAttribute('href')||'',m;
+  if((m=/^#to-([a-z])$/.exec(href))&&nodes[m[1]]){
+    e.preventDefault();apply(m[1],cur.pace,{anim:true,say:true,hash:true});
+    d.getElementById('map').scrollIntoView({behavior:rm.matches?'auto':'smooth',block:'start'});
+    nodes[m[1]].focus({preventScroll:true});
+  }else if((m=/^#c-([a-z])$/.exec(href))&&cards[m[1]]){var dt=$('details',cards[m[1]]);if(dt)dt.open=true;}
+});
+
+function fromHash(){var m=/^#to-([a-z])(?:-p([0-9]+))?$/.exec(location.hash);return m&&nodes[m[1]]?{to:m[1],pace:m[2]?+m[2]:cur.pace}:null;}
+addEventListener('hashchange',function(){var h=fromHash();if(h)apply(h.to,h.pace,{anim:true,say:true});});
+var rT=0;addEventListener('resize',function(){cancelAnimationFrame(rT);rT=requestAnimationFrame(function(){drawRiver(lastP,false);});});
+if(narrow.addEventListener)narrow.addEventListener('change',function(){drawRiver(lastP,false);});
+
+/* 啟動：hash 還原；手機收起非終點的課程細節 */
+var h0=fromHash();
+apply(h0?h0.to:cur.to,h0?h0.pace:cur.pace,{});
+if(cvw.scrollWidth>cvw.clientWidth+1){var r=nodes[cur.to].getBoundingClientRect(),w=cvw.getBoundingClientRect();cvw.scrollLeft=Math.max(0,Math.ceil(r.right+20-w.right));}
+})();
+</script>
+</body>
+</html>

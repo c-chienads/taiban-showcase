@@ -1,0 +1,1085 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F01" data-slug="index-press">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>字庫抽屜｜一一五年秋冬書目</title>
+<meta name="description" content="字庫抽屜是一間只用孔版印刷機套兩色印書的小出版社。第十四期秋冬書目：十四本書，每一本都有一張可以從抽屜裡抽出來看的索引卡。">
+
+<meta name="generator" content="套版網站平台 F01">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preload" href="fonts/01-noto-serif-tc.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"Noto Serif TC";src:url("fonts/01-noto-serif-tc.woff2") format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url("fonts/02-jetbrains-mono.woff2") format("woff2");font-weight:400 800;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root{
+  --paper:oklch(0.956 0.007 252);
+  --paper-hi:oklch(0.984 0.004 252);
+  --ink:oklch(0.47 0.165 262);
+  --ink-deep:oklch(0.32 0.115 264);
+  --ink-soft:oklch(0.46 0.075 262);
+  --rule:oklch(0.47 0.165 262 / .28);
+  --rule-2:oklch(0.47 0.165 262 / .6);
+  --pink:oklch(0.7 0.22 350);
+  --pink-ink:oklch(0.52 0.2 355);
+  --pink-tint:oklch(0.925 0.045 352);
+  --mx:1px; --my:-.5px;
+  --gut:16px;
+  --gap:14px;
+  --serif:"Noto Serif TC",serif;
+  --mono:"JetBrains Mono","Noto Serif TC",monospace;
+  --focus-ring:2px solid oklch(0.32 0.115 264);
+  --focus-offset:3px;
+  --selection-bg:oklch(0.87 0.09 352);
+  --selection-fg:oklch(0.28 0.11 264);
+  color-scheme:light;
+}
+@media (min-width:700px){:root{--gut:28px;--gap:20px}}
+@media (min-width:1100px){:root{--gut:44px;--gap:28px}}
+html{background:var(--paper);scroll-padding-bottom:4rem;scroll-padding-top:1rem}
+body{background:var(--paper) url("assets/paper-fiber.svg");color:var(--ink-deep);font:400 1.0625rem/1.78 var(--serif);font-feature-settings:"palt" 0}
+:focus-visible{box-shadow:4px 4px 0 0 var(--pink)}
+a{text-decoration-thickness:1px;text-underline-offset:.24em}
+a:hover{text-decoration-color:var(--pink-ink);text-decoration-thickness:2px}
+.sprite{position:absolute;overflow:hidden}
+
+/* ---------- 刊頭 ---------- */
+.mast{padding:1.1rem var(--gut) 0;overflow-x:clip}
+.strip{display:flex;flex-wrap:wrap;align-items:center;column-gap:1.15rem;row-gap:.2rem;padding-top:.5rem;padding-bottom:.5rem;border-top:1px solid var(--rule-2);border-bottom:1px solid var(--rule-2);font:400 .8125rem/1.5 var(--mono);font-variant-numeric:tabular-nums;color:var(--ink-deep)}
+.strip>span{white-space:nowrap}
+.strip>span+span:not(.brand)::before{content:"／";margin-inline-end:1.15rem;color:var(--rule-2)}
+.brand{display:inline-flex;align-items:center;gap:.6rem;font:700 .95rem/1 var(--serif);color:var(--ink);letter-spacing:.08em;margin-inline-end:.6rem}
+.brand svg{width:46px;height:auto;aspect-ratio:100/64;color:var(--ink)}
+.strip .reg{width:18px;height:18px;color:var(--ink);margin-inline-start:auto;flex:none}
+.mast-body{--wm-fs:clamp(4.3rem,10.4vw,10rem);position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto 1fr;column-gap:var(--gap);padding-top:3rem;padding-bottom:2.6rem}
+.mast-body::before{content:attr(data-issue);position:absolute;z-index:-1;inset-block-start:clamp(8px,1.5vw,22px);inset-inline-start:calc(var(--wm-fs) * 3.86 - .11em + var(--plate-dx,0px));font:800 clamp(10rem,21vw,19.5rem)/.74 var(--mono);letter-spacing:-.07em;color:var(--pink);-webkit-mask:url("assets/ink-grain.svg");mask:url("assets/ink-grain.svg");transform:translate(var(--mx),var(--my)) rotate(var(--plate-r,0deg));transform-origin:0 100%;pointer-events:none}
+.h1{grid-column:1/span 8;grid-row:1/span 2;margin:0;line-height:1}
+.wm{display:block;font-weight:900;font-size:var(--wm-fs);line-height:.92;letter-spacing:-.035em;color:var(--ink);mix-blend-mode:multiply}
+.wm-sub{display:flex;align-items:baseline;gap:.9rem;margin-top:clamp(14px,1.6vw,26px);font-weight:500;font-size:clamp(1.2rem,2vw,1.85rem);letter-spacing:.16em;color:var(--ink-deep)}
+.wm-sub small{font:400 .8125rem/1 var(--mono);letter-spacing:0;color:var(--ink-soft)}
+.lede{grid-column:9/-1;grid-row:1;margin:0;font-size:1rem;line-height:1.85;hanging-punctuation:allow-end}
+@font-face{font-family:"Noto Serif TC Em";src:url("fonts/01-noto-serif-tc.woff2") format("woff2");font-weight:400 900;font-display:swap;ascent-override:100%;descent-override:14%}
+.lede em,.co-a .pledge em,.pf-fix ins{font-family:"Noto Serif TC Em",var(--serif)}
+.lede em{text-emphasis:filled dot var(--pink-ink);text-emphasis-position:under right}
+.edges{grid-column:9/-1;grid-row:2;align-self:end;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:1.3rem;align-items:end;margin:1.6rem 0 0}
+.edge-row{position:relative;display:flex;align-items:flex-end;height:70px;padding:0 .35rem 0 .45rem;border-bottom:2px solid var(--ink);border-left:2px solid var(--ink)}
+.e{position:relative;flex:none;width:11px;height:50px;transform:rotate(var(--t,0deg));transform-origin:50% 100%}
+.e::before{content:"";position:absolute;left:50%;bottom:0;width:3px;height:100%;margin-left:-1.5px;background:var(--ink-soft)}
+.e-re::before{background:var(--ink)}
+.e-new::before,.e-pre::before{height:112%;background:var(--pink-ink)}
+.e-new::after,.e-pre::after{content:"";position:absolute;left:50%;bottom:112%;width:12px;height:8px;background:var(--pink);mix-blend-mode:multiply}
+.e-pre::after{left:auto;right:50%}
+.e-low::before{height:64%;background:var(--ink)}
+.e-low::after{content:"";position:absolute;left:50%;bottom:64%;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--pink-ink)}
+.e-oop::before{width:0;margin-left:0;background:none;border-left:1px dashed var(--rule-2)}
+.e-back{flex:none;width:9px;height:60px;margin-left:.4rem;border:1.5px solid var(--ink);background:var(--pink);transform:skewX(-9deg);transform-origin:0 100%}
+.edge-cap{margin:0 0 .3rem;font:400 .8125rem/1.45 var(--mono);color:var(--ink-soft)}
+.edge-cap b{color:var(--ink);font-weight:700}
+.edge-key{display:flex;flex-wrap:wrap;gap:.15rem 1.05rem;margin:0;font:400 .8125rem/1.5 var(--mono);color:var(--ink-deep)}
+.edge-key div{display:flex;align-items:center;gap:.4rem}
+.edge-key div::before{content:"";width:3px;height:.95em;background:var(--ink-soft)}
+.edge-key .k-new::before,.edge-key .k-pre::before{background:var(--pink-ink)}
+.edge-key .k-re::before,.edge-key .k-low::before{background:var(--ink)}
+.edge-key .k-oop::before{width:0;background:none;border-left:1px dashed var(--ink-soft)}
+.edge-key dt{color:var(--ink-deep)}
+.edge-key dd{margin:0;font-weight:700;color:var(--ink)}
+
+/* ---------- 三欄：側標｜書目｜旁註 ---------- */
+.stacks{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,7fr) minmax(0,3fr);column-gap:var(--gap);padding:2.1rem var(--gut) 6rem;border-top:2px solid var(--ink)}
+.spine{grid-column:1;grid-row:1/span 4}
+.spine-in{position:sticky;top:clamp(18px,4vh,44px);display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.holder{position:relative;writing-mode:vertical-rl;padding:2.3rem 1rem;border:1.5px solid var(--ink);outline:1px solid var(--rule-2);outline-offset:-6px;background:var(--paper-hi)}
+.holder .screw{position:absolute;inset-inline-start:50%;width:12px;height:12px;color:var(--ink);transform:translateX(-50%);writing-mode:horizontal-tb}
+.holder .screw.t{top:.62rem}.holder .screw.b{bottom:.62rem}
+.screw g,.pull g{fill:none;stroke:currentColor}
+.sp-title{margin:0;font-weight:900;font-size:clamp(2rem,3.2vw,3.15rem);line-height:1.04;letter-spacing:.14em;color:var(--ink)}
+.sp-sub{margin:0;margin-inline-start:.55rem;font-size:.8125rem;line-height:1.55;letter-spacing:.16em;color:var(--ink-soft)}
+.tcy{text-combine-upright:all;font-family:var(--mono);letter-spacing:0}
+.pull{width:7.4rem;height:auto;color:var(--ink)}
+.sp-count{margin:0;font:400 .75rem/1.6 var(--mono);text-align:center;color:var(--ink-soft)}
+.sp-count b{display:block;font:900 1.05rem/1.4 var(--serif);color:var(--ink);letter-spacing:.2em}
+
+.catalog{grid-column:2/4;display:grid;grid-template-columns:subgrid;align-content:start}
+.cat-head{grid-column:1;display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:.8rem 1.4rem;padding-bottom:.85rem}
+.cat-h{margin:0;font-weight:900;font-size:clamp(1.55rem,2.1vw,2rem);letter-spacing:.24em;line-height:1;color:var(--ink-deep)}
+.cat-h small{display:block;margin-top:.55rem;font:400 .8125rem/1 var(--mono);letter-spacing:0;color:var(--ink-soft)}
+.tap-hint{display:none;flex-basis:100%;margin:0;font-size:.8125rem;line-height:1.6;color:var(--ink-soft)}
+.tabs{display:flex;flex-wrap:wrap;margin:0;padding:0;border:0}
+.tabs input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.tabs label{display:inline-flex;align-items:baseline;gap:.32rem;margin-inline-start:-1px;padding:.46rem .72rem .4rem;border:1px solid var(--rule-2);border-bottom:0;background:var(--paper-hi);font-size:.875rem;line-height:1.3;cursor:pointer;position:relative}
+.tabs label b{font-weight:900;color:var(--ink)}
+.tabs label .n{font:400 .75rem/1 var(--mono);color:var(--ink-soft)}
+.tabs label:hover{background:var(--pink-tint)}
+.tabs input:checked+label{background:var(--pink-tint);border-color:var(--ink);z-index:1;margin-top:0;padding-bottom:.82rem}
+.tabs input:checked+label .n{color:var(--ink-deep)}
+.tabs input:focus-visible+label{outline:var(--focus-ring);outline-offset:2px;box-shadow:4px 4px 0 0 var(--pink);z-index:2}
+.mhead{grid-column:2;align-self:end;padding-bottom:.85rem}
+.mh-k{margin:0;font-weight:900;font-size:1.05rem;letter-spacing:.3em;color:var(--ink)}
+.mh-hint{margin:.2rem 0 0;font-size:.8125rem;line-height:1.6;color:var(--ink-soft)}
+.colheads{grid-column:1;position:relative;display:grid;grid-template-columns:4.1rem minmax(0,1fr) 5.4rem 4.3rem 4rem 6.2rem;column-gap:.9rem;padding:.42rem 0 .42rem 3.3rem;border-block:2px solid var(--ink) 1px solid var(--rule-2);border-top:2px solid var(--ink);border-bottom:1px solid var(--rule-2);font:400 .75rem/1.3 var(--mono);color:var(--ink-soft)}
+.mrule{grid-column:2;border-top:2px solid var(--ink)}
+.ch-bk{position:absolute;left:0;top:.42rem}
+.entries{grid-column:1/-1;display:grid;grid-template-columns:subgrid;margin:0;padding:0;list-style:none}
+.entry{grid-column:1/-1;display:grid;grid-template-columns:subgrid;position:relative;scroll-margin-block-start:28vh}
+.row{grid-column:1;grid-row:1;position:relative;isolation:isolate;display:grid;grid-template-columns:4.1rem minmax(0,1fr) 5.4rem 4.3rem 4rem 6.2rem;column-gap:.9rem;align-items:baseline;padding-top:1.05rem;padding-bottom:1.15rem;padding-left:3.3rem;border-bottom:1px solid var(--rule)}
+.bk{position:absolute;left:0;bottom:0;width:var(--sp-w);height:var(--sp-h);background:var(--pink);mix-blend-mode:multiply;-webkit-mask:url("assets/ink-grain.svg");mask:url("assets/ink-grain.svg");transform:rotate(var(--sp-t,0deg));transform-origin:0 100%}
+.bk{max-height:calc(100% - .3rem);--c2:var(--ink)}
+.bk-b{background:var(--ink);--c2:var(--pink)}
+.bk::before{content:"";position:absolute;left:0;right:0;background:var(--c2)}
+.pat-a::before{top:8%;height:11%}
+.pat-b::before{bottom:5%;height:8%}
+.pat-c::before{top:6%;left:50%;right:auto;width:min(64%,14px);aspect-ratio:1;border-radius:50%;transform:translateX(-50%)}
+.pat-d::before{top:0;height:16%}
+.pat-e::before{top:7%;height:3.5%;box-shadow:0 5px 0 0 var(--c2)}
+.pat-b .bk-t{top:8px}
+.bk-t{position:absolute;top:20px;left:50%;transform:translateX(-50%);writing-mode:vertical-rl;font-weight:700;font-style:normal;line-height:1;letter-spacing:.04em;white-space:nowrap;color:var(--ink)}
+.bk-p .bk-t{color:oklch(0.22 0.09 268)}
+.bk-b .bk-t{color:var(--paper-hi)}
+.row::before{content:"";position:absolute;z-index:-1;inset:.5rem -.45rem .45rem 6.6rem;background:var(--pink-tint);mix-blend-mode:multiply;transform:translate(var(--mx),var(--my));opacity:0}
+.no{grid-row:1/span 2;margin:0;position:relative;font:500 1.45rem/1.15 var(--mono);letter-spacing:-.03em;color:var(--ink)}
+.no::after{content:attr(data-n);position:absolute;inset-block-start:0;inset-inline-start:0;color:var(--pink);mix-blend-mode:multiply;transform:translate(var(--mx),var(--my));pointer-events:none}
+.ttl{grid-column:2;margin:0;font-weight:700;font-size:clamp(1.3rem,1.75vw,1.66rem);line-height:1.3;letter-spacing:.03em;color:var(--ink-deep)}
+.ttl a{text-decoration:none}
+.ttl a:hover{text-decoration:underline;text-decoration-color:var(--pink-ink)}
+.by{grid-column:2;grid-row:2;margin:.25rem 0 0;font-size:.9375rem;line-height:1.5;color:var(--ink-soft)}
+.by .role{margin-inline-start:.35em;font-size:.8125rem}
+.meta{grid-column:3/-1;grid-row:1/span 2;display:grid;grid-template-columns:subgrid;align-items:baseline;margin:0;font:400 .8125rem/1.45 var(--mono);color:var(--ink-deep)}
+.meta dd{margin:0}
+.meta .stem{font:900 .95rem/1 var(--serif);color:var(--ink);margin-inline-end:.3em}
+.meta small{font-size:.75rem;margin-inline-start:.15em;color:var(--ink-soft)}
+.st{display:inline-block;padding:.08rem .38rem;white-space:nowrap}
+.st-new,.st-pre{color:var(--pink-ink);border:1px solid currentColor;transform:rotate(-2.5deg);font-weight:700}
+.st-pre{transform:rotate(1.8deg)}
+.st-low{color:var(--pink-ink);font-weight:700}
+.st-oop{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:var(--pink);text-decoration-thickness:2px}
+.note{grid-column:2;grid-row:1;position:relative;margin:0;padding:1.1rem 0 .9rem 1.05rem;font-size:.9375rem;line-height:1.7;text-wrap:pretty;color:var(--ink-soft)}
+.note::before{content:"";position:absolute;inset-inline-start:0;top:1.72rem;width:.62rem;border-top:1px solid var(--pink-ink)}
+
+/* 索引卡 */
+.card{position:relative;background:var(--paper-hi);color:var(--ink-deep);padding:.85rem 1.05rem 2.1rem;border-radius:3px;box-shadow:6px 6px 0 0 var(--pink)}
+.card-hd{position:relative;display:flex;align-items:center;gap:.85rem;padding-bottom:.7rem;margin-bottom:.8rem}
+.card-hd::after{content:"";position:absolute;inset-inline:-1.05rem;bottom:0;border-top:2px solid var(--pink)}
+.lbl{width:4.5rem;height:auto;aspect-ratio:100/64;flex:none;color:var(--ink)}
+.callno{margin:0;display:grid;font:400 .75rem/1.55 var(--mono);color:var(--ink-soft)}
+.callno b{font-weight:700;font-size:.875rem;color:var(--ink)}
+.first{margin:0 0 .9rem;padding-left:1em;font-size:1rem;line-height:1.75;background:repeating-linear-gradient(180deg,transparent 0 calc(1.75em - 1px),var(--rule) calc(1.75em - 1px) 1.75em)}
+.first p{margin:0;text-indent:-1em}
+.spec{display:grid;grid-template-columns:auto minmax(0,1fr) auto minmax(0,1fr);column-gap:.6rem;row-gap:.15rem;margin:0 0 .8rem;font-size:.8125rem;line-height:1.55}
+.spec dt{font:400 .75rem/1.95 var(--mono);color:var(--ink-soft)}
+.spec dd:nth-of-type(odd){padding-right:.3rem}
+.spec .wide{grid-column:2/-1}
+.spec dd{margin:0;font-variant-numeric:tabular-nums}
+.c-note{margin:0;padding-top:.6rem;border-top:1px dashed var(--rule-2);font-size:.875rem;line-height:1.7;text-wrap:pretty}
+.c-note b{font:700 .75rem/1 var(--mono);color:var(--pink-ink);margin-inline-end:.55em}
+.card::after{content:"";position:absolute;inset-inline-start:50%;bottom:.6rem;width:12px;height:12px;margin-inline-start:-6px;border-radius:50%;background:var(--paper);box-shadow:inset 0 0 0 1px var(--rule-2),inset 1px 2px 0 oklch(0.47 0.165 262 / .18)}
+
+/* 抽屜底：卡桿與後擋板 */
+.drawer-end{grid-column:1;position:relative;display:grid;grid-template-columns:minmax(0,1fr) 7.5rem;column-gap:1.4rem;align-items:end;padding:2.2rem 0 0 3.3rem}
+.drawer-end::before{content:"";position:absolute;left:0;right:7.5rem;bottom:13px;border-top:2px solid var(--ink)}
+.de-k{grid-column:1;margin:0;font-weight:900;font-size:1.05rem;letter-spacing:.24em;color:var(--ink)}
+.de-t{grid-column:1;margin:.35rem 0 1.9rem;max-width:36em;font-size:.9375rem;line-height:1.75;color:var(--ink-soft)}
+.rod-end{grid-column:2;grid-row:1/span 2;width:7.5rem;height:auto;color:var(--ink)}
+
+/* 招牌時刻：滑過／聚焦／錨點 → 索引卡分 5 格從抽屜抽出（steps），收回 3 格 */
+@media (min-width:1100px){
+  .slot{position:absolute;grid-column:2;grid-row:1;inset-block-start:.35rem;inset-inline:0;overflow:hidden;pointer-events:none;z-index:4;padding:0 8px 8px 0}
+  .card{transform:translateX(calc(-100% - 14px))}
+  .entry:hover .card,.entries:not(:has(.entry:hover)) .entry:is(:focus-within,:target) .card,.entries:not(:has(.entry:is(:hover,:focus-within,:target))) .is-featured .card{transform:none;transition:transform .36s steps(5,end)}
+  .entry:hover .slot,.entries:not(:has(.entry:hover)) .entry:is(:focus-within,:target) .slot,.entries:not(:has(.entry:is(:hover,:focus-within,:target))) .is-featured .slot{pointer-events:auto}
+  .entry:hover .row::before,.entries:not(:has(.entry:hover)) .entry:is(:focus-within,:target) .row::before,.entries:not(:has(.entry:is(:hover,:focus-within,:target))) .is-featured .row::before{opacity:1}
+  .entry:hover .no::after,.entries:not(:has(.entry:hover)) .entry:is(:focus-within,:target) .no::after,.entries:not(:has(.entry:is(:hover,:focus-within,:target))) .is-featured .no::after{transform:translate(calc(var(--mx) + 2px),calc(var(--my) + 1.5px));transition:transform .16s steps(2,end)}
+  .entry:hover + .entry .note,.entry:hover + .entry + .entry .note,.entry:hover + .entry + .entry + .entry .note,.entries:not(:has(.entry:hover)) .entry:is(:focus-within,:target) + .entry .note,.entries:not(:has(.entry:hover)) .entry:is(:focus-within,:target) + .entry + .entry .note,.entries:not(:has(.entry:hover)) .entry:is(:focus-within,:target) + .entry + .entry + .entry .note,.entries:not(:has(.entry:is(:hover,:focus-within,:target))) .is-featured + .entry .note,.entries:not(:has(.entry:is(:hover,:focus-within,:target))) .is-featured + .entry + .entry .note,.entries:not(:has(.entry:is(:hover,:focus-within,:target))) .is-featured + .entry + .entry + .entry .note{clip-path:inset(0 0 100% 0)}
+}
+
+/* 抽屜篩選（:has，無 JS 可用） */
+.catalog:has(#dr-a:checked) .entry:not([data-drawer="a"]),
+.catalog:has(#dr-b:checked) .entry:not([data-drawer="b"]),
+.catalog:has(#dr-c:checked) .entry:not([data-drawer="c"]),
+.catalog:has(#dr-d:checked) .entry:not([data-drawer="d"]),
+.catalog:has(#dr-e:checked) .entry:not([data-drawer="e"]){display:none}
+
+/* ---------- 版權頁 ---------- */
+.colophon{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:1.6rem;padding:4.6rem var(--gut) 5.4rem;border-top:2px solid var(--ink)}
+.co-title{grid-column:1/-1;display:flex;align-items:baseline;gap:1.1rem;margin:0;font-weight:900;font-size:clamp(1.55rem,2.1vw,2rem);letter-spacing:.3em;line-height:1}
+.co-title small{font:400 .8125rem/1 var(--mono);letter-spacing:0;color:var(--ink-soft)}
+.co-a{grid-column:1/span 4;align-self:start;padding:1.15rem 1.25rem 1.25rem;border:3px double var(--ink);background:var(--paper-hi)}
+.co-b{grid-column:5/span 5}
+.co-c{grid-column:10/span 3}
+.co-h{margin:0 0 .8rem;font-weight:700;font-size:1.05rem;letter-spacing:.18em;color:var(--ink)}
+.imprint{display:grid;grid-template-columns:4.2em minmax(0,1fr);gap:.28rem .9rem;margin:0;font-size:.875rem;line-height:1.6}
+.imprint dt{text-align:justify;text-align-last:justify;color:var(--ink-soft)}
+.imprint dd{margin:0}
+.co-a .pledge{margin:1rem 0 0;padding-top:.8rem;border-top:1px solid var(--rule-2);font-size:.875rem;line-height:1.75}
+.co-a .pledge em{text-emphasis:filled dot var(--pink-ink);text-emphasis-position:under right}
+.pf-head{display:grid;grid-template-columns:6.4rem minmax(0,1fr) 7rem;column-gap:1.1rem;margin:0;padding-bottom:.4rem;border-bottom:2px solid var(--ink);font:400 .75rem/1.4 var(--mono);color:var(--ink-soft)}
+.proofs{margin:0;padding:0;list-style:none}
+.proof{display:grid;grid-template-columns:6.4rem minmax(0,1fr) 7rem;column-gap:1.1rem;align-items:baseline;padding-top:.9rem;padding-bottom:.75rem;border-bottom:1px solid var(--rule)}
+.pf-ref{margin:0;font:400 .8125rem/1.5 var(--mono);color:var(--ink-deep)}
+.pf-ref span{display:block;font-size:.75rem;color:var(--ink-soft)}
+.pf-line{margin:-.9rem 0 0;padding-top:.9rem;overflow:hidden;white-space:nowrap;font-size:1rem;line-height:1.95}
+.pf-mark{position:relative;display:inline-block;white-space:nowrap}
+.pf-mark del{text-decoration:none;color:var(--ink-deep)}
+.loop{position:absolute;left:-.22em;top:12%;width:calc(100% + .5em);max-width:none;height:76%;overflow:visible;pointer-events:none}
+.loop path{fill:none;stroke:var(--pink-ink);stroke-width:1.3;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.pf-mark::after{content:"";position:absolute;left:calc(100% + .26em);bottom:62%;width:80em;height:.9em;border-left:1px solid var(--pink-ink);border-top:1px solid var(--pink-ink);transform:skewX(28deg);transform-origin:0 100%;pointer-events:none}
+.pf-fix{margin:0;font-size:1rem;line-height:1.5}
+.pf-fix ins{text-decoration:none;font-weight:700;color:var(--pink-ink);text-emphasis:filled dot var(--pink-ink);text-emphasis-position:under right}
+.pf-memo{display:block;font-size:.75rem;line-height:1.5;color:var(--ink-soft)}
+.co-b .after{margin:.9rem 0 0;font-size:.875rem;line-height:1.75;color:var(--ink-soft);max-width:36em}
+.cabinet{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:0;padding:6px;list-style:none;border:2px solid var(--ink);background:var(--paper-hi)}
+.drw{position:relative;display:grid;justify-items:center;align-content:start;gap:.1rem;padding:.75rem .6rem 1.7rem;border:1px solid var(--ink);text-align:center}
+.drw .lbl{width:3.5rem;margin-bottom:.4rem}
+.drw-n{font-weight:700;font-size:.9375rem;line-height:1.35;color:var(--ink-deep)}
+.drw-a{font:400 .75rem/1.45 var(--mono);color:var(--ink-soft)}
+.drw-main{grid-column:1/-1;grid-template-columns:auto minmax(0,1fr);justify-items:start;align-items:center;column-gap:1rem;row-gap:.15rem;padding:1rem 1rem 1.9rem;text-align:start}
+.drw-main .lbl{grid-row:1/span 2;width:5.2rem;margin:0}
+.drw-main .drw-n{font-size:1.125rem;letter-spacing:.08em;align-self:end}
+.drw-main .drw-a{align-self:start;font-size:.8125rem}
+.drw-empty{border-style:dashed;background:none}
+.drw-empty .lbl{opacity:.55}
+.drw-empty .drw-n{color:var(--ink-soft);font-weight:400}
+.drw-empty::after{content:none}
+.drw::after{content:"";position:absolute;left:50%;bottom:.55rem;width:1.7rem;height:.55rem;margin-left:-.85rem;border:1.5px solid var(--ink);border-top-width:0;border-radius:0 0 .85rem .85rem;background:var(--pink)}
+.co-c .submit{margin:1.2rem 0 0;font-size:.875rem;line-height:1.75}
+
+/* ---------- 座標條（黏在視窗底，捲到底時落進頁尾） ---------- */
+.readout{position:sticky;bottom:0;z-index:30;display:flex;align-items:center;gap:clamp(.7rem,1.6vw,1.7rem);padding:.42rem var(--gut);background:var(--paper);border-top:1px solid var(--rule-2);font:400 .78rem/1.3 var(--mono);font-variant-numeric:tabular-nums;color:var(--ink-deep);white-space:nowrap}
+.readout b{font-weight:700;color:var(--ink)}
+.readout .reg{width:15px;height:15px;flex:none;color:var(--ink)}
+.ro-ruler{flex:1;min-width:3rem;height:12px;position:relative;overflow:hidden;background:repeating-linear-gradient(90deg,var(--ink) 0 1px,transparent 1px 10px) 0 100%/100% 5px no-repeat,repeating-linear-gradient(90deg,var(--ink) 0 1px,transparent 1px 50px) 0 100%/100% 11px no-repeat}
+.ro-ptr{position:absolute;inset:0;transform:translateX(calc(var(--p,0) * 100% - var(--p,0) * 3px))}
+.ro-ptr::before{content:"";position:absolute;inset-block:0;inset-inline-start:0;width:3px;background:var(--pink)}
+.ro-where{overflow:hidden;text-overflow:ellipsis;max-width:16em}
+
+/* ---------- 座標頁尾 ---------- */
+.coords{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:1.4rem;padding:3.4rem var(--gut) 3rem}
+.geo-big{grid-column:1/span 8;margin:0;position:relative;isolation:isolate;font:400 clamp(2.1rem,5.5vw,5.4rem)/1.02 var(--mono);letter-spacing:-.045em;color:var(--ink)}
+.geo-big span:not(.sr-only){display:block}
+.geo-big::after{content:attr(data-plate);position:absolute;inset:0;z-index:-1;white-space:pre;color:var(--pink);-webkit-mask:url("assets/ink-grain.svg");mask:url("assets/ink-grain.svg");transform:translate(calc(var(--mx) * 1.6),calc(var(--my) * 1.6 + 1px));pointer-events:none}
+.geo-big span:last-child{padding-left:1.11em}
+.f-meta{grid-column:9/-1;align-self:end;margin:0;font-size:.875rem;line-height:1.75}
+.f-meta b{font-weight:700;color:var(--ink)}
+.colorbar{grid-column:1/span 8;display:flex;flex-wrap:wrap;align-items:stretch;margin:0;padding:0;list-style:none;font:400 .75rem/1.2 var(--mono);color:var(--ink-deep)}
+.colorbar li{display:grid;grid-template-rows:22px auto;gap:.3rem;width:5.4rem;padding-right:.4rem}
+.colorbar i{display:block;background:var(--c);mix-blend-mode:multiply}
+.colorbar .ov i{background:var(--pink);position:relative}
+.colorbar .ov i::after{content:"";position:absolute;inset:0;background:var(--ink);mix-blend-mode:multiply}
+.totop{grid-column:9/-1;justify-self:start;align-self:center;display:inline-flex;align-items:center;gap:.5rem;font-size:.9375rem;color:var(--ink);padding-top:.3rem;padding-bottom:.3rem}
+.totop .arr{width:11px;height:14px}
+
+/* ---------- 404：空抽屜 ---------- */
+.lost{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);padding:5rem var(--gut) 6.5rem;border-top:2px solid var(--ink)}
+.lost-copy{grid-column:1/span 6}
+.lost-q{margin:0 0 1.2rem;font:400 .8125rem/1.5 var(--mono);color:var(--ink-soft)}
+.lost-q b{color:var(--pink-ink)}
+.lost-h{margin:0 0 1.4rem;font-weight:900;font-size:clamp(2.8rem,7vw,6.6rem);line-height:1.06;letter-spacing:.04em;color:var(--ink)}
+.lost-no{display:block;margin-top:.5rem;font:400 clamp(1rem,1.6vw,1.4rem)/1 var(--mono);letter-spacing:0;color:var(--pink-ink)}
+.lost-copy p.say{max-width:30em;margin:0 0 1.6rem}
+.lost-go{margin:0;padding:0;list-style:none;display:grid;gap:.5rem}
+.lost-go a{display:inline-flex;align-items:center;gap:.6rem;font-size:1rem;color:var(--ink);padding-top:.25rem;padding-bottom:.25rem}
+.lost-go a::before{content:"";width:.7rem;height:.42rem;border:1px solid currentColor;flex:none}
+.lost-card{grid-column:8/span 5;align-self:start;position:relative;overflow:hidden;padding:0 10px 10px 0}
+.lost-card .card{animation:pull-once .42s steps(5,end) .25s both}
+@keyframes pull-once{from{transform:translateX(calc(-100% - 14px));box-shadow:0 0 0 0 var(--pink)}80%{box-shadow:0 0 0 0 var(--pink)}to{transform:none;box-shadow:6px 6px 0 0 var(--pink)}}
+.blank{height:calc(1.75em * 4);margin:0 0 1rem;background:repeating-linear-gradient(180deg,transparent 0 calc(1.75em - 1px),var(--rule) calc(1.75em - 1px) 1.75em)}
+.stamp{position:absolute;top:5.6rem;right:1.6rem;margin:0;padding:.25rem .7rem .25rem .9rem;border:2.5px solid var(--pink-ink);color:var(--pink-ink);font-weight:900;font-size:1.6rem;line-height:1.3;letter-spacing:.24em;transform:rotate(var(--r,-6deg));mix-blend-mode:multiply;-webkit-mask:url("assets/ink-grain.svg");mask:url("assets/ink-grain.svg")}
+.slip-h{margin:0 0 .3rem;font:400 .75rem/1.4 var(--mono);color:var(--ink-soft)}
+.slip{margin:0;padding:0;list-style:none;font:400 .8125rem/1 var(--mono)}
+.slip li{display:flex;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--rule)}
+.slip li span:last-child{display:inline-block;color:var(--pink-ink);font-weight:700;transform:rotate(var(--r,0deg))}
+
+@media (min-width:1100px){.row{min-height:7.5rem;align-content:center}}
+/* 1100–1299：窄桌機，側標欄讓位給書目，欄位收緊 */
+@media (min-width:1100px) and (max-width:1299.98px){
+  .stacks{grid-template-columns:minmax(0,1.25fr) minmax(0,7.55fr) minmax(0,3.2fr)}
+  .row,.colheads{grid-template-columns:3.3rem minmax(0,1fr) 4.4rem 3.9rem 3.5rem 5.4rem;column-gap:.75rem}
+  .holder{padding:2.1rem .7rem}
+  .sp-title{font-size:2rem}
+  .pull{width:5.6rem}
+  .entry:hover + .entry + .entry + .entry + .entry .note,.entries:not(:has(.entry:hover)) .entry:is(:focus-within,:target) + .entry + .entry + .entry + .entry .note,.entries:not(:has(.entry:is(:hover,:focus-within,:target))) .is-featured + .entry + .entry + .entry + .entry .note{clip-path:inset(0 0 100% 0)}
+}
+/* ---------- 響應式：<1100 卡片直接攤在列下，書脊站在書號下方 ---------- */
+@media (max-width:1099.98px){
+  .stacks{grid-template-columns:clamp(2.7rem,7vw,4.6rem) minmax(0,1fr);padding-bottom:4rem}
+  .catalog{grid-column:2;display:block}
+  .entries{display:block}
+  .entry{display:block;padding-bottom:.2rem}
+  .note,.mhead,.mrule,.pull,.sp-count,.sp-sub{display:none}
+  .holder{padding:1.9rem .55rem}
+  .sp-title{font-size:clamp(1.35rem,3.6vw,2rem);letter-spacing:.1em}
+  .slot{padding:0 6px 6px 0;overflow:hidden}
+  .card{margin:.1rem 0 1.4rem 5rem}
+  .tap-hint{display:block}
+  .row{position:static;isolation:auto;padding-left:0;border-bottom:0}
+  .row::before{display:none}
+  .colheads{padding-left:0}
+  .ch-bk{display:none}
+  .entry{border-bottom:1px solid var(--rule)}
+  /* 未抽出：只留旁註與規格一行（首句與標籤仍給讀屏） */
+  .entry:not(:target) .card{background:none;box-shadow:none;padding:0;border-radius:0;margin-bottom:1.05rem}
+  .entry:not(:target) .card::after{content:none}
+  .entry:not(:target) :is(.card-hd,.first),.entry:not(:target) .spec :is(dt,dd:nth-of-type(3),dd:nth-of-type(5)){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .entry:not(:target) .spec{display:flex;flex-wrap:wrap;gap:0 1.1rem;margin:0 0 .3rem;font:400 .75rem/1.65 var(--mono);color:var(--ink-soft)}
+  .entry:not(:target) .spec dd{white-space:nowrap}
+  .entry:not(:target) .c-note{border:0;padding:0;color:var(--ink-soft)}
+  /* 點書名（:target）→ 整張卡分五格抽出 */
+  .entry:target .card{animation:pull-once .36s steps(5,end) both}
+  .entry:target .bk{opacity:.35}
+  .drawer-end{padding-left:0}
+  .colophon{row-gap:2.2rem}
+  .strip .geo,.strip .free{display:none}
+  .h1{grid-column:1/-1;grid-row:1}
+  .lede{grid-column:1/span 6;grid-row:2;margin-top:2rem}
+  .edges{grid-column:7/-1;grid-row:2}
+  .mast-body::before{font-size:clamp(8.6rem,23vw,16rem)}
+  .co-a{grid-column:1/span 6}.co-b{grid-column:7/-1}.co-c{grid-column:1/span 6}
+}
+/* ---------- 手機：側標改成頂部黏著橫條 ---------- */
+@media (max-width:699.98px){
+  .strip{column-gap:.7rem;font-size:.75rem}
+  .strip .brand{flex-basis:100%;margin-bottom:.15rem}
+  .strip>span.brand+span::before{content:none}
+  .mast-body{padding-top:2rem;padding-bottom:2rem}
+  .stacks{grid-template-columns:minmax(0,1fr);padding-top:1.2rem}
+  .spine{grid-column:1;grid-row:1;z-index:25;pointer-events:none;margin:0 calc(-1 * var(--gut))}
+  .spine-in{position:sticky;top:0;pointer-events:auto;flex-direction:row;justify-content:space-between;align-items:center;gap:.6rem;padding:.45rem var(--gut);background:var(--paper);border-bottom:1px solid var(--rule-2)}
+  .holder{writing-mode:horizontal-tb;display:flex;align-items:baseline;gap:.6rem;padding:.3rem 1.6rem}
+  .holder .screw.t,.holder .screw.b{top:50%;bottom:auto;transform:translate(-50%,-50%)}
+  .holder .screw.t{inset-inline-start:.8rem}
+  .holder .screw.b{inset-inline-start:auto;inset-inline-end:.8rem;transform:translate(50%,-50%)}
+  .sp-title{font-size:1.05rem;letter-spacing:.12em;line-height:1.4;white-space:nowrap}
+  .sp-sub{display:block;margin:0;font-size:.75rem;letter-spacing:.04em;line-height:1.4;white-space:nowrap}
+  .sp-season{display:none}
+  .tcy{text-combine-upright:none;margin-inline:.15em}
+  .sp-count{display:block;text-align:right;font-size:.75rem;line-height:1.35;white-space:nowrap}
+  .sp-count b{display:inline;font-size:.875rem;letter-spacing:.12em;margin-right:.4em}
+  .catalog{grid-column:1;grid-row:1;padding-top:4.2rem}
+  .colophon{padding-top:3rem;padding-bottom:3.4rem}
+  .coords{padding-top:2.4rem}
+  .lost{padding-top:3rem;padding-bottom:4rem}
+  .strip>span+span:not(.brand)::before{margin-inline-end:.7rem}
+  .mast-body{grid-template-columns:minmax(0,1fr)}
+  .mast-body::before{inset-inline-start:auto;inset-inline-end:.05em;inset-block-start:1.6rem;letter-spacing:-.1em;font-size:clamp(7.5rem,33vw,10rem)}
+  .h1,.lede,.edges{grid-column:1;grid-row:auto}
+  .lede{margin-top:1.4rem}
+  .wm{font-size:clamp(3.2rem,16vw,4.6rem)}
+  .wm-sub{flex-direction:column;gap:.4rem;letter-spacing:.1em}
+  .edges{margin-top:1.8rem}
+  .colheads{display:none}
+  .cat-head{display:block}
+  .tap-hint{margin-top:.6rem}
+  .tabs{margin-top:1rem}
+  .tabs label{margin-top:-1px;border-bottom:1px solid var(--rule-2)}
+  .tabs input:checked+label{padding-bottom:.4rem}
+  .row{grid-template-columns:2.9rem minmax(0,1fr);row-gap:.1rem;padding-top:1rem;padding-bottom:.7rem}
+  .no{font-size:1.1rem;grid-row:1/span 3}
+  .meta{grid-column:2;grid-row:3;display:flex;flex-wrap:wrap;gap:.15rem .9rem;margin-top:.45rem}
+  .card{margin-left:0}
+  .entry:not(:target) .card{margin-left:3.8rem}
+  .co-a,.co-b,.co-c{grid-column:1/-1}
+  .pf-head{display:none}
+  .proof{grid-template-columns:minmax(0,1fr) auto;row-gap:.2rem}
+  .pf-ref{grid-column:1/-1;display:flex;gap:.8rem}
+  .pf-ref span{display:inline}
+  .pf-line{grid-column:1}
+  .pf-fix{grid-column:2;align-self:start;padding-top:.2rem;text-align:end}
+  .pf-mark::after{width:30em}
+  .geo-big,.f-meta,.colorbar,.totop{grid-column:1/-1}
+  .colorbar li{width:20%}
+  .geo-big span:last-child{padding-left:0}
+  .geo-big::after{content:none}
+  .readout .ro-geo,.readout .ro-ruler{display:none}
+  .readout{justify-content:space-between}
+  .lost-copy,.lost-card{grid-column:1/-1}
+  .lost-card{margin-top:2rem}
+}
+/* 320 級手機：頂部橫條裡書目標籤 184px＋「甲至戊五屜・十四張卡」不換行 137px 超過內容寬 288px，右緣被推出視窗 26px；計數改成兩行（甲至戊／五屜・十四張卡）窄窄地靠右 */
+@media (max-width:379.98px){
+  .sp-count{white-space:normal}
+  .sp-count b{display:block;margin-right:0}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .card,.no::after{transition:none!important}
+  .lost-card .card,.entry:target .card{animation:none!important}
+}
+@media print{
+  :root{--ink:oklch(0.15 0 0);--ink-deep:oklch(0.15 0 0);--ink-soft:oklch(0.32 0 0);--rule:oklch(0.15 0 0 / .3);--rule-2:oklch(0.15 0 0 / .6);--pink:oklch(0.72 0 0);--pink-ink:oklch(0.15 0 0)}
+  html,body{background:none!important}
+  body{color:oklch(0.15 0 0);font-size:10.5pt}
+  *{color:oklch(0.15 0 0)!important;box-shadow:none!important;text-shadow:none!important}
+  .readout,.tabs,.tap-hint,.mhead,.mrule,.colheads,.note,.spine,.colorbar,.totop,.reg{display:none!important}
+  .mast-body::before,.no::after,.row::before,.bk,.edge-row,.rod-end,.drawer-end::before,.drw::after,.pf-mark::after{display:none!important}
+  .wm{mix-blend-mode:normal}
+  .stacks{display:block;padding:0;border:0}
+  .catalog,.entries,.entry{display:block}
+  .entry{break-inside:avoid;border-bottom:1px solid}
+  .slot{position:static!important;overflow:visible!important}
+  .card{transform:none!important;margin:.2rem 0 .8rem 3rem!important;padding:0!important;background:none!important;animation:none!important}
+  .card :is(.card-hd,.first),.card .spec :is(dt,dd){position:static!important;width:auto!important;height:auto!important;overflow:visible!important;clip-path:none!important;white-space:normal!important}
+  .card .lbl,.card::after,.card-hd::after{display:none!important}
+  .card-hd{padding:0;margin:0 0 .2rem}
+  .first{background:none!important;margin:0 0 .2rem!important}
+  .card .spec{display:flex!important;flex-wrap:wrap;gap:0 .8rem;margin:0 0 .2rem!important;font-size:8.5pt}
+  .c-note{border:0!important;padding:0!important}
+  a{text-decoration:none}
+  .colophon,.coords{display:block;border:0}
+}
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<svg xmlns="http://www.w3.org/2000/svg" class="sprite" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="lbl-001" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(1.26 1.15)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M48.4 5.2L50 8.6L51.6 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M56.06 55.26l8.29 -2.4M30.56 54.19l3.32 -0.8" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M10.67 32.59L5.33 31.41" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M94.66 32.65L89.34 31.35" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">夜</text></symbol><symbol id="lbl-002" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(-1.59 -0.24)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M45.7 5.2L47.3 8.6L48.9 5.2M51.1 5.2L52.7 8.6L54.3 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M23.33 55.35l4.5 1.3M39.85 9.33l4.31 0.09M56.93 54.85l4.35 -1.17" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M10.34 30.58L5.66 33.42" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M94.72 32.28L89.28 31.72" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">迴</text></symbol><symbol id="lbl-003" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(0.89 1.57)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M48.4 5.2L50 8.6L51.6 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M48.59 10.05l5.97 0.36M24.24 9.56l7.56 0.83" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M10.39 33.33L5.61 30.67" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M94.43 33.26L89.57 30.74" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">南</text></symbol><symbol id="lbl-004" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(2.17 0.55)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M43 5.2L44.6 8.6L46.2 5.2M48.4 5.2L50 8.6L51.6 5.2M53.8 5.2L55.4 8.6L57 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M38.67 10.15l6.39 1.79M61.21 55.6l6.11 1.41M68.35 53.69l5.87 1.12M42.52 10.5l6.03 1.39" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M9.09 34.51L6.91 29.49" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M94.71 31.58L89.29 32.42" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">逗</text></symbol><symbol id="lbl-005" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(1.78 -1.45)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M37.6 5.2L39.2 8.6L40.8 5.2M43 5.2L44.6 8.6L46.2 5.2M48.4 5.2L50 8.6L51.6 5.2M53.8 5.2L55.4 8.6L57 5.2M59.2 5.2L60.8 8.6L62.4 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M46.97 54.2l4.24 0.08M74.86 55.18l4.31 -0.86M67.33 54.9l8.87 1.86" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M10.29 33.5L5.71 30.5" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M92.1 34.74L91.9 29.26" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">活</text></symbol><symbol id="lbl-006" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(2.15 0.84)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M40.3 5.2L41.9 8.6L43.5 5.2M45.7 5.2L47.3 8.6L48.9 5.2M51.1 5.2L52.7 8.6L54.3 5.2M56.5 5.2L58.1 8.6L59.7 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M33.88 56.3l7.81 1.09M21.23 9.64l4.77 -1.24M42.75 56.21l3.2 0.1M54.32 54.78l3.29 0.23" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M9.73 29.88L6.27 34.12" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M92.64 34.66L91.36 29.34" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">颱</text></symbol><symbol id="lbl-007" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(2.19 0.99)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M43 5.2L44.6 8.6L46.2 5.2M48.4 5.2L50 8.6L51.6 5.2M53.8 5.2L55.4 8.6L57 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M61.85 55.69l5.41 -1.51M53.38 10.53l3.46 0.9M64.33 9.74l3.92 0.78M58.04 9.72l5.86 -1.17" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M10.72 32.3L5.28 31.7" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M93.52 34.28L90.48 29.72" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">貨</text></symbol><symbol id="lbl-008" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(-0.33 -1.48)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M45.7 5.2L47.3 8.6L48.9 5.2M51.1 5.2L52.7 8.6L54.3 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M20.77 10.48l6.24 1.68M49.32 10.22l3.67 -1.1M52.67 53.75l3.4 0.58M49.51 55.46l5.39 0.43" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M8.74 34.64L7.26 29.36" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M94.6 32.86L89.4 31.14" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">一</text></symbol><symbol id="lbl-009" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(1.89 0.27)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M48.4 5.2L50 8.6L51.6 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M60.2 53.5l3.05 0.73M25.83 56.12l8.03 2.09M27.41 55.35l4.5 -0.77" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M10.74 31.95L5.26 32.05" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M93.56 29.75L90.44 34.25" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">校</text></symbol><symbol id="lbl-010" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(-0.16 -0.46)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M37.6 5.2L39.2 8.6L40.8 5.2M43 5.2L44.6 8.6L46.2 5.2M48.4 5.2L50 8.6L51.6 5.2M53.8 5.2L55.4 8.6L57 5.2M59.2 5.2L60.8 8.6L62.4 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M36.83 10.45l5.4 -0.86M74.16 55.17l7.22 0.58M57.55 55.09l5.66 -1.25M27.87 53.53l4.42 -0.13" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M10.69 31.49L5.31 32.51" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M94.64 31.28L89.36 32.72" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">招</text></symbol><symbol id="lbl-011" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(0.71 -0.07)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M45.7 5.2L47.3 8.6L48.9 5.2M51.1 5.2L52.7 8.6L54.3 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M27.42 10.28l4.3 0.13M42.17 9.87l8.84 -0.18" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M9.25 34.44L6.75 29.56" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M93.73 34.13L90.27 29.87" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">小</text></symbol><symbol id="lbl-012" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(1.45 0.98)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M43 5.2L44.6 8.6L46.2 5.2M48.4 5.2L50 8.6L51.6 5.2M53.8 5.2L55.4 8.6L57 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M33.24 55.67l6.6 1.78M59.98 54.34l5.99 1.32M38.66 55.31l3.5 -0.46" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M8.02 34.74L7.98 29.26" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M94.63 31.23L89.37 32.77" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">水</text></symbol><symbol id="lbl-013" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(-0.74 0.79)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M48.4 5.2L50 8.6L51.6 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M61.94 9.32l5.93 1.07M39.53 55.81l3.98 -0.92M24.53 9.71l7.2 1.58M69.31 54.54l8.84 1.33" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M8.61 29.33L7.39 34.67" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M94.49 30.86L89.51 33.14" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">中</text></symbol><symbol id="lbl-014" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(-0.19 0.41)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M40.3 5.2L41.9 8.6L43.5 5.2M45.7 5.2L47.3 8.6L48.9 5.2M51.1 5.2L52.7 8.6L54.3 5.2M56.5 5.2L58.1 8.6L59.7 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M54.41 10.17l5.09 -0.76M46.64 9.59l7.07 -1.2" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M10.73 31.84L5.27 32.16" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M94.36 33.39L89.64 30.61" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">抽</text></symbol><symbol id="lbl-logo" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(0.05 1.47)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M37.6 5.2L39.2 8.6L40.8 5.2M43 5.2L44.6 8.6L46.2 5.2M48.4 5.2L50 8.6L51.6 5.2M53.8 5.2L55.4 8.6L57 5.2M59.2 5.2L60.8 8.6L62.4 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M56.35 55.51l3.43 -0.45M60.46 9.83l6.13 1.35" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M8.95 29.43L7.05 34.57" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M92.11 29.26L91.89 34.74" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">字</text></symbol><symbol id="lbl-s0" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(-1.11 -0.53)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M48.4 5.2L50 8.6L51.6 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M38.87 9.92l5.64 -0.06M34.89 9.29l8.1 0.89" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M10.66 32.64L5.34 31.36" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M94.12 30.27L89.88 33.73" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">北</text></symbol><symbol id="lbl-s1" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(-0.45 0.17)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M45.7 5.2L47.3 8.6L48.9 5.2M51.1 5.2L52.7 8.6L54.3 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M37.62 55.73l5.47 -1.26M24.82 53.65l5.13 -0.21" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M8.34 34.72L7.66 29.28" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M94.72 32.29L89.28 31.71" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">北</text></symbol><symbol id="lbl-s2" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(-1.3 -0.41)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M43 5.2L44.6 8.6L46.2 5.2M48.4 5.2L50 8.6L51.6 5.2M53.8 5.2L55.4 8.6L57 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M23.79 55.71l7.81 1.56M28.97 10.03l7.69 0M58.87 55.29l5.85 -1.64M67.75 9.44l4 0.32" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M9.2 34.46L6.8 29.54" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M92.05 29.26L91.95 34.74" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">中</text></symbol><symbol id="lbl-s3" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(1.02 -1.15)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M48.4 5.2L50 8.6L51.6 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M30.8 10.19l6.43 1.54M45.28 9.34l5.38 -1.13" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M10.67 31.4L5.33 32.6" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M94.72 32.33L89.28 31.67" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">南</text></symbol><symbol id="lbl-s4" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(-0.33 -1.03)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M45.7 5.2L47.3 8.6L48.9 5.2M51.1 5.2L52.7 8.6L54.3 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M32.22 53.6l3.47 0.94M77.78 9.56l6.38 1.34M33.68 9.54l4.69 0.52" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M10.13 30.28L5.87 33.72" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M94.14 30.3L89.86 33.7" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">雄</text></symbol><symbol id="lbl-s5" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(1.87 0.1)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="M43 5.2L44.6 8.6L46.2 5.2M48.4 5.2L50 8.6L51.6 5.2M53.8 5.2L55.4 8.6L57 5.2" stroke-width=".9" stroke-linejoin="round"/><path d="M62.25 10.18l8.06 -0.81M59.4 9.61l4.61 0.51M62.01 56.08l5.36 1.18" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M8.83 29.39L7.17 34.61" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M94.49 33.15L89.51 30.85" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">蓮</text></symbol><symbol id="lbl-s-empty" viewBox="0 0 100 64"><rect x="15.5" y="12.5" width="69" height="39" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply" transform="translate(-1.13 -1.6)"/><g fill="none" stroke="currentColor"><rect x="1" y="4.8" width="98" height="54.4" rx="4" stroke-width="1.5"/><rect x="15" y="12" width="70" height="40" rx="1" stroke-width="1"/><path d="M15 15.6H85M15 48.4H85" stroke-width=".55" opacity=".6"/><path d="" stroke-width=".9" stroke-linejoin="round"/><path d="M30.39 54.32l4.84 0.19M47.62 9.95l5.98 -1.02M44.6 9.46l3.16 -0.79M31.51 9.91l6.36 0.89" stroke-width=".45" opacity=".55" stroke-linecap="round"/><circle cx="8" cy="32" r="3.7" stroke-width="1"/><path d="M10.43 30.74L5.57 33.26" stroke-width="1.15" stroke-linecap="round"/><circle cx="92" cy="32" r="3.7" stroke-width="1"/><path d="M93.6 34.22L90.4 29.78" stroke-width="1.15" stroke-linecap="round"/></g><text x="50" y="42.6" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="28.5" fill="currentColor" style="mix-blend-mode:multiply">空</text></symbol></svg>
+<header class="mast" id="top" style="--mx:0.56px;--my:-1.59px;--plate-dx:0.44px;--plate-r:1.73deg">
+  <div class="strip">
+    <span class="brand"><svg viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-logo"/></svg>字庫抽屜出版社</span>
+    <span>ZK-CAT 115-2</span><span>第 14 期</span><span>秋冬號</span><span class="geo">臺北・鉛字巷　N25°03′27″ E121°30′35″</span><span class="free">免費索取，每人一份</span>
+    <svg class="reg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke-width="1"><g style="stroke:var(--pink);mix-blend-mode:multiply;transform:translate(var(--mx),var(--my))"><circle cx="12" cy="12" r="6"/><path d="M12 1.5v21M1.5 12h21"/></g><g stroke="currentColor"><circle cx="12" cy="12" r="6"/><path d="M12 1.5v21M1.5 12h21"/></g></g></svg>
+  </div>
+  <div class="mast-body" data-issue="14">
+    <h1 class="h1"><span class="wm">字庫抽屜</span><span class="wm-sub">一一五年秋冬書目<small>No.14 ／ 秋分出刊</small></span></h1>
+    <p class="lede">字庫抽屜是一間只用孔版印刷機印書的小出版社，門市在鉛字巷底那扇綠色鐵捲門後面。每本書只套兩色——鈷藍與螢光粉。墨會偏、紙會皺，這些都<em>留著</em>。這份目錄就是店裡的抽屜：每一列是一本書，每一張卡片，是編輯想替那本書多說的一句話。</p>
+    <figure class="edges">
+      <div class="edge-row" aria-hidden="true"><i class="e e-pre" style="--t:4.68deg"></i><i class="e e-new" style="--t:-2.19deg"></i><i class="e e-new" style="--t:1.13deg"></i><i class="e e-stock" style="--t:2.21deg"></i><i class="e e-stock" style="--t:-0.74deg"></i><i class="e e-low" style="--t:4.95deg"></i><i class="e e-stock" style="--t:-0.45deg"></i><i class="e e-stock" style="--t:-0.11deg"></i><i class="e e-re" style="--t:-3.61deg"></i><i class="e e-stock" style="--t:-0.96deg"></i><i class="e e-stock" style="--t:-2.52deg"></i><i class="e e-re" style="--t:-3.46deg"></i><i class="e e-oop" style="--t:-0.11deg"></i><i class="e e-re" style="--t:-4.33deg"></i><b class="e-back"></b></div>
+      <figcaption>
+        <p class="edge-cap">抽屜俯視・本期收錄 <b>14</b> 種</p>
+        <dl class="edge-key">
+          <div class="k-new"><dt>新書</dt><dd>2</dd></div>
+          <div class="k-pre"><dt>預購</dt><dd>1</dd></div>
+          <div class="k-re"><dt>再刷</dt><dd>3</dd></div>
+          <div class="k-low"><dt>庫存少</dt><dd>1</dd></div>
+          <div class="k-oop"><dt>絕版</dt><dd>1</dd></div>
+        </dl>
+      </figcaption>
+    </figure>
+  </div>
+</header>
+<main id="main" class="stacks" style="--mx:0.56px;--my:-1.59px">
+  <aside class="spine" aria-label="抽屜側標">
+    <div class="spine-in">
+      <div class="holder">
+        <svg class="screw t" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><g><circle cx="6" cy="6" r="4.6" stroke-width="1"/><path d="M8.19 8.61L3.81 3.39" stroke-width="1.15" stroke-linecap="round"/></g></svg>
+        <p class="sp-title">秋冬書目</p>
+        <p class="sp-sub"><span class="sp-season">一一五年秋冬　</span>第<span class="tcy">14</span>期</p>
+        <svg class="screw b" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><g><circle cx="6" cy="6" r="4.6" stroke-width="1"/><path d="M8.5 3.69L3.5 8.31" stroke-width="1.15" stroke-linecap="round"/></g></svg>
+      </div>
+      <svg class="pull" viewBox="0 0 132 44" aria-hidden="true" focusable="false"><rect x="8" y="6" width="116" height="20" rx="1.5" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply;transform:translate(var(--mx),var(--my))"/><g fill="none" stroke="currentColor"><rect x="8" y="6" width="116" height="20" rx="1.5" stroke-width="1"/><circle cx="17" cy="16" r="3.1" stroke-width="0.9"/><path d="M17.6 13.78L16.4 18.22" stroke-width="1.03" stroke-linecap="round"/><circle cx="115" cy="16" r="3.1" stroke-width="0.9"/><path d="M115.01 18.29L114.99 13.71" stroke-width="1.03" stroke-linecap="round"/><path d="M30 16v14M102 16v14" stroke-width="2.4" stroke-linecap="round"/><path d="M26 32.5H106" stroke-width="5" stroke-linecap="round"/><path d="M30 31.2H102" stroke-width=".8" opacity=".35"/><path d="M24 39.5H108" stroke-width=".6" opacity=".45" stroke-dasharray="2 2"/></g></svg>
+      <p class="sp-count"><b>甲至戊</b>五屜・十四張卡</p>
+    </div>
+  </aside>
+  <section class="catalog" aria-labelledby="cat-h">
+    <div class="cat-head">
+      <h2 class="cat-h" id="cat-h">書目<small>依書號倒序・新書在上</small></h2>
+      <p class="tap-hint">點一下書名，那本書的索引卡就會從抽屜裡抽出來。</p>
+      <fieldset class="tabs">
+        <legend class="sr-only">只看某一個抽屜</legend>
+        <input type="radio" name="drawer" id="dr-all" value="all" checked><label for="dr-all">全部<span class="n">14</span></label>
+        <input type="radio" name="drawer" id="dr-a" value="a"><label for="dr-a"><b>甲</b>小說<span class="n">4</span></label><input type="radio" name="drawer" id="dr-b" value="b"><label for="dr-b"><b>乙</b>散文<span class="n">3</span></label><input type="radio" name="drawer" id="dr-c" value="c"><label for="dr-c"><b>丙</b>詩<span class="n">3</span></label><input type="radio" name="drawer" id="dr-d" value="d"><label for="dr-d"><b>丁</b>圖文<span class="n">2</span></label><input type="radio" name="drawer" id="dr-e" value="e"><label for="dr-e"><b>戊</b>研究<span class="n">2</span></label>
+      </fieldset>
+    </div>
+    <div class="mhead">
+      <p class="mh-k">旁註</p>
+      <p class="mh-hint">游標停在任一列，或用 Tab 移到書名，那本書的索引卡就會從抽屜裡抽出來。</p>
+    </div>
+    <div class="colheads" aria-hidden="true"><span class="ch-bk">書脊</span><span>書號</span><span>書名／作者</span><span>抽屜</span><span>出版</span><span>頁數</span><span>狀態</span></div>
+    <div class="mrule" aria-hidden="true"></div>
+    <ol class="entries" role="list">
+      <li class="entry" id="zk-014" data-drawer="d" data-no="ZK-014" data-title="抽屜底層" style="--sp-w:29.43px;--sp-h:92px;--sp-t:1.34deg">
+  <div class="row">
+    <span class="bk bk-p pat-d" aria-hidden="true"><i class="bk-t" style="font-size:12px">抽屜底層</i></span>
+    <p class="no" data-n="014"><span class="sr-only">書號 ZK-</span>014</p>
+    <h3 class="ttl"><a href="#zk-014">抽屜底層</a></h3>
+    <p class="by">字庫抽屜編輯部<span class="role">編</span></p>
+    <dl class="meta">
+      <div><dt class="sr-only">抽屜</dt><dd><span class="stem">丁</span>圖文</dd></div>
+      <div><dt class="sr-only">出版</dt><dd><time datetime="2026-11">115.11</time></dd></div>
+      <div><dt class="sr-only">頁數</dt><dd>160<small>頁</small></dd></div>
+      <div><dt class="sr-only">狀態</dt><dd><span class="st st-pre">預購</span></dd></div>
+    </dl>
+  </div>
+  <p class="note" aria-hidden="true">十週年合集：31 封退稿信與編輯回信的原件影印，裝在一只紙抽屜盒裡。</p>
+  <div class="slot"><div class="card" role="group" aria-label="《抽屜底層》索引卡">
+  <div class="card-hd">
+    <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-014"/></svg>
+    <p class="callno"><b>丁屜・ZK-014</b><span>115.11　圖文</span></p>
+  </div>
+  <blockquote class="first"><p>「每間出版社，都有一個不太敢打開的抽屜。」</p></blockquote>
+  <dl class="spec">
+    <dt>開本</dt><dd>17 × 23 cm</dd>
+    <dt>裝幀</dt><dd>活頁・附紙抽屜盒</dd>
+    <dt>用紙</dt><dd>再生道林 100 磅</dd>
+    <dt>定價</dt><dd>NT$ 500</dd>
+    <dt>印量</dt><dd class="wide">限定 300 套・預購九折</dd>
+  </dl>
+  <p class="c-note"><b>旁註</b>十週年合集：31 封退稿信與編輯回信的原件影印，裝在一只紙抽屜盒裡。</p>
+</div></div>
+</li><li class="entry is-featured" id="zk-013" data-drawer="a" data-no="ZK-013" data-title="中文打字機" style="--sp-w:36.86px;--sp-h:86px;--sp-t:-1.36deg">
+  <div class="row">
+    <span class="bk bk-b pat-a" aria-hidden="true"><i class="bk-t" style="font-size:12px">中文打字機</i></span>
+    <p class="no" data-n="013"><span class="sr-only">書號 ZK-</span>013</p>
+    <h3 class="ttl"><a href="#zk-013">中文打字機</a></h3>
+    <p class="by">曾以安<span class="role">著</span></p>
+    <dl class="meta">
+      <div><dt class="sr-only">抽屜</dt><dd><span class="stem">甲</span>小說</dd></div>
+      <div><dt class="sr-only">出版</dt><dd><time datetime="2026-09">115.09</time></dd></div>
+      <div><dt class="sr-only">頁數</dt><dd>264<small>頁</small></dd></div>
+      <div><dt class="sr-only">狀態</dt><dd><span class="st st-new">新書</span></dd></div>
+    </dl>
+  </div>
+  <p class="note" aria-hidden="true">作者在舊貨攤買到那台打字機，字盤裡真的少了一格。</p>
+  <div class="slot"><div class="card" role="group" aria-label="《中文打字機》索引卡">
+  <div class="card-hd">
+    <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-013"/></svg>
+    <p class="callno"><b>甲屜・ZK-013</b><span>115.09　小說</span></p>
+  </div>
+  <blockquote class="first"><p>「她的中文打字機缺了一個『愛』字，所以整本日記都繞著它寫。」</p></blockquote>
+  <dl class="spec">
+    <dt>開本</dt><dd>13 × 19 cm</dd>
+    <dt>裝幀</dt><dd>穿線膠裝・裸背</dd>
+    <dt>用紙</dt><dd>再生道林 80 磅</dd>
+    <dt>定價</dt><dd>NT$ 460</dd>
+    <dt>印量</dt><dd class="wide">初版 800 冊</dd>
+  </dl>
+  <p class="c-note"><b>旁註</b>作者在舊貨攤買到那台打字機，字盤裡真的少了一格。</p>
+</div></div>
+</li><li class="entry" id="zk-012" data-drawer="c" data-no="ZK-012" data-title="水泥詩集" style="--sp-w:24.86px;--sp-h:74px;--sp-t:1.01deg">
+  <div class="row">
+    <span class="bk bk-p pat-c" aria-hidden="true"><i class="bk-t" style="font-size:12px">水泥詩集</i></span>
+    <p class="no" data-n="012"><span class="sr-only">書號 ZK-</span>012</p>
+    <h3 class="ttl"><a href="#zk-012">水泥詩集</a></h3>
+    <p class="by">何棠<span class="role">著</span></p>
+    <dl class="meta">
+      <div><dt class="sr-only">抽屜</dt><dd><span class="stem">丙</span>詩</dd></div>
+      <div><dt class="sr-only">出版</dt><dd><time datetime="2026-06">115.06</time></dd></div>
+      <div><dt class="sr-only">頁數</dt><dd>96<small>頁</small></dd></div>
+      <div><dt class="sr-only">狀態</dt><dd><span class="st st-new">新書</span></dd></div>
+    </dl>
+  </div>
+  <p class="note" aria-hidden="true">封面是水泥灰紙板，孔版的藍印上去會被纖維吃掉一點，每本深淺都不一樣。</p>
+  <div class="slot"><div class="card" role="group" aria-label="《水泥詩集》索引卡">
+  <div class="card-hd">
+    <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-012"/></svg>
+    <p class="callno"><b>丙屜・ZK-012</b><span>115.06　詩</span></p>
+  </div>
+  <blockquote class="first"><p>「城市是一首／還沒有乾透的詩」</p></blockquote>
+  <dl class="spec">
+    <dt>開本</dt><dd>11 × 17 cm</dd>
+    <dt>裝幀</dt><dd>瑞士裝</dd>
+    <dt>用紙</dt><dd>水泥灰紙板封面</dd>
+    <dt>定價</dt><dd>NT$ 300</dd>
+    <dt>印量</dt><dd class="wide">初版 400 冊</dd>
+  </dl>
+  <p class="c-note"><b>旁註</b>封面是水泥灰紙板，孔版的藍印上去會被纖維吃掉一點，每本深淺都不一樣。</p>
+</div></div>
+</li><li class="entry" id="zk-011" data-drawer="b" data-no="ZK-011" data-title="小島通訊錄" style="--sp-w:31.14px;--sp-h:86px;--sp-t:-1.09deg">
+  <div class="row">
+    <span class="bk bk-b pat-b" aria-hidden="true"><i class="bk-t" style="font-size:12px">小島通訊錄</i></span>
+    <p class="no" data-n="011"><span class="sr-only">書號 ZK-</span>011</p>
+    <h3 class="ttl"><a href="#zk-011">小島通訊錄</a></h3>
+    <p class="by">王映晴<span class="role">著</span></p>
+    <dl class="meta">
+      <div><dt class="sr-only">抽屜</dt><dd><span class="stem">乙</span>散文</dd></div>
+      <div><dt class="sr-only">出版</dt><dd><time datetime="2025-10">114.10</time></dd></div>
+      <div><dt class="sr-only">頁數</dt><dd>184<small>頁</small></dd></div>
+      <div><dt class="sr-only">狀態</dt><dd><span class="st st-stock">現貨</span></dd></div>
+    </dl>
+  </div>
+  <p class="note" aria-hidden="true">作者在島上的郵局代過三個月的班，信封都還留著。</p>
+  <div class="slot"><div class="card" role="group" aria-label="《小島通訊錄》索引卡">
+  <div class="card-hd">
+    <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-011"/></svg>
+    <p class="callno"><b>乙屜・ZK-011</b><span>114.10　散文</span></p>
+  </div>
+  <blockquote class="first"><p>「島上的地址不寫門牌，只寫『賣冬瓜那家的隔壁』。」</p></blockquote>
+  <dl class="spec">
+    <dt>開本</dt><dd>12.8 × 18.8 cm</dd>
+    <dt>裝幀</dt><dd>穿線膠裝</dd>
+    <dt>用紙</dt><dd>模造紙 70 磅</dd>
+    <dt>定價</dt><dd>NT$ 380</dd>
+    <dt>印量</dt><dd class="wide">初版 600 冊</dd>
+  </dl>
+  <p class="c-note"><b>旁註</b>作者在島上的郵局代過三個月的班，信封都還留著。</p>
+</div></div>
+</li><li class="entry" id="zk-010" data-drawer="e" data-no="ZK-010" data-title="招牌字考" style="--sp-w:30.57px;--sp-h:84px;--sp-t:-0.3deg">
+  <div class="row">
+    <span class="bk bk-p pat-e" aria-hidden="true"><i class="bk-t" style="font-size:12px">招牌字考</i></span>
+    <p class="no" data-n="010"><span class="sr-only">書號 ZK-</span>010</p>
+    <h3 class="ttl"><a href="#zk-010">招牌字考</a></h3>
+    <p class="by">陳柏諺<span class="role">著</span></p>
+    <dl class="meta">
+      <div><dt class="sr-only">抽屜</dt><dd><span class="stem">戊</span>研究</dd></div>
+      <div><dt class="sr-only">出版</dt><dd><time datetime="2025-08">114.08</time></dd></div>
+      <div><dt class="sr-only">頁數</dt><dd>176<small>頁</small></dd></div>
+      <div><dt class="sr-only">狀態</dt><dd><span class="st st-stock">現貨</span></dd></div>
+    </dl>
+  </div>
+  <p class="note" aria-hidden="true">收錄 86 個老招牌字的描摹，每一筆都重新描過線。</p>
+  <div class="slot"><div class="card" role="group" aria-label="《招牌字考》索引卡">
+  <div class="card-hd">
+    <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-010"/></svg>
+    <p class="callno"><b>戊屜・ZK-010</b><span>114.08　研究</span></p>
+  </div>
+  <blockquote class="first"><p>「招牌會褪色，但寫字的人手腕怎麼轉，筆畫都記得。」</p></blockquote>
+  <dl class="spec">
+    <dt>開本</dt><dd>15 × 21 cm</dd>
+    <dt>裝幀</dt><dd>穿線膠裝</dd>
+    <dt>用紙</dt><dd>道林 100 磅</dd>
+    <dt>定價</dt><dd>NT$ 520</dd>
+    <dt>印量</dt><dd class="wide">初版 500 冊</dd>
+  </dl>
+  <p class="c-note"><b>旁註</b>收錄 86 個老招牌字的描摹，每一筆都重新描過線。</p>
+</div></div>
+</li><li class="entry" id="zk-009" data-drawer="a" data-no="ZK-009" data-title="校對者" style="--sp-w:40.29px;--sp-h:76px;--sp-t:0.3deg">
+  <div class="row">
+    <span class="bk bk-b pat-a" aria-hidden="true"><i class="bk-t" style="font-size:12px">校對者</i></span>
+    <p class="no" data-n="009"><span class="sr-only">書號 ZK-</span>009</p>
+    <h3 class="ttl"><a href="#zk-009">校對者</a></h3>
+    <p class="by">許牧<span class="role">著</span></p>
+    <dl class="meta">
+      <div><dt class="sr-only">抽屜</dt><dd><span class="stem">甲</span>小說</dd></div>
+      <div><dt class="sr-only">出版</dt><dd><time datetime="2025-06">114.06</time></dd></div>
+      <div><dt class="sr-only">頁數</dt><dd>312<small>頁</small></dd></div>
+      <div><dt class="sr-only">狀態</dt><dd><span class="st st-low">庫存 18 冊</span></dd></div>
+    </dl>
+  </div>
+  <p class="note" aria-hidden="true">書末夾一張空白勘誤卡，讀者找到錯字，填好寄回來就會進下一版勘誤表。</p>
+  <div class="slot"><div class="card" role="group" aria-label="《校對者》索引卡">
+  <div class="card-hd">
+    <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-009"/></svg>
+    <p class="callno"><b>甲屜・ZK-009</b><span>114.06　小說</span></p>
+  </div>
+  <blockquote class="first"><p>「她一生改過的錯字，比她說過的話還多。」</p></blockquote>
+  <dl class="spec">
+    <dt>開本</dt><dd>13 × 19 cm</dd>
+    <dt>裝幀</dt><dd>穿線膠裝・裸背</dd>
+    <dt>用紙</dt><dd>再生道林 80 磅</dd>
+    <dt>定價</dt><dd>NT$ 440</dd>
+    <dt>印量</dt><dd class="wide">初版 700 冊</dd>
+  </dl>
+  <p class="c-note"><b>旁註</b>書末夾一張空白勘誤卡，讀者找到錯字，填好寄回來就會進下一版勘誤表。</p>
+</div></div>
+</li><li class="entry" id="zk-008" data-drawer="b" data-no="ZK-008" data-title="一間房間的地址" style="--sp-w:32.86px;--sp-h:110px;--sp-t:0.07deg">
+  <div class="row">
+    <span class="bk bk-p pat-b" aria-hidden="true"><i class="bk-t" style="font-size:12px">一間房間的地址</i></span>
+    <p class="no" data-n="008"><span class="sr-only">書號 ZK-</span>008</p>
+    <h3 class="ttl"><a href="#zk-008">一間房間的地址</a></h3>
+    <p class="by">簡如<span class="role">著</span></p>
+    <dl class="meta">
+      <div><dt class="sr-only">抽屜</dt><dd><span class="stem">乙</span>散文</dd></div>
+      <div><dt class="sr-only">出版</dt><dd><time datetime="2025-04">114.04</time></dd></div>
+      <div><dt class="sr-only">頁數</dt><dd>208<small>頁</small></dd></div>
+      <div><dt class="sr-only">狀態</dt><dd><span class="st st-stock">現貨</span></dd></div>
+    </dl>
+  </div>
+  <p class="note" aria-hidden="true">書腰沿虛線撕下，背面就是郵簡，貼張郵票就能寄。</p>
+  <div class="slot"><div class="card" role="group" aria-label="《一間房間的地址》索引卡">
+  <div class="card-hd">
+    <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-008"/></svg>
+    <p class="callno"><b>乙屜・ZK-008</b><span>114.04　散文</span></p>
+  </div>
+  <blockquote class="first"><p>「我搬過十一次家，每一次都先拆裝書的箱子。」</p></blockquote>
+  <dl class="spec">
+    <dt>開本</dt><dd>12.8 × 18.8 cm</dd>
+    <dt>裝幀</dt><dd>穿線膠裝</dd>
+    <dt>用紙</dt><dd>模造紙 70 磅</dd>
+    <dt>定價</dt><dd>NT$ 380</dd>
+    <dt>印量</dt><dd class="wide">初版 600 冊</dd>
+  </dl>
+  <p class="c-note"><b>旁註</b>書腰沿虛線撕下，背面就是郵簡，貼張郵票就能寄。</p>
+</div></div>
+</li><li class="entry" id="zk-007" data-drawer="c" data-no="ZK-007" data-title="貨櫃與月亮" style="--sp-w:27.14px;--sp-h:86px;--sp-t:-0.32deg">
+  <div class="row">
+    <span class="bk bk-b pat-c" aria-hidden="true"><i class="bk-t" style="font-size:12px">貨櫃與月亮</i></span>
+    <p class="no" data-n="007"><span class="sr-only">書號 ZK-</span>007</p>
+    <h3 class="ttl"><a href="#zk-007">貨櫃與月亮</a></h3>
+    <p class="by">柯雨禾<span class="role">著</span></p>
+    <dl class="meta">
+      <div><dt class="sr-only">抽屜</dt><dd><span class="stem">丙</span>詩</dd></div>
+      <div><dt class="sr-only">出版</dt><dd><time datetime="2025-02">114.02</time></dd></div>
+      <div><dt class="sr-only">頁數</dt><dd>128<small>頁</small></dd></div>
+      <div><dt class="sr-only">狀態</dt><dd><span class="st st-stock">現貨</span></dd></div>
+    </dl>
+  </div>
+  <p class="note" aria-hidden="true">作者在港區開了二十年吊車，詩都寫在交班表的背面。</p>
+  <div class="slot"><div class="card" role="group" aria-label="《貨櫃與月亮》索引卡">
+  <div class="card-hd">
+    <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-007"/></svg>
+    <p class="callno"><b>丙屜・ZK-007</b><span>114.02　詩</span></p>
+  </div>
+  <blockquote class="first"><p>「港邊的起重機／每晚把月亮吊上去一次」</p></blockquote>
+  <dl class="spec">
+    <dt>開本</dt><dd>11 × 17 cm</dd>
+    <dt>裝幀</dt><dd>瑞士裝</dd>
+    <dt>用紙</dt><dd>再生道林 100 磅</dd>
+    <dt>定價</dt><dd>NT$ 320</dd>
+    <dt>印量</dt><dd class="wide">初版 400 冊</dd>
+  </dl>
+  <p class="c-note"><b>旁註</b>作者在港區開了二十年吊車，詩都寫在交班表的背面。</p>
+</div></div>
+</li><li class="entry" id="zk-006" data-drawer="d" data-no="ZK-006" data-title="颱風天的麵包店" style="--sp-w:22.57px;--sp-h:110px;--sp-t:0.6deg">
+  <div class="row">
+    <span class="bk bk-p pat-d" aria-hidden="true"><i class="bk-t" style="font-size:12px">颱風天的麵包店</i></span>
+    <p class="no" data-n="006"><span class="sr-only">書號 ZK-</span>006</p>
+    <h3 class="ttl"><a href="#zk-006">颱風天的麵包店</a></h3>
+    <p class="by">吳小滿<span class="role">圖・文</span></p>
+    <dl class="meta">
+      <div><dt class="sr-only">抽屜</dt><dd><span class="stem">丁</span>圖文</dd></div>
+      <div><dt class="sr-only">出版</dt><dd><time datetime="2024-09">113.09</time></dd></div>
+      <div><dt class="sr-only">頁數</dt><dd>64<small>頁</small></dd></div>
+      <div><dt class="sr-only">狀態</dt><dd><span class="st st-re">二刷</span></dd></div>
+    </dl>
+  </div>
+  <p class="note" aria-hidden="true">全書只用兩色：粉紅是奶油，藍是雨。</p>
+  <div class="slot"><div class="card" role="group" aria-label="《颱風天的麵包店》索引卡">
+  <div class="card-hd">
+    <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-006"/></svg>
+    <p class="callno"><b>丁屜・ZK-006</b><span>113.09　圖文</span></p>
+  </div>
+  <blockquote class="first"><p>「停電的時候，烤箱還是溫的。」</p></blockquote>
+  <dl class="spec">
+    <dt>開本</dt><dd>21 × 21 cm</dd>
+    <dt>裝幀</dt><dd>精裝</dd>
+    <dt>用紙</dt><dd>雲彩紙 120 磅</dd>
+    <dt>定價</dt><dd>NT$ 450</dd>
+    <dt>印量</dt><dd class="wide">二刷累計 1,800 冊</dd>
+  </dl>
+  <p class="c-note"><b>旁註</b>全書只用兩色：粉紅是奶油，藍是雨。</p>
+</div></div>
+</li><li class="entry" id="zk-005" data-drawer="e" data-no="ZK-005" data-title="活字的重量" style="--sp-w:42px;--sp-h:86px;--sp-t:-1.02deg">
+  <div class="row">
+    <span class="bk bk-b pat-e" aria-hidden="true"><i class="bk-t" style="font-size:12px">活字的重量</i></span>
+    <p class="no" data-n="005"><span class="sr-only">書號 ZK-</span>005</p>
+    <h3 class="ttl"><a href="#zk-005">活字的重量</a></h3>
+    <p class="by">黃鐵生<span class="role">著</span></p>
+    <dl class="meta">
+      <div><dt class="sr-only">抽屜</dt><dd><span class="stem">戊</span>研究</dd></div>
+      <div><dt class="sr-only">出版</dt><dd><time datetime="2024-07">113.07</time></dd></div>
+      <div><dt class="sr-only">頁數</dt><dd>336<small>頁</small></dd></div>
+      <div><dt class="sr-only">狀態</dt><dd><span class="st st-stock">現貨</span></dd></div>
+    </dl>
+  </div>
+  <p class="note" aria-hidden="true">附錄的鑄字行分布圖用鈷藍印街道、螢光粉印店家，兩版靠十字規線對位。</p>
+  <div class="slot"><div class="card" role="group" aria-label="《活字的重量》索引卡">
+  <div class="card-hd">
+    <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-005"/></svg>
+    <p class="callno"><b>戊屜・ZK-005</b><span>113.07　研究</span></p>
+  </div>
+  <blockquote class="first"><p>「老師傅說，五號字拿在手上，要輕到讓人忘記它是鉛。」</p></blockquote>
+  <dl class="spec">
+    <dt>開本</dt><dd>15 × 21 cm</dd>
+    <dt>裝幀</dt><dd>穿線精裝</dd>
+    <dt>用紙</dt><dd>道林 100 磅</dd>
+    <dt>定價</dt><dd>NT$ 580</dd>
+    <dt>印量</dt><dd class="wide">初版 800 冊</dd>
+  </dl>
+  <p class="c-note"><b>旁註</b>附錄的鑄字行分布圖用鈷藍印街道、螢光粉印店家，兩版靠十字規線對位。</p>
+</div></div>
+</li><li class="entry" id="zk-004" data-drawer="c" data-no="ZK-004" data-title="逗號以後" style="--sp-w:26px;--sp-h:74px;--sp-t:-0.6deg">
+  <div class="row">
+    <span class="bk bk-p pat-c" aria-hidden="true"><i class="bk-t" style="font-size:12px">逗號以後</i></span>
+    <p class="no" data-n="004"><span class="sr-only">書號 ZK-</span>004</p>
+    <h3 class="ttl"><a href="#zk-004">逗號以後</a></h3>
+    <p class="by">莊未央<span class="role">著</span></p>
+    <dl class="meta">
+      <div><dt class="sr-only">抽屜</dt><dd><span class="stem">丙</span>詩</dd></div>
+      <div><dt class="sr-only">出版</dt><dd><time datetime="2024-05">113.05</time></dd></div>
+      <div><dt class="sr-only">頁數</dt><dd>112<small>頁</small></dd></div>
+      <div><dt class="sr-only">狀態</dt><dd><span class="st st-stock">現貨</span></dd></div>
+    </dl>
+  </div>
+  <p class="note" aria-hidden="true">全書沒有一個句號：排版那天，句號那一格鉛字整排從字盤抽走。</p>
+  <div class="slot"><div class="card" role="group" aria-label="《逗號以後》索引卡">
+  <div class="card-hd">
+    <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-004"/></svg>
+    <p class="callno"><b>丙屜・ZK-004</b><span>113.05　詩</span></p>
+  </div>
+  <blockquote class="first"><p>「我把句點借給你／你還我一個逗號」</p></blockquote>
+  <dl class="spec">
+    <dt>開本</dt><dd>11 × 17 cm</dd>
+    <dt>裝幀</dt><dd>瑞士裝</dd>
+    <dt>用紙</dt><dd>再生道林 100 磅</dd>
+    <dt>定價</dt><dd>NT$ 300</dd>
+    <dt>印量</dt><dd class="wide">初版 400 冊</dd>
+  </dl>
+  <p class="c-note"><b>旁註</b>全書沒有一個句號：排版那天，句號那一格鉛字整排從字盤抽走。</p>
+</div></div>
+</li><li class="entry" id="zk-003" data-drawer="a" data-no="ZK-003" data-title="南機場的鴿子" style="--sp-w:35.14px;--sp-h:98px;--sp-t:1.3deg">
+  <div class="row">
+    <span class="bk bk-b pat-a" aria-hidden="true"><i class="bk-t" style="font-size:12px">南機場的鴿子</i></span>
+    <p class="no" data-n="003"><span class="sr-only">書號 ZK-</span>003</p>
+    <h3 class="ttl"><a href="#zk-003">南機場的鴿子</a></h3>
+    <p class="by">葉思齊<span class="role">著</span></p>
+    <dl class="meta">
+      <div><dt class="sr-only">抽屜</dt><dd><span class="stem">甲</span>小說</dd></div>
+      <div><dt class="sr-only">出版</dt><dd><time datetime="2024-01">113.01</time></dd></div>
+      <div><dt class="sr-only">頁數</dt><dd>240<small>頁</small></dd></div>
+      <div><dt class="sr-only">狀態</dt><dd><span class="st st-re">二刷</span></dd></div>
+    </dl>
+  </div>
+  <p class="note" aria-hidden="true">二刷修正第 41 頁的誤植：「鴿捨」應為「鴿舍」。謝謝那位寄明信片來的讀者。</p>
+  <div class="slot"><div class="card" role="group" aria-label="《南機場的鴿子》索引卡">
+  <div class="card-hd">
+    <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-003"/></svg>
+    <p class="callno"><b>甲屜・ZK-003</b><span>113.01　小說</span></p>
+  </div>
+  <blockquote class="first"><p>「鴿子比住戶更早知道，哪一棟要拆。」</p></blockquote>
+  <dl class="spec">
+    <dt>開本</dt><dd>13 × 19 cm</dd>
+    <dt>裝幀</dt><dd>穿線膠裝</dd>
+    <dt>用紙</dt><dd>再生道林 80 磅</dd>
+    <dt>定價</dt><dd>NT$ 400</dd>
+    <dt>印量</dt><dd class="wide">二刷累計 1,100 冊</dd>
+  </dl>
+  <p class="c-note"><b>旁註</b>二刷修正第 41 頁的誤植：「鴿捨」應為「鴿舍」。謝謝那位寄明信片來的讀者。</p>
+</div></div>
+</li><li class="entry" id="zk-002" data-drawer="b" data-no="ZK-002" data-title="迴紋針與鹽" style="--sp-w:32px;--sp-h:86px;--sp-t:0.33deg">
+  <div class="row">
+    <span class="bk bk-p pat-b" aria-hidden="true"><i class="bk-t" style="font-size:12px">迴紋針與鹽</i></span>
+    <p class="no" data-n="002"><span class="sr-only">書號 ZK-</span>002</p>
+    <h3 class="ttl"><a href="#zk-002">迴紋針與鹽</a></h3>
+    <p class="by">林晏<span class="role">著</span></p>
+    <dl class="meta">
+      <div><dt class="sr-only">抽屜</dt><dd><span class="stem">乙</span>散文</dd></div>
+      <div><dt class="sr-only">出版</dt><dd><time datetime="2023-08">112.08</time></dd></div>
+      <div><dt class="sr-only">頁數</dt><dd>196<small>頁</small></dd></div>
+      <div><dt class="sr-only">狀態</dt><dd><span class="st st-oop">絕版</span></dd></div>
+    </dl>
+  </div>
+  <p class="note" aria-hidden="true">已絕版。孔版母版在二刷後裂開，作者決定不再重製，最後 37 冊在門市售完。</p>
+  <div class="slot"><div class="card" role="group" aria-label="《迴紋針與鹽》索引卡">
+  <div class="card-hd">
+    <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-002"/></svg>
+    <p class="callno"><b>乙屜・ZK-002</b><span>112.08　散文</span></p>
+  </div>
+  <blockquote class="first"><p>「外婆把所有收據都用迴紋針別起來，連海風也是。」</p></blockquote>
+  <dl class="spec">
+    <dt>開本</dt><dd>12.8 × 18.8 cm</dd>
+    <dt>裝幀</dt><dd>穿線膠裝</dd>
+    <dt>用紙</dt><dd>模造紙 70 磅</dd>
+    <dt>定價</dt><dd>NT$ 360</dd>
+    <dt>印量</dt><dd class="wide">初版 500 冊・不再印</dd>
+  </dl>
+  <p class="c-note"><b>旁註</b>已絕版。孔版母版在二刷後裂開，作者決定不再重製，最後 37 冊在門市售完。</p>
+</div></div>
+</li><li class="entry" id="zk-001" data-drawer="a" data-no="ZK-001" data-title="夜間排字房" style="--sp-w:38.57px;--sp-h:86px;--sp-t:0.12deg">
+  <div class="row">
+    <span class="bk bk-b pat-a" aria-hidden="true"><i class="bk-t" style="font-size:12px">夜間排字房</i></span>
+    <p class="no" data-n="001"><span class="sr-only">書號 ZK-</span>001</p>
+    <h3 class="ttl"><a href="#zk-001">夜間排字房</a></h3>
+    <p class="by">鍾以寧<span class="role">著</span></p>
+    <dl class="meta">
+      <div><dt class="sr-only">抽屜</dt><dd><span class="stem">甲</span>小說</dd></div>
+      <div><dt class="sr-only">出版</dt><dd><time datetime="2023-03">112.03</time></dd></div>
+      <div><dt class="sr-only">頁數</dt><dd>288<small>頁</small></dd></div>
+      <div><dt class="sr-only">狀態</dt><dd><span class="st st-re">三刷</span></dd></div>
+    </dl>
+  </div>
+  <p class="note" aria-hidden="true">字庫抽屜的第一本書。三刷起封面的藍改成鈷藍疊印兩次，比初版深一階。</p>
+  <div class="slot"><div class="card" role="group" aria-label="《夜間排字房》索引卡">
+  <div class="card-hd">
+    <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-001"/></svg>
+    <p class="callno"><b>甲屜・ZK-001</b><span>112.03　小說</span></p>
+  </div>
+  <blockquote class="first"><p>「凌晨兩點，整條街只剩鉛字還醒著。」</p></blockquote>
+  <dl class="spec">
+    <dt>開本</dt><dd>13 × 19 cm</dd>
+    <dt>裝幀</dt><dd>穿線膠裝・裸背</dd>
+    <dt>用紙</dt><dd>再生道林 80 磅</dd>
+    <dt>定價</dt><dd>NT$ 420</dd>
+    <dt>印量</dt><dd class="wide">三刷累計 1,800 冊</dd>
+  </dl>
+  <p class="c-note"><b>旁註</b>字庫抽屜的第一本書。三刷起封面的藍改成鈷藍疊印兩次，比初版深一階。</p>
+</div></div>
+</li>
+    </ol>
+    <div class="drawer-end">
+      <p class="de-k">抽屜到底了</p>
+      <p class="de-t">最後一格插著一張空白卡，留給一一六年的春季書目。書脊的寬隨頁數，高隨開本——同一格抽屜裡，《活字的重量》最厚，《颱風天的麵包店》最薄。</p>
+      <svg class="rod-end" viewBox="0 0 120 64" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor"><path d="M0 50H96" stroke-width="2"/><path d="M58 50L66 8h10l-6 42" stroke-width="1.4"/><path d="M62 50h18" stroke-width="3"/><circle cx="104" cy="50" r="8" stroke-width="1.5"/><path d="M104 44v12M98 50h12" stroke-width=".8" opacity=".6"/></g><path d="M66 8h10l-6 42h-8z" style="fill:var(--pink,#fb55b1);mix-blend-mode:multiply;transform:translate(var(--mx),var(--my))"/></svg>
+    </div>
+  </section>
+</main>
+<section class="colophon" aria-labelledby="co-h" style="--mx:0.56px;--my:-1.59px">
+  <h2 class="co-title" id="co-h">版權頁<small>ZK-CAT 115-2・本目錄的出生證明</small></h2>
+  <div class="co-a">
+    <h3 class="co-h">本目錄</h3>
+    <dl class="imprint">
+      <dt>刊名</dt><dd>字庫抽屜 一一五年秋冬書目</dd>
+      <dt>期號</dt><dd>第十四期（ZK-CAT 115-2）</dd>
+      <dt>出版者</dt><dd>字庫抽屜出版社</dd>
+      <dt>發行人</dt><dd>蘇硯</dd>
+      <dt>編輯</dt><dd>方綠、李一格</dd>
+      <dt>地址</dt><dd>臺北市大同區　鉛字巷 9 號</dd>
+      <dt>印製</dt><dd>本社孔版印刷機，二色：鈷藍、螢光粉</dd>
+      <dt>用紙</dt><dd>再生道林 100 磅（冷灰）</dd>
+      <dt>字型</dt><dd>Noto Serif TC、JetBrains Mono（SIL OFL 1.1）</dd>
+      <dt>印量</dt><dd>1,200 份，免費索取</dd>
+      <dt>版次</dt><dd>一一五年秋分　初版一刷</dd>
+    </dl>
+    <p class="pledge">兩色之間允許一公釐的偏移。那不是印壞，是<em>有人</em>親手把紙送進機器的證據。</p>
+  </div>
+  <div class="co-b">
+    <h3 class="co-h" id="errata-h">勘誤表</h3>
+    <p class="pf-head" aria-hidden="true"><span>書號・位置</span><span>校樣</span><span>改正</span></p>
+    <ol class="proofs" role="list" aria-labelledby="errata-h"><li class="proof">
+      <p class="pf-ref">ZK-003<span>41 頁 7 行</span></p>
+      <p class="pf-line">頂樓那排<span class="pf-mark"><del>鴿捨</del><svg class="loop" viewBox="-2 -2 104 44" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M16.42 9.39C18.61 8.72 24.89 6.52 29.58 5.41C34.26 4.3 39.29 2.91 44.51 2.74C49.72 2.58 55.53 3.88 60.87 4.42C66.21 4.97 71.88 4.96 76.56 5.99C81.23 7.03 85.68 9.03 88.95 10.65C92.21 12.26 94.66 13.81 96.14 15.66C97.62 17.52 98.58 19.75 97.82 21.77C97.06 23.79 94.25 26.06 91.57 27.79C88.89 29.53 85.58 30.92 81.73 32.18C77.88 33.44 73.4 34.41 68.46 35.36C63.52 36.32 57.63 37.84 52.1 37.9C46.57 37.97 40.49 36.6 35.28 35.77C30.08 34.93 25.31 33.94 20.87 32.91C16.42 31.88 11.48 31.15 8.61 29.59C5.75 28.02 4.84 25.61 3.69 23.52C2.54 21.43 0.86 19.16 1.72 17.04C2.57 14.92 6.08 12.76 8.84 10.81C11.59 8.86 14.03 6.81 18.23 5.35C22.43 3.88 28.51 2.75 34.03 2C39.55 1.25 48.47 1.06 51.35 0.87"/></svg></span>，比住戶都早醒。</p>
+      <p class="pf-fix"><span class="sr-only">改為</span><ins>鴿舍</ins><span class="pf-memo">二刷已改</span></p>
+    </li><li class="proof">
+      <p class="pf-ref">ZK-008<span>112 頁 3 行</span></p>
+      <p class="pf-line">她<span class="pf-mark"><del>再接再勵</del><svg class="loop" viewBox="-2 -2 104 44" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M10.75 10.98C12.56 10.26 17.46 7.88 21.61 6.66C25.76 5.43 30.69 4.27 35.66 3.63C40.62 3 46.14 2.6 51.4 2.84C56.67 3.09 62.28 4.31 67.26 5.11C72.23 5.92 77.46 6.58 81.25 7.69C85.04 8.8 87.58 10.29 89.99 11.78C92.41 13.28 94.53 14.9 95.76 16.65C96.99 18.39 97.92 20.48 97.36 22.25C96.79 24.02 94.64 25.48 92.39 27.27C90.13 29.07 87.6 31.73 83.84 33.02C80.07 34.31 74.61 34.14 69.77 35.02C64.94 35.9 59.9 38.11 54.8 38.31C49.71 38.51 44.32 36.79 39.19 36.24C34.05 35.68 28.38 35.94 23.98 34.97C19.59 34 15.87 32.01 12.83 30.43C9.78 28.86 7.46 27.26 5.72 25.52C3.98 23.79 2.73 21.88 2.39 20.04C2.05 18.19 2.12 16.32 3.68 14.45C5.25 12.58 8.37 10.54 11.8 8.82C15.23 7.11 22.2 4.95 24.28 4.17"/></svg></span>地把書排回架上。</p>
+      <p class="pf-fix"><span class="sr-only">改為</span><ins>再接再厲</ins></p>
+    </li><li class="proof">
+      <p class="pf-ref">ZK-009<span>27 頁 14 行</span></p>
+      <p class="pf-line">她在<span class="pf-mark"><del>校隊</del><svg class="loop" viewBox="-2 -2 104 44" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M12.44 9.23C14.89 8.76 22.18 7.55 27.14 6.42C32.11 5.29 36.97 3.01 42.22 2.45C47.47 1.89 53.15 2.36 58.66 3.04C64.16 3.72 70.61 5.5 75.24 6.52C79.88 7.55 83.01 7.79 86.48 9.19C89.94 10.6 94.45 12.96 96.02 14.96C97.6 16.97 96.68 19.17 95.94 21.21C95.2 23.25 93.74 25.4 91.57 27.2C89.41 29 86.69 30.65 82.95 32.03C79.22 33.41 74.33 34.47 69.15 35.5C63.98 36.53 57.66 38 51.9 38.23C46.15 38.47 39.89 37.75 34.6 36.93C29.31 36.11 24.46 34.75 20.18 33.32C15.9 31.89 11.73 30.1 8.92 28.36C6.11 26.62 4.6 24.84 3.32 22.85C2.04 20.87 0.12 18.45 1.23 16.44C2.34 14.44 6.44 12.75 9.97 10.83C13.5 8.92 17.84 6.24 22.39 4.97C26.94 3.7 31.92 3.84 37.29 3.21C42.65 2.59 51.71 1.55 54.6 1.22"/></svg></span>稿上畫了一個圈。</p>
+      <p class="pf-fix"><span class="sr-only">改為</span><ins>校對</ins><span class="pf-memo">三刷改正</span></p>
+    </li><li class="proof">
+      <p class="pf-ref">ZK-010<span>88 頁 圖說</span></p>
+      <p class="pf-line">布行招牌，<span class="pf-mark"><del>民國五十七年</del><svg class="loop" viewBox="-2 -2 104 44" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M14.46 9.54C16.53 8.93 22.12 6.9 26.89 5.89C31.65 4.87 37.57 3.94 43.05 3.45C48.54 2.96 54.6 2.43 59.81 2.93C65.01 3.42 69.6 5.29 74.29 6.42C78.97 7.55 84.71 8.19 87.92 9.69C91.12 11.19 92.04 13.46 93.5 15.43C94.96 17.39 96.72 19.5 96.67 21.46C96.61 23.42 95.5 25.34 93.14 27.19C90.78 29.04 86.67 30.96 82.49 32.57C78.31 34.17 73.12 36 68.06 36.83C63.01 37.65 57.67 37.71 52.16 37.53C46.66 37.34 40.22 36.28 35.03 35.74C29.84 35.2 25.22 35.35 21.02 34.26C16.81 33.17 12.74 31.07 9.81 29.21C6.88 27.35 4.5 25.18 3.43 23.09C2.36 20.99 2.71 18.62 3.39 16.64C4.07 14.66 4.54 12.9 7.5 11.2C10.46 9.5 16.5 7.67 21.17 6.44C25.84 5.21 30.21 4.52 35.52 3.82C40.83 3.12 50.13 2.49 53.05 2.22"/></svg></span>攝。</p>
+      <p class="pf-fix"><span class="sr-only">改為</span><ins>民國五十八年</ins></p>
+    </li></ol>
+    <p class="after">發現錯字，請寄明信片到門市。每一筆都先抄進這張校樣，下一刷改好之後，再在旁邊蓋一枚「已改」章。</p>
+  </div>
+  <div class="co-c">
+    <h3 class="co-h">取書處</h3>
+    <ul class="cabinet" role="list"><li class="drw drw-main">
+      <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-s0"/></svg>
+      <span class="drw-n">本社門市</span><span class="drw-a">臺北・鉛字巷 9 號・週四至週日 13:00–19:00・可現場翻抽屜</span>
+    </li><li class="drw">
+      <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-s1"/></svg>
+      <span class="drw-n">霧鐘書房</span><span class="drw-a">臺北・溫州街</span>
+    </li><li class="drw">
+      <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-s2"/></svg>
+      <span class="drw-n">紙條書店</span><span class="drw-a">臺中・審計新村</span>
+    </li><li class="drw">
+      <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-s3"/></svg>
+      <span class="drw-n">慢讀冊房</span><span class="drw-a">臺南・中西區</span>
+    </li><li class="drw">
+      <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-s4"/></svg>
+      <span class="drw-n">舊港字號</span><span class="drw-a">高雄・鹽埕</span>
+    </li><li class="drw">
+      <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-s5"/></svg>
+      <span class="drw-n">海線書舍</span><span class="drw-a">花蓮・市區</span>
+    </li><li class="drw drw-empty">
+      <svg class="lbl" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#lbl-s-empty"/></svg>
+      <span class="drw-n">這一格還空著</span><span class="drw-a">新竹、宜蘭、屏東的書店，來信就補上</span>
+    </li></ul>
+    <p class="submit">投稿請寄紙本並附回郵信封。每份稿件都會在抽屜裡建一張卡，三個月內回信。</p>
+  </div>
+</section>
+<div class="readout" data-readout aria-hidden="true" style="--mx:0.56px;--my:-1.59px">
+  <svg class="reg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke-width="1"><g style="stroke:var(--pink);mix-blend-mode:multiply;transform:translate(var(--mx),var(--my))"><circle cx="12" cy="12" r="6"/><path d="M12 1.5v21M1.5 12h21"/></g><g stroke="currentColor"><circle cx="12" cy="12" r="6"/><path d="M12 1.5v21M1.5 12h21"/></g></g></svg>
+  <span class="ro-geo">N25°03′27″ E121°30′35″</span>
+  <span>抽屜深度 <b data-depth>000</b>／420 mm</span>
+  <span class="ro-ruler"><span class="ro-ptr"></span></span>
+  <span>現在翻到 <b data-card>———</b></span>
+  <span class="ro-where" data-where>刊頭</span>
+</div>
+<footer class="coords" style="--mx:0.56px;--my:-1.59px">
+  <p class="geo-big" data-plate="N 25°03′27″&#10;  E 121°30′35″"><span class="sr-only">北緯 25 度 03 分 27 秒，東經 121 度 30 分 35 秒</span><span aria-hidden="true">N 25°03′27″</span><span aria-hidden="true">E 121°30′35″</span></p>
+  <p class="f-meta"><b>字庫抽屜出版社</b><br>臺北市大同區・鉛字巷　海拔 6 公尺<br>民國一〇五年創立，今年第十年。</p>
+  <ul class="colorbar" aria-label="本目錄使用的兩色油墨">
+    <li style="--c:var(--ink)"><i></i>鈷藍 100</li>
+    <li style="--c:oklch(0.47 0.165 262 / .45)"><i></i>鈷藍 45</li>
+    <li style="--c:var(--pink)"><i></i>螢光粉 100</li>
+    <li style="--c:oklch(0.7 0.22 350 / .4)"><i></i>螢光粉 40</li>
+    <li class="ov"><i></i>疊印</li>
+  </ul>
+  <a class="totop" href="#top"><svg class="arr" viewBox="0 0 14 18" aria-hidden="true" focusable="false"><path d="M7 17V2M2 7l5-5 5 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/></svg>回到抽屜最上層</a>
+</footer>
+<script>
+(()=>{
+const ro=document.querySelector('[data-readout]');if(!ro)return;
+const $d=ro.querySelector('[data-depth]'),$c=ro.querySelector('[data-card]'),$w=ro.querySelector('[data-where]');
+const rows=[...document.querySelectorAll('.entry')],colo=document.querySelector('.colophon');
+let raf=0,last='';
+const run=()=>{raf=0;
+ const max=document.documentElement.scrollHeight-innerHeight,f=max>0?Math.min(1,Math.max(0,scrollY/max)):0,line=innerHeight*.42;
+ let cur=null;for(const r of rows){if(!r.offsetHeight)continue;if(r.getBoundingClientRect().top<=line)cur=r;else break;}
+ let code='———',where='刊頭';
+ if(cur){code=cur.dataset.no;where='《'+cur.dataset.title+'》';}
+ if(colo&&colo.getBoundingClientRect().top<=line){code='———';where='版權頁';}
+ const depth=String(Math.round(f*420)).padStart(3,'0'),key=depth+code+where;
+ ro.style.setProperty('--p',f.toFixed(4));
+ if(key===last)return;last=key;$d.textContent=depth;$c.textContent=code;$w.textContent=where;};
+const req=()=>{if(!raf)raf=requestAnimationFrame(run)};
+addEventListener('scroll',req,{passive:true});addEventListener('resize',req);document.addEventListener('change',req);run();
+})();
+</script>
+</body>
+</html>

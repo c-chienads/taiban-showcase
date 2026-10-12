@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F23" data-slug="slow-roast">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>找不到頁面｜慢焙咖啡｜烘焙曲線、風味、手沖、生豆與訂購</title>
+<meta name="description" content="找不到這個頁面。">
+
+<meta name="generator" content="套版網站平台 F23">
+<link rel="icon" href="assets/bean.svg">
+<link rel="preload" href="fonts/01-chiron-goround-tc.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/02-sometype-mono.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"Chiron GoRound TC";src:url("fonts/01-chiron-goround-tc.woff2") format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Sometype Mono";src:url("fonts/02-sometype-mono.woff2") format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root{
+  --mus:oklch(0.82 0.14 90);--mus-d:oklch(0.765 0.135 86);--mus-l:oklch(0.88 0.105 95);--ink:oklch(0.24 0.04 52);--ink-2:oklch(0.37 0.05 56);--crema:oklch(0.96 0.045 95);
+  --sage:oklch(0.71 0.07 128);--sage-d:oklch(0.62 0.075 131);--sage-l:oklch(0.79 0.06 124);
+  --gut:clamp(16px,3.9vw,56px);
+  --gr:"Chiron GoRound TC",sans-serif;
+  --num:"Sometype Mono","Chiron GoRound TC",monospace;
+  --focus-ring:3px solid var(--ink);--focus-offset:3px;
+  --selection-bg:var(--ink);--selection-fg:var(--mus);
+  color-scheme:light;
+}
+html{background:var(--mus)}
+body{background:var(--mus);color:var(--ink);font-family:var(--gr);font-weight:450;font-size:17px;line-height:1.75}
+.num{font-family:var(--num);font-variant-numeric:tabular-nums;font-weight:500;letter-spacing:-.02em}
+a{color:inherit;text-decoration-thickness:2px;text-underline-offset:.22em}
+button{font:inherit;color:inherit}
+:where(p,li,dd,h1,h2,h3){overflow-wrap:anywhere}
+h1,h2,h3{font-family:var(--gr);font-weight:580;text-wrap:balance}
+.k{font-size:14px;line-height:1.4;font-weight:520;letter-spacing:.04em;margin:0}
+
+/* ---------- 頁首 ---------- */
+.mh{display:flex;align-items:center;gap:10px 30px;flex-wrap:wrap;padding:12px var(--gut)}
+.mh__brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-size:21px;font-weight:600;line-height:1.3;margin-right:18px}
+.mh__brand .mark{width:34px;height:24px;flex:none}
+.mh nav{display:flex;flex-wrap:wrap;gap:2px 22px}
+.mh nav a{text-decoration:none;font-size:16px;font-weight:520;padding:4px 0;border-bottom:2px solid transparent}
+.mh nav a:hover{border-bottom-color:currentColor}
+.mh__tel{font-size:15px;text-decoration:none;margin-left:auto}
+
+/* ---------- 曲線編輯器：線下是量過的地帶，線上是天空 ---------- */
+.ed{padding:8px 0 0;overflow-x:clip}
+.ed__stage{position:relative;margin-inline:var(--gut);display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"bt" "ph" "bean" "x"}
+.ed__title{grid-area:bt;align-self:start;justify-self:start;position:relative;z-index:3;margin:5% 0 0 7.5%;max-width:44%;pointer-events:none;transition:opacity .2s}
+.ed.is-drag .ed__title{opacity:.18}
+.ed__title h1{font-size:clamp(44px,4.9vw,72px);line-height:1.06;letter-spacing:.01em;margin:0 0 .32em}
+.ed__title h1 .num{font-weight:600;letter-spacing:-.06em;font-size:1.04em}
+.ed__tip{margin:0;font-size:16px;font-weight:520;display:inline-flex;align-items:center;gap:8px}
+.ed__tip::before{content:"";width:14px;height:14px;border-radius:50%;border:4px solid var(--ink);background:var(--mus);flex:none}
+.trk{position:relative;min-width:0}
+.trk--bt{grid-area:bt;height:clamp(400px,calc(100vh - 410px),600px);touch-action:pan-y}
+.trk--bt.is-armed{cursor:crosshair}
+.plot{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.plot .under{fill:var(--mus-d)}
+.plot .base{fill:none;stroke:var(--ink);stroke-width:2;vector-effect:non-scaling-stroke}
+.plot .iso{fill:none;stroke:var(--ink);stroke-opacity:.15;stroke-width:1;vector-effect:non-scaling-stroke}
+.plot .evl{fill:none;stroke:var(--ink);stroke-opacity:.55;stroke-width:1.6;stroke-dasharray:5 5;vector-effect:non-scaling-stroke}
+.plot .ror{fill:none;stroke:var(--ink-2);stroke-width:2;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.plot .ghost{fill:none;stroke:var(--ink);stroke-opacity:.42;stroke-width:2;stroke-dasharray:2 6;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.plot .trail{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.plot .trail[data-trail="0"]{stroke-opacity:.34}
+.plot .trail[data-trail="1"]{stroke-opacity:.2}
+.plot .trail[data-trail="2"]{stroke-opacity:.1}
+.plot .bt{fill:none;stroke:var(--ink);stroke-width:5;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.yax{position:absolute;inset:0;margin:0;padding:0;list-style:none;pointer-events:none}
+.yax li{position:absolute;right:calc(100% + 9px);transform:translateY(-50%);font:500 12.5px/1 var(--num);white-space:nowrap}
+.trk__name{position:absolute;margin:0;font-size:14px;font-weight:520;line-height:1.4;pointer-events:none;white-space:nowrap}
+.trk__name--bt{left:10px;top:0}
+.trk__name--ror{transform:translate(8px,10px);background:var(--mus-d);padding:0 6px;font-size:13px;color:var(--ink-2)}
+.bm{position:absolute;width:10px;height:10px;margin:-5px 0 0 -5px;pointer-events:none;z-index:1}
+.bm::before,.bm::after{content:"";position:absolute;left:4px;top:-1px;width:2px;height:12px;background:var(--ink);opacity:.7;transform:rotate(45deg)}
+.bm::after{transform:rotate(-45deg)}
+.bm--new::before,.bm--new::after{opacity:.9}
+.smoke-at{position:absolute;width:210px;height:118px;margin:-120px 0 0 -4px;pointer-events:none;z-index:1}
+.smoke{width:100%;height:100%;overflow:visible;fill:var(--ink-2);opacity:.6;filter:blur(.7px)}
+.chaff-at{position:absolute;width:84px;height:52px;margin:-98px 0 0 -12px;pointer-events:none;z-index:1}
+.chaff{width:100%;height:100%;overflow:visible;fill:oklch(0.93 0.05 88);stroke:var(--ink-2);stroke-width:.9;stroke-linejoin:round}
+
+/* 控制點：44px 觸控框，視覺 22px 墨圈；無 JS 時只是靜態標記 */
+.hd{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;z-index:4;border-radius:50%}
+.hd::before{content:"";position:absolute;inset:11px;border-radius:50%;background:var(--mus);border:6px solid var(--ink)}
+html.js .hd{cursor:grab;touch-action:none}
+html.js .hd:active{cursor:grabbing}
+.hd:focus-visible{outline:var(--focus-ring);outline-offset:-2px}
+.hd[data-armed]::before{box-shadow:0 0 0 4px var(--mus),0 0 0 7px var(--ink)}
+.hd__lab{position:absolute;white-space:nowrap;background:var(--mus);padding:1px 7px;font-size:15px;line-height:1.55;font-weight:560;pointer-events:none}
+.hd__lab .num{font-size:13px;font-weight:600}
+.hd[data-p=de] .hd__lab{background:var(--mus-d)}
+.hd[data-side=r] .hd__lab{left:38px;top:50%;transform:translateY(-50%)}
+.hd[data-side=l] .hd__lab{right:38px;top:50%;transform:translateY(-50%)}
+.hd[data-side=b] .hd__lab{left:26px;top:34px}
+.hd[data-side=t] .hd__lab{right:26px;bottom:34px}
+.tp{position:absolute;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--ink);z-index:2;pointer-events:none}
+.tp span{position:absolute;left:14px;top:-4px;font-size:13px;font-weight:560;white-space:nowrap;background:var(--mus-d);padding:0 5px;line-height:1.5}
+
+/* 階段括號＋豆色軌道 */
+.phs{grid-area:ph;position:relative;height:30px;margin-top:14px}
+.ph{position:absolute;top:0;height:30px;margin:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:560;line-height:1;white-space:nowrap}
+.ph::before{content:"";position:absolute;left:1px;right:1px;top:50%;border-top:2px solid var(--ink)}
+.ph::after{content:"";position:absolute;left:1px;right:1px;top:calc(50% - 6px);height:12px;border-left:2px solid var(--ink);border-right:2px solid var(--ink)}
+.ph span{position:relative;z-index:1;background:var(--mus);padding:0 8px;display:inline-flex;gap:.45em;align-items:baseline}
+.ph .num{font-size:13px}
+.trk--bean{grid-area:bean;height:44px;margin-top:6px}
+.strip{position:absolute;inset:0;width:100%;height:100%}
+.after{position:absolute;top:0;bottom:0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.cool{position:absolute;inset:0;width:100%;height:100%;max-width:none}
+.cool use{stroke:var(--ink);stroke-width:5}
+.sweep{position:absolute;top:-6px;bottom:-6px;left:0;width:3px;margin-left:-1.5px;background:var(--ink);opacity:0;pointer-events:none;z-index:3}
+html.js .sweep.is-run{animation:sweep .46s linear both}
+@keyframes sweep{0%{left:0;opacity:1}92%{left:var(--to);opacity:1}100%{left:var(--to);opacity:0}}
+.beanat{position:absolute;top:50%;left:min(var(--x),calc(100% - 70px));width:72px;height:51px;margin:-25px 0 0 -4px;z-index:2;pointer-events:none}
+.bean{width:100%;height:100%;overflow:visible}
+.bean__body{stroke:var(--ink);stroke-width:2.6}
+.bean__crack{fill:none;stroke:var(--crema);stroke-linecap:round}
+.xax{grid-area:x;position:relative;height:28px;margin:6px 0 0;padding:0;list-style:none}
+.xax li{position:absolute;top:0;transform:translateX(-50%);font:500 12.5px/1.6 var(--num)}
+.xax li:first-child{transform:none}
+.xax .xax__u{right:0;left:auto;transform:none;font-family:var(--gr);font-size:13px}
+
+/* 讀數：巨大的下豆溫，其餘小字 */
+.ro{margin:26px var(--gut) 0;display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,.9fr);gap:18px 56px;align-items:end}
+.ro__big .k{margin-bottom:2px}
+.ro__v{margin:0;font:700 clamp(110px,11.4vw,168px)/.86 var(--num);letter-spacing:-.07em;white-space:nowrap;margin-left:-.06em}
+.ro__v small{font-size:.3em;font-weight:600;letter-spacing:0;margin-left:.12em;vertical-align:.95em}
+.ro__list{margin:0 0 6px;display:flex;flex-wrap:wrap;gap:14px 34px}
+.ro__list dt{font-size:14px;font-weight:520;color:var(--ink-2)}
+.ro__list dd{margin:0;font:600 25px/1.2 var(--num);white-space:nowrap}
+.ro__list .ro__sub{font-size:15px;font-weight:500;margin-left:.3em}
+.ro__deg dd{font-family:var(--gr);font-weight:600;font-size:23px;display:flex;align-items:center;gap:9px}
+.sw{display:inline-block;width:24px;height:24px;border:2px solid var(--ink);border-radius:50%;flex:none}
+.ro__note{margin:0 0 6px;padding-left:18px;border-left:2px solid currentColor;font-size:16px;line-height:1.6}
+.ro__note p{margin:0}
+.ro__note .k{margin-bottom:4px;color:var(--ink-2)}
+.ro__leg{display:flex;flex-wrap:wrap;gap:2px 16px;margin-top:8px !important;font-size:14px;color:var(--ink-2)}
+.ro__leg span{display:inline-flex;align-items:center;gap:6px}
+.lg-ghost{display:inline-block;width:26px;border-top:2px dotted var(--ink)}
+.lg-x{position:relative;display:inline-block;width:12px;height:12px}
+.lg-x::before,.lg-x::after{content:"";position:absolute;left:5px;top:-1px;width:2px;height:14px;background:var(--ink);transform:rotate(45deg)}
+.lg-x::after{transform:rotate(-45deg)}
+
+/* 店內三條曲線（無 JS＝三張小圖並排）、重設、分享、說明 */
+.ed__bar{margin:26px var(--gut) 0;padding-bottom:56px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px}
+.ed__bar h2{font-size:17px;font-weight:560;line-height:1.4;margin:0}
+.house{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;flex:1 1 100%}
+.house__f{margin:0}
+.house__f .mini{width:100%;height:96px;border-left:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.house__f figcaption{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 14px;font-size:15px;margin-top:6px}
+.house__f b{font-weight:600;font-size:19px}
+.mini .gl{fill:none;stroke:var(--ink);stroke-opacity:.16;vector-effect:non-scaling-stroke}
+.mini .bt{fill:none;stroke:var(--ink);stroke-width:3;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+html.js .house{display:flex;flex-wrap:wrap;gap:8px;flex:0 1 auto}
+html.js .house__f{display:none}
+.house__b{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:4px 14px 4px 10px;background:transparent;border:2px solid var(--ink);border-radius:22px;font-size:15px;font-weight:560;line-height:1.3}
+.house__b .mini{width:50px;height:22px}
+.house__b[aria-pressed=true]{background:var(--ink);color:var(--mus)}
+.house__b[aria-pressed=true] .mini .bt,.house__b[aria-pressed=true] .mini .gl{stroke:var(--mus)}
+.house__b .num{font-size:13px}
+.ed__acts{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:4px 16px;border:2px solid var(--ink);background:transparent;border-radius:22px;font-size:15px;font-weight:560;line-height:1.3;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--ink);color:var(--mus)}
+.btn--ink{background:var(--ink);color:var(--mus)}
+.btn--ink:hover{background:transparent;color:var(--ink)}
+@media (hover:hover) and (pointer:fine){
+.mh__brand:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.22em}
+.mh__tel:hover{text-decoration:underline}
+.house__b:not([aria-pressed=true]):hover{background:var(--mus-l)}
+.ft a:hover{color:var(--mus)}
+}
+.msg{margin:0;font-size:15px}
+.how{flex:1 1 100%;font-size:15px;margin:0;display:flex;flex-wrap:wrap;gap:2px 1.2em;max-width:38em}
+.how kbd{font:inherit;font-weight:560;display:inline-block;min-width:1.5em;padding:0 .3em;margin:0 1px;border:1px solid currentColor;border-bottom-width:2px;border-radius:6px;text-align:center;line-height:1.45}
+.how-armed{flex:1 1 100%;margin:0;font-size:15px;font-weight:560}
+html:not(.js) .ed__tip,html:not(.js) .how{display:none}
+
+/* ---------- 風味：半個風味輪貼著頁緣＋巨大的詞＋一杯六層 ---------- */
+.fl{position:relative;display:grid;grid-template-columns:minmax(220px,24%) minmax(0,1fr) minmax(300px,30%);gap:0 48px;align-items:center;padding:40px var(--gut) 110px 0}
+.fl__fan{margin:0;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.fan{width:100%;height:auto;max-height:640px;overflow:visible}
+.fan .fam text{font-size:21px;font-weight:600;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.fan .fam--dk text{fill:var(--crema)}
+.fan .w path{fill:var(--mus);stroke:var(--ink);stroke-width:1.6}
+.fan .w text{font-size:19px;font-weight:520;fill:var(--ink);dominant-baseline:central}
+.fan .w.on path{fill:var(--ink)}
+.fan .w.on text{fill:var(--mus)}
+.fan__hub{fill:var(--ink)}
+.fl__fan figcaption{display:flex;flex-wrap:wrap;gap:4px 18px;padding-left:var(--gut);font-size:14px;margin-top:12px}
+.fl__fan figcaption p{margin:0;display:inline-flex;align-items:center;gap:7px}
+.fl__fan figcaption i{width:16px;height:16px;background:var(--ink);display:inline-block}
+.fl__fan figcaption .ar{width:auto;height:auto;background:none;font-style:normal}
+.fl__main{min-width:0;padding-left:8px}
+.fl__main h2{font-size:clamp(26px,2.3vw,34px);margin:0 0 22px;max-width:15em}
+.words{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.06em .55em;font-size:clamp(52px,5.4vw,88px);font-weight:640;line-height:1.16;letter-spacing:.01em}
+.fl__notes{margin-top:30px;display:flex;flex-wrap:wrap;gap:4px 30px;font-size:16px}
+.fl__notes p{margin:0}
+.fl__self{margin:22px 0 0;font-size:19px;font-weight:560;max-width:22em}
+.warn{margin:22px 0 0;padding:0;list-style:none}
+.warn li{display:inline-block;margin:0 10px 10px 0;padding:6px 16px;background:var(--ink);color:var(--mus);font-size:16px;border-radius:20px}
+.warn li[data-f=ok]{background:transparent;color:var(--ink);padding-left:0}
+.cup{margin:0;position:relative;display:grid;grid-template-columns:280px minmax(0,1fr);gap:0 18px;align-items:start}
+.cup__glass{position:relative;width:280px;height:340px;grid-row:1}
+.cup__fill{position:absolute;inset:38px 0 0 0;display:flex;flex-direction:column;clip-path:path("M0 -16H280L262 212C252 274 214 302 140 302C66 302 28 274 18 212Z")}
+.cup__fill i{display:block;flex:calc(2 + var(--v)) 1 0;min-height:0}
+html.js .cup__fill i,html.js .cup__lab li{transition:flex-grow .18s ease-out}
+.cup__line{position:absolute;left:-60px;top:0;width:340px;max-width:none;height:368px;overflow:visible;fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.cup__lab{grid-row:1;grid-column:2;margin:38px 0 0;padding:0;list-style:none;height:302px;display:flex;flex-direction:column}
+.cup__lab li{flex:calc(2 + var(--v)) 1 0;min-height:0;display:flex;align-items:center;gap:10px;position:relative;font-size:16px;font-weight:560;line-height:1}
+.cup__lab li::before{content:"";position:absolute;right:calc(100% + 4px);top:50%;width:34px;border-top:1.5px solid var(--ink)}
+.cup__lab b{font:600 19px/1 var(--num);margin-left:auto}
+.cup figcaption{grid-column:1/-1;margin-top:26px;font-size:15px;color:var(--ink-2);padding-left:20px}
+
+/* ---------- 手沖起點：濃縮咖啡色、拱形上緣、斜階大數字 ---------- */
+.br{--focus-ring:3px solid var(--mus);--selection-bg:var(--mus);--selection-fg:var(--ink);position:relative;background:var(--ink);color:var(--crema);padding:0 var(--gut) 0}
+.br__arc{display:block;width:calc(100% + 2 * var(--gut));max-width:none;height:90px;margin:0 calc(-1 * var(--gut));fill:var(--ink);background:var(--mus)}
+.br__in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0 30px;padding:20px 0 40px}
+.br__foot{display:block;width:calc(100% + 2 * var(--gut));max-width:none;height:70px;margin:0 calc(-1 * var(--gut));fill:var(--ink);background:var(--mus)}
+.br__head{grid-column:1/5}
+.br__head h2{font-size:clamp(40px,4.2vw,64px);margin:0 0 .3em;color:var(--mus)}
+.br__head p{margin:0;font-size:17px}
+.rcp{grid-column:5/-1;margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1.25fr 1fr 1.15fr;gap:0 26px}
+.rcp>li{min-width:0}
+.rcp>li:nth-child(2){margin-top:64px}
+.rcp>li:nth-child(3){margin-top:128px}
+.rcp>li:nth-child(4){margin-top:192px}
+.rcp .k{color:var(--crema);margin-bottom:4px}
+.rcp__v{margin:0;font:700 clamp(46px,4.6vw,72px)/1 var(--num);letter-spacing:-.05em;color:var(--mus);white-space:nowrap}
+.rcp__v small{font-size:.38em;font-weight:600;letter-spacing:0;margin-left:.08em}
+.rcp__v--zh{font-family:var(--gr);font-weight:640;letter-spacing:0;font-size:clamp(40px,3.8vw,58px)}
+.rcp__n{margin:8px 0 0;font-size:15px;line-height:1.55}
+.grind{width:100%;max-width:270px;height:auto;margin-top:10px}
+.grind .gr{fill:var(--crema);opacity:.4}
+.grind .gr.on{fill:var(--mus);opacity:1}
+.grind__lab{display:flex;justify-content:space-around;max-width:270px;margin:2px 0 0;font-size:13px}
+.pour{grid-column:1/-1;position:relative;height:88px;margin:58px 0 0;padding:0;list-style:none}
+.pour li{position:absolute;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:1px;padding:0 12px;font-size:15px;line-height:1.35;white-space:nowrap;overflow:hidden;border-radius:44px 6px 6px 44px;box-shadow:inset 0 0 0 2px var(--mus)}
+.pour li+li{border-radius:6px}
+.pour li:last-child{border-radius:6px 44px 44px 6px}
+.pour li:nth-child(odd){background:var(--mus);color:var(--ink)}
+.pour li b{font-weight:600;font-size:13px}
+.pour .num{font-size:13px}
+.pour__sc{grid-column:1/-1;display:flex;justify-content:space-between;margin:8px 0 0;font:500 12.5px/1 var(--num);color:var(--crema)}
+.br__note{margin:150px 0 0;padding-top:16px;border-top:2px solid var(--mus);max-width:17em;font-size:17px;line-height:1.7}
+.br__note p{margin:0}
+.br__note b{color:var(--mus);font-weight:600}
+.ridge{position:relative;height:170px;margin-top:-10px}
+.ridge svg{position:absolute;inset:0;width:100%;height:100%;fill:var(--sage)}
+.ridge__pk{position:absolute;transform:translate(-50%,-100%);margin-top:-12px;text-align:center;font-size:14px;font-weight:560;line-height:1.3;white-space:nowrap}
+.ridge__pk .num{display:block;font-size:13px;font-weight:600}
+.ridge__pk::after{content:"";display:block;width:2px;height:9px;margin:4px auto 0;background:var(--ink)}
+
+/* ---------- 生豆：生豆綠底；每支豆一列 ---------- */
+.shop{display:block}
+.lt{background:var(--sage);padding:10px var(--gut) 120px;clip-path:polygon(0 0,100% 0,100% 100%,0 calc(100% - 70px));--altw:clamp(150px,17vw,250px)}
+.lt__head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:8px 48px;margin-bottom:34px}
+.lt__head h2{font-size:clamp(40px,4.2vw,64px);margin:0}
+.lt__head p{margin:0;font-size:16px}
+.lt__leg{display:flex;flex-wrap:wrap;gap:4px 22px;font-size:15px}
+.lt__leg span{display:inline-flex;align-items:center;gap:8px}
+.lt__leg .lb{width:30px;height:14px;background:var(--mus);border:2px solid var(--ink)}
+.lt__leg .ln{width:3px;height:18px;background:var(--ink)}
+.lots{margin:0;padding:0;min-width:0;border:0}
+.lots__scale{position:relative;margin-left:var(--altw);margin-right:150px;height:66px;border-bottom:2px solid var(--ink)}
+.lots__deg{position:absolute;top:8px;height:28px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:560}
+.lots__deg:nth-child(odd){background:var(--sage-l)}
+.lots__tick{position:absolute;z-index:1;bottom:4px;transform:translateX(-50%);font:500 12.5px/1 var(--num);white-space:nowrap}
+.lots__now{position:absolute;z-index:0;left:var(--x);top:-14px;bottom:-2px;width:3px;margin-left:-1.5px;background:var(--ink)}
+.lots__now span{position:absolute;top:-6px;left:8px;white-space:nowrap;font-size:14px;font-weight:560;line-height:1.4;background:var(--sage);padding-right:4px}
+.lots__now b{font:600 13px var(--num)}
+.is-hi .lots__now span{left:auto;right:8px;padding:0 0 0 4px}
+.lot{position:relative}
+.lot+.lot{border-top:2px solid oklch(0.24 0.04 52 / .22)}
+.lot__pick{display:grid;grid-template-columns:var(--altw) minmax(0,1fr) 150px;padding:18px 0 20px;cursor:pointer;align-items:start}
+.lot__pick input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.lot__pick:has(input:checked){background:var(--sage-l);box-shadow:-12px 0 0 var(--sage-l),12px 0 0 var(--sage-l)}
+.lot__pick:has(input:focus-visible){outline:var(--focus-ring);outline-offset:3px}
+.lot__id{grid-column:1;grid-row:1/3;display:flex;flex-direction:column;gap:2px;padding-right:12px}
+.lot__code{font-size:clamp(26px,2.3vw,34px);font-weight:640;line-height:1.15}
+.lot__alt{font:600 15px/1.3 var(--num)}
+.lot__alt small{font:500 13px var(--gr);margin-left:2px}
+.lot__track{grid-column:2;position:relative;display:block;height:40px}
+.lot__track::after{content:"";position:absolute;z-index:0;left:var(--x);top:-18px;bottom:-14px;width:3px;margin-left:-1.5px;background:var(--ink)}
+.lot__bar{position:absolute;z-index:1;top:4px;height:30px;background:var(--mus);border:2px solid var(--ink);border-radius:15px}
+.lot__dot{position:absolute;z-index:1;bottom:-2px;width:0;height:0;margin-left:-7px;border:7px solid transparent;border-top:0;border-bottom:10px solid var(--ink)}
+.lot.fit .lot__bar{background:var(--ink)}
+.lot__info{grid-column:2;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 22px;margin-top:10px;font-size:15px}
+.lot__w{font-size:21px;font-weight:600;flex:1 1 100%}
+.lot__fit,.lot__sel{padding:1px 12px;font-size:14px;border-radius:14px}
+.lot__fit{background:var(--ink);color:var(--sage-l)}
+.lot__sel{display:none !important;box-shadow:inset 0 0 0 2px var(--ink)}
+.lot__pick:has(input:checked) .lot__sel{display:block !important}
+.lot__pile{grid-column:3;grid-row:1/3;width:150px;height:60px;align-self:center}
+.pile{width:100%;height:100%;overflow:visible}
+.pile__b{stroke:var(--ink);stroke-width:5}
+.pile__c{fill:none;stroke:var(--ink);stroke-width:4;stroke-linecap:round;opacity:.55}
+.lot__load{position:absolute;right:0;bottom:16px;z-index:2;min-height:40px;font-size:14px;padding:2px 14px}
+
+/* ---------- 訂購（芥黃，斜切上緣） ---------- */
+.ord{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:34px 30px;padding:56px var(--gut) 96px;border-top:2px solid var(--ink)}
+.ord__head{grid-column:1/4}
+.ord__head h2{font-size:clamp(40px,4.2vw,64px);margin:0 0 .25em}
+.ord__head p{margin:0;font-size:16px}
+.og{margin:0;padding:0;border:0;min-width:0}
+.og legend{font-size:15px;font-weight:560;padding:0;margin-bottom:10px}
+.og__opts{display:flex;flex-wrap:wrap;gap:8px}
+.og label{position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;padding:10px 16px 10px 14px;border:2px solid var(--ink);border-radius:14px;cursor:pointer;min-height:44px}
+.og input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.og label:has(input:checked){background:var(--ink);color:var(--mus)}
+.og label:has(input:focus-visible){outline:var(--focus-ring);outline-offset:3px}
+.og__name{font-size:20px;font-weight:600;line-height:1.25}
+.og__sub{font-size:14px;line-height:1.3}
+.og--w{grid-column:4/9}
+.og--w label{flex-direction:row;align-items:flex-end;gap:12px}
+.og--w .wsq{display:block;width:calc(var(--s) * var(--k,1px));height:calc(var(--s) * var(--k,1px));border:2px solid currentColor;border-radius:6px 6px 3px 3px;flex:none}
+.og--w .og__name{font-family:var(--num);font-size:18px}
+.og--g{grid-column:9/-1}
+.og--g .gdot{display:block;height:12px;width:44px;background:radial-gradient(circle,currentColor calc(var(--g) * 1px),transparent calc(var(--g) * 1px + .6px)) 0 50%/calc(var(--g) * 3px + 4px) 12px repeat-x;margin-bottom:4px}
+.ord__sum{grid-column:1/6;margin:0}
+.ord__sum div{display:flex;align-items:baseline;gap:14px}
+.ord__sum dt{font-size:15px;font-weight:560;min-width:3em}
+.ord__sum dd{margin:0;font:600 22px/1.3 var(--num)}
+.ord__sum .tot dd{font-size:clamp(54px,6vw,90px);font-weight:700;letter-spacing:-.05em;line-height:1.05}
+.ord__note{margin:6px 0 0;font-size:15px}
+.ord__text{grid-column:6/-1;min-width:0}
+.ord__out{display:block;margin:6px 0 12px;padding:14px 18px;border:2px solid var(--ink);border-radius:14px;font-size:18px;line-height:1.6;overflow-wrap:anywhere}
+.ord__text .msg{margin-top:8px}
+.ord__how{margin:12px 0 0;font-size:15px;display:flex;flex-wrap:wrap;gap:2px 26px}
+.ord__how p{margin:0}
+.ord__fine{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 30px;padding-top:26px;border-top:2px solid var(--ink);font-size:15px}
+.ord__fine p{margin:0}
+.ord__fine h3{font-size:17px;margin:0 0 4px}
+
+/* ---------- 週二與週五開火：週帶＋一包豆子的 21 天 ---------- */
+.dy{padding:30px var(--gut) 90px}
+.dy__head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 48px;margin-bottom:22px}
+.dy__head h2{font-size:clamp(40px,4.2vw,64px);margin:0}
+.dy__head div{display:flex;flex-wrap:wrap;gap:2px 26px;font-size:17px}
+.dy__head p{margin:0}
+.wk{position:relative;margin:110px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-top:2px solid var(--ink)}
+.wk__d{position:relative;padding:12px 10px 0;min-height:150px}
+.wk__d+.wk__d{border-left:1px solid oklch(0.24 0.04 52 / .3)}
+.wk__n{display:block;font-size:44px;font-weight:620;line-height:1.1}
+.wk__e{display:block;margin-top:8px;font-size:16px;font-weight:560;line-height:1.45}
+.wk__e .num{font-size:15px;font-weight:600}
+.wk__d--off .wk__n{color:var(--ink-2)}
+.wk__d--off .wk__e{display:inline-block;border:2px dashed var(--ink-2);border-radius:14px;padding:0 10px;color:var(--ink-2)}
+.wk__d--roast .wk__e:first-of-type{display:inline-block;background:var(--ink);color:var(--mus);padding:2px 12px;border-radius:14px}
+.wk__smoke{position:absolute;left:60px;top:-104px;width:170px;height:150px;pointer-events:none}
+.wk__smoke .smoke{opacity:.5}
+.wk__bar{grid-column:3/-1;margin:16px 0 0;background:var(--mus-d);border-radius:22px;padding:8px 18px;font-size:16px;font-weight:560}
+.wk__bar .num{font-weight:600}
+.dy__warm{position:relative;margin:30px 0 0 calc(100% / 7);padding:14px 0 0 22px;font-size:clamp(22px,2vw,28px);font-weight:560;line-height:1.5;max-width:22em}
+.dy__warm::before{content:"";position:absolute;left:0;top:-30px;bottom:8px;border-left:2px solid var(--ink)}
+.dy__warm p{margin:0}
+.life{margin-top:76px}
+.life h3{font-size:clamp(28px,2.6vw,38px);margin:0 0 30px}
+.life__ax{position:relative;height:150px;margin:0 6px;list-style:none;padding:0}
+.life__ax::before{content:"";position:absolute;left:0;right:0;top:70px;border-top:2px solid var(--ink)}
+.life__t{position:absolute;top:64px;width:2px;height:14px;margin-left:-1px;background:var(--ink)}
+.life__t span{position:absolute;top:18px;left:50%;transform:translateX(-50%);font:500 12.5px/1 var(--num);white-space:nowrap}
+.life__win{position:absolute;top:58px;height:26px;background:var(--sage);border:2px solid var(--ink);border-radius:13px}
+html.js .life__win{transition:left .18s ease-out,width .18s ease-out}
+.life__m{position:absolute;bottom:92px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;font-size:15px;font-weight:560;line-height:1.35;white-space:nowrap}
+.life__m::after{content:"";width:2px;height:14px;margin-top:4px;background:var(--ink)}
+.life__m--b{bottom:auto;top:96px;flex-direction:column-reverse}
+.life__m--b::after{margin:0 0 4px}
+.life__m--s{transform:translateX(-1px);align-items:flex-start}
+.life__m--e{transform:translateX(calc(-100% + 1px));align-items:flex-end}
+.life__m .num{font-weight:600}
+.life__notes{display:flex;flex-wrap:wrap;gap:4px 34px;margin-top:22px;font-size:16px}
+.life__notes p{margin:0}
+
+/* ---------- 頁尾 ---------- */
+.ft{background:var(--ink);color:var(--crema);padding:44px var(--gut) 46px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px 30px;--focus-ring:3px solid var(--mus);--selection-bg:var(--mus);--selection-fg:var(--ink)}
+.ft__brand{grid-column:1/5;display:flex;align-items:center;gap:12px;margin:0;font-size:26px;font-weight:600;color:var(--mus)}
+.ft__brand .mark{width:44px;height:32px}
+.ft dl{grid-column:5/-1;margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 22px;font-size:16px}
+.ft dd{margin:0}
+.ft__fine{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 30px;margin:0;font-size:14px}
+
+/* ---------- 404 ---------- */
+.lost{min-height:calc(100svh - 190px);padding:30px var(--gut) 80px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px 30px;align-items:end}
+.lost__plot{grid-column:1/-1;position:relative;height:300px}
+.lost__plot svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.lost__plot .under{fill:var(--mus-d)}
+.lost__plot .bt{fill:none;stroke:var(--ink);stroke-width:5;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.lost__plot .gap{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-dasharray:2 9;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.lost__plot .base{fill:none;stroke:var(--ink);stroke-width:2;vector-effect:non-scaling-stroke}
+.lost__smoke{position:absolute;width:300px;height:120px;margin:-122px 0 0 -6px}
+.lost__code{grid-column:1/6;margin:0;font:700 clamp(90px,12vw,170px)/1 var(--num);letter-spacing:-.07em;white-space:nowrap}
+.lost__txt{grid-column:6/-1}
+.lost h1{font-size:clamp(36px,4.4vw,62px);line-height:1.2;margin-bottom:.3em}
+.lost__txt p{margin:0;font-size:18px}
+.lost__act{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px !important}
+
+/* ---------- 平板 ---------- */
+@media (max-width:1100px){
+  .ro{grid-template-columns:auto minmax(0,1fr)}
+  .ro__note{grid-column:1/-1}
+  .fl{grid-template-columns:minmax(200px,30%) minmax(0,1fr);padding-right:var(--gut)}
+  .cup{grid-column:1/-1;justify-self:center;margin-top:40px}
+  .br__head{grid-column:1/-1;margin-bottom:30px}
+  .rcp{grid-column:1/-1}
+  .og--w{grid-column:1/7}
+  .og--g{grid-column:7/-1}
+  .ord__head{grid-column:1/-1}
+}
+/* ---------- 手機 ---------- */
+@media (max-width:760px){
+  body{font-size:16px}
+  .mh{padding-block:10px;gap:6px 18px}
+  .mh nav{gap:0 16px;order:3;flex:1 1 100%}
+  .mh nav a{position:relative;font-size:15px;min-height:0;padding:6px 0}
+  .mh nav a::after{content:"";position:absolute;inset:-2.5px -7px} /* 觸控目標：畫面不變，可點範圍上下各 2.5px、左右各 7px */
+  .mh__tel{font-size:14px}
+  .ed{padding-top:6px}
+  .ed__stage{grid-template-areas:"title" "bt" "ph" "bean" "x"}
+  .ed__title{grid-area:title;margin:0 0 20px;max-width:none}
+  .ed__title h1{font-size:clamp(38px,11vw,46px);margin-bottom:.3em}
+  .trk--bt{height:min(92vw,360px)}
+  .yax li{right:auto;left:4px;background:var(--mus-d);padding:0 3px;font-size:12px}
+  .trk--bt .yax li:nth-child(even),.trk--bt .yax li:nth-child(7){display:none}
+  .trk__name--ror{display:none}
+  .trk__name{font-size:13px}
+  .ph{font-size:12.5px}
+  .ph span{padding:0 4px}
+  .ph .num{display:none}
+  .xax li:nth-child(3n+2),.xax li:nth-child(3n+3){display:none}
+  .beanat{width:56px;height:40px;margin-top:-20px}
+  .smoke-at{width:120px;height:70px;margin-top:-72px}
+  .chaff-at{width:84px;height:46px;margin:-64px 0 0 14px}
+  .tp span{display:none}
+  .hd__lab{font-size:13px;padding:0 5px}
+  .hd__lab .num{display:none}
+  .hd[data-side=b] .hd__lab{left:22px;top:28px}
+  .hd[data-side=t] .hd__lab{right:22px;bottom:28px}
+  .hd[data-side=r] .hd__lab{left:30px}
+  .hd[data-side=l] .hd__lab{right:30px}
+  .bm{transform:scale(.8)}
+  .ro{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:18px}
+  .ro__v{font-size:88px}
+  .ro__list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 12px}
+  .ro__list dd{font-size:19px}
+  .ro__list .ro__sub{display:block;margin:0;font-size:13px}
+  .ro__deg dd{font-size:20px}
+  .ro__note{font-size:15px}
+  .house{grid-template-columns:minmax(0,1fr);gap:14px}
+  html.js .house{gap:6px}
+  .house__b .mini{display:none}
+  .house__b{padding:4px 12px}
+  .ed__bar{gap:10px 12px}
+  .ed__bar h2{flex:1 1 100%}
+  .house__f .mini{height:76px}
+  .ed__bar{padding-bottom:30px}
+  .fl{grid-template-columns:minmax(0,1fr);padding:10px var(--gut) 70px}
+  .fl__fan{display:none}
+  .fl__main{padding-left:0}
+  .fl__main h2{font-size:24px;margin-bottom:14px}
+  .words{font-size:clamp(40px,11.5vw,50px)}
+  .fl__notes{margin-top:20px;font-size:15px}
+  .fl__self{font-size:17px}
+  .cup{grid-template-columns:210px minmax(0,1fr);gap:0 12px;margin-top:36px;justify-self:stretch}
+  .cup__glass{width:210px;height:255px}
+  .cup__fill{inset:28.5px 0 0 0;clip-path:path("M0 -12H210L196.5 159C189 205.5 160.5 226.5 105 226.5C49.5 226.5 21 205.5 13.5 159Z")}
+  .cup__line{left:-45px;width:255px;height:276px}
+  .cup__lab{margin-top:28.5px;height:226.5px}
+  .cup__lab li{font-size:14px}
+  .cup__lab li::before{width:16px}
+  .cup__lab b{font-size:16px}
+  .cup figcaption{padding-left:0;margin-top:18px}
+  .br__arc{height:48px}
+  .br__foot{height:36px}
+  .br__in{grid-template-columns:minmax(0,1fr);padding:10px 0 46px}
+  .br__head{grid-column:1/-1;margin-bottom:24px}
+  .br__head h2{font-size:38px}
+  .rcp{grid-column:1/-1;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 18px}
+  .rcp>li:nth-child(n){margin-top:0}
+  .rcp>li:nth-child(even){margin-top:26px}
+  .rcp__v{font-size:44px}
+  .rcp__v--zh{font-size:36px}
+  .pour{height:80px;margin-top:34px}
+  .pour li{padding:0 7px;font-size:13px}
+  .pour li span:not(.num){font-size:13px}
+  .br__note{margin-top:22px;font-size:16px;max-width:none}
+  .ridge{height:96px}
+  .ridge__pk{display:none}
+  .lt{padding:0 var(--gut) 96px;--altw:0px;clip-path:polygon(0 0,100% 0,100% 100%,0 calc(100% - 40px))}
+  .lt__head{margin-bottom:22px}
+  .lt__head h2{font-size:38px}
+  .lots__scale{margin-right:0;height:60px}
+  .lots__deg{font-size:12.5px}
+  .lots__tick--o{display:none}
+  .lot__pick{grid-template-columns:minmax(0,1fr) 92px;padding:12px 0 56px}
+  .lot__id{grid-column:1;grid-row:1;flex-direction:row;align-items:baseline;gap:12px;padding:0}
+  .lot__code{font-size:22px}
+  .lot__track{grid-column:1/-1;grid-row:2;margin-top:10px;height:36px}
+  .lot__track::after{top:-8px;bottom:-4px}
+  .lot__info{grid-column:1/-1;grid-row:3;gap:0 14px;font-size:14px;line-height:1.6;margin-top:6px}
+  .lot__w{font-size:18px}
+  .lot__pile{grid-column:2;grid-row:1;width:92px;height:38px}
+  .lot__load{right:auto;left:0;bottom:12px;min-height:40px}
+  .lot__load::after{content:"";position:absolute;inset:-4px 0} /* 觸控目標：按鈕畫面維持 40px，可點範圍 48px（上下鄰接的選豆標籤會吃掉一部分，實測要 4px 才過 44） */
+  .ord,.ft,.lost{grid-template-columns:minmax(0,1fr)}
+  .ord>*,.ft>*,.lost>*{grid-column:1/-1 !important}
+  .ord{padding:0 var(--gut) 56px;gap:20px}
+  .ord__head h2{font-size:38px}
+  .og--w{--k:.62px}
+  .og--w label{padding:8px 10px;gap:8px}
+  .og--w .og__name{font-size:15px}
+  .og--g label{padding:8px 9px;flex:1 1 0}
+  .og--g .og__name{font-size:17px}
+  .og--g .gdot{width:30px}
+  .ord__fine{grid-template-columns:minmax(0,1fr);font-size:14px;padding-top:18px}
+  .ord__sum .tot dd{font-size:56px}
+  .og label{padding:6px 10px}
+  .ord__out{font-size:16px;padding:10px 14px}
+  .dy{padding:0 var(--gut) 56px}
+  .wk{margin-top:70px}
+  .dy__head h2{font-size:38px}
+  .dy__head div{font-size:15px;gap:0 16px}
+  .wk__d{padding:8px 3px 0;min-height:128px}
+  .wk__n{font-size:26px}
+  .wk__e{font-size:12.5px;line-height:1.35;margin-top:6px}
+  .wk__e .num{display:block;font-size:12.5px}
+  .wk__d--roast .wk__e:first-of-type{padding:2px 5px;border-radius:8px}
+  .wk__smoke{left:20px;top:-56px;width:74px;height:84px}
+  .wk__bar{grid-column:3/-1;font-size:13px;padding:6px 10px}
+  .dy__warm{font-size:17px;margin:22px 0 0 calc(100% / 7);padding:8px 0 0 14px}
+  .dy__warm::before{top:-22px}
+  .life{margin-top:40px}
+  .life h3{font-size:26px;margin-bottom:20px}
+  .life__ax{height:146px;margin:0 4px}
+  .life__m{font-size:12.5px}
+  .life__t:nth-child(even) span{display:none}
+  .life__notes{font-size:15px;gap:2px 20px}
+  .ft{padding:30px var(--gut) 34px;gap:14px}
+  .ft dl{grid-template-columns:auto minmax(0,1fr);font-size:15px}
+  .ft__brand{font-size:22px}
+  .lost__plot{height:220px}
+}
+/* ---------- 降級動效：只有狀態變化，沒有過渡 ---------- */
+@media (prefers-reduced-motion:reduce){
+  html.js .strip rect,html.js .cup__fill i,html.js .cup__lab li,html.js .life__win,html.js .bean__body,.ed__title{transition:none !important}
+  html.js .sweep.is-run{animation:none}
+}
+html.js .strip rect{transition:fill .16s linear;transition-delay:calc(var(--i) * 4ms)}
+html.js .ed.is-drag .strip rect{transition-delay:0s}
+html.js .bean__body{transition:fill .2s linear .3s}
+
+/* ---------- 列印：白底黑線 ---------- */
+@media print{
+  :root{--mus:#fff;--mus-d:#eee;--mus-l:#f6f6f6;--ink:#000;--ink-2:#333;--crema:#fff;--sage:#e6e6e6;--sage-l:#f2f2f2;--sage-d:#ccc}
+  html,body,.br,.lt,.ft{background:#fff !important;color:#000 !important}
+  .lt{clip-path:none}
+  .br__arc,.ridge,.smoke-at,.chaff-at,.wk__smoke,.fl__fan{display:none !important}
+  .rcp__v,.br__head h2,.ft__brand{color:#000 !important}
+  .mh nav,.ed__acts,.house__b,[data-copy-order],.how,.lot__load{display:none !important}
+  .ed__stage{break-inside:avoid}
+  .br,.shop,.dy{break-before:page;padding-top:20px}
+  .pour li{box-shadow:inset 0 0 0 1px #000 !important}
+  .grind .gr{fill:#000}
+  a{text-decoration:underline;overflow-wrap:anywhere}
+  html.js .house{display:grid}
+  html.js .house__f{display:block}
+}
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="mh">
+<a class="mh__brand" href="./"><svg class="mark" viewBox="0 0 40 28" aria-hidden="true"><path d="M2.5 1.5V26H39" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 5.5C8 17.5 9.6 20.81 12 20.81S24 13.5 33 5.49" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="33" cy="5.49" r="3" fill="currentColor"/></svg><span>慢焙咖啡</span></a>
+<nav aria-label="回到主頁"><a href="./#curve">曲線</a><a href="./#lots">生豆</a><a href="./#order">訂購</a></nav>
+</header>
+<main id="main" class="lost">
+<div class="lost__plot" aria-hidden="true"><svg viewBox="0 0 900 180" preserveAspectRatio="none"><path class="under" d="M0 35.00L4 43.62L8 53.13L12 63.30L16 73.88L20 84.65L24 95.36L28 105.76L32 115.63L36 124.73L40 132.80L44 139.63L48 144.96L52 148.55L56 150.18L60 150.22L64 150.10L68 149.88L72 149.58L76 149.18L80 148.70L84 148.14L88 147.49L92 146.78L96 145.99L100 145.13L104 144.21L108 143.22L112 142.17L116 141.07L120 139.91L124 138.70L128 137.45L132 136.15L136 134.81L140 133.44L144 132.03L148 130.58L152 129.11L156 127.62L160 126.10L164 124.57L168 123.02L172 121.45L176 119.88L180 118.30L184 116.72L188 115.14L192 113.56L196 111.99L200 110.43L204 108.88L208 107.35L212 105.83L216 104.34L220 102.88L224 101.44L228 100.03L232 98.66L236 97.33L240 96.04L244 94.80L244 180L0 180Z"/><path class="base" d="M0 0V180H900"/><path class="bt" d="M0 35.00L4 43.62L8 53.13L12 63.30L16 73.88L20 84.65L24 95.36L28 105.76L32 115.63L36 124.73L40 132.80L44 139.63L48 144.96L52 148.55L56 150.18L60 150.22L64 150.10L68 149.88L72 149.58L76 149.18L80 148.70L84 148.14L88 147.49L92 146.78L96 145.99L100 145.13L104 144.21L108 143.22L112 142.17L116 141.07L120 139.91L124 138.70L128 137.45L132 136.15L136 134.81L140 133.44L144 132.03L148 130.58L152 129.11L156 127.62L160 126.10L164 124.57L168 123.02L172 121.45L176 119.88L180 118.30L184 116.72L188 115.14L192 113.56L196 111.99L200 110.43L204 108.88L208 107.35L212 105.83L216 104.34L220 102.88L224 101.44L228 100.03L232 98.66L236 97.33L240 96.04L244 94.80"/><path class="gap" d="M244 94.80H900"/></svg><span class="lost__smoke" style="left:27.111%;top:52.665%"><svg class="smoke" viewBox="-10 0 320 120" aria-hidden="true"><path data-k="0" d="M8.82 120.05C8.91 115.53 8.96 99.26 9.36 92.94C9.76 86.62 10.26 85.3 11.22 82.14C12.18 78.99 14 76.52 15.1 74.01C16.21 71.51 16.78 69.21 17.83 67.09C18.88 64.97 19.58 63.17 21.4 61.31C23.22 59.44 25.97 57.68 28.75 55.89C31.54 54.11 35.29 52.32 38.09 50.58C40.9 48.85 43.26 47.13 45.59 45.47C47.93 43.82 49.12 42.13 52.08 40.67C55.04 39.2 58.87 38.14 63.38 36.68C67.89 35.22 74.11 33.39 79.13 31.92C84.14 30.45 89.33 29.16 93.47 27.87C97.6 26.58 100.07 25.54 103.93 24.18C107.79 22.82 111.09 21.07 116.65 19.7C122.21 18.34 130.08 17.21 137.27 15.99C144.46 14.76 153.26 13.58 159.78 12.37C166.29 11.16 171.21 9.91 176.36 8.73C181.51 7.55 188.31 5.87 190.7 5.3L190.24 3.27C187.85 3.79 181.02 5.33 175.85 6.36C170.69 7.39 165.79 8.37 159.27 9.44C152.75 10.5 143.97 11.62 136.75 12.75C129.52 13.88 121.63 15.13 115.9 16.2C110.16 17.27 106.3 17.98 102.31 19.14C98.32 20.3 96.04 21.83 91.96 23.17C87.88 24.5 82.9 25.89 77.83 27.16C72.76 28.44 66.25 29.4 61.55 30.82C56.85 32.24 52.89 34.12 49.65 35.69C46.4 37.26 44.58 38.67 42.1 40.24C39.61 41.81 37.53 43.39 34.73 45.1C31.92 46.81 28.25 48.55 25.26 50.49C22.28 52.43 19.09 54.5 16.82 56.72C14.55 58.94 13.03 61.35 11.65 63.82C10.27 66.28 9.47 68.69 8.54 71.51C7.61 74.32 6.92 77.22 6.05 80.72C5.17 84.22 3.81 85.97 3.3 92.51C2.78 99.05 3.02 115.38 2.97 119.95Z" style="opacity:0.62"/><path data-k="1" d="M7.47 120.1C7.65 115.52 8.06 99.03 8.54 92.63C9.02 86.22 9.56 84.79 10.37 81.69C11.18 78.58 11.69 76.39 13.41 73.99C15.14 71.6 18.92 69.46 20.72 67.3C22.52 65.14 22.07 63.02 24.23 61.05C26.39 59.07 30.42 57.25 33.67 55.44C36.92 53.64 40.83 52.1 43.73 50.24C46.63 48.39 46.88 45.93 51.08 44.32C55.28 42.71 64.41 42.01 68.92 40.57C73.44 39.14 73.71 37.25 78.18 35.73C82.66 34.21 89.65 32.99 95.77 31.45C101.9 29.91 109.66 27.92 114.95 26.49C120.23 25.06 120.75 24.25 127.47 22.89C134.19 21.54 147.99 19.68 155.28 18.37C162.57 17.06 164.59 16.22 171.21 15.03C177.84 13.84 186.05 12.52 195.03 11.23C204.01 9.95 217.33 8.51 225.09 7.3C232.86 6.1 238.87 4.55 241.63 4L241.14 1.59C238.41 2.15 232.51 3.87 224.75 4.9C216.99 5.93 203.63 6.75 194.59 7.77C185.54 8.78 177.14 9.8 170.49 10.99C163.84 12.18 162.02 13.75 154.69 14.91C147.37 16.06 133.34 16.7 126.53 17.9C119.72 19.1 119.21 20.89 113.85 22.12C108.5 23.36 100.67 24.07 94.4 25.31C88.13 26.55 80.85 28.16 76.21 29.56C71.57 30.95 71.07 32.04 66.57 33.68C62.07 35.32 53.67 37.76 49.23 39.41C44.79 41.06 43.09 41.95 39.91 43.58C36.73 45.22 33.58 47.25 30.16 49.22C26.73 51.19 21.97 53.25 19.35 55.41C16.73 57.57 16.4 59.72 14.44 62.2C12.47 64.68 9.21 67.31 7.55 70.31C5.88 73.31 5.38 76.54 4.47 80.18C3.56 83.81 2.6 85.5 2.07 92.12C1.54 98.74 1.42 115.27 1.29 119.9Z" style="opacity:0.57"/><path data-k="2" d="M9.41 120.11C9.76 116.03 10.79 101.33 11.49 95.63C12.2 89.93 12.65 88.74 13.63 85.92C14.61 83.09 15.92 80.77 17.36 78.66C18.8 76.56 20.21 75.13 22.26 73.31C24.3 71.48 26.5 69.48 29.63 67.69C32.76 65.9 37.21 64.32 41.03 62.55C44.85 60.77 48.91 58.72 52.55 57.04C56.18 55.36 59.09 53.93 62.84 52.47C66.59 51.01 69.97 49.59 75.06 48.26C80.15 46.94 86.65 45.8 93.39 44.5C100.13 43.19 108.48 41.7 115.49 40.43C122.51 39.15 129.34 38.12 135.48 36.84C141.62 35.55 146.08 34.01 152.32 32.72C158.56 31.43 164.65 30.25 172.92 29.11C181.19 27.96 191.73 27 201.95 25.85C212.17 24.7 224.27 23.35 234.21 22.22C244.15 21.09 253.1 20.14 261.59 19.08C270.07 18.02 281.21 16.42 285.13 15.88L284.88 13.86C280.95 14.32 269.78 15.64 261.29 16.59C252.8 17.54 243.89 18.62 233.94 19.55C223.98 20.49 211.82 21.23 201.57 22.22C191.32 23.2 180.77 24.4 172.44 25.47C164.1 26.53 157.9 27.6 151.57 28.6C145.24 29.61 140.61 30.39 134.44 31.49C128.28 32.6 121.59 34 114.57 35.21C107.54 36.43 99.1 37.48 92.29 38.79C85.47 40.1 78.91 41.64 73.67 43.06C68.44 44.49 64.77 45.9 60.88 47.36C56.99 48.82 54.13 50.39 50.35 51.84C46.58 53.29 42.26 54.45 38.23 56.06C34.2 57.67 29.76 59.58 26.19 61.5C22.63 63.42 19.23 65.25 16.86 67.58C14.49 69.91 13.39 72.77 11.99 75.5C10.58 78.24 9.66 80.78 8.41 84C7.17 87.22 5.17 88.83 4.51 94.81C3.85 100.8 4.48 115.71 4.47 119.89Z" style="opacity:0.52"/><path data-k="3" d="M0.77 120.03C0.74 116.26 0.18 102.57 0.61 97.39C1.04 92.22 2.35 91.51 3.34 88.98C4.33 86.44 5.54 84.32 6.53 82.19C7.52 80.07 8.38 77.93 9.27 76.23C10.16 74.53 10.39 73.49 11.86 72C13.34 70.51 15.69 68.9 18.09 67.29C20.5 65.68 24.11 63.94 26.29 62.36C28.47 60.78 29.24 59.06 31.18 57.82C33.11 56.57 34.61 56.04 37.9 54.91C41.18 53.78 46.69 52.33 50.9 51.04C55.1 49.74 59.91 48.37 63.11 47.12C66.31 45.87 67 44.65 70.12 43.54C73.23 42.43 76.64 41.56 81.8 40.46C86.96 39.37 95.4 38.08 101.08 36.97C106.77 35.85 111.87 34.84 115.89 33.78C119.91 32.71 120.65 31.63 125.2 30.56C129.75 29.49 136.04 28.36 143.18 27.36C150.33 26.36 163.91 25.02 168.06 24.56L167.81 22.23C163.65 22.67 150.08 24.04 142.87 24.88C135.65 25.72 129.18 26.45 124.52 27.28C119.87 28.11 118.97 28.95 114.94 29.85C110.9 30.74 106.01 31.72 100.31 32.64C94.62 33.55 86.08 34.33 80.77 35.34C75.46 36.35 71.71 37.62 68.45 38.7C65.19 39.79 64.44 40.8 61.23 41.84C58.01 42.88 53.46 43.85 49.18 44.95C44.89 46.06 38.99 47.07 35.49 48.47C32 49.88 30.31 51.93 28.21 53.38C26.12 54.82 25.25 55.86 22.95 57.16C20.65 58.45 17.23 59.66 14.43 61.16C11.63 62.66 8.14 64.25 6.14 66.17C4.14 68.09 3.51 70.56 2.42 72.69C1.34 74.82 0.72 76.61 -0.39 78.93C-1.49 81.25 -3.47 83.6 -4.22 86.62C-4.97 89.64 -4.66 91.51 -4.88 97.07C-5.09 102.62 -5.41 116.15 -5.52 119.97Z" style="opacity:0.47"/><path data-k="4" d="M1.61 120.06C1.63 116.07 1.49 101.63 1.74 96.08C1.99 90.53 2.33 89.4 3.11 86.76C3.89 84.13 5.29 82.43 6.43 80.26C7.57 78.09 8.45 75.64 9.96 73.74C11.47 71.84 13.88 70.5 15.46 68.87C17.05 67.24 17.93 65.54 19.47 63.98C21.01 62.43 22.36 61.03 24.71 59.53C27.06 58.03 30.26 56.44 33.58 54.98C36.9 53.51 41.17 52.14 44.63 50.75C48.1 49.36 51.38 47.99 54.37 46.64C57.36 45.29 59.38 43.85 62.56 42.65C65.74 41.44 69.01 40.61 73.45 39.42C77.88 38.22 83.63 36.71 89.18 35.49C94.74 34.27 101.42 33.25 106.77 32.1C112.12 30.95 116.84 29.77 121.3 28.59C125.77 27.41 128.84 26.1 133.58 25.01C138.31 23.93 143.26 23.09 149.7 22.1C156.14 21.1 168.48 19.56 172.24 19.05L171.93 16.62C168.15 17.07 155.77 18.38 149.28 19.34C142.8 20.29 137.82 21.42 133.01 22.35C128.21 23.27 124.97 23.99 120.45 24.89C115.93 25.78 111.25 26.7 105.89 27.7C100.52 28.69 93.91 29.85 88.26 30.86C82.61 31.87 76.59 32.63 71.99 33.75C67.4 34.88 64.01 36.41 60.69 37.63C57.36 38.84 55.08 39.87 52.03 41.06C48.97 42.25 45.83 43.48 42.33 44.77C38.84 46.06 34.6 47.43 31.03 48.81C27.46 50.19 23.77 51.51 20.92 53.05C18.07 54.59 15.9 56.32 13.92 58.05C11.95 59.78 10.54 61.46 9.07 63.44C7.59 65.42 6.7 67.79 5.06 69.94C3.42 72.08 0.67 73.79 -0.76 76.32C-2.2 78.85 -2.89 81.89 -3.55 85.13C-4.21 88.37 -4.4 89.96 -4.71 95.76C-5.03 101.56 -5.32 115.91 -5.44 119.94Z" style="opacity:0.42"/></svg></span></div>
+<p class="lost__code">404</p>
+<div class="lost__txt"><h1>這一頁在 <span class="num">4:04</span> 斷了火</h1><p>網址可能打錯，或頁面已移除。</p><p class="lost__act"><a class="btn btn--ink" href="./">回到曲線</a><a class="btn" href="./#lots">看生豆</a></p></div>
+</main>
+<footer class="ft"><p class="ft__fine"><span>慢焙咖啡</span><span>台中市西區五權五街巷內 1 樓</span><span>電話 <span class="num">04-0000-0230</span></span></p></footer>
+
+</body>
+</html>

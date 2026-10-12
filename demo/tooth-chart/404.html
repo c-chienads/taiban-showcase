@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F17" data-slug="tooth-chart">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>找不到頁面｜恆齒牙醫｜先找到那顆牙，再談怎麼做</title>
+<meta name="description" content="找不到這個頁面。">
+
+<meta name="generator" content="套版網站平台 F17">
+<link rel="icon" href="assets/mark.svg">
+<link rel="preload" href="fonts/01-chocolate-classical-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/02-noto-sans-tc.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"Chocolate Classical Sans";src:url("fonts/01-chocolate-classical-sans.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans TC";src:url("fonts/02-noto-sans-tc.woff2") format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Red Hat Mono";src:url("fonts/03-red-hat-mono.woff2") format("woff2");font-weight:400 600;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root{
+  --paper: oklch(0.83 0.06 85);
+  --paper-2: oklch(0.79 0.065 85);
+  --grid: oklch(0.87 0.05 85);
+  --grid-2: oklch(0.7 0.07 80);
+  --sheet: oklch(0.972 0.02 95);
+  --sheet-grid: oklch(0.89 0.04 185);
+  --sheet-rule: oklch(0.86 0.025 185);
+  --sheet-shadow: oklch(0.66 0.075 78 / .5);
+  --enamel: oklch(0.985 0.006 100);
+  --ink: oklch(0.26 0.015 190);
+  --ink-2: oklch(0.38 0.07 62);
+  --line: oklch(0.36 0.016 190);
+  --red: oklch(0.52 0.19 25);
+  --red-ink: oklch(0.42 0.16 25);
+  --red-tint: oklch(0.9 0.06 22);
+  --blue: oklch(0.45 0.12 258);
+  --blue-ink: oklch(0.42 0.12 258);
+  --u: 28px;
+  --gut: clamp(16px, 3.6vw, 56px);
+  --sans: "Noto Sans TC", sans-serif;
+  --disp: "Chocolate Classical Sans", "Noto Sans TC", sans-serif;
+  --mono: "Red Hat Mono", "Noto Sans TC", monospace;
+  --focus-ring: 2px dashed var(--red);
+  --focus-offset: 3px;
+  --selection-bg: oklch(0.86 0.08 258);
+  --selection-fg: var(--ink);
+}
+html{background:var(--paper)}
+body{background:var(--paper) linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / var(--u) var(--u), var(--paper) linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / var(--u) var(--u);
+  background-color:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:var(--u);font-weight:400}
+body{background-image:linear-gradient(var(--grid) 1px, transparent 1px),linear-gradient(90deg, var(--grid) 1px, transparent 1px);background-size:var(--u) var(--u);background-position:0 0}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.22em}
+a:hover{color:var(--red-ink)}
+:lang(zh) em,em{text-emphasis:none;font-weight:700}
+b,strong{font-weight:700}
+.mono,.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.skip,.skip:hover{background:var(--ink);color:var(--paper);text-decoration:none}
+h1,h2,h3{font-weight:700;letter-spacing:.01em}
+h1,h2{font-family:var(--disp);font-weight:400;letter-spacing:.03em}
+h2{font-size:30px;line-height:calc(var(--u) * 1.5)}
+h3{font-size:17px;line-height:var(--u)}
+p,li,dd{text-wrap:pretty}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+input,select,textarea{border-radius:0}
+
+/* ---------- 抬頭欄 ---------- */
+.head{border-bottom:1.5px solid var(--ink);background:var(--paper)}
+.head{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:0 36px;padding:0 var(--gut);min-height:calc(var(--u) * 2.5)}
+.head-row{display:contents}
+.brand{display:flex;align-items:center;gap:12px;margin:0;font-family:var(--disp);font-size:21px;font-weight:400;letter-spacing:.06em;line-height:1}
+.brand a{text-decoration:none;display:inline-flex;align-items:center;gap:12px}
+.brand svg{width:30px;height:30px}
+.brand small{font-size:12.5px;font-weight:500;color:var(--ink-2);letter-spacing:.12em;margin-left:2px}
+.nav{display:flex;gap:4px 24px;flex-wrap:wrap;justify-content:flex-end;order:3}
+.nav a{text-decoration:none;font-size:15px;font-weight:500;padding:4px 0;border-bottom:1.5px solid transparent;white-space:nowrap}
+.nav a:hover{border-bottom-color:var(--red);color:inherit}
+.head-tel{margin:0;font-size:14px;white-space:nowrap}
+.head-tel a{font-family:var(--mono);font-weight:500;font-size:15px;text-decoration:none;margin-left:.4em}
+.head-f .hf-t a{padding:8px 0}
+.head-tel a:hover{text-decoration:underline}
+.head-f{display:flex;flex-wrap:wrap;gap:0 0;margin:0;order:2;justify-content:center}
+.head-f>div{display:flex;align-items:baseline;gap:0 10px;padding:4px 14px;border-left:1px solid var(--grid-2)}
+.head-f>div:first-child{border-left:0}
+.head-f dt{font-size:12.5px;letter-spacing:.14em;color:var(--ink-2);font-weight:500}
+.head-f dd{margin:0;font-size:14px;font-weight:500;line-height:1.5;white-space:nowrap}
+@media (min-width:1101px) and (max-width:1340px){.head-f .hf-h{display:none}}
+.head-f dd .mono{font-size:14px}
+
+/* ---------- 首屏：牙位圖＋紀錄欄 ---------- */
+.hero{display:grid;grid-template-columns:minmax(0,500px) minmax(0,1fr);column-gap:40px;padding:var(--u) var(--gut) var(--u);max-width:1440px;margin:0 auto}
+.chart-col{grid-column:1;align-self:start;position:sticky;top:14px}
+.text-col{grid-column:2;display:flex;flex-direction:column;max-width:660px}
+h1{font-size:56px;line-height:66px;letter-spacing:.03em;margin:0 0 14px;text-wrap:balance}
+.lead{font-size:17px;line-height:var(--u);max-width:30em;margin:0 0 14px}
+.lead-cta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;margin:0 0 var(--u);font-size:15px}
+.cta{display:inline-block;font-family:var(--sans);font-size:17px;font-weight:700;letter-spacing:.14em;line-height:1.3;text-decoration:none;color:var(--paper);background:var(--ink);padding:9px 24px 10px;box-shadow:3px 3px 0 var(--red)}
+.cta:hover{background:var(--line);color:var(--paper)}
+.cta:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--red)}
+.lead-cta .mono{font-size:15px;font-weight:500}
+.chart-cap{display:flex;justify-content:space-between;align-items:baseline;gap:2px 16px;font-size:15px;line-height:22px;color:var(--ink-2);margin:0 0 8px;flex-wrap:wrap}
+.chart-cap b{color:var(--ink);font-weight:600;letter-spacing:.1em}
+.chart-cap .mono{font-size:12.5px}
+.odont{position:relative;width:100%;aspect-ratio:var(--cw)/var(--ch);margin:0;padding:0;border:1.5px solid var(--ink);background:var(--sheet);box-shadow:5px 6px 0 var(--sheet-shadow);
+  background-image:linear-gradient(var(--sheet-grid) 1px, transparent 1px),linear-gradient(90deg, var(--sheet-grid) 1px, transparent 1px);background-size:var(--u) var(--u)}
+.arch{position:absolute;inset:0;width:100%;height:100%;max-width:none;pointer-events:none;overflow:visible}
+.arch .gum{fill:url(#ab-h);stroke:var(--line);stroke-width:.2;stroke-linejoin:round;opacity:.95}
+.arch .gh{stroke:var(--ink-2);stroke-width:.16;opacity:.42}
+.arch .gd{fill:none;stroke:var(--ink-2);stroke-width:.14;stroke-dasharray:1.4 1.1;opacity:.6}
+.arch .tk{fill:none;stroke:var(--ink-2);stroke-width:.14;opacity:.7}
+.arch .sb{fill:none;stroke:var(--ink);stroke-width:.22}
+.arch .sbt{font-family:var(--mono);font-size:2.5px;font-weight:500;fill:var(--ink);text-anchor:middle;paint-order:stroke;stroke:var(--sheet);stroke-width:1px;stroke-linejoin:round}
+.odont-f{margin:0;padding:0;border:0;min-width:0;display:block}
+.odont-f legend{float:none}
+.odont .mid,.odont .occ{position:absolute;pointer-events:none;border:0 dashed var(--line);opacity:.7}
+.odont .mid{left:50%;top:1.5%;bottom:1.5%;border-left-width:1px}
+.odont .occ{left:1.5%;right:1.5%;top:var(--oy);border-top-width:1px}
+.qlab{position:absolute;margin:0;font-size:13px;letter-spacing:.12em;color:var(--ink-2);font-weight:500;line-height:1}
+.qlab .mono{display:block;font-size:17px;font-weight:600;color:var(--ink);letter-spacing:0;margin-top:4px}
+.qlab.q1{left:3.5%;top:5%}.qlab.q2{right:3.5%;top:5%;text-align:right}.qlab.q4{left:3.5%;bottom:5%}.qlab.q3{right:3.5%;bottom:5%;text-align:right}
+.tooth{position:absolute;left:var(--x);top:var(--y);width:var(--w);height:var(--h);transform:translate(-50%,-50%) rotate(var(--r));cursor:pointer;display:block}
+/* 單選鈕本體＝牙冠中央的一個圓（量測用的觸控目標 ≥24px，彼此不重疊）；整個 <label>（整顆牙）都點得到 */
+.tooth input{appearance:none;-webkit-appearance:none;position:absolute;left:50%;top:50%;translate:-50% -50%;width:max(24px,72%);height:max(24px,72%);margin:0;border:0;border-radius:50%;background:transparent;cursor:pointer;z-index:2}
+.tooth.n1 input,.tooth.n2 input,.tooth.n3 input{width:max(24px,58%);height:max(24px,58%)}
+/* 鍵盤焦點＝藍鉛筆在牙的外圍畫一圈（紅色留給「選到」的排線，兩者永遠同時出現，所以要分色） */
+.tooth input:focus-visible{outline:2.5px dashed var(--blue);outline-offset:4px}
+.tooth svg{position:absolute;inset:0;width:100%;height:100%;max-width:none;overflow:visible;pointer-events:none}
+.tooth .fdi{margin:6px 0 0;position:absolute;left:50%;top:0;translate:-50% calc(-100% - 5px);rotate:calc(-1 * var(--r));font-family:var(--mono);font-size:14px;font-weight:500;line-height:1;letter-spacing:.02em;color:var(--ink);white-space:nowrap;padding:1px 2px;pointer-events:none;font-variant-numeric:tabular-nums}
+.tooth[data-f] .fdi{top:auto;bottom:0;translate:-50% calc(100% + 5px)}
+.tf{fill:var(--enamel);stroke:var(--line);stroke-width:.3;stroke-linejoin:round;transition:fill .15s,stroke .15s}
+.td path{fill:none;stroke:var(--line);stroke-width:.26;stroke-linecap:round;stroke-linejoin:round}
+.td .f{stroke-width:.16;opacity:.6}
+.td circle{fill:var(--line);opacity:.8}
+.th line{stroke:var(--red);stroke-linecap:round;stroke-dasharray:1 1;stroke-dashoffset:1}
+.tooth:hover .tf{stroke:var(--ink);stroke-width:.44}
+.tooth:has(input:checked) .tf{stroke:var(--red);stroke-width:.42}
+.tooth:has(input:checked) .fdi{color:var(--red-ink);font-weight:600}
+.tooth:has(input:checked) .th line{stroke-dashoffset:0}
+@media (prefers-reduced-motion:no-preference){
+  .tooth:has(input:checked) .th line{animation:f17-draw .26s cubic-bezier(.3,.6,.4,1) both;animation-delay:calc(var(--i) * 28ms)}
+  @keyframes f17-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+}
+.odont:has(input[value^="1"]:checked) .q1 .tf,.odont:has(input[value^="2"]:checked) .q2 .tf,.odont:has(input[value^="3"]:checked) .q3 .tf,.odont:has(input[value^="4"]:checked) .q4 .tf{fill:var(--red-tint)}
+.odont:has(input:checked) .tooth:has(input:checked) .tf{fill:var(--enamel)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 22px;margin:10px 0 0;padding:0;font-size:14px;color:var(--ink-2);line-height:22px}
+.legend li{display:flex;align-items:center;gap:8px}
+.legend .k{display:inline-block;width:18px;height:14px;flex:none;border:1px solid var(--line);background:var(--enamel)}
+.legend .k-sel{background:repeating-linear-gradient(135deg,var(--red) 0 1.2px,transparent 1.2px 3.6px) var(--enamel);border-color:var(--red)}
+.legend .k-q{background:var(--red-tint)}
+.legend .k-dash{border:0;border-top:1px dashed var(--line);height:0;background:none;align-self:center}
+@media (hover:none){.legend .lk{display:none}}
+.legend kbd{font-family:var(--mono);font-size:12.5px;border:1px solid var(--ink-2);padding:0 4px;color:var(--ink);line-height:1.5}
+
+/* 紀錄欄 */
+.rec{--grid-2:var(--sheet-rule);border:1.5px solid var(--ink);background:var(--sheet);box-shadow:5px 6px 0 var(--sheet-shadow);margin-top:0;position:relative}
+.rec-h{font-size:13px;letter-spacing:.2em;font-weight:600;color:var(--sheet);background:var(--ink);margin:0;padding:5px 16px;line-height:1.6}
+.rec-id{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:0 16px;padding:12px 18px;border-bottom:1px solid var(--ink);margin:0}
+.rec-id dt,.rec-k{font-size:12.5px;letter-spacing:.14em;color:var(--ink-2);font-weight:500}
+.rec-id dd{margin:0;line-height:1.3}
+.tn{display:none;font-family:var(--disp);font-size:24px;font-weight:400;letter-spacing:.04em}
+.tn .num{font-size:30px;font-weight:600;color:var(--red-ink);margin-right:8px;letter-spacing:-.01em}
+.tn small{display:block;font-size:14px;font-weight:400;color:var(--ink-2);letter-spacing:.02em;margin-top:2px}
+.tb{display:none;padding:10px 18px 16px}
+.rec-role{margin:0 0 10px;font-size:15.5px;line-height:26px;max-width:36em}
+.rec-role::before{content:"";display:block;width:34px;border-top:2px solid var(--red);margin:4px 0 8px}
+.rec h3{font-size:12.5px;letter-spacing:.14em;color:var(--ink-2);font-weight:500;margin:14px 0 4px;line-height:22px}
+.tx{width:100%;font-size:14px;line-height:22px;border-top:1px solid var(--ink)}
+.tx th,.tx td{text-align:left;vertical-align:top;padding:7px 8px 7px 0;border-bottom:1px solid var(--grid-2)}
+.tx thead th{font-size:12.5px;letter-spacing:.1em;color:var(--ink-2);font-weight:500;padding-top:5px;padding-bottom:3px;white-space:nowrap}
+.tx td.n{font-family:var(--mono);font-size:14px;white-space:nowrap;padding-right:14px;width:5.5em}
+.tx td.pc{width:5em}
+.tx td.w{min-width:9em}
+.tx b{display:block;font-weight:700}
+.tx .what{display:block;color:var(--ink-2);font-size:14px}
+.tx .note{font-size:14px;color:var(--ink-2);display:block;line-height:21px;margin-top:3px;max-width:26em}
+.pay{display:inline-flex;align-items:center;gap:6px;font-size:14px;white-space:nowrap}
+.pay::before{content:"";width:12px;height:12px;flex:none}
+.pay-nhi::before{border:1.6px solid var(--blue);border-radius:50%}
+.pay-self::before{clip-path:polygon(50% 0,100% 100%,0 100%);background:var(--red)}
+.pay-both::before{border:1.6px solid var(--blue);border-radius:50%;background:linear-gradient(135deg,transparent 50%,var(--red) 50%)}
+.signs{margin:0;padding:0;list-style:none;font-size:14.5px;line-height:24px;columns:2;column-gap:18px}
+.signs li{break-inside:avoid;padding-left:16px;position:relative}
+.signs li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border:1.4px solid var(--red);transform:rotate(45deg)}
+.flow{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,auto);grid-auto-flow:column;gap:0 24px;font-size:14px;line-height:22px;counter-reset:fl}
+.flow li{counter-increment:fl;position:relative;padding:3px 0 3px 30px}
+.flow li::before{content:counter(fl);position:absolute;left:0;top:4px;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--blue-ink);border:1.4px solid var(--blue);width:20px;height:20px;display:inline-grid;place-items:center;border-radius:50%}
+.flow li::after{content:"";position:absolute;left:9.5px;top:26px;bottom:-5px;border-left:1px dashed var(--ink-2);opacity:.7}
+.flow li:last-child::after,.flow li:nth-child(3)::after{display:none}
+
+.rec-cta{margin:0;padding:12px 18px;border-top:1px solid var(--ink);display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;font-size:15px}
+.rec-cta a:first-child{font-weight:700;text-decoration:none;border-bottom:2px solid var(--red);padding-bottom:2px}
+.rec-cta a:first-child:hover{color:var(--red-ink)}
+.rec-cta .mono{font-size:14px}
+@supports selector(:has(a)){
+  body:has(input[name="tooth"][data-t="incisor"]:checked) .tb-incisor,
+  body:has(input[name="tooth"][data-t="canine"]:checked) .tb-canine,
+  body:has(input[name="tooth"][data-t="premolar"]:checked) .tb-premolar,
+  body:has(input[name="tooth"][data-t="molar"]:checked) .tb-molar,
+  body:has(input[name="tooth"][data-t="third"]:checked) .tb-third{display:block}
+  body:has(input[name="tooth"][value="11"]:checked) .tn-11,
+  body:has(input[name="tooth"][value="12"]:checked) .tn-12,
+  body:has(input[name="tooth"][value="13"]:checked) .tn-13,
+  body:has(input[name="tooth"][value="14"]:checked) .tn-14,
+  body:has(input[name="tooth"][value="15"]:checked) .tn-15,
+  body:has(input[name="tooth"][value="16"]:checked) .tn-16,
+  body:has(input[name="tooth"][value="17"]:checked) .tn-17,
+  body:has(input[name="tooth"][value="18"]:checked) .tn-18,
+  body:has(input[name="tooth"][value="21"]:checked) .tn-21,
+  body:has(input[name="tooth"][value="22"]:checked) .tn-22,
+  body:has(input[name="tooth"][value="23"]:checked) .tn-23,
+  body:has(input[name="tooth"][value="24"]:checked) .tn-24,
+  body:has(input[name="tooth"][value="25"]:checked) .tn-25,
+  body:has(input[name="tooth"][value="26"]:checked) .tn-26,
+  body:has(input[name="tooth"][value="27"]:checked) .tn-27,
+  body:has(input[name="tooth"][value="28"]:checked) .tn-28,
+  body:has(input[name="tooth"][value="31"]:checked) .tn-31,
+  body:has(input[name="tooth"][value="32"]:checked) .tn-32,
+  body:has(input[name="tooth"][value="33"]:checked) .tn-33,
+  body:has(input[name="tooth"][value="34"]:checked) .tn-34,
+  body:has(input[name="tooth"][value="35"]:checked) .tn-35,
+  body:has(input[name="tooth"][value="36"]:checked) .tn-36,
+  body:has(input[name="tooth"][value="37"]:checked) .tn-37,
+  body:has(input[name="tooth"][value="38"]:checked) .tn-38,
+  body:has(input[name="tooth"][value="41"]:checked) .tn-41,
+  body:has(input[name="tooth"][value="42"]:checked) .tn-42,
+  body:has(input[name="tooth"][value="43"]:checked) .tn-43,
+  body:has(input[name="tooth"][value="44"]:checked) .tn-44,
+  body:has(input[name="tooth"][value="45"]:checked) .tn-45,
+  body:has(input[name="tooth"][value="46"]:checked) .tn-46,
+  body:has(input[name="tooth"][value="47"]:checked) .tn-47,
+  body:has(input[name="tooth"][value="48"]:checked) .tn-48{display:block}
+}
+@supports not selector(:has(a)){
+  .tn,.tb{display:block}
+  .tb{border-top:1px solid var(--ink)}
+}
+/* 輔助動效：換牙時面板內文做 120ms 的內容換位（@starting-style；不支援的瀏覽器直接切換） */
+@media (prefers-reduced-motion:no-preference){
+  .tb,.tn{transition:translate .12s ease-out,opacity .12s ease-out;translate:0 0;opacity:1}
+  @starting-style{.tb,.tn{translate:0 8px;opacity:.2}}
+}
+
+/* ---------- 區段共用：左欄標題 ---------- */
+.sec{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:28px;padding:calc(var(--u) * 1.5) var(--gut) calc(var(--u) * 2);max-width:1440px;margin:0 auto;border-top:1px solid var(--ink)}
+.sec-cap{grid-column:1/4}
+.sec-cap h2{margin:0 0 6px}
+.sec-cap p{font-size:15px;color:var(--ink-2);line-height:24px;margin:0;max-width:18em}
+.sec-body{grid-column:4/13;min-width:0}
+
+/* 看診時段 */
+.shift{width:100%;border-top:1.5px solid var(--ink);font-size:15px;line-height:22px}
+.shift th,.shift td{border-bottom:1px solid var(--grid-2);padding:10px 8px;text-align:center;vertical-align:middle}
+.shift thead th{font-size:14px;letter-spacing:.08em;font-weight:500;color:var(--ink-2);padding:8px 4px;border-bottom:1px solid var(--ink)}
+.shift thead th.today{color:var(--red-ink);font-weight:700}
+.shift tbody th{text-align:left;font-weight:700;white-space:nowrap;padding-left:0}
+.shift tbody th .mono{display:block;font-weight:400;font-size:13px;color:var(--ink-2);letter-spacing:.02em}
+.shift td{position:relative;font-weight:500}
+.shift .who{display:inline-block;padding:4px 10px;min-width:38px;border:1.6px solid var(--blue);border-radius:50% 46% 50% 48%/48% 50% 46% 50%;rotate:-3deg;line-height:22px;white-space:nowrap}
+.shift .who b{font-weight:500}
+.shift .who b+b::before{content:"・";color:var(--ink-2);font-weight:400}
+.shift tr:nth-child(2n) .who{rotate:2.5deg;border-radius:46% 50% 48% 50%/50% 48% 50% 46%}
+.shift td.off{color:var(--ink-2)}
+.shift td.off::before{content:"";position:absolute;left:50%;top:50%;width:26px;height:1.6px;background:var(--red);translate:-50% -50%;rotate:-38deg;opacity:.75}
+.shift td.off::after{content:"";position:absolute;left:50%;top:50%;width:26px;height:1.6px;background:var(--red);translate:-50% -50%;rotate:38deg;opacity:.75}
+.shift td.today{background:oklch(0.9 0.05 88 / .7)}
+.shift-note{display:flex;flex-wrap:wrap;gap:4px 28px;margin:12px 0 0;font-size:15px;color:var(--ink-2);line-height:22px}
+.fees{margin:calc(var(--u) * 1.25) 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;border-top:1.5px solid var(--ink)}
+.fees>div{display:grid;grid-template-columns:7em 1fr;gap:0 12px;padding:9px 0;border-bottom:1px solid var(--grid-2);font-size:14.5px;line-height:24px}
+.fees dt{font-weight:700}
+.fees dd{margin:0}
+
+/* 醫師與設備 */
+.sec-team .sec-cap{grid-column:1/-1;display:flex;align-items:baseline;gap:8px 28px;flex-wrap:wrap;margin-bottom:14px}
+.sec-team .sec-cap h2{margin:0}
+.sec-team .sec-cap p{max-width:none}
+.sec-team .sec-body{grid-column:1/-1}
+.team-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:0 56px}
+.roster{width:100%;border-top:1.5px solid var(--ink);font-size:14.5px;line-height:24px}
+.roster th,.roster td{text-align:left;vertical-align:top;padding:12px 10px 12px 0;border-bottom:1px solid var(--grid-2)}
+.roster thead th{font-size:12.5px;letter-spacing:.12em;color:var(--ink-2);font-weight:500;padding:6px 10px 4px 0;border-bottom:1px solid var(--ink);white-space:nowrap}
+.roster tbody th{font-weight:700;white-space:nowrap;font-size:17px}
+.roster tbody th small{display:block;font-size:12.5px;font-weight:400;color:var(--ink-2);letter-spacing:.06em}
+.roster q{quotes:"「" "」";font-size:14px;color:var(--ink);display:block;line-height:23px}
+.roster .rl{display:none}
+.equip{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink);font-size:14.5px;line-height:24px}
+.equip li{display:grid;grid-template-columns:28px 1fr;gap:0 8px;padding:7px 0;border-bottom:1px solid var(--grid-2)}
+.equip li::before{content:"";grid-column:1;grid-row:1;width:16px;height:16px;margin-top:4px;border:1.2px solid var(--line);background:var(--enamel)}
+.equip li::after{content:"";grid-column:1;grid-row:1;width:13px;height:7px;margin:7px 0 0 3px;border-left:1.8px solid var(--blue);border-bottom:1.8px solid var(--blue);transform:rotate(-48deg) skewX(-8deg);transform-origin:left bottom}
+.equip li span{grid-column:2;grid-row:1}
+.equip-h{font-size:12.5px;letter-spacing:.14em;color:var(--ink-2);font-weight:500;margin:0 0 6px;line-height:22px}
+
+/* 預約 */
+.book{--bp:24px;--grid-2:var(--sheet-rule);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 36px;border:1px solid var(--line);padding:0 var(--bp) 22px;background:var(--sheet);box-shadow:5px 6px 0 var(--sheet-shadow);max-width:880px}
+.book-h{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:0 calc(-1 * var(--bp)) 8px;padding:8px var(--bp);border-bottom:1px solid var(--line);font-size:13px;letter-spacing:.16em;font-weight:600;color:var(--ink)}
+.book-h span{font-weight:400;letter-spacing:.02em;color:var(--ink-2)}
+.fld{display:flex;flex-direction:column;gap:2px;min-width:0}
+.fld label,.fld .lab{font-size:13px;letter-spacing:.1em;font-weight:600;color:var(--ink);line-height:22px}
+.fld label span,.fld .lab span{font-weight:400;color:var(--ink-2);letter-spacing:.02em;margin-left:8px}
+.fld input,.fld select,.fld textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);padding:5px 2px;font-size:16px;line-height:24px;color:var(--ink)}
+.fld input::placeholder,.fld textarea::placeholder{color:var(--ink-2);opacity:1}
+.fld textarea{border:1px solid var(--line);padding:6px 10px;background-image:repeating-linear-gradient(transparent 0 27px,var(--grid-2) 27px 28px);background-attachment:local;background-origin:content-box}
+.fld select{appearance:none;-webkit-appearance:none;padding-right:34px;background-image:linear-gradient(45deg,transparent 48%,var(--ink) 48% 60%,transparent 60%),linear-gradient(-45deg,transparent 48%,var(--ink) 48% 60%,transparent 60%);background-repeat:no-repeat;background-size:9px 9px;background-position:right 14px center,right 8px center}
+.fld textarea{min-height:calc(var(--u) * 3);resize:vertical;line-height:28px}
+.fld input:focus-visible,.fld select:focus-visible,.fld textarea:focus-visible{outline:var(--focus-ring);outline-offset:1px}
+.fld .err{display:none;margin:0;font-size:13px;color:var(--red-ink);font-weight:500;line-height:20px}
+.fld:has(:user-invalid) .err,.tried .fld:has(:invalid) .err{display:block}
+.fld:has(:user-invalid) input,.tried .fld:has(:invalid) input,.fld:has(:user-invalid) select,.tried .fld:has(:invalid) select{border-color:var(--red);box-shadow:inset 0 -1px 0 var(--red)}
+.fld-wide{grid-column:1/-1}
+.chk{display:flex;flex-wrap:wrap;gap:6px 18px;margin:2px 0 0}
+.chk label{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:400;letter-spacing:0;cursor:pointer;line-height:24px;color:var(--ink)}
+.chk input{appearance:none;-webkit-appearance:none;width:18px;height:18px;margin:0;border:1.2px solid var(--line);background:var(--enamel);position:relative;flex:none;cursor:pointer}
+.chk input:checked::after{content:"";position:absolute;left:3px;top:1px;width:9px;height:5px;border-left:1.8px solid var(--blue);border-bottom:1.8px solid var(--blue);transform:rotate(-48deg)}
+.book-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;margin-top:6px}
+.book button{font:inherit;font-size:16px;font-weight:700;letter-spacing:.14em;background:var(--ink);color:var(--paper);border:0;padding:9px 26px;cursor:pointer;box-shadow:3px 3px 0 var(--red)}
+.book button:hover{background:var(--line)}
+.book button:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--red)}
+.book-foot p{margin:0;font-size:15px;color:var(--ink-2);line-height:20px;max-width:34em}
+.done{grid-column:1/-1;margin:0;padding:10px 14px;border:1.5px solid var(--blue);font-size:15px;line-height:24px}
+
+/* 診前須知 */
+.pre-list{margin:0;padding:0;list-style:none;counter-reset:pc;border-top:1.5px solid var(--ink)}
+.pre-list li{counter-increment:pc;display:grid;grid-template-columns:30px 22px 1fr;gap:0 10px;padding:9px 0;border-bottom:1px solid var(--grid-2);font-size:15.5px;line-height:26px}
+.pre-list li::before{content:counter(pc,decimal-leading-zero);font-family:var(--mono);font-size:13px;color:var(--ink-2);line-height:26px}
+.pre-list li::after{content:"";grid-column:2;grid-row:1;width:16px;height:16px;margin-top:5px;border:1.2px solid var(--line);background:var(--enamel)}
+.pre-list li span{grid-column:3;grid-row:1}
+.sec-cap .scope{margin:var(--u) 0 0;font-size:15px;line-height:22px;color:var(--ink);padding:12px 14px;border:1px solid var(--line);background:var(--sheet);max-width:22em;box-shadow:4px 5px 0 var(--sheet-shadow)}
+.scope b{display:block;font-size:12.5px;letter-spacing:.14em;color:var(--ink-2);font-weight:500;margin-bottom:4px}
+.pre .sec-body{grid-column:4/11}
+
+/* ---------- 頁尾 ---------- */
+.foot{border-top:1.5px solid var(--ink);padding:calc(var(--u) * 1) var(--gut) calc(var(--u) * 1.5);display:grid;grid-template-columns:auto 1fr auto;gap:8px 32px;align-items:baseline;font-size:13px;color:var(--ink-2);line-height:22px;max-width:1440px;margin:0 auto}
+.foot p{margin:0}
+.foot .brand{font-size:15px}
+.foot .brand svg{width:22px;height:22px}
+.foot address{font-style:normal}
+
+/* ---------- 404 ---------- */
+.e404{max-width:1100px;margin:0 auto;padding:calc(var(--u) * 1.5) var(--gut) calc(var(--u) * 3);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:var(--u) 48px;align-items:center;min-height:calc(100svh - 190px)}
+.e404 h1{font-size:44px;line-height:56px}
+.e404 .lead{max-width:28em}
+.e404-links{display:flex;flex-wrap:wrap;gap:8px 24px;margin:0;padding:0;list-style:none;font-size:15px}
+.e404-links a:first-child{font-weight:700;text-decoration:none;border-bottom:2px solid var(--red)}
+.e404-fig{margin:0;border:1.5px solid var(--ink);background:var(--sheet);box-shadow:5px 6px 0 var(--sheet-shadow);background-image:linear-gradient(var(--sheet-grid) 1px, transparent 1px),linear-gradient(90deg, var(--sheet-grid) 1px, transparent 1px);background-size:var(--u) var(--u);padding:12px}
+.e404-fig svg{width:100%;height:auto;display:block;overflow:visible}
+.e404-fig figcaption{font-size:13px;color:var(--ink-2);margin-top:8px;line-height:20px}
+.e404-fig .tf{fill:var(--enamel);stroke:var(--line);stroke-width:.3}
+.e404-fig .ghost{fill:none;stroke:var(--blue);stroke-width:.4;stroke-dasharray:1.1 .8}
+.e404-fig .x{stroke:var(--blue);stroke-width:.55;stroke-linecap:round}
+.e404-fig .num{font-family:var(--mono);font-size:3px;fill:var(--ink);text-anchor:middle;dominant-baseline:central;paint-order:stroke;stroke:var(--sheet);stroke-width:.8}
+.e404-fig .num.b{fill:var(--blue-ink);font-weight:600}
+
+/* ---------- 響應 ---------- */
+@media (max-width:1100px){
+  .hero{grid-template-columns:minmax(0,420px) minmax(0,1fr);column-gap:28px}
+  h1{font-size:44px;line-height:54px}
+  /* 欄與欄首都改成整列（1/-1）之後就不需要 12 欄：留著的話 11 道 28px 欄距（308px）會比 320 手機的內容寬（288px）還寬，整段被撐出視窗右緣 */
+  .sec{grid-template-columns:minmax(0,1fr)}
+  .sec-cap{grid-column:1/-1;margin-bottom:12px}
+  .sec-body{grid-column:1/-1}
+  .pre .sec-body{grid-column:1/-1}
+  .sec-cap .scope{margin:12px 0 0}
+  .team-grid{grid-template-columns:1fr}
+  .equip-col{margin-top:var(--u)}
+}
+@media (max-width:1100px){
+  .head{grid-template-columns:1fr auto;padding:10px var(--gut) 0;gap:6px 16px}
+  .head-f{grid-column:1/-1;justify-content:flex-start;border-top:1px solid var(--grid-2);margin:4px calc(-1 * var(--gut)) 0;padding:2px var(--gut)}
+  .head-f>div{padding:3px 14px 3px 0;border-left:0}
+  .nav{justify-content:flex-end;order:0}
+}
+@media (max-width:900px){
+  .hero{display:flex;flex-direction:column}
+  .chart-col,.text-col{display:contents}
+  h1{order:1}.lead{order:2}.chart-cap{order:3}.odont-f{order:4}.legend{order:5}.rec{order:6}
+  .lead-cta{display:none}
+  .lead{margin-bottom:12px}
+  .odont-f{max-width:560px}
+  .rec{margin-top:var(--u);max-width:none}
+}
+@media (max-width:760px){
+  :root{--gut:16px}
+  .odont-f{max-width:none}
+  /* 抬頭欄壓成四條：品牌＋電話（一鍵撥號）／導覽／看診時段／地址，從約 226px 縮到約 150px，標題與牙位圖留在首屏 */
+  .head{grid-template-columns:minmax(0,1fr) auto;padding-top:4px;gap:0 12px}
+  .brand{grid-column:1;grid-row:1}
+  .nav{grid-column:1/-1;grid-row:2;order:0;justify-content:flex-start;gap:0 10px;margin:0 -8px}
+  .nav a{font-size:14px;padding:6px 8px}
+  .head-f{display:contents}
+  .head-f>div{padding:0;border:0}
+  .head-f .hf-t{grid-column:2;grid-row:1;justify-self:end}
+  .head-f .hf-t dt{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .head-f .hf-t dd .mono{font-size:15px}
+  .head-f .hf-h,.head-f .hf-a{grid-column:1/-1;margin:0 calc(-1 * var(--gut));padding:3px var(--gut)}
+  .head-f .hf-h{grid-row:3;border-top:1px solid var(--grid-2);padding-top:5px}
+  .head-f .hf-a{grid-row:4;padding-bottom:7px}
+  .head-f .hf-t{padding:0}
+  .head-f dd{white-space:normal}
+  h1{font-size:38px;line-height:46px}
+  .lead{font-size:16px;line-height:27px}
+  .hero{padding-top:calc(var(--u) * .5)}
+  .odont-f{margin:0 calc(-1 * var(--gut) + 4px)}
+  .chart-cap{line-height:20px;gap:4px 12px;margin-bottom:10px}
+  .tooth .fdi{font-size:13px}
+  .qlab{font-size:12.5px}
+  .qlab .mono{font-size:15px}
+  .rec-id{padding:10px 14px}
+  .tb{padding:8px 14px 14px}
+  .tx thead{display:none}
+  .tx,.tx tbody,.tx tr,.tx td{display:block}
+  .tx tr{padding:8px 0;border-bottom:1px solid var(--grid-2);display:grid;grid-template-columns:auto auto 1fr;gap:0 16px}
+  .tx td{border:0;padding:0;width:auto}
+  .tx td.w{grid-column:1/-1;grid-row:1}
+  .tx td.n{padding-right:0;grid-row:2}
+  .tx td.n:nth-child(2){grid-column:1}
+  .tx td.n:nth-child(3){grid-column:2}
+  .tx td.pc{grid-column:3;grid-row:2;justify-self:end}
+  .tx td.n,.tx td.pc{margin-top:6px}
+  .flow{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row}
+  .flow li:nth-child(3)::after{display:block}
+  .signs{columns:1}
+  .flow li:not(:last-child)::after{width:12px;margin:0 4px}
+  .shift{font-size:14px;table-layout:fixed}
+  .shift thead th:first-child{width:96px}
+  .shift thead th{padding:8px 0;letter-spacing:0;white-space:nowrap}
+  .shift th,.shift td{padding:8px 0}
+  .shift tbody th{font-size:14px}
+  .shift tbody th .mono{font-size:12.5px}
+  .shift td.off::before,.shift td.off::after{width:18px}
+  .shift-note{display:block}
+  .shift-note span{display:block}
+  .fees{grid-template-columns:1fr}
+  .fees>div{grid-template-columns:6em 1fr}
+  .roster thead{display:none}
+  .roster,.roster tbody,.roster tr,.roster th,.roster td{display:block}
+  .roster tr{padding:10px 0;border-bottom:1px solid var(--grid-2)}
+  .roster th,.roster td{border:0;padding:0}
+  .roster tbody th{padding-bottom:2px}
+  .roster .rl{display:inline;font-size:12.5px;color:var(--ink-2);letter-spacing:.08em;margin-right:8px}
+  .book{--bp:14px;grid-template-columns:1fr;padding:0 var(--bp) 16px;gap:10px}
+  /* 兩位醫師同診時，各自一顆圈、上下疊起來；不合併成「林陳」這種像人名的字串 */
+  .shift .who{display:flex;flex-direction:column;align-items:center;gap:3px;padding:0;min-width:0;border:0;border-radius:0;rotate:0}
+  .shift .who b{display:grid;place-items:center;box-sizing:border-box;width:30px;height:30px;font-size:14px;line-height:1;border:1.6px solid var(--blue);border-radius:48% 52% 50% 50%/50% 48% 52% 50%;rotate:-3deg}
+  .shift tr:nth-child(2n) .who b{rotate:2.5deg}
+  .shift .who b+b::before{content:none}
+  .pre-list li{font-size:15px;grid-template-columns:26px 20px 1fr;gap:0 8px}
+  .foot{grid-template-columns:1fr;gap:6px}
+  .e404{grid-template-columns:1fr}
+  .e404 h1{font-size:30px;line-height:40px}
+}
+/* 320 級手機：內容寬 288px，診次欄 96px 讓七個星期欄各只剩 27px，容不下 30px 的圈與「週一」兩字；診次欄收到剛好放得下時間（85px），圈縮到 26px、星期字 13px */
+@media (max-width:359.98px){
+  .shift thead th:first-child{width:88px}
+  .shift thead th{font-size:13px}
+  .shift .who b{width:26px;height:26px;font-size:13px}
+}
+@media print{
+  :root{--paper:#fff;--paper-2:#fff;--grid:#fff;--grid-2:#fff;--ink:#000;--ink-2:#333;--line:#222;--red:#b00;--red-ink:#900;--blue:#124;--blue-ink:#124;--enamel:#fff;--red-tint:#fff;--sheet:#fff;--sheet-grid:#fff;--sheet-rule:#ddd;--sheet-shadow:transparent}
+  body,html{background:#fff;color:#000}
+  body,.odont,.e404-fig{background-image:none}
+  .nav,.skip,.book,.legend,.rec-cta,.chart-cap .mono{display:none!important}
+  .hero,.sec{display:block;padding:0 0 16px}
+  .odont{width:60%;margin:0 auto 16px}
+  .th line{animation:none!important;stroke-dashoffset:0}
+  .tb,.tn{transition:none!important;translate:0!important;opacity:1!important}
+  a{color:#000;text-decoration:underline}
+  .rec,.head,.sec,.foot{border-color:#000}
+  .rec-h{background:#000;color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="head">
+      <div class="head-row">
+        <p class="brand"><a href="./"><svg class="mark" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="27" height="27" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M15 3V27M3 15H27" fill="none" stroke="currentColor" stroke-width=".9" stroke-dasharray="2 1.6"/><path d="M17.2 26.4 26.4 17.2M16.4 22.2 22.2 16.4M20.8 27 27 20.8" fill="none" stroke="#be222a" stroke-width="1.7" stroke-linecap="round"/></svg><span>恆齒牙醫<small>診所</small></span></a></p>
+        <nav class="nav" aria-label="主選單"><a href="./#chart">牙位圖</a><a href="./#hours">時段</a><a href="./#book">預約</a></nav>
+      </div>
+      <dl class="head-f"><div class="hf-t"><dt>電話</dt><dd><a class="mono" href="tel:+886200000170">(02) 0000-0170</a></dd></div></dl>
+    </header>
+    <main id="main" class="e404">
+      <div>
+        <h1>牙位表上沒有 404 這一顆。</h1>
+        <p class="lead">恆齒的編號只有 11 到 18、21 到 28、31 到 38、41 到 48。你要找的這一頁，可能已經拔掉了，也可能是網址抄錯了一位。</p>
+        <ul class="e404-links"><li><a href="./#chart">回到牙位圖</a></li><li><a href="./#hours">看診時段</a></li><li><a href="./#book">直接預約</a></li></ul>
+      </div>
+      <figure class="e404-fig">
+        <svg viewBox="0 0.48 89.18 73.19" role="img" aria-label="上顎牙位圖 18 到 28，旁邊多了一顆虛線的 404，被藍鉛筆打了叉"><g transform="translate(40.07 10.73) rotate(167.15)"><defs><clipPath id="nf11"><path d="M4.27 0C4.23 -0.23 4.07 -0.28 3.95 -0.43C3.83 -0.58 3.7 -0.74 3.54 -0.88C3.39 -1.03 3.19 -1.17 3.02 -1.3C2.84 -1.43 2.66 -1.56 2.48 -1.69C2.31 -1.81 2.13 -1.93 1.96 -2.04C1.79 -2.16 1.63 -2.28 1.46 -2.37C1.3 -2.47 1.13 -2.56 0.96 -2.61C0.79 -2.67 0.61 -2.7 0.45 -2.72C0.29 -2.74 0.15 -2.74 0 -2.74C-0.15 -2.73 -0.29 -2.71 -0.45 -2.68C-0.6 -2.65 -0.77 -2.63 -0.94 -2.57C-1.11 -2.52 -1.28 -2.44 -1.46 -2.35C-1.63 -2.27 -1.81 -2.17 -1.98 -2.06C-2.15 -1.95 -2.31 -1.81 -2.48 -1.68C-2.65 -1.56 -2.83 -1.43 -3.01 -1.3C-3.19 -1.16 -3.38 -1.03 -3.54 -0.88C-3.71 -0.74 -3.87 -0.58 -4 -0.44C-4.12 -0.29 -4.25 -0.23 -4.3 0C-4.35 0.23 -4.32 0.7 -4.29 0.96C-4.26 1.22 -4.18 1.38 -4.13 1.58C-4.07 1.77 -4.03 1.95 -3.94 2.12C-3.86 2.28 -3.74 2.43 -3.61 2.56C-3.48 2.69 -3.33 2.81 -3.15 2.9C-2.98 2.99 -2.78 3.07 -2.58 3.13C-2.37 3.18 -2.14 3.21 -1.91 3.26C-1.67 3.31 -1.49 3.39 -1.17 3.43C-0.86 3.46 -0.39 3.48 0 3.49C0.39 3.49 0.86 3.48 1.18 3.46C1.51 3.43 1.73 3.4 1.96 3.35C2.19 3.29 2.37 3.19 2.57 3.11C2.76 3.04 2.96 2.97 3.13 2.88C3.31 2.79 3.49 2.7 3.62 2.57C3.76 2.44 3.87 2.29 3.96 2.13C4.04 1.96 4.11 1.78 4.15 1.59C4.2 1.39 4.21 1.21 4.23 0.94C4.25 0.68 4.32 0.23 4.27 0Z"/></clipPath></defs><path class="tf" d="M4.27 0C4.23 -0.23 4.07 -0.28 3.95 -0.43C3.83 -0.58 3.7 -0.74 3.54 -0.88C3.39 -1.03 3.19 -1.17 3.02 -1.3C2.84 -1.43 2.66 -1.56 2.48 -1.69C2.31 -1.81 2.13 -1.93 1.96 -2.04C1.79 -2.16 1.63 -2.28 1.46 -2.37C1.3 -2.47 1.13 -2.56 0.96 -2.61C0.79 -2.67 0.61 -2.7 0.45 -2.72C0.29 -2.74 0.15 -2.74 0 -2.74C-0.15 -2.73 -0.29 -2.71 -0.45 -2.68C-0.6 -2.65 -0.77 -2.63 -0.94 -2.57C-1.11 -2.52 -1.28 -2.44 -1.46 -2.35C-1.63 -2.27 -1.81 -2.17 -1.98 -2.06C-2.15 -1.95 -2.31 -1.81 -2.48 -1.68C-2.65 -1.56 -2.83 -1.43 -3.01 -1.3C-3.19 -1.16 -3.38 -1.03 -3.54 -0.88C-3.71 -0.74 -3.87 -0.58 -4 -0.44C-4.12 -0.29 -4.25 -0.23 -4.3 0C-4.35 0.23 -4.32 0.7 -4.29 0.96C-4.26 1.22 -4.18 1.38 -4.13 1.58C-4.07 1.77 -4.03 1.95 -3.94 2.12C-3.86 2.28 -3.74 2.43 -3.61 2.56C-3.48 2.69 -3.33 2.81 -3.15 2.9C-2.98 2.99 -2.78 3.07 -2.58 3.13C-2.37 3.18 -2.14 3.21 -1.91 3.26C-1.67 3.31 -1.49 3.39 -1.17 3.43C-0.86 3.46 -0.39 3.48 0 3.49C0.39 3.49 0.86 3.48 1.18 3.46C1.51 3.43 1.73 3.4 1.96 3.35C2.19 3.29 2.37 3.19 2.57 3.11C2.76 3.04 2.96 2.97 3.13 2.88C3.31 2.79 3.49 2.7 3.62 2.57C3.76 2.44 3.87 2.29 3.96 2.13C4.04 1.96 4.11 1.78 4.15 1.59C4.2 1.39 4.21 1.21 4.23 0.94C4.25 0.68 4.32 0.23 4.27 0Z"/><g class="td"><path class="g" d="M-3.4 1.15C-3.11 1.15 -2.21 1.12 -1.65 1.11C-1.09 1.1 -0.58 1.1 -0.02 1.1C0.53 1.11 1.13 1.12 1.7 1.13C2.27 1.14 3.12 1.15 3.4 1.16"/><path class="f" d="M-1.91 -0.18C-1.74 -0.38 -1.31 -1.18 -0.85 -1.4C-0.39 -1.62 0.39 -1.66 0.85 -1.47C1.31 -1.28 1.74 -0.48 1.91 -0.28"/><path class="f" d="M-1.4 1.49L-1.45 0.69"/><path class="f" d="M0 1.49L0 0.69"/><path class="f" d="M1.4 1.49L1.46 0.69"/></g></g><text class="num" x="38.87" y="4.48">11</text><g transform="translate(32.4 13.47) rotate(148.68)"><defs><clipPath id="nf12"><path d="M3.33 0C3.29 -0.2 3.14 -0.25 3.04 -0.38C2.95 -0.51 2.86 -0.65 2.75 -0.78C2.64 -0.91 2.51 -1.05 2.38 -1.17C2.24 -1.29 2.08 -1.4 1.94 -1.5C1.8 -1.61 1.66 -1.72 1.53 -1.81C1.39 -1.9 1.25 -1.99 1.12 -2.07C0.99 -2.14 0.86 -2.23 0.73 -2.28C0.61 -2.34 0.48 -2.39 0.35 -2.42C0.23 -2.45 0.12 -2.46 0 -2.46C-0.12 -2.45 -0.23 -2.42 -0.35 -2.38C-0.47 -2.35 -0.6 -2.31 -0.73 -2.26C-0.85 -2.21 -0.99 -2.14 -1.12 -2.07C-1.26 -2 -1.41 -1.93 -1.55 -1.84C-1.69 -1.74 -1.81 -1.62 -1.94 -1.5C-2.07 -1.39 -2.2 -1.26 -2.32 -1.14C-2.45 -1.02 -2.58 -0.9 -2.71 -0.77C-2.83 -0.64 -2.97 -0.51 -3.07 -0.38C-3.18 -0.25 -3.29 -0.21 -3.34 0C-3.38 0.21 -3.37 0.62 -3.35 0.85C-3.34 1.09 -3.29 1.24 -3.24 1.41C-3.19 1.58 -3.11 1.72 -3.04 1.86C-2.96 2 -2.89 2.14 -2.79 2.26C-2.7 2.38 -2.59 2.49 -2.46 2.58C-2.33 2.67 -2.19 2.75 -2.03 2.8C-1.86 2.86 -1.68 2.88 -1.49 2.91C-1.31 2.94 -1.15 2.97 -0.9 3C-0.65 3.02 -0.3 3.04 0 3.05C0.3 3.07 0.66 3.07 0.92 3.06C1.18 3.05 1.35 3.03 1.53 2.99C1.72 2.94 1.87 2.87 2.02 2.79C2.17 2.72 2.3 2.64 2.43 2.55C2.56 2.46 2.67 2.36 2.78 2.25C2.89 2.14 3 2.03 3.08 1.89C3.16 1.75 3.22 1.59 3.26 1.42C3.3 1.25 3.31 1.08 3.32 0.85C3.34 0.61 3.38 0.2 3.33 0Z"/></clipPath></defs><path class="tf" d="M3.33 0C3.29 -0.2 3.14 -0.25 3.04 -0.38C2.95 -0.51 2.86 -0.65 2.75 -0.78C2.64 -0.91 2.51 -1.05 2.38 -1.17C2.24 -1.29 2.08 -1.4 1.94 -1.5C1.8 -1.61 1.66 -1.72 1.53 -1.81C1.39 -1.9 1.25 -1.99 1.12 -2.07C0.99 -2.14 0.86 -2.23 0.73 -2.28C0.61 -2.34 0.48 -2.39 0.35 -2.42C0.23 -2.45 0.12 -2.46 0 -2.46C-0.12 -2.45 -0.23 -2.42 -0.35 -2.38C-0.47 -2.35 -0.6 -2.31 -0.73 -2.26C-0.85 -2.21 -0.99 -2.14 -1.12 -2.07C-1.26 -2 -1.41 -1.93 -1.55 -1.84C-1.69 -1.74 -1.81 -1.62 -1.94 -1.5C-2.07 -1.39 -2.2 -1.26 -2.32 -1.14C-2.45 -1.02 -2.58 -0.9 -2.71 -0.77C-2.83 -0.64 -2.97 -0.51 -3.07 -0.38C-3.18 -0.25 -3.29 -0.21 -3.34 0C-3.38 0.21 -3.37 0.62 -3.35 0.85C-3.34 1.09 -3.29 1.24 -3.24 1.41C-3.19 1.58 -3.11 1.72 -3.04 1.86C-2.96 2 -2.89 2.14 -2.79 2.26C-2.7 2.38 -2.59 2.49 -2.46 2.58C-2.33 2.67 -2.19 2.75 -2.03 2.8C-1.86 2.86 -1.68 2.88 -1.49 2.91C-1.31 2.94 -1.15 2.97 -0.9 3C-0.65 3.02 -0.3 3.04 0 3.05C0.3 3.07 0.66 3.07 0.92 3.06C1.18 3.05 1.35 3.03 1.53 2.99C1.72 2.94 1.87 2.87 2.02 2.79C2.17 2.72 2.3 2.64 2.43 2.55C2.56 2.46 2.67 2.36 2.78 2.25C2.89 2.14 3 2.03 3.08 1.89C3.16 1.75 3.22 1.59 3.26 1.42C3.3 1.25 3.31 1.08 3.32 0.85C3.34 0.61 3.38 0.2 3.33 0Z"/><g class="td"><path class="g" d="M-2.64 1.34C-2.42 1.32 -1.76 1.26 -1.33 1.24C-0.89 1.22 -0.49 1.22 -0.05 1.22C0.39 1.22 0.87 1.25 1.32 1.25C1.77 1.25 2.42 1.21 2.64 1.21"/><path class="f" d="M-1.48 -0.16C-1.35 -0.34 -1.02 -1.05 -0.66 -1.24C-0.3 -1.43 0.3 -1.47 0.66 -1.3C1.02 -1.14 1.35 -0.42 1.49 -0.25"/></g></g><text class="num" x="29.45" y="8.42">12</text><g transform="translate(26.11 18.07) rotate(131.4)"><defs><clipPath id="nf13"><path d="M3.78 0C3.76 -0.21 3.63 -0.51 3.54 -0.75C3.46 -0.98 3.36 -1.2 3.26 -1.42C3.16 -1.64 3.06 -1.87 2.94 -2.07C2.82 -2.27 2.67 -2.46 2.52 -2.63C2.38 -2.8 2.22 -2.95 2.06 -3.09C1.9 -3.23 1.74 -3.35 1.58 -3.47C1.41 -3.58 1.25 -3.69 1.09 -3.78C0.92 -3.87 0.75 -3.97 0.57 -4.02C0.39 -4.06 0.19 -4.04 0 -4.03C-0.19 -4.02 -0.38 -4 -0.56 -3.96C-0.74 -3.91 -0.91 -3.82 -1.08 -3.74C-1.25 -3.66 -1.41 -3.57 -1.58 -3.47C-1.74 -3.36 -1.91 -3.24 -2.07 -3.1C-2.22 -2.96 -2.37 -2.79 -2.51 -2.61C-2.65 -2.44 -2.8 -2.26 -2.92 -2.06C-3.05 -1.86 -3.14 -1.64 -3.25 -1.42C-3.37 -1.2 -3.5 -0.99 -3.59 -0.76C-3.69 -0.52 -3.8 -0.22 -3.82 0C-3.84 0.22 -3.78 0.35 -3.72 0.55C-3.65 0.74 -3.55 0.97 -3.44 1.18C-3.33 1.39 -3.17 1.6 -3.03 1.8C-2.89 2.01 -2.75 2.22 -2.6 2.41C-2.44 2.6 -2.26 2.78 -2.09 2.95C-1.92 3.12 -1.74 3.29 -1.56 3.42C-1.37 3.55 -1.18 3.65 -0.99 3.72C-0.8 3.8 -0.61 3.83 -0.45 3.86C-0.28 3.9 -0.15 3.92 0 3.93C0.15 3.95 0.29 3.97 0.45 3.94C0.62 3.91 0.81 3.84 1 3.76C1.18 3.67 1.37 3.55 1.56 3.42C1.74 3.28 1.92 3.12 2.09 2.95C2.26 2.78 2.43 2.59 2.59 2.41C2.75 2.22 2.93 2.03 3.08 1.83C3.22 1.62 3.34 1.4 3.45 1.18C3.55 0.97 3.64 0.74 3.7 0.54C3.75 0.35 3.81 0.21 3.78 0Z"/></clipPath></defs><path class="tf" d="M3.78 0C3.76 -0.21 3.63 -0.51 3.54 -0.75C3.46 -0.98 3.36 -1.2 3.26 -1.42C3.16 -1.64 3.06 -1.87 2.94 -2.07C2.82 -2.27 2.67 -2.46 2.52 -2.63C2.38 -2.8 2.22 -2.95 2.06 -3.09C1.9 -3.23 1.74 -3.35 1.58 -3.47C1.41 -3.58 1.25 -3.69 1.09 -3.78C0.92 -3.87 0.75 -3.97 0.57 -4.02C0.39 -4.06 0.19 -4.04 0 -4.03C-0.19 -4.02 -0.38 -4 -0.56 -3.96C-0.74 -3.91 -0.91 -3.82 -1.08 -3.74C-1.25 -3.66 -1.41 -3.57 -1.58 -3.47C-1.74 -3.36 -1.91 -3.24 -2.07 -3.1C-2.22 -2.96 -2.37 -2.79 -2.51 -2.61C-2.65 -2.44 -2.8 -2.26 -2.92 -2.06C-3.05 -1.86 -3.14 -1.64 -3.25 -1.42C-3.37 -1.2 -3.5 -0.99 -3.59 -0.76C-3.69 -0.52 -3.8 -0.22 -3.82 0C-3.84 0.22 -3.78 0.35 -3.72 0.55C-3.65 0.74 -3.55 0.97 -3.44 1.18C-3.33 1.39 -3.17 1.6 -3.03 1.8C-2.89 2.01 -2.75 2.22 -2.6 2.41C-2.44 2.6 -2.26 2.78 -2.09 2.95C-1.92 3.12 -1.74 3.29 -1.56 3.42C-1.37 3.55 -1.18 3.65 -0.99 3.72C-0.8 3.8 -0.61 3.83 -0.45 3.86C-0.28 3.9 -0.15 3.92 0 3.93C0.15 3.95 0.29 3.97 0.45 3.94C0.62 3.91 0.81 3.84 1 3.76C1.18 3.67 1.37 3.55 1.56 3.42C1.74 3.28 1.92 3.12 2.09 2.95C2.26 2.78 2.43 2.59 2.59 2.41C2.75 2.22 2.93 2.03 3.08 1.83C3.22 1.62 3.34 1.4 3.45 1.18C3.55 0.97 3.64 0.74 3.7 0.54C3.75 0.35 3.81 0.21 3.78 0Z"/><g class="td"><path class="g" d="M0.05 0.69C-0.12 0.67 -0.62 0.57 -0.98 0.52C-1.33 0.48 -1.72 0.49 -2.07 0.45C-2.43 0.42 -2.94 0.34 -3.12 0.32"/><path class="g" d="M0.05 0.69C0.23 0.65 0.78 0.52 1.12 0.45C1.47 0.39 1.79 0.37 2.12 0.31C2.45 0.25 2.95 0.12 3.12 0.08"/><path class="f" d="M0.05 0.69C0.05 0.53 0.05 0.04 0.05 -0.3C0.05 -0.64 0.05 -0.99 0.05 -1.36C0.06 -1.72 0.07 -2.29 0.08 -2.48"/><path class="f" d="M-1.33 -1.2C-1.17 -1.37 -0.7 -2.03 -0.38 -2.2C-0.06 -2.37 0.27 -2.35 0.57 -2.2C0.87 -2.05 1.3 -1.43 1.44 -1.28"/><circle cx="0.05" cy="0.69" r="0.42"/></g></g><text class="num" x="21.45" y="13.78">13</text><g transform="translate(21.55 24.39) rotate(121.85)"><defs><clipPath id="nf14"><path d="M3.48 0C3.44 -0.31 3.27 -0.63 3.2 -0.91C3.13 -1.19 3.12 -1.45 3.06 -1.69C3 -1.93 2.91 -2.15 2.82 -2.37C2.73 -2.58 2.64 -2.79 2.53 -2.98C2.43 -3.18 2.32 -3.38 2.19 -3.55C2.06 -3.73 1.92 -3.9 1.77 -4.02C1.61 -4.15 1.43 -4.25 1.25 -4.32C1.06 -4.38 0.87 -4.39 0.66 -4.42C0.45 -4.45 0.22 -4.5 0 -4.5C-0.22 -4.5 -0.45 -4.46 -0.66 -4.42C-0.87 -4.39 -1.06 -4.36 -1.23 -4.28C-1.41 -4.2 -1.58 -4.09 -1.74 -3.96C-1.89 -3.82 -2.02 -3.65 -2.15 -3.48C-2.28 -3.32 -2.4 -3.15 -2.52 -2.97C-2.63 -2.78 -2.75 -2.6 -2.84 -2.39C-2.94 -2.17 -3.02 -1.95 -3.09 -1.7C-3.15 -1.46 -3.22 -1.21 -3.25 -0.93C-3.28 -0.64 -3.22 -0.32 -3.25 0C-3.28 0.32 -3.43 0.68 -3.44 0.98C-3.46 1.27 -3.38 1.52 -3.32 1.77C-3.27 2.03 -3.21 2.27 -3.12 2.49C-3.03 2.71 -2.9 2.89 -2.78 3.07C-2.66 3.25 -2.53 3.42 -2.38 3.56C-2.23 3.7 -2.06 3.81 -1.89 3.92C-1.72 4.03 -1.55 4.14 -1.36 4.22C-1.17 4.3 -0.99 4.38 -0.76 4.42C-0.53 4.47 -0.25 4.51 0 4.51C0.25 4.51 0.53 4.46 0.76 4.42C0.99 4.37 1.18 4.31 1.37 4.24C1.56 4.16 1.74 4.07 1.92 3.97C2.09 3.87 2.27 3.76 2.42 3.62C2.57 3.48 2.71 3.31 2.82 3.11C2.93 2.92 3.01 2.69 3.08 2.46C3.16 2.23 3.22 2 3.28 1.75C3.34 1.5 3.4 1.27 3.43 0.98C3.47 0.68 3.52 0.31 3.48 0Z"/></clipPath></defs><path class="tf" d="M3.48 0C3.44 -0.31 3.27 -0.63 3.2 -0.91C3.13 -1.19 3.12 -1.45 3.06 -1.69C3 -1.93 2.91 -2.15 2.82 -2.37C2.73 -2.58 2.64 -2.79 2.53 -2.98C2.43 -3.18 2.32 -3.38 2.19 -3.55C2.06 -3.73 1.92 -3.9 1.77 -4.02C1.61 -4.15 1.43 -4.25 1.25 -4.32C1.06 -4.38 0.87 -4.39 0.66 -4.42C0.45 -4.45 0.22 -4.5 0 -4.5C-0.22 -4.5 -0.45 -4.46 -0.66 -4.42C-0.87 -4.39 -1.06 -4.36 -1.23 -4.28C-1.41 -4.2 -1.58 -4.09 -1.74 -3.96C-1.89 -3.82 -2.02 -3.65 -2.15 -3.48C-2.28 -3.32 -2.4 -3.15 -2.52 -2.97C-2.63 -2.78 -2.75 -2.6 -2.84 -2.39C-2.94 -2.17 -3.02 -1.95 -3.09 -1.7C-3.15 -1.46 -3.22 -1.21 -3.25 -0.93C-3.28 -0.64 -3.22 -0.32 -3.25 0C-3.28 0.32 -3.43 0.68 -3.44 0.98C-3.46 1.27 -3.38 1.52 -3.32 1.77C-3.27 2.03 -3.21 2.27 -3.12 2.49C-3.03 2.71 -2.9 2.89 -2.78 3.07C-2.66 3.25 -2.53 3.42 -2.38 3.56C-2.23 3.7 -2.06 3.81 -1.89 3.92C-1.72 4.03 -1.55 4.14 -1.36 4.22C-1.17 4.3 -0.99 4.38 -0.76 4.42C-0.53 4.47 -0.25 4.51 0 4.51C0.25 4.51 0.53 4.46 0.76 4.42C0.99 4.37 1.18 4.31 1.37 4.24C1.56 4.16 1.74 4.07 1.92 3.97C2.09 3.87 2.27 3.76 2.42 3.62C2.57 3.48 2.71 3.31 2.82 3.11C2.93 2.92 3.01 2.69 3.08 2.46C3.16 2.23 3.22 2 3.28 1.75C3.34 1.5 3.4 1.27 3.43 0.98C3.47 0.68 3.52 0.31 3.48 0Z"/><g class="td"><path class="g" d="M-2.03 0.31C-1.9 0.31 -1.5 0.27 -1.25 0.29C-1 0.3 -0.8 0.4 -0.51 0.4C-0.21 0.4 0.2 0.31 0.5 0.28C0.79 0.26 0.99 0.27 1.24 0.27C1.5 0.27 1.9 0.3 2.03 0.31"/><path class="f" d="M-1.05 3.37C-0.97 3.23 -0.74 2.81 -0.59 2.53C-0.43 2.25 -0.21 1.85 -0.13 1.72"/><path class="f" d="M1.05 3.37C0.94 3.23 0.61 2.8 0.41 2.52C0.22 2.25 -0.04 1.85 -0.13 1.72"/><circle cx="-0.13" cy="1.72" r="0.42"/><circle cx="0" cy="-1.65" r="0.34"/><circle cx="-2.03" cy="0.31" r="0.2"/><circle cx="2.03" cy="0.31" r="0.2"/></g></g><text class="num" x="15.62" y="21">14</text><g transform="translate(18.67 31.07) rotate(113.59)"><defs><clipPath id="nf15"><path d="M3.27 0C3.24 -0.32 3.1 -0.63 3.04 -0.92C2.98 -1.21 2.99 -1.47 2.94 -1.72C2.88 -1.97 2.81 -2.21 2.72 -2.42C2.63 -2.64 2.52 -2.82 2.41 -3.01C2.3 -3.19 2.18 -3.37 2.05 -3.53C1.93 -3.69 1.79 -3.85 1.64 -3.97C1.49 -4.09 1.33 -4.19 1.16 -4.27C0.99 -4.35 0.82 -4.42 0.63 -4.45C0.43 -4.48 0.21 -4.48 0 -4.47C-0.21 -4.46 -0.43 -4.43 -0.62 -4.39C-0.81 -4.35 -0.97 -4.28 -1.15 -4.21C-1.32 -4.14 -1.49 -4.08 -1.64 -3.97C-1.8 -3.87 -1.95 -3.73 -2.08 -3.57C-2.21 -3.41 -2.31 -3.21 -2.41 -3.02C-2.51 -2.82 -2.6 -2.61 -2.68 -2.39C-2.77 -2.17 -2.86 -1.95 -2.92 -1.71C-2.98 -1.46 -3.03 -1.21 -3.06 -0.93C-3.09 -0.64 -3.05 -0.32 -3.09 0C-3.12 0.32 -3.25 0.69 -3.25 0.98C-3.25 1.27 -3.14 1.5 -3.08 1.75C-3.02 1.99 -2.96 2.22 -2.88 2.44C-2.81 2.66 -2.72 2.88 -2.62 3.07C-2.51 3.26 -2.39 3.43 -2.25 3.58C-2.12 3.72 -1.96 3.84 -1.8 3.95C-1.64 4.06 -1.47 4.14 -1.29 4.22C-1.11 4.31 -0.94 4.4 -0.72 4.45C-0.51 4.5 -0.24 4.51 0 4.52C0.24 4.53 0.51 4.55 0.73 4.51C0.95 4.48 1.14 4.41 1.31 4.31C1.49 4.22 1.64 4.07 1.79 3.94C1.95 3.81 2.09 3.68 2.23 3.54C2.36 3.39 2.5 3.24 2.61 3.06C2.73 2.88 2.83 2.68 2.91 2.47C3 2.25 3.07 2.02 3.12 1.77C3.17 1.52 3.21 1.27 3.23 0.97C3.26 0.68 3.31 0.32 3.27 0Z"/></clipPath></defs><path class="tf" d="M3.27 0C3.24 -0.32 3.1 -0.63 3.04 -0.92C2.98 -1.21 2.99 -1.47 2.94 -1.72C2.88 -1.97 2.81 -2.21 2.72 -2.42C2.63 -2.64 2.52 -2.82 2.41 -3.01C2.3 -3.19 2.18 -3.37 2.05 -3.53C1.93 -3.69 1.79 -3.85 1.64 -3.97C1.49 -4.09 1.33 -4.19 1.16 -4.27C0.99 -4.35 0.82 -4.42 0.63 -4.45C0.43 -4.48 0.21 -4.48 0 -4.47C-0.21 -4.46 -0.43 -4.43 -0.62 -4.39C-0.81 -4.35 -0.97 -4.28 -1.15 -4.21C-1.32 -4.14 -1.49 -4.08 -1.64 -3.97C-1.8 -3.87 -1.95 -3.73 -2.08 -3.57C-2.21 -3.41 -2.31 -3.21 -2.41 -3.02C-2.51 -2.82 -2.6 -2.61 -2.68 -2.39C-2.77 -2.17 -2.86 -1.95 -2.92 -1.71C-2.98 -1.46 -3.03 -1.21 -3.06 -0.93C-3.09 -0.64 -3.05 -0.32 -3.09 0C-3.12 0.32 -3.25 0.69 -3.25 0.98C-3.25 1.27 -3.14 1.5 -3.08 1.75C-3.02 1.99 -2.96 2.22 -2.88 2.44C-2.81 2.66 -2.72 2.88 -2.62 3.07C-2.51 3.26 -2.39 3.43 -2.25 3.58C-2.12 3.72 -1.96 3.84 -1.8 3.95C-1.64 4.06 -1.47 4.14 -1.29 4.22C-1.11 4.31 -0.94 4.4 -0.72 4.45C-0.51 4.5 -0.24 4.51 0 4.52C0.24 4.53 0.51 4.55 0.73 4.51C0.95 4.48 1.14 4.41 1.31 4.31C1.49 4.22 1.64 4.07 1.79 3.94C1.95 3.81 2.09 3.68 2.23 3.54C2.36 3.39 2.5 3.24 2.61 3.06C2.73 2.88 2.83 2.68 2.91 2.47C3 2.25 3.07 2.02 3.12 1.77C3.17 1.52 3.21 1.27 3.23 0.97C3.26 0.68 3.31 0.32 3.27 0Z"/><g class="td"><path class="g" d="M-1.91 0.04C-1.79 0.04 -1.4 0.02 -1.15 0.04C-0.91 0.05 -0.69 0.13 -0.45 0.13C-0.2 0.13 0.06 0.06 0.32 0.02C0.59 -0.01 0.88 -0.09 1.15 -0.08C1.41 -0.08 1.79 0.02 1.91 0.04"/><path class="f" d="M-0.99 3.37C-0.91 3.26 -0.66 2.9 -0.51 2.67C-0.35 2.44 -0.13 2.11 -0.06 2"/><path class="f" d="M0.99 3.37C0.9 3.26 0.65 2.88 0.47 2.66C0.3 2.43 0.03 2.11 -0.06 2"/><circle cx="-0.06" cy="2" r="0.42"/><circle cx="0.07" cy="-1.75" r="0.34"/><circle cx="-1.91" cy="0.04" r="0.2"/><circle cx="1.91" cy="0.04" r="0.2"/></g></g><text class="num" x="12.07" y="28.5">15</text><g transform="translate(15.82 39.46) rotate(101.9)"><defs><clipPath id="nf16"><path d="M5.1 0C5.18 -0.57 5.22 -1.2 5.25 -1.64C5.28 -2.07 5.28 -2.33 5.25 -2.62C5.22 -2.92 5.14 -3.15 5.07 -3.39C4.99 -3.63 4.9 -3.84 4.8 -4.04C4.7 -4.25 4.59 -4.46 4.44 -4.62C4.3 -4.79 4.11 -4.93 3.91 -5.04C3.7 -5.16 3.48 -5.27 3.21 -5.34C2.94 -5.4 2.7 -5.43 2.29 -5.45C1.88 -5.47 1.27 -5.46 0.76 -5.46C0.26 -5.46 -0.35 -5.49 -0.77 -5.46C-1.18 -5.43 -1.41 -5.35 -1.7 -5.27C-1.98 -5.19 -2.23 -5.09 -2.46 -4.97C-2.69 -4.85 -2.9 -4.7 -3.1 -4.54C-3.29 -4.39 -3.47 -4.21 -3.64 -4.02C-3.81 -3.82 -3.97 -3.62 -4.12 -3.39C-4.27 -3.16 -4.43 -2.93 -4.55 -2.65C-4.68 -2.36 -4.79 -2.11 -4.89 -1.67C-4.98 -1.23 -5.05 -0.57 -5.12 0C-5.19 0.57 -5.26 1.32 -5.29 1.77C-5.32 2.23 -5.31 2.46 -5.29 2.76C-5.28 3.05 -5.25 3.31 -5.18 3.54C-5.12 3.78 -5.03 3.99 -4.91 4.16C-4.79 4.34 -4.64 4.49 -4.47 4.61C-4.3 4.74 -4.09 4.82 -3.89 4.93C-3.69 5.03 -3.52 5.16 -3.27 5.25C-3.02 5.34 -2.84 5.42 -2.42 5.46C-2 5.51 -1.32 5.52 -0.77 5.52C-0.22 5.51 0.45 5.47 0.88 5.43C1.32 5.4 1.54 5.36 1.82 5.29C2.1 5.22 2.32 5.11 2.56 5.01C2.79 4.91 3.03 4.83 3.23 4.69C3.43 4.55 3.59 4.36 3.74 4.17C3.9 3.97 4.06 3.78 4.18 3.54C4.3 3.3 4.37 3.02 4.47 2.72C4.56 2.43 4.65 2.22 4.76 1.76C4.86 1.31 5.01 0.57 5.1 0Z"/></clipPath></defs><path class="tf" d="M5.1 0C5.18 -0.57 5.22 -1.2 5.25 -1.64C5.28 -2.07 5.28 -2.33 5.25 -2.62C5.22 -2.92 5.14 -3.15 5.07 -3.39C4.99 -3.63 4.9 -3.84 4.8 -4.04C4.7 -4.25 4.59 -4.46 4.44 -4.62C4.3 -4.79 4.11 -4.93 3.91 -5.04C3.7 -5.16 3.48 -5.27 3.21 -5.34C2.94 -5.4 2.7 -5.43 2.29 -5.45C1.88 -5.47 1.27 -5.46 0.76 -5.46C0.26 -5.46 -0.35 -5.49 -0.77 -5.46C-1.18 -5.43 -1.41 -5.35 -1.7 -5.27C-1.98 -5.19 -2.23 -5.09 -2.46 -4.97C-2.69 -4.85 -2.9 -4.7 -3.1 -4.54C-3.29 -4.39 -3.47 -4.21 -3.64 -4.02C-3.81 -3.82 -3.97 -3.62 -4.12 -3.39C-4.27 -3.16 -4.43 -2.93 -4.55 -2.65C-4.68 -2.36 -4.79 -2.11 -4.89 -1.67C-4.98 -1.23 -5.05 -0.57 -5.12 0C-5.19 0.57 -5.26 1.32 -5.29 1.77C-5.32 2.23 -5.31 2.46 -5.29 2.76C-5.28 3.05 -5.25 3.31 -5.18 3.54C-5.12 3.78 -5.03 3.99 -4.91 4.16C-4.79 4.34 -4.64 4.49 -4.47 4.61C-4.3 4.74 -4.09 4.82 -3.89 4.93C-3.69 5.03 -3.52 5.16 -3.27 5.25C-3.02 5.34 -2.84 5.42 -2.42 5.46C-2 5.51 -1.32 5.52 -0.77 5.52C-0.22 5.51 0.45 5.47 0.88 5.43C1.32 5.4 1.54 5.36 1.82 5.29C2.1 5.22 2.32 5.11 2.56 5.01C2.79 4.91 3.03 4.83 3.23 4.69C3.43 4.55 3.59 4.36 3.74 4.17C3.9 3.97 4.06 3.78 4.18 3.54C4.3 3.3 4.37 3.02 4.47 2.72C4.56 2.43 4.65 2.22 4.76 1.76C4.86 1.31 5.01 0.57 5.1 0Z"/><g class="td"><path class="g" d="M-0.34 0.11C-0.51 0.11 -1.04 0.09 -1.36 0.1C-1.69 0.11 -1.95 0.15 -2.29 0.15C-2.62 0.15 -3.19 0.12 -3.37 0.11"/><path class="g" d="M-0.34 0.11C-0.32 0.34 -0.25 1.03 -0.23 1.52C-0.22 2.01 -0.27 2.56 -0.25 3.04C-0.23 3.53 -0.13 4.17 -0.1 4.4"/><path class="g" d="M2.04 -0.4C2.17 -0.38 2.54 -0.33 2.81 -0.28C3.08 -0.24 3.53 -0.14 3.67 -0.11"/><path class="g" d="M2.04 -0.4C2.03 -0.59 2 -1.14 1.98 -1.57C1.96 -2 1.95 -2.53 1.92 -2.96C1.9 -3.4 1.85 -3.98 1.84 -4.18"/><path class="f" d="M-1.33 -1.43C-1.18 -1.28 -0.75 -0.84 -0.45 -0.52C-0.15 -0.2 0.18 0.17 0.47 0.5C0.77 0.82 1.18 1.27 1.33 1.43"/><circle cx="-2.24" cy="2.14" r="0.36"/><circle cx="2.07" cy="2.64" r="0.34"/><circle cx="-1.93" cy="-2.46" r="0.4"/><circle cx="2" cy="-2.31" r="0.3"/><circle cx="-0.34" cy="0.11" r="0.2"/><circle cx="2.04" cy="-0.4" r="0.2"/></g></g><text class="num" x="8.18" y="37.55">16</text><g transform="translate(13.96 49.45) rotate(96.43)"><defs><clipPath id="nf17"><path d="M4.59 0C4.64 -0.56 4.68 -1.18 4.69 -1.61C4.7 -2.05 4.7 -2.3 4.67 -2.6C4.64 -2.89 4.57 -3.14 4.5 -3.38C4.43 -3.62 4.35 -3.84 4.24 -4.03C4.12 -4.21 3.96 -4.33 3.8 -4.47C3.65 -4.61 3.5 -4.75 3.32 -4.86C3.14 -4.97 2.95 -5.04 2.72 -5.12C2.5 -5.2 2.33 -5.28 1.99 -5.33C1.65 -5.37 1.14 -5.39 0.71 -5.38C0.28 -5.38 -0.24 -5.34 -0.58 -5.29C-0.93 -5.25 -1.13 -5.19 -1.37 -5.12C-1.62 -5.06 -1.84 -4.99 -2.05 -4.89C-2.26 -4.79 -2.46 -4.68 -2.65 -4.53C-2.83 -4.39 -3.01 -4.22 -3.16 -4.03C-3.32 -3.83 -3.45 -3.61 -3.58 -3.37C-3.71 -3.13 -3.83 -2.88 -3.94 -2.58C-4.04 -2.29 -4.11 -2.03 -4.22 -1.6C-4.33 -1.17 -4.5 -0.56 -4.61 0C-4.72 0.56 -4.83 1.29 -4.87 1.74C-4.92 2.18 -4.9 2.39 -4.89 2.67C-4.88 2.95 -4.85 3.19 -4.81 3.42C-4.76 3.65 -4.7 3.85 -4.62 4.04C-4.54 4.23 -4.45 4.41 -4.32 4.57C-4.2 4.72 -4.06 4.87 -3.88 4.98C-3.69 5.09 -3.47 5.16 -3.22 5.21C-2.97 5.27 -2.76 5.3 -2.36 5.33C-1.96 5.37 -1.33 5.42 -0.81 5.43C-0.28 5.44 0.38 5.43 0.79 5.39C1.2 5.35 1.41 5.28 1.67 5.21C1.94 5.13 2.16 5.03 2.37 4.92C2.58 4.8 2.76 4.66 2.94 4.51C3.11 4.36 3.27 4.2 3.42 4.02C3.57 3.84 3.7 3.65 3.83 3.43C3.95 3.21 4.06 2.98 4.15 2.7C4.25 2.41 4.31 2.19 4.38 1.74C4.46 1.29 4.54 0.56 4.59 0Z"/></clipPath></defs><path class="tf" d="M4.59 0C4.64 -0.56 4.68 -1.18 4.69 -1.61C4.7 -2.05 4.7 -2.3 4.67 -2.6C4.64 -2.89 4.57 -3.14 4.5 -3.38C4.43 -3.62 4.35 -3.84 4.24 -4.03C4.12 -4.21 3.96 -4.33 3.8 -4.47C3.65 -4.61 3.5 -4.75 3.32 -4.86C3.14 -4.97 2.95 -5.04 2.72 -5.12C2.5 -5.2 2.33 -5.28 1.99 -5.33C1.65 -5.37 1.14 -5.39 0.71 -5.38C0.28 -5.38 -0.24 -5.34 -0.58 -5.29C-0.93 -5.25 -1.13 -5.19 -1.37 -5.12C-1.62 -5.06 -1.84 -4.99 -2.05 -4.89C-2.26 -4.79 -2.46 -4.68 -2.65 -4.53C-2.83 -4.39 -3.01 -4.22 -3.16 -4.03C-3.32 -3.83 -3.45 -3.61 -3.58 -3.37C-3.71 -3.13 -3.83 -2.88 -3.94 -2.58C-4.04 -2.29 -4.11 -2.03 -4.22 -1.6C-4.33 -1.17 -4.5 -0.56 -4.61 0C-4.72 0.56 -4.83 1.29 -4.87 1.74C-4.92 2.18 -4.9 2.39 -4.89 2.67C-4.88 2.95 -4.85 3.19 -4.81 3.42C-4.76 3.65 -4.7 3.85 -4.62 4.04C-4.54 4.23 -4.45 4.41 -4.32 4.57C-4.2 4.72 -4.06 4.87 -3.88 4.98C-3.69 5.09 -3.47 5.16 -3.22 5.21C-2.97 5.27 -2.76 5.3 -2.36 5.33C-1.96 5.37 -1.33 5.42 -0.81 5.43C-0.28 5.44 0.38 5.43 0.79 5.39C1.2 5.35 1.41 5.28 1.67 5.21C1.94 5.13 2.16 5.03 2.37 4.92C2.58 4.8 2.76 4.66 2.94 4.51C3.11 4.36 3.27 4.2 3.42 4.02C3.57 3.84 3.7 3.65 3.83 3.43C3.95 3.21 4.06 2.98 4.15 2.7C4.25 2.41 4.31 2.19 4.38 1.74C4.46 1.29 4.54 0.56 4.59 0Z"/><g class="td"><path class="g" d="M-0.32 0.14C-0.48 0.14 -0.98 0.17 -1.29 0.16C-1.6 0.15 -1.9 0.1 -2.19 0.09C-2.48 0.08 -2.9 0.11 -3.04 0.11"/><path class="g" d="M-0.32 0.14C-0.32 0.37 -0.34 1.07 -0.32 1.53C-0.31 1.99 -0.27 2.42 -0.23 2.88C-0.19 3.35 -0.11 4.08 -0.09 4.32"/><path class="g" d="M1.84 -0.5C1.96 -0.47 2.29 -0.36 2.54 -0.29C2.78 -0.23 3.18 -0.14 3.31 -0.11"/><path class="g" d="M1.84 -0.5C1.81 -0.71 1.69 -1.35 1.69 -1.76C1.68 -2.16 1.79 -2.53 1.79 -2.92C1.78 -3.31 1.68 -3.91 1.66 -4.1"/><path class="f" d="M-1.2 -1.4C-1.06 -1.25 -0.66 -0.81 -0.39 -0.5C-0.11 -0.18 0.18 0.18 0.44 0.49C0.7 0.81 1.07 1.25 1.2 1.4"/><circle cx="-2.05" cy="1.99" r="0.36"/><circle cx="2.11" cy="2.09" r="0.34"/><circle cx="-1.72" cy="-2" r="0.4"/><circle cx="1.29" cy="-2.03" r="0.3"/><circle cx="-0.32" cy="0.14" r="0.2"/><circle cx="1.84" cy="-0.5" r="0.2"/></g></g><text class="num" x="6.18" y="48.31">17</text><g transform="translate(12.83 58.65) rotate(94.98)"><defs><clipPath id="nf18"><path d="M4.18 0C4.22 -0.37 4.25 -0.77 4.25 -1.08C4.25 -1.39 4.21 -1.63 4.18 -1.88C4.15 -2.14 4.15 -2.4 4.09 -2.63C4.04 -2.86 3.96 -3.08 3.87 -3.28C3.77 -3.48 3.65 -3.67 3.5 -3.82C3.36 -3.97 3.17 -4.09 2.98 -4.2C2.79 -4.3 2.58 -4.38 2.36 -4.45C2.14 -4.53 1.93 -4.6 1.65 -4.65C1.38 -4.69 1.02 -4.73 0.69 -4.74C0.37 -4.74 -0.01 -4.71 -0.3 -4.66C-0.59 -4.61 -0.82 -4.53 -1.06 -4.44C-1.3 -4.34 -1.51 -4.22 -1.72 -4.1C-1.93 -3.98 -2.14 -3.87 -2.33 -3.73C-2.52 -3.58 -2.71 -3.42 -2.88 -3.25C-3.05 -3.07 -3.23 -2.88 -3.37 -2.66C-3.5 -2.44 -3.6 -2.18 -3.7 -1.92C-3.8 -1.66 -3.88 -1.41 -3.97 -1.09C-4.06 -0.77 -4.15 -0.38 -4.22 0C-4.29 0.38 -4.37 0.84 -4.39 1.18C-4.41 1.52 -4.38 1.76 -4.34 2.02C-4.31 2.28 -4.26 2.52 -4.18 2.73C-4.1 2.94 -3.98 3.12 -3.86 3.29C-3.73 3.45 -3.59 3.59 -3.44 3.74C-3.3 3.88 -3.18 4.05 -3.01 4.17C-2.84 4.29 -2.65 4.4 -2.43 4.48C-2.22 4.55 -2 4.6 -1.71 4.63C-1.41 4.66 -1.02 4.64 -0.68 4.64C-0.33 4.64 0.05 4.65 0.36 4.62C0.66 4.6 0.89 4.57 1.14 4.51C1.38 4.45 1.61 4.37 1.83 4.26C2.05 4.15 2.25 4.02 2.43 3.86C2.61 3.7 2.77 3.5 2.91 3.3C3.06 3.11 3.19 2.9 3.32 2.68C3.45 2.46 3.58 2.24 3.7 1.99C3.81 1.74 3.92 1.5 4 1.17C4.08 0.83 4.14 0.37 4.18 0Z"/></clipPath></defs><path class="tf" d="M4.18 0C4.22 -0.37 4.25 -0.77 4.25 -1.08C4.25 -1.39 4.21 -1.63 4.18 -1.88C4.15 -2.14 4.15 -2.4 4.09 -2.63C4.04 -2.86 3.96 -3.08 3.87 -3.28C3.77 -3.48 3.65 -3.67 3.5 -3.82C3.36 -3.97 3.17 -4.09 2.98 -4.2C2.79 -4.3 2.58 -4.38 2.36 -4.45C2.14 -4.53 1.93 -4.6 1.65 -4.65C1.38 -4.69 1.02 -4.73 0.69 -4.74C0.37 -4.74 -0.01 -4.71 -0.3 -4.66C-0.59 -4.61 -0.82 -4.53 -1.06 -4.44C-1.3 -4.34 -1.51 -4.22 -1.72 -4.1C-1.93 -3.98 -2.14 -3.87 -2.33 -3.73C-2.52 -3.58 -2.71 -3.42 -2.88 -3.25C-3.05 -3.07 -3.23 -2.88 -3.37 -2.66C-3.5 -2.44 -3.6 -2.18 -3.7 -1.92C-3.8 -1.66 -3.88 -1.41 -3.97 -1.09C-4.06 -0.77 -4.15 -0.38 -4.22 0C-4.29 0.38 -4.37 0.84 -4.39 1.18C-4.41 1.52 -4.38 1.76 -4.34 2.02C-4.31 2.28 -4.26 2.52 -4.18 2.73C-4.1 2.94 -3.98 3.12 -3.86 3.29C-3.73 3.45 -3.59 3.59 -3.44 3.74C-3.3 3.88 -3.18 4.05 -3.01 4.17C-2.84 4.29 -2.65 4.4 -2.43 4.48C-2.22 4.55 -2 4.6 -1.71 4.63C-1.41 4.66 -1.02 4.64 -0.68 4.64C-0.33 4.64 0.05 4.65 0.36 4.62C0.66 4.6 0.89 4.57 1.14 4.51C1.38 4.45 1.61 4.37 1.83 4.26C2.05 4.15 2.25 4.02 2.43 3.86C2.61 3.7 2.77 3.5 2.91 3.3C3.06 3.11 3.19 2.9 3.32 2.68C3.45 2.46 3.58 2.24 3.7 1.99C3.81 1.74 3.92 1.5 4 1.17C4.08 0.83 4.14 0.37 4.18 0Z"/><g class="td"><path class="g" d="M-0.27 0.09C-0.4 0.08 -0.77 0.01 -1.04 0.03C-1.32 0.05 -1.62 0.18 -1.91 0.19C-2.2 0.2 -2.63 0.11 -2.77 0.1"/><path class="g" d="M-0.27 0.09C-0.24 0.3 -0.14 0.91 -0.13 1.35C-0.13 1.78 -0.23 2.28 -0.22 2.71C-0.21 3.14 -0.11 3.72 -0.08 3.92"/><path class="g" d="M1.68 -0.3C1.79 -0.27 2.1 -0.16 2.32 -0.13C2.55 -0.1 2.91 -0.1 3.02 -0.1"/><path class="g" d="M1.68 -0.3C1.67 -0.48 1.63 -0.97 1.61 -1.36C1.58 -1.75 1.56 -2.24 1.54 -2.64C1.53 -3.03 1.52 -3.54 1.51 -3.72"/><path class="f" d="M-1.09 -1.27C-0.97 -1.12 -0.6 -0.65 -0.35 -0.37C-0.1 -0.09 0.16 0.14 0.4 0.41C0.64 0.68 0.98 1.13 1.09 1.27"/><path class="f" d="M0.25 1.26C0.05 1.13 -0.57 0.73 -0.92 0.47C-1.27 0.22 -1.7 -0.13 -1.85 -0.25"/><path class="f" d="M2.06 1.76C1.8 1.66 1.01 1.36 0.5 1.18C0 1 -0.73 0.75 -0.98 0.66"/><circle cx="-1.68" cy="1.72" r="0.36"/><circle cx="1.9" cy="1.43" r="0.34"/><circle cx="-1.47" cy="-1.36" r="0.4"/><circle cx="2.04" cy="-1.3" r="0.24"/><circle cx="-0.27" cy="0.09" r="0.2"/><circle cx="1.68" cy="-0.3" r="0.2"/></g></g><text class="num" x="5.6" y="58.08">18</text><g transform="translate(49.21 10.21) rotate(11.47)"><defs><clipPath id="nf21"><path d="M4.35 0C4.31 0.23 4.15 0.29 4.02 0.44C3.89 0.59 3.73 0.74 3.57 0.89C3.41 1.04 3.23 1.18 3.06 1.32C2.88 1.46 2.7 1.59 2.52 1.71C2.34 1.84 2.16 1.95 1.98 2.06C1.8 2.17 1.63 2.28 1.46 2.36C1.28 2.44 1.1 2.49 0.93 2.55C0.76 2.6 0.6 2.64 0.44 2.66C0.29 2.69 0.15 2.69 0 2.7C-0.15 2.7 -0.29 2.69 -0.44 2.67C-0.6 2.65 -0.78 2.63 -0.95 2.58C-1.12 2.53 -1.29 2.46 -1.47 2.38C-1.64 2.29 -1.82 2.19 -2 2.08C-2.17 1.97 -2.34 1.84 -2.52 1.71C-2.7 1.58 -2.88 1.46 -3.06 1.32C-3.23 1.18 -3.42 1.04 -3.57 0.89C-3.72 0.74 -3.85 0.58 -3.96 0.43C-4.07 0.28 -4.19 0.23 -4.24 0C-4.28 -0.23 -4.25 -0.68 -4.23 -0.94C-4.2 -1.2 -4.13 -1.37 -4.08 -1.56C-4.03 -1.75 -3.99 -1.94 -3.91 -2.1C-3.82 -2.26 -3.69 -2.4 -3.57 -2.53C-3.44 -2.66 -3.3 -2.78 -3.14 -2.88C-2.98 -2.99 -2.79 -3.07 -2.6 -3.15C-2.4 -3.22 -2.19 -3.28 -1.96 -3.34C-1.72 -3.4 -1.53 -3.47 -1.2 -3.51C-0.87 -3.54 -0.4 -3.54 0 -3.54C0.4 -3.53 0.87 -3.52 1.19 -3.48C1.51 -3.44 1.71 -3.36 1.93 -3.3C2.16 -3.24 2.36 -3.18 2.56 -3.1C2.75 -3.03 2.93 -2.94 3.1 -2.85C3.27 -2.75 3.44 -2.66 3.57 -2.53C3.7 -2.4 3.78 -2.24 3.87 -2.08C3.95 -1.92 4.02 -1.75 4.08 -1.56C4.15 -1.37 4.21 -1.21 4.26 -0.95C4.3 -0.69 4.39 -0.23 4.35 0Z"/></clipPath></defs><path class="tf" d="M4.35 0C4.31 0.23 4.15 0.29 4.02 0.44C3.89 0.59 3.73 0.74 3.57 0.89C3.41 1.04 3.23 1.18 3.06 1.32C2.88 1.46 2.7 1.59 2.52 1.71C2.34 1.84 2.16 1.95 1.98 2.06C1.8 2.17 1.63 2.28 1.46 2.36C1.28 2.44 1.1 2.49 0.93 2.55C0.76 2.6 0.6 2.64 0.44 2.66C0.29 2.69 0.15 2.69 0 2.7C-0.15 2.7 -0.29 2.69 -0.44 2.67C-0.6 2.65 -0.78 2.63 -0.95 2.58C-1.12 2.53 -1.29 2.46 -1.47 2.38C-1.64 2.29 -1.82 2.19 -2 2.08C-2.17 1.97 -2.34 1.84 -2.52 1.71C-2.7 1.58 -2.88 1.46 -3.06 1.32C-3.23 1.18 -3.42 1.04 -3.57 0.89C-3.72 0.74 -3.85 0.58 -3.96 0.43C-4.07 0.28 -4.19 0.23 -4.24 0C-4.28 -0.23 -4.25 -0.68 -4.23 -0.94C-4.2 -1.2 -4.13 -1.37 -4.08 -1.56C-4.03 -1.75 -3.99 -1.94 -3.91 -2.1C-3.82 -2.26 -3.69 -2.4 -3.57 -2.53C-3.44 -2.66 -3.3 -2.78 -3.14 -2.88C-2.98 -2.99 -2.79 -3.07 -2.6 -3.15C-2.4 -3.22 -2.19 -3.28 -1.96 -3.34C-1.72 -3.4 -1.53 -3.47 -1.2 -3.51C-0.87 -3.54 -0.4 -3.54 0 -3.54C0.4 -3.53 0.87 -3.52 1.19 -3.48C1.51 -3.44 1.71 -3.36 1.93 -3.3C2.16 -3.24 2.36 -3.18 2.56 -3.1C2.75 -3.03 2.93 -2.94 3.1 -2.85C3.27 -2.75 3.44 -2.66 3.57 -2.53C3.7 -2.4 3.78 -2.24 3.87 -2.08C3.95 -1.92 4.02 -1.75 4.08 -1.56C4.15 -1.37 4.21 -1.21 4.26 -0.95C4.3 -0.69 4.39 -0.23 4.35 0Z"/><g class="td"><path class="g" d="M-3.4 -1.26C-3.13 -1.25 -2.31 -1.22 -1.75 -1.21C-1.19 -1.2 -0.6 -1.22 -0.03 -1.22C0.54 -1.22 1.09 -1.22 1.67 -1.22C2.24 -1.22 3.11 -1.23 3.4 -1.23"/><path class="f" d="M-1.91 0.18C-1.74 0.38 -1.31 1.18 -0.85 1.4C-0.39 1.62 0.39 1.66 0.85 1.47C1.31 1.28 1.74 0.48 1.91 0.28"/><path class="f" d="M-1.4 -1.58L-1.43 -0.78"/><path class="f" d="M0 -1.58L0.03 -0.78"/><path class="f" d="M1.4 -1.58L1.44 -0.78"/></g></g><text class="num" x="50.31" y="4.48">21</text><g transform="translate(56.81 13.41) rotate(32.38)"><defs><clipPath id="nf22"><path d="M3.33 0C3.28 0.2 3.13 0.25 3.03 0.38C2.93 0.51 2.86 0.65 2.76 0.78C2.65 0.92 2.54 1.06 2.42 1.19C2.29 1.32 2.16 1.45 2.01 1.56C1.87 1.67 1.7 1.76 1.55 1.84C1.4 1.93 1.26 2 1.12 2.06C0.98 2.13 0.85 2.18 0.72 2.23C0.59 2.29 0.47 2.36 0.35 2.39C0.23 2.42 0.12 2.44 0 2.43C-0.12 2.42 -0.22 2.38 -0.34 2.34C-0.46 2.31 -0.58 2.26 -0.71 2.21C-0.84 2.16 -0.97 2.11 -1.11 2.05C-1.25 1.98 -1.41 1.93 -1.56 1.85C-1.71 1.77 -1.86 1.66 -2 1.55C-2.14 1.44 -2.28 1.31 -2.4 1.18C-2.53 1.05 -2.64 0.92 -2.75 0.78C-2.87 0.65 -2.99 0.51 -3.08 0.38C-3.18 0.25 -3.28 0.21 -3.32 0C-3.37 -0.21 -3.38 -0.62 -3.36 -0.86C-3.34 -1.09 -3.27 -1.24 -3.21 -1.4C-3.14 -1.56 -3.04 -1.68 -2.95 -1.81C-2.87 -1.94 -2.79 -2.06 -2.7 -2.18C-2.61 -2.3 -2.53 -2.43 -2.42 -2.53C-2.31 -2.64 -2.18 -2.74 -2.04 -2.82C-1.89 -2.89 -1.72 -2.94 -1.53 -2.98C-1.34 -3.02 -1.18 -3.04 -0.92 -3.06C-0.67 -3.09 -0.31 -3.1 0 -3.11C0.31 -3.11 0.67 -3.11 0.93 -3.09C1.19 -3.08 1.36 -3.05 1.54 -3.01C1.73 -2.96 1.9 -2.91 2.05 -2.83C2.19 -2.75 2.3 -2.64 2.41 -2.53C2.53 -2.43 2.63 -2.32 2.72 -2.2C2.81 -2.08 2.89 -1.95 2.97 -1.82C3.05 -1.69 3.15 -1.56 3.21 -1.4C3.28 -1.24 3.33 -1.09 3.35 -0.85C3.37 -0.62 3.39 -0.2 3.33 0Z"/></clipPath></defs><path class="tf" d="M3.33 0C3.28 0.2 3.13 0.25 3.03 0.38C2.93 0.51 2.86 0.65 2.76 0.78C2.65 0.92 2.54 1.06 2.42 1.19C2.29 1.32 2.16 1.45 2.01 1.56C1.87 1.67 1.7 1.76 1.55 1.84C1.4 1.93 1.26 2 1.12 2.06C0.98 2.13 0.85 2.18 0.72 2.23C0.59 2.29 0.47 2.36 0.35 2.39C0.23 2.42 0.12 2.44 0 2.43C-0.12 2.42 -0.22 2.38 -0.34 2.34C-0.46 2.31 -0.58 2.26 -0.71 2.21C-0.84 2.16 -0.97 2.11 -1.11 2.05C-1.25 1.98 -1.41 1.93 -1.56 1.85C-1.71 1.77 -1.86 1.66 -2 1.55C-2.14 1.44 -2.28 1.31 -2.4 1.18C-2.53 1.05 -2.64 0.92 -2.75 0.78C-2.87 0.65 -2.99 0.51 -3.08 0.38C-3.18 0.25 -3.28 0.21 -3.32 0C-3.37 -0.21 -3.38 -0.62 -3.36 -0.86C-3.34 -1.09 -3.27 -1.24 -3.21 -1.4C-3.14 -1.56 -3.04 -1.68 -2.95 -1.81C-2.87 -1.94 -2.79 -2.06 -2.7 -2.18C-2.61 -2.3 -2.53 -2.43 -2.42 -2.53C-2.31 -2.64 -2.18 -2.74 -2.04 -2.82C-1.89 -2.89 -1.72 -2.94 -1.53 -2.98C-1.34 -3.02 -1.18 -3.04 -0.92 -3.06C-0.67 -3.09 -0.31 -3.1 0 -3.11C0.31 -3.11 0.67 -3.11 0.93 -3.09C1.19 -3.08 1.36 -3.05 1.54 -3.01C1.73 -2.96 1.9 -2.91 2.05 -2.83C2.19 -2.75 2.3 -2.64 2.41 -2.53C2.53 -2.43 2.63 -2.32 2.72 -2.2C2.81 -2.08 2.89 -1.95 2.97 -1.82C3.05 -1.69 3.15 -1.56 3.21 -1.4C3.28 -1.24 3.33 -1.09 3.35 -0.85C3.37 -0.62 3.39 -0.2 3.33 0Z"/><g class="td"><path class="g" d="M-2.64 -1.12C-2.42 -1.11 -1.78 -1.08 -1.35 -1.07C-0.92 -1.07 -0.49 -1.07 -0.04 -1.08C0.41 -1.09 0.9 -1.12 1.34 -1.12C1.79 -1.12 2.42 -1.07 2.64 -1.06"/><path class="f" d="M-1.48 0.16C-1.35 0.34 -1.02 1.05 -0.66 1.24C-0.3 1.43 0.3 1.47 0.66 1.3C1.02 1.14 1.35 0.42 1.49 0.25"/></g></g><text class="num" x="59.73" y="8.42">22</text><g transform="translate(62.89 18.24) rotate(46.86)"><defs><clipPath id="nf23"><path d="M3.79 0C3.78 0.22 3.67 0.52 3.59 0.75C3.5 0.99 3.4 1.22 3.29 1.43C3.17 1.65 3.03 1.85 2.9 2.04C2.76 2.23 2.62 2.4 2.48 2.58C2.34 2.76 2.22 2.95 2.07 3.11C1.92 3.26 1.77 3.42 1.61 3.53C1.45 3.65 1.27 3.73 1.09 3.8C0.92 3.88 0.75 3.94 0.57 3.98C0.38 4.01 0.19 4.02 0 4.02C-0.19 4.02 -0.39 4.02 -0.57 3.99C-0.75 3.96 -0.93 3.9 -1.1 3.82C-1.27 3.74 -1.44 3.63 -1.6 3.51C-1.75 3.38 -1.91 3.24 -2.05 3.08C-2.2 2.92 -2.32 2.73 -2.46 2.56C-2.6 2.38 -2.75 2.22 -2.88 2.03C-3.02 1.84 -3.17 1.65 -3.29 1.44C-3.41 1.22 -3.53 1 -3.62 0.76C-3.7 0.52 -3.78 0.22 -3.79 0C-3.8 -0.22 -3.71 -0.34 -3.65 -0.54C-3.6 -0.74 -3.54 -0.97 -3.45 -1.19C-3.36 -1.4 -3.24 -1.63 -3.1 -1.84C-2.97 -2.06 -2.81 -2.27 -2.65 -2.46C-2.48 -2.64 -2.29 -2.82 -2.1 -2.96C-1.91 -3.11 -1.71 -3.22 -1.52 -3.34C-1.33 -3.46 -1.15 -3.58 -0.98 -3.67C-0.8 -3.77 -0.61 -3.85 -0.45 -3.91C-0.29 -3.96 -0.15 -3.98 0 -3.98C0.15 -3.99 0.29 -3.97 0.45 -3.92C0.61 -3.87 0.79 -3.76 0.98 -3.67C1.16 -3.58 1.35 -3.49 1.54 -3.38C1.73 -3.26 1.92 -3.13 2.11 -2.98C2.3 -2.82 2.5 -2.66 2.66 -2.47C2.82 -2.28 2.95 -2.05 3.08 -1.83C3.21 -1.61 3.32 -1.39 3.42 -1.17C3.51 -0.96 3.59 -0.73 3.66 -0.54C3.72 -0.34 3.81 -0.22 3.79 0Z"/></clipPath></defs><path class="tf" d="M3.79 0C3.78 0.22 3.67 0.52 3.59 0.75C3.5 0.99 3.4 1.22 3.29 1.43C3.17 1.65 3.03 1.85 2.9 2.04C2.76 2.23 2.62 2.4 2.48 2.58C2.34 2.76 2.22 2.95 2.07 3.11C1.92 3.26 1.77 3.42 1.61 3.53C1.45 3.65 1.27 3.73 1.09 3.8C0.92 3.88 0.75 3.94 0.57 3.98C0.38 4.01 0.19 4.02 0 4.02C-0.19 4.02 -0.39 4.02 -0.57 3.99C-0.75 3.96 -0.93 3.9 -1.1 3.82C-1.27 3.74 -1.44 3.63 -1.6 3.51C-1.75 3.38 -1.91 3.24 -2.05 3.08C-2.2 2.92 -2.32 2.73 -2.46 2.56C-2.6 2.38 -2.75 2.22 -2.88 2.03C-3.02 1.84 -3.17 1.65 -3.29 1.44C-3.41 1.22 -3.53 1 -3.62 0.76C-3.7 0.52 -3.78 0.22 -3.79 0C-3.8 -0.22 -3.71 -0.34 -3.65 -0.54C-3.6 -0.74 -3.54 -0.97 -3.45 -1.19C-3.36 -1.4 -3.24 -1.63 -3.1 -1.84C-2.97 -2.06 -2.81 -2.27 -2.65 -2.46C-2.48 -2.64 -2.29 -2.82 -2.1 -2.96C-1.91 -3.11 -1.71 -3.22 -1.52 -3.34C-1.33 -3.46 -1.15 -3.58 -0.98 -3.67C-0.8 -3.77 -0.61 -3.85 -0.45 -3.91C-0.29 -3.96 -0.15 -3.98 0 -3.98C0.15 -3.99 0.29 -3.97 0.45 -3.92C0.61 -3.87 0.79 -3.76 0.98 -3.67C1.16 -3.58 1.35 -3.49 1.54 -3.38C1.73 -3.26 1.92 -3.13 2.11 -2.98C2.3 -2.82 2.5 -2.66 2.66 -2.47C2.82 -2.28 2.95 -2.05 3.08 -1.83C3.21 -1.61 3.32 -1.39 3.42 -1.17C3.51 -0.96 3.59 -0.73 3.66 -0.54C3.72 -0.34 3.81 -0.22 3.79 0Z"/><g class="td"><path class="g" d="M0.08 -0.51C-0.1 -0.5 -0.69 -0.51 -1.03 -0.48C-1.38 -0.45 -1.67 -0.35 -2.01 -0.33C-2.36 -0.3 -2.93 -0.32 -3.12 -0.32"/><path class="g" d="M0.08 -0.51C0.25 -0.49 0.73 -0.44 1.07 -0.39C1.41 -0.34 1.76 -0.24 2.1 -0.18C2.44 -0.13 2.95 -0.1 3.12 -0.08"/><path class="f" d="M0.08 -0.51C0.07 -0.34 0 0.16 0 0.48C0.01 0.8 0.12 1.09 0.13 1.42C0.14 1.76 0.08 2.3 0.08 2.48"/><path class="f" d="M-1.33 1.2C-1.17 1.37 -0.7 2.03 -0.38 2.2C-0.06 2.37 0.27 2.35 0.57 2.2C0.87 2.05 1.3 1.43 1.44 1.28"/><circle cx="0.08" cy="-0.51" r="0.42"/></g></g><text class="num" x="67.73" y="13.78">23</text><g transform="translate(67.57 24.43) rotate(58.64)"><defs><clipPath id="nf24"><path d="M3.46 0C3.42 0.31 3.25 0.63 3.2 0.91C3.14 1.2 3.17 1.47 3.13 1.72C3.08 1.98 3.02 2.24 2.93 2.46C2.84 2.68 2.71 2.87 2.59 3.05C2.46 3.22 2.31 3.37 2.17 3.51C2.02 3.66 1.87 3.78 1.72 3.91C1.56 4.03 1.4 4.17 1.23 4.26C1.05 4.35 0.87 4.41 0.66 4.44C0.46 4.47 0.22 4.48 0 4.47C-0.22 4.45 -0.45 4.4 -0.65 4.36C-0.85 4.31 -1.03 4.25 -1.21 4.18C-1.39 4.12 -1.57 4.05 -1.73 3.95C-1.9 3.85 -2.07 3.74 -2.21 3.59C-2.36 3.44 -2.48 3.26 -2.6 3.06C-2.71 2.86 -2.8 2.64 -2.88 2.42C-2.96 2.19 -3.01 1.94 -3.07 1.69C-3.12 1.44 -3.17 1.2 -3.21 0.92C-3.25 0.63 -3.25 0.32 -3.29 0C-3.33 -0.32 -3.47 -0.69 -3.46 -0.98C-3.45 -1.27 -3.33 -1.5 -3.26 -1.74C-3.18 -1.98 -3.11 -2.2 -3.03 -2.41C-2.94 -2.63 -2.84 -2.82 -2.73 -3.02C-2.63 -3.21 -2.53 -3.43 -2.4 -3.59C-2.27 -3.76 -2.1 -3.88 -1.93 -4C-1.76 -4.12 -1.58 -4.23 -1.39 -4.3C-1.19 -4.37 -0.99 -4.39 -0.76 -4.43C-0.53 -4.47 -0.26 -4.52 0 -4.54C0.26 -4.55 0.54 -4.55 0.78 -4.52C1.01 -4.48 1.21 -4.42 1.4 -4.33C1.59 -4.24 1.76 -4.11 1.92 -3.98C2.08 -3.84 2.21 -3.68 2.35 -3.52C2.49 -3.36 2.61 -3.19 2.73 -3.02C2.86 -2.84 2.99 -2.67 3.09 -2.46C3.19 -2.25 3.26 -2.02 3.31 -1.77C3.37 -1.52 3.4 -1.27 3.42 -0.97C3.45 -0.68 3.5 -0.31 3.46 0Z"/></clipPath></defs><path class="tf" d="M3.46 0C3.42 0.31 3.25 0.63 3.2 0.91C3.14 1.2 3.17 1.47 3.13 1.72C3.08 1.98 3.02 2.24 2.93 2.46C2.84 2.68 2.71 2.87 2.59 3.05C2.46 3.22 2.31 3.37 2.17 3.51C2.02 3.66 1.87 3.78 1.72 3.91C1.56 4.03 1.4 4.17 1.23 4.26C1.05 4.35 0.87 4.41 0.66 4.44C0.46 4.47 0.22 4.48 0 4.47C-0.22 4.45 -0.45 4.4 -0.65 4.36C-0.85 4.31 -1.03 4.25 -1.21 4.18C-1.39 4.12 -1.57 4.05 -1.73 3.95C-1.9 3.85 -2.07 3.74 -2.21 3.59C-2.36 3.44 -2.48 3.26 -2.6 3.06C-2.71 2.86 -2.8 2.64 -2.88 2.42C-2.96 2.19 -3.01 1.94 -3.07 1.69C-3.12 1.44 -3.17 1.2 -3.21 0.92C-3.25 0.63 -3.25 0.32 -3.29 0C-3.33 -0.32 -3.47 -0.69 -3.46 -0.98C-3.45 -1.27 -3.33 -1.5 -3.26 -1.74C-3.18 -1.98 -3.11 -2.2 -3.03 -2.41C-2.94 -2.63 -2.84 -2.82 -2.73 -3.02C-2.63 -3.21 -2.53 -3.43 -2.4 -3.59C-2.27 -3.76 -2.1 -3.88 -1.93 -4C-1.76 -4.12 -1.58 -4.23 -1.39 -4.3C-1.19 -4.37 -0.99 -4.39 -0.76 -4.43C-0.53 -4.47 -0.26 -4.52 0 -4.54C0.26 -4.55 0.54 -4.55 0.78 -4.52C1.01 -4.48 1.21 -4.42 1.4 -4.33C1.59 -4.24 1.76 -4.11 1.92 -3.98C2.08 -3.84 2.21 -3.68 2.35 -3.52C2.49 -3.36 2.61 -3.19 2.73 -3.02C2.86 -2.84 2.99 -2.67 3.09 -2.46C3.19 -2.25 3.26 -2.02 3.31 -1.77C3.37 -1.52 3.4 -1.27 3.42 -0.97C3.45 -0.68 3.5 -0.31 3.46 0Z"/><g class="td"><path class="g" d="M-2.03 -0.28C-1.89 -0.26 -1.47 -0.19 -1.21 -0.19C-0.95 -0.19 -0.75 -0.28 -0.49 -0.28C-0.23 -0.27 0.08 -0.18 0.37 -0.17C0.66 -0.16 0.97 -0.21 1.25 -0.23C1.52 -0.25 1.9 -0.27 2.03 -0.28"/><path class="f" d="M-1.05 -3.37C-0.97 -3.24 -0.7 -2.84 -0.54 -2.55C-0.38 -2.26 -0.18 -1.78 -0.11 -1.63"/><path class="f" d="M1.05 -3.37C0.96 -3.23 0.7 -2.79 0.5 -2.5C0.31 -2.2 -0.01 -1.77 -0.11 -1.63"/><circle cx="-0.11" cy="-1.63" r="0.42"/><circle cx="0.02" cy="1.93" r="0.34"/><circle cx="-2.03" cy="-0.28" r="0.2"/><circle cx="2.03" cy="-0.28" r="0.2"/></g></g><text class="num" x="73.56" y="21">24</text><g transform="translate(70.38 31.12) rotate(70.45)"><defs><clipPath id="nf25"><path d="M3.31 0C3.27 0.32 3.09 0.63 3.03 0.92C2.96 1.2 2.98 1.46 2.93 1.71C2.88 1.97 2.84 2.23 2.75 2.45C2.67 2.67 2.54 2.85 2.42 3.03C2.3 3.2 2.17 3.36 2.04 3.5C1.9 3.64 1.75 3.75 1.6 3.87C1.45 3.99 1.31 4.12 1.15 4.21C0.98 4.31 0.82 4.4 0.63 4.45C0.44 4.49 0.21 4.51 0 4.5C-0.21 4.5 -0.43 4.47 -0.62 4.42C-0.81 4.37 -0.97 4.28 -1.14 4.21C-1.32 4.13 -1.49 4.08 -1.65 3.98C-1.8 3.88 -1.96 3.75 -2.09 3.59C-2.22 3.44 -2.35 3.26 -2.45 3.06C-2.55 2.86 -2.62 2.63 -2.7 2.4C-2.77 2.17 -2.84 1.94 -2.89 1.69C-2.94 1.44 -2.99 1.2 -3.02 0.91C-3.05 0.63 -3.04 0.32 -3.08 0C-3.12 -0.32 -3.25 -0.69 -3.25 -0.98C-3.25 -1.27 -3.16 -1.51 -3.1 -1.75C-3.03 -1.99 -2.95 -2.21 -2.86 -2.42C-2.78 -2.64 -2.7 -2.84 -2.6 -3.04C-2.5 -3.24 -2.4 -3.44 -2.27 -3.61C-2.15 -3.78 -1.99 -3.92 -1.83 -4.03C-1.67 -4.15 -1.5 -4.23 -1.31 -4.3C-1.13 -4.37 -0.94 -4.43 -0.72 -4.46C-0.5 -4.5 -0.24 -4.51 0 -4.51C0.24 -4.52 0.51 -4.51 0.73 -4.48C0.95 -4.45 1.13 -4.4 1.31 -4.31C1.49 -4.22 1.64 -4.08 1.79 -3.94C1.94 -3.81 2.08 -3.67 2.21 -3.51C2.34 -3.35 2.45 -3.17 2.56 -3C2.67 -2.82 2.79 -2.65 2.89 -2.45C3 -2.25 3.1 -2.04 3.16 -1.79C3.23 -1.55 3.24 -1.28 3.26 -0.98C3.29 -0.69 3.35 -0.32 3.31 0Z"/></clipPath></defs><path class="tf" d="M3.31 0C3.27 0.32 3.09 0.63 3.03 0.92C2.96 1.2 2.98 1.46 2.93 1.71C2.88 1.97 2.84 2.23 2.75 2.45C2.67 2.67 2.54 2.85 2.42 3.03C2.3 3.2 2.17 3.36 2.04 3.5C1.9 3.64 1.75 3.75 1.6 3.87C1.45 3.99 1.31 4.12 1.15 4.21C0.98 4.31 0.82 4.4 0.63 4.45C0.44 4.49 0.21 4.51 0 4.5C-0.21 4.5 -0.43 4.47 -0.62 4.42C-0.81 4.37 -0.97 4.28 -1.14 4.21C-1.32 4.13 -1.49 4.08 -1.65 3.98C-1.8 3.88 -1.96 3.75 -2.09 3.59C-2.22 3.44 -2.35 3.26 -2.45 3.06C-2.55 2.86 -2.62 2.63 -2.7 2.4C-2.77 2.17 -2.84 1.94 -2.89 1.69C-2.94 1.44 -2.99 1.2 -3.02 0.91C-3.05 0.63 -3.04 0.32 -3.08 0C-3.12 -0.32 -3.25 -0.69 -3.25 -0.98C-3.25 -1.27 -3.16 -1.51 -3.1 -1.75C-3.03 -1.99 -2.95 -2.21 -2.86 -2.42C-2.78 -2.64 -2.7 -2.84 -2.6 -3.04C-2.5 -3.24 -2.4 -3.44 -2.27 -3.61C-2.15 -3.78 -1.99 -3.92 -1.83 -4.03C-1.67 -4.15 -1.5 -4.23 -1.31 -4.3C-1.13 -4.37 -0.94 -4.43 -0.72 -4.46C-0.5 -4.5 -0.24 -4.51 0 -4.51C0.24 -4.52 0.51 -4.51 0.73 -4.48C0.95 -4.45 1.13 -4.4 1.31 -4.31C1.49 -4.22 1.64 -4.08 1.79 -3.94C1.94 -3.81 2.08 -3.67 2.21 -3.51C2.34 -3.35 2.45 -3.17 2.56 -3C2.67 -2.82 2.79 -2.65 2.89 -2.45C3 -2.25 3.1 -2.04 3.16 -1.79C3.23 -1.55 3.24 -1.28 3.26 -0.98C3.29 -0.69 3.35 -0.32 3.31 0Z"/><g class="td"><path class="g" d="M-1.91 -0.29C-1.79 -0.3 -1.43 -0.31 -1.16 -0.31C-0.88 -0.32 -0.54 -0.35 -0.27 -0.34C0.01 -0.34 0.25 -0.29 0.49 -0.28C0.73 -0.27 0.95 -0.28 1.19 -0.28C1.43 -0.28 1.79 -0.29 1.91 -0.29"/><path class="f" d="M-0.99 -3.37C-0.9 -3.24 -0.63 -2.85 -0.47 -2.57C-0.31 -2.29 -0.1 -1.83 -0.03 -1.68"/><path class="f" d="M0.99 -3.37C0.91 -3.23 0.67 -2.8 0.5 -2.52C0.33 -2.24 0.06 -1.82 -0.03 -1.68"/><circle cx="-0.03" cy="-1.68" r="0.42"/><circle cx="-0.32" cy="1.9" r="0.34"/><circle cx="-1.91" cy="-0.29" r="0.2"/><circle cx="1.91" cy="-0.29" r="0.2"/></g></g><text class="num" x="77.1" y="28.5">25</text><g transform="translate(73.19 39.5) rotate(75.95)"><defs><clipPath id="nf26"><path d="M5.18 0C5.27 0.57 5.31 1.22 5.32 1.66C5.33 2.1 5.29 2.33 5.24 2.62C5.19 2.9 5.13 3.14 5.04 3.37C4.96 3.6 4.85 3.8 4.74 4C4.63 4.2 4.53 4.39 4.39 4.56C4.24 4.73 4.08 4.89 3.88 5.01C3.68 5.13 3.44 5.2 3.17 5.27C2.9 5.33 2.67 5.37 2.27 5.4C1.87 5.44 1.28 5.47 0.77 5.49C0.26 5.51 -0.36 5.54 -0.77 5.52C-1.19 5.49 -1.43 5.43 -1.72 5.35C-2.01 5.27 -2.26 5.17 -2.49 5.03C-2.72 4.9 -2.91 4.71 -3.1 4.55C-3.29 4.38 -3.48 4.22 -3.65 4.03C-3.82 3.83 -3.98 3.63 -4.12 3.4C-4.27 3.16 -4.4 2.91 -4.51 2.62C-4.62 2.33 -4.69 2.07 -4.78 1.63C-4.87 1.2 -4.97 0.56 -5.05 0C-5.12 -0.56 -5.2 -1.3 -5.24 -1.76C-5.28 -2.22 -5.31 -2.46 -5.31 -2.76C-5.3 -3.06 -5.27 -3.32 -5.2 -3.56C-5.13 -3.79 -5.03 -3.99 -4.91 -4.16C-4.79 -4.34 -4.64 -4.49 -4.48 -4.63C-4.33 -4.77 -4.17 -4.92 -3.98 -5.03C-3.78 -5.14 -3.56 -5.23 -3.31 -5.31C-3.05 -5.39 -2.86 -5.48 -2.44 -5.51C-2.01 -5.53 -1.32 -5.49 -0.77 -5.47C-0.21 -5.45 0.45 -5.42 0.87 -5.38C1.3 -5.33 1.5 -5.26 1.78 -5.19C2.06 -5.12 2.3 -5.06 2.54 -4.98C2.78 -4.89 3.01 -4.8 3.21 -4.66C3.41 -4.53 3.58 -4.35 3.74 -4.16C3.9 -3.97 4.03 -3.75 4.16 -3.52C4.29 -3.29 4.42 -3.05 4.53 -2.76C4.64 -2.47 4.72 -2.25 4.83 -1.79C4.94 -1.33 5.1 -0.57 5.18 0Z"/></clipPath></defs><path class="tf" d="M5.18 0C5.27 0.57 5.31 1.22 5.32 1.66C5.33 2.1 5.29 2.33 5.24 2.62C5.19 2.9 5.13 3.14 5.04 3.37C4.96 3.6 4.85 3.8 4.74 4C4.63 4.2 4.53 4.39 4.39 4.56C4.24 4.73 4.08 4.89 3.88 5.01C3.68 5.13 3.44 5.2 3.17 5.27C2.9 5.33 2.67 5.37 2.27 5.4C1.87 5.44 1.28 5.47 0.77 5.49C0.26 5.51 -0.36 5.54 -0.77 5.52C-1.19 5.49 -1.43 5.43 -1.72 5.35C-2.01 5.27 -2.26 5.17 -2.49 5.03C-2.72 4.9 -2.91 4.71 -3.1 4.55C-3.29 4.38 -3.48 4.22 -3.65 4.03C-3.82 3.83 -3.98 3.63 -4.12 3.4C-4.27 3.16 -4.4 2.91 -4.51 2.62C-4.62 2.33 -4.69 2.07 -4.78 1.63C-4.87 1.2 -4.97 0.56 -5.05 0C-5.12 -0.56 -5.2 -1.3 -5.24 -1.76C-5.28 -2.22 -5.31 -2.46 -5.31 -2.76C-5.3 -3.06 -5.27 -3.32 -5.2 -3.56C-5.13 -3.79 -5.03 -3.99 -4.91 -4.16C-4.79 -4.34 -4.64 -4.49 -4.48 -4.63C-4.33 -4.77 -4.17 -4.92 -3.98 -5.03C-3.78 -5.14 -3.56 -5.23 -3.31 -5.31C-3.05 -5.39 -2.86 -5.48 -2.44 -5.51C-2.01 -5.53 -1.32 -5.49 -0.77 -5.47C-0.21 -5.45 0.45 -5.42 0.87 -5.38C1.3 -5.33 1.5 -5.26 1.78 -5.19C2.06 -5.12 2.3 -5.06 2.54 -4.98C2.78 -4.89 3.01 -4.8 3.21 -4.66C3.41 -4.53 3.58 -4.35 3.74 -4.16C3.9 -3.97 4.03 -3.75 4.16 -3.52C4.29 -3.29 4.42 -3.05 4.53 -2.76C4.64 -2.47 4.72 -2.25 4.83 -1.79C4.94 -1.33 5.1 -0.57 5.18 0Z"/><g class="td"><path class="g" d="M-0.45 -0.2C-0.62 -0.18 -1.18 -0.08 -1.5 -0.08C-1.82 -0.08 -2.08 -0.19 -2.39 -0.19C-2.7 -0.2 -3.2 -0.12 -3.37 -0.11"/><path class="g" d="M-0.45 -0.2C-0.45 -0.43 -0.47 -1.11 -0.43 -1.59C-0.38 -2.07 -0.23 -2.61 -0.18 -3.08C-0.12 -3.55 -0.11 -4.18 -0.1 -4.4"/><path class="g" d="M2.04 0.48C2.17 0.45 2.53 0.33 2.8 0.26C3.07 0.2 3.53 0.14 3.67 0.11"/><path class="g" d="M2.04 0.48C2.04 0.68 2.03 1.22 2.03 1.63C2.02 2.05 2.03 2.55 2 2.97C1.96 3.4 1.86 3.98 1.84 4.18"/><path class="f" d="M-1.33 1.43C-1.17 1.27 -0.7 0.79 -0.41 0.47C-0.12 0.14 0.12 -0.19 0.41 -0.51C0.7 -0.82 1.17 -1.28 1.33 -1.43"/><circle cx="-2.31" cy="-2.55" r="0.36"/><circle cx="1.64" cy="-2.13" r="0.34"/><circle cx="-1.86" cy="2.07" r="0.4"/><circle cx="1.71" cy="2.46" r="0.3"/><circle cx="-0.45" cy="-0.2" r="0.2"/><circle cx="2.04" cy="0.48" r="0.2"/></g></g><text class="num" x="81" y="37.55">26</text><g transform="translate(74.8 49.51) rotate(82.79)"><defs><clipPath id="nf27"><path d="M4.61 0C4.65 0.56 4.64 1.17 4.65 1.6C4.66 2.03 4.68 2.29 4.65 2.59C4.63 2.89 4.58 3.14 4.52 3.39C4.45 3.63 4.39 3.87 4.27 4.06C4.16 4.25 3.99 4.37 3.83 4.5C3.67 4.63 3.49 4.73 3.31 4.84C3.13 4.94 2.95 5.05 2.73 5.13C2.51 5.21 2.32 5.27 1.99 5.31C1.65 5.36 1.14 5.39 0.71 5.38C0.28 5.38 -0.24 5.35 -0.59 5.3C-0.93 5.25 -1.13 5.17 -1.37 5.1C-1.61 5.02 -1.81 4.93 -2.03 4.84C-2.24 4.74 -2.46 4.66 -2.65 4.53C-2.84 4.4 -3.03 4.25 -3.19 4.06C-3.35 3.87 -3.49 3.64 -3.61 3.4C-3.74 3.15 -3.84 2.88 -3.95 2.59C-4.05 2.29 -4.14 2.05 -4.25 1.62C-4.36 1.18 -4.49 0.56 -4.6 0C-4.72 -0.56 -4.87 -1.31 -4.93 -1.76C-4.98 -2.21 -4.97 -2.43 -4.94 -2.7C-4.92 -2.98 -4.86 -3.19 -4.79 -3.41C-4.73 -3.62 -4.64 -3.8 -4.55 -3.98C-4.47 -4.17 -4.39 -4.36 -4.28 -4.52C-4.17 -4.69 -4.05 -4.86 -3.88 -4.98C-3.7 -5.11 -3.5 -5.2 -3.25 -5.27C-3 -5.33 -2.79 -5.34 -2.38 -5.37C-1.97 -5.39 -1.33 -5.41 -0.8 -5.41C-0.28 -5.42 0.37 -5.42 0.79 -5.4C1.21 -5.37 1.43 -5.34 1.69 -5.27C1.96 -5.19 2.18 -5.07 2.39 -4.95C2.6 -4.83 2.79 -4.7 2.96 -4.54C3.13 -4.38 3.26 -4.19 3.4 -4C3.54 -3.8 3.66 -3.61 3.79 -3.4C3.91 -3.18 4.03 -2.96 4.13 -2.68C4.24 -2.41 4.32 -2.19 4.4 -1.75C4.48 -1.3 4.57 -0.56 4.61 0Z"/></clipPath></defs><path class="tf" d="M4.61 0C4.65 0.56 4.64 1.17 4.65 1.6C4.66 2.03 4.68 2.29 4.65 2.59C4.63 2.89 4.58 3.14 4.52 3.39C4.45 3.63 4.39 3.87 4.27 4.06C4.16 4.25 3.99 4.37 3.83 4.5C3.67 4.63 3.49 4.73 3.31 4.84C3.13 4.94 2.95 5.05 2.73 5.13C2.51 5.21 2.32 5.27 1.99 5.31C1.65 5.36 1.14 5.39 0.71 5.38C0.28 5.38 -0.24 5.35 -0.59 5.3C-0.93 5.25 -1.13 5.17 -1.37 5.1C-1.61 5.02 -1.81 4.93 -2.03 4.84C-2.24 4.74 -2.46 4.66 -2.65 4.53C-2.84 4.4 -3.03 4.25 -3.19 4.06C-3.35 3.87 -3.49 3.64 -3.61 3.4C-3.74 3.15 -3.84 2.88 -3.95 2.59C-4.05 2.29 -4.14 2.05 -4.25 1.62C-4.36 1.18 -4.49 0.56 -4.6 0C-4.72 -0.56 -4.87 -1.31 -4.93 -1.76C-4.98 -2.21 -4.97 -2.43 -4.94 -2.7C-4.92 -2.98 -4.86 -3.19 -4.79 -3.41C-4.73 -3.62 -4.64 -3.8 -4.55 -3.98C-4.47 -4.17 -4.39 -4.36 -4.28 -4.52C-4.17 -4.69 -4.05 -4.86 -3.88 -4.98C-3.7 -5.11 -3.5 -5.2 -3.25 -5.27C-3 -5.33 -2.79 -5.34 -2.38 -5.37C-1.97 -5.39 -1.33 -5.41 -0.8 -5.41C-0.28 -5.42 0.37 -5.42 0.79 -5.4C1.21 -5.37 1.43 -5.34 1.69 -5.27C1.96 -5.19 2.18 -5.07 2.39 -4.95C2.6 -4.83 2.79 -4.7 2.96 -4.54C3.13 -4.38 3.26 -4.19 3.4 -4C3.54 -3.8 3.66 -3.61 3.79 -3.4C3.91 -3.18 4.03 -2.96 4.13 -2.68C4.24 -2.41 4.32 -2.19 4.4 -1.75C4.48 -1.3 4.57 -0.56 4.61 0Z"/><g class="td"><path class="g" d="M-0.43 -0.08C-0.58 -0.09 -1.02 -0.18 -1.32 -0.17C-1.61 -0.17 -1.92 -0.06 -2.2 -0.05C-2.49 -0.04 -2.9 -0.1 -3.04 -0.11"/><path class="g" d="M-0.43 -0.08C-0.42 -0.32 -0.44 -1.03 -0.4 -1.51C-0.36 -1.98 -0.26 -2.46 -0.21 -2.93C-0.16 -3.4 -0.11 -4.09 -0.09 -4.32"/><path class="g" d="M1.84 0.39C1.95 0.36 2.24 0.26 2.49 0.21C2.73 0.16 3.17 0.13 3.31 0.11"/><path class="g" d="M1.84 0.39C1.84 0.59 1.85 1.17 1.84 1.59C1.84 2.01 1.84 2.49 1.81 2.91C1.78 3.33 1.68 3.91 1.66 4.1"/><path class="f" d="M-1.2 1.4C-1.06 1.24 -0.63 0.74 -0.36 0.43C-0.1 0.13 0.14 -0.11 0.4 -0.42C0.66 -0.73 1.06 -1.24 1.2 -1.4"/><circle cx="-2.09" cy="-2.11" r="0.36"/><circle cx="1.47" cy="-2.06" r="0.34"/><circle cx="-2.14" cy="2.25" r="0.4"/><circle cx="1.57" cy="2.08" r="0.3"/><circle cx="-0.43" cy="-0.08" r="0.2"/><circle cx="1.84" cy="0.39" r="0.2"/></g></g><text class="num" x="82.99" y="48.31">27</text><g transform="translate(76.08 58.67) rotate(86.38)"><defs><clipPath id="nf28"><path d="M4.18 0C4.22 0.37 4.23 0.76 4.23 1.08C4.24 1.39 4.23 1.64 4.21 1.9C4.18 2.15 4.14 2.39 4.08 2.62C4.03 2.85 3.97 3.08 3.87 3.28C3.77 3.48 3.64 3.65 3.49 3.81C3.35 3.97 3.2 4.12 3.01 4.23C2.82 4.34 2.59 4.38 2.36 4.46C2.14 4.53 1.94 4.61 1.66 4.66C1.38 4.71 1.02 4.75 0.69 4.75C0.37 4.75 -0.01 4.72 -0.3 4.67C-0.59 4.61 -0.82 4.52 -1.06 4.43C-1.29 4.34 -1.51 4.23 -1.72 4.11C-1.93 3.99 -2.12 3.84 -2.31 3.7C-2.51 3.56 -2.71 3.42 -2.88 3.25C-3.06 3.07 -3.23 2.88 -3.37 2.66C-3.51 2.44 -3.6 2.19 -3.71 1.92C-3.81 1.66 -3.91 1.42 -4 1.1C-4.08 0.78 -4.15 0.38 -4.21 0C-4.27 -0.38 -4.35 -0.84 -4.37 -1.17C-4.4 -1.51 -4.39 -1.77 -4.36 -2.03C-4.33 -2.29 -4.28 -2.53 -4.19 -2.74C-4.11 -2.95 -3.96 -3.1 -3.83 -3.27C-3.7 -3.43 -3.57 -3.58 -3.43 -3.72C-3.29 -3.87 -3.16 -4.02 -2.99 -4.15C-2.83 -4.28 -2.66 -4.41 -2.44 -4.49C-2.23 -4.57 -2 -4.59 -1.7 -4.62C-1.41 -4.65 -1.02 -4.68 -0.68 -4.67C-0.34 -4.67 0.05 -4.61 0.35 -4.58C0.66 -4.56 0.89 -4.57 1.14 -4.52C1.39 -4.46 1.62 -4.39 1.84 -4.28C2.06 -4.17 2.26 -4.04 2.44 -3.88C2.62 -3.71 2.77 -3.5 2.91 -3.31C3.06 -3.11 3.2 -2.91 3.33 -2.69C3.46 -2.47 3.59 -2.25 3.7 -1.99C3.81 -1.74 3.91 -1.49 3.99 -1.16C4.07 -0.83 4.13 -0.37 4.18 0Z"/></clipPath></defs><path class="tf" d="M4.18 0C4.22 0.37 4.23 0.76 4.23 1.08C4.24 1.39 4.23 1.64 4.21 1.9C4.18 2.15 4.14 2.39 4.08 2.62C4.03 2.85 3.97 3.08 3.87 3.28C3.77 3.48 3.64 3.65 3.49 3.81C3.35 3.97 3.2 4.12 3.01 4.23C2.82 4.34 2.59 4.38 2.36 4.46C2.14 4.53 1.94 4.61 1.66 4.66C1.38 4.71 1.02 4.75 0.69 4.75C0.37 4.75 -0.01 4.72 -0.3 4.67C-0.59 4.61 -0.82 4.52 -1.06 4.43C-1.29 4.34 -1.51 4.23 -1.72 4.11C-1.93 3.99 -2.12 3.84 -2.31 3.7C-2.51 3.56 -2.71 3.42 -2.88 3.25C-3.06 3.07 -3.23 2.88 -3.37 2.66C-3.51 2.44 -3.6 2.19 -3.71 1.92C-3.81 1.66 -3.91 1.42 -4 1.1C-4.08 0.78 -4.15 0.38 -4.21 0C-4.27 -0.38 -4.35 -0.84 -4.37 -1.17C-4.4 -1.51 -4.39 -1.77 -4.36 -2.03C-4.33 -2.29 -4.28 -2.53 -4.19 -2.74C-4.11 -2.95 -3.96 -3.1 -3.83 -3.27C-3.7 -3.43 -3.57 -3.58 -3.43 -3.72C-3.29 -3.87 -3.16 -4.02 -2.99 -4.15C-2.83 -4.28 -2.66 -4.41 -2.44 -4.49C-2.23 -4.57 -2 -4.59 -1.7 -4.62C-1.41 -4.65 -1.02 -4.68 -0.68 -4.67C-0.34 -4.67 0.05 -4.61 0.35 -4.58C0.66 -4.56 0.89 -4.57 1.14 -4.52C1.39 -4.46 1.62 -4.39 1.84 -4.28C2.06 -4.17 2.26 -4.04 2.44 -3.88C2.62 -3.71 2.77 -3.5 2.91 -3.31C3.06 -3.11 3.2 -2.91 3.33 -2.69C3.46 -2.47 3.59 -2.25 3.7 -1.99C3.81 -1.74 3.91 -1.49 3.99 -1.16C4.07 -0.83 4.13 -0.37 4.18 0Z"/><g class="td"><path class="g" d="M-0.39 -0.18C-0.51 -0.17 -0.82 -0.13 -1.1 -0.12C-1.37 -0.12 -1.77 -0.16 -2.05 -0.15C-2.33 -0.15 -2.65 -0.11 -2.77 -0.1"/><path class="g" d="M-0.39 -0.18C-0.37 -0.39 -0.33 -1.07 -0.31 -1.49C-0.29 -1.91 -0.29 -2.31 -0.25 -2.71C-0.22 -3.12 -0.11 -3.72 -0.08 -3.92"/><path class="g" d="M1.68 0.48C1.8 0.44 2.2 0.31 2.42 0.25C2.65 0.19 2.92 0.12 3.02 0.1"/><path class="g" d="M1.68 0.48C1.69 0.67 1.74 1.27 1.72 1.62C1.69 1.97 1.57 2.24 1.54 2.59C1.5 2.94 1.52 3.53 1.51 3.72"/><path class="f" d="M-1.09 1.27C-0.96 1.14 -0.56 0.73 -0.31 0.45C-0.06 0.16 0.15 -0.15 0.38 -0.44C0.62 -0.72 0.97 -1.13 1.09 -1.27"/><path class="f" d="M-1.27 -0.63C-1.16 -0.67 -0.87 -0.84 -0.63 -0.88C-0.4 -0.91 0.03 -0.85 0.16 -0.85"/><path class="f" d="M1.9 -0.51C1.84 -0.59 1.7 -0.83 1.58 -1.02C1.45 -1.21 1.23 -1.55 1.16 -1.66"/><circle cx="-1.92" cy="-1.76" r="0.36"/><circle cx="2.12" cy="-2.15" r="0.34"/><circle cx="-1.98" cy="1.91" r="0.4"/><circle cx="1.11" cy="2.26" r="0.24"/><circle cx="-0.39" cy="-0.18" r="0.2"/><circle cx="1.68" cy="0.48" r="0.2"/></g></g><text class="num" x="83.58" y="58.08">28</text><g transform="translate(11.33 70.15) rotate(94.98)"><path class="ghost" d="M4.18 0C4.22 -0.37 4.25 -0.77 4.25 -1.08C4.25 -1.39 4.21 -1.63 4.18 -1.88C4.15 -2.14 4.15 -2.4 4.09 -2.63C4.04 -2.86 3.96 -3.08 3.87 -3.28C3.77 -3.48 3.65 -3.67 3.5 -3.82C3.36 -3.97 3.17 -4.09 2.98 -4.2C2.79 -4.3 2.58 -4.38 2.36 -4.45C2.14 -4.53 1.93 -4.6 1.65 -4.65C1.38 -4.69 1.02 -4.73 0.69 -4.74C0.37 -4.74 -0.01 -4.71 -0.3 -4.66C-0.59 -4.61 -0.82 -4.53 -1.06 -4.44C-1.3 -4.34 -1.51 -4.22 -1.72 -4.1C-1.93 -3.98 -2.14 -3.87 -2.33 -3.73C-2.52 -3.58 -2.71 -3.42 -2.88 -3.25C-3.05 -3.07 -3.23 -2.88 -3.37 -2.66C-3.5 -2.44 -3.6 -2.18 -3.7 -1.92C-3.8 -1.66 -3.88 -1.41 -3.97 -1.09C-4.06 -0.77 -4.15 -0.38 -4.22 0C-4.29 0.38 -4.37 0.84 -4.39 1.18C-4.41 1.52 -4.38 1.76 -4.34 2.02C-4.31 2.28 -4.26 2.52 -4.18 2.73C-4.1 2.94 -3.98 3.12 -3.86 3.29C-3.73 3.45 -3.59 3.59 -3.44 3.74C-3.3 3.88 -3.18 4.05 -3.01 4.17C-2.84 4.29 -2.65 4.4 -2.43 4.48C-2.22 4.55 -2 4.6 -1.71 4.63C-1.41 4.66 -1.02 4.64 -0.68 4.64C-0.33 4.64 0.05 4.65 0.36 4.62C0.66 4.6 0.89 4.57 1.14 4.51C1.38 4.45 1.61 4.37 1.83 4.26C2.05 4.15 2.25 4.02 2.43 3.86C2.61 3.7 2.77 3.5 2.91 3.3C3.06 3.11 3.19 2.9 3.32 2.68C3.45 2.46 3.58 2.24 3.7 1.99C3.81 1.74 3.92 1.5 4 1.17C4.08 0.83 4.14 0.37 4.18 0Z"/><path class="x" d="M-3.2 -3.4L3.2 3.4M3 -3.6L-3.2 3.2"/></g><text class="num b" x="1.13" y="70.35">404</text></svg>
+        <figcaption>病歷上打叉的記法是「已拔除」。這一顆從來沒長過。</figcaption>
+      </figure>
+    </main>
+    <footer class="foot">
+      <p class="brand"><svg class="mark" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="27" height="27" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M15 3V27M3 15H27" fill="none" stroke="currentColor" stroke-width=".9" stroke-dasharray="2 1.6"/><path d="M17.2 26.4 26.4 17.2M16.4 22.2 22.2 16.4M20.8 27 27 20.8" fill="none" stroke="#be222a" stroke-width="1.7" stroke-linecap="round"/></svg><span>恆齒牙醫診所</span></p>
+      <address><span>臺北市大安區瑞安街 203 巷 12 號 1 樓</span>　<span class="mono">(02) 0000-0170</span></address>
+      <p>© 恆齒牙醫診所</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-flagship="F21" data-slug="corner-shop">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>找不到頁面｜角落商行｜鹽埕轉角的日用品二十四件・型錄、比較、購物車</title>
+<meta name="description" content="找不到這個頁面。">
+
+<meta name="generator" content="套版網站平台 F21">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preload" href="fonts/01-noto-sans-tc.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/02-wdxl-lubrifont-tc.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>
+/* base.css — 所有旗艦共用的最小底座：重置、無障礙、繁中排印基線、降級安全網。
+   不含任何視覺風格（顏色/字型/間距由旗艦自己決定）。刻意不提供卡片/按鈕/漸層等元件，避免「共用元件→同質化」。 */
+@layer reset, base, flagship;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; tab-size: 4; }
+  body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  img, svg, video, canvas, picture { display: block; max-width: 100%; }
+  img, video { height: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* 點了會切換的控制項與包著它們的 label：手指游標（Gate X03；文字欄位的 label 維持預設） */
+  input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled), label:has(input[type="checkbox"]:not(:disabled)), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  [hidden] { display: none !important; }
+}
+
+@layer base {
+  html { font-synthesis: none; scroll-behavior: smooth; }
+  body {
+    min-height: 100dvh;
+    line-height: 1.75;                          /* 繁中正文 1.75–1.8（web-craft） */
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+    line-break: strict;                         /* 嚴格禁則 */
+    text-autospace: normal;                      /* 中英/中數間距（= ideograph-alpha + ideograph-numeric；Chromium 140+/Safari 18.4+，其餘忽略。注意：雙關鍵字寫法在 Chromium 141 是無效值，整條宣告會被丟掉） */
+  }
+  @supports (word-break: auto-phrase) { :lang(zh) { word-break: auto-phrase; } }
+  h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+  p, li, dd, blockquote { text-wrap: pretty; }
+  table, .tnum, time, [data-num] { font-variant-numeric: tabular-nums; }
+  :lang(zh) em, :lang(zh) i { font-style: normal; }   /* 中文無斜體；強調請用 text-emphasis（著重號）或字重 */
+  :lang(zh) em { text-emphasis: filled currentColor; text-emphasis-position: under right; }
+
+  /* 跳到主要內容 */
+  .skip { position: fixed; inset-block-start: 0; inset-inline-start: 0; z-index: 9999; padding: .6em 1em; background: #000; color: #fff; transform: translateY(-120%); }
+  .skip:focus { transform: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* 焦點：預設給一個可見的環；每款旗艦必須用 --focus-ring 覆寫成自己的設計（Gate 檢查） */
+  :focus-visible { outline: var(--focus-ring, 2px solid currentColor); outline-offset: var(--focus-offset, 3px); }
+  :focus:not(:focus-visible) { outline: none; }
+  ::selection { background: var(--selection-bg, Highlight); color: var(--selection-fg, HighlightText); }
+
+  /* 觸控目標下限 */
+  @media (pointer: coarse) { a, button, summary, label[for], [role="button"] { min-block-size: 44px; } }
+}
+
+/* 降級安全網：旗艦若沒寫自己的 reduced-motion 版本，至少不會無限循環 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .no-print, .skip { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@font-face{font-family:"Noto Sans TC";src:url("fonts/01-noto-sans-tc.woff2") format("woff2");font-weight:400 600;font-style:normal;font-display:swap}
+@font-face{font-family:"WDXL Lubrifont TC";src:url("fonts/02-wdxl-lubrifont-tc.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Sometype Mono";src:url("fonts/03-sometype-mono.woff2") format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+@layer flagship {
+
+:root{
+  --cobalt:oklch(.38 .155 261);
+  --c1:oklch(.22 .1 263);--c2:oklch(.29 .125 262);--c3:oklch(.47 .17 259);--c4:oklch(.72 .1 252);--c5:oklch(.91 .04 245);
+  --porc:oklch(.975 .01 250);--mint:oklch(.87 .11 168);--mint2:oklch(.8 .12 168);--mint3:oklch(.95 .05 168);--mute:oklch(.83 .05 250);
+  --gap:5px;--row:240px;--wrap:min(1392px,100% - 32px);
+  --sans:"Noto Sans TC",sans-serif;--disp:"WDXL Lubrifont TC","Noto Sans TC",sans-serif;--num:"Sometype Mono","Noto Sans TC",monospace;
+  --focus-ring:3px solid var(--mint);--focus-offset:2px;--selection-bg:var(--mint);--selection-fg:var(--c1);
+  color-scheme:light;
+}
+html{background:var(--cobalt)}
+body{background:var(--cobalt);color:var(--porc);font-family:var(--sans);font-size:16px;line-height:1.75;letter-spacing:.02em;font-weight:400}
+b,strong{font-weight:600}
+:focus-visible{box-shadow:0 0 0 5px var(--c1)}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1.5px}
+button{font:inherit;letter-spacing:inherit;border:0;background:none;color:inherit;padding:0;cursor:pointer}
+.num,.pr,.cnt-n,.ru-n,.rl-lab,.rl-t,.ch-code,.cr-amt,.cr-n,.tr-n,.mono{font-family:var(--num);font-variant-numeric:tabular-nums;letter-spacing:0}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+
+/* ---------- 鈷藍繪（symbol 內的各層；顏色由所在格子的變數決定） ---------- */
+.g{overflow:visible}
+.gw{fill:var(--wash)}
+.gs{fill:var(--shade)}
+.gm{fill:none;stroke:var(--shade);stroke-linecap:round}
+.gi{fill:var(--hi,#fff)}
+.gc path{fill:none;stroke:var(--ink);stroke-linecap:round;stroke-linejoin:round}
+.gf{fill:var(--ink)}
+.gk{fill:none;stroke:var(--ink);stroke-linecap:round;stroke-linejoin:round}
+.gg{fill:var(--gnd,transparent)}
+.gl path{fill:var(--lite,var(--mint));opacity:.3}
+.gh{fill:none;stroke:var(--gst,transparent)}
+.gp,.gl{visibility:var(--pv,visible)}
+
+/* ---------- 頁首 ---------- */
+.top{width:var(--wrap);margin-inline:auto;display:flex;align-items:center;gap:28px;min-height:70px;padding-block:10px}
+.mark{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--disp);font-size:23px;letter-spacing:.06em;line-height:1}
+.mark svg{width:26px;height:26px;flex:none}
+.mark .m1{fill:none;stroke:currentColor;stroke-width:2.6}.mark .m2{fill:var(--mint)}
+.nav ul{display:flex;flex-wrap:wrap;gap:4px 22px}
+.nav a{text-decoration:none;font-weight:500;font-size:15px;padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-bottom-color:var(--mint)}
+.cart-btn{margin-left:auto;display:inline-flex;align-items:center;gap:10px;background:var(--mint);color:var(--c1);font-weight:600;font-size:15px;padding:8px 12px 8px 16px;min-height:42px;
+  background:linear-gradient(225deg,transparent 9px,var(--mint) 9px)}
+.cart-btn .n{font-family:var(--num);font-weight:700;min-width:1.6em;text-align:center;background:var(--c1);color:var(--mint);padding:0 6px;line-height:1.7}
+html:not(.js) .cart-btn,html:not(.js) [data-cart-open]{display:none}
+
+/* ---------- 型錄矩陣 ---------- */
+.cat{width:var(--wrap);margin-inline:auto}
+.mx{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));grid-template-rows:auto auto;grid-auto-rows:minmax(var(--row),auto);grid-auto-flow:row dense;gap:var(--gap)}
+.brand{grid-column:1/span 5;grid-row:1/span 2;padding:4px 28px 26px 0;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:1fr auto;gap:22px 38px}
+.brand h1{grid-row:1;font-family:var(--disp);font-weight:400;font-size:clamp(84px,12.2vw,178px);line-height:.94;letter-spacing:.02em;color:var(--porc);overflow-wrap:anywhere;margin:2px 0 0 -.04em;max-width:2.1em}
+.tele{grid-row:1;align-self:end;display:flex;flex-direction:column;gap:6px;font-size:clamp(19px,1.8vw,26px);font-weight:500;letter-spacing:.18em;line-height:1.5;color:var(--c5);word-break:keep-all;padding-bottom:.3em}
+.tele span:first-child{color:var(--mint)}
+.tele-s{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 26px;font-size:15px;color:var(--mute)}
+.tele-s .mono{color:var(--mint);font-size:15px}
+.tele-s a{color:var(--mint);font-weight:600}
+
+.filt{grid-column:6/span 3;grid-row:1/span 2;background:var(--mint);color:var(--c1);padding:20px 22px 18px;display:flex;flex-direction:column;gap:10px;--focus-ring:3px solid var(--c1)}
+.filt-hd{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.filt h2{font-family:var(--disp);font-weight:400;font-size:clamp(38px,3.4vw,50px);line-height:1;letter-spacing:.04em}
+.cnt{display:flex;align-items:baseline;gap:6px;font-size:15px;line-height:1;font-weight:500}
+.cnt-n{font-size:54px;font-weight:700;line-height:.82;min-width:2ch;text-align:right;letter-spacing:-.03em}
+html:not(.js) .cnt{display:none}
+.hint{font-size:14px;font-weight:500;color:var(--c2);letter-spacing:.14em;margin-top:-2px}
+.fdet>summary{display:none}
+.fl{display:flex;flex-direction:column;gap:11px}
+.fg{display:grid;grid-template-columns:50px minmax(0,1fr);align-items:start;gap:8px}
+.fg legend{float:left;font-size:13px;font-weight:600;color:var(--c2);padding-top:7px;letter-spacing:.14em}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{position:relative;display:inline-flex;align-items:center;min-height:37px;padding:3px 14px 3px 12px;font-size:15px;font-weight:500;cursor:pointer;color:var(--c1);user-select:none;
+  background:linear-gradient(225deg,transparent 7px,var(--mint3) 7px)}
+.chip input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.chip:hover{background:linear-gradient(225deg,transparent 7px,var(--porc) 7px)}
+.chip:has(input:checked){background:linear-gradient(225deg,transparent 7px,var(--c1) 7px);color:var(--mint)}
+.chip:has(input:focus-visible){outline:3px solid var(--c1);outline-offset:2px;box-shadow:none}
+.fl-ft{margin-top:auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-top:8px}
+.reset{box-shadow:inset 0 0 0 2px var(--c1);padding:5px 14px;font-weight:600;font-size:14px;min-height:36px}
+.reset:hover{background:var(--c1);color:var(--mint)}
+
+/* 商品格：色域＋鈷藍繪＋大字價格；無外框、無陰影；物件站在一塊橢圓「轉盤」上 */
+.it{position:relative;background:var(--bg);color:var(--fg);padding:13px 13px 12px 15px;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto minmax(84px,1fr) auto auto;min-width:0;container-type:inline-size;
+  --cs:1;--rs:1;grid-column:span var(--cs);grid-row:span var(--rs)}
+.s21{--cs:2}.s12{--rs:2}.s22{--cs:2;--rs:2}
+.s22{padding:18px 20px 16px 22px}
+.f-deep{--bg:var(--c1);--bg2:var(--c2);--fg:var(--c5);--sub:var(--mute);--pr:var(--mint);--wash:var(--c5);--ink:var(--c1);--shade:var(--c3);--gnd:var(--c3);--lite:var(--mint)}
+.f-navy{--bg:var(--c2);--bg2:oklch(.245 .11 263);--fg:var(--c5);--sub:var(--mute);--pr:var(--porc);--wash:var(--porc);--ink:var(--c1);--shade:var(--c3);--gnd:var(--c4)}
+.f-lift{--bg:var(--c3);--bg2:oklch(.42 .165 260);--fg:var(--porc);--sub:oklch(.94 .03 245);--pr:var(--porc);--wash:var(--porc);--ink:var(--c1);--shade:var(--c3);--gnd:var(--c1)}
+.f-mid{--bg:var(--c4);--bg2:oklch(.665 .115 253);--fg:var(--c1);--sub:var(--c1);--pr:var(--c1);--wash:var(--porc);--ink:var(--c1);--shade:var(--c3);--gnd:var(--c2);--lite:var(--porc)}
+.f-ice{--bg:var(--c5);--bg2:oklch(.855 .06 248);--fg:var(--c1);--sub:oklch(.34 .11 262);--pr:var(--c1);--wash:#fff;--ink:var(--c1);--shade:var(--c3);--gnd:var(--c3)}
+.f-mint{--bg:var(--mint);--bg2:var(--mint2);--fg:var(--c1);--sub:oklch(.3 .1 262);--pr:var(--c1);--wash:var(--porc);--ink:var(--c1);--shade:var(--c3);--gnd:var(--c2)}
+.it-top{display:flex;align-items:flex-start;justify-content:space-between;gap:6px}
+.nm{font-family:var(--disp);font-weight:400;font-size:19px;line-height:1.2;letter-spacing:.04em;overflow-wrap:anywhere;min-width:0;padding-top:2px}
+.s21 .nm,.s12 .nm{font-size:22px}.s22 .nm{font-size:31px}
+.ds{font-size:13.5px;line-height:1.6;color:var(--sub);margin-top:4px;font-weight:500;letter-spacing:.04em;word-break:keep-all}
+.s22 .ds{font-size:15.5px}
+.cmp{flex:none;display:inline-flex;flex-direction:column;align-items:center;gap:3px;font-size:11.5px;font-weight:600;cursor:pointer;line-height:1;padding:3px 2px 0;letter-spacing:.08em}
+.cmp input{appearance:none;-webkit-appearance:none;width:18px;height:18px;margin:0;border:2px solid currentColor;background:transparent;cursor:pointer;flex:none}
+.cmp input:checked{background:currentColor;box-shadow:inset 0 0 0 3px var(--bg)}
+.fig{position:relative;min-height:84px;margin-block:10px 8px;isolation:isolate}
+.fig::before{content:"";position:absolute;left:4%;right:4%;bottom:-7%;height:30%;max-height:70px;border-radius:50%;background:var(--bg2);z-index:-1}
+.fig svg{position:absolute;inset:4% 6% 2%;width:88%;height:94%}
+.s22 .fig{margin-block:14px 12px}
+.it-bot{display:flex;align-items:flex-end;justify-content:space-between;gap:8px}
+.pr{color:var(--pr);font-weight:700;line-height:.84;letter-spacing:-.03em;display:flex;align-items:flex-start;gap:4px;white-space:nowrap;font-size:27px}
+.pr .cur{font-size:12px;font-weight:500;letter-spacing:.02em;margin-top:.1em}
+.s21 .pr{font-size:clamp(30px,13cqi,44px)}.s22 .pr{font-size:clamp(42px,12cqi,62px)}
+.add{flex:none;position:relative;width:40px;height:40px;background:var(--fg);color:var(--bg);display:grid;place-items:center}
+.add svg{width:18px;height:18px}.add .pl{stroke:currentColor;stroke-width:2.6;fill:none}
+.add .q{position:absolute;top:-8px;right:-6px;min-width:20px;height:20px;padding:0 4px;background:var(--mint);color:var(--c1);font:700 12px/20px var(--num);text-align:center}
+.f-mint .add .q{background:var(--c1);color:var(--mint)}
+.add .q:empty{display:none}
+/* 窄格（內容寬 <140px：320 手機、861–1180 的六欄、1024 附近）：四位數價格（104px）＋40px 按鈕放不下一列，按鈕會滑出格外、被隔壁格壓住；放不下時按鈕折到價格下一列靠右（position:relative 讓價格畫在高格的「轉盤」橢圓之上，折行後價格會落進橢圓往下探出的那一段） */
+@container (max-width:139.98px){.it-bot{position:relative;flex-wrap:wrap;row-gap:6px}.it-bot .add{margin-left:auto}}
+.spec{display:none}
+.s22 .spec{display:grid;grid-template-columns:auto 1fr;gap:1px 12px;font-size:13.5px;margin-bottom:12px;color:var(--sub);font-weight:500}
+.s22 .spec div{display:contents}.s22 .spec dt{color:var(--fg);font-weight:600;letter-spacing:.1em}
+.s22 .spec div:nth-child(n+5){display:none}
+html:not(.js) .cmp,html:not(.js) .add{display:none}
+/* 被拿去比較：格中只留虛線輪廓 */
+.it.on,.rl-b[aria-pressed=true]{--pv:hidden;--gst:var(--fg)}
+.empty,.mx-end{grid-column:1/-1;background:var(--c1);color:var(--c5);padding:26px 26px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;min-height:120px}
+.mx-end{grid-column:auto;background:none;box-shadow:inset 0 0 0 2px oklch(.91 .04 245 / .35);align-content:center}
+.empty p,.mx-end p{font-size:22px;font-weight:500;line-height:1.4;letter-spacing:.16em}
+.empty button,.mx-end button{box-shadow:inset 0 0 0 2px var(--c5);padding:8px 16px;font-weight:600;font-size:14px}
+.mx:not(:has(.fg input[value=""]:not(:checked))) .mx-end button{display:none}
+.cat-ft{display:flex;align-items:center;gap:14px 18px;flex-wrap:wrap;padding:16px 0 0;font-size:16px;font-weight:500}
+.cat-ft b{font-family:var(--num);font-weight:700;font-size:22px;color:var(--mint)}
+.cat-ft .btn{box-shadow:inset 0 0 0 2px var(--c5);padding:6px 14px;text-decoration:none;font-size:15px;font-weight:600}
+.cat-ft a.btn{background:var(--c5);color:var(--c1)}
+html:not(.js) .cat-ft .cf-cart{display:none}
+
+/* ---------- 比較盤 ---------- */
+.tray{background:var(--c1);color:var(--c5);--wash:var(--c5);--ink:var(--c1);--shade:var(--c3);--gnd:transparent;--lite:var(--mint);--fg:var(--c5)}
+html.js .tray{position:fixed;left:0;right:0;bottom:0;z-index:40;border-top:2px solid var(--mint)}
+html.js .tray.in{animation:tray-in .2s cubic-bezier(.2,.7,.3,1) both}
+html:not(.js) .tray{width:var(--wrap);margin:56px auto 0}
+html.js .tray[data-init]{display:none}
+.tr-bar{width:var(--wrap);margin-inline:auto;display:flex;align-items:center;gap:18px;min-height:66px;padding-block:8px;flex-wrap:wrap}
+.tr-bar h2{font-size:18px;font-weight:600;letter-spacing:.2em;color:var(--porc)}
+.tr-n{font-weight:700;font-size:22px;color:var(--mint);line-height:1}
+.tr-n span{font-size:.7em;color:var(--mute)}
+.tr-th{display:flex;gap:12px;align-items:flex-end}
+.tr-th li{display:flex;align-items:flex-end;gap:6px;font:500 12px var(--num);color:var(--mute)}
+.tr-th svg{height:34px;width:auto;max-width:56px}
+.tr-hint{font-size:14px;font-weight:500;color:var(--mint);letter-spacing:.1em}
+.tray:not([data-n="1"]) .tr-hint{display:none}
+.tr-act{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+.tr-act button{box-shadow:inset 0 0 0 2px var(--c5);padding:6px 14px;font-weight:600;font-size:14px;min-height:40px}
+.tr-tog{background:var(--mint)!important;box-shadow:none!important;color:var(--c1)}
+.tr-tog .t-c,.tray[data-open] .tr-tog .t-o{display:none}.tray[data-open] .tr-tog .t-c{display:inline}
+html:not(.js) .tr-act,html:not(.js) .tr-th,html:not(.js) .ch-rm,html:not(.js) .tr-buy{display:none}
+html.js .tray:not([data-open]) .tr-body{display:none}
+html.js .tr-body{max-height:min(72vh,640px);overflow:auto;overscroll-behavior:contain;border-top:1px solid oklch(.91 .04 245 / .2)}
+.tr-in{width:var(--wrap);margin-inline:auto;padding:14px 0 22px}
+.tr-cap{font-size:14px;color:var(--mute);font-weight:500;margin-bottom:6px;letter-spacing:.1em}
+.tr-demo{font-size:14px;color:var(--mint);font-weight:500}
+html.js .tr-demo{display:none}
+.cmp-t{width:100%;table-layout:fixed;--lh:210px;--s:.87;--tk:10}
+.cmp-t th,.cmp-t td{padding:6px 12px;text-align:left;vertical-align:top;font-size:14.5px;line-height:1.55}
+.cmp-t col.c0{width:96px}
+.cmp-t thead th,.cmp-t thead td{vertical-align:top;padding-bottom:12px}
+.cmp-t tbody th{color:var(--mint);font-weight:600;font-size:13.5px;letter-spacing:.12em;white-space:nowrap}
+.cmp-t tbody tr+tr th,.cmp-t tbody tr+tr td{border-top:1px solid oklch(.91 .04 245 / .16)}
+.cmp-t .v-pr{font:700 26px/1 var(--num);color:var(--porc)}
+.ch-stage{height:var(--lh);display:flex;align-items:flex-end;justify-content:center;border-bottom:2px solid var(--c5);margin:0 -12px}
+.ch-fig{width:calc(var(--w) * var(--s) * 1px);height:calc(var(--h) * var(--s) * 1px);flex:none}
+.ch-fig svg{width:100%;height:100%;display:block}
+.ch-nm{font-family:var(--disp);font-size:19px;color:var(--porc);margin-top:10px;line-height:1.3;letter-spacing:.04em}
+.ch-code{font-size:12px;color:var(--mute)}
+.ch-rm{margin-top:6px;box-shadow:inset 0 0 0 1.5px oklch(.91 .04 245 / .6);padding:2px 10px;font-size:13px;font-weight:600;min-height:30px}
+.ch-add{background:var(--mint);color:var(--c1);font-weight:600;font-size:14px;padding:7px 12px;min-height:38px}
+.rul-c{position:relative}
+.rul{position:relative;height:var(--lh);margin-right:-12px;border-right:2px solid var(--c5);border-bottom:2px solid var(--c5);
+  background:repeating-linear-gradient(to top,var(--c5) 0 1.5px,transparent 1.5px calc(var(--tk) * var(--s) * 1px)) right bottom/9px 100% no-repeat,
+             repeating-linear-gradient(to top,var(--mint) 0 2px,transparent 2px calc(var(--tk) * 5 * var(--s) * 1px)) right bottom/20px 100% no-repeat}
+.rul-l{position:absolute;right:26px;bottom:calc(var(--cm) * 10 * var(--s) * 1px);transform:translateY(50%);font:500 12px/1 var(--num);color:var(--c5)}
+.rul-u{position:absolute;left:0;top:0;font-size:12px;font-weight:500;color:var(--mute)}
+.rul.draw{animation:rul-draw .46s .3s cubic-bezier(.3,.7,.3,1) both}
+.fly{position:fixed;inset:0;pointer-events:none;z-index:70;--wash:var(--c5);--ink:var(--c1);--shade:var(--c3);--gnd:transparent}
+.fly svg{position:fixed;transform-origin:0 0;overflow:visible}
+body.has-tray{padding-bottom:84px}
+
+/* ---------- 同一把尺：24 件同一比例，站在同一條基線上 ---------- */
+.rl{position:relative;width:var(--wrap);margin:44px auto 0;--wash:var(--c5);--ink:var(--c1);--shade:var(--c3);--gnd:transparent;--fg:var(--mint);--lite:var(--mint)}
+.rl-hd{display:flex;align-items:flex-end;gap:10px 30px;flex-wrap:wrap}
+.rl-hd h2{font-size:clamp(48px,4.6vw,66px)!important}
+.rl-hd h2,.rules h2,.store h2,.co h2{font-family:var(--disp);font-weight:400;font-size:clamp(52px,6.2vw,92px);line-height:1;letter-spacing:.04em;color:var(--porc)}
+.rl-hd p{font-size:16px;font-weight:500;color:var(--c5);letter-spacing:.16em;padding-bottom:.4em}
+.rl-hd .hint2{margin-left:auto;font-size:14px;color:var(--mint);letter-spacing:.14em}
+.rl-sc{position:relative;padding-top:24px}
+.rl-ch{--s:calc((min(100vw,1424px) - 32px - 64px - 184px) / 5186);position:relative;padding:0 0 64px 64px}
+.rl-row{display:flex;align-items:flex-end;gap:8px;height:calc(var(--s) * 880);border-bottom:2px solid var(--c5);
+  background:repeating-linear-gradient(to top,oklch(.91 .04 245 / .3) 0 1px,transparent 1px calc(var(--s) * 100)) left bottom/100% 100% no-repeat}
+.rl-t{position:absolute;left:0;bottom:calc(64px + var(--s) * var(--cm) * 10);transform:translateY(50%);font-size:12px;color:var(--c5);width:52px;text-align:right;line-height:1}
+.rl-t.u{bottom:calc(64px + var(--s) * 880 + 14px);color:var(--mute);font-family:var(--sans)}
+.rl-it{position:relative;flex:none;display:flex}
+.rl-b{display:block;width:calc(var(--w) * var(--s));height:calc(var(--h) * var(--s))}
+.rl-b svg{width:100%;height:100%;display:block}
+.rl-b:hover{--wash:var(--mint)}
+.rl-lab{position:absolute;top:calc(100% + 8px);left:50%;translate:-50% 0;writing-mode:vertical-rl;font-size:11.5px;line-height:1;color:var(--mute);white-space:nowrap}
+.rl-lab b{color:var(--porc);font-weight:700;margin-top:6px}
+html:not(.js) .rl-b{cursor:default}
+
+/* ---------- 規矩：一個巨大的數字，其餘沿階梯往右下走 ---------- */
+.rules{width:var(--wrap);margin:140px auto 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px}
+.rules h2{grid-column:1/-1}
+.ru-big{grid-column:1/span 6;grid-row:2/span 2;align-self:end;display:flex;align-items:flex-end;gap:18px;margin-top:34px}
+.ru-big .ru-n{font-size:clamp(170px,27vw,388px);font-weight:700;line-height:.74;letter-spacing:-.06em;color:var(--porc);margin-left:-.06em}
+.ru-big p{font-size:14px;font-weight:500;color:var(--mint);letter-spacing:.14em;line-height:1.7;max-width:9em;padding-bottom:.4em}
+.ru-st{grid-column:7/span 6;grid-row:2;display:flex;flex-direction:column;gap:16px;margin-top:40px}
+.ru-st li{display:flex;align-items:baseline;gap:14px;margin-left:calc(var(--i) * 52px)}
+.ru-st .ru-n{flex:none;font-size:46px;font-weight:700;line-height:1;color:var(--mint);min-width:1.3ch;text-align:right}
+.ru-st p{font-size:16px;font-weight:500;color:var(--c5);letter-spacing:.1em}
+.ru-note{grid-column:7/span 6;grid-row:3;align-self:end;margin:30px 0 0 calc(5 * 52px);font-size:15px;color:var(--mute);max-width:24em;letter-spacing:.03em}
+
+/* ---------- 門市：轉角平面（圓弧的路緣） ---------- */
+.store{width:var(--wrap);margin:150px auto 0;display:grid;grid-template-columns:minmax(0,1.15fr) 76px minmax(0,1fr);grid-template-rows:auto 76px auto;--R:30px}
+.rd{background:var(--c2);position:relative;color:var(--c5)}
+.rd-h{grid-column:1/-1;grid-row:2;background:repeating-linear-gradient(90deg,var(--c5) 0 26px,transparent 26px 52px) 0 50%/100% 2px no-repeat,var(--c2)}
+.rd-v{grid-column:2;grid-row:1/-1;background:repeating-linear-gradient(180deg,var(--c5) 0 26px,transparent 26px 52px) 50% 0/2px 100% no-repeat,var(--c2)}
+.zebra{grid-column:2;grid-row:2;z-index:2;position:relative;background:repeating-linear-gradient(90deg,var(--c5) 0 7px,var(--c2) 7px 14px)}
+.cb{position:absolute;width:var(--R);height:var(--R)}
+.cb.tl{right:100%;bottom:100%;background:radial-gradient(circle at 0 0,transparent calc(var(--R) - .5px),var(--c2) var(--R))}
+.cb.tr{left:100%;bottom:100%;background:radial-gradient(circle at 100% 0,transparent calc(var(--R) - .5px),var(--c2) var(--R))}
+.cb.bl{right:100%;top:100%;background:radial-gradient(circle at 0 100%,transparent calc(var(--R) - .5px),var(--c2) var(--R))}
+.cb.br{left:100%;top:100%;background:radial-gradient(circle at 100% 100%,transparent calc(var(--R) - .5px),var(--c2) var(--R))}
+.rd-n{position:absolute;font-size:15px;font-weight:600;letter-spacing:.3em;background:var(--c2);padding:2px 10px}
+.rd-h .rd-n{left:20px;top:50%;transform:translateY(-50%)}
+.rd-v .rd-n{writing-mode:vertical-rl;left:50%;top:22px;transform:translateX(-50%);padding:10px 2px}
+.qd{padding:28px 30px 34px 4px}
+.q-tl{grid-column:1;grid-row:1;padding-top:0;position:relative;min-height:230px}
+.st-fig{position:absolute;right:34px;bottom:0;width:min(40%,280px);aspect-ratio:420/300;--wash:var(--c5);--ink:var(--c1);--shade:var(--c3);--gnd:transparent}
+.st-fig svg{width:100%;height:100%;display:block}
+.q-tl .st-addr{max-width:calc(100% - min(40%,280px) - 64px);word-break:keep-all}
+.q-tr{grid-column:3;grid-row:1;padding-left:40px}
+.q-bl{grid-column:1;grid-row:3}
+.q-br{grid-column:3;grid-row:3;padding:0 0 30px;display:grid;grid-template-columns:minmax(0,1fr);gap:24px;align-content:start}
+.hrs{padding-right:40px;max-width:600px}
+.q-br .st-dl{padding-left:24px}
+.st-addr{font-size:clamp(20px,2vw,27px);font-weight:500;line-height:1.5;margin-top:20px;color:var(--porc);letter-spacing:.04em}
+.st-addr span{color:var(--mint)}
+.st-dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:16px;align-items:baseline}
+.st-dl dt{font-weight:600;color:var(--mint);letter-spacing:.14em;font-size:14px}
+.st-dl dd{color:var(--c5)}
+.shop{background:var(--mint);color:var(--c1);padding:20px 22px 18px 34px;position:relative}
+.shop b{display:block;font-family:var(--disp);font-weight:400;font-size:28px;letter-spacing:.06em;line-height:1.2}
+.shop p{font-size:14px;font-weight:500;letter-spacing:.08em}
+.hrs h3{font-size:16px;font-weight:600;margin-bottom:10px;color:var(--porc);letter-spacing:.2em}
+.hr-t{display:flex;flex-direction:column;gap:6px;font-size:14px}
+.hr,.hr-ax{display:grid;grid-template-columns:76px repeat(12,minmax(0,1fr));align-items:center;min-height:22px}
+.hr-d{font-weight:500;color:var(--c5);grid-column:1}
+.hr-bar{height:16px;background:var(--c5)}
+.hr-off{font-size:13px;color:var(--mute);font-weight:500;grid-column:2/-1}
+.hr-now{display:none;font-size:12px;font-weight:600;color:var(--c1);background:var(--mint);padding:0 6px;margin-left:6px}
+.hr.today .hr-d{color:var(--mint)}.hr.today .hr-bar{background:var(--mint)}.hr.today .hr-now{display:inline}
+.hr-ax span{font:500 12px var(--num);color:var(--mute)}
+.hr-ax .a0{grid-column:4}.hr-ax .a1{grid-column:8}.hr-ax .a2{grid-column:12}
+
+/* ---------- 結帳 ---------- */
+.co{width:var(--wrap);margin:150px auto 0}
+.co-hd{display:flex;align-items:flex-end;gap:10px 40px;flex-wrap:wrap}
+.co-flow{display:flex;flex-wrap:wrap;gap:6px;margin:26px 0 30px;counter-reset:st}
+.co-flow li{position:relative;display:flex;align-items:center;gap:12px;background:var(--c2);padding:14px 34px 14px 18px;font-size:16px;font-weight:500;letter-spacing:.08em;color:var(--c5);
+  clip-path:polygon(0 0,calc(100% - 18px) 0,100% 50%,calc(100% - 18px) 100%,0 100%,18px 50%)}
+.co-flow li:first-child{clip-path:polygon(0 0,calc(100% - 18px) 0,100% 50%,calc(100% - 18px) 100%,0 100%);padding-left:16px}
+.co-flow li:nth-child(2){background:var(--c3)}.co-flow li:nth-child(3){background:var(--c4);color:var(--c1)}.co-flow li:last-child{background:var(--mint);color:var(--c1)}
+.co-flow .mono{font-size:22px;font-weight:700;line-height:1}
+.co-lede{font-size:clamp(17px,1.5vw,20px);font-weight:500;color:var(--c5);max-width:32em;line-height:1.65;letter-spacing:.04em;padding-bottom:.5em}
+.co-f{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr) minmax(0,1fr);gap:var(--gap)}
+.co-f>div,.co-f>fieldset{padding:22px 22px 24px}
+.co-lines{background:var(--c5);color:var(--c1)}
+.co-ship{background:var(--c2)}
+.co-who{background:var(--c1)}
+.co-sum{grid-column:1/-1;background:var(--porc);color:var(--c1);display:flex;align-items:center;gap:22px 40px;flex-wrap:wrap}
+.co-out{grid-column:1/-1;background:var(--c1);color:var(--c5)}
+.co-f h3,.co-ship legend{font-size:17px;font-weight:600;margin-bottom:12px;padding:0;letter-spacing:.16em}
+.co-ship legend{float:left;width:100%}
+.co-ship legend+label{clear:both}
+.co-ul{display:flex;flex-direction:column}
+.co-ul li{display:grid;grid-template-columns:62px 1fr auto;gap:2px 12px;align-items:center;padding:8px 0;border-top:1px solid oklch(.29 .125 262 / .2)}
+.co-ul .cr-code{font:500 12px var(--num);color:oklch(.36 .1 262)}
+.co-ul .cr-nm b{font-family:var(--disp);font-weight:400;font-size:18px;letter-spacing:.04em}
+.co-ul .cr-amt{font-weight:700;font-size:18px}
+.co-empty{font-weight:500}
+.co-ship label{display:grid;grid-template-columns:22px 1fr;gap:2px 10px;padding:10px 0;cursor:pointer;border-top:1px solid oklch(.91 .04 245 / .2)}
+.co-ship input{appearance:none;-webkit-appearance:none;width:18px;height:18px;border:2px solid var(--c5);border-radius:50%;margin:5px 0 0;grid-row:span 2}
+.co-ship input:checked{background:var(--mint);border-color:var(--mint);box-shadow:inset 0 0 0 3px var(--c2)}
+.sh-n{font-weight:600;font-size:16px}.sh-f{font-size:14px;color:var(--mute);grid-column:2}
+.co-who label{display:block;font-weight:600;font-size:14px;color:var(--mint);margin-top:10px;letter-spacing:.1em}
+.co-who label:first-of-type{margin-top:0}
+.co-who input,.co-who textarea{width:100%;background:var(--porc);color:var(--c1);border:0;padding:8px 10px;font-size:16px;margin-top:4px;border-radius:0}
+.co-who input[aria-invalid=true]{box-shadow:inset 0 0 0 3px var(--mint)}
+.err{font-size:14px;font-weight:600;color:var(--mint);margin-top:4px}
+.co-sum dl{display:flex;gap:10px 36px;flex-wrap:wrap;align-items:baseline}
+.co-sum dl div{display:flex;align-items:baseline;gap:10px}
+.co-sum dt{font-weight:600;font-size:15px;letter-spacing:.1em}
+.co-sum dd{font:700 28px/1 var(--num)}
+.co-sum .tot dd{font-size:44px}
+.co-sum .u{font:500 14px var(--sans);margin-left:4px}
+::placeholder{color:oklch(.45 .06 262);opacity:1}
+.co-go{margin-left:auto;background:var(--cobalt);color:var(--porc);font-weight:600;font-size:17px;padding:12px 22px;min-height:48px;letter-spacing:.08em}
+.co-sum .err{color:var(--cobalt);flex-basis:100%}
+.co-out pre{font:500 14.5px/1.85 var(--num);letter-spacing:0;white-space:pre-wrap;background:var(--c2);padding:16px 18px;margin:10px 0 14px;overflow-wrap:anywhere}
+.co-out button{background:var(--mint);color:var(--c1);font-weight:600;padding:8px 18px;min-height:42px}
+.co-out p{display:inline-block;margin-left:14px;font-weight:500;color:var(--mint)}
+.co-wait{display:none;grid-column:1/-1;background:var(--c2);color:var(--c5);padding:26px 28px;align-items:flex-start;gap:18px 48px;flex-wrap:wrap}
+.co-wait>div{display:flex;flex-direction:column;align-items:flex-start;gap:18px;flex:1 1 280px}
+.co-eg{flex:1 1 420px;max-width:560px;background:var(--c5);color:var(--c1);padding:16px 20px 18px;margin:0}
+.co-eg figcaption{font-size:13px;font-weight:600;letter-spacing:.16em;color:var(--c3);margin-bottom:6px}
+.co-eg pre{font:500 14.5px/1.85 var(--num);white-space:pre-wrap;letter-spacing:0;overflow-wrap:anywhere}
+.co-wait p{font-size:clamp(18px,1.6vw,22px);font-weight:500;letter-spacing:.04em;line-height:1.55;max-width:18em}
+.co-wait a{box-shadow:inset 0 0 0 2px var(--c5);padding:6px 14px;text-decoration:none;font-weight:600;font-size:15px}
+.co-f[data-empty] .co-wait{display:flex}
+.co-f[data-empty] .co-lines,.co-f[data-empty] .co-ship,.co-f[data-empty] .co-who,.co-f[data-empty] .co-sum{display:none}
+.co-nojs{background:var(--c5);color:var(--c1);padding:22px;font-weight:500;font-size:17px;max-width:40em}
+html.js .co-nojs{display:none}
+html:not(.js) .co-f{display:none}
+
+/* ---------- 頁尾 ---------- */
+.nf{width:var(--wrap);margin-inline:auto}
+.foot{width:var(--wrap);margin:140px auto 0;padding:26px 0 40px;border-top:2px solid var(--c5);display:flex;justify-content:space-between;gap:12px 40px;flex-wrap:wrap;font-size:15px;color:var(--c5)}
+.foot b{font-family:var(--disp);font-weight:400;font-size:20px;color:var(--porc);margin-right:12px;letter-spacing:.06em}
+
+/* ---------- 購物車抽屜 ---------- */
+.cart{margin:0 0 0 auto;height:100dvh;max-height:none;max-width:100vw;width:min(440px,100vw);border:0;padding:0;background:var(--porc);color:var(--c1);--wash:#fff;--ink:var(--c1);--shade:var(--c3);--gnd:transparent;--lite:var(--c4)}
+.cart::backdrop{background:oklch(.22 .1 263 / .55)}
+.cart[open]{animation:drawer-in .22s cubic-bezier(.2,.7,.3,1)}
+.cart-in{display:flex;flex-direction:column;height:100%;padding:20px 22px 22px}
+.cart-hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:2px solid var(--c1)}
+.cart-hd h2{font-family:var(--disp);font-weight:400;font-size:32px;letter-spacing:.06em}
+.cart-hd h2:focus{outline:none}
+.x{width:44px;height:44px;display:grid;place-items:center}
+.x svg{width:20px;height:20px;stroke:currentColor;stroke-width:2.6;fill:none}
+.cart-ul{flex:1;overflow:auto;margin-top:6px}
+.cr{display:grid;grid-template-columns:52px 1fr auto;grid-template-areas:"fig nm amt" "fig q rm";gap:2px 12px;align-items:center;padding:12px 0;border-bottom:1px solid oklch(.22 .1 263 / .15)}
+.cr-fig{grid-area:fig;height:52px;display:flex;align-items:flex-end;justify-content:center}
+.cr-fig svg{max-height:48px;max-width:48px;width:auto;height:auto}
+.cr-nm{grid-area:nm;line-height:1.3}
+.cr-nm b{font-family:var(--disp);font-weight:400;font-size:18px;letter-spacing:.04em}
+.cr-nm small{display:block;font:500 12px var(--num);color:oklch(.36 .1 262)}
+.cr-amt{grid-area:amt;font-weight:700;font-size:19px;text-align:right}
+.cr-q{grid-area:q;display:inline-flex;align-items:center;gap:0;box-shadow:inset 0 0 0 2px var(--c1);justify-self:start}
+.cr-q button{width:34px;height:32px;font-weight:600;font-size:18px;line-height:1}
+.cr-n{min-width:28px;text-align:center;font-weight:700}
+.cr-rm{grid-area:rm;justify-self:end;font-size:13px;font-weight:600;text-decoration:underline;text-underline-offset:.2em;min-height:30px}
+.cart-empty{padding:24px 0;font-size:20px;font-weight:500;letter-spacing:.16em}
+.cart[data-n="0"] .cart-ul,.cart:not([data-n="0"]) .cart-empty{display:none}
+.cart-sum{border-top:2px solid var(--c1);padding-top:12px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:baseline}
+.cart-sum dt{font-weight:600;font-size:14px}.cart-sum dd{font-size:14px;color:oklch(.32 .09 262)}
+.cart-sum .sub dd{font:700 34px/1 var(--num);color:var(--c1)}
+.cart-act{display:flex;gap:8px;margin-top:16px}
+.cart-act .go{flex:1;background:var(--cobalt);color:var(--porc);text-decoration:none;font-weight:600;font-size:17px;display:grid;place-items:center;min-height:50px;letter-spacing:.08em}
+.cart-act button{box-shadow:inset 0 0 0 2px var(--c1);padding:0 16px;font-weight:600;min-height:50px}
+.cart[data-n="0"] .cart-act .go{pointer-events:none;opacity:.45}
+
+/* ---------- 懸停：只有色塊反白、薄荷填滿、一條底線；不位移 ---------- */
+@media (hover:hover) and (pointer:fine){
+  .mark:hover{color:var(--mint)}
+  .cart-btn:hover{background:linear-gradient(225deg,transparent 15px,var(--porc) 15px);box-shadow:inset 0 -3px 0 var(--c1)}
+  .cat-ft .btn:hover{background:var(--mint);color:var(--c1);box-shadow:inset 0 0 0 2px var(--mint)}
+  .add:hover{background:var(--bg);color:var(--fg);box-shadow:inset 0 0 0 2.5px var(--fg)}
+  .rl-b:hover{background:oklch(.91 .04 245 / .16)}
+  .tr-act button:not(.tr-tog):hover,.empty button:hover,.mx-end button:hover,.ch-rm:hover{background:var(--c5);color:var(--c1)}
+  .tr-tog:hover{background:var(--porc)!important}
+  .ch-add:hover{background:var(--porc)}
+  .co-go:hover,.cart-act .go:hover{background:var(--c1)}
+  .co-out button:hover{background:var(--porc)}
+  .co-wait a:hover{background:var(--c5);color:var(--c1)}
+  .cart-act button:hover,.cr-q button:hover,.x:hover{background:var(--c1);color:var(--porc)}
+  .cr-rm:hover{color:var(--c3)}
+  main a:not([class]):hover,.nf a:not([class]):hover,.foot a:not([class]):hover{background:var(--mint);color:var(--c1)}
+}
+
+/* ---------- 動畫 ---------- */
+@keyframes drawer-in{from{translate:100% 0}}
+@keyframes tray-in{from{translate:0 100%}}
+@keyframes rul-draw{from{background-size:9px 0,20px 0}}
+
+/* ---------- 斷點 ---------- */
+@media (min-width:1181px){
+  .mx .it{grid-row:calc(var(--r) + 2) / span var(--rs);grid-column:var(--c) / span var(--cs)}
+  .mx:has(.fg input[value=""]:not(:checked)) .it{grid-row:auto / span var(--rs);grid-column:auto / span var(--cs)}
+}
+@media (max-width:1180px){
+  .mx{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .brand{grid-column:1/span 3}.filt{grid-column:4/span 3}
+  .rules{column-gap:14px}.ru-st{grid-column:6/span 7}.ru-note{grid-column:6/span 7;margin-left:calc(3 * 52px)}
+}
+@media (max-width:860px){
+  :root{--row:194px;--gap:4px}
+  .mx{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .brand{grid-column:1/-1;grid-row:1;padding:6px 2px 22px;grid-template-columns:minmax(0,1fr);grid-template-rows:auto;gap:12px}
+  .filt{grid-column:1/-1;grid-row:2;padding:16px 14px 14px}
+  .s21,.s12{--cs:1;--rs:1}.s22{--cs:2;--rs:1}
+  .s22 .spec{display:none}
+  .fig{min-height:66px;margin-block:6px 4px}.s22 .fig{margin-block:8px 6px}
+  .it{padding:11px 11px 10px 13px;grid-template-rows:auto auto minmax(66px,1fr) auto auto}
+  .s22{padding:14px 14px 12px 16px}.s22 .nm{font-size:24px}.s22 .ds{font-size:14px}
+  .s21 .nm,.s12 .nm{font-size:19px}
+  .s21 .pr{font-size:27px}.s22 .pr{font-size:44px}
+  .top{gap:10px 12px;flex-wrap:wrap}
+  .nav{order:3;width:100%}.nav ul{gap:2px 18px}.nav a{font-size:14px}
+  .cart-btn{font-size:14px}
+  .brand h1{font-size:clamp(76px,24vw,124px);max-width:none}
+  .tele{grid-row:auto;flex-direction:row;flex-wrap:wrap;gap:0 1em;font-size:17px;letter-spacing:.12em}
+  .tele-s{font-size:14px;gap:2px 18px}
+  .fdet>summary{display:flex;align-items:center;gap:12px;min-height:46px;padding:0 12px 0 14px;background:linear-gradient(225deg,transparent 9px,var(--mint3) 9px);cursor:pointer;list-style:none;font-weight:600;font-size:15px}
+  .fdet>summary::-webkit-details-marker{display:none}
+  .fdet>summary .fs-cur{font-weight:500;font-size:14px;color:var(--c2);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .fdet>summary .fs-ch{margin-left:auto;width:12px;height:12px;flex:none;border-right:2.5px solid var(--c1);border-bottom:2.5px solid var(--c1);rotate:45deg;translate:0 -3px}
+  .fdet[open]>summary .fs-ch{rotate:-135deg;translate:0 3px}
+  .fdet[open]>summary{margin-bottom:12px}
+  .fl-ft{display:none}.fdet[open]+.fl-ft{display:flex}
+  .filt{gap:8px}.filt h2{font-size:34px}.cnt-n{font-size:42px}
+  .fg{grid-template-columns:40px minmax(0,1fr);gap:6px}
+  .fg legend{font-size:12.5px;letter-spacing:.06em}
+  .chip{font-size:14px;padding:3px 11px 3px 10px;min-height:36px}
+  .cmp-t{--lh:150px;--s:.31}
+  .cmp-t col.c0{width:58px}
+  .cmp-t th,.cmp-t td{padding:6px 6px;font-size:13px}
+  .cmp-t tbody th{font-size:12px;letter-spacing:.04em;white-space:normal}
+  .ch-stage{margin:0 -6px}.rul{margin-right:-6px}
+  .ch-nm{font-size:15px}.cmp-t .v-pr{font-size:19px}
+  .rul-l{right:22px}
+  .ch-add{font-size:13px;padding:6px 8px}
+  .tr-bar{gap:8px 12px;min-height:56px}.tr-act{margin-left:auto}
+  .tr-bar h2{font-size:16px}.tr-n{font-size:18px}
+  .tr-th{order:5;width:100%}.tray[data-open] .tr-th,.tr-cart{display:none}
+  .tr-act button{padding:5px 10px;min-height:40px}
+  .tr-hint{order:6;width:100%}
+  .rl{margin-top:64px;width:auto;margin-inline:0;padding-inline:16px}
+  .rl-hd{gap:6px 20px}.rl-hd h2{font-size:50px!important}.rl-hd .hint2{margin-left:0}
+  .rl-hd{margin-bottom:14px}.rl-hd .hint2{margin-left:0}
+  .rl-sc{padding-top:14px;overflow-x:auto;overscroll-behavior-x:contain;margin-inline:-16px;padding-inline:16px;scrollbar-width:thin}
+  .rl-ch{--s:.27px;width:max-content;padding-left:48px}
+  .rl-t{width:40px}
+  .rules{margin-top:76px;grid-template-columns:minmax(0,1fr);row-gap:0}
+  .ru-big,.ru-st,.ru-note{grid-column:1;grid-row:auto}
+  .ru-big{flex-direction:column;align-items:flex-start;gap:12px}.ru-big p{max-width:none;padding-bottom:0}
+  .ru-big .ru-n{font-size:clamp(140px,42vw,172px)}
+  .ru-st{margin-top:24px;gap:8px}.ru-st li{margin-left:calc(var(--i) * 14px)}
+  .ru-st .ru-n{font-size:34px}.ru-st p{font-size:15px;letter-spacing:.04em}
+  .ru-note{margin:24px 0 0}
+  .store{margin-top:76px;grid-template-columns:minmax(0,1fr) 44px;grid-template-rows:auto 52px auto auto auto;--R:18px}
+  .q-tl{grid-column:1;grid-row:1;padding-right:16px;min-height:0}
+  .st-fig{display:none}
+  .q-tl .st-addr{max-width:none}
+  .rd-v{grid-column:2;grid-row:1/3}
+  .rd-h{grid-column:1/-1;grid-row:2}
+  .zebra{grid-column:2;grid-row:2}
+  .cb.tr,.cb.br{display:none}
+  .q-br{grid-column:1/-1;grid-row:3;padding-top:0}
+  .q-br .st-dl{padding-left:0}.hrs{padding-right:0}
+  .q-tr{grid-column:1/-1;grid-row:4;padding:20px 0 0}
+  .st-dl{gap:6px 14px;font-size:15px}
+  .q-bl{grid-column:1/-1;grid-row:5;padding:16px 0 0}
+  .rd-v .rd-n{font-size:13px;letter-spacing:.2em}
+  .shop{padding-left:22px}
+  .co{margin-top:76px}
+  .co-flow{margin:18px 0 20px}
+  .co-flow{display:grid;grid-template-columns:minmax(0,1fr);gap:5px}
+  .co-flow li,.co-flow li:first-child{font-size:15px;gap:10px;padding:9px 18px 20px 14px;letter-spacing:.04em;clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),50% 100%,0 calc(100% - 12px))}
+  .co-flow li:last-child{padding-bottom:9px;clip-path:none}
+  .co-f{grid-template-columns:1fr}
+  .co-go{margin-left:0;width:100%}
+  .co-eg{display:none}
+  .foot{margin-top:60px}
+  /* X10：畫面不變，可點區往外長到 ≥44px（::after；格距 4–5px，壓不到鄰格的控制項） */
+  .nav a,.cart-btn,.add,.reset,.cat-ft .btn,.tr-act button,.empty button,.mx-end button,.ch-rm,.ch-add,.cr-q button,.cr-rm,.rl-b{position:relative}
+  .nav a::after,.cart-btn::after,.add::after,.reset::after,.cat-ft .btn::after,.tr-act button::after,.empty button::after,.mx-end button::after,.ch-rm::after,.ch-add::after,.cr-q button::after,.cr-rm::after{content:"";position:absolute;inset:var(--hy,-5px) var(--hx,-5px)}
+  .nav a{--hy:-6px;--hx:-8px}.ch-rm,.cr-rm{--hy:-8px}.cr-q button{--hy:-6px}
+  /* 同一把尺的剪影＝同比例的實物，寬度不能放大；窄的往兩側留白（li 加內距），再讓點擊區長到 44px，高度不夠的往上長 */
+  .rl-it{padding-inline:max(0px,calc((44px - var(--w) * var(--s)) / 2 - 4px))}
+  .rl-b::after{content:"";position:absolute;inset-inline:min(0px,calc((var(--w) * var(--s) - 44px) / 2));inset-block-start:min(0px,calc(var(--h) * var(--s) - 44px));inset-block-end:0}
+}
+
+/* ---------- 減少動態：沒有飛行、沒有滑入、沒有刻度長出來；只有狀態切換 ---------- */
+@media (prefers-reduced-motion:reduce){
+  html.js .tray.in,.cart[open],.rul.draw{animation:none}
+}
+
+/* ---------- 列印：白底黑字，型錄變成清單 ---------- */
+@media print{
+  html,body{background:#fff!important;color:#000}
+  .top .nav,.cart-btn,.filt,.cat-ft,.tray,.cart,.fly,.add,.cmp,.co,.rl,.say{display:none!important}
+  .brand h1,.tele,.tele-s,.tele-s .mono{color:#000}
+  .mx{grid-template-columns:repeat(4,1fr);grid-auto-rows:auto;gap:6pt}
+  .brand{grid-column:1/-1;grid-row:auto;min-height:0}
+  .mx .it{grid-column:auto;grid-row:auto;background:none!important;color:#000;border:1pt solid #000;break-inside:avoid;--wash:#fff;--ink:#000;--shade:#666;--gnd:transparent;--pr:#000;--sub:#333;--fg:#000}
+  .fig{min-height:70pt}.fig::before{display:none}
+  .it .pr{font-size:20pt}
+  .ru-n,.ru-big p,.ru-st p,.ru-note,.store,.st-dl dd,.st-dl dt,.foot,.foot b,.rules h2,.store h2,.st-addr{color:#000!important}
+  .rd,.zebra,.shop,.cb{background:none!important;border:1pt solid #000;color:#000}
+  .hr-bar{background:#000}
+  a{text-decoration:underline}
+}
+
+html:not(.js) #catalog:has(input[name=cat][value=cup]:checked) .it:not([data-cat=cup]),
+html:not(.js) #catalog:has(input[name=cat][value=pot]:checked) .it:not([data-cat=pot]),
+html:not(.js) #catalog:has(input[name=cat][value=bowl]:checked) .it:not([data-cat=bowl]),
+html:not(.js) #catalog:has(input[name=cat][value=basket]:checked) .it:not([data-cat=basket]),
+html:not(.js) #catalog:has(input[name=cat][value=cloth]:checked) .it:not([data-cat=cloth]),
+html:not(.js) #catalog:has(input[name=cat][value=lamp]:checked) .it:not([data-cat=lamp]),
+html:not(.js) #catalog:has(input[name=cat][value=desk]:checked) .it:not([data-cat=desk]),
+html:not(.js) #catalog:has(input[name=cat][value=vase]:checked) .it:not([data-cat=vase]),
+html:not(.js) #catalog:has(input[name=mat][value=clay]:checked) .it:not([data-mat=clay]),
+html:not(.js) #catalog:has(input[name=mat][value=glass]:checked) .it:not([data-mat=glass]),
+html:not(.js) #catalog:has(input[name=mat][value=wood]:checked) .it:not([data-mat=wood]),
+html:not(.js) #catalog:has(input[name=mat][value=metal]:checked) .it:not([data-mat=metal]),
+html:not(.js) #catalog:has(input[name=mat][value=fiber]:checked) .it:not([data-mat=fiber]),
+html:not(.js) #catalog:has(input[name=mat][value=paper]:checked) .it:not([data-mat=paper]),
+html:not(.js) #catalog:has(input[name=band][value=lo]:checked) .it:not([data-band=lo]),
+html:not(.js) #catalog:has(input[name=band][value=mid]:checked) .it:not([data-band=mid]),
+html:not(.js) #catalog:has(input[name=band][value=hi]:checked) .it:not([data-band=hi]),
+html:not(.js) #catalog:has(input[name=size][value=s]:checked) .it:not([data-size=s]),
+html:not(.js) #catalog:has(input[name=size][value=m]:checked) .it:not([data-size=m]),
+html:not(.js) #catalog:has(input[name=size][value=l]:checked) .it:not([data-size=l]){display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false"><defs><symbol id="g-k12" viewBox="0 0 300 330" overflow="visible"><defs><g id="gb-k12"><path d="M298 170.2C297.6 172.5 296 179.1 295.4 184.1C294.9 189.1 295.7 182.2 294.7 199.9C293.7 217.5 291.4 269.8 289.4 290C287.4 310.2 285.2 314.4 283 321C280.7 327.7 277 328.4 275.9 329.9L24.5 330.2C23.3 328.6 19.8 327.6 17.3 320.9C14.7 314.2 11.4 309.8 9.3 289.7C7.3 269.6 5.9 217.9 5.1 200.3C4.2 182.7 4.9 189.2 4.3 184.1C3.8 179.1 2.2 172.3 1.8 170Z"/><path d="M48.5 186.2C48.6 182.6 48.4 171.3 49.1 164.5C49.7 157.7 50.8 151.4 52.2 145.3C53.6 139.3 55.4 133.7 57.6 128.4C59.7 123 62.2 118.1 64.9 113.4C67.7 108.8 70.8 104.5 74 100.6C77.3 96.6 80.9 93 84.6 89.7C88.4 86.4 92.3 83.5 96.4 80.8C100.6 78.2 104.9 75.9 109.3 73.9C113.7 71.9 118.3 70.3 122.9 69C127.5 67.6 132.2 66.7 137 66C141.7 65.3 146.5 65 151.3 65C156.1 65 160.9 65.3 165.6 66C170.4 66.7 175.1 67.6 179.7 69C184.2 70.3 188.8 71.9 193.1 73.9C197.5 75.9 201.8 78.2 205.8 80.8C209.9 83.4 213.8 86.4 217.4 89.7C221.1 93 224.6 96.6 227.8 100.5C231 104.5 233.9 108.7 236.6 113.4C239.2 118 241.6 122.9 243.6 128.2C245.7 133.6 247.4 139.2 248.7 145.2C250 151.2 250.9 157.5 251.4 164.3C251.9 171.1 251.5 182.4 251.5 186L264.5 186C264.5 182.2 264.9 170.7 264.4 163.4C263.8 156.2 262.8 149.1 261.4 142.5C260 135.9 258.1 129.6 255.8 123.6C253.6 117.7 250.9 112.1 247.9 106.9C244.9 101.7 241.5 96.8 237.9 92.3C234.3 87.9 230.3 83.7 226.1 80C222 76.3 217.5 72.9 212.9 69.9C208.3 66.9 203.4 64.3 198.5 62.1C193.6 59.8 188.4 58 183.3 56.5C178.1 55 172.8 53.9 167.4 53.1C162.1 52.4 156.7 52 151.3 52C145.9 52 140.5 52.4 135.2 53.1C129.9 53.9 124.5 55 119.3 56.5C114.1 58 108.9 59.8 104 62.1C99 64.3 94.1 66.9 89.4 69.9C84.8 72.9 80.3 76.2 76 80C71.8 83.7 67.7 87.8 64 92.3C60.3 96.8 56.8 101.6 53.8 106.8C50.7 112 47.9 117.6 45.5 123.5C43.1 129.4 41.1 135.7 39.5 142.4C38 149 36.8 156 36.1 163.3C35.4 170.5 35.6 182.1 35.5 185.8Z"/></g></defs><g class="gp"><path class="gg" d="M-40.7 332.3L-0.1 334.5L40.5 335.2L81.1 335.1L121.7 335.1L162.3 334.6L202.8 333.7L243.4 334.4L284 332.8L284 332.8L243.4 331L202.8 330.5L162.2 329.7L121.6 331.5L81.1 329.9L40.5 331.3L-0.1 331.1L-40.7 332.3ZM58.6 336L79.5 336L100.4 336.9L121.4 337.1L142.3 336.7L163.2 336.7L184.1 337L205.1 335.9L226 335L226 335L205 334L184.1 334.8L163.2 334L142.3 334L121.3 334.6L100.5 334.2L79.5 334.3L58.6 336Z"/><use href="#gb-k12" class="gw"/><path class="gs" d="M189.6 175.8L279.7 178.3L279.7 181.2L189.6 176.3ZM176.6 181.9L282.6 185.2L282.6 187.6L176.6 182.3ZM172 187.9L279.7 191.2L279.7 193.7L172 188.3ZM180.9 193.9L276.8 196.9L276.8 199.1L180.9 194.3ZM172.1 199.9L278.5 203.2L278.5 205.7L172.1 200.3ZM183.1 205.8L275.7 208.1L275.7 211.6L183.1 206.4ZM186.5 211.9L275.8 214.4L275.8 217.1L186.5 212.3ZM179.5 217.8L284.4 220.9L284.4 223.9L179.5 218.4ZM195.1 223.8L274.6 225.9L274.6 228.8L195.1 224.4ZM170.1 229.9L282.7 233.4L282.7 236.1L170.1 230.4ZM165.7 235.9L277.2 239.5L277.2 241.8L165.7 236.3ZM164.8 241.8L274.1 245L274.1 248.1L164.8 242.4ZM179.3 247.9L280.3 250.7L280.3 253.7L179.3 248.4ZM172.4 253.9L279.2 257.2L279.2 259.8L172.4 254.4ZM171 259.9L277.9 263.2L277.9 265.8L171 260.4ZM170.8 265.9L281.4 269.5L281.4 271.8L170.8 266.3ZM176.9 271.8L280.1 274.6L280.1 278.1L176.9 272.5ZM190.8 277.9L277.6 280.3L277.6 283.1L190.8 278.4ZM165.7 283.9L279.3 287.2L279.3 290.3L165.7 284.4ZM174.9 289.9L279 292.8L279 296L174.9 290.4ZM185.9 295.9L269.3 298L269.3 301.2L185.9 296.4ZM99.1 301.9L276 307.8L276 310.9L99.1 302.4ZM117.3 307.9L275.2 312.9L275.2 316.3L117.3 308.5ZM114.8 313.9L276.5 319.5L276.5 322.1L114.8 314.4ZM117.6 320L271.9 325.4L271.9 327.6L117.6 320.4ZM119.4 325.9L271 331.1L271 333.7L119.4 326.4ZM158.3 56.6L180 55.2L180 57.7L158.3 57ZM162.2 63.1L196.3 61.2L196.3 64.6L162.2 63.7ZM107.4 69.8L117.2 68.7L117.2 71L107.4 70.2ZM201.1 69.8L210.6 68.7L210.6 71L201.1 70.2ZM96 76.4L101.4 75.3L101.4 77.7L96 76.8ZM212.2 76.3L219.7 74.8L219.7 78.1L212.2 76.9ZM41.2 162L46.9 161L46.9 163.2L41.2 162.4ZM255.2 161.9L261.9 160.4L261.9 163.8L255.2 162.5ZM40 168.5L46.4 167L46.4 170.3L40 169ZM256.8 168.5L262.2 167.2L262.2 170.1L256.8 169ZM40.2 175.1L46.2 174L46.2 176.5L40.2 175.6ZM256.6 175L262.2 173.7L262.2 176.8L256.6 175.6ZM39.7 181.7L46.1 180.6L46.1 183L39.7 182.1ZM255.7 181.7L262.1 180.5L262.1 183.1L255.7 182.1Z"/><g class="gc" stroke-width="2.5"><path d="M6 186C30 186.5 102 189 150 189C198 189 270 186.5 294 186"/><path d="M10.4 197.6l17.2 0M38.4 198.2l17.8 -0.1M66.4 198.2l17.6 -0.8M94.4 197.4l16.5 -0.5M122.4 198.6l16.4 0.3M150.4 197.8l16.6 0M178.4 197.4l18.9 0.2M206.4 197.8l17.4 -0.5M234.4 197.4l15.4 0.2M262.4 198.1l18.1 0.8"/><path d="M22.6 210.3l15.8 0.5M50.6 210.6l16.2 0.2M78.6 211.5l16.1 0.6M106.6 210.9l15.8 0.7M134.6 211.1l17.4 0.4M162.6 211.5l18.3 0.7M190.6 210.7l15.1 0.2M218.6 210.5l16.5 -0.5M246.6 211.3l17.3 -0.1M274.6 210.5l13.4 0.3"/><path d="M9.3 224.3l16 -0.6M37.3 224.4l17.8 0.5M65.3 224l15.8 -0.5M93.3 224.7l17.9 0.1M121.3 223.8l18.2 0M149.3 223.9l18 0.2M177.3 223.9l18.1 -0.2M205.3 223.8l15.8 -0.7M233.3 224.2l15.1 0.2M261.3 224l18 -0.4"/><path d="M24.4 237.6l18.3 0.4M52.4 237l18.4 -0.6M80.4 236.9l16.1 -0.3M108.4 237.1l15.2 -0.5M136.4 237.6l17.8 -0.4M164.4 237.5l17.6 0M192.4 236.3l18.6 -0.5M220.4 236.8l17.3 0.5M248.4 236.4l16.6 -0.2M276.4 237.7l10.1 0.8"/><path d="M9.8 250.2l16.2 0.5M37.8 249.6l18.8 0.4M65.8 249.9l18.9 0.7M93.8 249.6l16.3 -0.2M121.8 250.5l16.4 -0.7M149.8 249.7l16.8 0.3M177.8 250.2l15.9 0.5M205.8 249.5l15.1 0.7M233.8 249.4l15.2 -0.1M261.8 250.5l19 -0.2"/><path d="M26.3 262.4l15.7 -0.4M54.3 263.5l17.3 0.8M82.3 263.2l16.5 0.1M110.3 263.3l16.6 0.7M138.3 263.7l17.4 0.7M166.3 262.5l15.6 0M194.3 263l16 0.2M222.3 263l15.1 0.3M250.3 262.6l15.5 -0.8M278.3 263.5l6.7 -0.6"/><path d="M11.7 275.4l16.6 -0.1M39.7 275.3l17.9 -0.1M67.7 276.5l15.5 0.1M95.7 275.4l18.6 -0.7M123.7 276.1l16.6 -0.5M151.7 275.7l15.2 0.6M179.7 276.7l18.5 0.3M207.7 276.3l16.7 0.5M235.7 276.4l16.4 -0.7M263.7 276.1l15.4 -0.3"/><path d="M26.7 289.2l18 0.6M54.7 289.6l16.4 0.4M82.7 289.3l18.8 0.2M110.7 288.8l18.2 0.4M138.7 289.4l16.1 -0.5M166.7 289l16.3 -0.7M194.7 288.6l18.5 -0.5M222.7 289.3l18 -0.7M250.7 289.3l18 -0.4M278.7 288.7l4.8 0.2"/><path d="M18.3 302.4l15.1 0.1M46.3 301.8l15.9 -0.2M74.3 302.1l15.7 0M102.3 302.2l15.2 0M130.3 301.9l15.8 -0.2M158.3 302l17.4 0.5M186.3 301.7l18.3 0.7M214.3 302.5l18.8 -0.3M242.3 302.6l18.3 -0.4M270.3 302.2l10.6 0.3"/><path d="M32.5 314.7l16.7 -0.4M60.5 314.4l18.9 0.8M88.5 315.6l18.8 0.5M116.5 315l18.5 0.5M144.5 315.2l17.3 0.5M172.5 315l18.7 -0.8M200.5 314.8l18.8 0.7M228.5 314.4l15.9 0.8M256.5 315.3l16.7 -0.5"/><path d="M36 178l12 -4"/><path d="M36 172l12 -4"/><path d="M36 166l12 -4"/><path d="M36 160l12 -4"/><path d="M252 178l12 -4"/><path d="M252 172l12 -4"/><path d="M252 166l12 -4"/><path d="M252 160l12 -4"/></g><use href="#gb-k12" class="gk" stroke-width="3.3" stroke-dasharray="993.9 6.2 2319.1"/><use href="#gb-k12" class="gk" stroke-width="7.3" stroke-dasharray="20.5 37.9 35.5 21.1 56.5 56.3 50.1 21.6 42.9 55.4 23.2 23.6 27.9 46.5 32 51.8 15 31.7 19.9 29.5 46.2 19.8 28.4 57.3 56.5 15.4 19.5 65.5 48.9 39.4 37.7 32.8 42.9 47.5 21.7 24.8 26.8 22.2 35.1 24.6 55.5 29.8 44.6 20.9 27.8 18.4 43.5 34.5" stroke-dashoffset="28.9"/></g><use href="#gb-k12" class="gh"/></symbol><symbol id="g-k01" viewBox="0 0 120 95" overflow="visible"><defs><g id="gb-k01"><path d="M84.2 -0.1C84.3 1 84.8 1.2 84.7 6.2C84.5 11.2 83.5 21.1 83.2 30.1C83 39.1 82.9 51.7 83 60C83.1 68.4 84.2 75.6 83.9 80.2C83.6 84.9 82 86.2 81.2 88C80.4 89.8 79.6 89.8 79.3 91C78.9 92.1 79.1 94.3 79.1 95L9 95C9 94.4 8.8 92.3 8.6 91.2C8.3 90 8.2 90 7.5 88.2C6.8 86.3 4.8 84.5 4.3 79.8C3.9 75.1 4.5 68.4 4.6 60.1C4.6 51.8 5 39.2 4.6 30.2C4.3 21.2 2.7 10.9 2.6 5.9C2.4 0.9 3.5 1.1 3.7 0.1Z"/><path d="M82.1 23.5C83.2 23.5 86.7 23.1 88.6 23.3C90.6 23.4 92.2 23.8 93.7 24.3C95.3 24.8 96.7 25.5 98 26.4C99.3 27.2 100.5 28.2 101.5 29.3C102.6 30.4 103.5 31.6 104.4 32.9C105.2 34.3 105.9 35.7 106.5 37.3C107.1 38.8 107.5 40.4 107.8 42C108.1 43.7 108.3 45.4 108.3 47C108.4 48.7 108.3 50.4 108 52.1C107.8 53.7 107.4 55.3 106.9 56.9C106.4 58.4 105.7 59.9 104.9 61.3C104.1 62.6 103.2 63.9 102.2 65.1C101.1 66.2 99.9 67.3 98.6 68.2C97.3 69.1 95.9 69.8 94.2 70.4C92.6 71 90.9 71.4 88.9 71.6C86.8 71.8 83.2 71.5 82.1 71.5L81.9 78.5C83.2 78.5 87.1 78.9 89.5 78.7C91.9 78.5 94.4 78 96.6 77.3C98.7 76.5 100.8 75.5 102.6 74.4C104.5 73.2 106.2 71.8 107.6 70.2C109.1 68.7 110.4 67 111.5 65.2C112.6 63.4 113.5 61.4 114.2 59.4C114.9 57.5 115.4 55.4 115.8 53.3C116.2 51.2 116.3 49.1 116.3 47C116.3 44.8 116.2 42.7 115.8 40.6C115.5 38.5 114.9 36.4 114.2 34.4C113.5 32.4 112.6 30.4 111.5 28.6C110.4 26.8 109.2 25 107.7 23.4C106.2 21.8 104.6 20.4 102.7 19.1C100.8 17.9 98.8 16.8 96.6 16C94.4 15.3 91.9 14.7 89.4 14.4C87 14.2 83.2 14.5 81.9 14.5Z"/></g></defs><g class="gp"><path class="gg" d="M2.9 96.1L13.9 96.4L24.9 96.6L35.9 96.9L46.9 97.1L57.9 96.8L68.9 96.4L79.9 96.7L90.9 95.8L90.9 95.8L79.9 95.5L68.9 94.9L57.9 95.5L46.9 95.2L35.9 95.3L24.9 95.2L13.9 95.2L2.9 96.1ZM20.5 97.2L29.2 97.4L37.8 97.6L46.4 97.5L55.1 97.8L63.7 97.4L72.4 97.1L81 97.2L89.6 96.9L89.6 96.9L81 96.5L72.3 96.4L63.7 96.5L55.1 96.6L46.4 96.7L37.8 96.8L29.2 96.7L20.5 97.2Z"/><use href="#gb-k01" class="gw"/><path class="gs" d="M51.7 1.6L80.5 2.1L80.5 3L51.7 1.7ZM54.1 4.2L79.2 4.6L79.2 5.5L54.1 4.3ZM53.9 6.7L79.4 7.1L79.4 8.1L53.9 6.9ZM55.9 9.3L79.4 9.7L79.4 10.6L55.9 9.4ZM48.5 11.9L78.8 12.4L78.8 13.4L48.5 12ZM52.2 14.4L80.8 14.8L80.8 16L52.2 14.6ZM48.9 17L80 17.5L80 18.6L48.9 17.2ZM58.1 19.6L79.7 19.9L79.7 20.8L58.1 19.7ZM52.1 22.1L80.7 22.5L80.7 23.7L52.1 22.3ZM52.3 24.7L80.1 25.2L80.1 26.2L52.3 24.9ZM57.2 27.3L80.1 27.6L80.1 28.5L57.2 27.4ZM49.9 29.8L79.6 30.4L79.6 31.3L49.9 30ZM56.4 32.4L80.6 32.8L80.6 33.8L56.4 32.6ZM53.7 35L78.5 35.4L78.5 36.3L53.7 35.2ZM51.4 37.5L78 38L78 39L51.4 37.7ZM52.4 40.1L78 40.5L78 41.5L52.4 40.3ZM56.7 42.7L80.3 43L80.3 44L56.7 42.9ZM54.9 45.2L79.6 45.6L79.6 46.6L54.9 45.4ZM55 47.8L79.4 48.2L79.4 49.2L55 48ZM50.6 50.4L78.1 50.9L78.1 51.8L50.6 50.6ZM57 52.9L77.9 53.1L77.9 54.3L57 53.2ZM55 55.5L79.7 55.8L79.7 57L55 55.7ZM50.3 58.1L78.7 58.5L78.7 59.7L50.3 58.3ZM48.2 60.6L80.2 61.2L80.2 62.4L48.2 60.9ZM49.3 63.2L78.8 63.7L78.8 64.8L49.3 63.4ZM54.7 65.8L78 66.2L78 67L54.7 66ZM52.5 68.4L79.9 68.9L79.9 69.8L52.5 68.5ZM51.7 70.9L80.5 71.4L80.5 72.5L51.7 71.1ZM53.8 73.5L80 73.9L80 75L53.8 73.7ZM48.1 76.1L81.2 76.7L81.2 77.8L48.1 76.3ZM31.8 78.6L79.6 79.6L79.6 80.9L31.8 78.8ZM29.8 81.2L81.1 82.4L81.1 83.5L29.8 81.4ZM33 83.8L78.1 84.7L78.1 86L33 84ZM31.5 86.4L79 87.5L79 88.4L31.5 86.5ZM34 88.9L78.3 90L78.3 90.9L34 89.1ZM30.8 91.5L75.6 92.6L75.6 93.5L30.8 91.7ZM92.1 16.1L96.4 15.9L96.4 17L92.1 16.3ZM94.4 18.4L100.4 18.2L100.4 19.1L94.4 18.5ZM95.9 20.6L103.9 20.4L103.9 21.6L95.9 20.8ZM98.4 22.8L105.6 22.6L105.6 23.7L98.4 23ZM104.7 25L108.3 24.7L108.3 25.8L104.7 25.2ZM105.8 27.2L109.8 27L109.8 27.9L105.8 27.4ZM108 29.4L111.2 29.2L111.2 30.1L108 29.6ZM110 31.6L112.3 31.2L112.3 32.4L110 31.8ZM110.6 33.8L113.2 33.5L113.2 34.6L110.6 34ZM111.1 36.1L113.9 35.8L113.9 36.7L111.1 36.2ZM112 38.3L114.5 38L114.5 38.9L112 38.5ZM112.1 40.5L114.9 40.1L114.9 41.3L112.1 40.7ZM113 42.7L115.2 42.4L115.2 43.3L113 42.9ZM113.6 44.9L115.4 44.6L115.4 45.6L113.6 45.1ZM113.4 47.1L115.4 46.8L115.4 47.8L113.4 47.3ZM112.9 49.3L115.4 49L115.4 50.1L112.9 49.5ZM112.9 51.6L115.2 51.3L115.2 52.1L112.9 51.7ZM112.6 53.8L114.8 53.4L114.8 54.5L112.6 54ZM112.2 56L114.3 55.7L114.3 56.6L112.2 56.2ZM111.7 58.2L113.7 58L113.7 58.8L111.7 58.4ZM110.9 60.4L112.9 60L112.9 61.2L110.9 60.6ZM109.9 62.6L112 62.3L112 63.2L109.9 62.8ZM108.2 64.8L110.8 64.4L110.8 65.6L108.2 65ZM106.1 67.1L109.3 66.8L109.3 67.7L106.1 67.2ZM100.3 69.3L107.5 69.2L107.5 70L100.3 69.4ZM95.5 71.4L105.4 71.3L105.4 72.6L95.5 71.7ZM88.8 73.7L102.7 73.9L102.7 74.7L88.8 73.8ZM88.8 75.9L98.8 75.9L98.8 76.8L88.8 76.1Z"/><path class="gs" d="M9.1 79a0.5 0.4 0 1 0 1.1 0a0.5 0.4 0 1 0 -1.1 0ZM53.8 54.1a0.7 0.5 0 1 0 1.3 0a0.7 0.5 0 1 0 -1.3 0ZM6.3 51.9a0.6 0.6 0 1 0 1.2 0a0.6 0.6 0 1 0 -1.2 0ZM34 91.7a0.5 0.5 0 1 0 1 0a0.5 0.5 0 1 0 -1 0ZM51 53.4a0.5 0.5 0 1 0 1 0a0.5 0.5 0 1 0 -1 0ZM74.6 56.4a0.4 0.3 0 1 0 0.8 0a0.4 0.3 0 1 0 -0.8 0ZM6.1 41.6a0.6 0.4 0 1 0 1.2 0a0.6 0.4 0 1 0 -1.2 0ZM76.8 43.3a0.7 0.5 0 1 0 1.3 0a0.7 0.5 0 1 0 -1.3 0ZM52.5 62.3a0.4 0.4 0 1 0 0.9 0a0.4 0.4 0 1 0 -0.9 0ZM77.7 88.5a0.6 0.5 0 1 0 1.2 0a0.6 0.5 0 1 0 -1.2 0ZM11.5 60.8a0.4 0.3 0 1 0 0.8 0a0.4 0.3 0 1 0 -0.8 0ZM53.9 74.7a0.5 0.3 0 1 0 1 0a0.5 0.3 0 1 0 -1 0ZM64.6 51.1a0.7 0.5 0 1 0 1.4 0a0.7 0.5 0 1 0 -1.4 0ZM66.3 56a0.4 0.4 0 1 0 0.9 0a0.4 0.4 0 1 0 -0.9 0ZM70 86.2a0.6 0.4 0 1 0 1.1 0a0.6 0.4 0 1 0 -1.1 0ZM18.6 80.3a0.5 0.4 0 1 0 0.9 0a0.5 0.4 0 1 0 -0.9 0ZM53.4 58.5a0.6 0.4 0 1 0 1.2 0a0.6 0.4 0 1 0 -1.2 0ZM28.6 59.6a0.8 0.5 0 1 0 1.5 0a0.8 0.5 0 1 0 -1.5 0ZM13 49.2a0.7 0.5 0 1 0 1.3 0a0.7 0.5 0 1 0 -1.3 0ZM7.2 79.8a0.5 0.4 0 1 0 0.9 0a0.5 0.4 0 1 0 -0.9 0ZM40 43.4a0.6 0.5 0 1 0 1.3 0a0.6 0.5 0 1 0 -1.3 0ZM75.2 77a0.6 0.5 0 1 0 1.2 0a0.6 0.5 0 1 0 -1.2 0ZM34.5 70.5a0.4 0.4 0 1 0 0.9 0a0.4 0.4 0 1 0 -0.9 0ZM16.7 79.6a0.6 0.4 0 1 0 1.2 0a0.6 0.4 0 1 0 -1.2 0ZM20 65.7a0.4 0.4 0 1 0 0.8 0a0.4 0.4 0 1 0 -0.8 0ZM24.3 44.9a0.5 0.4 0 1 0 0.9 0a0.5 0.4 0 1 0 -0.9 0ZM60.7 56a0.6 0.5 0 1 0 1.3 0a0.6 0.5 0 1 0 -1.3 0ZM46.8 76.3a0.7 0.5 0 1 0 1.3 0a0.7 0.5 0 1 0 -1.3 0ZM37.8 78.2a0.4 0.4 0 1 0 0.9 0a0.4 0.4 0 1 0 -0.9 0ZM42.6 79.2a0.7 0.5 0 1 0 1.4 0a0.7 0.5 0 1 0 -1.4 0ZM55.4 90.5a0.7 0.6 0 1 0 1.3 0a0.7 0.6 0 1 0 -1.3 0ZM29.2 74.3a0.6 0.6 0 1 0 1.2 0a0.6 0.6 0 1 0 -1.2 0ZM17.1 35.8a0.8 0.6 0 1 0 1.5 0a0.8 0.6 0 1 0 -1.5 0ZM58.4 68.6a0.4 0.4 0 1 0 0.9 0a0.4 0.4 0 1 0 -0.9 0ZM62.6 46.2a0.6 0.5 0 1 0 1.1 0a0.6 0.5 0 1 0 -1.1 0ZM111.2 44.5a0.6 0.5 0 1 0 1.1 0a0.6 0.5 0 1 0 -1.1 0ZM111.5 54.4a0.6 0.5 0 1 0 1.1 0a0.6 0.5 0 1 0 -1.1 0ZM104.4 64.3a0.6 0.4 0 1 0 1.2 0a0.6 0.4 0 1 0 -1.2 0ZM113.8 45.1a0.6 0.5 0 1 0 1.2 0a0.6 0.5 0 1 0 -1.2 0ZM113.3 47.3a0.5 0.5 0 1 0 1 0a0.5 0.5 0 1 0 -1 0ZM109.3 41.3a0.6 0.4 0 1 0 1.1 0a0.6 0.4 0 1 0 -1.1 0ZM113.9 49.3a0.6 0.5 0 1 0 1.3 0a0.6 0.5 0 1 0 -1.3 0ZM97.1 76.1a0.4 0.4 0 1 0 0.9 0a0.4 0.4 0 1 0 -0.9 0ZM110 54.2a0.4 0.3 0 1 0 0.8 0a0.4 0.3 0 1 0 -0.8 0ZM108 37.8a0.4 0.3 0 1 0 0.8 0a0.4 0.3 0 1 0 -0.8 0ZM109.6 48.5a0.7 0.6 0 1 0 1.4 0a0.7 0.6 0 1 0 -1.4 0ZM112.2 44.4a0.4 0.4 0 1 0 0.9 0a0.4 0.4 0 1 0 -0.9 0ZM102.4 69.5a0.4 0.3 0 1 0 0.8 0a0.4 0.3 0 1 0 -0.8 0Z"/><g class="gc" stroke-width="0.9"><path d="M9 3.5C12.8 4.4 23.8 8.2 32 9.1C40.2 10 50.2 9.6 58 8.7C65.8 7.8 75.5 4.4 79 3.5"/><path d="M6.6 58.2C8.4 58.3 13.7 58.7 17.2 58.6C20.8 58.5 24.3 58 27.9 57.8C31.4 57.5 34.9 56.9 38.5 57.1C42 57.2 45.6 58.4 49.1 58.7C52.7 59 56.2 59.1 59.8 58.9C63.3 58.6 66.9 57.3 70.4 57.2C73.9 57.2 79.3 58.4 81 58.6"/><path d="M18.2 40.1C22.5 40.5 34.4 42.2 44 42.3C53.6 42.4 70.4 41 75.7 40.7"/></g><g class="gf"><path d="M15.9 78.7a1 1 0 1 0 2.1 0a1 1 0 1 0 -2.1 0ZM28.2 76.7a0.9 0.9 0 1 0 1.8 0a0.9 0.9 0 1 0 -1.8 0ZM56.4 83.8a1.1 0.9 0 1 0 2.2 0a1.1 0.9 0 1 0 -2.2 0ZM7.9 67.6a0.9 0.7 0 1 0 1.8 0a0.9 0.7 0 1 0 -1.8 0ZM42.9 85.2a0.9 0.9 0 1 0 1.9 0a0.9 0.9 0 1 0 -1.9 0ZM32.9 66a0.7 0.7 0 1 0 1.4 0a0.7 0.7 0 1 0 -1.4 0ZM64.9 86.6a0.8 0.8 0 1 0 1.7 0a0.8 0.8 0 1 0 -1.7 0ZM49.4 63.4a1.1 0.9 0 1 0 2.1 0a1.1 0.9 0 1 0 -2.1 0ZM38.8 75.7a0.5 0.5 0 1 0 1 0a0.5 0.5 0 1 0 -1 0ZM32.8 75.8a0.9 0.7 0 1 0 1.8 0a0.9 0.7 0 1 0 -1.8 0ZM31.9 79.5a1 1 0 1 0 2 0a1 1 0 1 0 -2 0ZM44.4 78.2a0.9 0.8 0 1 0 1.7 0a0.9 0.8 0 1 0 -1.7 0ZM30.6 66.1a1.1 0.8 0 1 0 2.2 0a1.1 0.8 0 1 0 -2.2 0ZM30.5 73.7a1 0.8 0 1 0 2 0a1 0.8 0 1 0 -2 0Z"/></g><use href="#gb-k01" class="gk" stroke-width="1.2" stroke-dasharray="281.6 2.3 102.4 2 713.3"/><use href="#gb-k01" class="gk" stroke-width="2.6" stroke-dasharray="14.1 13.8 13.4 6.4 18.6 15.3 9.9 7.7 14.9 21.4 5.7 22.7 11.7 16.7 13 4.8 5.6 17.9 20.5 23.6 11.3 8.7 11.8 13.2 12 8.3 20.7 23.8 8.8 14.1 20 21.7 15.7 6 12.4 20.8 5.1 9 17.4 5.2 13.6 19.4" stroke-dashoffset="1.1"/></g><use href="#gb-k01" class="gh"/></symbol><symbol id="g-k23" viewBox="0 0 60 160" overflow="visible"><defs><g id="gb-k23"><path d="M36.5 0C36.7 0.4 37.5 1.5 37.3 2.5C37.1 3.5 35.6 -0.3 35.1 6C34.7 12.3 34.3 30.7 34.6 40.1C34.9 49.4 34.5 53.8 36.7 62.1C38.9 70.4 44.2 80.2 47.8 89.9C51.3 99.6 56.2 111.8 58.1 120.1C60 128.4 59.8 133.9 59.1 139.9C58.4 145.9 55.5 152.7 54 156.1C52.5 159.4 50.7 159.3 50.1 160L10.1 159.9C9.4 159.3 7.5 159.4 6 156.1C4.6 152.8 1.8 146 1.2 140C0.5 134 0.4 128.4 2.2 120C4 111.6 8.5 99.6 12 89.9C15.5 80.2 21.1 70.3 23.3 62C25.5 53.7 24.9 49.4 25.1 40C25.4 30.7 25.4 12.3 25 6C24.6 -0.2 22.8 3.5 22.5 2.5C22.3 1.5 23.5 0.5 23.7 0.1Z"/></g></defs><g class="gp"><path class="gg" d="M-3.5 161.1L4.9 161.4L13.2 161.9L21.5 162.3L29.8 162.4L38.1 162.4L46.5 162.2L54.8 161.8L63.1 161L63.1 161L54.8 160.6L46.4 160.1L38.1 160.3L29.8 160.4L21.5 160.1L13.2 160.2L4.9 160L-3.5 161.1ZM4.9 162L10.2 163.1L15.4 162.6L20.6 163L25.9 163.2L31.1 163L36.4 162.6L41.6 162.5L46.8 162.2L46.8 162.2L41.6 161.7L36.3 161.6L31.1 161.8L25.9 162.2L20.7 161.7L15.4 161.5L10.2 162.1L4.9 162Z"/><use href="#gb-k23" class="gw"/><path class="gs" d="M30.6 4.7L34.1 4.2L34.1 5.8L30.6 5ZM31.1 15.3L33.6 14.7L33.6 16.3L31.1 15.6ZM31.2 47L33.6 46.7L33.6 47.8L31.2 47.2ZM31.1 57.6L34.5 57.2L34.5 58.5L31.1 57.8ZM31.1 68.2L37.6 68L37.6 69.2L31.1 68.4ZM34.7 78.8L42 78.7L42 79.8L34.7 79ZM35.9 89.3L46.2 89.3L46.2 90.6L35.9 89.6ZM35.9 99.9L50 99.9L50 101.5L35.9 100.2ZM37.3 110.5L53.1 110.8L53.1 111.9L37.3 110.7ZM33.5 121L55.5 121.6L55.5 122.9L33.5 121.3ZM22.6 131.6L56.5 132.7L56.5 134.1L22.6 131.9ZM20 142.2L55.2 143.3L55.2 144.7L20 142.4ZM22.8 152.8L52 153.6L52 155L22.8 153Z"/><path class="gi" d="M26.8 25.5L26.4 36.9L26 48.3L25.1 59.6L22.3 71L18.7 82.4L16.6 93.9L13.9 105.4L12.1 116.9L12.1 116.9L14.7 105.5L17.8 94.2L20.2 82.8L23.9 71.4L26.6 59.9L27.3 48.3L27.2 36.9L26.8 25.5ZM27.9 20.1L27.5 31.5L27.1 42.9L26.9 54.3L25.5 65.7L23.5 77.1L21.2 88.5L19 100L18 111.5L18 111.5L19.8 100.2L22.5 88.8L25 77.4L27.1 65.9L28.4 54.4L28.3 43L28.3 31.5L27.9 20.1Z"/><g class="gc" stroke-width="1.2"><path d="M4.5 117.8C6.6 117.7 13 117.6 17.3 117.5C21.6 117.3 25.9 117.1 30.1 117.1C34.4 117.1 38.7 117.2 43 117.3C47.3 117.4 53.7 117.6 55.8 117.7"/><path d="M13.5 112C13.2 114.7 11.9 122.7 12 128C12.1 133.3 13.7 141.3 14 144"/><path d="M28.5 10C28.5 15.7 28.4 38.3 28.4 44"/></g><use href="#gb-k23" class="gk" stroke-width="1.6" stroke-dasharray="231.7 2.8 71.4 1.7 478"/><use href="#gb-k23" class="gk" stroke-width="3.5" stroke-dasharray="21.4 16.2 23.7 12.5 14.9 31.5 27.5 18 13.7 24.6 22.6 30.3 20 8.3 11.1 17.9 16.5 27.7 13.3 12.4 19.9 10" stroke-dashoffset="26"/></g><use href="#gb-k23" class="gh"/></symbol><symbol id="g-k09" viewBox="0 0 118 62" overflow="visible"><defs><g id="gb-k09"><path d="M117.9 0C117.9 1.4 118.6 3.5 117.8 8C117 12.5 115.5 21 113 27C110.5 33 106.4 39.7 102.7 43.9C99 48 93.8 50.2 90.8 52C87.9 53.8 85.7 53.9 84.9 55C84 56 85.9 57 85.8 58.2C85.7 59.3 84.4 61.3 84.1 61.9L33.5 61.9C33.4 61.3 32.9 59.1 32.8 57.9C32.7 56.8 33.9 55.8 32.9 54.8C32 53.9 30.1 53.9 27 52.1C24 50.3 18.3 48.2 14.5 44C10.8 39.9 6.9 33.2 4.6 27.2C2.4 21.2 1.8 12.5 1 8C0.2 3.4 0 1.2 -0.2 -0.1Z"/></g></defs><g class="gp"><path class="gg" d="M30.2 62.5L38.2 63L46.2 63.1L54.2 63.3L62.2 62.9L70.2 63.1L78.2 63.1L86.2 62.5L94.3 62.3L94.3 62.3L86.2 61.7L78.2 61.5L70.2 61.7L62.2 61.4L54.2 61.9L46.2 61.6L38.2 61.8L30.2 62.5ZM24.7 63.9L30.9 63.9L37.1 64.4L43.4 64.1L49.6 64.2L55.8 64.1L62 64.6L68.2 64.5L74.4 63.8L74.4 63.8L68.2 63.7L62 63.6L55.8 63.3L49.6 63.3L43.3 63.4L37.1 63.4L30.9 63.4L24.7 63.9Z"/><use href="#gb-k09" class="gw"/><path class="gs" d="M78.9 2.2L113 2.5L113 3.6L78.9 2.4ZM68.3 4.4L111.6 4.9L111.6 5.9L68.3 4.5ZM68.3 6.5L110.8 7.1L110.8 8L68.3 6.7ZM70.6 8.7L111.5 9.2L111.5 10.2L70.6 8.9ZM75.1 10.8L113 11.3L113 12.2L75.1 11ZM75.2 13L109.3 13.4L109.3 14.3L75.2 13.2ZM69.9 15.2L109.8 15.7L109.8 16.6L69.9 15.3ZM71.7 17.3L109.5 17.7L109.5 18.8L71.7 17.5ZM73 19.5L110.9 20L110.9 20.8L73 19.6ZM65.3 21.6L109.5 22.3L109.5 23.1L65.3 21.8ZM64.7 23.8L109.8 24.5L109.8 25.3L64.7 24ZM70.7 25.9L107 26.2L107 27.4L70.7 26.1ZM75.9 28.1L107.3 28.4L107.3 29.4L75.9 28.3ZM65.5 30.3L107.1 30.7L107.1 31.9L65.5 30.5ZM74.2 32.4L103.9 32.7L103.9 33.7L74.2 32.6ZM75.9 34.6L105.6 34.9L105.6 35.8L75.9 34.8ZM66.5 36.7L104.8 37.2L104.8 38.2L66.5 36.9ZM67.8 38.9L102.5 39.2L102.5 40.4L67.8 39.1ZM70.6 41.1L99.8 41.4L99.8 42.2L70.6 41.2ZM67.2 43.2L98.8 43.5L98.8 44.6L67.2 43.4ZM71.1 45.4L97.4 45.5L97.4 46.6L71.1 45.6ZM67.8 47.5L94.6 47.7L94.6 48.8L67.8 47.7ZM66.7 49.7L90.2 49.8L90.2 50.8L66.7 49.9ZM47.6 51.9L88.5 52.4L88.5 53.3L47.6 52ZM50.6 54L82.5 54.4L82.5 55.2L50.6 54.2ZM50.9 56.2L81.3 56.4L81.3 57.4L50.9 56.4ZM53.5 58.3L83.4 58.6L83.4 59.6L53.5 58.5ZM54.6 60.5L82.5 60.7L82.5 61.7L54.6 60.7Z"/><path class="gs" d="M24.2 34.6a0.7 0.5 0 1 0 1.4 0a0.7 0.5 0 1 0 -1.4 0ZM93.5 25.6a0.6 0.4 0 1 0 1.2 0a0.6 0.4 0 1 0 -1.2 0ZM36.4 51.2a0.6 0.5 0 1 0 1.1 0a0.6 0.5 0 1 0 -1.1 0ZM14 28.4a0.5 0.4 0 1 0 1.1 0a0.5 0.4 0 1 0 -1.1 0ZM15.1 27.2a0.5 0.4 0 1 0 1.1 0a0.5 0.4 0 1 0 -1.1 0ZM83.5 52.4a0.6 0.5 0 1 0 1.1 0a0.6 0.5 0 1 0 -1.1 0ZM35.3 28.3a0.7 0.5 0 1 0 1.3 0a0.7 0.5 0 1 0 -1.3 0ZM87.9 49.5a0.6 0.5 0 1 0 1.1 0a0.6 0.5 0 1 0 -1.1 0ZM44.1 60.3a0.6 0.5 0 1 0 1.3 0a0.6 0.5 0 1 0 -1.3 0ZM59.2 43.9a0.7 0.5 0 1 0 1.4 0a0.7 0.5 0 1 0 -1.4 0ZM64.6 22.9a0.6 0.4 0 1 0 1.3 0a0.6 0.4 0 1 0 -1.3 0ZM52.9 43.8a0.5 0.5 0 1 0 1 0a0.5 0.5 0 1 0 -1 0ZM49.3 23.1a0.4 0.3 0 1 0 0.7 0a0.4 0.3 0 1 0 -0.7 0ZM26.5 50.3a0.5 0.4 0 1 0 1.1 0a0.5 0.4 0 1 0 -1.1 0ZM52.1 26.4a0.7 0.5 0 1 0 1.3 0a0.7 0.5 0 1 0 -1.3 0ZM54.4 37.2a0.6 0.4 0 1 0 1.1 0a0.6 0.4 0 1 0 -1.1 0ZM100.1 30.5a0.6 0.5 0 1 0 1.3 0a0.6 0.5 0 1 0 -1.3 0ZM12.8 39.3a0.7 0.7 0 1 0 1.4 0a0.7 0.7 0 1 0 -1.4 0ZM36.5 59.5a0.4 0.3 0 1 0 0.8 0a0.4 0.3 0 1 0 -0.8 0ZM14.3 22.8a0.5 0.4 0 1 0 0.9 0a0.5 0.4 0 1 0 -0.9 0ZM74 44.5a0.4 0.4 0 1 0 0.9 0a0.4 0.4 0 1 0 -0.9 0ZM19.8 26.4a0.5 0.4 0 1 0 1.1 0a0.5 0.4 0 1 0 -1.1 0ZM44.7 36.7a0.6 0.4 0 1 0 1.1 0a0.6 0.4 0 1 0 -1.1 0ZM82.5 57.4a0.7 0.7 0 1 0 1.4 0a0.7 0.7 0 1 0 -1.4 0ZM18.3 32.1a0.6 0.6 0 1 0 1.2 0a0.6 0.6 0 1 0 -1.2 0ZM45.9 50.6a0.7 0.5 0 1 0 1.4 0a0.7 0.5 0 1 0 -1.4 0ZM64.8 56.1a0.5 0.4 0 1 0 1 0a0.5 0.4 0 1 0 -1 0ZM71.1 47.1a0.4 0.4 0 1 0 0.8 0a0.4 0.4 0 1 0 -0.8 0ZM64.8 50.7a0.4 0.4 0 1 0 0.9 0a0.4 0.4 0 1 0 -0.9 0ZM81.5 26.2a0.7 0.6 0 1 0 1.5 0a0.7 0.6 0 1 0 -1.5 0ZM60.3 59.2a0.5 0.4 0 1 0 1 0a0.5 0.4 0 1 0 -1 0ZM84.7 33.6a0.7 0.5 0 1 0 1.4 0a0.7 0.5 0 1 0 -1.4 0ZM27.2 47a0.7 0.6 0 1 0 1.3 0a0.7 0.6 0 1 0 -1.3 0ZM72.8 28.6a0.6 0.6 0 1 0 1.2 0a0.6 0.6 0 1 0 -1.2 0ZM25.6 37.7a0.7 0.5 0 1 0 1.4 0a0.7 0.5 0 1 0 -1.4 0ZM9.7 27.9a0.4 0.3 0 1 0 0.7 0a0.4 0.3 0 1 0 -0.7 0ZM80.8 57.2a0.7 0.7 0 1 0 1.5 0a0.7 0.7 0 1 0 -1.5 0ZM73.5 32.5a0.7 0.7 0 1 0 1.5 0a0.7 0.7 0 1 0 -1.5 0ZM11.5 33.8a0.5 0.4 0 1 0 1.1 0a0.5 0.4 0 1 0 -1.1 0ZM99.8 25.2a0.7 0.6 0 1 0 1.5 0a0.7 0.6 0 1 0 -1.5 0Z"/><g class="gc" stroke-width="0.9"><path d="M5 3.5C14 4.4 41 9 59 9C77 9 104 4.4 113 3.5"/><path d="M12.6 37.5C15.2 37.3 22.9 36.4 28 36.4C33.1 36.3 38.2 37 43.3 37.2C48.4 37.3 53.5 37.1 58.6 37.1C63.7 37.2 68.8 37.8 74 37.7C79.1 37.5 84.2 36.1 89.3 36.1C94.4 36.1 102.1 37.4 104.6 37.7"/><path d="M20.4 16.8C26.9 17.3 45.2 19.7 59 19.8C72.8 20 96.1 18.2 103.5 17.8"/></g><use href="#gb-k09" class="gk" stroke-width="1.2" stroke-dasharray="166.2 1.3 476.2"/><use href="#gb-k09" class="gk" stroke-width="2.6" stroke-dasharray="17.8 16.5 16.2 22.6 11 12.4 20 19.4 18 11.5 13.9 6.6 9.6 6.8 8.4 5 16.1 6.4 12 4.6 15.8 15.8 14.6 16.2 13.7 22.4" stroke-dashoffset="9.4"/></g><use href="#gb-k09" class="gh"/></symbol><symbol id="g-k03" viewBox="0 0 70 50" overflow="visible"><defs><g id="gb-k03"><path d="M70.3 0.1C70.1 1.1 70.1 2.4 69.3 5.9C68.5 9.4 67.3 16.1 65.4 21C63.5 25.9 60.1 31.8 58 35.1C55.9 38.4 53.9 39.6 52.8 41.1C51.7 42.5 51.5 43 51.3 44C51.1 45 51.8 45.9 51.8 46.9C51.7 48 51.1 49.5 51 50L19.2 50C19 49.5 18.2 47.9 18.1 46.9C18 45.9 18.7 45 18.5 44C18.3 43 18 42.5 16.9 41C15.8 39.5 13.9 38.3 11.8 34.9C9.8 31.6 6.4 25.7 4.6 20.9C2.8 16.1 1.9 9.5 1.2 6C0.5 2.6 0.4 1.1 0.3 0.1Z"/></g></defs><g class="gp"><path class="gg" d="M13.5 50.7L18.3 50.8L23.1 50.8L27.9 50.9L32.8 51L37.6 50.8L42.4 51L47.3 50.9L52.1 50.6L52.1 50.6L47.3 50.3L42.5 50.2L37.6 49.8L32.8 50.2L28 49.9L23.1 49.9L18.3 50.2L13.5 50.7ZM27.1 51.1L29.9 51.2L32.7 51.3L35.5 51.5L38.4 51.5L41.2 51.4L44 51.4L46.8 51.4L49.6 51.3L49.6 51.3L46.8 51.1L44 50.8L41.2 50.9L38.4 51L35.5 50.9L32.7 50.9L29.9 50.8L27.1 51.1Z"/><use href="#gb-k03" class="gw"/><path class="gs" d="M41.7 1.1L67.8 0.2L67.8 0.8L41.7 1.2ZM46.2 2.6L66.9 1.9L66.9 2.4L46.2 2.7ZM45.8 4.1L66.6 3.3L66.6 3.9L45.8 4.2ZM38.9 5.6L65.2 4.7L65.2 5.3L38.9 5.7ZM46.3 7.1L65.4 6.3L65.4 6.9L46.3 7.2ZM44.3 8.5L64.7 7.7L64.7 8.5L44.3 8.7ZM46.2 10L64.9 9.3L64.9 9.9L46.2 10.1ZM44.1 11.5L64.5 10.8L64.5 11.4L44.1 11.6ZM42.8 13L64.7 12.2L64.7 12.9L42.8 13.1ZM44.9 14.5L63.9 13.7L63.9 14.4L44.9 14.6ZM43.1 16L64.8 15.2L64.8 15.8L43.1 16.1ZM42.3 17.5L62.3 16.7L62.3 17.4L42.3 17.6ZM45.2 19L61.8 18.3L61.8 18.9L45.2 19.1ZM39.8 20.4L61.9 19.7L61.9 20.2L39.8 20.5ZM38.2 21.9L61.1 21.2L61.1 21.6L38.2 22ZM42.5 23.4L62.4 22.7L62.4 23.3L42.5 23.5ZM44.3 24.9L60.5 24.2L60.5 24.9L44.3 25ZM43.1 26.4L60 25.7L60 26.3L43.1 26.5ZM41.4 27.9L58.9 27.1L58.9 27.8L41.4 28ZM40.4 29.4L58.4 28.7L58.4 29.2L40.4 29.4ZM38.6 30.8L58.7 30L58.7 30.7L38.6 31ZM39.5 32.3L57.4 31.7L57.4 32.2L39.5 32.4ZM41.3 33.8L56.5 33.2L56.5 33.7L41.3 33.9ZM38.9 35.3L56.1 34.6L56.1 35.2L38.9 35.4ZM40.8 36.8L54.1 36.3L54.1 36.7L40.8 36.9ZM40.3 38.3L53.3 37.7L53.3 38.3L40.3 38.4ZM37.6 39.7L51.9 39.1L51.9 39.7L37.6 39.9ZM30.6 41.2L50.4 40.5L50.4 41.1L30.6 41.3ZM28.2 42.7L49.4 42L49.4 42.5L28.2 42.8ZM30.4 44.2L50.1 43.4L50.1 44.1L30.4 44.3ZM31 45.7L49.6 44.9L49.6 45.6L31 45.8ZM31.7 47.2L50.4 46.4L50.4 47.1L31.7 47.3ZM29.6 48.7L49.5 47.9L49.5 48.6L29.6 48.8Z"/><path class="gs" d="M22.3 21.4a0.3 0.2 0 1 0 0.6 0a0.3 0.2 0 1 0 -0.6 0ZM18.4 37.4a0.4 0.3 0 1 0 0.7 0a0.4 0.3 0 1 0 -0.7 0ZM25.1 46.4a0.4 0.3 0 1 0 0.9 0a0.4 0.3 0 1 0 -0.9 0ZM23.1 45.7a0.2 0.2 0 1 0 0.4 0a0.2 0.2 0 1 0 -0.4 0ZM37.5 37.6a0.2 0.2 0 1 0 0.5 0a0.2 0.2 0 1 0 -0.5 0ZM55.5 28.4a0.4 0.4 0 1 0 0.9 0a0.4 0.4 0 1 0 -0.9 0ZM24.3 30.3a0.3 0.2 0 1 0 0.7 0a0.3 0.2 0 1 0 -0.7 0ZM38.3 27.3a0.3 0.2 0 1 0 0.5 0a0.3 0.2 0 1 0 -0.5 0ZM33.7 35.3a0.4 0.3 0 1 0 0.7 0a0.4 0.3 0 1 0 -0.7 0ZM51.2 30.3a0.4 0.3 0 1 0 0.9 0a0.4 0.3 0 1 0 -0.9 0ZM42.8 32.9a0.2 0.2 0 1 0 0.5 0a0.2 0.2 0 1 0 -0.5 0ZM35.6 20.3a0.3 0.3 0 1 0 0.6 0a0.3 0.3 0 1 0 -0.6 0ZM37.2 40.6a0.4 0.4 0 1 0 0.8 0a0.4 0.4 0 1 0 -0.8 0ZM13.7 34.3a0.4 0.4 0 1 0 0.9 0a0.4 0.4 0 1 0 -0.9 0ZM18.3 28.5a0.2 0.1 0 1 0 0.4 0a0.2 0.1 0 1 0 -0.4 0ZM32.7 45.4a0.4 0.4 0 1 0 0.8 0a0.4 0.4 0 1 0 -0.8 0ZM22.9 34.7a0.3 0.2 0 1 0 0.6 0a0.3 0.2 0 1 0 -0.6 0ZM38.7 48.9a0.4 0.3 0 1 0 0.8 0a0.4 0.3 0 1 0 -0.8 0ZM13.2 23.7a0.3 0.3 0 1 0 0.6 0a0.3 0.3 0 1 0 -0.6 0ZM46.9 43.6a0.3 0.2 0 1 0 0.5 0a0.3 0.2 0 1 0 -0.5 0ZM54.8 28.6a0.4 0.4 0 1 0 0.7 0a0.4 0.4 0 1 0 -0.7 0ZM56.8 29.9a0.2 0.2 0 1 0 0.5 0a0.2 0.2 0 1 0 -0.5 0ZM33.2 40.7a0.3 0.3 0 1 0 0.6 0a0.3 0.3 0 1 0 -0.6 0ZM36.9 36.8a0.2 0.2 0 1 0 0.5 0a0.2 0.2 0 1 0 -0.5 0ZM38 38.8a0.2 0.2 0 1 0 0.4 0a0.2 0.2 0 1 0 -0.4 0ZM50.8 24.5a0.3 0.2 0 1 0 0.6 0a0.3 0.2 0 1 0 -0.6 0ZM53.4 17.9a0.2 0.2 0 1 0 0.5 0a0.2 0.2 0 1 0 -0.5 0ZM30.8 29.7a0.3 0.2 0 1 0 0.5 0a0.3 0.2 0 1 0 -0.5 0ZM25.5 43.2a0.4 0.3 0 1 0 0.7 0a0.4 0.3 0 1 0 -0.7 0ZM29.6 34.1a0.3 0.3 0 1 0 0.7 0a0.3 0.3 0 1 0 -0.7 0ZM33.9 41a0.3 0.3 0 1 0 0.7 0a0.3 0.3 0 1 0 -0.7 0ZM32.2 32.5a0.4 0.3 0 1 0 0.7 0a0.4 0.3 0 1 0 -0.7 0ZM44.7 36.2a0.3 0.2 0 1 0 0.5 0a0.3 0.2 0 1 0 -0.5 0ZM24.1 20.6a0.3 0.2 0 1 0 0.6 0a0.3 0.2 0 1 0 -0.6 0ZM40 47.5a0.3 0.2 0 1 0 0.6 0a0.3 0.2 0 1 0 -0.6 0ZM31.4 34.5a0.3 0.3 0 1 0 0.6 0a0.3 0.3 0 1 0 -0.6 0ZM31.1 20.2a0.4 0.3 0 1 0 0.8 0a0.4 0.3 0 1 0 -0.8 0ZM47.8 18.5a0.3 0.2 0 1 0 0.5 0a0.3 0.2 0 1 0 -0.5 0ZM38.9 45.4a0.3 0.3 0 1 0 0.7 0a0.3 0.3 0 1 0 -0.7 0ZM47.4 42.5a0.4 0.3 0 1 0 0.8 0a0.4 0.3 0 1 0 -0.8 0ZM20.8 17.8a0.4 0.3 0 1 0 0.8 0a0.4 0.3 0 1 0 -0.8 0ZM37.6 33a0.4 0.4 0 1 0 0.8 0a0.4 0.4 0 1 0 -0.8 0ZM19.9 40.6a0.2 0.2 0 1 0 0.5 0a0.2 0.2 0 1 0 -0.5 0ZM45.5 43.4a0.2 0.2 0 1 0 0.4 0a0.2 0.2 0 1 0 -0.4 0ZM13 34.7a0.2 0.2 0 1 0 0.5 0a0.2 0.2 0 1 0 -0.5 0ZM9.1 28.4a0.2 0.2 0 1 0 0.4 0a0.2 0.2 0 1 0 -0.4 0ZM32.8 38.8a0.4 0.4 0 1 0 0.8 0a0.4 0.4 0 1 0 -0.8 0ZM29.8 22.7a0.2 0.2 0 1 0 0.4 0a0.2 0.2 0 1 0 -0.4 0ZM14.6 34.9a0.2 0.2 0 1 0 0.4 0a0.2 0.2 0 1 0 -0.4 0ZM7.9 26.6a0.4 0.3 0 1 0 0.8 0a0.4 0.3 0 1 0 -0.8 0ZM33 22.1a0.4 0.3 0 1 0 0.7 0a0.4 0.3 0 1 0 -0.7 0ZM29.5 29.9a0.3 0.2 0 1 0 0.5 0a0.3 0.2 0 1 0 -0.5 0ZM21.7 28.3a0.3 0.3 0 1 0 0.6 0a0.3 0.3 0 1 0 -0.6 0ZM49.7 17.7a0.2 0.2 0 1 0 0.4 0a0.2 0.2 0 1 0 -0.4 0ZM28.2 40.4a0.4 0.3 0 1 0 0.7 0a0.4 0.3 0 1 0 -0.7 0ZM22.3 34.6a0.4 0.3 0 1 0 0.8 0a0.4 0.3 0 1 0 -0.8 0ZM35.1 33.2a0.4 0.3 0 1 0 0.9 0a0.4 0.3 0 1 0 -0.9 0ZM34.8 39.9a0.4 0.4 0 1 0 0.7 0a0.4 0.4 0 1 0 -0.7 0ZM31.2 40.6a0.3 0.3 0 1 0 0.7 0a0.3 0.3 0 1 0 -0.7 0ZM39.5 48.2a0.4 0.3 0 1 0 0.8 0a0.4 0.3 0 1 0 -0.8 0ZM16.7 18.5a0.2 0.1 0 1 0 0.4 0a0.2 0.1 0 1 0 -0.4 0ZM18.5 27.2a0.3 0.2 0 1 0 0.5 0a0.3 0.2 0 1 0 -0.5 0ZM30.3 30.2a0.3 0.2 0 1 0 0.7 0a0.3 0.2 0 1 0 -0.7 0ZM43.1 21.9a0.4 0.4 0 1 0 0.9 0a0.4 0.4 0 1 0 -0.9 0ZM40.9 23.2a0.4 0.3 0 1 0 0.8 0a0.4 0.3 0 1 0 -0.8 0ZM10.7 29.7a0.2 0.2 0 1 0 0.5 0a0.2 0.2 0 1 0 -0.5 0ZM38.9 31.5a0.3 0.2 0 1 0 0.7 0a0.3 0.2 0 1 0 -0.7 0ZM40.2 41a0.3 0.2 0 1 0 0.7 0a0.3 0.2 0 1 0 -0.7 0Z"/><g class="gc" stroke-width="0.5"><path d="M5 3C10 3.6 25 6.5 35 6.5C45 6.5 60 3.6 65 3"/><path d="M3.6 9.9C8.8 10.4 24.5 12.4 35 12.4C45.5 12.4 61.5 10.4 66.7 9.9"/><path d="M20 42.5C22.5 42.7 30 43.6 35 43.6C40 43.6 47.5 42.7 50 42.5"/></g><use href="#gb-k03" class="gk" stroke-width="0.7" stroke-dasharray="112.3 0.8 310.5"/><use href="#gb-k03" class="gk" stroke-width="1.5" stroke-dasharray="5.2 10 3.6 8.2 10.2 2.9 9.6 13.9 4.7 3.3 2.9 11.4 4.6 2.5 6.3 4.5 5.2 10.2 8.7 6.3 7 7.3 9.9 10.9 3.7 4.4 11.4 6.7 3.7 10.8 5.5 5.5" stroke-dashoffset="2.8"/></g><use href="#gb-k03" class="gh"/></symbol></defs></svg>
+<header class="top">
+  <a class="mark" href="./#main"><svg viewBox="0 0 26 26" aria-hidden="true" focusable="false"><path class="m1" d="M2 2h22v22H2z"/><path class="m2" d="M2 2h11v11H2z"/></svg><span>角落商行</span></a>
+  <nav class="nav" aria-label="頁內導覽"><ul role="list">
+    <li><a href="./#catalog">型錄</a></li><li><a href="./#ruler">同一把尺</a></li><li><a href="./#rules">規矩</a></li><li><a href="./#store">門市</a></li><li><a href="./#checkout">結帳</a></li>
+  </ul></nav>
+  
+</header>
+<main id="main" class="nf">
+  <div class="mx nf-mx">
+    <div class="brand">
+      <h1>空著的一格</h1>
+      <p class="tele">查無此頁　網址可能打錯　或商品已下架</p>
+      <p class="tele-s"><a href="./#catalog">回型錄</a><a href="./#ruler">看同一把尺</a></p>
+    </div>
+    <div class="it s22 f-mint on" aria-hidden="true" style="grid-column:6/span 3;grid-row:1/span 2"><div class="it-top"><span class="nm">K-404</span></div><p class="ds">缺號。這一格的貨還沒到。</p><div class="fig"><svg class="g" viewBox="0 0 300 330" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false"><use href="#g-k12"/></svg></div><div class="it-bot"><p class="pr"><span class="cur">NT$</span><span class="num">404</span></p></div></div>
+    <div class="it s11 f-ice" aria-hidden="true" style="grid-column:span 2"><div class="it-top"><span class="nm">粗陶馬克杯</span></div><p class="ds">把手容三指。杯底一枚拇指印。</p><div class="fig"><svg class="g" viewBox="0 0 120 95" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false"><use href="#g-k01"/></svg></div><div class="it-bot"><p class="pr"><span class="cur">NT$</span><span class="num">680</span></p></div></div><div class="it s11 f-deep" aria-hidden="true" style="grid-column:span 2"><div class="it-top"><span class="nm">一輪花瓶</span></div><p class="ds">瓶口一指寬。插一枝剛好。</p><div class="fig"><svg class="g" viewBox="0 0 60 160" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false"><use href="#g-k23"/></svg></div><div class="it-bot"><p class="pr"><span class="cur">NT$</span><span class="num">640</span></p></div></div><div class="it s11 f-lift" aria-hidden="true" style="grid-column:span 2"><div class="it-top"><span class="nm">手拉飯碗</span></div><p class="ds">一碗飯量。碗足留旋坯痕。</p><div class="fig"><svg class="g" viewBox="0 0 118 62" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false"><use href="#g-k09"/></svg></div><div class="it-bot"><p class="pr"><span class="cur">NT$</span><span class="num">380</span></p></div></div><div class="it s11 f-lift" aria-hidden="true" style="grid-column:span 2"><div class="it-top"><span class="nm">白瓷小茶杯</span></div><p class="ds">薄胎。迎光看得見指影。</p><div class="fig"><svg class="g" viewBox="0 0 70 50" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false"><use href="#g-k03"/></svg></div><div class="it-bot"><p class="pr"><span class="cur">NT$</span><span class="num">360</span></p></div></div>
+  </div>
+</main>
+<footer class="foot"><p><b>角落商行</b>高雄市鹽埕區新樂街 21 號　<span class="mono">07-0000-0421</span></p><p>字型：WDXL Lubrifont TC、Noto Sans TC、Sometype Mono，皆依 SIL Open Font License 授權使用。</p></footer>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /list/
+Sitemap: https://taiban-showcase.vercel.app/sitemap.xml

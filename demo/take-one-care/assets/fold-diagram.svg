@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 44" fill="none" stroke="#764872" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <!-- 一日一帖 說明書四摺示意（手繪 SVG）：風琴摺三道＋展開方向箭頭 -->
+  <path d="M6 34.5 L32.4 14.2 L58.6 34.1 L85.1 14.6 L111.3 34.4"/>
+  <path d="M6 34.5 L6 40.2 M32.4 14.2 L32.4 8.6 M58.6 34.1 L58.6 39.8 M85.1 14.6 L85.1 8.9 M111.3 34.4 L111.3 40" stroke-dasharray="1.2 2.4"/>
+  <path d="M116.5 24.2 C120.8 24 124.6 24.3 128.2 24.4 M124.4 20.6 L128.4 24.4 L124.3 28.3"/>
+  <circle cx="32.4" cy="14.2" r="1.6" fill="#764872" stroke="none"/>
+  <circle cx="85.1" cy="14.6" r="1.6" fill="#764872" stroke="none"/>
+  <path d="M10.8 25.1 L14.6 22.2 M63.4 25.4 L67.2 22.5" stroke-width="1.1"/>
+</svg>
